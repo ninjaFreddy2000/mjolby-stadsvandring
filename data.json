@@ -1,0 +1,785 @@
+{
+  "metadata": {
+    "title": "Mjölby kunskapsdatabas",
+    "description": "Strukturerad kunskapsdatabas över sevärdheter, historia, byggnader, personer, företag, konst och kultur i och kring Mjölby (inkl. Skänninge och Bjälbo). Avsedd som underlag för stadsvandringar, guideappar, skyltar och innehållssystem.",
+    "version": "1.0",
+    "created": "2026-06-01",
+    "language": "sv",
+    "coordinate_system": "WGS84 (decimal lat/lng)",
+    "image_provenance_note": "Fältet 'images' innehåller direkta, fungerande bild-URL:er (källa Google Maps/Places) där sådana fanns tillgängliga. Wikipedia/Wikimedia-bildfiler kunde inte hämtas automatiskt (wikipedia.org är spärrad för direkthämtning), därför anges istället 'image_source_pages' — de Wikipedia-, mjolby.se- och visitmjolby.se-sidor där fritt/officiellt bildmaterial finns att ladda ned. Wikipedia/Wikimedia-bilder är normalt CC BY-SA och kräver attribution. Google-bilder lyder under Googles villkor. Kontrollera licens innan publicering.",
+    "categories": [
+      "ort", "vattendrag", "kyrka", "byggnad", "torg", "museum_hembygd",
+      "handel", "kafe_restaurang", "hotell", "industri_foretag", "person",
+      "konst_staty", "runsten", "klosterruin", "borgruin", "bro",
+      "musikkar", "handelse", "idrott", "station"
+    ],
+    "sources_primary": [
+      "https://sv.wikipedia.org/wiki/Mjölby",
+      "https://www.mjolby.se",
+      "https://www.visitmjolby.se",
+      "https://slekt.se/mjolby (Per Anderssons Mjölbyhistoria)"
+    ]
+  },
+  "entries": [
+    {
+      "id": "mjolby-orten",
+      "name": "Mjölby",
+      "category": "ort",
+      "coordinates": { "lat": 58.325, "lng": 15.131 },
+      "era": "Kvarnby sedan 1100-talet; stad 1920",
+      "summary": "Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland.",
+      "description": "Namnet kommer av fornsvenskans Mölloby, av mylna/mölna = kvarn. Forsarna i Svartån och den bördiga slätten gjorde platsen självskriven för kvarnar redan på 1100-talet, och orten omnämns i ett gåvobrev på 1200-talet. Mjölby fick stadsrättigheter 1920 och har idag drygt 14 000 invånare.",
+      "key_facts": [
+        "Namnbetydelse: kvarn",
+        "Stad 1920",
+        "Under Dackefejden 1542–43 nordligaste punkt som smålandsupprorets styrkor nådde"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Mjölby", "source": "Wikipedia" }
+      ],
+      "sources": [
+        "https://sv.wikipedia.org/wiki/Mjölby",
+        "https://www.mjolby.se/uppleva-och-gora/arkiv-och-slaktforskning/lokalhistoria"
+      ]
+    },
+    {
+      "id": "svartan",
+      "name": "Svartån",
+      "category": "vattendrag",
+      "coordinates": { "lat": 58.3245, "lng": 15.129 },
+      "era": "—",
+      "summary": "Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande.",
+      "description": "Svartån (Östergötland) rinner från Sommen genom bland annat Tranås och Mjölby ut i Roxen, där den möter Motala ström. Forsarna genom Mjölby drev kvarnarna och senare industrin; ån går idag genom centrala stan och kantas av parker och promenadstråk.",
+      "key_facts": [
+        "Drev Mjölbys kvarnar i århundraden",
+        "Rinner genom stadskärnan"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Svartån,_Östergötland", "source": "Wikipedia" }
+      ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Svartån,_Östergötland" ]
+    },
+    {
+      "id": "mjolby-kyrka",
+      "name": "Mjölby kyrka",
+      "category": "kyrka",
+      "coordinates": { "lat": 58.3260763, "lng": 15.1310782 },
+      "address": "Kungsvägen 53, 595 41 Mjölby",
+      "era": "Ursprung 1100-tal; nuvarande kyrka 1772–1777",
+      "summary": "Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771.",
+      "description": "Den ursprungliga kyrkan uppfördes på 1100-talet i kalk- och gråsten. I branden 1771 förstördes nästan allt, men det medeltida tornet återanvändes när den nuvarande kyrkan byggdes 1772–1777 av byggmästaren Peter Östberg. Kyrkan har glasmålningar av professor Crodel.",
+      "key_facts": [
+        "Tornet är medeltida; långhuset 1770-tal",
+        "Glasmålningar av Crodel",
+        "Öppen dagligen"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZPaYRZyHx-4947btnwOtG0qKwFtVonGDEmhEPRDCCYFbWBUALXnKdFRDA3yCm0cGUWBnxI2NHsDoXX8jU6nAQ8Dix8TeXRHKnEblmMl6OvZewSyBvDfOHYkJQQ9zZVzmxDxE_aJSrYdvPHIuw=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Frank Senkel" }
+      ],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Mjölby_kyrka", "source": "Wikipedia" },
+        { "url": "https://www.svenskakyrkan.se/folkungabygden/mjolby-kyrka", "source": "Svenska kyrkan" }
+      ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Mjölby_kyrka" ],
+      "tour": { "in_central_walk": true, "stop_no": 5 }
+    },
+    {
+      "id": "mjolby-station",
+      "name": "Mjölby järnvägsstation",
+      "category": "station",
+      "coordinates": { "lat": 58.3227753, "lng": 15.1322308 },
+      "era": "Öppnad 11 maj 1873",
+      "summary": "Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.",
+      "description": "Mjölby station öppnade 11 maj 1873 som en del av dåvarande Östra stambanan (idag Södra stambanan). Samma år öppnade även den privata Hallsberg–Motala–Mjölby Järnväg (HMMJ), som förstatligades 1879 och gjorde Mjölby till en järnvägsknut. Knuten födde i sin tur stadsdelen Mjölby östra och Järnvägshotellet mitt emot spåren.",
+      "key_facts": [
+        "Öppnad 11 maj 1873",
+        "Knutpunkt mellan stambanan och Bergslagsbanan/Godsstråket",
+        "Mjölby östra (stadsdel) växte fram på 1880-talet"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZN_460OTuP62L54WvKq_4FPVazVpmJSyGKiq2cWrjutoDYQiLF1Y2arXlloYmU740aT7MpDUsG79vUWLxCtx5lwm5XV5nXPuhyUS7oShCj7hpMZqzXM9IJ3c1RBAEkk6E66ugRWpSyWcWNrAe0=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Mats Ormhed" }
+      ],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Mjölbys_historia", "source": "Wikipedia" }
+      ],
+      "sources": [
+        "https://sv.wikipedia.org/wiki/Mjölbys_historia",
+        "https://www.jarnvag.net/banguide/mjolby-storvik"
+      ],
+      "tour": { "in_central_walk": true, "stop_no": 1 }
+    },
+    {
+      "id": "mjolby-stadshotell",
+      "name": "Mjölby Stadshotell (gamla Järnvägshotellet)",
+      "category": "hotell",
+      "coordinates": { "lat": 58.3227463, "lng": 15.1335195 },
+      "address": "Järnvägsgatan 24, 595 52 Mjölby",
+      "era": "Uppfört kort efter järnvägen, 1873",
+      "summary": "Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst.",
+      "description": "Hotellet anlades kort efter att järnvägen dragits fram 1873, mitt emot stationen, och hette ursprungligen Järnvägshotellet. På 1970-talet kläddes den vittrande putsfasaden in i plåt; nya ägare återställde fasaden runt 2017. Vid renoveringen hittades en dagstidning från 1901 i timmerstommen. Idag finns en whiskybar med hundratals sorter.",
+      "key_facts": [
+        "Ursprungligen Järnvägshotellet",
+        "Dagstidning från 1901 funnen i stommen",
+        "Del av Best Western; ca 73 rum"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZOd2TFSykdFuzf8SrXNIUf_RYWnMwDR8yOkfWX17FY_yWG-WTZdv8VoYRXWJnu4hJ1iiELexibEFmJd0qYNuHiNKQyCIGV1gueACysV8g9rNKGBD7fQu3MbrKYFfAwzCyWfpfwK4KUdQ8oVzaw=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Kennet Ahlbom" }
+      ],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Mjölby_stadshotell", "source": "Wikipedia" },
+        { "url": "https://mjolbystadshotell.se/historik/", "source": "Mjölby Stadshotell" }
+      ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Mjölby_stadshotell" ],
+      "tour": { "in_central_walk": true, "stop_no": 2 }
+    },
+    {
+      "id": "stora-torget",
+      "name": "Stora Torget",
+      "category": "torg",
+      "coordinates": { "lat": 58.3251203, "lng": 15.1310293 },
+      "era": "Medeltida bykärna",
+      "summary": "Byns historiska hjärta, vid det gamla vägskälet mot Småland.",
+      "description": "Torget ligger där jordbruksbyns tyngdpunkt en gång låg, mitt emot kyrkan. Vid vägkorsningen mot Småland låg byns Gästgivaregård — krog och skjutsstation där resenärer bytte hästar. Området har varit utgångspunkt för stadskärnans gradvisa förnyelse sedan medeltiden.",
+      "key_facts": [
+        "Plats för byns gamla gästgivaregård",
+        "Vid gamla huvudvägen/vägskälet mot Småland"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://slekt.se/mjolby-bebyggelse", "source": "slekt.se (Per Andersson)" }
+      ],
+      "sources": [ "https://slekt.se/mjolby-bebyggelse" ],
+      "tour": { "in_central_walk": true, "stop_no": 4 }
+    },
+    {
+      "id": "mjolby-hembygdsgard",
+      "name": "Mjölby hembygdsgård (Norrgårdsholmen)",
+      "category": "museum_hembygd",
+      "coordinates": { "lat": 58.328396, "lng": 15.1295005 },
+      "address": "Norrgårdsgatan 13, 595 41 Mjölby",
+      "era": "Byggnader från 1700-tal och framåt",
+      "summary": "Faluröda museihus på en holme i ån, med en fin intarsiasamling.",
+      "description": "På Norrgårdsholmen i centrala Mjölby visar byggnader och samlingar ortens historia från 1700-talet till nutid. Här finns en fin samling intarsia — ett signum för Mjölbys industrihistoria. Museet ägs av kommunen och drivs ideellt av Mjölby hembygdsförening; på holmen finns även vandrarhem och kaffeserveringen Åttakanten.",
+      "key_facts": [
+        "Intarsiasamling",
+        "Drivs av Mjölby hembygdsförening",
+        "Öppet främst sommartid"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZNO0xxNFdy_yRf6oRlV5QA7kp6ZgryNrV6RWwCjfQSh2_HurY9sdnTfUWTe_3hxV9sxgtq_CaCxUegbI0nPNYuXwz4Qgn23xqUgWZGBRwsdW49xZF5pVwUXHCUIRPZLNy--G_wklaesZ7czcA=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Cathryn Johvallius" }
+      ],
+      "image_source_pages": [
+        { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv", "source": "mjolby.se" },
+        { "url": "https://www.naturkartan.se/sv/ostergotlands-lan/mjolby-hembygdsomraade", "source": "Naturkartan" }
+      ],
+      "sources": [ "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv" ],
+      "tour": { "in_central_walk": true, "stop_no": 6 }
+    },
+    {
+      "id": "galleria-kvarnen",
+      "name": "Galleria Kvarnen",
+      "category": "handel",
+      "coordinates": { "lat": 58.3255114, "lng": 15.1250723 },
+      "address": "Jerikodalsgatan 3, 595 30 Mjölby",
+      "era": "Nutida",
+      "summary": "Stadens galleria, vars namn nickar åt kvarnarvet.",
+      "description": "Centralt belägen galleria med butiker och restauranger; namnet Kvarnen anspelar på ortens identitet. Här inne finns bland annat Linds bageri & konditori.",
+      "key_facts": [ "Namnet anspelar på kvarnbyn", "Rymmer Linds bageri/konditori" ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZOqy68wfNNBfjj2zylVtcwpKJfFRSPG7JgOab7sX5aiz95WnPg5gglskr0-qexXNsiapEn7lh1siMP5vd0FR8rYdyXK0UujQW6g5VhzbSQ2C0cPSYNXqO9s_FmA9t5NrM2LfmI6Myyn2BvW=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Dennis Kristoffersson" }
+      ],
+      "image_source_pages": [ { "url": "http://galleriakvarnen.com/", "source": "Galleria Kvarnen" } ],
+      "sources": [ "http://galleriakvarnen.com/" ],
+      "tour": { "in_central_walk": true, "stop_no": 8 }
+    },
+    {
+      "id": "gamla-stadshuset",
+      "name": "Gamla Stadshuset / Stadshuset i Mjölby",
+      "category": "byggnad",
+      "coordinates": { "lat": 58.3248271, "lng": 15.125268 },
+      "address": "Burensköldsvägen 11, 595 30 Mjölby",
+      "era": "—",
+      "summary": "Stadshuset nära gallerian och biblioteket; framför entrén står en Carl Milles-skulptur.",
+      "description": "Stadshuset ligger centralt intill gallerian och biblioteket. Framför entrén står en skulptur av Carl Milles föreställande två dansande figurer (se separat post).",
+      "key_facts": [ "Carl Milles-skulptur vid entrén" ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZMDuMNkczc5VDXDadqBATwG3e9Zl93gI6SkIugD6ePzbJ-QaH3qFQtbWlB5uM3Ea-QNy4auDZP7yKqfEkBfYjHqJkgCH2ropjqNA7rk3NEQX5EWWknF1GJccPB337sWKe3OARmj8O2IXJJgmA=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "SkandikFilm" }
+      ],
+      "image_source_pages": [ { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar", "source": "mjolby.se" } ],
+      "sources": [ "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar" ],
+      "tour": { "in_central_walk": true, "stop_no": 8 }
+    },
+    {
+      "id": "kvarnparken",
+      "name": "Kvarnparken",
+      "category": "kafe_restaurang",
+      "coordinates": { "lat": 58.3226542, "lng": 15.1253061 },
+      "address": "Folkparksgatan 2, 595 30 Mjölby",
+      "era": "Nutida (park/anläggning)",
+      "summary": "Park och anläggning vid ån med restaurang, pub och statyn av Skånska Lasse.",
+      "description": "Kvarnparken vid Svartån är en samlingsplats med restaurang, pub och nattklubb samt dagens lunch på vardagar. I parken står statyn av bondkomikern Skånska Lasse.",
+      "key_facts": [ "Statyn av Skånska Lasse finns här", "Restaurang/pub vid ån" ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZNCwo1bL8x88xGdosivLhe9PoWVOsPNScRdzw9qP4v3BNLMuObis8Wzpn_iGKEqC6_EnSZSG7CIh8g37QBa_mRUi8h-vuMpXK_H9RXUGRftXylM3dm7VpyhDDEH43mTl2nbr1F5TiQVD2MCV2s=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Isam Al-Karkhi" }
+      ],
+      "image_source_pages": [],
+      "sources": [ "http://www.kvarnparken.com/" ],
+      "tour": { "in_central_walk": true, "stop_no": 9 }
+    },
+    {
+      "id": "konditori-hornet",
+      "name": "Konditori Hörnet",
+      "category": "kafe_restaurang",
+      "coordinates": { "lat": 58.3249291, "lng": 15.1226492 },
+      "address": "Smålandsvägen 21, 595 30 Mjölby",
+      "era": "Nutida",
+      "summary": "Mysigt, centralt klassiskt konditori intill biblioteket.",
+      "description": "Välbesökt och högt betygsatt konditori intill biblioteket, känt för klassiska smörgåsar och bakverk i trivsam miljö.",
+      "key_facts": [ "Intill biblioteket", "Klassiskt konditori" ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZNkY2nY1dDNUdjdTH9XGXxyPte6RQtY3FdewslimV-S-09qyVwNxZHJLlNUB-fqtuug-3HrP-EjZNvSapQ5Py7O6izZ2K_7P2Yg7DSO7Y7M0vw903Vy0HgO7Ud_vKmQyQPeCuT0IS-vIHvDBQ=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Marjaterttu Pulkkinen" }
+      ],
+      "image_source_pages": [],
+      "sources": [ "https://www.yelp.com/biz/konditori-h%C3%B6rnet-mj%C3%B6lby" ],
+      "tour": { "in_central_walk": true, "stop_no": "fika" }
+    },
+    {
+      "id": "linds-mjolby",
+      "name": "Linds (bageri & konditori)",
+      "category": "kafe_restaurang",
+      "coordinates": { "lat": 58.3256406, "lng": 15.1256978 },
+      "address": "Jerikodalsgatan 3 (Galleria Kvarnen), 595 30 Mjölby",
+      "era": "Nutida",
+      "summary": "Café och konditori med eget bageri i Galleria Kvarnen.",
+      "description": "Linds är ett café och konditori i Galleria Kvarnen med eget bageri — bakelser, smörgåsar och lättare luncher.",
+      "key_facts": [ "Eget bageri", "Beläget i Galleria Kvarnen" ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.lindsbageri.se/linds-mjolby/", "source": "Linds Bageri" } ],
+      "sources": [ "https://www.lindsbageri.se/linds-mjolby/" ]
+    },
+    {
+      "id": "skanska-lasse",
+      "name": "Skånska Lasse (Theodor Lorentz Larsson)",
+      "category": "person",
+      "coordinates": null,
+      "era": "1880–1937",
+      "summary": "Bondkomiker och visdiktare, mjölbybo större delen av livet.",
+      "description": "Theodor Lorentz Larsson, född 8 juni 1880 i byn Gylle nära Trelleborg, död 30 juni 1937 i Mjölby. Han arbetade som möbelsnickare och kom via Malmö och Stockholm till Mjölby, där han fick jobb på en möbelfabrik och inledde sin bana som bondkomiker — ofta i långrock och blommig väst med dragspel. Kända visor: Bonnjazz/Johan på Snippen (1924), Elektricitetsvisan och Bolsjevikvisan. Elektricitetsvisan fick förnyat liv när Tage Danielsson framförde den i 88-öresrevyn 1970.",
+      "key_facts": [
+        "Riktigt namn: Theodor Lorentz Larsson",
+        "Född i Gylle (Trelleborg), bosatt i Mjölby 1918–1937",
+        "Visor: Johan på Snippen, Elektricitetsvisan, Bolsjevikvisan",
+        "Biografi: Harry Netzell, 'Skånska Lasse' (2008)"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Skånska_Lasse", "source": "Wikipedia" }
+      ],
+      "sources": [
+        "https://sv.wikipedia.org/wiki/Skånska_Lasse",
+        "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv"
+      ]
+    },
+    {
+      "id": "skanska-lasses-staty",
+      "name": "Statyn av Skånska Lasse",
+      "category": "konst_staty",
+      "coordinates": { "lat": 58.326445, "lng": 15.1268935 },
+      "address": "Kvarnparken, Mjölby",
+      "era": "—",
+      "summary": "Staty i Kvarnparken över ortens folkkäre bondkomiker.",
+      "description": "Statyn av Skånska Lasse står placerad i Kvarnparken vid Svartån.",
+      "key_facts": [ "Placerad i Kvarnparken" ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv", "source": "mjolby.se" } ],
+      "sources": [ "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv" ]
+    },
+    {
+      "id": "skanska-lasses-hus",
+      "name": "Skånska Lasses hus",
+      "category": "byggnad",
+      "coordinates": null,
+      "address": "Sandgatan, Mjölby (källor anger nr 2; vissa nr 12 — verifiera på plats)",
+      "era": "Bebott av Skånska Lasse 1918–1937",
+      "summary": "Det blygsamma hemmet där Skånska Lasse bodde med sin familj.",
+      "description": "Skånska Lasse bodde med fru och barn på Sandgatan från 1918 till sin död 1937. Huset var litet: en farstu, ett kök och en kammare, samt två små sovrum på övervåningen. De mest auktoritativa lokala källorna anger Sandgatan 2; vissa andra källor uppger nr 12. Husets framtid och bevarande har under senare år varit föremål för diskussion.",
+      "key_facts": [
+        "Sandgatan (nr 2 enligt kommun/hembygdsförening)",
+        "Blygsam planlösning: farstu, kök, kammare + två sovrum"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://www.naturkartan.se/sv/ostergotlands-lan/skaanska-lasses-hus-i-mjolby", "source": "Naturkartan" }
+      ],
+      "sources": [
+        "https://www.mjolby.se/uppleva-och-gora/kultur/kulturhistoria-kulturarv",
+        "https://corren.se/nyheter/mjolby/artikel/mycket-att-se-i-skanska-lasses-hem/jn9qwqmr"
+      ]
+    },
+    {
+      "id": "potatisrondellen",
+      "name": "Potatisrondellen (Mjölbypotäten)",
+      "category": "konst_staty",
+      "coordinates": { "lat": 58.32282, "lng": 15.0939495 },
+      "address": "Ryttarhagsleden (Viringe), 595 35 Mjölby",
+      "era": "Invigd 26 oktober 2011",
+      "summary": "Ortens mest omtalade symbol: en jättelik King Edward-potatis i en rondell.",
+      "description": "Konstverket föreställer en King Edward-potatis, är tillverkat i Åtvidaberg och godkänt av potatisodlarna själva; det skissades fram av illustratören och lokalpolitikern Lars-Åke Pettersson. Invigt på Potatisens dag 26 oktober 2011 vid Viringe. Trafikverket sa nej (distraktion/reklam) men länsstyrelsen godkände det som symbol för lantbruksbygden. Potatisen kläs säsongsvis (julgris till jul), passeras av cirka fem miljoner fordon per år och har till och med en tvilling i Xylofagou på Cypern (sedan 2021). För kommunen står den för värdeordet 'hemkär'.",
+      "key_facts": [
+        "King Edward-potatis, tillverkad i Åtvidaberg",
+        "Invigd 26 oktober 2011 vid Viringe",
+        "Tvilling i Xylofagou, Cypern (2021)",
+        "Egen Facebooksida"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar", "source": "mjolby.se" }
+      ],
+      "sources": [
+        "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar",
+        "https://www.svt.se/nyheter/lokalt/ost/omdebatterad-rondellpotatis-i-mjolby"
+      ]
+    },
+    {
+      "id": "mjolby-intarsia-fanerami",
+      "name": "Mjölby Intarsia / Fanerami AB",
+      "category": "industri_foretag",
+      "coordinates": { "lat": 58.3159719, "lng": 15.1116332 },
+      "address": "Hallevadsgatan 3, 595 35 Mjölby (Fanerami AB idag)",
+      "era": "Grundat ca 1909",
+      "summary": "Träinläggnings­företaget som klädde atlantångare och bankpalats i intarsia.",
+      "description": "Knut Werner Dahlström startade omkring 1909 Mjölby Decoupeurfabrik, som 1917 ombildades till AB Mjölby Intarsia. Företaget levererade intarsiainläggningar till bland annat passagerarfartyg i Sverige–Nordamerika-trafiken och till offentliga byggnader (t.ex. ett montage av Einar Forseth för LO-borgen). Konstnärlig ledare Erik Mattsson kunde bygga verk av över 30 träslag. På 1960-talet bytte företaget namn till Fanerami och utvecklade bl.a. möbeljalusier. Drivet av familjen Dahlström i fyra generationer.",
+      "key_facts": [
+        "Grundare: Knut Werner Dahlström",
+        "AB Mjölby Intarsia från 1917; Fanerami från 1960-talet",
+        "Intarsia till fartyg och bankpalats",
+        "Fjärde generationen Dahlström"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "http://www.fanerami.se/historia.php", "source": "Fanerami" }
+      ],
+      "sources": [
+        "http://www.fanerami.se/historia.php",
+        "http://emp-web-84.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&module=artist&objectId=20375&lang=sv"
+      ]
+    },
+    {
+      "id": "ols-mobler-mio",
+      "name": "Ols Möbler (idag Mio Mjölby)",
+      "category": "industri_foretag",
+      "coordinates": { "lat": 58.3308934, "lng": 15.1098531 },
+      "address": "Ryttarhagsleden 3, 595 34 Mjölby (Mio)",
+      "era": "Grundat 1887",
+      "summary": "Möbeldynasti som startade 1887 och fortfarande drivs av samma familj.",
+      "description": "Sadelmakaren och möbelfabrikanten Johannes Ohlsson från Skåne öppnade 1887 en möbelaffär i en uthusbyggnad på Kungsvägen och blev pionjär för möbelindustrin i Mjölby. Företaget (Ols Möbler) drivs fortfarande av familjen Ohlsson, numera i fjärde generationen, idag som Mio vid Ryttarhagen nära E4.",
+      "key_facts": [
+        "Grundare: Johannes Ohlsson, 1887, på Kungsvägen",
+        "Pionjär för möbelindustrin i Mjölby",
+        "Samma familj i fyra generationer; idag Mio"
+      ],
+      "images": [],
+      "image_source_pages": [],
+      "sources": [ "https://www.corren.se/nyheter/mjolby/artikel/farfar-borjade-med-mobeltillverkningen/jv19y2oj" ]
+    },
+    {
+      "id": "mjolby-bryggeri",
+      "name": "Mjölby Bryggeri (historiskt)",
+      "category": "industri_foretag",
+      "coordinates": null,
+      "era": "Nedlagt 1954; rivet ca 1980-talet",
+      "summary": "Ortens anrika bryggeri, sedermera inriktat på svagdricka och läsk.",
+      "description": "Mjölby hade ett anrikt bryggeri som från 1927 ägdes av Centralbryggeriet i Linköping. Tillverkningen kom efterhand att koncentreras till svagdricka och läskedrycker. Verksamheten lades ned 1954 och anläggningen revs i början av 1980-talet — inga byggnadsspår finns kvar.",
+      "key_facts": [
+        "Från 1927 ägt av Centralbryggeriet i Linköping",
+        "Nedlagt 1954, rivet ca 1980-talet"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://digitaltmuseum.se/0210114073292/mjolby-bryggeri", "source": "DigitaltMuseum / Östergötlands museum" }
+      ],
+      "sources": [ "https://digitaltmuseum.se/0210114073292/mjolby-bryggeri" ]
+    },
+    {
+      "id": "mjolby-ungdomsmusikkar",
+      "name": "Mjölby Ungdomsmusikkår",
+      "category": "musikkar",
+      "coordinates": null,
+      "era": "Grundad 1956",
+      "summary": "En av Sveriges främsta och största ungdomsblåsorkestrar.",
+      "description": "Ideell förening grundad 1956, idag med omkring 120–140 aktiva unga musikanter och drillare; en symfonisk blåsorkester som räknas som en av Sveriges främsta och största ungdomsorkestrar. Medverkar vid valborg, nationaldag och skolavslutningar. Fyller 70 år 2026 med en jubileumsfestival 7–9 augusti då musikkårer från hela Europa gästar Mjölby.",
+      "key_facts": [
+        "Grundad 1956",
+        "~120–140 musikanter och drillare",
+        "70-årsjubileum 2026 (festival 7–9 augusti)"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://mumk.nu/", "source": "Mjölby Ungdomsmusikkår" } ],
+      "sources": [ "https://mumk.nu/", "https://www.svenskalag.se/mumk/sida/106156/om-oss" ]
+    },
+    {
+      "id": "mjolby-stadsmusikkar",
+      "name": "Mjölby Stadsmusikkår",
+      "category": "musikkar",
+      "coordinates": null,
+      "era": "Rötter i 1938; bildad i nuvarande form 1960",
+      "summary": "Symfonisk blåsorkester med rötter i fackföreningsrörelsen.",
+      "description": "Symfonisk blåsorkester vars förening bildades 1960 genom en sammanslagning av ABF:s Musikkår (startad 1938) och Mjölby Janitscharkår (startad 1945). Ur kåren växte även storbandet Mjölby Storband, med första offentliga framträdande 1967. Kåren är medlem i Lindbladssällskapet (efter tonsättaren A.F. Lindblad).",
+      "key_facts": [
+        "ABF:s Musikkår (1938) + Mjölby Janitscharkår (1945) → 1960",
+        "Mjölby Storband bildades 1967",
+        "Medlem i Lindbladssällskapet"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.msmk.se/?page=about", "source": "Mjölby Stadsmusikkår" } ],
+      "sources": [ "https://www.msmk.se/?page=about", "https://www.msmk.se/?page=history" ]
+    },
+    {
+      "id": "carl-milles-staty",
+      "name": "Carl Milles-skulptur (dansande figurer), Stadshuset",
+      "category": "konst_staty",
+      "coordinates": { "lat": 58.3248271, "lng": 15.125268 },
+      "address": "Framför Stadshuset, Burensköldsvägen 11–13, Mjölby",
+      "era": "—",
+      "summary": "Skulptur av den världskände Carl Milles framför Stadshusets entré.",
+      "description": "Framför entrén till Stadshuset står en skulptur av två dansande figurer av Carl Milles (1875–1955), en av 1900-talets största svenska skulptörer. Milles var fascinerad av dans, svävande och tyngdlöshet, vilket märks i verket.",
+      "key_facts": [ "Konstnär: Carl Milles", "Motiv: två dansande figurer" ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar", "source": "mjolby.se" } ],
+      "sources": [ "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar" ]
+    },
+    {
+      "id": "det-kom-en-gang-en-mjolnare",
+      "name": "Statyn 'Det kom en gång en mjölnare'",
+      "category": "konst_staty",
+      "coordinates": null,
+      "address": "Vid Svartån, centrala Mjölby",
+      "era": "—",
+      "summary": "Skulptur vid ån som hyllar Mjölbys mjölnar- och kvarnarv.",
+      "description": "En staty vid Svartån som anspelar på ortens ursprung som kvarn- och mjölnarby; ligger längs det vackra åpromenadstråket i centrum.",
+      "key_facts": [ "Tema: mjölnar-/kvarnarvet", "Vid åpromenaden" ],
+      "images": [],
+      "image_source_pages": [],
+      "sources": [ "https://www.tripadvisor.com/Attraction_Review-g806317-d23705889-Reviews-Det_Kom_En_Gang_En_Mjolnare-Mjolby_Ostergotland_County.html" ]
+    },
+    {
+      "id": "bjalbo-kyrka",
+      "name": "Bjälbo kyrka",
+      "category": "kyrka",
+      "coordinates": { "lat": 58.372155, "lng": 15.0052593 },
+      "address": "596 91 Bjälbo",
+      "era": "1100-tal; tornet ca 1220",
+      "summary": "Folkungaättens gårdskyrka och Birger jarls trakt — med ett mäktigt medeltida torn.",
+      "description": "Bjälbo var Bjälboättens (Folkungaättens) stamgods. Kyrkan byggdes på 1100-talet och det väldiga tornet uppfördes omkring 1220 — ett av stiftets största (ca 10 m brett, 21 m högt, 18 m spira), ursprungligen i sex våningar, använt som bostad, sädesmagasin och försvarsborg. Tornet tillskrivs Ingrid Ylva, Birger jarls mor; ett rum kallas 'drottning Ylvas kammare'. Utanför kyrkogården står en minnessten över Birger jarl, och runstenar vid kyrkan vittnar om platsens vikingatida betydelse.",
+      "key_facts": [
+        "Folkungaättens gårdskyrka",
+        "Torn ca 1220, ursprungligen sex våningar",
+        "Tillskrivs Ingrid Ylva",
+        "Minnessten över Birger jarl"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZMM4R6bHvg0glfBTteVwiOAqtiXUSP1YJutg6W0y1jyC9Rp6u3Er5WNTMKNi3JTJRnqHJLWnFB4Ws0B-whYp9JSu6ZWlyRG4jOM4GfKp8Isa3r0ncPlWbXzR9ocWqqJSdL7c6c-JveNYxnovR3_m4vEug=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Pardalis Georgios" }
+      ],
+      "image_source_pages": [
+        { "url": "https://www.visitmjolby.se/gora/kultur-historia/bjalbo-kyrka", "source": "Visit Mjölby" },
+        { "url": "https://www.kyrkokartan.se/055723/Bjälbo_kyrka", "source": "Kyrkokartan" }
+      ],
+      "sources": [ "https://www.ostgotadagarna.se/sv/138537/Bjalbo-kyrka/" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "birger-jarl",
+      "name": "Birger jarl (Birger Magnusson)",
+      "category": "person",
+      "coordinates": null,
+      "era": "ca 1210–1266",
+      "summary": "Folkungaättens mest kände son, brukar räknas som Stockholms grundare — född i Bjälbo.",
+      "description": "Birger jarl tillhörde Bjälboätten med stamgods i Bjälbo, där han föddes omkring 1210. Som jarl (från 1248) blev han rikets starke man och stamfader till den kungliga grenen av ätten. Han brukar räknas som Stockholms grundare och var en förgrundsgestalt vid Skänninge möte 1248.",
+      "key_facts": [
+        "Född i Bjälbo (ca 1210)",
+        "Jarl från 1248",
+        "Räknas som Stockholms grundare"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://sv.wikipedia.org/wiki/Birger_jarl", "source": "Wikipedia" } ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Bjälboätten" ]
+    },
+    {
+      "id": "ingrid-ylva",
+      "name": "Ingrid Ylva",
+      "category": "person",
+      "coordinates": null,
+      "era": "1100-/1200-tal",
+      "summary": "Birger jarls sägenomspunna mor, förknippad med Bjälbo kyrktorn.",
+      "description": "Ingrid Ylva, Birger jarls mor, är en av medeltidens mest sägenomspunna kvinnor. Hon tillskrivs uppförandet av Bjälbo mäktiga kyrktorn omkring 1220 och sägs ha bott i tornet under perioder — ett rum kallas 'drottning Ylvas kammare'.",
+      "key_facts": [
+        "Birger jarls mor",
+        "Förknippad med Bjälbo kyrktorn"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://sv.wikipedia.org/wiki/Ingrid_Ylva", "source": "Wikipedia" } ],
+      "sources": [ "https://lennartwaara.com/2019/08/26/bjalbo-kyrka-och-jarlen-birger-magnusson/" ]
+    },
+    {
+      "id": "hogbystenen",
+      "name": "Högbystenen (Ög 81)",
+      "category": "runsten",
+      "coordinates": { "lat": 58.3605469, "lng": 15.0995262 },
+      "address": "Vid gamla Högby kyrkplats, 595 94 Mjölby (skyltat från väg 50)",
+      "era": "Ristad ca 1010–1050",
+      "summary": "En av Sveriges främsta runstenar, näst efter Rökstenen i Östergötland.",
+      "description": "Rödaktig granit, cirka 3,45 m hög, med drakhuvuden i Ringerikestil. Framsidan berättar att Torgärd reste stenen efter sin morbror Assur, som dog 'österut i Grekland' — en så kallad greklandssten. Baksidan bär en gripande vers (fornyrðislag) om den gode bonden Gulle och hans fem söner, alla döda långt hemifrån. Ristad av Torkel. Stenen var inmurad i gamla Högby kyrkas sakristia och restes på kyrkplatsen 1874 när kyrkan revs.",
+      "key_facts": [
+        "Ög 81; greklandssten",
+        "Ca 3,45 m hög, ca 1010–1050",
+        "Vers om Gulles fem söner",
+        "Restes på kyrkplatsen 1874"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZPA3n0hlReNQHtwtpJ8ZghXq3wONVoOH264_NaUvRuRb8t_J0wMGUegsH7m_8Rifb9qogRRg_5pobWZPzWB_HMVPnuW6z8_aCcbfOhDWwJINCRp1yzKzmOMaNwvH9FZ5cc3m6qr0LlSqy16Ti5PpBYPgA=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Hi im Filthy" }
+      ],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Högbystenen", "source": "Wikipedia" }
+      ],
+      "sources": [
+        "https://sv.wikipedia.org/wiki/Högbystenen",
+        "https://runkartan.se/runristningar/runsten-hogbystenen-og81-l2012-9874-hogby-10-2-i-mjolby-ostergotland.html"
+      ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "skanninge-orten",
+      "name": "Skänninge",
+      "category": "ort",
+      "coordinates": { "lat": 58.3925, "lng": 15.085 },
+      "era": "Medeltida stad; storhetstid 1200–1300-tal",
+      "summary": "En av Sveriges äldsta städer och ett medeltida kraftcentrum, idag del av Mjölby kommun.",
+      "description": "Skänninge växte fram i Östergötlands rikaste jordbruksbygd och var under 1200–1300-talet en av rikets viktigaste orter — en knutpunkt där landsvägar (bl.a. Eriksvägen) möttes. Här hölls Skänninge möte 1248, här fanns Sveriges första hospital och två dominikankloster, och tyska köpmän byggde Vårfrukyrkan och anlade Stora torget.",
+      "key_facts": [
+        "En av Sveriges äldsta städer",
+        "Skänninge möte 1248",
+        "Tysk köpmannadominans på 1200-talet"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Skänninge", "source": "Wikipedia" },
+        { "url": "https://skanninge.com/historia.html", "source": "skanninge.com" }
+      ],
+      "sources": [ "https://skanninge.com/historia.html", "http://k-arv.se/pages/326" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "skanninge-mote-1248",
+      "name": "Skänninge möte 1248",
+      "category": "handelse",
+      "coordinates": { "lat": 58.3925, "lng": 15.085 },
+      "era": "1248",
+      "summary": "Kyrkomöte som införde prästcelibat och stärkte kyrkans makt i Sverige.",
+      "description": "Ett kyrkomöte i Skänninge 1248 med påvens sändebud och Birger jarl som förgrundsgestalter. Mötet införde bland annat prästcelibat och den kanoniska lagen, stärkte biskoparnas roll och blev ett avgörande steg i Sveriges införlivande i den västliga kristenheten.",
+      "key_facts": [
+        "Påvligt sändebud + Birger jarl",
+        "Införde prästcelibat och kanonisk lag"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://sv.wikipedia.org/wiki/Skänninge_möte", "source": "Wikipedia" } ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Skänninge_möte" ]
+    },
+    {
+      "id": "varfrukyrkan-skanninge",
+      "name": "Vårfrukyrkan ('Garpekyrkan'), Skänninge",
+      "category": "kyrka",
+      "coordinates": { "lat": 58.3947888, "lng": 15.0867153 },
+      "address": "Västra Kyrkogatan 1, 596 33 Skänninge",
+      "era": "Färdig i början av 1300-talet",
+      "summary": "De tyska köpmännens mäktiga tegelkyrka — en av få stora medeltida tegelkyrkor i Östergötland.",
+      "description": "Vårfrukyrkan byggdes av de tyska köpmännen (garpar) och stod färdig i början av 1300-talet; den är ovanligt stor och påkostad och en av få medeltida tegelkyrkor i landskapet. I folkmun kallades den 'Garpekyrkan'. Golvet rymmer många gravhällar, främst från 1600–1700-tal men även medeltida.",
+      "key_facts": [
+        "Byggd av tyska köpmän, ca 1300",
+        "Tegelkyrka, ovanligt stor",
+        "Folknamn: Garpekyrkan"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/places/ANXAkqFVgnrkeUeGgPsibruwA_MgU8iFzzbg1RO-BigewsAgmk4v84yH_xtl7vkTZQB73F7TlAQMDYelNpPKY29oBP1jYyAP6MiwUzI=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Vårfrukyrkan" }
+      ],
+      "image_source_pages": [
+        { "url": "https://www.visitmjolby.se/gora/kultur-historia/skanninge-varfrukyrkan", "source": "Visit Mjölby" }
+      ],
+      "sources": [ "https://www.visitmjolby.se/english/experience/culture-and-history/skanninge-varfrukyrkan" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "sta-ingrids-kloster",
+      "name": "S:ta Ingrids klosterruin",
+      "category": "klosterruin",
+      "coordinates": { "lat": 58.3982617, "lng": 15.0827455 },
+      "address": "Sankta Ingrids väg, 596 31 Skänninge",
+      "era": "Rättigheter 1282, invigt 1285",
+      "summary": "Sveriges första kvinnliga dominikankloster.",
+      "description": "S:ta Ingrids kloster var Sveriges första kvinnliga dominikankloster, grundat av den högättade Ingrid Elovsdotter (sedermera helgonförklarad som S:ta Ingrid); det fick sina rättigheter 1282 och invigdes 1285. Klosterbyggnaderna revs på 1500-talet och materialet återanvändes till slottet i Vadstena. Ruinen finns kvar att besöka.",
+      "key_facts": [
+        "Sveriges första kvinnokloster",
+        "Grundat av Ingrid Elovsdotter (S:ta Ingrid)",
+        "Rivet på 1500-talet"
+      ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZNfC80kQ3Kjy4OITJoP61YMrxUg36p7B0xyWyn85EvWxgEVSC2WBgThWdzsf6CLFBhPuBeu8bg1vZ7sbZtygrdndJdVUJNopfas8d7shYdug07X0shejysA9Ey-dNZ0jZHiue0fMecGGcHHfw=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "Jonas Ericson" }
+      ],
+      "image_source_pages": [
+        { "url": "https://www.svenskakyrkan.se/folkungabygden/sta-ingrids-kloster", "source": "Svenska kyrkan" }
+      ],
+      "sources": [ "http://k-arv.se/pages/326" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "st-olofs-kloster-petrus-de-dacia",
+      "name": "S:t Olofs kloster & Petrus de Dacia",
+      "category": "klosterruin",
+      "coordinates": { "lat": 58.3925, "lng": 15.085 },
+      "era": "Dominikankonvent från 1237",
+      "summary": "Dominikankonventet i Skänninge där 'Sveriges förste författare' verkade.",
+      "description": "S:t Olofs kloster, ett dominikankonvent grundat 1237, var platsen för Skänninge möte 1248. Här undervisade Petrus de Dacia, ofta kallad Sveriges förste författare, känd för sina innerliga brev till mystikern Kristina av Stommeln.",
+      "key_facts": [
+        "Dominikankonvent från 1237",
+        "Petrus de Dacia verkade här"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "http://k-arv.se/pages/326", "source": "Kulturarv Östergötland" } ],
+      "sources": [ "http://k-arv.se/pages/326" ]
+    },
+    {
+      "id": "adolf-fredrik-lindblad",
+      "name": "Adolf Fredrik Lindblad",
+      "category": "person",
+      "coordinates": null,
+      "era": "1801–1878",
+      "summary": "Tonsättare född i Skänninge, 'den svenske Schubert', lärare till Jenny Lind.",
+      "description": "Adolf Fredrik Lindblad föddes 1 februari 1801 i Skänninge (på gästgivaregården vid Stora torget) och dog 1878. Mest känd för sina sånger och körverk men skrev även symfonier, kammarmusik och operan Frondörerna; kallas ibland 'den svenske Schubert'. Han drev en egen musikskola i Stockholm 1827–1861, där bland andra sångerskan Jenny Lind var elev.",
+      "key_facts": [
+        "Född i Skänninge 1801",
+        "Lärare till Jenny Lind",
+        "Musikskola i Stockholm 1827–1861"
+      ],
+      "images": [],
+      "image_source_pages": [
+        { "url": "https://sv.wikipedia.org/wiki/Adolf_Fredrik_Lindblad", "source": "Wikipedia" },
+        { "url": "https://sok.riksarkivet.se/sbl/Artikel/10448", "source": "Svenskt biografiskt lexikon" }
+      ],
+      "sources": [
+        "https://sok.riksarkivet.se/sbl/Artikel/10448",
+        "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar"
+      ]
+    },
+    {
+      "id": "lindbladsparken-byst",
+      "name": "Lindbladsparken & bysten av A.F. Lindblad",
+      "category": "konst_staty",
+      "coordinates": { "lat": 58.3943436, "lng": 15.0828304 },
+      "address": "Ågatan 8, 596 32 Skänninge",
+      "era": "—",
+      "summary": "Park i Skänninge med en byst av tonsättaren Adolf Fredrik Lindblad.",
+      "description": "I Lindbladsparken vid Ågatan i Skänninge står en byst föreställande tonsättaren Adolf Fredrik Lindblad, född i staden 1801.",
+      "key_facts": [ "Byst av A.F. Lindblad", "Vid Ågatan, Skänninge" ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar", "source": "mjolby.se" } ],
+      "sources": [ "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar" ]
+    },
+    {
+      "id": "ture-lang",
+      "name": "Ture Lång (Rolandsstaty), Skänninge",
+      "category": "konst_staty",
+      "coordinates": { "lat": 58.395489, "lng": 15.086764 },
+      "address": "Stora Torget, 596 31 Skänninge",
+      "era": "Modern; arvtagare till medeltida tradition",
+      "summary": "Ståljätte på Skänninges torg, symbol för rättsskipning i medeltida tysk tradition.",
+      "description": "På Stora torget framför rådhuset i Skänninge står Ture Lång, en så kallad Rolandsstaty som symboliserar rättsskipning. Den moderne ståljätten är arvtagare till den medeltida tyska torgtraditionen, då en Rolandsfigur restes som symbol för stadens dömande makt.",
+      "key_facts": [
+        "Rolandsstaty på Stora torget",
+        "Symbol för rättsskipning"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://www.mjolby.se/uppleva-och-gora/kultur/museer-gallerier-och-konst/offentlig-konst-och-utsmyckningar", "source": "mjolby.se" } ],
+      "sources": [ "http://k-arv.se/pages/326" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "svaneholms-borgruin",
+      "name": "Svaneholms borgruin",
+      "category": "borgruin",
+      "coordinates": { "lat": 58.2703521, "lng": 15.2830875 },
+      "address": "595 97 Mantorp",
+      "era": "1300-tal",
+      "summary": "Ruinerna av en 1300-talsborg på en udde i Kilarpesjön.",
+      "description": "Svaneholms borgruin ligger på en udde i Kilarpesjön, i en lummig och kuperad fårhage med stigar. Ruinerna härrör från en 1300-talsborg; på våren är platsen full av blåsippor.",
+      "key_facts": [ "1300-talsborg", "Udde i Kilarpesjön", "Blåsippor på våren" ],
+      "images": [
+        { "url": "https://lh3.googleusercontent.com/place-photos/AJRVUZNIgi53-MeiWKi1JNbBDcPml8Rs9iN__LWNTd3ysA9bRp7nogV0VyOHBSQNrAcXzjAG3zQwtcKTEz7ksreYOTk8OJeCZUEO89SC-G7zqI2Bwz4yuATo30FjF1TG9jyg61or1k-Oc2RqSAnuj60=s4800-w800-h600", "source": "Google Maps/Places", "attribution": "J Jacob Wikner" }
+      ],
+      "image_source_pages": [ { "url": "https://uddautflykter.se/guide/ostergotland/svaneholms-borgruin/", "source": "Udda Utflykter" } ],
+      "sources": [ "https://uddautflykter.se/guide/ostergotland/svaneholms-borgruin/" ],
+      "tour": { "in_medieval_ring": true }
+    },
+    {
+      "id": "ojebro-stenvalvsbro",
+      "name": "Öjebro stenvalvsbro",
+      "category": "bro",
+      "coordinates": { "lat": 58.3784, "lng": 15.1957 },
+      "address": "Öjebro, 596 93 Skänninge (koordinat ungefärlig)",
+      "era": "—",
+      "summary": "Gammal stenvalvsbro i den forna kvarnbyn Öjebro.",
+      "description": "En vacker gammal stenvalvsbro i Öjebro, som också var en egen gammal kvarnby. (Koordinaten är ungefärlig och baserad på hållplatsläget — verifiera exakt broläge.)",
+      "key_facts": [ "Stenvalvsbro", "Forna kvarnbyn Öjebro" ],
+      "images": [],
+      "image_source_pages": [],
+      "sources": [ "https://tadigut.nu/att-gora-mjolby-kmn/" ]
+    },
+    {
+      "id": "branden-1771",
+      "name": "Stadsbranden 1771",
+      "category": "handelse",
+      "coordinates": { "lat": 58.3256, "lng": 15.131 },
+      "era": "28 maj 1771",
+      "summary": "Branden som nästan utplånade kvarnbyn och som möjliggör att vi känner den medeltida byplanen.",
+      "description": "Den 28 maj 1771 utplånade en förödande brand nästan hela byn — kyrka, kvarnar, manbyggnader och hus. Återuppbyggnaden bekostades delvis av rikskollekter från kyrkor i Sverige och Finland; nya kyrkan togs i bruk 1775 och stod klar 1779. Vid 1828 fanns åter elva kvarnar. En storskifteskarta gjord bara 3,5 månader före branden bevarar den medeltida byplanen.",
+      "key_facts": [
+        "28 maj 1771",
+        "Återuppbyggnad via rikskollekter",
+        "Storskifteskarta strax före branden bevarar byplanen"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://slekt.se/mjolby-bebyggelse", "source": "slekt.se (Per Andersson)" } ],
+      "sources": [ "https://slekt.se/mjolby-bebyggelse" ]
+    },
+    {
+      "id": "dackefejden",
+      "name": "Dackefejden i Mjölby (1542–43)",
+      "category": "handelse",
+      "coordinates": { "lat": 58.325, "lng": 15.131 },
+      "era": "1542–1543",
+      "summary": "Mjölby var den nordligaste punkt som smålandsupprorets styrkor nådde.",
+      "description": "Under Dackefejden 1542–43 — Sveriges största folkresning — var Mjölby den nordligaste punkt som de upproriska smålänningarna nådde.",
+      "key_facts": [
+        "Sveriges största folkresning",
+        "Mjölby = nordligaste punkt för upproret"
+      ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://en.wikipedia.org/wiki/Dacke_War", "source": "Wikipedia" } ],
+      "sources": [ "https://sv.wikipedia.org/wiki/Mjölby" ]
+    },
+    {
+      "id": "mjolby-ai-ff-vifolkavallen",
+      "name": "Mjölby AI FF / Vifolkavallen",
+      "category": "idrott",
+      "coordinates": { "lat": 58.3293077, "lng": 15.1514487 },
+      "address": "Vifolkavallsvägen, 595 50 Mjölby",
+      "era": "Klubben grundad 1912",
+      "summary": "Ortens fotbollsklubb med hemmaplan på Vifolkavallen.",
+      "description": "Mjölby AI FF (Mjölby Allmänna Idrottsförening Fotbollförening) grundades 26 maj 1912 och spelar sina hemmamatcher på Vifolkavallen i Mjölby.",
+      "key_facts": [ "Grundad 1912", "Hemmaplan: Vifolkavallen" ],
+      "images": [],
+      "image_source_pages": [ { "url": "https://en.wikipedia.org/wiki/Mjölby_AI_FF", "source": "Wikipedia" } ],
+      "sources": [ "https://en.wikipedia.org/wiki/Mjölby_AI_FF" ]
+    }
+  ]
+}
