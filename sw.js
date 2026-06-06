@@ -1,6 +1,6 @@
-const CACHE = 'mjolby-stadsvandring-v4';
+const CACHE = 'mjolby-stadsvandring-v5';
 const SHELL = [
-  './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './data.json',
+  './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './images/skanska-lasse.jpg',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',

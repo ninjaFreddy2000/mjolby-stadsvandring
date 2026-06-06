@@ -2,6 +2,12 @@
 // Data: mjolby_kunskapsdatabas.json (knowledge base)
 import { STORIES, EXTRA_IMAGES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
+import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
+
+let lang = localStorage.getItem('mjolby_lang') || 'sv';
+const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
+const tellerL = () => (lang === 'en' && TELLER_EN[ACTIVE_CITY]) ? TELLER_EN[ACTIVE_CITY] : null;
+const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 
 const TELLER = STORYTELLERS[ACTIVE_CITY] || null;
 const TELLER_SEEN_KEY = 'mjolby_teller_seen_v1';
@@ -93,7 +99,14 @@ let DATA = [], ENTRIES = [], markersById = {};
 let map, markerLayer, routeLayer, meMarker;
 const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
+let questMode = false;  // progressiv upplåsning av stopp i en vandring
 const STAMP_KEY = 'mjolby_stamps_v1';
+
+// Audio narration + GPS auto-guide state
+let speaking = false;
+let autoGuide = false, watchId = null;
+const autoTriggered = new Set();
+const AUTO_RADIUS = 45; // meter
 
 const $ = sel => document.querySelector(sel);
 const stamps = () => new Set(JSON.parse(localStorage.getItem(STAMP_KEY) || '[]'));
@@ -103,6 +116,16 @@ const hasCoords = e => e.coordinates && typeof e.coordinates.lat === 'number';
 const imgUrl = e => (e.images && e.images[0] && e.images[0].url) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].url) || null;
 const imgCredit = e => (e.images && e.images[0] && e.images[0].attribution) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].attribution) || null;
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
+const typeLabel = e => t('type_' + typeOf(e));
+const tourName = key => t('tour_' + key + '_name');
+const tourSub = key => t('tour_' + key + '_sub');
+function stopThumb(e, badge){
+  const img = imgUrl(e), icon = iconOf(e);
+  return img
+    ? `<span class="stop-thumb"><img src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer"
+         onerror="this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')">${badge||''}</span>`
+    : `<span class="stop-thumb ph">${icon}${badge||''}</span>`;
+}
 
 /* ---------- Init ---------- */
 async function init() {
@@ -116,6 +139,7 @@ async function init() {
   buildFilters();
   renderMarkers();
   wireUi();
+  applyI18n();
   updateStampBadge();
   setupTeller();
 
@@ -137,12 +161,26 @@ function buildMap() {
     onAdd(){
       const b = L.DomUtil.create('a','leaflet-bar leaflet-control loc-btn');
       b.href='#'; b.title='Var är jag?'; b.innerHTML='📍';
+      b.setAttribute('role','button'); b.setAttribute('aria-label','Visa min position på kartan');
       b.style.cssText='width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;background:#fff';
       L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); locate(); });
       return b;
     }
   });
   map.addControl(new Loc());
+
+  const Auto = L.Control.extend({
+    options:{ position:'topleft' },
+    onAdd(){
+      const b = L.DomUtil.create('a','leaflet-bar leaflet-control autoguide-btn');
+      b.href='#'; b.title='Auto-guide av'; b.innerHTML='🎧';
+      b.setAttribute('role','button'); b.setAttribute('aria-label','Slå på auto-guide (ljud vid stopp)'); b.setAttribute('aria-pressed','false');
+      b.style.cssText='width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;background:#fff';
+      L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); toggleAutoGuide(); });
+      return b;
+    }
+  });
+  map.addControl(new Auto());
 }
 
 function pinIcon(entry, visited){
@@ -206,8 +244,8 @@ function fitView(){
 /* ---------- Tours UI ---------- */
 function buildTours(){
   const wrap = $('#tours');
-  const chips = [['all','Alla platser', ENTRIES.length+' stopp']]
-    .concat(Object.entries(TOURS).map(([k,t])=>[k, t.name, DATA.filter(t.test).length+' stopp']));
+  const chips = [['all', t('tours_all'), ENTRIES.length+' '+t('stops')]]
+    .concat(Object.entries(TOURS).map(([k,tr])=>[k, tourName(k), DATA.filter(tr.test).length+' '+t('stops')]));
   wrap.innerHTML = chips.map(([k,name,sub])=>
     `<button class="tour-chip ${k==='all'?'active':''}" data-tour="${k}">${name}<small>${sub}</small></button>`
   ).join('');
@@ -224,28 +262,40 @@ function buildTours(){
 }
 
 function openTourPanel(key){
-  const t = TOURS[key];
-  $('#tour-title').textContent = t.name;
-  $('#tour-sub').textContent = t.sub;
+  $('#tour-title').textContent = tourName(key);
+  $('#tour-sub').textContent = tourSub(key);
   const st = stamps();
   const list = orderedTourEntries(key);
+  // Quest-progress: första stoppet i ordningen som inte är incheckat
+  let progressIndex = list.findIndex(e=>!st.has(e.id));
+  if (progressIndex < 0) progressIndex = list.length;
+
+  const qt = $('#quest-toggle');
+  qt.setAttribute('aria-pressed', String(questMode));
+  qt.classList.toggle('on', questMode);
+  qt.textContent = '🗺️ ' + (questMode ? t('quest_on') : t('quest_off'));
+  qt.onclick = ()=>{ questMode = !questMode; openTourPanel(key); };
+
   $('#tour-stops').innerHTML = list.map((e,i)=>{
     const ty = TYPES[typeOf(e)];
     const done = st.has(e.id);
-    const img = imgUrl(e), icon = iconOf(e);
-    const thumb = img
-      ? `<span class="stop-thumb">
-           <img src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer"
-                onerror="this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')">
-           <span class="stop-no" style="background:${ty.color}">${i+1}</span></span>`
-      : `<span class="stop-thumb ph">${icon}<span class="stop-no" style="background:${ty.color}">${i+1}</span></span>`;
-    return `<li class="stop-row" data-id="${e.id}">
-      ${thumb}
-      <span class="stop-meta"><b>${e.name}</b><small>${ty.label} · ${e.era||''}</small></span>
-      ${done?'<span class="tick">✓</span>':''}
-    </li>`;
+    const locked = questMode && i > progressIndex;
+    const current = questMode && i === progressIndex;
+    const badge = `<span class="stop-no" style="background:${ty.color}">${i+1}</span>`;
+    if (locked){
+      const clue = `${CAT_LABEL[e.category]||'Ett stopp'}${e.era?` · ${e.era}`:''}`;
+      return `<li><div class="stop-row locked" aria-disabled="true">
+        <span class="stop-thumb ph">🔒${badge}</span>
+        <span class="stop-meta"><b>???</b><small>Lasse viskar: ${clue}</small></span>
+      </div></li>`;
+    }
+    return `<li><button class="stop-row ${current?'current':''}" data-id="${e.id}">
+      ${stopThumb(e, badge)}
+      <span class="stop-meta"><b>${current?(lang==='en'?'Next: ':'Nästa: '):''}${e.name}</b><small>${typeLabel(e)} · ${e.era||''}</small></span>
+      ${done?'<span class="tick" aria-label="besökt">✓</span>':''}
+    </button></li>`;
   }).join('');
-  $('#tour-stops').querySelectorAll('.stop-row').forEach(r=>{
+  $('#tour-stops').querySelectorAll('.stop-row[data-id]').forEach(r=>{
     r.onclick = ()=> openSheet(r.dataset.id);
   });
   $('#tour-quiz-btn').onclick = ()=> startQuiz(key);
@@ -255,9 +305,9 @@ function openTourPanel(key){
 /* ---------- Filters ---------- */
 function buildFilters(){
   const wrap = $('#filters');
-  wrap.innerHTML = Object.entries(TYPES).map(([k,t])=>
+  wrap.innerHTML = Object.entries(TYPES).map(([k,ty])=>
     `<button class="fchip" data-type="${k}" aria-pressed="true">
-       <span class="dot" style="background:${t.color}"></span>${t.label}
+       <span class="dot" style="background:${ty.color}"></span>${t('type_'+k)}
      </button>`).join('');
   wrap.querySelectorAll('.fchip').forEach(b=>{
     b.onclick = ()=>{
@@ -285,7 +335,7 @@ function openSheet(id){
   const mapsHref = hasCoords(e)
     ? `https://www.google.com/maps/dir/?api=1&destination=${e.coordinates.lat},${e.coordinates.lng}` : null;
   const srcs = (e.sources||[]).slice(0,3)
-    .map(s=>`<a href="${s}" target="_blank" rel="noopener">källa</a>`).join(' · ');
+    .map(s=>`<a href="${s}" target="_blank" rel="noopener">${t('source')}</a>`).join(' · ');
 
   const heroPh = `<div class="hero-ph"><span>${icon}</span></div>`;
   const hero = img
@@ -299,11 +349,13 @@ function openSheet(id){
   $('#sheet-inner').innerHTML = `
     ${hero}
     <div class="sheet-pad">
-      <span class="type-tag" style="background:${ty.color}">${icon} ${ty.label}</span>
+      <span class="type-tag" style="background:${ty.color}">${icon} ${typeLabel(e)}</span>
       <h2>${e.name}</h2>
       ${e.era?`<div class="era">${e.era}</div>`:''}
-      ${e.summary?`<p class="lead">${e.summary}</p>`:''}
+      ${leadOf(e)?`<p class="lead">${leadOf(e)}</p>`:''}
       ${tellerBubble(id)}
+      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${t('speak_pre')} ${TELLER?TELLER.name:''} ${t('speak_suf')}</button>`:''}
+      ${(lang==='en' && storyHtml)?`<p class="story-note">📖 ${t('story_note')}</p>`:''}
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
       ${offer?(()=>{ const m=metricsFor(id); return `<div class="offer">
@@ -318,10 +370,11 @@ function openSheet(id){
       </div>`; })():''}
       ${hasCoords(e)
         ? `<button class="checkin ${visited?'done':''}" id="checkin-btn">
-             ${visited?'✓ Incheckad – stämpel sparad':'Checka in & samla stämpel'}
-           </button>`
+             ${visited?t('checkin_done'):t('checkin')}
+           </button>
+           ${photoBlock(id)}`
         : ''}
-      ${e.address?`<p class="addr">📍 ${e.address}${mapsHref?` · <a href="${mapsHref}" target="_blank" rel="noopener">vägbeskrivning</a>`:''}</p>`:''}
+      ${e.address?`<p class="addr">📍 ${e.address}${mapsHref?` · <a href="${mapsHref}" target="_blank" rel="noopener">${t('directions')}</a>`:''}</p>`:''}
       ${srcs?`<p class="srcs">${srcs}</p>`:''}
     </div>`;
 
@@ -329,8 +382,15 @@ function openSheet(id){
   if (btn) btn.onclick = ()=> toggleCheckin(id);
   const sp = $('#sheet-inner [data-sponsor]');
   if (sp) sp.onclick = openSponsor;
+  const spk = $('#speak-btn');
+  if (spk) spk.onclick = ()=> speaking ? stopSpeaking() : speak(narrationText(e));
+  const pc = $('#sheet-inner [data-photo]');
+  if (pc) pc.onclick = ()=> startPhoto(pc.dataset.photo);
+  const psh = $('#sheet-inner [data-share]');
+  if (psh) psh.onclick = ()=> sharePhoto(psh.dataset.share);
 
   $('#sheet').setAttribute('aria-hidden','false');
+  focusInto('#sheet');
   if (hasCoords(e)) map.panTo([e.coordinates.lat, e.coordinates.lng], { animate:true });
 }
 
@@ -359,9 +419,9 @@ function openProgress(){
   }).join('');
   $('#progress-body').innerHTML = `
     <div class="prog-stat">
-      <div class="prog-box"><b>${set.size}</b><small>stämplar</small></div>
-      <div class="prog-box"><b>${pct}%</b><small>av staden</small></div>
-      <div class="prog-box"><b>${total}</b><small>stopp totalt</small></div>
+      <div class="prog-box"><b>${set.size}</b><small>${t('prog_stamps')}</small></div>
+      <div class="prog-box"><b>${pct}%</b><small>${t('prog_city')}</small></div>
+      <div class="prog-box"><b>${total}</b><small>${t('prog_total')}</small></div>
     </div>
     <div class="bar"><i style="width:${pct}%"></i></div>
     <div class="stamp-grid">${grid}</div>
@@ -388,7 +448,7 @@ function openSponsor(){
     <div class="sponsor-rows">
       ${rows.map(r=>{
         const ty = TYPES[typeOf(r.e)];
-        return `<div class="sp-row" data-id="${r.e.id}">
+        return `<div class="sp-row" data-id="${r.e.id}" role="button" tabindex="0">
           <div class="sp-top">
             <b>${iconOf(r.e)} ${r.e.name}</b>
             <span class="sp-week">${r.m.week}<small>/v</small></span>
@@ -413,12 +473,13 @@ function startQuiz(tourKey){
   let i = 0, score = 0;
   const overlay = $('#quiz'), card = $('#quiz-card');
   overlay.setAttribute('aria-hidden','false');
+  lastFocus = document.activeElement;
 
   const render = ()=>{
     const q = bank[i];
     card.innerHTML = `
-      <div class="quiz-progress">Fråga ${i+1} / ${bank.length}</div>
-      <h3>${TOURS[tourKey].name}</h3>
+      <div class="quiz-progress">${lang==='en'?'Question':'Fråga'} ${i+1} / ${bank.length}</div>
+      <h3>${tourName(tourKey)}</h3>
       <p class="quiz-q">${q.q}</p>
       <div class="quiz-opts">
         ${q.opts.map((o,idx)=>`<button class="quiz-opt" data-i="${idx}">${o}</button>`).join('')}
@@ -437,12 +498,86 @@ function startQuiz(tourKey){
     card.innerHTML = `
       <div class="quiz-result">
         <div class="big">${score}/${bank.length}</div>
-        <p class="quiz-q">${score===bank.length?'Stadsvandrarmästare! 🏆':score>=bank.length/2?'Bra jobbat! 👏':'Gå vandringen igen och samla fler fakta. 🚶'}</p>
-        <button class="cta" id="quiz-done" style="margin:8px 0 0">Klar</button>
+        <p class="quiz-q">${
+          lang==='en'
+            ? (score===bank.length?'Master town-walker! 🏆':score>=bank.length/2?'Well done! 👏':'Walk it again and gather more facts. 🚶')
+            : (score===bank.length?'Stadsvandrarmästare! 🏆':score>=bank.length/2?'Bra jobbat! 👏':'Gå vandringen igen och samla fler fakta. 🚶')
+        }</p>
+        <button class="cta" id="quiz-done" style="margin:8px 0 0">${lang==='en'?'Done':'Klar'}</button>
       </div>`;
-    card.querySelector('#quiz-done').onclick = ()=> overlay.setAttribute('aria-hidden','true');
+    card.querySelector('#quiz-done').onclick = ()=>{ overlay.setAttribute('aria-hidden','true'); restoreFocus(); };
   };
   render();
+  focusInto('#quiz');
+}
+
+/* ---------- Fotoutmaning + delning ---------- */
+const PHOTO_KEY = 'mjolby_photos_v1';
+const SHARE_URL = 'https://ninjafreddy2000.github.io/mjolby-stadsvandring/';
+const photos = () => { try { return JSON.parse(localStorage.getItem(PHOTO_KEY) || '{}'); } catch(e){ return {}; } };
+function savePhoto(id, dataUrl){
+  const p = photos(); p[id] = dataUrl;
+  try { localStorage.setItem(PHOTO_KEY, JSON.stringify(p)); }
+  catch(e){ toast('Kunde inte spara bilden (minne fullt)'); }
+}
+function photoBlock(id){
+  const p = photos()[id];
+  if (p) return `<div class="photo-block">
+      <img class="my-photo" src="${p}" alt="${lang==='en'?'Your photo from the place':'Din bild från platsen'}">
+      <button class="photo-share" data-share="${id}">${t('photo_share')}</button>
+    </div>`;
+  return `<button class="photo-cta" data-photo="${id}">${t('photo_cta')}</button>`;
+}
+function fileToThumb(file, cb){
+  const img = new Image(), url = URL.createObjectURL(file);
+  img.onload = ()=>{
+    const max = 640; let w = img.width, h = img.height;
+    const s = Math.min(1, max/Math.max(w,h)); w = Math.round(w*s); h = Math.round(h*s);
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    c.getContext('2d').drawImage(img, 0, 0, w, h);
+    URL.revokeObjectURL(url); cb(c.toDataURL('image/jpeg', 0.72));
+  };
+  img.onerror = ()=>{ URL.revokeObjectURL(url); toast('Kunde inte läsa bilden'); };
+  img.src = url;
+}
+function startPhoto(id){
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*'; inp.capture = 'environment';
+  inp.onchange = ()=>{
+    const f = inp.files && inp.files[0]; if (!f) return;
+    fileToThumb(f, dataUrl=>{
+      savePhoto(id, dataUrl);
+      const set = stamps();
+      if (!set.has(id)){ set.add(id); saveStamps(set); updateStampBadge(); renderMarkers(); }
+      toast('📸 Foto sparat – stämpel klar!');
+      openSheet(id);
+    });
+  };
+  inp.click();
+}
+function dataUrlToFile(dataUrl, name){
+  try {
+    const [meta, b64] = dataUrl.split(',');
+    const mime = (meta.match(/:(.*?);/) || [])[1] || 'image/jpeg';
+    const bin = atob(b64), arr = new Uint8Array(bin.length);
+    for (let i=0;i<bin.length;i++) arr[i] = bin.charCodeAt(i);
+    return new File([arr], name, { type: mime });
+  } catch(e){ return null; }
+}
+async function sharePhoto(id){
+  const e = DATA.find(x=>x.id===id), p = photos()[id];
+  const text = `Jag utforskar ${e?e.name:'Mjölby'} med Mjölby Stadsvandring! #MjölbyStadsvandring #SkånskaLasse`;
+  try {
+    if (p && navigator.canShare){
+      const file = dataUrlToFile(p, 'mjolby.jpg');
+      if (file && navigator.canShare({ files:[file] })){
+        await navigator.share({ files:[file], text, title:'Mjölby Stadsvandring' }); return;
+      }
+    }
+    if (navigator.share){ await navigator.share({ title:'Mjölby Stadsvandring', text, url: SHARE_URL }); return; }
+    await navigator.clipboard.writeText(text + ' ' + SHARE_URL);
+    toast('Länk kopierad – klistra in och dela!');
+  } catch(err){ /* användaren avbröt delningen */ }
 }
 
 /* ---------- Personer & berättelser (alla poster) ---------- */
@@ -461,23 +596,34 @@ function renderStories(filter){
   });
   const st = stamps();
   $('#stories-list').innerHTML = list.map(e=>{
-    const ty = TYPES[typeOf(e)], img = imgUrl(e), icon = iconOf(e);
     const onMap = hasCoords(e);
-    const thumb = img
-      ? `<span class="stop-thumb"><img src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer"
-            onerror="this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')"></span>`
-      : `<span class="stop-thumb ph">${icon}</span>`;
-    return `<li class="stop-row" data-id="${e.id}">
-      ${thumb}
-      <span class="stop-meta"><b>${e.name}</b><small>${CAT_LABEL[e.category]||''}${onMap?'':' · endast berättelse'}</small></span>
-      ${st.has(e.id)?'<span class="tick">✓</span>':''}
-    </li>`;
-  }).join('') || `<li class="stories-empty">Inget hittades.</li>`;
+    return `<li><button class="stop-row" data-id="${e.id}">
+      ${stopThumb(e)}
+      <span class="stop-meta"><b>${e.name}</b><small>${CAT_LABEL[e.category]||''}${onMap?'':' · '+t('only_story')}</small></span>
+      ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}
+    </button></li>`;
+  }).join('') || `<li class="stories-empty">${lang==='en'?'Nothing found.':'Inget hittades.'}</li>`;
   $('#stories-list').querySelectorAll('.stop-row').forEach(r=>{
     r.onclick = ()=> openSheet(r.dataset.id);
   });
 }
 function openStories(){ renderStories($('#stories-q').value); openPanel('#stories-panel'); }
+
+/* ---------- i18n: statiska strängar ---------- */
+function applyI18n(){
+  document.documentElement.lang = lang;
+  const setText = (sel, val)=>{ const el=$(sel); if(el) el.textContent = val; };
+  setText('#brand-sub', t('brand_sub'));
+  setText('#lang-btn', t('lang_btn'));
+  const sp = $('#stories-panel');
+  if (sp){
+    sp.querySelector('.panel-head h2').textContent = t('act_stories_full');
+    sp.querySelector('.panel-sub').textContent = t('stories_sub');
+  }
+  const q = $('#stories-q'); if (q) q.setAttribute('placeholder', t('stories_search'));
+  const pp = $('#progress-panel'); if (pp) pp.querySelector('.panel-head h2').textContent = t('act_progress');
+  setText('#tour-quiz-btn', t('quiz_cta'));
+}
 
 /* ---------- Stadens berättare (storyteller) ---------- */
 function setupTeller(){
@@ -486,8 +632,8 @@ function setupTeller(){
   bar.hidden = false;
   bar.innerHTML =
     `<span class="tb-av">${tellerAvatar()}</span>
-     <span class="tb-text">Berättad av <b>${TELLER.name}</b><small>${TELLER.role||''}</small></span>
-     <span class="tb-go">Möt mig ›</span>`;
+     <span class="tb-text">${t('teller_by')} <b>${TELLER.name}</b><small>${(tellerL()&&tellerL().role)||TELLER.role||''}</small></span>
+     <span class="tb-go">${t('teller_meet')}</span>`;
   bar.onclick = ()=> openTeller();
   if (!localStorage.getItem(TELLER_SEEN_KEY)) openTeller(true);
 }
@@ -509,6 +655,7 @@ function tellerRemark(id){
 }
 
 function tellerBubble(id){
+  if (lang === 'en') return '';   // dialektreplikerna finns bara på svenska
   const say = tellerRemark(id);
   if (!say) return '';
   return `<div class="teller-say">
@@ -518,65 +665,175 @@ function tellerBubble(id){
 }
 
 function openTeller(firstTime){
-  const t = TELLER; if (!t) return;
-  const v = t.voice || {};
-  const greet = (t.greeting||'').split(/\n\n+/).map(p=>`<p>${p}</p>`).join('');
-  const traits = (v.traits||[]).map(x=>`<li>${x}</li>`).join('');
-  const phrases = (v.phrases||[]).map(x=>`<span class="vphrase">${x}</span>`).join('');
-  const entry = t.entryId && DATA.find(x=>x.id===t.entryId);
+  const tel = TELLER; if (!tel) return;
+  const en = lang === 'en', loc = tellerL(), v = tel.voice || {};
+  const role = (loc && loc.role) || tel.role || '';
+  const tagline = (loc && loc.tagline) || v.tagline || '';
+  const greetSrc = (loc && loc.greeting) || tel.greeting || '';
+  const voiceSum = (loc && loc.voiceSummary) || v.summary || '';
+  const greet = greetSrc.split(/\n\n+/).map(p=>`<p>${p}</p>`).join('');
+  const traits = ((loc && loc.traits) || v.traits || []).map(x=>`<li>${x}</li>`).join('');
+  const phrases = en ? '' : (v.phrases||[]).map(x=>`<span class="vphrase">${x}</span>`).join('');
+  const signoff = en ? '' : (v.signoff||'');
+  const entry = tel.entryId && DATA.find(x=>x.id===tel.entryId);
+  const voiceHeader = en ? '🎙️ How I speak' : '🎙️ Så här pratar jag';
+  const goLabel = firstTime ? (en?'Come along →':'Följ med mig →') : (en?'Back to the map':'Tillbaka till kartan');
+  const scaleLine = en ? `Every town can have its own storyteller. In ${tel.city}, that's me.`
+                       : `Varje stad kan ha sin egen berättare. I ${tel.city} är det ja.`;
 
   $('#teller-card').innerHTML = `
-    <button class="teller-x" id="teller-x" aria-label="Stäng">&times;</button>
+    <button class="teller-x" id="teller-x" aria-label="${en?'Close':'Stäng'}">&times;</button>
     <div class="teller-hd">
-      <span class="teller-bigav">${t.portrait?`<img class="av-img" src="${t.portrait}" alt="${t.name}">`:(t.avatar||'💬')}</span>
+      <span class="teller-bigav">${tel.portrait?`<img class="av-img" src="${tel.portrait}" alt="${tel.name}">`:(tel.avatar||'💬')}</span>
       <div>
-        <h3>${t.name}</h3>
-        <small>${[t.realName, t.years].filter(Boolean).join(' · ')}</small>
-        <div class="teller-role">${t.role||''}</div>
+        <h3>${tel.name}</h3>
+        <small>${[tel.realName, tel.years].filter(Boolean).join(' · ')}</small>
+        <div class="teller-role">${role}</div>
       </div>
     </div>
-    ${v.tagline?`<p class="teller-tagline">”${v.tagline}”</p>`:''}
+    ${tagline?`<p class="teller-tagline">”${tagline}”</p>`:''}
     <div class="teller-greet">${greet}</div>
-    ${(traits||phrases)?`
+    ${traits?`
       <div class="voice-card">
-        <div class="vc-h">🎙️ Så här pratar jag</div>
-        ${v.summary?`<p class="vc-sum">${v.summary}</p>`:''}
-        ${traits?`<ul class="vtraits">${traits}</ul>`:''}
+        <div class="vc-h">${voiceHeader}</div>
+        ${voiceSum?`<p class="vc-sum">${voiceSum}</p>`:''}
+        <ul class="vtraits">${traits}</ul>
         ${phrases?`<div class="vphrases">${phrases}</div>`:''}
       </div>`:''}
-    ${v.signoff?`<p class="teller-sign">${v.signoff}</p>`:''}
-    <button class="cta teller-go" id="teller-go" style="margin:6px 0 8px">${firstTime?'Följ med mig →':'Tillbaka till kartan'}</button>
-    ${entry?`<button class="teller-more" id="teller-more">Läs mer om ${t.name} i appen</button>`:''}
-    <p class="teller-scale">Varje stad kan ha sin egen berättare. I ${t.city} är det ja.</p>`;
+    ${signoff?`<p class="teller-sign">${signoff}</p>`:''}
+    <button class="cta teller-go" id="teller-go" style="margin:6px 0 8px">${goLabel}</button>
+    ${entry?`<button class="teller-more" id="teller-more">${en?`Read more about ${tel.name}`:`Läs mer om ${tel.name} i appen`}</button>`:''}
+    <p class="teller-scale">${scaleLine}</p>`;
 
   $('#teller').setAttribute('aria-hidden','false');
+  focusInto('#teller');
   localStorage.setItem(TELLER_SEEN_KEY, '1');
-  const close = ()=> $('#teller').setAttribute('aria-hidden','true');
+  const close = ()=>{ $('#teller').setAttribute('aria-hidden','true'); restoreFocus(); };
   $('#teller-x').onclick = close;
   $('#teller-go').onclick = close;
   const more = $('#teller-more');
-  if (more) more.onclick = ()=>{ close(); openSheet(t.entryId); };
+  if (more) more.onclick = ()=>{ close(); openSheet(tel.entryId); };
 }
 
-/* ---------- Geolocation ---------- */
+/* ---------- Ljuduppläsning (Web Speech API) ---------- */
+function pickSvVoice(){
+  if (!('speechSynthesis' in window)) return null;
+  const vs = speechSynthesis.getVoices() || [];
+  return vs.find(v=>/sv[-_]?se/i.test(v.lang)) || vs.find(v=>(v.lang||'').toLowerCase().startsWith('sv')) || null;
+}
+function narrationText(e){
+  if (lang === 'en') return SUMMARY_EN[e.id] || e.summary || e.name;
+  const parts = [];
+  const r = tellerRemark(e.id); if (r) parts.push(r);
+  if (e.summary) parts.push(e.summary);
+  const story = STORIES[e.id] || e.description; if (story) parts.push(story.replace(/\n\n+/g,' '));
+  return parts.join('  ');
+}
+function speak(text){
+  if (!('speechSynthesis' in window)){ toast('Uppläsning stöds inte i denna webbläsare'); return false; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  const v = pickSvVoice(); if (v) u.voice = v;
+  u.lang = 'sv-SE'; u.rate = 0.98; u.pitch = 1.0;
+  u.onend = ()=>{ speaking = false; updateSpeakButtons(); };
+  u.onerror = ()=>{ speaking = false; updateSpeakButtons(); };
+  speaking = true; speechSynthesis.speak(u); updateSpeakButtons();
+  return true;
+}
+function stopSpeaking(){
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false; updateSpeakButtons();
+}
+function updateSpeakButtons(){
+  const b = $('#speak-btn');
+  if (b) b.innerHTML = speaking
+    ? t('speak_stop')
+    : `🔊 ${t('speak_pre')} ${TELLER ? TELLER.name : ''} ${t('speak_suf')}`;
+}
+// Röster laddas ibland asynkront
+if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
+
+/* ---------- Geolocation + auto-guide ---------- */
+function showMe(ll, recenter){
+  if (meMarker) meMarker.remove();
+  meMarker = L.marker(ll, { icon:L.divIcon({className:'',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]}) }).addTo(map);
+  if (recenter) map.setView(ll, Math.max(map.getZoom(), 15));
+}
 function locate(){
   if (!navigator.geolocation){ toast('Platstjänst stöds inte'); return; }
   toast('Letar efter din position…');
   navigator.geolocation.getCurrentPosition(
-    pos=>{
-      const ll=[pos.coords.latitude, pos.coords.longitude];
-      if (meMarker) meMarker.remove();
-      meMarker = L.marker(ll, { icon:L.divIcon({className:'',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]}) }).addTo(map);
-      map.setView(ll, 15);
-    },
+    pos=> showMe([pos.coords.latitude, pos.coords.longitude], true),
     ()=> toast('Kunde inte hämta position'),
     { enableHighAccuracy:true, timeout:8000 }
   );
 }
+function handleGeo(ll){
+  // Närmaste synliga stopp inom radie som inte redan triggats
+  let best=null, bestD=Infinity;
+  visibleEntries().forEach(e=>{
+    const d = map.distance(ll, [e.coordinates.lat, e.coordinates.lng]);
+    if (d < bestD){ bestD = d; best = e; }
+  });
+  if (best && bestD <= AUTO_RADIUS && !autoTriggered.has(best.id)){
+    autoTriggered.add(best.id);
+    openSheet(best.id);
+    toast('📍 Du är vid ' + best.name);
+    speak(narrationText(best));
+  }
+}
+function toggleAutoGuide(){
+  autoGuide = !autoGuide;
+  if (autoGuide){
+    if (!navigator.geolocation){ toast('Platstjänst stöds inte'); autoGuide=false; updateAutoBtn(); return; }
+    toast('🎧 Auto-guide på — gå nära ett stopp så berättar ' + (TELLER?TELLER.name:'guiden'));
+    watchId = navigator.geolocation.watchPosition(
+      pos=>{ const ll=[pos.coords.latitude,pos.coords.longitude]; showMe(ll); handleGeo(ll); },
+      ()=> toast('Kunde inte följa din position'),
+      { enableHighAccuracy:true, maximumAge:5000, timeout:12000 }
+    );
+  } else {
+    if (watchId!=null) navigator.geolocation.clearWatch(watchId);
+    watchId = null; stopSpeaking(); toast('Auto-guide av');
+  }
+  updateAutoBtn();
+}
+function updateAutoBtn(){
+  const b = document.querySelector('.autoguide-btn');
+  if (!b) return;
+  b.classList.toggle('on', autoGuide);
+  b.title = autoGuide ? 'Auto-guide på' : 'Auto-guide av';
+  b.setAttribute('aria-pressed', String(autoGuide));
+  b.setAttribute('aria-label', autoGuide ? 'Stäng av auto-guide' : 'Slå på auto-guide (ljud vid stopp)');
+}
+// Testkrok: simulera GPS-position utan riktig sensor (skadar inget i produktion)
+window.__feedPos = (lat,lng)=>{ const ll=[lat,lng]; showMe(ll,true); handleGeo(ll); };
 
 /* ---------- Panels / helpers ---------- */
-function openPanel(sel){ $(sel).setAttribute('aria-hidden','false'); }
-function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); }
+let lastFocus = null;
+function focusInto(sel){
+  lastFocus = document.activeElement;
+  const dlg = $(sel); if (!dlg) return;
+  const target = dlg.querySelector('.panel-close, .sheet-close, .teller-x, .quiz-opt, [autofocus]') || dlg;
+  // vänta in transition/innehåll
+  setTimeout(()=>{ try { target.focus({preventScroll:true}); } catch(e){} }, 30);
+}
+function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focus({preventScroll:true}); } catch(e){} } lastFocus = null; }
+function openPanel(sel){ $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
+function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
+function closeTopDialog(){
+  const order = ['#quiz','#teller','#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
+  for (const sel of order){
+    const el = $(sel);
+    if (el && el.getAttribute('aria-hidden') === 'false'){
+      if (sel === '#sheet') stopSpeaking();
+      el.setAttribute('aria-hidden','true');
+      restoreFocus();
+      return true;
+    }
+  }
+  return false;
+}
 let toastT;
 function toast(msg){
   const t=$('#toast'); t.textContent=msg; t.classList.add('show');
@@ -584,16 +841,28 @@ function toast(msg){
 }
 
 function wireUi(){
-  $('#sheet-close').onclick = ()=> $('#sheet').setAttribute('aria-hidden','true');
+  $('#sheet-close').onclick = ()=>{ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); };
   $('#tour-close').onclick = ()=> closePanel('#tour-panel');
   $('#progress-close').onclick = ()=> closePanel('#progress-panel');
   $('#progress-btn').onclick = openProgress;
+  $('#lang-btn').onclick = ()=>{ lang = (lang==='sv'?'en':'sv'); localStorage.setItem('mjolby_lang', lang); location.reload(); };
   $('#stories-btn').onclick = openStories;
   $('#stories-close').onclick = ()=> closePanel('#stories-panel');
   $('#stories-q').oninput = e=> renderStories(e.target.value);
   $('#sponsor-close').onclick = ()=> closePanel('#sponsor-panel');
   $('#quiz').onclick = e=>{ if(e.target.id==='quiz') $('#quiz').setAttribute('aria-hidden','true'); };
-  $('#teller').onclick = e=>{ if(e.target.id==='teller') $('#teller').setAttribute('aria-hidden','true'); };
+  $('#teller').onclick = e=>{ if(e.target.id==='teller'){ $('#teller').setAttribute('aria-hidden','true'); restoreFocus(); } };
+
+  // Tangentbord: Esc stänger översta dialogen; Enter/Space aktiverar list-rader
+  document.addEventListener('keydown', e=>{
+    if (e.key === 'Escape'){ if (closeTopDialog()) e.preventDefault(); return; }
+    if (e.key === 'Enter' || e.key === ' '){
+      const el = document.activeElement;
+      if (el && el.matches && el.matches('.sp-row[data-id]')){
+        e.preventDefault(); el.click();
+      }
+    }
+  });
 }
 
 init();
