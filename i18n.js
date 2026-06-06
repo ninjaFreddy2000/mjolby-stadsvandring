@@ -4,7 +4,7 @@
 
 export const STRINGS = {
   sv: {
-    brand_sub: 'Upptäck staden — en plats i taget',
+    brand_sub: 'Stadsvandringar i Mjölby',
     act_stories: 'Berättelser', act_stories_full: 'Personer & berättelser',
     stories_sub: 'Alla platser, personer och händelser — även de som inte har en egen nål på kartan.',
     stories_search: 'Sök…',
@@ -25,7 +25,7 @@ export const STRINGS = {
     lang_btn: 'EN',
   },
   en: {
-    brand_sub: 'Discover the town — one place at a time',
+    brand_sub: 'City walks in Mjölby',
     act_stories: 'Stories', act_stories_full: 'People & stories',
     stories_sub: 'Every place, person and event — including the ones without a pin on the map.',
     stories_search: 'Search…',

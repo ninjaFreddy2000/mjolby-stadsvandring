@@ -14,10 +14,10 @@ const TELLER_SEEN_KEY = 'mjolby_teller_seen_v1';
 
 /* ---------- Stop-type model (the 4 pitch types) ---------- */
 const TYPES = {
-  story: { label: 'Berättelse', color: '#1657C9', tag: 'Ingår i kommunens abonnemang' },
-  assoc: { label: 'Förening',   color: '#2E8C63', tag: 'Gratis / bidragsfinansierat' },
-  biz:   { label: 'Affär',      color: '#E0A100', tag: 'Sponsrat erbjudande' },
-  info:  { label: 'InfoPin',    color: '#6B4BC4', tag: 'Praktiskt & neutralt' },
+  story: { label: 'Berättelse', color: '#3E78A8', tag: 'Ingår i kommunens abonnemang' },
+  assoc: { label: 'Förening',   color: '#5E8C53', tag: 'Gratis / bidragsfinansierat' },
+  biz:   { label: 'Affär',      color: '#C77F1E', tag: 'Sponsrat erbjudande' },
+  info:  { label: 'InfoPin',    color: '#9A3B52', tag: 'Praktiskt & neutralt' },
 };
 
 const CATEGORY_TYPE = {
