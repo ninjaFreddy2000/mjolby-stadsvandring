@@ -200,7 +200,14 @@ async function init() {
   setupTeller();
 
   if ('serviceWorker' in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
     navigator.serviceWorker.register('sw.js').catch(()=>{});
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', ()=>{
+      // En ny version tog över → ladda om en gång så den nya designen syns direkt
+      if (reloaded || !hadController) return;
+      reloaded = true; location.reload();
+    });
   }
 }
 
