@@ -117,6 +117,61 @@ const imgUrl = e => (e.images && e.images[0] && e.images[0].url) || (EXTRA_IMAGE
 const imgCredit = e => (e.images && e.images[0] && e.images[0].attribution) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].attribution) || null;
 const imgFocal = e => (e.images && e.images[0] && e.images[0].focal) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].focal) || null;
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
+/* ---------- Illustrerad Strosa-stadsscen (porterad från designen) ---------- */
+function svgHouse(x,y,w,h,wall,roof,hip){
+  const rh=h*0.52;
+  const r = hip
+    ? `<polygon points="${x-4},${y} ${x+w+4},${y} ${x+w-6},${y-rh} ${x+6},${y-rh}" fill="${roof}"/>`
+    : `<polygon points="${x-5},${y} ${x+w+5},${y} ${x+w/2},${y-rh}" fill="${roof}"/>`;
+  return `<g>${r}<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${wall}"/>`
+    + `<rect x="${x-1}" y="${y}" width="${w+2}" height="2.5" fill="rgba(0,0,0,.08)"/>`
+    + `<rect x="${x+w*0.16}" y="${y+h*0.2}" width="${w*0.22}" height="${h*0.28}" rx="1.5" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.12)" stroke-width="0.8"/>`
+    + `<rect x="${x+w*0.62}" y="${y+h*0.2}" width="${w*0.22}" height="${h*0.28}" rx="1.5" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.12)" stroke-width="0.8"/>`
+    + `<rect x="${x+w*0.4}" y="${y+h*0.5}" width="${w*0.2}" height="${h*0.5}" rx="2" fill="rgba(0,0,0,.18)"/></g>`;
+}
+function svgTree(x,y,r,c='var(--scene-grass-2)'){
+  return `<g><rect x="${x-1.6}" y="${y}" width="3.2" height="${r*0.7}" rx="1.5" fill="#7c5a3a"/>`
+    + `<circle cx="${x}" cy="${y-r*0.3}" r="${r}" fill="${c}"/>`
+    + `<circle cx="${x-r*0.55}" cy="${y+r*0.1}" r="${r*0.7}" fill="${c}"/>`
+    + `<circle cx="${x+r*0.55}" cy="${y+r*0.1}" r="${r*0.7}" fill="${c}"/>`
+    + `<circle cx="${x-r*0.3}" cy="${y-r*0.5}" r="${r*0.45}" fill="rgba(255,255,255,.12)"/></g>`;
+}
+function svgPine(x,y,h){
+  const w=h*0.5;
+  return `<g><rect x="${x-1.4}" y="${y}" width="2.8" height="5" fill="#7c5a3a"/>`
+    + `<polygon points="${x},${y-h} ${x-w/2},${y-h*0.45} ${x+w/2},${y-h*0.45}" fill="var(--scene-grass-2)"/>`
+    + `<polygon points="${x},${y-h*0.62} ${x-w*0.62},${y} ${x+w*0.62},${y}" fill="var(--scene-grass)"/></g>`;
+}
+function svgCloud(x,y,s,speed){
+  return `<g style="animation:driftCloud ${speed}s ease-in-out infinite alternate" transform="translate(${x} ${y}) scale(${s})">`
+    + `<ellipse cx="0" cy="0" rx="16" ry="9" fill="rgba(255,255,255,.92)"/>`
+    + `<ellipse cx="13" cy="3" rx="11" ry="7" fill="rgba(255,255,255,.92)"/>`
+    + `<ellipse cx="-12" cy="3" rx="9" ry="6" fill="rgba(255,255,255,.92)"/></g>`;
+}
+function townScene(){
+  return `<svg class="town-scene" viewBox="0 0 400 178" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs><linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--sky-1)"/><stop offset="100%" stop-color="var(--sky-2)"/></linearGradient></defs>
+    <rect x="0" y="0" width="400" height="178" fill="url(#skyG)"/>
+    <g style="animation:floaty 7s ease-in-out infinite"><circle cx="338" cy="40" r="18" fill="var(--flag-yellow)" opacity="0.9"/><circle cx="338" cy="40" r="26" fill="var(--flag-yellow)" opacity="0.18"/></g>
+    ${svgCloud(78,36,1,26)}${svgCloud(250,26,0.7,20)}
+    <path d="M0 96 Q70 64 150 88 T300 80 T400 92 V178 H0 Z" fill="var(--forest-soft)"/>
+    <path d="M0 112 Q90 84 200 104 T400 104 V178 H0 Z" fill="var(--scene-grass)" opacity="0.55"/>
+    <rect x="0" y="126" width="400" height="52" fill="var(--scene-water)"/>
+    <rect x="0" y="126" width="400" height="9" fill="rgba(255,255,255,0.18)"/>
+    <g style="animation:bob 5s ease-in-out infinite"><polygon points="44,150 70,150 64,160 50,160" fill="#7c5a3a"/><polygon points="57,120 57,148 40,148" fill="#FFFDF7"/><polygon points="59,122 59,148 74,148" fill="var(--flag-blue)"/></g>
+    <rect x="0" y="120" width="400" height="14" fill="var(--scene-grass-2)"/>
+    ${svgHouse(96,118,34,30,'var(--wall-a)','var(--roof-a)',false)}
+    ${svgHouse(138,116,30,32,'var(--wall-b)','var(--roof-b)',false)}
+    <g><rect x="186" y="92" width="34" height="56" fill="#FBF7EE"/><polygon points="183,92 223,92 203,72" fill="var(--roof-a)"/><rect x="198" y="46" width="10" height="48" fill="#FBF7EE"/><polygon points="197,46 209,46 203,30" fill="var(--forest)"/><rect x="201" y="34" width="4" height="9" fill="var(--honey)"/><rect x="200" y="108" width="6" height="14" rx="3" fill="rgba(0,0,0,0.18)"/></g>
+    ${svgHouse(232,116,32,32,'var(--wall-c)','var(--roof-b)',true)}
+    ${svgHouse(270,118,30,30,'var(--wall-a)','var(--roof-a)',false)}
+    ${svgTree(80,138,13)}${svgTree(170,140,11,'var(--scene-grass)')}${svgPine(346,146,30)}
+    <g><rect x="20" y="96" width="2.6" height="52" rx="1.3" fill="#9a8b6f"/><g style="animation:floaty 4s ease-in-out infinite"><rect x="22.6" y="98" width="30" height="19" fill="var(--flag-blue)"/><rect x="22.6" y="105" width="30" height="5" fill="var(--flag-yellow)"/><rect x="31" y="98" width="5" height="19" fill="var(--flag-yellow)"/></g></g>
+    <path d="M0 178 L0 162 Q140 150 200 162 Q280 176 400 160 L400 178 Z" fill="var(--scene-road)"/>
+    <path d="M0 162 Q140 150 200 162 Q280 176 400 160" fill="none" stroke="var(--scene-road-edge)" stroke-width="2"/>
+  </svg>`;
+}
+
 const typeLabel = e => t('type_' + typeOf(e));
 const tourName = key => t('tour_' + key + '_name');
 const tourSub = key => t('tour_' + key + '_sub');
@@ -343,7 +398,7 @@ function openSheet(id){
     .map(s=>`<a href="${s}" target="_blank" rel="noopener">${t('source')}</a>`).join(' · ');
 
   const focal = imgFocal(e);
-  const heroPh = `<div class="hero-ph"><span>${icon}</span></div>`;
+  const heroPh = `<div class="hero-ph">${townScene()}<span class="ph-emoji">${icon}</span></div>`;
   const hero = img
     ? `<div class="hero">
          ${heroPh}
@@ -690,6 +745,7 @@ function openTeller(firstTime){
                        : `Varje stad kan ha sin egen berättare. I ${tel.city} är det ja.`;
 
   $('#teller-card').innerHTML = `
+    <div class="teller-scene">${townScene()}</div>
     <button class="teller-x" id="teller-x" aria-label="${en?'Close':'Stäng'}">&times;</button>
     <div class="teller-hd">
       <span class="teller-bigav">${tel.portrait?`<img class="av-img" src="${tel.portrait}" alt="${tel.name}">`:(tel.avatar||'💬')}</span>
