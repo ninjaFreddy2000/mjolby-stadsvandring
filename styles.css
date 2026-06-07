@@ -75,11 +75,31 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .accent-stripe i:nth-child(2){background:var(--honey)}
 .accent-stripe i:nth-child(3){background:var(--primary)}
 
-/* Toppbar */
+/* Toppbar — illustrerad header som tonar in i appen */
 .topbar{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:12px 18px;background:var(--paper);border-bottom:1px solid var(--line);z-index:600;
+  padding:12px 18px;background:var(--paper);z-index:600;
 }
+.header-hero{
+  position:relative;flex:none;height:140px;overflow:hidden;padding:0;display:block;
+  background:var(--paper);
+}
+.header-hero::before{   /* headerbilden */
+  content:"";position:absolute;inset:0;
+  background:url('images/header.jpg') center 34% / cover no-repeat;
+}
+.header-hero::after{    /* mjuk gradient: lätt scrim upptill + tonar ner i pergament */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,
+    rgba(18,28,42,.20) 0%, rgba(18,28,42,0) 24%,
+    rgba(243,234,216,0) 52%, rgba(243,234,216,.65) 82%, var(--paper) 100%);
+}
+.header-hero .top-actions{position:absolute;top:12px;right:14px;z-index:2}
+.header-hero .brand{position:absolute;left:16px;bottom:9px;z-index:2}
+.header-hero h1{color:var(--primary);text-shadow:0 1px 0 rgba(255,253,247,.7)}
+.header-hero .brand p{color:var(--ink-2);text-shadow:0 1px 0 rgba(255,253,247,.7)}
+.header-hero .icon-btn,.header-hero .progress-btn{box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+.header-hero .brand-mark{box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-mark{
   width:42px;height:42px;border-radius:var(--r-md);flex:none;display:grid;place-items:center;
