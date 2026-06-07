@@ -23,6 +23,12 @@ export const STRINGS = {
     prog_stamps: 'stämplar', prog_city: 'av staden', prog_total: 'stopp totalt',
     directions: 'vägbeskrivning', source: 'källa', only_story: 'endast berättelse',
     lang_btn: 'EN',
+    tab_home: 'Utforska', tab_routes: 'Leder', tab_saved: 'Sparade', tab_profile: 'Profil',
+    screen_routes: 'Leder i Mjölby', screen_saved: 'Sparade', screen_profile: 'Min profil',
+    routes_sub: 'Välj en vandring och följ den slingrande leden genom staden.',
+    saved_empty: 'Inga sparade än — tryck på ♥ på ett stopp för att spara det.',
+    save: 'Spara', saved: 'Sparad', start_walk: 'Starta vandringen',
+    prof_visited: 'besökta', prof_saved: 'sparade', prof_badges: 'Mina stämplar',
   },
   en: {
     brand_sub: 'City walks in Mjölby',
@@ -44,6 +50,12 @@ export const STRINGS = {
     prog_stamps: 'stamps', prog_city: 'of the town', prog_total: 'stops total',
     directions: 'directions', source: 'source', only_story: 'story only',
     lang_btn: 'SV',
+    tab_home: 'Explore', tab_routes: 'Trails', tab_saved: 'Saved', tab_profile: 'Profile',
+    screen_routes: 'Trails in Mjölby', screen_saved: 'Saved', screen_profile: 'My profile',
+    routes_sub: 'Pick a walk and follow the winding trail through town.',
+    saved_empty: 'Nothing saved yet — tap ♥ on a stop to save it.',
+    save: 'Save', saved: 'Saved', start_walk: 'Start the walk',
+    prof_visited: 'visited', prof_saved: 'saved', prof_badges: 'My stamps',
   },
 };
 

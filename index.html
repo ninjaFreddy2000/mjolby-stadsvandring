@@ -37,18 +37,24 @@
     </div>
   </header>
 
-  <button class="tellerbar" id="tellerbar" hidden></button>
+  <div id="explore">
+    <button class="tellerbar" id="tellerbar" hidden></button>
+    <nav class="tours" id="tours" aria-label="Vandringar"></nav>
+    <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
+    <main id="map" aria-label="Karta"></main>
+  </div>
 
-  <nav class="tours" id="tours" aria-label="Vandringar"></nav>
+  <section id="screen" hidden aria-label="Vy"></section>
 
-  <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
-
-  <main id="map" aria-label="Karta"></main>
+  <nav class="tabbar" id="tabbar" aria-label="Huvudmeny"></nav>
 
   <!-- Stop detail sheet -->
   <section class="sheet" id="sheet" aria-hidden="true" aria-modal="true" role="dialog">
     <span class="sheet-grip" aria-hidden="true"></span>
     <button class="sheet-close" id="sheet-close" aria-label="Stäng">&times;</button>
+    <button class="save-btn" id="save-btn" aria-label="Spara">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z" fill="currentColor"/></svg>
+    </button>
     <div class="sheet-inner" id="sheet-inner"></div>
   </section>
 

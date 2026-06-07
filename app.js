@@ -100,7 +100,9 @@ let map, markerLayer, routeLayer, meMarker;
 const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
+let activeTab = 'home'; // bottenflik-meny
 const STAMP_KEY = 'mjolby_stamps_v1';
+const SAVED_KEY = 'mjolby_saved_v1';
 
 // Audio narration + GPS auto-guide state
 let speaking = false;
@@ -111,6 +113,7 @@ const AUTO_RADIUS = 45; // meter
 const $ = sel => document.querySelector(sel);
 const stamps = () => new Set(JSON.parse(localStorage.getItem(STAMP_KEY) || '[]'));
 const saveStamps = set => localStorage.setItem(STAMP_KEY, JSON.stringify([...set]));
+const saved = () => new Set(JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'));
 const typeOf = e => CATEGORY_TYPE[e.category] || 'story';
 const hasCoords = e => e.coordinates && typeof e.coordinates.lat === 'number';
 const imgUrl = e => (e.images && e.images[0] && e.images[0].url) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].url) || null;
@@ -172,6 +175,23 @@ function townScene(){
   </svg>`;
 }
 
+function routeThumb(seed=0){
+  const roofs=['var(--roof-a)','var(--lake)','var(--forest)'];
+  const d=['M0 46 C40 36 70 56 132 44','M0 30 C40 44 70 26 132 40'][seed%2];
+  return `<svg viewBox="0 0 132 72" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" aria-hidden="true">
+    <rect width="132" height="72" fill="var(--scene-grass)"/><rect width="132" height="72" fill="rgba(255,255,255,.08)"/>
+    <path d="M0 ${42+seed*4} C40 ${36+seed*4} 70 ${50-seed*3} 132 44" stroke="var(--scene-water)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <ellipse cx="${100-seed*8}" cy="58" rx="20" ry="11" fill="var(--scene-water)"/>
+    <path d="${d}" fill="none" stroke="var(--scene-road-edge)" stroke-width="8" stroke-linecap="round"/>
+    <path d="${d}" fill="none" stroke="var(--scene-road)" stroke-width="5" stroke-linecap="round"/>
+    <g transform="translate(48 30) scale(.55)">${svgHouse(0,0,26,20,'#FBF7EE',roofs[seed%3],false)}</g>
+    <g transform="translate(80 50) scale(.5)">${svgHouse(0,0,24,20,'var(--wall-a)',roofs[(seed+1)%3],false)}</g>
+    ${svgTree(24,50,7)}${svgTree(118,60,8,'var(--honey)')}${svgPine(64,20,13)}
+    <circle cx="8" cy="${seed%2?24:56}" r="4.5" fill="var(--primary)" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="124" cy="44" r="5" fill="var(--honey)" stroke="#fff" stroke-width="1.5"/>
+  </svg>`;
+}
+
 const typeLabel = e => t('type_' + typeOf(e));
 const tourName = key => t('tour_' + key + '_name');
 const tourSub = key => t('tour_' + key + '_sub');
@@ -195,6 +215,7 @@ async function init() {
   buildFilters();
   renderMarkers();
   wireUi();
+  buildTabbar();
   applyI18n();
   updateStampBadge();
   setupTeller();
@@ -453,6 +474,8 @@ function openSheet(id){
   if (sp) sp.onclick = openSponsor;
   const spk = $('#speak-btn');
   if (spk) spk.onclick = ()=> speaking ? stopSpeaking() : speak(narrationText(e));
+  const sb = $('#save-btn');
+  if (sb){ const on=saved().has(id); sb.classList.toggle('on',on); sb.setAttribute('aria-label', on?t('saved'):t('save')); sb.onclick=()=> toggleSave(id); }
   const pc = $('#sheet-inner [data-photo]');
   if (pc) pc.onclick = ()=> startPhoto(pc.dataset.photo);
   const psh = $('#sheet-inner [data-share]');
@@ -824,6 +847,101 @@ function updateSpeakButtons(){
 // Röster laddas ibland asynkront
 if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
 
+/* ---------- Bottenflik-meny + vyer ---------- */
+const TABS = [
+  ['home',    'tab_home',    'M4 11l8-7 8 7M6 10v9h12v-9'],
+  ['routes',  'tab_routes',  'M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2Zm0 0v14m6-12v14'],
+  ['saved',   'tab_saved',   'M7 4h10v16l-5-3.5L7 20V4Z'],
+  ['profile', 'tab_profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 21c0-3.3 3.1-6 7-6s7 2.7 7 6'],
+];
+function buildTabbar(){
+  $('#tabbar').innerHTML = TABS.map(([id,key,d])=>
+    `<button data-tab="${id}" aria-label="${t(key)}">
+       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>
+       <span>${t(key)}</span>
+     </button>`).join('');
+  $('#tabbar').querySelectorAll('button').forEach(b=> b.onclick=()=> switchTab(b.dataset.tab));
+  updateTabbar();
+}
+function updateTabbar(){
+  $('#tabbar').querySelectorAll('button').forEach(b=>{
+    const on = b.dataset.tab===activeTab;
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-current', on ? 'page' : 'false');
+  });
+}
+function switchTab(id){
+  activeTab = id;
+  updateTabbar();
+  stopSpeaking();
+  ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel','#sheet'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
+  if (id==='home'){
+    $('#explore').hidden=false; $('#screen').hidden=true;
+    setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 60);
+  } else {
+    $('#explore').hidden=true; $('#screen').hidden=false;
+    if (id==='routes') renderLeder();
+    else if (id==='saved') renderSaved();
+    else if (id==='profile') renderProfil();
+    $('#screen').scrollTop=0;
+  }
+}
+function renderLeder(){
+  const st=stamps();
+  const cards = Object.keys(TOURS).map((key,i)=>{
+    const list=orderedTourEntries(key);
+    const done=list.filter(e=>st.has(e.id)).length;
+    return `<button class="led-card" data-led="${key}">
+      <span class="led-thumb">${routeThumb(i)}</span>
+      <span class="led-meta"><b>${tourName(key)}</b><small>${tourSub(key)}</small>
+        <span class="led-count">${list.length} ${t('stops')} · ${done} ✓</span></span>
+    </button>`;
+  }).join('');
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')}</p></div>${cards}`;
+  $('#screen').querySelectorAll('.led-card').forEach(c=> c.onclick=()=> startLed(c.dataset.led));
+}
+function startLed(key){
+  activeTour=key;
+  $('#tours').querySelectorAll('.tour-chip').forEach(x=>x.classList.toggle('active', x.dataset.tour===key));
+  switchTab('home');
+  renderMarkers();
+  openTourPanel(key);
+}
+function renderSaved(){
+  const sv=saved(), st=stamps();
+  const list = DATA.filter(e=> sv.has(e.id));
+  const rows = list.map(e=>`<li><button class="stop-row" data-id="${e.id}">${stopThumb(e)}
+      <span class="stop-meta"><b>${e.name}</b><small>${CAT_LABEL[e.category]||''}</small></span>
+      ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}</button></li>`).join('');
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_saved')}</h2></div>`
+    + (rows ? `<ol class="screen-list">${rows}</ol>` : `<div class="screen-empty">💛<br>${t('saved_empty')}</div>`);
+  $('#screen').querySelectorAll('.stop-row[data-id]').forEach(r=> r.onclick=()=> openSheet(r.dataset.id));
+}
+function renderProfil(){
+  const set=stamps(), sv=saved(), total=ENTRIES.length;
+  const pct= total? Math.round(set.size/total*100):0;
+  const grid = ENTRIES.map(e=>{const on=set.has(e.id);return `<div class="stamp ${on?'on':''}" title="${e.name}">${on?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_profile')}</h2></div>
+    <div class="prog-stat">
+      <div class="prog-box"><b>${set.size}</b><small>${t('prof_visited')}</small></div>
+      <div class="prog-box"><b>${pct}%</b><small>${t('prog_city')}</small></div>
+      <div class="prog-box"><b>${sv.size}</b><small>${t('prof_saved')}</small></div>
+    </div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    <h3 class="prof-h">${t('prof_badges')}</h3>
+    <div class="stamp-grid">${grid}</div>
+    <button class="om-link" id="to-sponsor2" style="margin-top:18px">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>`;
+  $('#to-sponsor2').onclick = openSponsor;
+}
+function toggleSave(id){
+  const set=saved();
+  if (set.has(id)) set.delete(id); else { set.add(id); toast('💛 '+t('saved')); }
+  localStorage.setItem(SAVED_KEY, JSON.stringify([...set]));
+  const sb=$('#save-btn');
+  if (sb){ const on=saved().has(id); sb.classList.toggle('on',on); sb.setAttribute('aria-label', on?t('saved'):t('save')); }
+  if (activeTab==='saved') renderSaved();
+}
+
 /* ---------- Geolocation + auto-guide ---------- */
 function showMe(ll, recenter){
   if (meMarker) meMarker.remove();
@@ -915,7 +1033,7 @@ function wireUi(){
   $('#sheet-close').onclick = ()=>{ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); };
   $('#tour-close').onclick = ()=> closePanel('#tour-panel');
   $('#progress-close').onclick = ()=> closePanel('#progress-panel');
-  $('#progress-btn').onclick = openProgress;
+  $('#progress-btn').onclick = ()=> switchTab('profile');
   $('#lang-btn').onclick = ()=>{ lang = (lang==='sv'?'en':'sv'); localStorage.setItem('mjolby_lang', lang); location.reload(); };
   $('#stories-btn').onclick = openStories;
   $('#stories-close').onclick = ()=> closePanel('#stories-panel');
