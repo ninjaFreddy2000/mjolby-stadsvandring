@@ -5,9 +5,9 @@
 // Extra bilder för poster som saknar foto i kunskapsdatabasen
 // (självhostade, fria bilder). Används som reservbild i detalj/lista.
 export const EXTRA_IMAGES = {
-  'skanska-lasse':        { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)' },
-  'skanska-lasses-staty': { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)' },
-  'skanska-lasses-hus':   { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)' },
+  'skanska-lasse':        { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
+  'skanska-lasses-staty': { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
+  'skanska-lasses-hus':   { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
 };
 
 export const STORIES = {

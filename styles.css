@@ -26,9 +26,29 @@
 html,body{height:100%}
 body{
   font-family:var(--font-body);color:var(--ink);
+  /* Ambient backdrop runt telefon-ramen (syns bara på större skärmar) */
+  background:#2A2118;
+  background-image:radial-gradient(1100px 700px at 50% -5%, #4A3D2C 0%, #322820 55%, #221B14 100%);
+  -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+/* Appen som en centrerad telefon-ram — ger app-känsla även i webbläsare.
+   transform skapar en containing block så fixed-paneler stannar inne i ramen. */
+#app{
+  position:relative;width:100%;max-width:430px;height:100dvh;height:100vh;
+  display:flex;flex-direction:column;overflow:hidden;
   background:var(--paper);
   background-image:radial-gradient(1200px 600px at 50% -10%, #F7EFDF 0%, #EFE5D0 55%, #E6DAC4 100%);
-  display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased;
+  transform:translateZ(0);
+}
+@media(min-width:480px){
+  body{padding:24px}
+  #app{
+    height:min(100dvh - 48px, 920px);max-height:920px;
+    border-radius:34px;
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.65), 0 0 0 10px #15110C, 0 0 0 11px rgba(255,255,255,.06);
+  }
+  .accent-stripe{border-radius:34px 34px 0 0;overflow:hidden}
 }
 h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-spacing:.005em;line-height:1.15}
 
@@ -137,15 +157,14 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .sheet-close{position:absolute;top:13px;right:14px;z-index:3;width:36px;height:36px;border:none;border-radius:50%;background:rgba(47,42,32,.5);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(4px)}
 .sheet-inner{overflow-y:auto;-webkit-overflow-scrolling:touch}
 
-/* Hero-bild */
-.hero{position:relative;width:100%;background:var(--forest-soft)}
-.hero img{display:block;width:100%;height:auto;max-height:46vh;object-fit:cover}
-.hero .credit{position:absolute;right:10px;bottom:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.4);padding:3px 8px;border-radius:100px;backdrop-filter:blur(3px)}
-.hero-ph{height:200px;display:grid;place-items:center;
-  background:
-    radial-gradient(70px 70px at 28% 32%, rgba(255,255,255,.55), transparent 70%),
-    linear-gradient(160deg, var(--lake-soft), var(--forest-soft) 70%, var(--honey-soft));
-}
+/* Hero-bild — fast höjd, beskuren mot motivet (övre delen) */
+.hero{position:relative;width:100%;height:240px;overflow:hidden;
+  background:linear-gradient(160deg, var(--lake-soft), var(--forest-soft) 70%, var(--honey-soft))}
+.hero img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focal, center 30%)}
+.hero .credit{position:absolute;right:10px;bottom:10px;font-size:10px;color:#fff;background:rgba(0,0,0,.45);
+  padding:3px 9px;border-radius:100px;backdrop-filter:blur(3px);max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-ph{position:absolute;inset:0;display:grid;place-items:center;
+  background:radial-gradient(70px 70px at 28% 32%, rgba(255,255,255,.5), transparent 70%)}
 .hero-ph span{font-size:64px;filter:drop-shadow(0 6px 10px rgba(60,40,20,.2))}
 
 .sheet-pad{padding:18px 20px calc(env(safe-area-inset-bottom) + 26px)}

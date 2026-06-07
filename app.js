@@ -115,6 +115,7 @@ const typeOf = e => CATEGORY_TYPE[e.category] || 'story';
 const hasCoords = e => e.coordinates && typeof e.coordinates.lat === 'number';
 const imgUrl = e => (e.images && e.images[0] && e.images[0].url) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].url) || null;
 const imgCredit = e => (e.images && e.images[0] && e.images[0].attribution) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].attribution) || null;
+const imgFocal = e => (e.images && e.images[0] && e.images[0].focal) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].focal) || null;
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
 const typeLabel = e => t('type_' + typeOf(e));
 const tourName = key => t('tour_' + key + '_name');
@@ -181,6 +182,10 @@ function buildMap() {
     }
   });
   map.addControl(new Auto());
+
+  // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig
+  setTimeout(()=> map.invalidateSize(), 200);
+  window.addEventListener('resize', ()=> map.invalidateSize());
 }
 
 function pinIcon(entry, visited){
@@ -337,11 +342,13 @@ function openSheet(id){
   const srcs = (e.sources||[]).slice(0,3)
     .map(s=>`<a href="${s}" target="_blank" rel="noopener">${t('source')}</a>`).join(' · ');
 
+  const focal = imgFocal(e);
   const heroPh = `<div class="hero-ph"><span>${icon}</span></div>`;
   const hero = img
     ? `<div class="hero">
+         ${heroPh}
          <img src="${img}" alt="${e.name}" loading="eager" referrerpolicy="no-referrer"
-              onerror="this.closest('.hero').outerHTML='<div class=&quot;hero&quot;>${heroPh}</div>'">
+              ${focal?`style="object-position:${focal}"`:''} onerror="this.remove()">
          ${credit?`<span class="credit">📷 ${credit}</span>`:''}
        </div>`
     : `<div class="hero">${heroPh}</div>`;
@@ -389,6 +396,8 @@ function openSheet(id){
   const psh = $('#sheet-inner [data-share]');
   if (psh) psh.onclick = ()=> sharePhoto(psh.dataset.share);
 
+  // Sheet och sidopaneler är ömsesidigt uteslutande (telefonbredd)
+  ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
   $('#sheet').setAttribute('aria-hidden','false');
   focusInto('#sheet');
   if (hasCoords(e)) map.panTo([e.coordinates.lat, e.coordinates.lng], { animate:true });
@@ -400,8 +409,7 @@ function toggleCheckin(id){
   saveStamps(set);
   updateStampBadge();
   renderMarkers();
-  openSheet(id); // refresh button + pin state
-  if (activeTour) openTourPanel(activeTour); // refresh ticks silently
+  openSheet(id); // refresh button + pin state (sheet stays focused over panels)
 }
 
 /* ---------- Progress / stamps ---------- */
@@ -819,7 +827,7 @@ function focusInto(sel){
   setTimeout(()=>{ try { target.focus({preventScroll:true}); } catch(e){} }, 30);
 }
 function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focus({preventScroll:true}); } catch(e){} } lastFocus = null; }
-function openPanel(sel){ $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
+function openPanel(sel){ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
 function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
 function closeTopDialog(){
   const order = ['#quiz','#teller','#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
