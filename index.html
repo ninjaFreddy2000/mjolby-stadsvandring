@@ -115,11 +115,44 @@
     <div class="fb-card" id="fb-card"></div>
   </section>
 
+  <!-- Stadsutmaning: byggare (arrangör) -->
+  <section class="panel" id="challenge-builder" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cb-title">Stadsutmaning</h2>
+      <button class="panel-close" id="cb-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cb-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: spelläge (elev) -->
+  <section class="panel" id="challenge-play" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cp-title">Stadsutmaning</h2>
+      <button class="panel-close" id="cp-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cp-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: resultat / topplista (arrangör) -->
+  <section class="panel" id="challenge-results" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cr-title">Resultat</h2>
+      <button class="panel-close" id="cr-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cr-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: uppgiftsmodal -->
+  <section class="ch-task" id="challenge-task" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="ch-task-modal" id="ct-card"></div>
+  </section>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="vendor/qrcode.js"></script>
   <script src="app.js" type="module"></script>
 </body>
 </html>

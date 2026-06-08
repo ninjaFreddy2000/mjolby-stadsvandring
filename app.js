@@ -3,6 +3,7 @@
 import { STORIES, EXTRA_IMAGES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
+import { initChallenges, detectChallengeInUrl, mountChallengeProfile } from './challenges.js';
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
 const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
@@ -109,6 +110,8 @@ let speaking = false;
 let autoGuide = false, watchId = null;
 const autoTriggered = new Set();
 const AUTO_RADIUS = 45; // meter
+const posSubscribers = []; // callbacks som vill veta om ny GPS-position (t.ex. stadsutmaningen)
+function notifyPos(ll){ posSubscribers.forEach(fn=>{ try { fn(ll); } catch(e){} }); }
 
 const $ = sel => document.querySelector(sel);
 const stamps = () => new Set(JSON.parse(localStorage.getItem(STAMP_KEY) || '[]'));
@@ -205,6 +208,8 @@ function stopThumb(e, badge){
 
 /* ---------- Init ---------- */
 async function init() {
+  detectChallengeInUrl();   // fånga ev. #challenge=/#result= innan hashen rensas
+
   const res = await fetch('data.json');
   const json = await res.json();
   DATA = json.entries;
@@ -219,6 +224,7 @@ async function init() {
   applyI18n();
   updateStampBadge();
   setupTeller();
+  setupChallenges();
 
   if ('serviceWorker' in navigator) {
     const hadController = !!navigator.serviceWorker.controller;
@@ -885,7 +891,7 @@ function switchTab(id){
   activeTab = id;
   updateTabbar();
   stopSpeaking();
-  ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel','#sheet'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
+  ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel','#sheet','#challenge-builder','#challenge-play','#challenge-results','#challenge-task'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
   if (id==='home'){
     $('#explore').hidden=false; $('#screen').hidden=true;
     setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 60);
@@ -1006,6 +1012,7 @@ function renderProfil(){
     <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>`;
   $('#to-sponsor2').onclick = openSponsor;
   $('#fb-prof').onclick = openFeedback;
+  mountChallengeProfile($('#screen'));
 }
 function toggleSave(id){
   const set=saved();
@@ -1021,6 +1028,7 @@ function showMe(ll, recenter){
   if (meMarker) meMarker.remove();
   meMarker = L.marker(ll, { icon:L.divIcon({className:'',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]}) }).addTo(map);
   if (recenter) map.setView(ll, Math.max(map.getZoom(), 15));
+  notifyPos(ll);
 }
 function locate(){
   if (!navigator.geolocation){ toast('Platstjänst stöds inte'); return; }
@@ -1085,7 +1093,7 @@ function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focu
 function openPanel(sel){ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
 function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
 function closeTopDialog(){
-  const order = ['#feedback','#quiz','#teller','#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
+  const order = ['#challenge-task','#feedback','#quiz','#teller','#sheet','#challenge-builder','#challenge-play','#challenge-results','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
   for (const sel of order){
     const el = $(sel);
     if (el && el.getAttribute('aria-hidden') === 'false'){
@@ -1126,6 +1134,18 @@ function wireUi(){
         e.preventDefault(); el.click();
       }
     }
+  });
+}
+
+/* ---------- Stadsutmaning (challenges.js) ---------- */
+function setupChallenges(){
+  initChallenges({
+    get DATA(){ return DATA; }, get ENTRIES(){ return ENTRIES; },
+    get map(){ return map; }, get lang(){ return lang; },
+    hasCoords, stopThumb, CAT_LABEL, AUTO_RADIUS,
+    openPanel, closePanel, focusInto, restoreFocus, toast,
+    locate, fileToThumb, t,
+    onPosition: cb => posSubscribers.push(cb),
   });
 }
 

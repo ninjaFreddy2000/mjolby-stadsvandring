@@ -437,3 +437,159 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .fb-thanks p{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:16px}
 
 @media(min-width:760px){ .header-hero h1{font-size:24px} }
+
+/* ───────────────────────────────────────────────────────────────
+   Stadsutmaning (challenges)
+─────────────────────────────────────────────────────────────── */
+.ch-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+
+/* Knappar */
+.ch-btn-primary,.ch-btn-ghost{width:100%;border-radius:var(--r-pill);padding:14px;font-family:var(--font-display);
+  font-weight:600;font-size:15px;cursor:pointer;margin-top:10px;display:block}
+.ch-btn-primary{border:none;background:var(--primary);color:var(--on-primary);box-shadow:0 6px 16px -8px var(--primary)}
+.ch-btn-ghost{border:1.5px solid var(--line);background:var(--card);color:var(--ink-2)}
+.ch-btn-primary:active,.ch-btn-ghost:active{transform:scale(.99)}
+.ch-btn-primary[disabled]{opacity:.5;cursor:default;box-shadow:none}
+.ch-row2{display:flex;gap:10px}
+.ch-row2 .ch-btn-primary,.ch-row2 .ch-btn-ghost{flex:1}
+
+/* Profil-sektion */
+.ch-prof{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.ch-prof-sub{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin:2px 0 6px}
+.ch-empty{font-size:13px;color:var(--ink-3);text-align:center;padding:16px;line-height:1.5}
+.ch-runs-h{font-size:14px;margin:16px 0 8px;color:var(--ink);font-family:var(--font-display)}
+.ch-run{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:10px 13px;margin-bottom:8px;box-shadow:var(--shadow-sm)}
+.ch-run-meta{flex:1;min-width:0}
+.ch-run-meta b{display:block;font-size:13.5px;font-family:var(--font-display);font-weight:600}
+.ch-run-meta small{font-size:11px;color:var(--ink-3)}
+.ch-run-score{font-size:19px;font-weight:700;color:var(--primary);font-family:var(--font-display);flex:none}
+.ch-run-score small{font-size:12px;color:var(--ink-3);font-weight:600}
+
+/* Byggare-formulär */
+.cb-pad,.cp-pad,.cr-pad{padding:16px 18px calc(env(safe-area-inset-bottom) + 24px)}
+.cb-l{display:block;font-size:12px;font-weight:700;color:var(--ink-2);margin:12px 0 5px;font-family:var(--font-display)}
+.cb-in{width:100%;border:1.5px solid var(--line);border-radius:var(--r-md);padding:11px 13px;
+  font-family:var(--font-body);font-size:14.5px;background:var(--paper);color:var(--ink)}
+.cb-in:focus{outline:none;border-color:var(--lake)}
+.cb-ta{resize:vertical}
+.cb-check{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-2);margin:12px 0 4px;cursor:pointer;font-weight:600}
+.cb-check input{width:18px;height:18px;accent-color:var(--primary)}
+.cb-hidden{display:none}
+.cb-h{font-size:15px;margin:20px 0 8px;color:var(--ink);font-family:var(--font-display);display:flex;align-items:center;gap:8px}
+.cb-count{background:var(--primary);color:var(--on-primary);font-size:12px;font-weight:700;border-radius:var(--r-pill);
+  padding:1px 9px;font-family:var(--font-body)}
+.cb-hint{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin-top:6px}
+
+/* Segmenterad kontroll */
+.ch-seg{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0}
+.ch-seg button{flex:1;min-width:64px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
+  border-radius:var(--r-md);padding:9px 6px;font-family:var(--font-body);font-weight:700;font-size:12.5px;cursor:pointer}
+.ch-seg button.on{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.ch-seg button:active{transform:scale(.97)}
+
+/* Stopp-väljare */
+.cb-picker{max-height:none;display:flex;flex-direction:column;gap:2px;margin-top:6px}
+.cb-pick{display:flex;gap:11px;align-items:center;padding:8px;border-radius:var(--r-md);cursor:pointer;
+  width:100%;text-align:left;background:transparent;border:none;font-family:var(--font-body);color:inherit}
+.cb-pick:hover{background:var(--card)}
+.cb-pick.on{background:var(--forest-soft)}
+.cb-pick .stop-meta{flex:1}
+.cb-pick-add{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:var(--card);border:1.5px solid var(--line);font-weight:800;color:var(--primary);font-size:16px}
+.cb-pick.on .cb-pick-add{background:var(--forest);border-color:var(--forest);color:#fff}
+
+/* Per-stopp uppgiftskort */
+.ch-task-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:13px 14px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.ctc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+.ctc-head b{font-size:14px;font-family:var(--font-display);font-weight:600;min-width:0}
+.ctc-tools{display:flex;gap:4px;flex:none}
+.ctc-mv,.ctc-rm{width:28px;height:28px;border:1px solid var(--line);background:var(--card-2);border-radius:var(--r-sm);
+  cursor:pointer;font-size:12px;color:var(--ink-2);display:grid;place-items:center}
+.ctc-rm{color:var(--primary)}
+.cb-opt-row{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.cb-opt-row input[type=radio]{width:18px;height:18px;flex:none;accent-color:var(--forest)}
+.cb-opt-f{flex:1}
+.cb-points{max-width:120px}
+
+/* Genererad tävling */
+.ch-gen{text-align:center}
+.ch-gen-emoji{font-size:46px;margin:8px 0 4px}
+.ch-gen-h{font-size:21px;color:var(--primary)}
+.ch-gen-sub{font-size:13px;color:var(--ink-3);margin:4px 0 14px;font-weight:600}
+.ch-qr{width:230px;max-width:80%;margin:0 auto 8px;background:var(--card);padding:12px;border-radius:var(--r-md);
+  border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.ch-qr svg{width:100%;height:auto;display:block}
+.ch-size-meter{font-size:11.5px;font-weight:700;margin-bottom:12px;padding:5px 12px;border-radius:var(--r-pill);display:inline-block}
+.ch-size-meter.ok{background:var(--forest-soft);color:#3a5e32}
+.ch-size-meter.warn{background:var(--honey-soft);color:#8a5a00}
+.ch-size-meter.bad{background:#F6DED4;color:var(--primary-2)}
+.ch-codebox{display:flex;margin:4px 0}
+.ch-codebox input{width:100%;border:1.5px solid var(--line);border-radius:var(--r-md);padding:11px 13px;
+  font-family:ui-monospace,monospace;font-size:12px;background:var(--card-2);color:var(--ink-2)}
+
+/* Spelläge — join */
+.cp-join .cp-badge{display:inline-block;background:var(--lake-soft);color:var(--lake);font-size:12px;font-weight:700;
+  padding:5px 12px;border-radius:var(--r-pill);margin-bottom:10px}
+.cp-h{font-size:24px;color:var(--ink);margin-bottom:8px;line-height:1.2}
+.cp-intro{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin-bottom:12px}
+.cp-window{font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:var(--r-md);margin-bottom:12px}
+.cp-window.open{background:var(--forest-soft);color:#3a5e32}
+.cp-window.upcoming{background:var(--honey-soft);color:#8a5a00}
+.cp-window.closed{background:#F6DED4;color:var(--primary-2)}
+.cp-facts{list-style:none;display:flex;gap:10px;margin:0 0 8px}
+.cp-facts li{flex:1;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:11px 6px;text-align:center;font-size:12px;color:var(--ink-3);font-weight:600}
+.cp-facts li b{display:block;font-size:20px;color:var(--primary);font-family:var(--font-display);line-height:1.1}
+
+/* Spelläge — poänghuvud + stopp */
+.ch-score-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:8px}
+.chs-score{font-size:36px;font-weight:700;color:var(--primary);font-family:var(--font-display);line-height:1}
+.chs-max{font-size:14px;color:var(--ink-3);font-weight:600;margin-left:6px}
+.chs-prog{font-size:12.5px;color:var(--ink-2);font-weight:700}
+.cp-stops{list-style:none;margin-top:6px}
+.cp-stop{margin-bottom:2px}
+.cp-stop.is-done{opacity:.72}
+.cp-go{margin-left:auto;color:var(--ink-3);font-size:20px;flex:none}
+
+/* Uppgiftsmodal */
+.ch-task{position:fixed;inset:0;z-index:1300;background:rgba(47,42,32,.5);backdrop-filter:blur(4px);
+  display:none;align-items:center;justify-content:center;padding:20px}
+.ch-task[aria-hidden="false"]{display:flex}
+.ch-task-modal{position:relative;background:var(--card);border-radius:var(--r-xl);width:100%;max-width:440px;
+  padding:24px 22px;box-shadow:var(--shadow);max-height:90vh;overflow-y:auto}
+.ct-x{position:absolute;top:13px;right:14px;width:34px;height:34px;border:none;border-radius:50%;
+  background:var(--card-2);font-size:21px;cursor:pointer;color:var(--ink)}
+.ct-pts{display:inline-block;background:var(--honey-soft);color:#8a5a00;font-size:12px;font-weight:700;
+  padding:4px 11px;border-radius:var(--r-pill);margin-bottom:8px}
+.ch-task-modal h3{font-size:20px;color:var(--ink);padding-right:34px;margin-bottom:14px}
+.ct-q{font-size:16px;font-weight:600;line-height:1.45;margin-bottom:14px;color:var(--ink)}
+.ct-dist{font-size:14px;font-weight:700;color:var(--ink-2);text-align:center;padding:10px;background:var(--card-2);
+  border-radius:var(--r-md);margin-bottom:6px}
+.ct-dist.near{background:var(--forest-soft);color:#3a5e32}
+.ct-maps{display:block;text-align:center;margin-top:10px;color:var(--lake);font-weight:700;font-size:13.5px;text-decoration:none}
+.ct-done{text-align:center;font-size:16px;font-weight:700;color:var(--forest);padding:14px 0}
+.ct-done span{display:block;font-size:34px;color:var(--primary);font-family:var(--font-display);margin-top:4px}
+
+/* Resultat (efter avslutad) */
+.ch-result{text-align:center}
+.ch-result-score{font-size:52px;font-weight:700;color:var(--primary);font-family:var(--font-display);line-height:1}
+.ch-result-score small{font-size:20px;color:var(--ink-3);font-weight:600}
+.ch-result-line{font-size:17px;font-weight:600;color:var(--ink);margin:6px 0 14px}
+.ch-result-stats{display:flex;gap:10px;margin-bottom:14px}
+.ch-result-stats span{flex:1;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:11px 6px;font-size:11.5px;color:var(--ink-3);font-weight:600}
+.ch-result-stats b{display:block;font-size:18px;color:var(--ink);font-family:var(--font-display)}
+
+/* Topplista */
+.ch-leader{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+.ch-leader-row{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:10px 13px}
+.chl-rank{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+  font-size:13px;background:var(--card-2);color:var(--ink-2);font-family:var(--font-display)}
+.chl-rank.top{background:var(--honey);color:#4a3000}
+.chl-name{flex:1;min-width:0;font-weight:700;font-size:14px;font-family:var(--font-display)}
+.chl-name small{display:block;font-size:11px;color:var(--ink-3);font-weight:600}
+.chl-score{flex:none;font-size:20px;font-weight:700;color:var(--primary);font-family:var(--font-display)}
+.cr-pick{margin-bottom:10px}
