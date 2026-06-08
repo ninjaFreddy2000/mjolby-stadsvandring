@@ -849,11 +849,22 @@ if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
 
 /* ---------- Bottenflik-meny + vyer ---------- */
 const TABS = [
+  ['cities',  'tab_cities',  'M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11ZM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z'],
   ['home',    'tab_home',    'M4 11l8-7 8 7M6 10v9h12v-9'],
   ['routes',  'tab_routes',  'M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2Zm0 0v14m6-12v14'],
   ['saved',   'tab_saved',   'M7 4h10v16l-5-3.5L7 20V4Z'],
   ['profile', 'tab_profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 21c0-3.3 3.1-6 7-6s7 2.7 7 6'],
 ];
+// Fler städer (Mjölby aktiv; övriga på väg). Skalbart: lägg till en post per stad.
+const CITIES = [
+  { id:'mjolby',    name:'Mjölby',    blurb:'Kvarnbyn vid Svartån — kyrka, järnväg & Skånska Lasse.', status:'active', leder:2, seed:0 },
+  { id:'skanninge', name:'Skänninge', blurb:'En av Sveriges äldsta städer — kloster & medeltid.',      status:'soon', seed:1 },
+  { id:'vadstena',  name:'Vadstena',  blurb:'Klosterstaden vid Vättern — slott & Heliga Birgitta.',     status:'soon', seed:2 },
+  { id:'linkoping', name:'Linköping', blurb:'Domkyrkostaden & Gamla Linköping.',                        status:'soon', seed:0 },
+  { id:'motala',    name:'Motala',    blurb:'Göta kanal och sjön Vättern.',                              status:'soon', seed:1 },
+  { id:'tranas',    name:'Tranås',    blurb:'Sjön Sommen och småländsk charm.',                          status:'soon', seed:2 },
+];
+const FEEDBACK_KEY = 'mjolby_feedback_v1';
 function buildTabbar(){
   $('#tabbar').innerHTML = TABS.map(([id,key,d])=>
     `<button data-tab="${id}" aria-label="${t(key)}">
@@ -880,7 +891,8 @@ function switchTab(id){
     setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 60);
   } else {
     $('#explore').hidden=true; $('#screen').hidden=false;
-    if (id==='routes') renderLeder();
+    if (id==='cities') renderCities();
+    else if (id==='routes') renderLeder();
     else if (id==='saved') renderSaved();
     else if (id==='profile') renderProfil();
     $('#screen').scrollTop=0;
@@ -907,6 +919,66 @@ function startLed(key){
   renderMarkers();
   openTourPanel(key);
 }
+function renderCities(){
+  const cards = CITIES.map(c=>{
+    const active = c.status==='active';
+    const badge = active ? `${t('city_active')} · ${c.leder} ${t('city_leder')}` : t('city_soon');
+    return `<button class="led-card city-card ${active?'':'soon'}" data-city="${c.id}" ${active?'':'data-soon="1"'}>
+      <span class="led-thumb">${routeThumb(c.seed)}${active?'':'<span class="city-lock">🔒</span>'}</span>
+      <span class="led-meta"><b>${c.name}</b><small>${c.blurb}</small>
+        <span class="city-badge ${active?'on':''}">${badge}</span></span>
+    </button>`;
+  }).join('');
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_sub')}</p></div>${cards}
+    <button class="fb-cta" id="fb-cities">💬 ${t('feedback')}</button>`;
+  $('#screen').querySelectorAll('.city-card').forEach(c=> c.onclick=()=>{
+    if (c.dataset.soon) toast(t('city_soon') + ' 🌱');
+    else switchTab('home');
+  });
+  $('#fb-cities').onclick = openFeedback;
+}
+
+/* ---------- Tyck till (feedback) ---------- */
+function openFeedback(){
+  const card = $('#fb-card');
+  let type = 'idea';
+  card.innerHTML = `
+    <button class="fb-x" id="fb-x" aria-label="Stäng">&times;</button>
+    <h3>${t('fb_title')}</h3>
+    <p class="fb-sub">${t('fb_sub')}</p>
+    <div class="fb-types" id="fb-types">
+      <button class="fb-chip on" data-type="idea">${t('fb_idea')}</button>
+      <button class="fb-chip" data-type="bug">${t('fb_bug')}</button>
+      <button class="fb-chip" data-type="love">${t('fb_love')}</button>
+    </div>
+    <textarea class="fb-text" id="fb-text" rows="4" placeholder="${t('fb_ph')}" aria-label="${t('fb_title')}"></textarea>
+    <input class="fb-email" id="fb-email" type="email" placeholder="${t('fb_email')}" aria-label="${t('fb_email')}">
+    <button class="cta fb-send" id="fb-send" style="margin:4px 0 0">${t('fb_send')}</button>`;
+  $('#feedback').setAttribute('aria-hidden','false');
+  lastFocus = document.activeElement;
+  setTimeout(()=>{ const x=$('#fb-x'); if(x) x.focus(); }, 30);
+  const close = ()=>{ $('#feedback').setAttribute('aria-hidden','true'); restoreFocus(); };
+  $('#fb-x').onclick = close;
+  $('#fb-types').querySelectorAll('.fb-chip').forEach(b=> b.onclick=()=>{
+    type = b.dataset.type;
+    $('#fb-types').querySelectorAll('.fb-chip').forEach(x=> x.classList.toggle('on', x===b));
+  });
+  $('#fb-send').onclick = ()=>{
+    const msg = $('#fb-text').value.trim();
+    if (!msg){ $('#fb-text').focus(); return; }
+    try {
+      const all = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '[]');
+      all.push({ type, msg, email: $('#fb-email').value.trim(), lang });
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(all));
+    } catch(e){}
+    card.innerHTML = `<div class="fb-thanks">
+      <div class="fb-thanks-emoji">💛</div>
+      <p>${t('fb_thanks')}</p>
+      <button class="cta" id="fb-done">${lang==='en'?'Close':'Stäng'}</button></div>`;
+    $('#fb-done').onclick = close;
+  };
+}
+
 function renderSaved(){
   const sv=saved(), st=stamps();
   const list = DATA.filter(e=> sv.has(e.id));
@@ -930,8 +1002,10 @@ function renderProfil(){
     <div class="bar"><i style="width:${pct}%"></i></div>
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
-    <button class="om-link" id="to-sponsor2" style="margin-top:18px">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>`;
+    <button class="om-link" id="to-sponsor2" style="margin-top:18px">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>
+    <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>`;
   $('#to-sponsor2').onclick = openSponsor;
+  $('#fb-prof').onclick = openFeedback;
 }
 function toggleSave(id){
   const set=saved();
@@ -1011,7 +1085,7 @@ function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focu
 function openPanel(sel){ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
 function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
 function closeTopDialog(){
-  const order = ['#quiz','#teller','#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
+  const order = ['#feedback','#quiz','#teller','#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
   for (const sel of order){
     const el = $(sel);
     if (el && el.getAttribute('aria-hidden') === 'false'){
@@ -1041,6 +1115,7 @@ function wireUi(){
   $('#sponsor-close').onclick = ()=> closePanel('#sponsor-panel');
   $('#quiz').onclick = e=>{ if(e.target.id==='quiz') $('#quiz').setAttribute('aria-hidden','true'); };
   $('#teller').onclick = e=>{ if(e.target.id==='teller'){ $('#teller').setAttribute('aria-hidden','true'); restoreFocus(); } };
+  $('#feedback').onclick = e=>{ if(e.target.id==='feedback'){ $('#feedback').setAttribute('aria-hidden','true'); restoreFocus(); } };
 
   // Tangentbord: Esc stänger översta dialogen; Enter/Space aktiverar list-rader
   document.addEventListener('keydown', e=>{

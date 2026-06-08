@@ -408,4 +408,32 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .save-btn.on{background:var(--primary)}
 .save-btn:active{transform:scale(.92)}
 
+/* Städer-vy */
+.led-thumb{position:relative}
+.city-card.soon{opacity:.94}
+.city-lock{position:absolute;inset:0;display:grid;place-items:center;font-size:22px;background:rgba(47,42,32,.30);border-radius:var(--r-md)}
+.city-badge{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:var(--r-pill);background:var(--card-2);color:var(--ink-3)}
+.city-badge.on{background:var(--forest-soft);color:#3a5e32}
+
+/* "Tyck till"-knapp i vyer */
+.fb-cta{width:100%;margin-top:14px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);
+  border-radius:var(--r-md);padding:13px;font-family:var(--font-display);font-weight:600;font-size:14px;cursor:pointer}
+.fb-cta:active{transform:scale(.99)}
+
+/* Feedback-overlay */
+.fb{position:fixed;inset:0;z-index:1400;background:rgba(47,42,32,.5);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.fb[aria-hidden="false"]{display:flex}
+.fb-card{position:relative;background:var(--card);border-radius:var(--r-xl);width:100%;max-width:440px;padding:24px;box-shadow:var(--shadow);margin:auto}
+.fb-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border:none;border-radius:50%;background:var(--card-2);font-size:21px;cursor:pointer;color:var(--ink)}
+.fb-card h3{font-size:20px;font-weight:600;color:var(--primary);padding-right:30px}
+.fb-sub{font-size:13.5px;color:var(--ink-2);line-height:1.5;margin:6px 0 14px}
+.fb-types{display:flex;gap:8px;margin-bottom:12px}
+.fb-chip{flex:1;border:1.5px solid var(--line);background:var(--card);border-radius:var(--r-pill);padding:9px 6px;font-family:var(--font-body);font-weight:700;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.fb-chip.on{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.fb-text,.fb-email{width:100%;border:1.5px solid var(--line);border-radius:var(--r-md);padding:12px 13px;font-family:var(--font-body);font-size:14.5px;background:var(--paper);margin-bottom:10px;resize:vertical;display:block}
+.fb-text:focus,.fb-email:focus{outline:none;border-color:var(--primary)}
+.fb-thanks{text-align:center;padding:14px 0}
+.fb-thanks-emoji{font-size:46px;margin-bottom:8px}
+.fb-thanks p{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:16px}
+
 @media(min-width:760px){ .header-hero h1{font-size:24px} }
