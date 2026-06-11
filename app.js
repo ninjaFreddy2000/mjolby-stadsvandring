@@ -13,7 +13,15 @@ const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
 const tellerL = () => (lang === 'en' && TELLER_EN[ACTIVE_CITY]) ? TELLER_EN[ACTIVE_CITY] : null;
 const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 
-const TELLER = STORYTELLERS[ACTIVE_CITY] || null;
+// ---------- Stad (man kan välja vilken stad man vandrar i) ----------
+let activeCity = localStorage.getItem('sv_city') || 'Mjölby';
+const citySlug = s => String(s||'').toLowerCase()
+  .replace(/[åä]/g,'a').replace(/ö/g,'o').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+const cityOf = e => e.city || 'Mjölby';
+const inCity = e => cityOf(e) === activeCity;
+const tellerFor = city => STORYTELLERS[citySlug(city)] || null;
+
+let TELLER = tellerFor(activeCity);
 const TELLER_SEEN_KEY = 'mjolby_teller_seen_v1';
 
 /* ---------- Stop-type model (the 4 pitch types) ---------- */
@@ -292,7 +300,7 @@ function pinIcon(entry, visited){
 }
 
 function visibleEntries(){
-  let list = ENTRIES.filter(e => activeTypes.has(typeOf(e)));
+  let list = ENTRIES.filter(e => inCity(e) && activeTypes.has(typeOf(e)));
   if (activeTour) list = list.filter(TOURS[activeTour].test);
   return list;
 }
@@ -336,6 +344,7 @@ function drawRoute(){
 function fitView(){
   const ms = Object.values(markersById);
   if (!ms.length) return;
+  try { map.invalidateSize(); } catch(e){}
   const grp = L.featureGroup(ms);
   map.fitBounds(grp.getBounds().pad(0.18), { maxZoom: activeTour==='central'?16:13 });
 }
@@ -343,8 +352,11 @@ function fitView(){
 /* ---------- Tours UI ---------- */
 function buildTours(){
   const wrap = $('#tours');
-  const chips = [['all', t('tours_all'), ENTRIES.length+' '+t('stops')]]
-    .concat(Object.entries(TOURS).map(([k,tr])=>[k, tourName(k), DATA.filter(tr.test).length+' '+t('stops')]));
+  const cityCount = ENTRIES.filter(inCity).length;
+  // Bara turer som har stopp i den valda staden
+  const cityTours = Object.entries(TOURS).filter(([k,tr])=> DATA.filter(tr.test).some(inCity));
+  const chips = [['all', t('tours_all'), cityCount+' '+t('stops')]]
+    .concat(cityTours.map(([k,tr])=>[k, tourName(k), DATA.filter(tr.test).filter(inCity).length+' '+t('stops')]));
   wrap.innerHTML = chips.map(([k,name,sub])=>
     `<button class="tour-chip ${k==='all'?'active':''}" data-tour="${k}">${name}<small>${sub}</small></button>`
   ).join('');
@@ -418,6 +430,33 @@ function buildFilters(){
   });
 }
 
+/* ---------- Stad: byt aktiv stad ---------- */
+function updateCityHeader(){
+  const el = $('#brand-sub');
+  if (el) el.textContent = (lang==='en' ? 'City walks in ' : 'Stadsvandringar i ') + activeCity;
+}
+function citiesInData(){
+  // Städer som faktiskt har stopp, med antal — i datans ordning (Mjölby först)
+  const seen = new Map();
+  DATA.forEach(e=>{ const c = cityOf(e); seen.set(c, (seen.get(c)||0) + (hasCoords(e)?1:0)); });
+  return [...seen.entries()].map(([name,count])=>({ name, count }));
+}
+function setActiveCity(city){
+  if (!city || city === activeCity) return;
+  activeCity = city;
+  localStorage.setItem('sv_city', city);
+  activeTour = null;
+  activeTypes.clear(); Object.keys(TYPES).forEach(k=>activeTypes.add(k));
+  TELLER = tellerFor(city);
+  autoTriggered.clear();
+  updateCityHeader();
+  buildTours();
+  buildFilters();
+  setupTeller(false);          // byt berättare utan att tvinga upp introt
+  renderMarkers();             // fitView centrerar om kartan till stadens stopp
+  toast((lang==='en'?'Now exploring ':'Nu utforskar du ') + city + ' 🗺️');
+}
+
 /* ---------- Stop detail sheet ---------- */
 function openSheet(id){
   const e = DATA.find(x=>x.id===id);
@@ -452,11 +491,12 @@ function openSheet(id){
     ${hero}
     <div class="sheet-pad">
       <span class="type-tag" style="background:${ty.color}">${icon} ${typeLabel(e)}</span>
+      <span class="city-tag">📍 ${cityOf(e)}</span>
       <h2>${e.name}</h2>
       ${e.era?`<div class="era">${e.era}</div>`:''}
       ${leadOf(e)?`<p class="lead">${leadOf(e)}</p>`:''}
       ${tellerBubble(id)}
-      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${t('speak_pre')} ${TELLER?TELLER.name:''} ${t('speak_suf')}</button>`:''}
+      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${TELLER?`${t('speak_pre')} ${TELLER.name} ${t('speak_suf')}`:(lang==='en'?'Listen':'Lyssna')}</button>`:''}
       ${(lang==='en' && storyHtml)?`<p class="story-note">📖 ${t('story_note')}</p>`:''}
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
@@ -703,6 +743,7 @@ const CAT_LABEL = {
 function renderStories(filter){
   const q = (filter||'').toLowerCase().trim();
   const list = DATA.filter(e=>{
+    if (!inCity(e)) return false;                 // bara den valda stadens berättelser
     if (!q) return true;
     return (e.name+' '+(e.summary||'')+' '+(CAT_LABEL[e.category]||'')).toLowerCase().includes(q);
   });
@@ -725,7 +766,7 @@ function openStories(){ renderStories($('#stories-q').value); openPanel('#storie
 function applyI18n(){
   document.documentElement.lang = lang;
   const setText = (sel, val)=>{ const el=$(sel); if(el) el.textContent = val; };
-  setText('#brand-sub', t('brand_sub'));
+  updateCityHeader();
   setText('#lang-btn', t('lang_btn'));
   const sp = $('#stories-panel');
   if (sp){
@@ -738,16 +779,16 @@ function applyI18n(){
 }
 
 /* ---------- Stadens berättare (storyteller) ---------- */
-function setupTeller(){
+function setupTeller(auto = true){
   const bar = $('#tellerbar');
-  if (!TELLER){ bar.hidden = true; return; }
+  if (!TELLER){ bar.hidden = true; return; }   // staden saknar egen berättare
   bar.hidden = false;
   bar.innerHTML =
     `<span class="tb-av">${tellerAvatar()}</span>
      <span class="tb-text">${t('teller_by')} <b>${TELLER.name}</b><small>${(tellerL()&&tellerL().role)||TELLER.role||''}</small></span>
      <span class="tb-go">${t('teller_meet')}</span>`;
   bar.onclick = ()=> openTeller();
-  if (!localStorage.getItem(TELLER_SEEN_KEY)) openTeller(true);
+  if (auto && !localStorage.getItem(TELLER_SEEN_KEY)) openTeller(true);
 }
 
 function tellerAvatar(){
@@ -861,7 +902,7 @@ function updateSpeakButtons(){
   const b = $('#speak-btn');
   if (b) b.innerHTML = speaking
     ? t('speak_stop')
-    : `🔊 ${t('speak_pre')} ${TELLER ? TELLER.name : ''} ${t('speak_suf')}`;
+    : `🔊 ${TELLER ? `${t('speak_pre')} ${TELLER.name} ${t('speak_suf')}` : (lang==='en'?'Listen':'Lyssna')}`;
 }
 // Röster laddas ibland asynkront
 if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
@@ -919,8 +960,10 @@ function switchTab(id){
 }
 function renderLeder(){
   const st=stamps();
-  const cards = Object.keys(TOURS).map((key,i)=>{
-    const list=orderedTourEntries(key);
+  // Bara leder som har stopp i den valda staden
+  const keys = Object.keys(TOURS).filter(key=> DATA.filter(TOURS[key].test).some(inCity));
+  const cards = keys.map((key,i)=>{
+    const list=orderedTourEntries(key).filter(inCity);
     const done=list.filter(e=>st.has(e.id)).length;
     return `<button class="led-card" data-led="${key}">
       <span class="led-thumb">${routeThumb(i)}</span>
@@ -928,7 +971,8 @@ function renderLeder(){
         <span class="led-count">${list.length} ${t('stops')} · ${done} ✓</span></span>
     </button>`;
   }).join('');
-  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')}</p></div>${cards}`;
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')} · ${activeCity}</p></div>`
+    + (cards || `<div class="screen-empty">🚶<br>${(lang==='en'?'No guided routes in ':'Inga färdiga leder i ')+activeCity+(lang==='en'?' yet — explore freely on the map!':' än — utforska fritt på kartan!')}</div>`);
   $('#screen').querySelectorAll('.led-card').forEach(c=> c.onclick=()=> startLed(c.dataset.led));
 }
 function startLed(key){
@@ -939,21 +983,38 @@ function startLed(key){
   openTourPanel(key);
 }
 function renderCities(){
-  const cards = CITIES.map(c=>{
-    const active = c.status==='active';
-    const badge = active ? `${t('city_active')} · ${c.leder} ${t('city_leder')}` : t('city_soon');
-    return `<button class="led-card city-card ${active?'':'soon'}" data-city="${c.id}" ${active?'':'data-soon="1"'}>
-      <span class="led-thumb">${routeThumb(c.seed)}${active?'':'<span class="city-lock">🔒</span>'}</span>
-      <span class="led-meta"><b>${c.name}</b><small>${c.blurb}</small>
-        <span class="city-badge ${active?'on':''}">${badge}</span></span>
+  const have = citiesInData();                       // [{name,count}] — städer med riktiga stopp
+  const haveNames = new Set(have.map(c=>c.name));
+  const meta = {}; CITIES.forEach(c=> meta[c.name]={ blurb:c.blurb, seed:c.seed });
+  const blurbFor = n => (meta[n]&&meta[n].blurb) || (lang==='en'?`Walks and stories in ${n}.`:`Vandringar och berättelser i ${n}.`);
+  const seedFor  = (n,i) => (meta[n]&&typeof meta[n].seed==='number') ? meta[n].seed : (i%3);
+
+  // Valbara städer (har stopp). Den aktiva markeras tydligt.
+  const activeCards = have.map((c,i)=>{
+    const sel = c.name===activeCity;
+    const tours = Object.values(TOURS).filter(tr=>DATA.filter(tr.test).some(e=>cityOf(e)===c.name)).length;
+    const sub = `${c.count} ${t('stops')}${tours?` · ${tours} ${t('city_leder')}`:''}`;
+    return `<button class="led-card city-card ${sel?'selected':''}" data-pick="${c.name}" aria-pressed="${sel}">
+      <span class="led-thumb">${routeThumb(seedFor(c.name,i))}</span>
+      <span class="led-meta"><b>${c.name}${sel?` · ${t('city_current')}`:''}</b><small>${blurbFor(c.name)}</small>
+        <span class="city-badge on">${sub}</span></span>
     </button>`;
   }).join('');
-  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_sub')}</p></div>${cards}
+
+  // "Kommer snart"-städer (utan stopp ännu)
+  const soon = CITIES.filter(c=> c.status!=='active' && !haveNames.has(c.name)).map(c=>
+    `<button class="led-card city-card soon" data-soon="1">
+      <span class="led-thumb">${routeThumb(c.seed)}<span class="city-lock">🔒</span></span>
+      <span class="led-meta"><b>${c.name}</b><small>${c.blurb}</small>
+        <span class="city-badge">${t('city_soon')}</span></span>
+    </button>`).join('');
+
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_pick')}</p></div>
+    ${activeCards}
+    ${soon?`<h3 class="prof-h">${t('city_more_soon')}</h3>${soon}`:''}
     <button class="fb-cta" id="fb-cities">💬 ${t('feedback')}</button>`;
-  $('#screen').querySelectorAll('.city-card').forEach(c=> c.onclick=()=>{
-    if (c.dataset.soon) toast(t('city_soon') + ' 🌱');
-    else switchTab('home');
-  });
+  $('#screen').querySelectorAll('[data-pick]').forEach(c=> c.onclick=()=>{ switchTab('home'); setActiveCity(c.dataset.pick); });
+  $('#screen').querySelectorAll('[data-soon]').forEach(c=> c.onclick=()=> toast(t('city_soon') + ' 🌱'));
   $('#fb-cities').onclick = openFeedback;
 }
 
@@ -1133,7 +1194,7 @@ function renderSaved(){
   const sv=saved(), st=stamps();
   const list = DATA.filter(e=> sv.has(e.id));
   const rows = list.map(e=>`<li><button class="stop-row" data-id="${e.id}">${stopThumb(e)}
-      <span class="stop-meta"><b>${e.name}</b><small>${CAT_LABEL[e.category]||''}</small></span>
+      <span class="stop-meta"><b>${e.name}</b><small>📍 ${cityOf(e)} · ${CAT_LABEL[e.category]||''}</small></span>
       ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}</button></li>`).join('');
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_saved')}</h2></div>`
     + (rows ? `<ol class="screen-list">${rows}</ol>` : `<div class="screen-empty">💛<br>${t('saved_empty')}</div>`);
@@ -1141,9 +1202,13 @@ function renderSaved(){
 }
 function renderProfil(){
   const on = tipsActive();
-  const set=stamps(), sv=saved(), total=ENTRIES.length, mine=myContribs();
-  const pct= total? Math.round(set.size/total*100):0;
-  const grid = ENTRIES.map(e=>{const got=set.has(e.id);return `<div class="stamp ${got?'on':''}" title="${e.name}">${got?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
+  const set=stamps(), sv=saved(), mine=myContribs();
+  // Statistiken gäller den valda staden
+  const cityEnt = ENTRIES.filter(inCity);
+  const total = cityEnt.length;
+  const visitedHere = cityEnt.filter(e=>set.has(e.id)).length;
+  const pct= total? Math.round(visitedHere/total*100):0;
+  const grid = cityEnt.map(e=>{const got=set.has(e.id);return `<div class="stamp ${got?'on':''}" title="${e.name}">${got?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
   // Den lokala "bidragsgivare"-demobrickan visas bara i offline-läget (utan backend);
   // med riktiga konton ersätts den av kontokortet + nivå-systemet.
   const badge = (!on && mine.length) ? `<div class="contributor-badge">
@@ -1151,10 +1216,10 @@ function renderProfil(){
       <div><b>${t('contributor_badge')}</b><small>${t('contributor_sub')}</small>
         <span class="cb-count">${mine.length} ${t('my_contribs')}</span></div>
     </div>` : '';
-  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_profile')}</h2></div>
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_profile')}</h2><p>📍 ${activeCity}</p></div>
     ${badge}
     <div class="prog-stat">
-      <div class="prog-box"><b>${set.size}</b><small>${t('prof_visited')}</small></div>
+      <div class="prog-box"><b>${visitedHere}</b><small>${t('prof_visited')}</small></div>
       <div class="prog-box"><b>${pct}%</b><small>${t('prog_city')}</small></div>
       <div class="prog-box"><b>${sv.size}</b><small>${t('prof_saved')}</small></div>
     </div>

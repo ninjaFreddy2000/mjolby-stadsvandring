@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v15';
+const CACHE = 'mjolby-stadsvandring-v17';
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
   './challenges.js', './config.js', './auth.js', './tips.js', './vendor/qrcode.js',
@@ -30,7 +30,9 @@ self.addEventListener('fetch', e=>{
   // App shell + navigations → NETWORK-FIRST (always get the latest; cache is offline fallback only).
   if (req.mode === 'navigate' || isShell(req.url)){
     e.respondWith(
-      fetch(req).then(res=>{
+      // Truly network-first: bypass the HTTP cache so app code/data updates show
+      // immediately. The cached copy below remains the offline fallback.
+      fetch(req, { cache: 'no-store' }).then(res=>{
         if (res && res.status===200){ const copy=res.clone(); caches.open(CACHE).then(c=>c.put(req, copy)); }
         return res;
       }).catch(()=> caches.match(req).then(c=> c || caches.match('./index.html')))

@@ -631,6 +631,13 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .chl-score{flex:none;font-size:20px;font-weight:700;color:var(--primary);font-family:var(--font-display)}
 .cr-pick{margin-bottom:10px}
 
+/* ───────── Stad (väljare + tydlig stad per plats) ───────── */
+.city-tag{display:inline-block;margin:0 0 0 6px;font-size:12.5px;font-weight:800;color:var(--primary);
+  background:var(--card-2);border:1px solid var(--line);padding:3px 10px;border-radius:var(--r-pill);
+  font-family:var(--font-display);vertical-align:middle}
+.city-card.selected{box-shadow:inset 0 0 0 2.5px var(--primary);background:var(--card-2)}
+.city-card.selected .city-badge.on{background:var(--primary);color:var(--on-primary)}
+
 /* ───────── Konto + community-tips ───────── */
 /* Login-overlay (återanvänder .fb / .fb-card) */
 .auth-google{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;cursor:pointer;
