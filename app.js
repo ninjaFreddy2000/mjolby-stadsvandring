@@ -4,6 +4,9 @@ import { STORIES, EXTRA_IMAGES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile } from './challenges.js';
+import { initAuth, mountAuthProfile, shareApp } from './auth.js';
+import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
+         openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
 const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
@@ -102,6 +105,7 @@ const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
 let activeTab = 'home'; // bottenflik-meny
+let currentSheetId = null; // öppet stopp i detaljvyn (för omritning vid datauppdatering)
 const STAMP_KEY = 'mjolby_stamps_v1';
 const SAVED_KEY = 'mjolby_saved_v1';
 
@@ -225,6 +229,7 @@ async function init() {
   updateStampBadge();
   setupTeller();
   setupChallenges();
+  setupAuthTips();
 
   if ('serviceWorker' in navigator) {
     const hadController = !!navigator.serviceWorker.controller;
@@ -417,6 +422,7 @@ function buildFilters(){
 function openSheet(id){
   const e = DATA.find(x=>x.id===id);
   if (!e) return;
+  currentSheetId = id;
   const ty = TYPES[typeOf(e)];
   const st = stamps();
   const visited = st.has(id);
@@ -454,6 +460,7 @@ function openSheet(id){
       ${(lang==='en' && storyHtml)?`<p class="story-note">📖 ${t('story_note')}</p>`:''}
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
+      ${tipsActive() ? stopBlockHtml(id) : contribBlock(id)}
       ${offer?(()=>{ const m=metricsFor(id); return `<div class="offer">
         <b>🎁 Exempelerbjudande (sponsrat)</b><p>${offer}</p>
         <div class="offer-metrics">
@@ -486,6 +493,12 @@ function openSheet(id){
   if (pc) pc.onclick = ()=> startPhoto(pc.dataset.photo);
   const psh = $('#sheet-inner [data-share]');
   if (psh) psh.onclick = ()=> sharePhoto(psh.dataset.share);
+  if (tipsActive()) {
+    wireStopBlock($('#sheet-inner'), id);
+  } else {
+    const ca = $('#sheet-inner [data-contrib]');
+    if (ca) ca.onclick = ()=> openContribute(ca.dataset.contrib);
+  }
 
   // Sheet och sidopaneler är ömsesidigt uteslutande (telefonbredd)
   ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
@@ -985,6 +998,137 @@ function openFeedback(){
   };
 }
 
+/* ---------- Bidrag (användarinnehåll: foto + text) ---------- */
+const CONTRIB_KEY = 'mjolby_contribs_v1';
+const escapeHtml = s => String(s==null?'':s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function contribs(){ try { return JSON.parse(localStorage.getItem(CONTRIB_KEY) || '[]'); } catch(e){ return []; } }
+function saveContribs(a){ try { localStorage.setItem(CONTRIB_KEY, JSON.stringify(a)); } catch(e){ toast(lang==='en'?'Storage is full':'Minnet är fullt'); } }
+function addContrib(o){
+  const a = contribs();
+  a.push({ id:'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6), status:'pending', mine:true, ...o });
+  saveContribs(a);
+}
+function contribsForStop(id){ return contribs().filter(c=> c.stopId===id); }
+function myContribs(){ return contribs().filter(c=> c.mine); }
+function setContribStatus(cid, status){ const a=contribs(); const c=a.find(x=>x.id===cid); if(c){ c.status=status; saveContribs(a); } }
+
+// Optimerar och "förskönar" en bild i webbläsaren: nedskalning + lätt förbättring
+// (kontrast/mättnad/ljus) + JPEG-komprimering mot en storleksgräns → snyggare,
+// tydligare och liten i filstorlek så sidan inte blir seg.
+function optimizeImage(file, cb){
+  const img = new Image(), url = URL.createObjectURL(file);
+  img.onload = ()=>{
+    const ENH = 'contrast(1.06) saturate(1.09) brightness(1.02)';
+    const draw = (cw, ch)=>{
+      const c=document.createElement('canvas'); c.width=cw; c.height=ch;
+      const x=c.getContext('2d'); x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
+      if ('filter' in x) x.filter = ENH;
+      x.drawImage(img, 0, 0, cw, ch); return c;
+    };
+    let w=img.naturalWidth||img.width, h=img.naturalHeight||img.height;
+    const s=Math.min(1, 1280/Math.max(w,h)); w=Math.max(1,Math.round(w*s)); h=Math.max(1,Math.round(h*s));
+    const c=draw(w,h);
+    let q=0.85, full=c.toDataURL('image/jpeg', q);
+    while (full.length>360000 && q>0.45){ q=Math.round((q-0.1)*100)/100; full=c.toDataURL('image/jpeg', q); }
+    const ts=Math.min(1, 560/Math.max(w,h));
+    const thumb=draw(Math.max(1,Math.round(w*ts)), Math.max(1,Math.round(h*ts))).toDataURL('image/jpeg', 0.74);
+    URL.revokeObjectURL(url);
+    cb({ full, thumb, w, h, kb: Math.round(full.length*0.73/1024) });
+  };
+  img.onerror = ()=>{ URL.revokeObjectURL(url); toast(lang==='en'?'Could not read the image':'Kunde inte läsa bilden'); };
+  img.src = url;
+}
+
+// Sektion i detaljvyn: publicerade bidrag (+ egna väntande) och en Bidra-knapp
+function contribBlock(id){
+  const visible = contribsForStop(id).filter(c=> c.status==='approved' || (c.mine && c.status==='pending'));
+  const items = visible.map(c=>{
+    const pend = c.status==='pending';
+    const meta = [escapeHtml(c.credit), escapeHtml(c.year)].filter(Boolean).join(' · ');
+    return `<div class="contrib-item${pend?' pending':''}">
+      ${c.thumb?`<img class="contrib-img" src="${c.thumb}" alt="" loading="lazy">`:''}
+      <div class="contrib-body">
+        ${c.text?`<p>${escapeHtml(c.text)}</p>`:''}
+        <small>${meta}${pend?`${meta?' · ':''}<em>${t('contrib_pending')}</em>`:''}</small>
+      </div></div>`;
+  }).join('');
+  return `<div class="contrib-section">
+    ${visible.length?`<div class="contrib-h">🧺 ${t('contrib_section')}</div>${items}`:''}
+    <button class="contrib-add" data-contrib="${id}">➕ ${t('contribute')}</button>
+  </div>`;
+}
+
+function openContribute(stopId){
+  const e = DATA.find(x=>x.id===stopId); if (!e) return;
+  const card = $('#contrib-card');
+  let pending = null;
+  const fileInput = document.createElement('input');
+  fileInput.type='file'; fileInput.accept='image/*';
+  card.innerHTML = `
+    <button class="fb-x" id="contrib-x" aria-label="Stäng">&times;</button>
+    <h3>${t('contribute_to')} ${escapeHtml(e.name)}</h3>
+    <p class="fb-sub">${t('contrib_sub')}</p>
+    <div class="contrib-photo-area" id="contrib-photo-area"></div>
+    <button class="fb-cta" id="contrib-photo-btn" type="button">${t('contrib_addphoto')}</button>
+    <textarea class="fb-text" id="contrib-text" rows="4" placeholder="${t('contrib_text_ph')}" aria-label="${t('contrib_text_ph')}"></textarea>
+    <input class="fb-email" id="contrib-year" placeholder="${t('contrib_year')}" aria-label="${t('contrib_year')}">
+    <input class="fb-email" id="contrib-credit" placeholder="${t('contrib_credit')}" aria-label="${t('contrib_credit')}">
+    <button class="cta" id="contrib-send" style="margin:4px 0 0">${t('contrib_send')}</button>`;
+  $('#contribute').setAttribute('aria-hidden','false');
+  lastFocus = document.activeElement;
+  setTimeout(()=>{ const x=$('#contrib-x'); if(x) x.focus(); }, 30);
+  const close = ()=>{ $('#contribute').setAttribute('aria-hidden','true'); restoreFocus(); };
+  $('#contrib-x').onclick = close;
+  $('#contrib-photo-btn').onclick = ()=> fileInput.click();
+  fileInput.onchange = ()=>{
+    const f = fileInput.files && fileInput.files[0]; if(!f) return;
+    $('#contrib-photo-area').innerHTML = `<div class="contrib-optimizing">${t('optimizing')}</div>`;
+    optimizeImage(f, opt=>{
+      pending = opt;
+      $('#contrib-photo-area').innerHTML = `<div class="contrib-preview"><img src="${opt.thumb}" alt=""><span class="contrib-kb">~${opt.kb} kB</span></div>`;
+      $('#contrib-photo-btn').textContent = t('contrib_changephoto');
+    });
+  };
+  $('#contrib-send').onclick = ()=>{
+    const text = $('#contrib-text').value.trim();
+    if (!text && !pending){ toast(t('contrib_need')); return; }
+    addContrib({ stopId, text, photo: pending?pending.full:null, thumb: pending?pending.thumb:null,
+      year: $('#contrib-year').value.trim(), credit: $('#contrib-credit').value.trim(), lang });
+    card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">💛</div><p>${t('contrib_thanks')}</p>
+      <button class="cta" id="contrib-done">${lang==='en'?'Close':'Stäng'}</button></div>`;
+    $('#contrib-done').onclick = ()=>{ close(); if ($('#sheet').getAttribute('aria-hidden')==='false') openSheet(stopId); };
+  };
+}
+
+// Granska-demo (riktiga roller/godkännande bor i cell-backenden, Spår B)
+function openReview(){
+  const card = $('#review-card');
+  const render = ()=>{
+    const pending = contribs().filter(c=> c.status==='pending');
+    const items = pending.map(c=>{
+      const e = DATA.find(x=>x.id===c.stopId);
+      const meta = [escapeHtml(c.credit), escapeHtml(c.year)].filter(Boolean).join(' · ');
+      return `<div class="review-item">
+        ${c.thumb?`<img class="contrib-img" src="${c.thumb}" alt="">`:''}
+        <div class="contrib-body"><b>${e?escapeHtml(e.name):''}</b>${c.text?`<p>${escapeHtml(c.text)}</p>`:''}<small>${meta}</small></div>
+        <div class="review-actions">
+          <button class="rev-ok" data-ok="${c.id}">${t('approve')}</button>
+          <button class="rev-no" data-no="${c.id}">${t('reject')}</button>
+        </div></div>`;
+    }).join('');
+    card.innerHTML = `<button class="fb-x" id="review-x" aria-label="Stäng">&times;</button>
+      <h3>${t('review')}</h3><p class="fb-sub">${t('review_sub')}</p>
+      ${items || `<div class="screen-empty">${t('review_empty')}</div>`}`;
+    $('#review-x').onclick = ()=>{ $('#review').setAttribute('aria-hidden','true'); restoreFocus(); };
+    card.querySelectorAll('[data-ok]').forEach(b=> b.onclick=()=>{ setContribStatus(b.dataset.ok,'approved'); toast('✓ '+t('approve')); render(); });
+    card.querySelectorAll('[data-no]').forEach(b=> b.onclick=()=>{ setContribStatus(b.dataset.no,'rejected'); render(); });
+  };
+  $('#review').setAttribute('aria-hidden','false');
+  lastFocus = document.activeElement;
+  render();
+  setTimeout(()=>{ const x=$('#review-x'); if(x) x.focus(); }, 30);
+}
+
 function renderSaved(){
   const sv=saved(), st=stamps();
   const list = DATA.filter(e=> sv.has(e.id));
@@ -996,10 +1140,19 @@ function renderSaved(){
   $('#screen').querySelectorAll('.stop-row[data-id]').forEach(r=> r.onclick=()=> openSheet(r.dataset.id));
 }
 function renderProfil(){
-  const set=stamps(), sv=saved(), total=ENTRIES.length;
+  const on = tipsActive();
+  const set=stamps(), sv=saved(), total=ENTRIES.length, mine=myContribs();
   const pct= total? Math.round(set.size/total*100):0;
-  const grid = ENTRIES.map(e=>{const on=set.has(e.id);return `<div class="stamp ${on?'on':''}" title="${e.name}">${on?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
+  const grid = ENTRIES.map(e=>{const got=set.has(e.id);return `<div class="stamp ${got?'on':''}" title="${e.name}">${got?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
+  // Den lokala "bidragsgivare"-demobrickan visas bara i offline-läget (utan backend);
+  // med riktiga konton ersätts den av kontokortet + nivå-systemet.
+  const badge = (!on && mine.length) ? `<div class="contributor-badge">
+      <span class="cb-medal">🎖️</span>
+      <div><b>${t('contributor_badge')}</b><small>${t('contributor_sub')}</small>
+        <span class="cb-count">${mine.length} ${t('my_contribs')}</span></div>
+    </div>` : '';
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_profile')}</h2></div>
+    ${badge}
     <div class="prog-stat">
       <div class="prog-box"><b>${set.size}</b><small>${t('prof_visited')}</small></div>
       <div class="prog-box"><b>${pct}%</b><small>${t('prog_city')}</small></div>
@@ -1008,11 +1161,17 @@ function renderProfil(){
     <div class="bar"><i style="width:${pct}%"></i></div>
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
-    <button class="om-link" id="to-sponsor2" style="margin-top:18px">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>
+    ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
+    <button class="om-link" id="to-sponsor2">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>
     <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>`;
+  const tr=$('#to-review'); if (tr) tr.onclick = openReview;
   $('#to-sponsor2').onclick = openSponsor;
   $('#fb-prof').onclick = openFeedback;
   mountChallengeProfile($('#screen'));
+  if (on){
+    mountTipsProfile($('#screen'), { onChange: renderProfil });
+    mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
+  }
 }
 function toggleSave(id){
   const set=saved();
@@ -1090,10 +1249,11 @@ function focusInto(sel){
   setTimeout(()=>{ try { target.focus({preventScroll:true}); } catch(e){} }, 30);
 }
 function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focus({preventScroll:true}); } catch(e){} } lastFocus = null; }
+function markFocus(){ lastFocus = document.activeElement; }
 function openPanel(sel){ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
 function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
 function closeTopDialog(){
-  const order = ['#challenge-task','#feedback','#quiz','#teller','#sheet','#challenge-builder','#challenge-play','#challenge-results','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
+  const order = ['#auth','#review','#contribute','#challenge-task','#feedback','#quiz','#teller','#sheet','#challenge-builder','#challenge-play','#challenge-results','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
   for (const sel of order){
     const el = $(sel);
     if (el && el.getAttribute('aria-hidden') === 'false'){
@@ -1124,6 +1284,9 @@ function wireUi(){
   $('#quiz').onclick = e=>{ if(e.target.id==='quiz') $('#quiz').setAttribute('aria-hidden','true'); };
   $('#teller').onclick = e=>{ if(e.target.id==='teller'){ $('#teller').setAttribute('aria-hidden','true'); restoreFocus(); } };
   $('#feedback').onclick = e=>{ if(e.target.id==='feedback'){ $('#feedback').setAttribute('aria-hidden','true'); restoreFocus(); } };
+  $('#contribute').onclick = e=>{ if(e.target.id==='contribute'){ $('#contribute').setAttribute('aria-hidden','true'); restoreFocus(); } };
+  $('#review').onclick = e=>{ if(e.target.id==='review'){ $('#review').setAttribute('aria-hidden','true'); restoreFocus(); } };
+  $('#auth').onclick = e=>{ if(e.target.id==='auth'){ $('#auth').setAttribute('aria-hidden','true'); restoreFocus(); } };
 
   // Tangentbord: Esc stänger översta dialogen; Enter/Space aktiverar list-rader
   document.addEventListener('keydown', e=>{
@@ -1147,6 +1310,24 @@ function setupChallenges(){
     locate, fileToThumb, t,
     onPosition: cb => posSubscribers.push(cb),
   });
+}
+
+/* ---------- Konton + community-tips (auth.js + tips.js) ---------- */
+function setupAuthTips(){
+  const c = {
+    get DATA(){ return DATA; }, get ENTRIES(){ return ENTRIES; },
+    get map(){ return map; }, get lang(){ return lang; },
+    CAT_LABEL, t, toast, hasCoords,
+    openSheet, optimizeImage,
+    markFocus, restoreFocus,
+    // Rita om öppen stopp-vy/profil när färska community-tips laddats
+    onTipsLoaded(){
+      const sh=$('#sheet');
+      if (sh && sh.getAttribute('aria-hidden')==='false' && currentSheetId) openSheet(currentSheetId);
+      if (activeTab==='profile') renderProfil();
+    },
+  };
+  initAuth(c).then(()=> initTips(c));
 }
 
 init();

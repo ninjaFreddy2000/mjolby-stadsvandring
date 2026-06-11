@@ -436,6 +436,43 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .fb-thanks-emoji{font-size:46px;margin-bottom:8px}
 .fb-thanks p{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:16px}
 
+/* ── Bidrag (UGC) ──────────────────────────────────────────────── */
+.contrib-section{margin:6px 0 18px;border-top:1px dashed var(--line);padding-top:14px}
+.contrib-h{font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:10px}
+.contrib-item{display:flex;gap:11px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-md);padding:10px;margin-bottom:9px}
+.contrib-item.pending{background:var(--honey-soft);border-color:#EAD7A6}
+.contrib-img{width:64px;height:64px;flex:none;border-radius:var(--r-sm);object-fit:cover;background:var(--forest-soft)}
+.contrib-body{min-width:0;flex:1}
+.contrib-body p{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin-bottom:4px}
+.contrib-body small{font-size:11.5px;color:var(--ink-3)}
+.contrib-body small em{color:#8a5a00;font-style:normal;font-weight:700}
+.contrib-add{width:100%;border:1.5px dashed var(--forest);background:var(--forest-soft);color:#3a5e32;
+  border-radius:var(--r-md);padding:12px;font-family:var(--font-display);font-weight:600;font-size:14px;cursor:pointer;margin-top:4px}
+.contrib-add:active{transform:scale(.99)}
+
+/* Bidra-formulär */
+.contrib-photo-area:empty{display:none}
+.contrib-optimizing{padding:14px;text-align:center;color:var(--ink-3);font-size:13px;background:var(--card-2);border-radius:var(--r-md);margin-bottom:10px}
+.contrib-preview{position:relative;margin-bottom:10px}
+.contrib-preview img{width:100%;max-height:220px;object-fit:cover;border-radius:var(--r-md);display:block;border:1px solid var(--line)}
+.contrib-kb{position:absolute;right:9px;bottom:9px;font-size:10.5px;font-weight:700;color:#fff;background:rgba(47,42,32,.55);padding:3px 8px;border-radius:100px;backdrop-filter:blur(3px)}
+
+/* Bidragsgivar-badge */
+.contributor-badge{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--honey-soft),var(--forest-soft));
+  border:1px solid #EAD7A6;border-radius:var(--r-lg);padding:14px 16px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.cb-medal{font-size:38px;flex:none;filter:drop-shadow(0 4px 8px rgba(60,40,20,.25))}
+.contributor-badge b{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);display:block}
+.contributor-badge small{font-size:12px;color:var(--ink-2);line-height:1.4;display:block;margin-top:1px}
+.cb-count{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;color:#8a5a00;background:var(--card);border-radius:100px;padding:2px 10px}
+
+/* Granska-vy */
+.review-item{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:11px;margin-bottom:10px}
+.review-item .contrib-body b{font-family:var(--font-display);font-weight:600;font-size:14px;display:block;margin-bottom:3px}
+.review-actions{display:flex;flex-direction:column;gap:6px;flex:none}
+.rev-ok,.rev-no{border:none;border-radius:var(--r-sm);padding:7px 12px;font-family:var(--font-body);font-weight:700;font-size:12.5px;cursor:pointer}
+.rev-ok{background:var(--forest);color:#fff}
+.rev-no{background:var(--card-2);color:var(--ink-2)}
+
 @media(min-width:760px){ .header-hero h1{font-size:24px} }
 
 /* ───────────────────────────────────────────────────────────────
@@ -593,3 +630,78 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .chl-name small{display:block;font-size:11px;color:var(--ink-3);font-weight:600}
 .chl-score{flex:none;font-size:20px;font-weight:700;color:var(--primary);font-family:var(--font-display)}
 .cr-pick{margin-bottom:10px}
+
+/* ───────── Konto + community-tips ───────── */
+/* Login-overlay (återanvänder .fb / .fb-card) */
+.auth-google{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;cursor:pointer;
+  border:1.5px solid var(--line-strong);background:var(--card);color:var(--ink);font-weight:700;
+  font-family:var(--font-display);font-size:14.5px;padding:11px;border-radius:var(--r-md);margin-bottom:12px}
+.auth-google .g-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+  color:#fff;background:conic-gradient(from -45deg,#ea4335,#fbbc05,#34a853,#4285f4,#ea4335);font-size:13px}
+.auth-or{display:flex;align-items:center;gap:10px;color:var(--ink-3);font-size:12px;font-weight:600;margin:4px 0 12px}
+.auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
+.auth-tabs{margin-bottom:10px}
+.auth-fine{font-size:12.5px;color:var(--ink-3);margin:8px 2px 0;min-height:1em}
+.auth-fine.err{color:var(--primary-2);font-weight:600}
+.auth-fine.ok{color:var(--forest)}
+
+/* Kontokort i profilen */
+.auth-profile{margin-bottom:16px}
+.auth-card-cta{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg,16px);padding:18px;text-align:center}
+.auth-card-cta .acc-emoji{font-size:30px}
+.auth-card-cta b{display:block;font-family:var(--font-display);font-size:17px;margin:4px 0 2px}
+.auth-card-cta.soon{opacity:.85}
+.auth-card-cta .cta{margin-top:10px}
+.acc-head{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-lg,16px);padding:14px 16px}
+.acc-av{width:48px;height:48px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:24px;
+  background:linear-gradient(135deg,var(--honey-soft),var(--forest-soft))}
+.acc-id{min-width:0}
+.acc-id b{display:block;font-family:var(--font-display);font-size:17px;line-height:1.2}
+.acc-id small{display:block;font-size:12px;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tier-badge{display:inline-block;margin-top:4px;font-size:12px;font-weight:700;color:var(--ink-2);
+  background:var(--card-2);border:1px solid var(--line);padding:2px 9px;border-radius:var(--r-pill)}
+.acc-stats{margin-top:12px}
+.tier-hint{font-size:12.5px;color:var(--ink-2);background:var(--card-2);border:1px dashed var(--line-strong);
+  border-radius:var(--r-md);padding:9px 12px;margin:10px 0 0}
+.acc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.acc-actions .om-link{flex:1;min-width:130px}
+
+/* "Tipsa & granska"-sektion */
+.tips-profile{margin-top:18px}
+.tips-profile .cta{width:100%}
+.tips-profile .fb-cta{margin-top:10px}
+.review-lock{margin-top:10px;font-size:13px;color:var(--ink-3);background:var(--card-2);
+  border:1px solid var(--line);border-radius:var(--r-md);padding:10px 13px;text-align:center}
+.tp-mine{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.tp-row{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:9px 13px}
+.tp-meta{flex:1;min-width:0}
+.tp-meta b{display:block;font-size:14px;font-family:var(--font-display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tp-meta small{font-size:11.5px;color:var(--ink-3)}
+.tp-status{flex:none;font-size:11px;font-weight:700;padding:3px 9px;border-radius:var(--r-pill);background:var(--card-2);color:var(--ink-2)}
+.tp-status.s-published{background:var(--forest-soft);color:#2f4a27}
+.tp-status.s-rejected{background:#f3d9d9;color:#7a2222}
+.tp-status.s-pending{background:var(--honey-soft);color:#5a4400}
+
+/* Tips-formulär: kind-väljare */
+.tip-kinds{display:flex;flex-direction:column;gap:9px;margin-bottom:6px}
+.tip-kind{display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer;background:var(--card);
+  border:1.5px solid var(--line);border-radius:var(--r-md);padding:13px 15px;color:var(--ink)}
+.tip-kind:hover{border-color:var(--primary)}
+.tip-kind span{font-size:24px;flex:none}
+.tip-kind b{display:block;font-family:var(--font-display);font-size:15px}
+.tip-kind small{font-size:12px;color:var(--ink-3)}
+.tip-coords{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 13px;margin:4px 0}
+.tip-coords #tip-coord-txt{font-weight:700;font-size:13.5px}
+.tip-coords .om-link{margin:6px 0 2px}
+.tip-coords small{display:block;font-size:11.5px}
+.tip-stoplist{max-height:46vh;overflow-y:auto}
+
+/* Granska-kö */
+.rev-kind{display:block;color:var(--ink-3);font-size:11.5px;margin-bottom:2px}
+.rev-ok.cast{background:var(--forest);color:#fff;border-color:var(--forest)}
+.rev-no.cast{background:var(--primary);color:#fff;border-color:var(--primary)}
+.rev-admin{cursor:pointer;font-size:12px;font-weight:700;border:1.5px solid var(--lake);color:var(--lake);
+  background:var(--card);border-radius:var(--r-pill);padding:5px 11px}
+.rev-admin.danger{border-color:var(--primary);color:var(--primary)}

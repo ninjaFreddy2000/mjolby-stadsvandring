@@ -1,0 +1,44 @@
+# Supabase CLI config for the Stadsvandring community-tips backend.
+# Local dev:  supabase start && supabase db reset   (applies migrations)
+# Hosted:     supabase link --project-ref <ref> && supabase db push
+project_id = "stadsvandring"
+
+[api]
+port = 55321
+
+[db]
+port = 55322
+shadow_port = 55320
+major_version = 15
+
+[studio]
+port = 55323
+
+[inbucket]
+port = 55324
+
+[analytics]
+enabled = false
+
+[auth]
+# Site URL + redirects for the live PWA. Add your local dev URL too if needed.
+site_url = "https://ninjafreddy2000.github.io/mjolby-stadsvandring/"
+additional_redirect_urls = [
+  "https://ninjafreddy2000.github.io/mjolby-stadsvandring/",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173"
+]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+
+# Google OAuth — fill GOOGLE_CLIENT_ID / GOOGLE_SECRET in the dashboard (or env for local).
+[auth.external.google]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GOOGLE_SECRET)"
+
+[storage]
+enabled = true
