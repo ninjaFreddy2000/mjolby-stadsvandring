@@ -52,7 +52,7 @@ function dec(s){
 }
 
 /* ---------- diverse helpers ---------- */
-const esc = (s='') => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const esc = (s='') => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const genId = () => 'c_' + Math.random().toString(36).slice(2,8);
 const baseUrl = () => location.origin + location.pathname;
 const entryById = (id) => ctx.DATA.find(x => x.id === id);

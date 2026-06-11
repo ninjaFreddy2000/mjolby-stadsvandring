@@ -1,4 +1,10 @@
-const CACHE = 'mjolby-stadsvandring-v18';
+const CACHE = 'mjolby-stadsvandring-v19';
+// Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
+// shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
+// till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
+const RUNTIME = 'mjolby-runtime-v1';
+const RUNTIME_MAX = 250;   // max antal cachade rutor/foton; äldsta vräks (FIFO)
+
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
   './challenges.js', './config.js', './auth.js', './tips.js', './vendor/qrcode.js',
@@ -12,10 +18,20 @@ self.addEventListener('install', e=>{
 });
 
 self.addEventListener('activate', e=>{
+  // Behåll aktuell shell-cache + runtime-cachen; radera allt annat (gamla versioner).
   e.waitUntil(caches.keys().then(keys=>
-    Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))
+    Promise.all(keys.filter(k=>k!==CACHE && k!==RUNTIME).map(k=>caches.delete(k)))
   ).then(()=>self.clients.claim()));
 });
+
+// Trimma en cache till maxantal poster. caches.keys() ger posterna i
+// insättningsordning, så slice(0, n) är de äldsta → vräk dem (FIFO).
+async function trimCache(name, max){
+  const c = await caches.open(name);
+  const keys = await c.keys();
+  if (keys.length <= max) return;
+  await Promise.all(keys.slice(0, keys.length - max).map(k=>c.delete(k)));
+}
 
 // Is this our own app code/markup? (must always be fresh so design/code updates show)
 function isShell(url){
@@ -40,12 +56,14 @@ self.addEventListener('fetch', e=>{
     return;
   }
 
-  // Everything else (map tiles, photos, fonts, Leaflet CDN) → cache-first + background refresh.
+  // Everything else (map tiles, photos, fonts, Leaflet CDN) → cache-first + background
+  // refresh, into the SIZE-CAPPED runtime cache so it can never grow without bound.
   e.respondWith(
     caches.match(req).then(cached=>{
       const net = fetch(req).then(res=>{
         if (res && res.status===200 && (req.url.startsWith(self.location.origin) || req.url.includes('tile.openstreetmap'))){
-          const copy = res.clone(); caches.open(CACHE).then(c=>c.put(req, copy));
+          const copy = res.clone();
+          caches.open(RUNTIME).then(c=>c.put(req, copy).then(()=>trimCache(RUNTIME, RUNTIME_MAX)));
         }
         return res;
       }).catch(()=>cached);

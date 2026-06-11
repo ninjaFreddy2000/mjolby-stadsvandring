@@ -4,6 +4,18 @@ Logg över vad som görs, fel som uppstår och hur de löses. Senaste överst.
 
 ---
 
+## 2026-06-11 — Säkerhetsgenomgång (A–H) + nattligt underhåll + hälsokontroll
+
+Heltäckande säkerhetskontroll uppdelad i 8 delmoment (A–H) — alla genomgångna. Backend-RLS
+och XSS-yta visade sig sunda/rena; fynd & fixar: Storage-bucket MIME/storleksgräns, CSP tillagd
+(verifierad i browser), `challenges.js esc` escapar nu `'`, server-side `display_name`-tak,
+`prod_home.png` borttaget. Nattlig "anti-clogging" byggd: `nightly_maintenance()` + pg_cron
+(03:00) + körningslogg, samt SW-cachetak (v18→v19). `scripts/healthcheck.sh` tillagt.
+**Full detalj + bugg-/fixlogg: [`security-maintenance-log.md`](security-maintenance-log.md).**
+Kvar: validera migrationen (`supabase db reset`), pinna esm.sh-version, ev. delmoment-finlir.
+
+---
+
 ## 2026-06-11 — Konton: skapa / logga in / återställ lösenord (+ E2E-test)
 
 **Mål:** Fungerande skapa-konto, inloggning och lösenordsåterställning, isolerat från andra
