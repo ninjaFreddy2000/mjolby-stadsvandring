@@ -648,6 +648,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .auth-or{display:flex;align-items:center;gap:10px;color:var(--ink-3);font-size:12px;font-weight:600;margin:4px 0 12px}
 .auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
 .auth-tabs{margin-bottom:10px}
+.auth-link{display:block;margin:10px auto 0;background:none;border:none;cursor:pointer;
+  color:var(--lake);font-weight:700;font-size:13px;text-decoration:underline;font-family:var(--font-body)}
 .auth-fine{font-size:12.5px;color:var(--ink-3);margin:8px 2px 0;min-height:1em}
 .auth-fine.err{color:var(--primary-2);font-weight:600}
 .auth-fine.ok{color:var(--forest)}

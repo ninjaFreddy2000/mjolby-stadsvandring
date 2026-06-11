@@ -1301,6 +1301,118 @@
    ],
    "sources": [],
    "city": "Luleå"
+  },
+  {
+   "id": "og-norra-vi-kyrka",
+   "name": "Norra Vi kyrka",
+   "city": "Norra Vi",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.88498,
+    "lng": 15.35044
+   },
+   "era": "",
+   "summary": "Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.",
+   "description": "Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet. Den stenkyrka som föregick nuvarande kyrka uppfördes sannolikt på 1200-talet. Den var invigd och helgad åt S:t Laurentius. Stenkyrkan revs i slutet av 1760-talet och nuvarande kyrka invigdes 1 januari 1775. Gravkoret på nuvarande kyrkas södra långsida, von Schaarska gravkoret, är byggdes i början av 1700-talet. Enklast börjar du din vandring vid Norra Vi kyrka och församlingshemmet, där parkering finns.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-korpberget",
+   "name": "Korpberget",
+   "city": "Norra Vi",
+   "category": "ort",
+   "coordinates": {
+    "lat": 57.88318,
+    "lng": 15.33066
+   },
+   "era": "",
+   "summary": "Härifrån har ni en vacker vy över Norra Vi.",
+   "description": "Härifrån har ni en vacker vy över Norra Vi. Namnet Korpberget har förekommit sedan ett par hundra år tillbaka i tiden. Det liksom Falkberget, 600-700 meter söder ut, har säkerligen fått sitt namn p.g.a. boplats för respektive fågelarter. På den fortsatta stigen finns ett stenrös till höger, där en i kärlek försmådd dräng i svunnen tid lär ha tagit livet av sig. Längre fram kommer ni till den s.k. pestkyrkogården.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-skuru",
+   "name": "Skuru",
+   "city": "Norra Vi",
+   "category": "ort",
+   "coordinates": {
+    "lat": 57.87736,
+    "lng": 15.34242
+   },
+   "era": "",
+   "summary": "Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.",
+   "description": "Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet. Gården är gammal. År 1374 skänkte Ingeborg Magnusdotter på Vi gård (Ribbingshov) 1/3 av torpet Skuru till kyrkan.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-norra-vi-vandringsled",
+   "name": "Norra Vi vandringsled",
+   "city": "Norra Vi",
+   "category": "ort",
+   "coordinates": {
+    "lat": 57.8835,
+    "lng": 15.342
+   },
+   "era": "",
+   "summary": "Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.",
+   "description": "Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning. Leden länkades senare till Östgötaleden och är nu en del av den. Leden är lätt tillgänglig från landsvägen eller som avstickare för dig som vandrar längs Östgötaleden. Leden är mycket kuperad med flera fina utsikter. Orangefärgade stolpar märker ut leden. Historiska platser är skyltade med texter och QR-koder med länkar till berättelser på Youtube. Leden är i sin längsta sträckning ca 9 km men kan kortas av vid tre punkter för kortare promenader. Utan paus är vandringstiden ca 1.5 timme. Räkna med 2-4 timmar om du vandrar i lugn takt med paus för fika eller lunch.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-ostgotaleden",
+   "name": "Östgötaleden",
+   "city": "Kinda",
+   "category": "ort",
+   "coordinates": {
+    "lat": 58.04674,
+    "lng": 15.36642
+   },
+   "era": "",
+   "summary": "Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!",
+   "description": "Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform! Så planera in vandring i kalendern och boka gärna en vistelse hos någon av våra fantastiska aktörer som står redo att ge er en oförglömlig vandringsupplevelse.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-mullsjo",
+   "name": "Mullsjö",
+   "city": "Mullsjö",
+   "category": "ort",
+   "coordinates": {
+    "lat": 57.91681,
+    "lng": 13.88047
+   },
+   "era": "",
+   "summary": "I Mullsjö finns det plats för det som är viktigt.",
+   "description": "I Mullsjö finns det plats för det som är viktigt. Här finns inga stora shoppingcenter och lekland men istället finns utrymme för friluftsliv och mer tid tillsammans. Koppla av vid badplatser utan trängsel, ge dig ut på äventyr i vandringsleder och skidspår eller upplev unika bruksmiljöer. Välkommen att ta plats i Mullsjö.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
+  },
+  {
+   "id": "og-store-mosse-nationalpark",
+   "name": "Store Mosse nationalpark",
+   "city": "Värnamo",
+   "category": "ort",
+   "coordinates": {
+    "lat": 57.30042,
+    "lng": 13.92827
+   },
+   "era": "",
+   "summary": "En kort bit från Värnamo ligger Store Mosse nationalpark, ett stort och öppet naturområde som bjuder på lugn och stillhet.",
+   "description": "En kort bit från Värnamo ligger Store Mosse nationalpark, ett stort och öppet naturområde som bjuder på lugn och stillhet. Här kan du vandra längs spångade leder, ta dig upp i utsiktstorn eller bara njuta av naturen i egen takt. Det är en perfekt plats för dig som vill komma bort från stadens tempo och andas lite frisk luft.",
+   "key_facts": [],
+   "sources": [],
+   "source_note": "Importerad och redaktionellt bearbetad via Platsdatabasen (scraper)."
   }
  ]
 }

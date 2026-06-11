@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v17';
+const CACHE = 'mjolby-stadsvandring-v18';
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
   './challenges.js', './config.js', './auth.js', './tips.js', './vendor/qrcode.js',

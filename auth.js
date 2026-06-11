@@ -47,14 +47,49 @@ export async function initAuth(context) {
   state.ready = true;
   emit();
 
-  supa.auth.onAuthStateChange(async (_evt, session) => {
+  supa.auth.onAuthStateChange(async (evt, session) => {
     const next = session ? session.user : null;
     const changed = (next && next.id) !== (state.user && state.user.id);
     state.user = next;
     await refreshProfile();
     emit();
+    // Användaren klickade på återställningslänken i mejlet → låt hen sätta nytt lösenord
+    if (evt === 'PASSWORD_RECOVERY') { openSetNewPassword(); return; }
     if (changed && next && ctx && ctx.toast) ctx.toast('💛 ' + t('auth_signed_in'));
   });
+}
+
+// Visas när användaren kommit in via en återställningslänk (PASSWORD_RECOVERY).
+export function openSetNewPassword() {
+  if (!supa) return;
+  const overlay = document.querySelector('#auth');
+  const card = document.querySelector('#auth-card');
+  const en = ctx && ctx.lang === 'en';
+  const msg = (txt, ok) => { const m = card.querySelector('#np-msg'); if (m) { m.textContent = txt; m.className = 'auth-fine' + (ok ? ' ok' : txt ? ' err' : ''); } };
+  function render() {
+    card.innerHTML = `<button class="fb-x" id="np-x" aria-label="${en ? 'Close' : 'Stäng'}">&times;</button>
+      <h3>${t('auth_new_pw_title')}</h3>
+      <p class="fb-sub">${t('auth_new_pw_sub')}</p>
+      <input class="fb-email" id="np-pw" type="password" autocomplete="new-password" placeholder="${t('auth_pw_ph')}" aria-label="${t('auth_pw_ph')}">
+      <button class="cta" id="np-save" style="margin:6px 0 0">${t('auth_new_pw_save')}</button>
+      <p class="auth-fine" id="np-msg"></p>`;
+    card.querySelector('#np-x').onclick = () => { overlay.setAttribute('aria-hidden', 'true'); if (ctx && ctx.restoreFocus) ctx.restoreFocus(); };
+    card.querySelector('#np-save').onclick = save;
+    setTimeout(() => { const e = card.querySelector('#np-pw'); if (e) e.focus(); }, 30);
+  }
+  async function save() {
+    const pw = (card.querySelector('#np-pw') || {}).value;
+    if (!pw || pw.length < 6) { msg(t('auth_pw_short'), false); return; }
+    msg(t('auth_working'), true);
+    const { error } = await supa.auth.updateUser({ password: pw });
+    if (error) { msg(error.message, false); return; }
+    await refreshProfile(); emit();
+    overlay.setAttribute('aria-hidden', 'true'); if (ctx && ctx.restoreFocus) ctx.restoreFocus();
+    if (ctx && ctx.toast) ctx.toast(t('auth_pw_updated'));
+  }
+  overlay.setAttribute('aria-hidden', 'false');
+  if (ctx && ctx.markFocus) ctx.markFocus();
+  render();
 }
 
 export async function refreshProfile() {
@@ -128,11 +163,13 @@ export function openLogin() {
         ${tabs}
         ${body}
         <button class="cta" id="auth-submit" style="margin:6px 0 0">${submitLabel}</button>
+        ${mode === 'password' ? `<button class="auth-link" id="auth-forgot" type="button">${t('auth_forgot')}</button>` : ''}
         <p class="auth-fine" id="auth-msg"></p>`;
       card.querySelector('#auth-x').onclick = () => close(false);
       card.querySelector('#auth-google').onclick = googleLogin;
       card.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode = b.dataset.mode; render(); });
       card.querySelector('#auth-submit').onclick = submit;
+      const fp = card.querySelector('#auth-forgot'); if (fp) fp.onclick = forgot;
       setTimeout(() => { const x = card.querySelector('#auth-x'); if (x) x.focus(); }, 30);
     }
 
@@ -145,7 +182,7 @@ export function openLogin() {
       msg(t('auth_redirecting'), true);
       const { error } = await supa.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: SHARE_URL },
+        options: { redirectTo: location.origin },
       });
       if (error) msg(error.message, false);
     }
@@ -158,7 +195,7 @@ export function openLogin() {
       btn.disabled = true; msg(t('auth_working'), true);
       try {
         if (mode === 'magic') {
-          const { error } = await supa.auth.signInWithOtp({ email, options: { emailRedirectTo: SHARE_URL } });
+          const { error } = await supa.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin } });
           if (error) throw error;
           card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
             <p>${t('auth_magic_sent')}</p>
@@ -167,7 +204,7 @@ export function openLogin() {
           return;
         }
         if (mode === 'signup') {
-          const { data, error } = await supa.auth.signUp({ email, password: pw, options: { emailRedirectTo: SHARE_URL } });
+          const { data, error } = await supa.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.origin } });
           if (error) throw error;
           if (data.session) { close(true); return; }     // confirmations off → signed in
           card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
@@ -183,6 +220,18 @@ export function openLogin() {
         btn.disabled = false;
         msg(e.message || String(e), false);
       }
+    }
+
+    async function forgot() {
+      const email = (card.querySelector('#auth-email') || {}).value;
+      if (!email || !email.includes('@')) { msg(t('auth_bad_email'), false); return; }
+      msg(t('auth_working'), true);
+      const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo: location.origin });
+      if (error) { msg(error.message, false); return; }
+      card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
+        <p>${t('auth_reset_sent')}</p>
+        <button class="cta" id="auth-done">${ctx && ctx.lang === 'en' ? 'Close' : 'Stäng'}</button></div>`;
+      card.querySelector('#auth-done').onclick = () => close(false);
     }
 
     overlay.setAttribute('aria-hidden', 'false');
