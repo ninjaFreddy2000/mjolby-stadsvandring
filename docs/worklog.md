@@ -4,6 +4,25 @@ Logg över vad som görs, fel som uppstår och hur de löses. Senaste överst.
 
 ---
 
+## 2026-06-12 — Productionisering: vendor:ade beroenden + Vercel-headers
+
+Inför lansering (egen domän, ~1000 användare): tog bort all tredjeparts-CDN i runtime.
+`supabase-js` (UMD `@2.108.1`) och Leaflet vendor:ades lokalt (`vendor/`), `config.js`
+använder nu `window.supabase` istället för dynamisk esm.sh-import. CSP skärpt till
+`script-src 'self'`. La `vercel.json` med riktiga säkerhets-headers (CSP/HSTS/`frame-ancestors`/
+`X-Frame-Options` m.m.) som GitHub Pages inte kan sätta. SW v19→v20.
+
+**Fel & lösningar:**
+- *esm.sh `?bundle` var inte självständig:* gav en 178-bytes stub som re-exporterar från esm.sh
+  i runtime (importerar `/node/buffer.mjs` m.m.) → oanvändbar vendor:ad. Löste det med jsdelivrs
+  **UMD**-build (`dist/umd/supabase.js`, 203 kB, helt självständig, sätter `window.supabase`).
+- Verifierat i browser-preview: Leaflet + OSM-rutor + fonts laddar, `window.supabase.createClient`
+  instansierar en klient (`.auth`/`.from`), **0 CSP-fel** med `script-src 'self'`.
+
+Go-live-checklista (Supabase-koppling, domän, OAuth, mejl): se `security-maintenance-log.md` §8.
+
+---
+
 ## 2026-06-11 — Säkerhetsgenomgång (A–H) + nattligt underhåll + hälsokontroll
 
 Heltäckande säkerhetskontroll uppdelad i 8 delmoment (A–H) — alla genomgångna. Backend-RLS

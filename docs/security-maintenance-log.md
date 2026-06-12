@@ -97,7 +97,7 @@ Snabb maskinell genomlysning innan djupgranskning:
 | 2026-06-11 | A | Info (ej bugg) | Granskare (vote_weight>0) kan via `tips_read_privileged` läsa *alla* tips (även rejected/withdrawn i alla städer), inte bara köns pending. | Accepterat per design (granskarroll); dokumenterat. Kan snävas till `status='pending'` om önskat. | — |
 | 2026-06-11 | G | **Medel** | Ingen CSP/säkerhets-headers (GitHub Pages sätter inga). XSS och en komprometterad CDN-modul körde med full åtkomst. | La till `<meta http-equiv="Content-Security-Policy">` i `index.html` med snäv `script-src` (ingen unsafe-inline/eval), origins för unpkg/esm.sh/fonts/OSM/Supabase. | ✅ Verifierat i browser (preview): Leaflet, OSM-rutor, fonts laddar utan CSP-fel. ⏳ esm.sh/Supabase-vägen verifieras när nycklar är live |
 | 2026-06-11 | C/H | Låg | `display_name` kapas bara klient-side (40 tecken) → direkt API-anrop kunde sätta godtyckligt långt namn (UI-bloat/abuse, ej XSS). | `check (char_length(display_name) <= 80)` (NOT VALID) i hardening-migrationen. | ⏳ `supabase db reset` |
-| 2026-06-11 | E | Medel (kvar) | `esm.sh/@supabase/supabase-js@2` — flytande major, ingen SRI. Komprometterad modul = full klient-/session-åtkomst. | CSP låser nu `script-src` till `esm.sh`. **Rekommendation kvar:** pinna exakt version (t.ex. `@2.45.x`) eller self-hosta. | ⬜ Att besluta |
+| 2026-06-11 | E | Medel → **löst** | `esm.sh/@supabase/supabase-js@2` — flytande major, ingen SRI, tredjeparts-CDN = single point of failure + supply-chain-risk vid skala. | **Vendor:ad lokalt** (`vendor/supabase.js`, UMD `@2.108.1`); `config.js` använder `window.supabase` istället för dynamisk CDN-import. CSP skärpt till `script-src 'self'`. Även Leaflet vendor:ad (`vendor/leaflet/`). | ✅ Verifierat i browser: klient instansieras, karta+rutor laddar, 0 CSP-fel |
 | 2026-06-11 | G/H | Info (per design) | Challenge-resultatkoder är base64-JSON utan signatur → en spelare kan förfalska sin poäng. | Inneboende utan backend; accepterat för skol/kommun-kontext. HMAC kräver delad hemlighet som ändå syns i länken. Dokumenterat. | — |
 
 ---
@@ -132,18 +132,24 @@ Snabb maskinell genomlysning innan djupgranskning:
   är generiska). `signUp` kan avslöja "User already registered" — Supabase-inneboende, mindre vektor.
 - Sessionsisolering mellan appar ✓ (eget projekt, session per projekt-URL i localStorage).
 
-### E/F — Supply chain & secrets → **CSP låser; pinning kvar**
-- Leaflet (CSS+JS) har **SRI** ✓. `vendor/qrcode.js` är vendor:at lokalt (Nayuki, public domain) ✓.
-- Inga `service_role`/privata nycklar i klientkoden ✓ (healthcheck + manuell koll). `.gitignore`
-  täcker `.DS_Store`, `node_modules`, `*.log`, `.claude/` ✓. Anon-nyckeln (tom ännu) är publik = ok.
-- **Kvar:** `esm.sh/@supabase/supabase-js@2` — pinna exakt version eller self-hosta (se §5).
+### E/F — Supply chain & secrets → **allt vendor:at, inga CDN i runtime**
+- **Alla JS-beroenden vendor:ade lokalt** (2026-06-11): `supabase-js` (UMD `@2.108.1` →
+  `vendor/supabase.js`, `window.supabase`), Leaflet (`vendor/leaflet/` inkl. marker-bilder),
+  `qrcode.js`. Ingen tredjeparts-CDN laddas vid runtime → ingen single point of failure, ingen
+  flytande-version-supply-chain-risk, och CSP kan hålla `script-src 'self'`.
+- Kvar externt (medvetet, låg risk): Google Fonts (fallback-font om nere) + OSM-kartrutor +
+  Supabase-API. Self-hosta fonts är en valfri framtida finputs.
+- Inga `service_role`/privata nycklar i klientkoden ✓. `.gitignore` täcker `.DS_Store`,
+  `node_modules`, `*.log`, `.claude/` ✓. Anon-nyckeln (tom ännu) är publik = ok.
 
 ### G — Integritet & klientdata → **CSP tillagd + verifierad**
-- **CSP** (`<meta http-equiv>` i `index.html`): `default-src 'self'`, snäv `script-src`
-  (self + unpkg + esm.sh, **ingen** unsafe-inline/eval), `object-src 'none'`, `base-uri 'self'`.
-  Verifierat i browser-preview: Leaflet, OSM-rutor (`a.tile.openstreetmap.org`) och Google Fonts
-  laddar utan CSP-överträdelser (0 console-fel). **Begränsning:** `frame-ancestors`/X-Frame-Options
-  (clickjacking) kräver HTTP-header → ej möjligt på GitHub Pages utan proxy/CDN framför.
+- **CSP** (`<meta http-equiv>` i `index.html` + riktig header via `vercel.json`):
+  `default-src 'self'`, `script-src 'self'` (all JS vendor:ad — **ingen** CDN/unsafe-inline/eval),
+  `object-src 'none'`, `base-uri 'self'`. Verifierat i browser-preview efter vendoring: Leaflet,
+  OSM-rutor och Google Fonts laddar utan CSP-överträdelser (0 console-fel).
+- **Clickjacking:** `frame-ancestors 'none'` + `X-Frame-Options: DENY` kräver HTTP-header →
+  finns i `vercel.json`. På GitHub Pages går det inte (en anledning till att flytta till Vercel
+  inför lansering — se §8).
 - `cfg_supabase_url/_anon_key`-override i localStorage påverkar bara den egna webbläsaren (self-targeting).
 - Geolocation används bara on-demand (incheckning/auto-guide) och skickas inte till tredje part.
 
@@ -168,5 +174,37 @@ Om du dessutom vill att *Claude* nattligen kör hälsokontrollen, analyserar och
 Eller via cron/launchd lokalt: `30 3 * * *  cd <repo> && bash scripts/healthcheck.sh >> docs/health.log 2>&1`.
 
 > Inte aktiverat automatiskt — säg till så sätter jag upp den schemalagda agenten.
+
+---
+
+## 8. Go-live-checklista (egen domän + Vercel)
+
+Statisk PWA utan byggsteg → den klarar 1000+ användare på vilken CDN-host som helst. Vercel
+väljs för **riktiga säkerhets-headers** (CSP/HSTS/clickjacking) + konsekvent pipeline med övriga appar.
+
+**Gjort (kod):**
+- ✅ Alla JS-beroenden vendor:ade lokalt (ingen CDN-driftrisk) — se §6 E/F.
+- ✅ `vercel.json` med säkerhets-headers (CSP, `frame-ancestors`, HSTS, `X-Frame-Options`,
+  `Referrer-Policy`, `Permissions-Policy`).
+- ✅ CSP verifierad i browser (0 fel).
+
+**Kvar (kräver dina konton/nycklar) — i ordning:**
+1. **Skapa Supabase-projektet** (om ej gjort) och kör migrationerna: `supabase link` + `supabase db push`.
+   Aktivera **pg_cron** (Dashboard → Database → Extensions) så nattstädningen kör.
+2. **Fyll `config.js`** med projektets `SUPABASE_URL` + `anon`-nyckel (publika, säkra att committa).
+3. **Köp domänen** och koppla den i **Vercel** (Project → Domains). Importera GitHub-repot i Vercel
+   (Framework preset: *Other* / static; ingen build-command).
+4. **Uppdatera URL:er till domänen:** `SHARE_URL` i `config.js`, `start_url`/`scope` i
+   `manifest.webmanifest`, samt Supabase **`site_url` + `additional_redirect_urls`** (annars funkar
+   inte inloggnings-/återställningslänkar). Överväg `location.origin + location.pathname` i auth-redirects.
+5. **Google OAuth:** lägg `GOOGLE_CLIENT_ID`/`SECRET` i Supabase och domänen i Googles redirect-URI:er.
+6. **E-post:** koppla SMTP/Resend i Supabase för bekräftelse-/återställningsmejl i prod.
+7. **Supabase-plan:** bedöm **Pro ($25/mån)** om fotouppladdningar/bandbredd närmar sig free-taket
+   (nattstädningen i §4 håller lagringen nere).
+8. **Smoke-test i prod:** logga in (Google + e-post), lämna ett tips, granska, ladda upp foto,
+   verifiera att inget bryts av CSP:n i den riktiga miljön (DevTools-konsolen).
+
+> Frontend-deploy (Vercel) och backend-deploy (Supabase) är **separata** — koden vet inget om
+> hosten; den pratar bara med Supabase via de publika nycklarna i `config.js`.
 
 ---

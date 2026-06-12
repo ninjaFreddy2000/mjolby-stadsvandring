@@ -24,16 +24,27 @@ export const SHARE_URL = 'https://ninjafreddy2000.github.io/mjolby-stadsvandring
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 
 let _clientPromise = null;
-// Lazy-laddar @supabase/supabase-js från ESM-CDN (inget byggsteg) och returnerar
-// en singleton-klient. Returnerar null om projektet inte är konfigurerat ännu.
+// Använder @supabase/supabase-js som är vendor:ad lokalt (vendor/supabase.js, UMD →
+// window.supabase) — ingen tredjeparts-CDN i runtime, så CSP:n kan hålla script-src 'self'
+// och inloggning fungerar även om esm.sh/CDN ligger nere. Returnerar en singleton-klient,
+// eller null om projektet inte är konfigurerat (eller biblioteket inte laddats).
 export function getSupabase() {
   if (!isConfigured()) return Promise.resolve(null);
   if (!_clientPromise) {
-    _clientPromise = import('https://esm.sh/@supabase/supabase-js@2')
-      .then(({ createClient }) => createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    const lib = (typeof window !== 'undefined') ? window.supabase : null;
+    if (!lib || typeof lib.createClient !== 'function') {
+      console.error('Supabase-biblioteket (vendor/supabase.js) laddades inte.');
+      return Promise.resolve(null);   // försök igen vid nästa anrop
+    }
+    try {
+      const client = lib.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
         auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
-      }))
-      .catch(err => { console.error('Kunde inte ladda Supabase:', err); _clientPromise = null; return null; });
+      });
+      _clientPromise = Promise.resolve(client);
+    } catch (err) {
+      console.error('Kunde inte skapa Supabase-klient:', err);
+      return Promise.resolve(null);
+    }
   }
   return _clientPromise;
 }
