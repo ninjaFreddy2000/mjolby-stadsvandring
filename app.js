@@ -1,6 +1,6 @@
 // Mjölby Stadsvandring — PWA prototype
 // Data: mjolby_kunskapsdatabas.json (knowledge base)
-import { STORIES, EXTRA_IMAGES } from './content.js';
+import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile } from './challenges.js';
@@ -114,6 +114,7 @@ let activeTour = null; // null = all
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
 let activeTab = 'home'; // bottenflik-meny
 let currentSheetId = null; // öppet stopp i detaljvyn (för omritning vid datauppdatering)
+let sheetReturnTour = null; // vilken tur stoppet öppnades från (för "tillbaka till turen")
 const STAMP_KEY = 'mjolby_stamps_v1';
 const SAVED_KEY = 'mjolby_saved_v1';
 
@@ -224,8 +225,12 @@ async function init() {
 
   const res = await fetch('data.json');
   const json = await res.json();
-  DATA = json.entries;
+  // Filtrera bort demo-/testdata ur hela appen (karta, städer, berättelser).
+  DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
   ENTRIES = DATA.filter(hasCoords);
+
+  // Evenemang (build-tids-hämtade från Visit Mjölby). Bryt inte appen om filen saknas.
+  try { const ev = await (await fetch('events.json')).json(); EVENTS = ev.events || []; EVENTS_META = ev; } catch (e) { EVENTS = []; }
 
   buildMap();
   buildTours();
@@ -249,6 +254,9 @@ async function init() {
       reloaded = true; location.reload();
     });
   }
+
+  // Landningssida vid första besöket: välj/sök stad innan appen visas.
+  if (!localStorage.getItem(LANDING_KEY)) openLanding();
 }
 
 function buildMap() {
@@ -316,6 +324,7 @@ function renderMarkers(){
     markersById[e.id] = m;
   });
   drawRoute();
+  updateNextStopBtn();
   fitView();
 }
 
@@ -331,14 +340,88 @@ function orderedTourEntries(tourKey){
   return list;
 }
 
+// Gatuföljande promenadled via gratis OSRM-foot (FOSSGIS). Rak streckad linje ritas
+// direkt som feedback + fallback om rutt-API:t inte svarar (offline/rate-limit).
+const routeCache = new Map();   // `${activeCity}|${activeTour}` → latlngs[]
+let routeReqId = 0;
+function drawRouteLine(latlngs){
+  L.polyline(latlngs, { color:'#fff', weight:7, opacity:.6, lineCap:'round', lineJoin:'round' }).addTo(routeLayer);
+  L.polyline(latlngs, { color:'#0A2A6B', weight:4, opacity:.85, lineCap:'round', lineJoin:'round' }).addTo(routeLayer);
+}
+async function fetchFootRoute(pts){
+  try{
+    const coords = pts.map(p=>`${p[1]},${p[0]}`).join(';');   // OSRM vill ha lng,lat
+    const url = `https://routing.openstreetmap.de/routed-foot/route/v1/foot/${coords}?overview=full&geometries=geojson`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const geo = data && data.routes && data.routes[0] && data.routes[0].geometry;
+    if (!geo || !geo.coordinates) return null;
+    return geo.coordinates.map(c=>[c[1], c[0]]);             // GeoJSON lng,lat → Leaflet lat,lng
+  }catch(e){ return null; }
+}
 function drawRoute(){
   routeLayer.clearLayers();
   if (!activeTour) return;
   const pts = orderedTourEntries(activeTour).filter(hasCoords)
     .map(e=>[e.coordinates.lat, e.coordinates.lng]);
-  if (pts.length>1){
-    L.polyline(pts, { color:'#0A2A6B', weight:4, opacity:.55, dashArray:'2 9', lineCap:'round' }).addTo(routeLayer);
-  }
+  if (pts.length < 2) return;
+  const key = `${activeCity}|${activeTour}`;
+  const cached = routeCache.get(key);
+  if (cached){ drawRouteLine(cached); return; }
+  // Omedelbar rak streckad linje (feedback + fallback)
+  L.polyline(pts, { color:'#0A2A6B', weight:3, opacity:.4, dashArray:'2 9', lineCap:'round' }).addTo(routeLayer);
+  const myReq = ++routeReqId;
+  fetchFootRoute(pts).then(latlngs=>{
+    if (myReq !== routeReqId || !activeTour) return;          // turen bytt/stängd under tiden
+    if (!latlngs) return;                                     // behåll rak linje
+    routeCache.set(key, latlngs);
+    routeLayer.clearLayers();
+    drawRouteLine(latlngs);
+  });
+}
+
+// "Till nästa plats": hämta position → nästa ostämplade stopp → gångväg dit + avstånd/tid.
+let navLayer = null;
+function routeDistance(latlngs){ let d=0; for (let i=1;i<latlngs.length;i++) d+=map.distance(latlngs[i-1],latlngs[i]); return d; }
+function updateNextStopBtn(){
+  const b=$('#next-stop-btn'); if (!b) return;
+  b.hidden = !activeTour;
+  if (!activeTour && navLayer) navLayer.clearLayers();
+  const lbl=$('#next-stop-label'); if (lbl) lbl.textContent=t('nav_next');
+}
+function navigateToNext(){
+  if (!activeTour) return;
+  if (!navigator.geolocation){ toast(t('nav_geo_fail')); return; }
+  toast(t('nav_locating'));
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const me=[pos.coords.latitude,pos.coords.longitude];
+    showMe(me, false);
+    const st=stamps();
+    const list=orderedTourEntries(activeTour).filter(hasCoords);
+    const next=list.find(e=>!st.has(e.id));
+    if (!next){ toast(t('nav_nostop')); return; }
+    const dest=[next.coordinates.lat,next.coordinates.lng];
+    if (map.distance(me, dest) < 40){          // du står redan vid stoppet
+      if (navLayer) navLayer.clearLayers();
+      map.setView(dest, Math.max(map.getZoom(),16), {animate:true});
+      toast(`✓ ${t('nav_here')} ${next.name} 🎉`);
+      openSheet(next.id);
+      return;
+    }
+    fetchFootRoute([me,dest]).then(latlngs=>{
+      if (!navLayer) navLayer=L.layerGroup().addTo(map);
+      navLayer.clearLayers();
+      const line=(latlngs&&latlngs.length>1)?latlngs:[me,dest];
+      L.polyline(line, { color:'#fff', weight:8, opacity:.7, lineCap:'round', lineJoin:'round' }).addTo(navLayer);
+      L.polyline(line, { color:'#E2A21A', weight:5, opacity:.95, lineCap:'round', lineJoin:'round', dashArray:latlngs?null:'4 9' }).addTo(navLayer);
+      const dist=Math.round(routeDistance(line));
+      const mins=Math.max(1,Math.round(dist/80));   // ~80 m/min gångtakt
+      const distTxt=dist>=1000?(dist/1000).toFixed(1)+' km':dist+' m';
+      try{ map.fitBounds(L.latLngBounds(line).pad(0.25), { maxZoom:17, animate:true }); }catch(e){}
+      toast(`${t('nav_to')} ${next.name} · ${distTxt} · ~${mins} ${t('nav_min')}`);
+    });
+  }, ()=> toast(t('nav_geo_fail')), { enableHighAccuracy:true, timeout:10000 });
 }
 
 function fitView(){
@@ -394,7 +477,7 @@ function openTourPanel(key){
     const current = questMode && i === progressIndex;
     const badge = `<span class="stop-no" style="background:${ty.color}">${i+1}</span>`;
     if (locked){
-      const clue = `${CAT_LABEL[e.category]||'Ett stopp'}${e.era?` · ${e.era}`:''}`;
+      const clue = `${catLabel(e)||(lang==='en'?'A stop':'Ett stopp')}${e.era?` · ${e.era}`:''}`;
       return `<li><div class="stop-row locked" aria-disabled="true">
         <span class="stop-thumb ph">🔒${badge}</span>
         <span class="stop-meta"><b>???</b><small>Lasse viskar: ${clue}</small></span>
@@ -410,6 +493,13 @@ function openTourPanel(key){
     r.onclick = ()=> openSheet(r.dataset.id);
   });
   $('#tour-quiz-btn').onclick = ()=> startQuiz(key);
+  $('#tour-start-label').textContent = t('start_walk');
+  $('#tour-start').onclick = ()=>{
+    activeTour = key;                 // säkerställ att turen är aktiv
+    closePanel('#tour-panel');        // ta mig till vandringen (kartan med leden)
+    renderMarkers();                  // visa turens stopp + gatuföljande led
+    navigateToNext();                 // vägbeskrivning till första (ostämplade) stoppet
+  };
   openPanel('#tour-panel');
 }
 
@@ -457,22 +547,68 @@ function setActiveCity(city){
   toast((lang==='en'?'Now exploring ':'Nu utforskar du ') + city + ' 🗺️');
 }
 
+/* ---------- Notis + tidslinje (per plats) ---------- */
+// Slås samman med ev. framtida contributor-data (e.notice / e.timeline) så
+// kurerat innehåll + inskickat innehåll samexisterar.
+// Riktiga evenemang från Visit Mjölby (hämtas vid build-tid → events.json).
+// EVENTS fylls i init(). Visas på ortens post (kategori 'ort') med VARJE evenemangs
+// egen arena/plats utskriven — ingen felaktig attribution till en specifik plats.
+let EVENTS = [];
+let EVENTS_META = null;
+function eventsFor(e){
+  // Stadens ort-post visar hela kommunens program (idag: Mjölby; andra orter saknar feed).
+  if (e && e.category === 'ort' && /mjölby/i.test(e.city || e.name || '') && EVENTS.length) return EVENTS;
+  return [];
+}
+function noticeHtml(id, e){
+  const n = NOTICES[id] || (e && e.notice);
+  const live = eventsFor(e);
+  if (!n && !live.length) return '';
+  const items = [
+    ...((n && n.events) || []).map(ev=>`<li>${ev.when?`<b>${ev.when}</b>`:''}${ev.when&&ev.what?' — ':''}${ev.what||''}</li>`),
+    ...live.map(ev=>`<li><b>${ev.date||''}</b>${ev.date?' — ':''}<a href="${ev.url}" target="_blank" rel="noopener">${ev.title}</a>${ev.arena?` <span class="ev-arena">· ${ev.arena}</span>`:''}</li>`),
+  ].join('');
+  const icon = (n&&n.icon) || '🎉';
+  const title = (n&&n.title) || (live.length ? (lang==='en'?`Events in ${e.name}`:`Evenemang i ${e.name}`) : (lang==='en'?'Events':'Evenemang'));
+  const text = (n&&n.text) || '';
+  const srcUrl = (n&&n.url) || (EVENTS_META&&EVENTS_META.sourceUrl) || 'https://www.visitmjolby.se/evenemang';
+  const srcName = (n&&n.source) || (EVENTS_META&&EVENTS_META.source) || 'Visit Mjölby';
+  return `<div class="notice">
+    <div class="notice-h">${icon} ${title}</div>
+    ${text?`<p>${text}</p>`:''}
+    ${items?`<ul class="notice-evs">${items}</ul>`:''}
+    <a class="notice-src" href="${srcUrl}" target="_blank" rel="noopener">${srcName} ↗</a>
+  </div>`;
+}
+function timelineHtml(id, e){
+  const tl = [...(TIMELINES[id]||[]), ...((e&&e.timeline)||[])];
+  if (!tl.length) return '';
+  const rows = tl.map(it=>`<li class="tl-item">
+    <span class="tl-year">${it.year||''}</span>
+    <div class="tl-card">
+      ${it.image?`<img class="tl-img" src="${it.image}" alt="${it.title||''}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}
+      ${it.title?`<b>${it.title}</b>`:''}
+      ${it.text?`<p>${it.text}</p>`:''}
+      ${it.credit?`<span class="tl-credit">${it.image?'📷 ':''}${it.credit}</span>`:''}
+    </div>
+  </li>`).join('');
+  return `<div class="timeline"><div class="tl-h">🕰️ ${lang==='en'?'Timeline':'Tidslinje'}</div><ol class="tl-list">${rows}</ol></div>`;
+}
+
 /* ---------- Stop detail sheet ---------- */
 function openSheet(id){
   const e = DATA.find(x=>x.id===id);
   if (!e) return;
   currentSheetId = id;
+  sheetReturnTour = activeTour;           // kom vi från en tur? (för "tillbaka till turen")
   const ty = TYPES[typeOf(e)];
   const st = stamps();
   const visited = st.has(id);
   const img = imgUrl(e), credit = imgCredit(e), icon = iconOf(e);
-  const offer = DEMO_OFFERS[id];
   const story = STORIES[id] || e.description || '';
   const storyHtml = story.split(/\n\n+/).map(p=>`<p>${p}</p>`).join('');
 
   const facts = (e.key_facts||[]).map(f=>`<li>${f}</li>`).join('');
-  const mapsHref = hasCoords(e)
-    ? `https://www.google.com/maps/dir/?api=1&destination=${e.coordinates.lat},${e.coordinates.lng}` : null;
   const srcs = (e.sources||[]).slice(0,3)
     .map(s=>`<a href="${s}" target="_blank" rel="noopener">${t('source')}</a>`).join(' · ');
 
@@ -490,41 +626,37 @@ function openSheet(id){
   $('#sheet-inner').innerHTML = `
     ${hero}
     <div class="sheet-pad">
+      ${sheetReturnTour?`<button class="sheet-back" id="sheet-back">← ${tourName(sheetReturnTour)}</button>`:''}
       <span class="type-tag" style="background:${ty.color}">${icon} ${typeLabel(e)}</span>
       <span class="city-tag">📍 ${cityOf(e)}</span>
       <h2>${e.name}</h2>
       ${e.era?`<div class="era">${e.era}</div>`:''}
       ${leadOf(e)?`<p class="lead">${leadOf(e)}</p>`:''}
+      ${noticeHtml(id, e)}
       ${tellerBubble(id)}
-      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${TELLER?`${t('speak_pre')} ${TELLER.name} ${t('speak_suf')}`:(lang==='en'?'Listen':'Lyssna')}</button>`:''}
+      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${t('speak_listen')}</button>`:''}
       ${(lang==='en' && storyHtml)?`<p class="story-note">📖 ${t('story_note')}</p>`:''}
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
+      ${timelineHtml(id, e)}
       ${tipsActive() ? stopBlockHtml(id) : contribBlock(id)}
-      ${offer?(()=>{ const m=metricsFor(id); return `<div class="offer">
-        <b>🎁 Exempelerbjudande (sponsrat)</b><p>${offer}</p>
-        <div class="offer-metrics">
-          <span class="om"><b>${m.week}</b><small>incheckningar denna vecka</small></span>
-          <span class="om"><b>${m.total}</b><small>totalt</small></span>
-          ${m.rating?`<span class="om"><b>${m.rating.toFixed(1)}</b><small>snittbetyg</small></span>`:''}
-        </div>
-        ${m.mine?`<p class="om-you">✓ Din incheckning räknas — så här ser sponsorn värdet växa.</p>`:''}
-        <button class="om-link" data-sponsor="1">📈 Se vad sponsorn ser</button>
-      </div>`; })():''}
       ${hasCoords(e)
         ? `<button class="checkin ${visited?'done':''}" id="checkin-btn">
              ${visited?t('checkin_done'):t('checkin')}
            </button>
            ${photoBlock(id)}`
         : ''}
-      ${e.address?`<p class="addr">📍 ${e.address}${mapsHref?` · <a href="${mapsHref}" target="_blank" rel="noopener">${t('directions')}</a>`:''}</p>`:''}
+      ${e.address?`<p class="addr">📍 ${e.address}</p>`:''}
+      ${hasCoords(e)?`<button class="addr-map" id="show-on-map">🗺️ ${lang==='en'?'Show on map':'Visa på kartan'}</button>`:''}
       ${srcs?`<p class="srcs">${srcs}</p>`:''}
     </div>`;
 
   const btn = $('#checkin-btn');
   if (btn) btn.onclick = ()=> toggleCheckin(id);
-  const sp = $('#sheet-inner [data-sponsor]');
-  if (sp) sp.onclick = openSponsor;
+  const back = $('#sheet-back');
+  if (back) back.onclick = ()=>{ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); if (sheetReturnTour) openTourPanel(sheetReturnTour); };
+  const som = $('#show-on-map');
+  if (som) som.onclick = ()=>{ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); if (map && e.coordinates) map.setView([e.coordinates.lat, e.coordinates.lng], 17, { animate:true }); };
   const spk = $('#speak-btn');
   if (spk) spk.onclick = ()=> speaking ? stopSpeaking() : speak(narrationText(e));
   const sb = $('#save-btn');
@@ -540,8 +672,8 @@ function openSheet(id){
     if (ca) ca.onclick = ()=> openContribute(ca.dataset.contrib);
   }
 
-  // Sheet och sidopaneler är ömsesidigt uteslutande (telefonbredd)
-  ['#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'].forEach(s=>{ const p=$(s); if(p) p.setAttribute('aria-hidden','true'); });
+  // En vy åt gången: stäng alla andra fönster innan stoppet visas (sömlöst, inga staplade fönster)
+  closeOverlays('#sheet');
   $('#sheet').setAttribute('aria-hidden','false');
   focusInto('#sheet');
   if (hasCoords(e)) map.panTo([e.coordinates.lat, e.coordinates.lng], { animate:true });
@@ -576,9 +708,7 @@ function openProgress(){
       <div class="prog-box"><b>${total}</b><small>${t('prog_total')}</small></div>
     </div>
     <div class="bar"><i style="width:${pct}%"></i></div>
-    <div class="stamp-grid">${grid}</div>
-    <button class="om-link" id="to-sponsor" style="margin-top:18px">📈 Öppna sponsorpanel (för kommun &amp; företag)</button>`;
-  $('#to-sponsor').onclick = openSponsor;
+    <div class="stamp-grid">${grid}</div>`;
   openPanel('#progress-panel');
 }
 
@@ -624,18 +754,23 @@ function startQuiz(tourKey){
   if (!bank.length){ toast('Quiz saknas för denna vandring'); return; }
   let i = 0, score = 0;
   const overlay = $('#quiz'), card = $('#quiz-card');
+  const closeQuiz = ()=>{ overlay.setAttribute('aria-hidden','true'); restoreFocus(); };
+  const closeBtn = `<button class="quiz-x" id="quiz-x" aria-label="${lang==='en'?'Close':'Stäng'}">&times;</button>`;
+  closeOverlays('#quiz');
   overlay.setAttribute('aria-hidden','false');
   lastFocus = document.activeElement;
 
   const render = ()=>{
     const q = bank[i];
     card.innerHTML = `
+      ${closeBtn}
       <div class="quiz-progress">${lang==='en'?'Question':'Fråga'} ${i+1} / ${bank.length}</div>
       <h3>${tourName(tourKey)}</h3>
       <p class="quiz-q">${q.q}</p>
       <div class="quiz-opts">
         ${q.opts.map((o,idx)=>`<button class="quiz-opt" data-i="${idx}">${o}</button>`).join('')}
       </div>`;
+    card.querySelector('#quiz-x').onclick = closeQuiz;
     card.querySelectorAll('.quiz-opt').forEach(b=>{
       b.onclick = ()=>{
         const chosen = +b.dataset.i;
@@ -648,6 +783,7 @@ function startQuiz(tourKey){
   };
   const result = ()=>{
     card.innerHTML = `
+      ${closeBtn}
       <div class="quiz-result">
         <div class="big">${score}/${bank.length}</div>
         <p class="quiz-q">${
@@ -657,7 +793,8 @@ function startQuiz(tourKey){
         }</p>
         <button class="cta" id="quiz-done" style="margin:8px 0 0">${lang==='en'?'Done':'Klar'}</button>
       </div>`;
-    card.querySelector('#quiz-done').onclick = ()=>{ overlay.setAttribute('aria-hidden','true'); restoreFocus(); };
+    card.querySelector('#quiz-x').onclick = closeQuiz;
+    card.querySelector('#quiz-done').onclick = closeQuiz;
   };
   render();
   focusInto('#quiz');
@@ -740,6 +877,16 @@ const CAT_LABEL = {
   museum_hembygd:'Museum', musikkar:'Musikkår', idrott:'Idrott',
   handel:'Handel', kafe_restaurang:'Café/Restaurang', hotell:'Hotell', industri_foretag:'Företag',
 };
+// Engelska kategori-etiketter (UI-nivå). Det djupa innehållet förblir svenskt (Spår B),
+// men korta etiketter översätts så engelskt läge inte blandar språk.
+const CAT_LABEL_EN = {
+  ort:'Locality', vattendrag:'Waterway', kyrka:'Church', byggnad:'Building', torg:'Square',
+  person:'Person', konst_staty:'Art', runsten:'Rune stone', klosterruin:'Monastery ruin',
+  borgruin:'Castle ruin', bro:'Bridge', handelse:'Event', station:'Station',
+  museum_hembygd:'Museum', musikkar:'Music corps', idrott:'Sports',
+  handel:'Retail', kafe_restaurang:'Café/Restaurant', hotell:'Hotel', industri_foretag:'Company',
+};
+const catLabel = e => (lang==='en' ? CAT_LABEL_EN : CAT_LABEL)[e.category] || '';
 function renderStories(filter){
   const q = (filter||'').toLowerCase().trim();
   const list = DATA.filter(e=>{
@@ -752,7 +899,7 @@ function renderStories(filter){
     const onMap = hasCoords(e);
     return `<li><button class="stop-row" data-id="${e.id}">
       ${stopThumb(e)}
-      <span class="stop-meta"><b>${e.name}</b><small>${CAT_LABEL[e.category]||''}${onMap?'':' · '+t('only_story')}</small></span>
+      <span class="stop-meta"><b>${e.name}</b><small>${catLabel(e)}${onMap?'':' · '+t('only_story')}</small></span>
       ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}
     </button></li>`;
   }).join('') || `<li class="stories-empty">${lang==='en'?'Nothing found.':'Inget hittades.'}</li>`;
@@ -767,7 +914,8 @@ function applyI18n(){
   document.documentElement.lang = lang;
   const setText = (sel, val)=>{ const el=$(sel); if(el) el.textContent = val; };
   updateCityHeader();
-  setText('#lang-btn', t('lang_btn'));
+  const ls = $('#lang-switch');
+  if (ls) ls.querySelectorAll('.flag-btn').forEach(b=> b.classList.toggle('on', b.dataset.lang===lang));
   const sp = $('#stories-panel');
   if (sp){
     sp.querySelector('.panel-head h2').textContent = t('act_stories_full');
@@ -823,13 +971,9 @@ function openTeller(firstTime){
   const role = (loc && loc.role) || tel.role || '';
   const tagline = (loc && loc.tagline) || v.tagline || '';
   const greetSrc = (loc && loc.greeting) || tel.greeting || '';
-  const voiceSum = (loc && loc.voiceSummary) || v.summary || '';
   const greet = greetSrc.split(/\n\n+/).map(p=>`<p>${p}</p>`).join('');
-  const traits = ((loc && loc.traits) || v.traits || []).map(x=>`<li>${x}</li>`).join('');
-  const phrases = en ? '' : (v.phrases||[]).map(x=>`<span class="vphrase">${x}</span>`).join('');
   const signoff = en ? '' : (v.signoff||'');
   const entry = tel.entryId && DATA.find(x=>x.id===tel.entryId);
-  const voiceHeader = en ? '🎙️ How I speak' : '🎙️ Så här pratar jag';
   const goLabel = firstTime ? (en?'Come along →':'Följ med mig →') : (en?'Back to the map':'Tillbaka till kartan');
   const scaleLine = en ? `Every town can have its own storyteller. In ${tel.city}, that's me.`
                        : `Varje stad kan ha sin egen berättare. I ${tel.city} är det ja.`;
@@ -847,18 +991,12 @@ function openTeller(firstTime){
     </div>
     ${tagline?`<p class="teller-tagline">”${tagline}”</p>`:''}
     <div class="teller-greet">${greet}</div>
-    ${traits?`
-      <div class="voice-card">
-        <div class="vc-h">${voiceHeader}</div>
-        ${voiceSum?`<p class="vc-sum">${voiceSum}</p>`:''}
-        <ul class="vtraits">${traits}</ul>
-        ${phrases?`<div class="vphrases">${phrases}</div>`:''}
-      </div>`:''}
     ${signoff?`<p class="teller-sign">${signoff}</p>`:''}
     <button class="cta teller-go" id="teller-go" style="margin:6px 0 8px">${goLabel}</button>
     ${entry?`<button class="teller-more" id="teller-more">${en?`Read more about ${tel.name}`:`Läs mer om ${tel.name} i appen`}</button>`:''}
     <p class="teller-scale">${scaleLine}</p>`;
 
+  closeOverlays('#teller');
   $('#teller').setAttribute('aria-hidden','false');
   focusInto('#teller');
   localStorage.setItem(TELLER_SEEN_KEY, '1');
@@ -873,7 +1011,9 @@ function openTeller(firstTime){
 function pickSvVoice(){
   if (!('speechSynthesis' in window)) return null;
   const vs = speechSynthesis.getVoices() || [];
-  return vs.find(v=>/sv[-_]?se/i.test(v.lang)) || vs.find(v=>(v.lang||'').toLowerCase().startsWith('sv')) || null;
+  const sv = vs.filter(v=>/^sv/i.test(v.lang||''));
+  // Föredra en manlig röst (Skånska Lasse är en man) om enheten har någon; annars valfri svensk.
+  return sv.find(v=>/oskar|male|man\b|mikael|erik|gustav/i.test(v.name||'')) || sv[0] || null;
 }
 function narrationText(e){
   if (lang === 'en') return SUMMARY_EN[e.id] || e.summary || e.name;
@@ -900,9 +1040,7 @@ function stopSpeaking(){
 }
 function updateSpeakButtons(){
   const b = $('#speak-btn');
-  if (b) b.innerHTML = speaking
-    ? t('speak_stop')
-    : `🔊 ${TELLER ? `${t('speak_pre')} ${TELLER.name} ${t('speak_suf')}` : (lang==='en'?'Listen':'Lyssna')}`;
+  if (b) b.innerHTML = speaking ? t('speak_stop') : `🔊 ${t('speak_listen')}`;
 }
 // Röster laddas ibland asynkront
 if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
@@ -1010,12 +1148,95 @@ function renderCities(){
     </button>`).join('');
 
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_pick')}</p></div>
+    <button class="fb-cta" id="cities-locate" style="margin:0 0 14px">📍 ${t('land_locate')}</button>
     ${activeCards}
     ${soon?`<h3 class="prof-h">${t('city_more_soon')}</h3>${soon}`:''}
     <button class="fb-cta" id="fb-cities">💬 ${t('feedback')}</button>`;
+  $('#screen').querySelector('#cities-locate').onclick = openLanding;
   $('#screen').querySelectorAll('[data-pick]').forEach(c=> c.onclick=()=>{ switchTab('home'); setActiveCity(c.dataset.pick); });
   $('#screen').querySelectorAll('[data-soon]').forEach(c=> c.onclick=()=> toast(t('city_soon') + ' 🌱'));
   $('#fb-cities').onclick = openFeedback;
+}
+
+/* ---------- Landningssida: välj/sök stad (entry) ---------- */
+const LANDING_KEY = 'sv_landing_done';
+let landNear = null;   // namn på närmaste stad (sätts av geolocation)
+
+function havKm(a,b){
+  if(!a||!b) return Infinity;
+  const R=6371, r=d=>d*Math.PI/180;
+  const dLa=r(b.lat-a.lat), dLo=r(b.lng-a.lng);
+  const s=Math.sin(dLa/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLo/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s));
+}
+function cityCentroid(name){
+  const p=ENTRIES.filter(e=>cityOf(e)===name && e.coordinates);
+  if(!p.length) return null;
+  return { lat:p.reduce((s,e)=>s+e.coordinates.lat,0)/p.length,
+           lng:p.reduce((s,e)=>s+e.coordinates.lng,0)/p.length };
+}
+function renderLandingList(filter){
+  const q=(filter||'').toLowerCase().trim();
+  const have=citiesInData();
+  const metaOf=n=>CITIES.find(c=>c.name===n);
+  const tourCount=n=>Object.values(TOURS).filter(tr=>DATA.filter(tr.test).some(e=>cityOf(e)===n)).length;
+  let list=have.filter(c=>!q || c.name.toLowerCase().includes(q));
+  if(landNear) list=[...list].sort((a,b)=>(b.name===landNear)-(a.name===landNear));
+  const cards=list.map((c,i)=>{
+    const m=metaOf(c.name), tn=tourCount(c.name), near=c.name===landNear;
+    const sub=(m&&m.blurb)||`${c.count} ${t('stops')}`;
+    const badge=near ? `📍 ${t('land_geo_near').replace(':','').trim()}`
+                     : `${c.count} ${t('stops')}${tn?` · ${tn} ${t('city_leder')}`:''}`;
+    return `<button class="land-city ${near?'near':''}" data-city="${c.name}">
+      <span class="lc-thumb">${routeThumb((m&&typeof m.seed==='number')?m.seed:i%3)}</span>
+      <span class="lc-body"><b>${c.name}</b><small>${sub}</small></span>
+      <span class="lc-badge">${badge}</span></button>`;
+  }).join('');
+  const haveNames=new Set(have.map(c=>c.name));
+  const soon=(!q ? CITIES.filter(c=>c.status!=='active' && !haveNames.has(c.name)) : []).map(c=>
+    `<button class="land-city soon" data-soon="1">
+      <span class="lc-thumb">${routeThumb(c.seed)}<span class="lc-lock">🔒</span></span>
+      <span class="lc-body"><b>${c.name}</b><small>${c.blurb}</small></span>
+      <span class="lc-badge">${t('city_soon')}</span></button>`).join('');
+  $('#land-list').innerHTML = (cards || `<div class="land-none">${t('land_none')}</div>`)
+    + (soon?`<div class="land-soon-h">${t('land_soon')}</div>${soon}`:'');
+  $('#land-list').querySelectorAll('[data-city]').forEach(b=> b.onclick=()=>chooseCity(b.dataset.city));
+  $('#land-list').querySelectorAll('[data-soon]').forEach(b=> b.onclick=()=> toast(t('city_soon')+' 🌱'));
+}
+function openLanding(){
+  $('#landing-card').innerHTML = `
+    <div class="land-brand"><span class="mark">S</span> Strosa</div>
+    <div class="land-hero"><h1>${t('land_title')}</h1><p>${t('land_sub')}</p></div>
+    <div class="land-search"><span class="land-mag">🔍</span>
+      <input id="land-q" type="search" inputmode="search" autocomplete="off" placeholder="${t('land_search')}"></div>
+    <button class="land-locate" id="land-locate">📍 ${t('land_locate')}</button>
+    <div class="land-list" id="land-list"></div>`;
+  const qi=$('#land-q'); qi.oninput=()=>renderLandingList(qi.value);
+  $('#land-locate').onclick=locateMe;
+  renderLandingList('');
+  $('#landing').setAttribute('aria-hidden','false');
+}
+function chooseCity(name){
+  setActiveCity(name);                 // byter + centrerar (no-op om samma stad)
+  try{ renderMarkers(); }catch(e){}    // säkerställ centrering även om samma stad
+  localStorage.setItem(LANDING_KEY,'1');
+  landNear=null;
+  $('#landing').setAttribute('aria-hidden','true');
+  switchTab('home');
+}
+function locateMe(){
+  const btn=$('#land-locate'); if(!btn) return;
+  if(!navigator.geolocation){ toast(t('land_geo_fail')); return; }
+  const orig=btn.innerHTML; btn.disabled=true; btn.innerHTML=`⏳ ${t('land_locating')}`;
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const me={lat:pos.coords.latitude,lng:pos.coords.longitude};
+    let best=null,bestD=Infinity;
+    citiesInData().forEach(c=>{ const d=havKm(me,cityCentroid(c.name)); if(d<bestD){bestD=d;best=c.name;} });
+    landNear=best; btn.disabled=false; btn.innerHTML=orig;
+    renderLandingList($('#land-q')?$('#land-q').value:'');
+    if(best) toast(`📍 ${t('land_geo_near')} ${best}`);
+  }, ()=>{ btn.disabled=false; btn.innerHTML=orig; toast(t('land_geo_fail')); },
+     {enableHighAccuracy:false,timeout:8000,maximumAge:600000});
 }
 
 /* ---------- Tyck till (feedback) ---------- */
@@ -1194,7 +1415,7 @@ function renderSaved(){
   const sv=saved(), st=stamps();
   const list = DATA.filter(e=> sv.has(e.id));
   const rows = list.map(e=>`<li><button class="stop-row" data-id="${e.id}">${stopThumb(e)}
-      <span class="stop-meta"><b>${e.name}</b><small>📍 ${cityOf(e)} · ${CAT_LABEL[e.category]||''}</small></span>
+      <span class="stop-meta"><b>${e.name}</b><small>📍 ${cityOf(e)} · ${catLabel(e)}</small></span>
       ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}</button></li>`).join('');
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_saved')}</h2></div>`
     + (rows ? `<ol class="screen-list">${rows}</ol>` : `<div class="screen-empty">💛<br>${t('saved_empty')}</div>`);
@@ -1227,10 +1448,8 @@ function renderProfil(){
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
     ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
-    <button class="om-link" id="to-sponsor2">📈 ${lang==='en'?'Open sponsor dashboard':'Öppna sponsorpanel (kommun & företag)'}</button>
     <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>`;
   const tr=$('#to-review'); if (tr) tr.onclick = openReview;
-  $('#to-sponsor2').onclick = openSponsor;
   $('#fb-prof').onclick = openFeedback;
   mountChallengeProfile($('#screen'));
   if (on){
@@ -1315,7 +1534,13 @@ function focusInto(sel){
 }
 function restoreFocus(){ if (lastFocus && lastFocus.focus){ try { lastFocus.focus({preventScroll:true}); } catch(e){} } lastFocus = null; }
 function markFocus(){ lastFocus = document.activeElement; }
-function openPanel(sel){ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
+// Alla "fönster" (paneler/sheet/modaler). En vy åt gången → sömlöst, inga staplade fönster.
+const OVERLAYS = ['#sheet','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel','#quiz','#teller','#feedback','#contribute','#review','#auth','#challenge-builder','#challenge-play','#challenge-results','#challenge-task'];
+function closeOverlays(except){
+  OVERLAYS.forEach(sel=>{ if (sel===except) return; const el=$(sel);
+    if (el && el.getAttribute('aria-hidden')==='false'){ if (sel==='#sheet') stopSpeaking(); el.setAttribute('aria-hidden','true'); } });
+}
+function openPanel(sel){ stopSpeaking(); closeOverlays(sel); $(sel).setAttribute('aria-hidden','false'); focusInto(sel); }
 function closePanel(sel){ $(sel).setAttribute('aria-hidden','true'); restoreFocus(); }
 function closeTopDialog(){
   const order = ['#auth','#review','#contribute','#challenge-task','#feedback','#quiz','#teller','#sheet','#challenge-builder','#challenge-play','#challenge-results','#tour-panel','#stories-panel','#progress-panel','#sponsor-panel'];
@@ -1341,7 +1566,10 @@ function wireUi(){
   $('#tour-close').onclick = ()=> closePanel('#tour-panel');
   $('#progress-close').onclick = ()=> closePanel('#progress-panel');
   $('#progress-btn').onclick = ()=> switchTab('profile');
-  $('#lang-btn').onclick = ()=>{ lang = (lang==='sv'?'en':'sv'); localStorage.setItem('mjolby_lang', lang); location.reload(); };
+  $('#lang-switch')?.querySelectorAll('.flag-btn').forEach(b=>{
+    b.onclick = ()=>{ const nl=b.dataset.lang; if (nl===lang) return; lang=nl; localStorage.setItem('mjolby_lang', lang); location.reload(); };
+  });
+  $('#next-stop-btn').onclick = navigateToNext;
   $('#stories-btn').onclick = openStories;
   $('#stories-close').onclick = ()=> closePanel('#stories-panel');
   $('#stories-q').oninput = e=> renderStories(e.target.value);

@@ -131,3 +131,42 @@ export const STORIES = {
   'mjolby-ai-ff-vifolkavallen':
     'På Vifolkavallen slår Mjölbys fotbollshjärta. Mjölby AI FF bildades den 26 maj 1912 och har spelat sina hemmamatcher här i mer än ett sekel. Kom en matchdag, så hör du staden heja på sina egna.',
 };
+
+// ── Tidslinjer per plats ────────────────────────────────────────────────────
+// Kurerad historik (faktagrundad i platsens källbelagda beskrivning). Visas under
+// nuvarande-bilden i detaljvyn. Fält per post: { year, title, text, image?, credit? }.
+// Samma form som en contributor lämnar in (bild laddas till Supabase → img-URL).
+// Bilder utelämnade tills riktiga (fria/contributor-) bilder finns — text-först.
+export const TIMELINES = {
+  'mjolby-kyrka': [
+    { year: '1100-talet', title: 'Första stenkyrkan', text: 'En kyrka i kalk- och gråsten reses på byns högsta punkt och helgas åt sitt skydd.' },
+    { year: '1771', title: 'Den stora branden', text: 'Branden förstör nästan hela kyrkan — men det medeltida tornet står kvar i röken.' },
+    { year: '1772–1777', title: 'Nuvarande kyrkan byggs', text: 'Byggmästaren Peter Östberg reser den kyrka som står idag, kring det bevarade tornet.' },
+    { year: '1900-talet', title: 'Crodels glasmålningar', text: 'Professor Crodel skapar kyrkans glasmålningar, där dagsljuset bryts i färg.' },
+  ],
+  'mjolby-station': [
+    { year: '11 maj 1873', title: 'Första tåget', text: 'Det första tåget ångar in och förvandlar kvarnbyn vid ån till en järnvägsknut.' },
+    { year: '1873', title: 'Banorna möts', text: 'Stambanan och den privata banan från Hallsberg–Motala korsas just här.' },
+    { year: 'Sent 1800-tal', title: 'Mjölby östra växer fram', text: 'En helt ny stadsdel reser sig ur spåren öster om järnvägen.' },
+  ],
+  'mjolby-stadshotell': [
+    { year: '1873', title: 'Järnvägshotellet byggs', text: 'Ett timmerhus reses för järnvägens resenärer, tvärs över spåren från stationen.' },
+    { year: '1901', title: 'Tidningen i väggen', text: 'En hopvikt dagstidning från 1901 muras in — och återfinns långt senare av hantverkare.' },
+    { year: '1970-talet', title: 'Plåtfasad', text: 'Den ursprungliga putsfasaden kläs in i tidstypisk plåt.' },
+    { year: 'omkring 2017', title: 'Fasaden återställs', text: 'Nya ägare återställer putsfasaden och öppnar en whiskybar med hundratals sorter.' },
+  ],
+};
+
+// ── Notiser / evenemang per plats ───────────────────────────────────────────
+// "Ruta" som dyker upp på vissa platser (t.ex. en scen/park) om evenemang.
+// Fält: { icon?, title, text?, events?:[{when,what}], source?, url? }.
+// Avsett att synkas från extern källa (t.ex. Visit Mjölby) — se url/source.
+export const NOTICES = {
+  'kvarnparken': {
+    icon: '🎵',
+    title: 'Evenemang i parken',
+    text: 'Parker som denna är en självklar scen för konserter och sommarevenemang i Mjölby. Det aktuella programmet — och vilka artister som spelar — finns hos Visit Mjölby.',
+    source: 'Visit Mjölby',
+    url: 'https://www.visitmjolby.se',
+  },
+};

@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v20';
+const CACHE = 'mjolby-stadsvandring-v31';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -7,7 +7,7 @@ const RUNTIME_MAX = 250;   // max antal cachade rutor/foton; äldsta vräks (FIF
 
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
-  './challenges.js', './config.js', './auth.js', './tips.js',
+  './events.json', './challenges.js', './config.js', './auth.js', './tips.js',
   './vendor/qrcode.js', './vendor/supabase.js', './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css',
   './vendor/leaflet/images/marker-icon.png', './vendor/leaflet/images/marker-icon-2x.png',
   './vendor/leaflet/images/marker-shadow.png', './vendor/leaflet/images/layers.png', './vendor/leaflet/images/layers-2x.png',

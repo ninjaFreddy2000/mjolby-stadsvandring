@@ -17,12 +17,30 @@
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' data: blob: https://*.tile.openstreetmap.org https://*.supabase.co;
-    connect-src 'self' https://*.supabase.co wss://*.supabase.co;
+    connect-src 'self' https://*.supabase.co wss://*.supabase.co https://routing.openstreetmap.de;
     worker-src 'self';
     manifest-src 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#F3EAD8">
-  <title>Strosa — Stadsvandringar i Mjölby</title>
+  <title>Strosa – Stadsvandringar i Mjölby &amp; Östergötland</title>
+  <meta name="description" content="Upptäck Mjölby, Skänninge och Bjälbo en plats i taget — guidade stadsvandringar med karta, berättelser, stämplar och quiz. 47 sevärdheter och historiska platser i Östergötland.">
+  <link rel="canonical" href="https://stadsvandring.io/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <!-- Open Graph / Twitter (länkförhandsvisningar + en del AI/SERP-thumbnails) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stadsvandring">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="Strosa – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta property="og:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz. Upptäck sevärdheter och historiska platser i Mjölby, Skänninge och Bjälbo.">
+  <meta property="og:url" content="https://stadsvandring.io/">
+  <meta property="og:image" content="https://stadsvandring.io/icons/icon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strosa – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta name="twitter:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz i Mjölby, Skänninge och Bjälbo.">
+  <meta name="twitter:image" content="https://stadsvandring.io/icons/icon-512.png">
+  <!-- Strukturerad data (JSON-LD är icke-exekverbar data → tillåten av script-src 'self') -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Strosa – Stadsvandring","alternateName":"Stadsvandring","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Guidade stadsvandringar i Mjölby, Skänninge och Bjälbo med karta, berättelser, stämplar och quiz."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Strosa Stadsvandring","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","areaServed":"Mjölby, Östergötland, Sverige"}</script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
@@ -33,10 +51,22 @@
 </head>
 <body>
  <div id="app">
+  <noscript>
+    <div style="max-width:760px;margin:0 auto;padding:24px 20px;font-family:system-ui,sans-serif;color:#1b2a4a">
+      <h1>Strosa – Stadsvandringar i Mjölby &amp; Östergötland</h1>
+      <p>Strosa är en guidad stadsvandring som låter dig upptäcka Mjölby, Skänninge och Bjälbo en plats i taget — med karta, berättelser, stämplar och quiz. Appen kräver JavaScript, men du kan läsa om alla platser här:</p>
+      <p><a href="/platser"><strong>➜ Bläddra bland alla 47 sevärdheter och historiska platser</strong></a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+      <p>Guidade vandringsturer: <a href="/tur/central">Centrala vandringen</a> (Mjölby, ca 2 km) och <a href="/tur/medeltidsringen">Medeltidsringen</a> (Skänninge &amp; Bjälbo).</p>
+      <p>Bland platserna finns <a href="/p/mjolby-kyrka">Mjölby kyrka</a>, <a href="/p/svartan">Svartån</a>, <a href="/p/stora-torget">Stora torget</a>, <a href="/p/skanninge-mote-1248">Skänninge möte 1248</a> och <a href="/p/bjalbo-kyrka">Bjälbo kyrka</a> — kvarnbyn vid Svartån som blev järnvägsknut och regioncentrum i sydvästra Östergötland.</p>
+    </div>
+  </noscript>
   <div class="accent-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
   <header class="topbar header-hero">
     <div class="top-actions">
-      <button id="lang-btn" class="icon-btn lang-btn" aria-label="Byt språk / Change language" title="Svenska / English">EN</button>
+      <div class="lang-switch" id="lang-switch" role="group" aria-label="Språk / Language">
+        <button class="flag-btn" data-lang="sv" aria-label="Svenska" title="Svenska">🇸🇪</button>
+        <button class="flag-btn" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+      </div>
       <button id="stories-btn" class="icon-btn" aria-label="Alla berättelser" title="Personer & berättelser">📖</button>
       <button id="progress-btn" class="progress-btn" aria-label="Min progress">
         <span id="stamp-count">0</span>
@@ -55,10 +85,13 @@
   </header>
 
   <div id="explore">
-    <button class="tellerbar" id="tellerbar" hidden></button>
-    <nav class="tours" id="tours" aria-label="Vandringar"></nav>
-    <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
+    <div class="sidebar" id="sidebar">
+      <button class="tellerbar" id="tellerbar" hidden></button>
+      <nav class="tours" id="tours" aria-label="Vandringar"></nav>
+      <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
+    </div>
     <main id="map" aria-label="Karta"></main>
+    <button class="next-stop-btn" id="next-stop-btn" hidden>🧭 <span id="next-stop-label">Till nästa plats</span></button>
   </div>
 
   <section id="screen" hidden aria-label="Vy"></section>
@@ -82,6 +115,7 @@
       <button class="panel-close" id="tour-close" aria-label="Stäng">&times;</button>
     </div>
     <p class="panel-sub" id="tour-sub"></p>
+    <button class="cta tour-start" id="tour-start">▶&nbsp; <span id="tour-start-label">Starta vandringen</span></button>
     <button class="quest-toggle" id="quest-toggle" aria-pressed="false">🗺️ Quest-läge</button>
     <ol class="stop-list" id="tour-stops"></ol>
     <button class="cta" id="tour-quiz-btn">Testa dina kunskaper — quiz</button>
@@ -177,6 +211,11 @@
   <!-- Stadsutmaning: uppgiftsmodal -->
   <section class="ch-task" id="challenge-task" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="ch-task-modal" id="ct-card"></div>
+  </section>
+
+  <!-- Landningssida: välj/sök stad (visas vid första besök) -->
+  <section class="landing" id="landing" aria-hidden="true">
+    <div class="landing-card" id="landing-card"></div>
   </section>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

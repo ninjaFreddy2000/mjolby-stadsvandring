@@ -12,14 +12,14 @@
 // de riktiga nycklarna fylls i.
 const _ov = (k) => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } };
 
-export const SUPABASE_URL = _ov('cfg_supabase_url') || '';          // t.ex. 'https://abcd1234.supabase.co'
-export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || ''; // den långa "anon public"-nyckeln
+export const SUPABASE_URL = _ov('cfg_supabase_url') || 'https://phkrlofngyobgupaepej.supabase.co';
+export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable_YrrflIKTGbNQSofhlf3aZA_qONa6Xdc'; // publik (publishable) nyckel — säker att committa; säkerheten ligger i RLS
 
 // Vilken stad denna installation gäller (matchar data.json-id:n och tips.city).
 export const APP_CITY = 'mjolby';
 
 // Publik dela-URL (återanvänds av profil/dela).
-export const SHARE_URL = 'https://ninjafreddy2000.github.io/mjolby-stadsvandring/';
+export const SHARE_URL = 'https://stadsvandring.io/';
 
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 

@@ -1,0 +1,67 @@
+# Stadsvandring (Strosa)
+
+> Guidade stadsvandringar i Mjölby, Norra Vi, Kinda, Mullsjö, Värnamo (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 47 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+
+## Om
+- Varumärke: Strosa
+- Plats: Mjölby, Norra Vi, Kinda, Mullsjö, Värnamo (Östergötland, Sverige)
+- Webbplats: https://stadsvandring.io
+- Innehåll: 47 kartlagda platser med beskrivning, epok, snabbfakta och källor.
+
+## Vandringsturer
+- [Centrala vandringen](https://stadsvandring.io/tur/central): Från stationen genom kvarnbyns hjärta — ca 2 km. 9 stopp.
+- [Medeltidsringen](https://stadsvandring.io/tur/medeltidsringen): Folkungaätten, kloster och runstenar runt Skänninge & Bjälbo. 7 stopp.
+
+## Platser
+- [Mjölby (Mjölby)](https://stadsvandring.io/p/mjolby-orten): Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland.
+- [Svartån (Mjölby)](https://stadsvandring.io/p/svartan): Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande.
+- [Mjölby kyrka (Mjölby)](https://stadsvandring.io/p/mjolby-kyrka): Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771.
+- [Mjölby järnvägsstation (Mjölby)](https://stadsvandring.io/p/mjolby-station): Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.
+- [Mjölby Stadshotell (gamla Järnvägshotellet) (Mjölby)](https://stadsvandring.io/p/mjolby-stadshotell): Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst.
+- [Stora Torget (Mjölby)](https://stadsvandring.io/p/stora-torget): Byns historiska hjärta, vid det gamla vägskälet mot Småland.
+- [Mjölby hembygdsgård (Norrgårdsholmen) (Mjölby)](https://stadsvandring.io/p/mjolby-hembygdsgard): Faluröda museihus på en holme i ån, med en fin intarsiasamling.
+- [Galleria Kvarnen (Mjölby)](https://stadsvandring.io/p/galleria-kvarnen): Stadens galleria, vars namn nickar åt kvarnarvet.
+- [Gamla Stadshuset / Stadshuset i Mjölby (Mjölby)](https://stadsvandring.io/p/gamla-stadshuset): Stadshuset nära gallerian och biblioteket; framför entrén står en Carl Milles-skulptur.
+- [Kvarnparken (Mjölby)](https://stadsvandring.io/p/kvarnparken): Park och anläggning vid ån med restaurang, pub och statyn av Skånska Lasse.
+- [Konditori Hörnet (Mjölby)](https://stadsvandring.io/p/konditori-hornet): Mysigt, centralt klassiskt konditori intill biblioteket.
+- [Linds (bageri & konditori) (Mjölby)](https://stadsvandring.io/p/linds-mjolby): Café och konditori med eget bageri i Galleria Kvarnen.
+- [Skånska Lasse (Theodor Lorentz Larsson) (Mjölby)](https://stadsvandring.io/p/skanska-lasse): Bondkomiker och visdiktare, mjölbybo större delen av livet.
+- [Statyn av Skånska Lasse (Mjölby)](https://stadsvandring.io/p/skanska-lasses-staty): Staty i Kvarnparken över ortens folkkäre bondkomiker.
+- [Skånska Lasses hus (Mjölby)](https://stadsvandring.io/p/skanska-lasses-hus): Det blygsamma hemmet där Skånska Lasse bodde med sin familj.
+- [Potatisrondellen (Mjölbypotäten) (Mjölby)](https://stadsvandring.io/p/potatisrondellen): Ortens mest omtalade symbol: en jättelik King Edward-potatis i en rondell.
+- [Mjölby Intarsia / Fanerami AB (Mjölby)](https://stadsvandring.io/p/mjolby-intarsia-fanerami): Träinläggnings­företaget som klädde atlantångare och bankpalats i intarsia.
+- [Ols Möbler (idag Mio Mjölby) (Mjölby)](https://stadsvandring.io/p/ols-mobler-mio): Möbeldynasti som startade 1887 och fortfarande drivs av samma familj.
+- [Mjölby Bryggeri (historiskt) (Mjölby)](https://stadsvandring.io/p/mjolby-bryggeri): Ortens anrika bryggeri, sedermera inriktat på svagdricka och läsk.
+- [Mjölby Ungdomsmusikkår (Mjölby)](https://stadsvandring.io/p/mjolby-ungdomsmusikkar): En av Sveriges främsta och största ungdomsblåsorkestrar.
+- [Mjölby Stadsmusikkår (Mjölby)](https://stadsvandring.io/p/mjolby-stadsmusikkar): Symfonisk blåsorkester med rötter i fackföreningsrörelsen.
+- [Carl Milles-skulptur (dansande figurer), Stadshuset (Mjölby)](https://stadsvandring.io/p/carl-milles-staty): Skulptur av den världskände Carl Milles framför Stadshusets entré.
+- [Statyn 'Det kom en gång en mjölnare' (Mjölby)](https://stadsvandring.io/p/det-kom-en-gang-en-mjolnare): Skulptur vid ån som hyllar Mjölbys mjölnar- och kvarnarv.
+- [Bjälbo kyrka (Mjölby)](https://stadsvandring.io/p/bjalbo-kyrka): Folkungaättens gårdskyrka och Birger jarls trakt — med ett mäktigt medeltida torn.
+- [Birger jarl (Birger Magnusson) (Mjölby)](https://stadsvandring.io/p/birger-jarl): Folkungaättens mest kände son, brukar räknas som Stockholms grundare — född i Bjälbo.
+- [Ingrid Ylva (Mjölby)](https://stadsvandring.io/p/ingrid-ylva): Birger jarls sägenomspunna mor, förknippad med Bjälbo kyrktorn.
+- [Högbystenen (Ög 81) (Mjölby)](https://stadsvandring.io/p/hogbystenen): En av Sveriges främsta runstenar, näst efter Rökstenen i Östergötland.
+- [Skänninge (Mjölby)](https://stadsvandring.io/p/skanninge-orten): En av Sveriges äldsta städer och ett medeltida kraftcentrum, idag del av Mjölby kommun.
+- [Skänninge möte 1248 (Mjölby)](https://stadsvandring.io/p/skanninge-mote-1248): Kyrkomöte som införde prästcelibat och stärkte kyrkans makt i Sverige.
+- [Vårfrukyrkan ('Garpekyrkan'), Skänninge (Mjölby)](https://stadsvandring.io/p/varfrukyrkan-skanninge): De tyska köpmännens mäktiga tegelkyrka — en av få stora medeltida tegelkyrkor i Östergötland.
+- [S:ta Ingrids klosterruin (Mjölby)](https://stadsvandring.io/p/sta-ingrids-kloster): Sveriges första kvinnliga dominikankloster.
+- [S:t Olofs kloster & Petrus de Dacia (Mjölby)](https://stadsvandring.io/p/st-olofs-kloster-petrus-de-dacia): Dominikankonventet i Skänninge där 'Sveriges förste författare' verkade.
+- [Adolf Fredrik Lindblad (Mjölby)](https://stadsvandring.io/p/adolf-fredrik-lindblad): Tonsättare född i Skänninge, 'den svenske Schubert', lärare till Jenny Lind.
+- [Lindbladsparken & bysten av A.F. Lindblad (Mjölby)](https://stadsvandring.io/p/lindbladsparken-byst): Park i Skänninge med en byst av tonsättaren Adolf Fredrik Lindblad.
+- [Ture Lång (Rolandsstaty), Skänninge (Mjölby)](https://stadsvandring.io/p/ture-lang): Ståljätte på Skänninges torg, symbol för rättsskipning i medeltida tysk tradition.
+- [Svaneholms borgruin (Mjölby)](https://stadsvandring.io/p/svaneholms-borgruin): Ruinerna av en 1300-talsborg på en udde i Kilarpesjön.
+- [Öjebro stenvalvsbro (Mjölby)](https://stadsvandring.io/p/ojebro-stenvalvsbro): Gammal stenvalvsbro i den forna kvarnbyn Öjebro.
+- [Stadsbranden 1771 (Mjölby)](https://stadsvandring.io/p/branden-1771): Branden som nästan utplånade kvarnbyn och som möjliggör att vi känner den medeltida byplanen.
+- [Dackefejden i Mjölby (1542–43) (Mjölby)](https://stadsvandring.io/p/dackefejden): Mjölby var den nordligaste punkt som smålandsupprorets styrkor nådde.
+- [Mjölby AI FF / Vifolkavallen (Mjölby)](https://stadsvandring.io/p/mjolby-ai-ff-vifolkavallen): Ortens fotbollsklubb med hemmaplan på Vifolkavallen.
+- [Norra Vi kyrka (Norra Vi)](https://stadsvandring.io/p/og-norra-vi-kyrka): Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.
+- [Korpberget (Norra Vi)](https://stadsvandring.io/p/og-korpberget): Härifrån har ni en vacker vy över Norra Vi.
+- [Skuru (Norra Vi)](https://stadsvandring.io/p/og-skuru): Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.
+- [Norra Vi vandringsled (Norra Vi)](https://stadsvandring.io/p/og-norra-vi-vandringsled): Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.
+- [Östgötaleden (Kinda)](https://stadsvandring.io/p/og-ostgotaleden): Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!
+- [Mullsjö (Mullsjö)](https://stadsvandring.io/p/og-mullsjo): I Mullsjö finns det plats för det som är viktigt.
+- [Store Mosse nationalpark (Värnamo)](https://stadsvandring.io/p/og-store-mosse-nationalpark): En kort bit från Värnamo ligger Store Mosse nationalpark, ett stort och öppet naturområde som bjuder på lugn och stillhet.
+
+## Index
+- [Om & vanliga frågor](https://stadsvandring.io/om): Vad Strosa är, vilka orter som täcks och svar på vanliga frågor.
+- [Alla platser](https://stadsvandring.io/platser): Komplett lista över sevärdheter och platser.
+- [Sitemap](https://stadsvandring.io/sitemap.xml)

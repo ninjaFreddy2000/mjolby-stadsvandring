@@ -1,0 +1,450 @@
+#!/usr/bin/env node
+// ─────────────────────────────────────────────────────────────────────────
+// build-seo.mjs — Genererar den crawl-bara SEO/AEO-ytan från data.json.
+//
+// VARFÖR: Appen är en SPA — allt innehåll renderas client-side via app.js, så
+// view-source är tomt. Google och (i princip alla) LLM-svarsmotorer kör inte
+// JS pålitligt → innehållet är osynligt. Den här generatorn producerar RIKTIGA
+// statiska, server-levererade HTML-sidor (en per plats) + en platsindex +
+// sitemap.xml + robots.txt + llms.txt. Textförst = bäst för LLM-extraktion.
+//
+// KÖR: node scripts/build-seo.mjs   (ingen build-kedja krävs; idempotent)
+// Skriver till repo-roten. Kör om varje gång data.json ändras.
+// ─────────────────────────────────────────────────────────────────────────
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const BASE = 'https://stadsvandring.io';          // kanonisk produktionsdomän
+const SITE_NAME = 'Stadsvandring';
+const BRAND = 'Strosa';
+const TODAY = new Date().toISOString().slice(0, 10);
+
+const data = JSON.parse(readFileSync(join(ROOT, 'data.json'), 'utf8'));
+// Exkludera demo-/testdata från den indexerbara ytan (tunt/irrelevant innehåll
+// skadar SEO). Allt övrigt är riktiga, innehållsrika poster.
+const isDemo = (e) => /^(demo|test)[-_]?/i.test(e.id || '') || /\b(demo|test)\b/i.test(e.id || '');
+const entries = (data.entries || []).filter((e) => !isDemo(e));
+
+// ── helpers ───────────────────────────────────────────────────────────────
+const esc = (s) => String(s ?? '')
+  .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+const attr = (s) => esc(s);
+const jsonld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+const trunc = (s, n) => { s = String(s || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; };
+const slug = (s) => String(s).toLowerCase()
+  .replaceAll('å', 'a').replaceAll('ä', 'a').replaceAll('ö', 'o')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+const CITIES = [...new Set(entries.map(e => e.city).filter(Boolean))];
+
+// Haversine-avstånd (km) för "närliggande platser" → internt länkgraf.
+function distKm(a, b) {
+  if (!a?.lat || !b?.lat) return Infinity;
+  const R = 6371, toR = (d) => d * Math.PI / 180;
+  const dLat = toR(b.lat - a.lat), dLng = toR(b.lng - a.lng);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(toR(a.lat)) * Math.cos(toR(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+// Förbered de 3 närmaste (inom 60 km) för varje plats med koordinater.
+function nearestFor(entry) {
+  if (!entry.coordinates?.lat) return [];
+  return entries
+    .filter(o => o.id !== entry.id && o.coordinates?.lat)
+    .map(o => ({ o, d: distKm(entry.coordinates, o.coordinates) }))
+    .filter(x => x.d < 60)
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 3)
+    .map(x => x.o);
+}
+
+// Kategori → mänsklig etikett (för synligt innehåll + nyckelord)
+const CAT_LABEL = {
+  ort: 'Ort', vattendrag: 'Vattendrag', kyrka: 'Kyrka', byggnad: 'Byggnad',
+  torg: 'Torg', museum_hembygd: 'Museum & hembygd', handel: 'Handel',
+  kafe_restaurang: 'Kafé & restaurang', hotell: 'Hotell',
+  industri_foretag: 'Industri & företag', person: 'Person',
+  konst_staty: 'Konst & staty', runsten: 'Runsten', klosterruin: 'Klosterruin',
+  borgruin: 'Borgruin', bro: 'Bro', musikkar: 'Musikkår', handelse: 'Händelse',
+  idrott: 'Idrott', station: 'Station',
+};
+
+// Kategori → Schema.org-typ (Place-subtyper får geo; Person/CreativeWork inte)
+function schemaTypeFor(cat) {
+  if (cat === 'person') return { type: 'Person', place: false };
+  if (cat === 'handelse') return { type: 'CreativeWork', place: false };
+  if (cat === 'kyrka') return { type: 'Church', place: true };
+  if (cat === 'klosterruin' || cat === 'borgruin') return { type: 'LandmarksOrHistoricalBuildings', place: true };
+  if (cat === 'museum_hembygd') return { type: 'Museum', place: true };
+  if (cat === 'hotell') return { type: 'Hotel', place: true };
+  if (cat === 'kafe_restaurang') return { type: 'Restaurant', place: true };
+  if (cat === 'station') return { type: 'TrainStation', place: true };
+  return { type: 'TouristAttraction', place: true };
+}
+
+// ── shared layout ───────────────────────────────────────────────────────────
+function page({ title, description, canonical, head = '', body }) {
+  return `<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>${esc(title)}</title>
+<meta name="description" content="${attr(description)}">
+<link rel="canonical" href="${attr(canonical)}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${attr(SITE_NAME)}">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="${attr(title)}">
+<meta property="og:description" content="${attr(description)}">
+<meta property="og:url" content="${attr(canonical)}">
+<meta property="og:image" content="${BASE}/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${attr(title)}">
+<meta name="twitter:description" content="${attr(description)}">
+<meta name="twitter:image" content="${BASE}/icons/icon-512.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+${head}
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="${attr(BRAND)} — hem">S</a>
+  <div><b>${esc(BRAND)}</b> · ${esc(SITE_NAME)}</div>
+</header>
+${body}
+<footer class="site">
+  <p><strong>${esc(BRAND)}</strong> — guidade stadsvandringar i ${esc(CITIES.join(', '))}. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>`;
+}
+
+// ── per-plats-sidor ─────────────────────────────────────────────────────────
+let pageCount = 0;
+const placeDir = join(ROOT, 'p');
+if (existsSync(placeDir)) rmSync(placeDir, { recursive: true, force: true });
+mkdirSync(placeDir, { recursive: true });
+
+const urls = [
+  { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${BASE}/platser`, priority: '0.8', changefreq: 'weekly' },
+];
+
+for (const e of entries) {
+  const s = slug(e.id || e.name);
+  const catLabel = CAT_LABEL[e.category] || e.category || '';
+  const desc = trunc(e.summary || e.description, 158);
+  const canonical = `${BASE}/p/${s}`;
+  const { type, place } = schemaTypeFor(e.category);
+
+  // JSON-LD: huvudentitet
+  const ld = { '@context': 'https://schema.org', '@type': type, name: e.name, url: canonical };
+  if (e.summary || e.description) ld.description = trunc(e.description || e.summary, 500);
+  if (place && e.coordinates?.lat) {
+    ld.geo = { '@type': 'GeoCoordinates', latitude: e.coordinates.lat, longitude: e.coordinates.lng };
+    ld.address = { '@type': 'PostalAddress', addressLocality: e.city, addressRegion: 'Östergötland', addressCountry: 'SE' };
+  }
+  if (e.city) ld.containedInPlace = { '@type': 'City', name: e.city };
+  const sames = (e.sources || []).filter(u => /^https?:\/\//.test(u));
+  if (sames.length) ld.sameAs = sames;
+
+  // JSON-LD: breadcrumb
+  const crumbs = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Platser', item: `${BASE}/platser` },
+      { '@type': 'ListItem', position: 3, name: e.name, item: canonical },
+    ],
+  };
+
+  const facts = (e.key_facts || []).map(f => `<li>${esc(f)}</li>`).join('');
+  const nearby = nearestFor(e);
+  const nearbyHtml = nearby.length ? `<div class="card"><h2>Närliggande platser</h2><div class="grid two">${
+    nearby.map(o => `<a class="tile" href="/p/${slug(o.id || o.name)}"><b>${esc(o.name)}</b><span>${esc(CAT_LABEL[o.category] || o.category || '')}${o.city && o.city !== e.city ? ' · ' + esc(o.city) : ''}</span></a>`).join('')
+  }</div></div>` : '';
+  const sourcesHtml = (e.sources || []).filter(u => /^https?:\/\//.test(u))
+    .map(u => `<li><a href="${attr(u)}" rel="nofollow noopener" target="_blank">${esc(u.replace(/^https?:\/\//, '').replace(/\/$/, ''))}</a></li>`).join('');
+
+  const body = `
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Platser</a> › ${esc(e.name)}</nav>
+<article>
+  <div class="badges">
+    ${catLabel ? `<span class="badge">${esc(catLabel)}</span>` : ''}
+    ${e.city ? `<span class="badge">📍 ${esc(e.city)}</span>` : ''}
+    ${e.era ? `<span class="badge">${esc(e.era)}</span>` : ''}
+  </div>
+  <h1>${esc(e.name)}</h1>
+  ${e.summary ? `<p class="lead">${esc(e.summary)}</p>` : ''}
+  ${e.description ? `<div class="card"><p>${esc(e.description)}</p></div>` : ''}
+  ${facts ? `<div class="card"><h2>Snabbfakta</h2><ul class="facts">${facts}</ul></div>` : ''}
+  <p>
+    <a class="cta" href="/">Visa på kartan</a>
+    <a class="cta ghost" href="/platser">Alla platser i ${esc(e.city || SITE_NAME)}</a>
+  </p>
+  ${nearbyHtml}
+  ${sourcesHtml ? `<div class="card"><h2>Källor</h2><ul class="sources">${sourcesHtml}</ul></div>` : ''}
+</article>`;
+
+  const html = page({
+    title: `${e.name} – ${e.city || 'Stadsvandring'} | ${BRAND}`,
+    description: desc,
+    canonical,
+    head: jsonld(ld) + '\n' + jsonld(crumbs),
+    body,
+  });
+  writeFileSync(join(placeDir, `${s}.html`), html);
+  urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly' });
+  pageCount++;
+}
+
+// ── platsindex (/platser) ────────────────────────────────────────────────────
+const byCity = {};
+for (const e of entries) (byCity[e.city || 'Övrigt'] ||= []).push(e);
+const indexBody = `
+<nav class="crumbs"><a href="/">Hem</a> › Platser</nav>
+<h1>Alla platser</h1>
+<p class="lead">${entries.length} sevärdheter, byggnader, personer och berättelser i ${esc(CITIES.join(', '))} — kartlagda för stadsvandring.</p>
+<h2 class="city-h">Vandringsturer</h2>
+<div class="grid two">
+  <a class="tile" href="/tur/central"><b>🚶 Centrala vandringen</b><span>Mjölby · från stationen genom kvarnbyns hjärta, ca 2 km</span></a>
+  <a class="tile" href="/tur/medeltidsringen"><b>🚶 Medeltidsringen</b><span>Skänninge &amp; Bjälbo · Folkungaätten, kloster och runstenar</span></a>
+</div>
+${Object.entries(byCity).map(([city, list]) => `
+<h2 class="city-h">${esc(city)} · ${list.length} platser</h2>
+<div class="grid two">
+${list.map(e => `<a class="tile" href="/p/${slug(e.id || e.name)}"><b>${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.era ? ' · ' + esc(e.era) : ''}</span></a>`).join('\n')}
+</div>`).join('\n')}
+<p style="margin-top:30px"><a class="cta" href="/">Öppna kartan &amp; appen</a></p>`;
+
+const indexLd = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage',
+  name: 'Alla platser – Stadsvandring', url: `${BASE}/platser`,
+  about: CITIES.map(c => ({ '@type': 'City', name: c })),
+  mainEntity: {
+    '@type': 'ItemList', numberOfItems: entries.length,
+    itemListElement: entries.map((e, i) => ({
+      '@type': 'ListItem', position: i + 1, name: e.name, url: `${BASE}/p/${slug(e.id || e.name)}`,
+    })),
+  },
+};
+writeFileSync(join(ROOT, 'platser.html'), page({
+  title: `Alla platser i ${CITIES.join(', ')} | ${BRAND} Stadsvandring`,
+  description: trunc(`Utforska ${entries.length} sevärdheter, byggnader och historiska platser i ${CITIES.join(', ')}. Guidade stadsvandringar med karta, berättelser och quiz.`, 158),
+  canonical: `${BASE}/platser`,
+  head: jsonld(indexLd),
+  body: indexBody,
+}));
+
+// ── /om (About + FAQ, FAQPage-schema) ────────────────────────────────────────
+const byId = (id) => entries.find(e => (e.id || '') === id);
+const mjo = byId('mjolby-orten'), ska = byId('skanninge-mote-1248');
+const faqs = [
+  { q: 'Vad är Strosa?', a: `Strosa är en gratis webbapp (PWA) för guidade stadsvandringar i ${CITIES[0]} med omnejd. Du utforskar sevärdheter, byggnader, historia och berättelser via en interaktiv karta, samlar digitala stämplar när du besöker platser och testar dina kunskaper med quiz.` },
+  { q: 'Vilka orter kan jag utforska?', a: `Du kan vandra i ${CITIES.join(', ')} samt kringliggande platser i Östergötland. Totalt finns ${entries.length} kartlagda sevärdheter, byggnader, personer och historiska händelser.` },
+  { q: 'Behöver jag installera en app?', a: 'Nej. Strosa körs direkt i webbläsaren på mobil och dator. Du kan också installera den som app via "Lägg till på hemskärmen" (PWA) för snabb åtkomst och offline-stöd.' },
+  { q: 'Vad kan jag göra i appen?', a: 'Du kan följa tematiska vandringsturer steg för steg, utforska platser på en karta, läsa om historia och personer, samla stämplar vid besök och testa dina kunskaper i quiz.' },
+  { q: 'Finns Strosa på engelska?', a: 'Ja. Du kan när som helst växla mellan svenska och engelska direkt i appen.' },
+  mjo ? { q: 'Vad är Mjölby känt för?', a: mjo.summary + (mjo.era ? ` (${mjo.era}.)` : '') } : null,
+  ska ? { q: 'Vad var Skänninge möte?', a: ska.summary } : null,
+].filter(Boolean);
+
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question', name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+const omBody = `
+<nav class="crumbs"><a href="/">Hem</a> › Om</nav>
+<h1>Om Strosa Stadsvandring</h1>
+<p class="lead">Strosa är en gratis webbapp för guidade stadsvandringar i ${esc(CITIES.join(', '))}. Upptäck ${entries.length} sevärdheter, byggnader, personer och historiska händelser — en plats i taget, med karta, berättelser, stämplar och quiz.</p>
+<div class="card">
+  <p>Strosa gör lokalhistorien levande och promenadvänlig. Varje plats har en kort sammanfattning, en fördjupande beskrivning, snabbfakta och källor — så att både besökare, skolklasser och nyfikna invånare kan lära känna sin stad på djupet. Innehållet bygger på källor som Wikipedia, ${esc(CITIES[0].toLowerCase())}.se och lokalhistoriskt material.</p>
+</div>
+<h2 class="city-h">Vanliga frågor</h2>
+${faqs.map(f => `<div class="card"><h2>${esc(f.q)}</h2><p>${esc(f.a)}</p></div>`).join('\n')}
+<p style="margin-top:24px"><a class="cta" href="/">Öppna kartan &amp; appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
+writeFileSync(join(ROOT, 'om.html'), page({
+  title: `Om Strosa – Guidade stadsvandringar i ${CITIES[0]} | Vanliga frågor`,
+  description: trunc(`Vad är Strosa? En gratis webbapp för guidade stadsvandringar i ${CITIES.join(', ')} med karta, berättelser, stämplar och quiz. Svar på vanliga frågor.`, 158),
+  canonical: `${BASE}/om`,
+  head: jsonld(faqLd),
+  body: omBody,
+}));
+urls.push({ loc: `${BASE}/om`, priority: '0.6', changefreq: 'monthly' });
+
+// ── Vandringsturer (/tur/<slug>, TouristTrip-schema) ─────────────────────────
+// Speglar TOURS i app.js: 'central' via flagga+stop_no, 'medeltidsringen' via sekvens.
+const TOURS = [
+  {
+    slug: 'central', name: 'Centrala vandringen',
+    sub: 'Från stationen genom kvarnbyns hjärta — ca 2 km.', area: 'Mjölby',
+    intro: 'En lättgången slinga genom Mjölbys historiska kärna — från järnvägsstationen som förvandlade kvarnbyn till järnvägsknut, via Stora Torget och kyrkan till hembygdsgården på Norrgårdsholmen. Cirka 2 km i lugn takt.',
+    stops: entries.filter(e => e.tour && e.tour.in_central_walk)
+      .sort((a, b) => (a.tour.stop_no || 99) - (b.tour.stop_no || 99)),
+  },
+  {
+    slug: 'medeltidsringen', name: 'Medeltidsringen',
+    sub: 'Folkungaätten, kloster och runstenar runt Skänninge & Bjälbo.', area: 'Skänninge & Bjälbo',
+    intro: 'En vandring i Folkungaättens fotspår genom medeltidens Skänninge och Bjälbo — kyrkor, klosterruiner och runstenar som berättar om 1200-talets maktcentrum i Östergötland.',
+    stops: ['bjalbo-kyrka', 'hogbystenen', 'skanninge-orten', 'varfrukyrkan-skanninge',
+      'sta-ingrids-kloster', 'ture-lang', 'svaneholms-borgruin'].map(byId).filter(Boolean),
+  },
+];
+
+const turDir = join(ROOT, 'tur');
+if (existsSync(turDir)) rmSync(turDir, { recursive: true, force: true });
+mkdirSync(turDir, { recursive: true });
+
+for (const t of TOURS) {
+  const canonical = `${BASE}/tur/${t.slug}`;
+  const tripLd = {
+    '@context': 'https://schema.org', '@type': 'TouristTrip',
+    name: t.name, description: t.intro, url: canonical, touristType: 'sightseeing',
+    itinerary: {
+      '@type': 'ItemList', numberOfItems: t.stops.length,
+      itemListElement: t.stops.map((e, i) => ({
+        '@type': 'ListItem', position: i + 1,
+        item: { '@type': 'TouristAttraction', name: e.name, url: `${BASE}/p/${slug(e.id || e.name)}` },
+      })),
+    },
+  };
+  const crumbs = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Vandringsturer', item: `${BASE}/platser` },
+      { '@type': 'ListItem', position: 3, name: t.name, item: canonical },
+    ],
+  };
+  const stopsHtml = t.stops.map((e, i) => `<a class="tile" href="/p/${slug(e.id || e.name)}"><b>${i + 1}. ${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.summary ? ' · ' + esc(trunc(e.summary, 70)) : ''}</span></a>`).join('\n');
+  const body = `
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Vandringsturer</a> › ${esc(t.name)}</nav>
+<div class="badges"><span class="badge">🚶 Vandringstur</span><span class="badge">📍 ${esc(t.area)}</span><span class="badge">${t.stops.length} stopp</span></div>
+<h1>${esc(t.name)}</h1>
+<p class="lead">${esc(t.sub)}</p>
+<div class="card"><p>${esc(t.intro)}</p></div>
+<h2 class="city-h">Stopp längs vägen</h2>
+<div class="grid">${stopsHtml}</div>
+<p style="margin-top:24px"><a class="cta" href="/">Starta vandringen i appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
+  writeFileSync(join(turDir, `${t.slug}.html`), page({
+    title: `${t.name} – guidad stadsvandring i ${t.area} | ${BRAND}`,
+    description: trunc(`${t.sub} ${t.stops.length} stopp med karta, berättelser och quiz i ${BRAND}.`, 158),
+    canonical, head: jsonld(tripLd) + '\n' + jsonld(crumbs), body,
+  }));
+  urls.push({ loc: canonical, priority: '0.8', changefreq: 'monthly' });
+}
+
+// ── sitemap.xml ──────────────────────────────────────────────────────────────
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url><loc>${u.loc}</loc><lastmod>${TODAY}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`).join('\n')}
+</urlset>
+`;
+writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);
+
+// ── robots.txt (välkomna AI-crawlers explicit) ───────────────────────────────
+const robots = `# robots.txt — ${SITE_NAME}
+# Alla sökmotorer välkomna. AI-svarsmotorer (AEO) uttryckligen tillåtna —
+# målet är att bli läst OCH citerad av LLM:er.
+User-agent: *
+Allow: /
+
+# AI-/LLM-crawlers (tillåt indexering & citering)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+Sitemap: ${BASE}/sitemap.xml
+`;
+writeFileSync(join(ROOT, 'robots.txt'), robots);
+
+// ── llms.txt (AEO: maskinläsbar karta för LLM:er) ────────────────────────────
+const llms = `# ${SITE_NAME} (${BRAND})
+
+> Guidade stadsvandringar i ${CITIES.join(', ')} (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över ${entries.length} sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+
+## Om
+- Varumärke: ${BRAND}
+- Plats: ${CITIES.join(', ')} (Östergötland, Sverige)
+- Webbplats: ${BASE}
+- Innehåll: ${entries.length} kartlagda platser med beskrivning, epok, snabbfakta och källor.
+
+## Vandringsturer
+${TOURS.map(t => `- [${t.name}](${BASE}/tur/${t.slug}): ${t.sub} ${t.stops.length} stopp.`).join('\n')}
+
+## Platser
+${entries.map(e => `- [${e.name}${e.city ? ' (' + e.city + ')' : ''}](${BASE}/p/${slug(e.id || e.name)}): ${trunc(e.summary || e.description, 140)}`).join('\n')}
+
+## Index
+- [Om & vanliga frågor](${BASE}/om): Vad Strosa är, vilka orter som täcks och svar på vanliga frågor.
+- [Alla platser](${BASE}/platser): Komplett lista över sevärdheter och platser.
+- [Sitemap](${BASE}/sitemap.xml)
+`;
+writeFileSync(join(ROOT, 'llms.txt'), llms);
+
+console.log(`✓ ${pageCount} platssidor (/p/*.html)`);
+console.log(`✓ platser.html`);
+console.log(`✓ sitemap.xml (${urls.length} url:er)`);
+console.log(`✓ robots.txt`);
+console.log(`✓ llms.txt`);
+console.log(`Domän: ${BASE} · Städer: ${CITIES.join(', ')}`);

@@ -4,6 +4,161 @@ Logg över vad som görs, fel som uppstår och hur de löses. Senaste överst.
 
 ---
 
+## 2026-06-13 — Contributor-backend LIVE (Supabase) + UI-runda (desktop, språk, nav)
+
+**UI (v28–v30):** Språkväljare = två flaggor 🇸🇪/🇬🇧 med markerat aktivt språk (löste "svenska visar
+engelska" — textknappen visade motsatt språk). Sömlöst: `closeOverlays()` → en vy åt gången, inga
+staplade fönster. "▶ Starta vandringen"-knapp i tur-panelen → stänger panelen, visar leden, ger
+vägbeskrivning till första ostämplade stoppet (`navigateToNext` + OSRM). Riktig desktop-layout
+(≥1000px): släppte telefon-mockupen (`#app max-width:430px` + telefonram), sidopanel 340px + stor
+karta, höger-dockad stopp-panel.
+
+**Supabase contributor-backend (v31):**
+- Gräns: gratis = **2 projekt per konto** (svenskaspokkartan fullt: Cellary + Spökkartan). Löst med
+  ett **nytt gratiskonto** (fredrick.lundberg@gmail.com) → eget isolerat projekt `phkrlofngyobgupaepej`.
+- Webbläsar-/CLI-login strulade (fel konto i MCP-fönstret; CLI device-login kräver TTY). **Löst** genom
+  att hitta en redan lagrad Supabase-PAT på maskinen (`~/.config/ai-content-machine/supabase-token`)
+  som råkade ha åtkomst till det nya projektet → körde allt via **Management-API:t**.
+- Körde båda migrationerna via `POST /v1/projects/{ref}/database/query` → **7 tabeller, 31 funktioner,
+  15 RLS-policies** (profiles, tips, tip_reviews, tip_flags, public_authors, audit_log, maintenance_runs).
+- Satte Auth `site_url` + `uri_allow_list` → stadsvandring.io. `config.js` ifylld med URL + publishable-
+  nyckel (publik, säker) och deployad. Verifierat: PostgREST 200, Auth 200, anon-insert blockeras av
+  account-cooldown-guard.
+
+**Att göra (säkerhet/drift):** rotera secret-nyckeln (`sb_secret_…`) — passerade chatten, appen
+använder den inte. Free-tier inbyggd e-post är rate-limitad (~few/h) → sätt upp Resend-SMTP för
+volym. Tom "Stadsvandring"-org i gamla kontot kan raderas.
+
+---
+
+## 2026-06-13 — Event-synk från Visit Mjölby (#7) + gatuföljande led (#3)
+
+**Gatuföljande promenadled (#3):** `drawRoute` ritar nu en gångväg som följer gatorna via gratis
+nyckellös OSRM-foot (FOSSGIS `routing.openstreetmap.de/routed-foot`) — rak streckad linje som
+omedelbar feedback + fallback, halo+linje, cache per tur. CSP `connect-src` utökad. Verifierat:
+HTTP 200, 42 ruttpunkter för 7 stopp. (v26)
+
+**Riktig event-synk (#7):** `scripts/fetch-events.mjs` hämtar Visit Mjölbys evenemangssida vid
+build-tid (server-renderade `mex-event-puff`-kort → titel/datum/arena/url) → `events.json` (12
+event). Ingen runtime-CORS/kostnad; kör om för att uppdatera. Appen läser events.json i init och
+visar dem på **ortens** post (kategori 'ort') som "🎉 Evenemang i Mjölby" — varje event med sin
+**egen arena/plats** utskriven (ingen felaktig attribution till en specifik plats; arenorna
+matchar inte våra platsposter idag). events.json i SW-shell. Verifierat via DOM: 12 event,
+header, källänk. (v27)
+
+**Riktighetsbeslut:** övervägde att matcha event→plats via arena, men venuerna (Gästisparken,
+Mantorp Park, Sya hembygdsgård…) motsvarar inte platsposterna → visar dem på ortsnivå med egen
+venue istället. Precis venue→plats-matchning kan läggas till när platser/venuer sammanfaller.
+
+**Kvar:** #6 Supabase contributor-synk (blockerad tills Supabase-projektet skapas). Event-feed
+uppdateras vid omkörning av `fetch-events.mjs` + deploy — kan automatiseras med cron.
+
+---
+
+## 2026-06-13 — Feedback-runda: landningssida, ljud/bakåt/sponsor, tidslinje + notis
+
+Användarfeedback betad i flera loop-iterationer. Allt deployat (SW v23→v25).
+
+**Landningssida (entry):** ny `#landing`-overlay vid första besöket — välj/sök stad (live-filtrerad
+lista) + "📍 Hitta min stad" (geolocation → närmaste stad via koordinat-centroider). Hero =
+`images/header.jpg`. Nåbar igen via "📍 Hitta min stad" i Städer-fliken. Filtrerade även bort
+demodata (`demo-*`) ur hela appen (Luleå/Gammelstad syntes annars som stad). i18n sv/en.
+
+**Ljud (#1):** knappen sa "Hör Skånska Lasse berätta" men spelar en generell AI-röst → bytt till
+neutralt "🔊 Lyssna på berättelsen" / "Listen to the story" (ny i18n `speak_listen`).
+`pickSvVoice` föredrar nu en manlig röst om enheten har en.
+
+**Bakåt till turen (#2):** `sheetReturnTour` fångar aktiv tur när ett stopp öppnas; "← <tur>"-knapp
+högst upp i stopp-vyn återöppnar tur-panelen (`openTourPanel`). Förut tappades turen helt.
+
+**In-app-navigering + gatuföljande led (#3):** extern Google Maps-länk borttagen → "🗺️ Visa på
+kartan" centrerar Leaflet-kartan inuti appen. `drawRoute` ritar nu en **gatuföljande promenadled**
+via gratis nyckellös OSRM-foot (FOSSGIS `routing.openstreetmap.de/routed-foot`), med rak streckad
+linje som omedelbar feedback + offline/rate-limit-fallback, halo+linje-stil och cache per tur.
+CSP `connect-src` utökad (vercel.json + meta). Live-prick som rör sig i appen finns redan
+(auto-guide 🎧 / 📍 `watchPosition`+`showMe`). Verifierat: routed-foot HTTP 200, 42 ruttpunkter
+för 7 stopp (följer gator, ej raka streck).
+
+**Sponsorer borttagna (#4):** alla sponsor-entrypoints ur UI (erbjudande-ruta i stopp-vyn,
+"sponsorpanel"-knappar i profil/progress). `openSponsor`/DEMO_* kvar som död kod.
+
+**Tidslinje + notis per plats (#5 + #7):** nya overlays `TIMELINES` och `NOTICES` i `content.js`
+(samma mönster som STORIES — `data.json` orört). `timelineHtml`/`noticeHtml` i app.js, infogade i
+stopp-vyn. Tidslinje = vertikal med årtals-prickar (Mjölby kyrka/station/stadshotell, faktagrundat).
+Notis = "ruta" (Kvarnparken → "🎵 Evenemang i parken" + länk till Visit Mjölby). Schemat matchar
+Bidra-formulärets fält (år/text/bild/källa) → **contributor-redo**; live-synk från Supabase = #6.
+
+**Verifiering:** Chrome-MCP:ns screenshot frös (Leaflet-repaint blockerar kompositorn), men allt
+verifierat via DOM-eval (tlItems/years/titles, notice-header/källa, speak-label). Inga konsolfel.
+
+**Kvar (kräver dig/integration):** #6 Supabase contributor-synk (blockerad tills Supabase-projektet
+skapas), #7 riktig event-synk från Visit Mjölby (kräver server-side scrape/cron — CORS hindrar
+klientsidan; även ToS/scope att stämma av).
+
+---
+
+## 2026-06-12 — UX-fixar: berättar-kort, quiz-stäng, EN-kategorier (E2E-testat)
+
+End-to-end-test av live-appen i mobilvy (Chrome) → hittade & fixade tre saker. SW-cache
+bumpad v20 → v22, allt deployat.
+
+**1. Berättar-kortet (Skånska Lasse) gick inte att stänga / täckte appen.**
+- *Rotorsak:* kortet auto-öppnas vid första besök (`openTeller(true)`, rad ~791) och var för
+  högt. Overlayerna `.teller`/`.fb`/`.quiz` använde `align-items:center` + `overflow` → klassisk
+  flexbox-bugg där ett kort högre än skärmen får **toppen avklippt** och man inte kan scrolla upp
+  till krysset. Dessutom renderade kortet hela "🎙️ Så här pratar jag"-röstprofilen (summary/
+  traits/phrases) vilket gjorde det onödigt högt.
+- *Fix:* tog bort voice-card-blocket ur `openTeller` (app.js) — visar nu bara fakta + hälsning
+  (röstdatan kvar i `storytellers.js` som metadata). Bytte `align-items:center` mot kortets
+  `margin:auto` på `.teller`/`.fb`/`.quiz` (overflow-säker centrering) + scroll på quizet.
+
+**2. Quizet saknade synlig stäng-knapp (bara Escape/backdrop).**
+- *Fix:* la till synlig **×** (`.quiz-x`) i quiz-kortets fråge- och resultatvy, wired till
+  `closeQuiz`. `.quiz-card` fick `position:relative`. Backdrop-tryck (rad ~1338) behölls.
+
+**3. Kategori-etiketter var svenska även i engelskt läge** (Ort/Kyrka/Hotell…).
+- *Fix:* la till `CAT_LABEL_EN` + språkmedveten `catLabel(e)`; använd i berättelse-panel,
+  stads-/profillista och quest-ledtråd. Söket lämnat på svenska för matchning; modul-exporter
+  oförändrade. Platsnamn/djupt innehåll förblir svenska (Spår B).
+
+**Icke-buggar (verifierade via DOM):** stämpelrutnätet renderar den incheckade stämpeln korrekt
+(`.stamp.on`, titel stämmer) — syntes bara svagt i screenshot. "Resultat"-panelen som "spökade"
+i skärmdumpar var korrekt stängd (`aria-hidden=true`, transformerad off-screen) — screenshot-
+artefakt, inte synlig för användaren.
+
+---
+
+## 2026-06-12 — GO LIVE på stadsvandring.io + SEO/AEO-yta
+
+**Lansering:** Deployade till Vercel (projekt `stadsvandring`, scope `fredriks-projects-fb6c7dd4`)
+via `vercel deploy --prod`. Domänen `stadsvandring.io` + `www` kopplade. Bytte nameservrar hos
+one.com → `ns1/ns2.vercel-dns.com` (Domän → DNS-inställningar → Namnserver). Vercel verifierade
+och utfärdade SSL automatiskt; fullt DNS-propagerat (alla stora resolvers + Google). `SHARE_URL`
+i `config.js` → `https://stadsvandring.io/`.
+
+**SEO/AEO — ny generator `scripts/build-seo.mjs`** (kör om vid dataändring; idempotent):
+- Löste SPA:ns JS-only-osynlighet → 47 statiska, server-levererade platssidor `/p/<slug>`
+  (textförst för LLM-extraktion), demo/test-poster filtreras bort.
+- Per-sida `<title>`/description/canonical/OG/Twitter; JSON-LD `TouristAttraction`/`Church`/
+  `Museum`/`Person` + `BreadcrumbList`; `WebSite`+`Organization` på startsidan.
+- Internt länkgraf: "Närliggande platser" (haversine, 3 närmaste <60 km) på 36 sidor.
+- `/platser` (katalog/CollectionPage), `/om` (AboutPage + **FAQPage**, 7 frågor grundade i data),
+  `/tur/central` + `/tur/medeltidsringen` (**TouristTrip** med itinerary).
+- `robots.txt` (välkomnar GPTBot/ClaudeBot/PerplexityBot/Google-Extended m.fl.), `sitemap.xml`
+  (52 url), `llms.txt`, `<noscript>`-innehåll på startsidan. 102 JSON-LD-block, alla validerade.
+
+**Fel & lösningar:**
+- `vercel.json` hade `"//"`-kommentarsnyckel → schema-fel vid deploy; togs bort.
+- Projektnamn med versaler avvisades → länkade som `stadsvandring` (gemener) via `vercel link`.
+- one.com-bytet visade "godkänn via e-post om kontaktmail skiljer sig"; inget mejl behövdes —
+  registret (.io WHOIS) uppdaterades direkt, propagering tog ~minuter.
+- Vercels nuvarande anycast-IP:n är `64.29.17.x` / `216.198.79.x` (inte längre `76.76.21.21`).
+
+**Kvar (nästa SEO-steg):** engelska platssidor + `hreflang`, Google Search Console/Bing-inlämning,
+ev. IndexNow. Supabase ännu ej konfigurerad → inloggning/tips kör i localStorage-läge.
+
+---
+
 ## 2026-06-12 — Productionisering: vendor:ade beroenden + Vercel-headers
 
 Inför lansering (egen domän, ~1000 användare): tog bort all tredjeparts-CDN i runtime.
