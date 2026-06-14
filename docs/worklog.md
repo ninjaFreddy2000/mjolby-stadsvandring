@@ -4,6 +4,98 @@ Logg över vad som görs, fel som uppstår och hur de löses. Senaste överst.
 
 ---
 
+## 2026-06-14 — Git-/deploy-avstämning + driftverifiering (live Supabase)
+
+**Git synkat med verkligheten:** all v31-launch låg ocommittat i arbetsträdet medan
+produktion (Vercel CLI-deploy från mappen) körde det. Committade hela arbetsträdet,
+fast-forwardade `main` → `79225a4`, pushade. PR #1 (hardening) auto-markerades MERGED.
+Git = live nu. (Framtid: koppla Vercel Git-integration så push→deploy, annars kan det glida isär.)
+
+**Driftverifiering via Supabase Management-API (projekt phkrlofngyobgupaepej):**
+pg_cron installerat ✓, jobbet `nightly-maintenance` schemalagt `0 3 * * *` aktivt ✓,
+`maintenance_runs`-tabellen finns ✓.
+
+**Bugg hittad & fixad — nattstädningen kraschade på hosted Supabase:**
+- *Symptom:* testkörning av `nightly_maintenance()` gav `42501: Direct deletion from storage
+  tables is not allowed` (triggern `storage.protect_delete`). Eftersom funktionen är en
+  transaktion avbröts HELA körningen → inget städades, `maintenance_runs` förblev 0. Jobbet
+  hade misslyckats tyst varje natt.
+- *Fix:* steget för övergivna Storage-objekt ändrat från `delete` till att **räkna** dem
+  (`orphan_media_stale`); faktisk radering måste gå via Storage-API:t (ej direkt SQL på hosted).
+  Applicerade korrigerad funktion på live via Management-API + uppdaterade repo-migrationen.
+  Testkörd OK → ren summary, `maintenance_runs` = 1.
+
+**Kvar (manuellt, kräver dina konton):** koppla Vercel↔GitHub i dashboarden (CLI-connect kräver
+Vercels GitHub-app), rotera `sb_secret_…` (inget i repot använder den), sätt upp Resend-SMTP.
+
+---
+
+## 2026-06-14 — Förbättringsloop: engelsk SEO-hub + hreflang (v39)
+
+Self-paced loop, iteration efter felövervakning/röst (v38).
+
+- **Engelsk hub-sida `/en` (v39):** innehållsrik engelsk SEO/AEO-yta som fångar engelska sök
+  ("Mjölby walking tours", "things to do in Mjölby"). Byggd i `scripts/build-seo.mjs` på de
+  befintliga `SUMMARY_EN`-sammanfattningarna (40 poster) + 9 nyförfattade (`EN_EXTRA`) → alla 49
+  platser listas med trogen engelsk text, grupperade per ort, plus engelska turbeskrivningar.
+- **Designbeslut — hub, INTE per-plats EN-sidor:** vi har trogna engelska *sammanfattningar* men
+  inte fullständiga engelska *beskrivningar*. Per-plats EN-sidor med bara en summary blir "thin
+  content" som skadar ranking. En enda innehållsrik hub ger äkta engelskt innehåll utan tunna sidor
+  och utan att maskinöversätta hela beskrivningar.
+- **Reciprok hreflang:** `page()` parametriserades (lang/alts/footer). `/en` ↔ `/` med
+  `hreflang="en"`, `"sv"`, `"x-default"` åt båda håll (Google kräver ömsesidighet). `/en` tillagd i
+  sitemap.xml + llms.txt. SW-cache → v39.
+- **Verifierat live:** `https://stadsvandring.io/en` HTTP 200, `<html lang="en">`, 3 hreflang-taggar;
+  svenska startsidan har reciprok hreflang; sitemap + llms.txt uppdaterade; ingen svensk text läcker
+  in i den engelska platslistan.
+
+---
+
+## 2026-06-14 — Förbättringsloop: kluster, OG, PWA, badges, analytics (v34–v37)
+
+Self-paced loop ("lös samtliga förbättringar"). Autonoma punkter avbetade:
+
+- **Kart-kluster (v34):** vendorade leaflet.markercluster (ingen runtime-CDN). `markerLayer` =
+  markerClusterGroup i bläddra-läget (klumpiga Mjölby-nålar → läsbara kluster-bubblor som
+  spiderfy:ar); under aktiv tur används ett plain-lager så alla numrerade stopp syns. Tematiserad
+  bubbla (`.mc-bubble`). Verifierat: 5 kluster i browse, 0 under tur (9 individuella).
+- **OG dela-bild + twitter:card (v35):** `images/og.jpg` 1200×630 (sips-crop av hero-illustrationen)
+  → og:image/twitter:image på start + alla platssidor; `summary_large_image`.
+- **PWA-installprompt (v35):** dismissbar banner på `beforeinstallprompt`, minns avböjande, döljs
+  om redan installerad.
+- **Gamification/badges (v36):** 7 utmärkelser (stämpel-trösklar, tur-/stad-completion, sparade) i
+  profilen med live progress (t.ex. "5/10") + "🏅 Nytt märke"-toast vid upplåsning. Allt klientsida.
+- **Förstaparts-analytics (v37):** `events`-tabell i Supabase (insert-only RLS → anon kan skriva,
+  inte läsa = integritet). `track()` i app.js loggar app_open/stop_open/checkin/tour_start/
+  city_change med anonym session-UUID (ingen cookie/PII). Obegränsat på free-tiern (vs Vercels
+  2 500/mån). Verifierat E2E (app_open loggades), testdata rensad.
+
+**Kvar (autonomt):** engelska platssidor + hreflang, riktiga foton (Wikimedia), turn-by-turn/röst.
+**Kvar (kräver Fredrik):** Resend-SMTP, Search Console, rotera secret-nyckeln.
+
+---
+
+## 2026-06-14 — Reliabilitet (e-post) + team-analys → implementerat (v32)
+
+**"Ingen ska kunna stängas ute":** gratis-tierns inbyggda e-post är rate-limitad (~few/h) →
+magic link/återställning kan stranda. Löst för registrering genom att slå på Supabase
+`mailer_autoconfirm=true` (Management-API) → lösenords-registrering blir omedelbar, oberoende av
+mejl. **Auth-default bytt `magic` → `signup`** (auth.js) så instant-vägen möter nya besökare först.
+*Kvar:* Resend-SMTP för magic link/återställning i volym (kräver Fredriks Resend-konto) — TRACKAS.
+
+**Team-analys (dev/kritisk användare/grafisk/UX) via agent-browser-skill + E2E-bilder.** Fynd →
+implementerat:
+- **Brand-läsbarhet:** "Strosa" var svårläst mot hero-bilden → cream-halo (text-shadow) + radial
+  scrim bak varumärket i `.header-hero::after`. Verifierat visuellt (desktop).
+- **Singular/plural:** "1 stops" (engelska) → `nStops(n)`-helper ("1 stop"/"N stops"; svenska
+  "stopp" är invariant). 6 ställen.
+- Övrigt bekräftat bra (sömlöst, flaggor, desktop-layout, start-vandring — fixat i tidigare rundor).
+
+**Att göra (Fredrik):** rotera secret-nyckeln (passerade chatten); sätt upp Resend-SMTP för
+mejlberoende auth-vägar i volym; ev. Pro-uppgradering om trafiken växer förbi free-gränserna.
+
+---
+
 ## 2026-06-13 — Contributor-backend LIVE (Supabase) + UI-runda (desktop, språk, nav)
 
 **UI (v28–v30):** Språkväljare = två flaggor 🇸🇪/🇬🇧 med markerat aktivt språk (löste "svenska visar

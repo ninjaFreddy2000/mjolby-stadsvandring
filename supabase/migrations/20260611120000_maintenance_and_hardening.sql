@@ -108,17 +108,18 @@ begin
     returning 1)
   select count(*) into v_trimmed_audit from done;
 
-  -- (e) Övergivna Storage-objekt: filer i 'tips'-bucketen som inget tip pekar på
-  --     (uppladdning avbröts, eller tipset raderades) och som passerat grace.
-  with done as (
-    delete from storage.objects o
-     where o.bucket_id = 'tips'
-       and o.created_at < now() - (public.cfg_orphan_grace_days() || ' days')::interval
-       and not exists (
-         select 1 from public.tips t
-          where t.media_url is not null and t.media_url like '%' || o.name)
-    returning 1)
-  select count(*) into v_orphan_media from done;
+  -- (e) Övergivna Storage-objekt: filer i 'tips'-bucketen som inget tip pekar på.
+  --     OBS: hosted Supabase BLOCKERAR direkt `delete from storage.objects`
+  --     (storage.protect_delete-triggern) — det skulle avbryta hela körningen. Vi
+  --     RÄKNAR därför bara övergivna objekt här; faktisk radering måste gå via
+  --     Storage-API:t (separat edge-function/skript som agerar på den här siffran).
+  select count(*) into v_orphan_media
+    from storage.objects o
+   where o.bucket_id = 'tips'
+     and o.created_at < now() - (public.cfg_orphan_grace_days() || ' days')::interval
+     and not exists (
+       select 1 from public.tips t
+        where t.media_url is not null and t.media_url like '%' || o.name);
 
   -- (f) Obekräftade konton: RÄKNA bara (radera inte härifrån — att städa
   --     auth.users/identities/sessions görs säkrast via Supabase Admin-API:t,
@@ -134,7 +135,7 @@ begin
     'deleted_terminal', v_deleted_terminal,
     'deleted_flags',    v_deleted_flags,
     'trimmed_audit',    v_trimmed_audit,
-    'orphan_media',     v_orphan_media,
+    'orphan_media_stale', v_orphan_media,
     'unconfirmed_stale', v_unconfirmed
   );
 
