@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://stadsvandring.io/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://stadsvandring.io/platser</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-orten</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/svartan</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-kyrka</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-station</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-stadshotell</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/stora-torget</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-hembygdsgard</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/galleria-kvarnen</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/gamla-stadshuset</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/kvarnparken</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/konditori-hornet</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/linds-mjolby</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/skanska-lasse</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/skanska-lasses-staty</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/skanska-lasses-hus</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/potatisrondellen</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-intarsia-fanerami</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/ols-mobler-mio</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-bryggeri</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-ungdomsmusikkar</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-stadsmusikkar</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/carl-milles-staty</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/det-kom-en-gang-en-mjolnare</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/bjalbo-kyrka</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/birger-jarl</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/ingrid-ylva</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/hogbystenen</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/skanninge-orten</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/skanninge-mote-1248</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/varfrukyrkan-skanninge</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/sta-ingrids-kloster</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/st-olofs-kloster-petrus-de-dacia</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/adolf-fredrik-lindblad</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/lindbladsparken-byst</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/ture-lang</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/svaneholms-borgruin</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/ojebro-stenvalvsbro</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/branden-1771</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/dackefejden</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/mjolby-ai-ff-vifolkavallen</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-norra-vi-kyrka</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-korpberget</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-skuru</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-norra-vi-vandringsled</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-ostgotaleden</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-mullsjo</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/p/og-store-mosse-nationalpark</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/om</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://stadsvandring.io/tur/central</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://stadsvandring.io/tur/medeltidsringen</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://stadsvandring.io/</loc><lastmod>2026-06-15</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://stadsvandring.io/platser</loc><lastmod>2026-06-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-orten</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-orten.jpg</image:loc><image:title>Mjölby</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/svartan</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/svartan.jpg</image:loc><image:title>Svartån</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-kyrka</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-kyrka.jpg</image:loc><image:title>Mjölby kyrka</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-station</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-station.jpg</image:loc><image:title>Mjölby järnvägsstation</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-stadshotell</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/stora-torget</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-hembygdsgard</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-hembygdsgard.jpg</image:loc><image:title>Mjölby hembygdsgård (Norrgårdsholmen)</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/galleria-kvarnen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/galleria-kvarnen.jpg</image:loc><image:title>Galleria Kvarnen</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/gamla-stadshuset</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/gamla-stadshuset.jpg</image:loc><image:title>Gamla Stadshuset / Stadshuset i Mjölby</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/kvarnparken</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/kvarnparken.jpg</image:loc><image:title>Kvarnparken</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/konditori-hornet</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/linds-mjolby</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/skanska-lasse</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/skanska-lasse.jpg</image:loc><image:title>Skånska Lasse (Theodor Lorentz Larsson)</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/skanska-lasses-staty</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/skanska-lasse.jpg</image:loc><image:title>Statyn av Skånska Lasse</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/skanska-lasses-hus</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/skanska-lasse.jpg</image:loc><image:title>Skånska Lasses hus</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/potatisrondellen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-intarsia-fanerami</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/ols-mobler-mio</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-bryggeri</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-ungdomsmusikkar</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-stadsmusikkar</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/carl-milles-staty</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/carl-milles-staty.jpg</image:loc><image:title>Carl Milles-skulptur (dansande figurer), Stadshuset</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/det-kom-en-gang-en-mjolnare</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/det-kom-en-gang-en-mjolnare.jpg</image:loc><image:title>Statyn &#39;Det kom en gång en mjölnare&#39;</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/bjalbo-kyrka</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/bjalbo-kyrka.jpg</image:loc><image:title>Bjälbo kyrka</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/birger-jarl</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/ingrid-ylva</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/hogbystenen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/hogbystenen.jpg</image:loc><image:title>Högbystenen (Ög 81)</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/skanninge-orten</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/skanninge-orten.jpg</image:loc><image:title>Skänninge</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/skanninge-mote-1248</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/varfrukyrkan-skanninge</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/varfrukyrkan-skanninge.jpg</image:loc><image:title>Vårfrukyrkan (&#39;Garpekyrkan&#39;), Skänninge</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/sta-ingrids-kloster</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/sta-ingrids-kloster.jpg</image:loc><image:title>S:ta Ingrids klosterruin</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/st-olofs-kloster-petrus-de-dacia</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/st-olofs-kloster-petrus-de-dacia.jpg</image:loc><image:title>S:t Olofs kloster &amp; Petrus de Dacia</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/adolf-fredrik-lindblad</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/lindbladsparken-byst</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/ture-lang</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/svaneholms-borgruin</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/svaneholms-borgruin.jpg</image:loc><image:title>Svaneholms borgruin</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/ojebro-stenvalvsbro</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/ojebro-stenvalvsbro.jpg</image:loc><image:title>Öjebro stenvalvsbro</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/branden-1771</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/dackefejden</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-ai-ff-vifolkavallen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-norra-vi-kyrka</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/og-norra-vi-kyrka.jpg</image:loc><image:title>Norra Vi kyrka</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/og-korpberget</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-skuru</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-norra-vi-vandringsled</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-ostgotaleden</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-mullsjo</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/og-store-mosse-nationalpark</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/kommunsammanslagningen-1971</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/p/mjolby-mejeri</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-mejeri.jpg</image:loc><image:title>Mejeriet (Kanikegatan)</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/p/saga-biografen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://stadsvandring.io/images/saga-biografen.jpg</image:loc><image:title>Sagabiografen</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/om</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stadsvandring.io/en</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/tur/central</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stadsvandring.io/tur/medeltidsringen</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

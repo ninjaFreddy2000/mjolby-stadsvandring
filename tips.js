@@ -107,12 +107,22 @@ export async function openTipForm(opts = {}) {
 
   const overlay = document.querySelector('#contribute');
   const card = document.querySelector('#contrib-card');
-  let kind = opts.kind || 'memory';
-  let stopId = opts.stopId || null;
-  let coords = null;            // { lat, lng } för 'place'
-  let photo = null;             // { full, thumb, kb }
+  const editTip = opts.editTip || null;     // sätt → komplettera/redigera ett befintligt tips
+  let kind = editTip ? editTip.kind : (opts.kind || 'memory');
+  let stopId = editTip ? editTip.stop_ref : (opts.stopId || null);
+  let coords = (editTip && editTip.lat != null) ? { lat: editTip.lat, lng: editTip.lng } : null;
+  let photo = null;             // { full, thumb, kb } — ny/utbytt bild
+  let existingMedia = editTip ? editTip.media_url : null;
+  let pasteHandler = null;      // dokument-paste-lyssnare (städas vid close)
+  let miniMap = null;           // Leaflet-kartväljaren för 'place' (städas vid close)
+  let pickMarker = null;
 
-  const close = () => { overlay.setAttribute('aria-hidden', 'true'); if (ctx.restoreFocus) ctx.restoreFocus(); };
+  const dropMiniMap = () => { if (miniMap) { try { miniMap.remove(); } catch (e) {} miniMap = null; pickMarker = null; } };
+  const close = () => {
+    if (pasteHandler) { document.removeEventListener('paste', pasteHandler); pasteHandler = null; }
+    dropMiniMap();
+    overlay.setAttribute('aria-hidden', 'true'); if (ctx.restoreFocus) ctx.restoreFocus();
+  };
   const stopName = id => { const e = (ctx.DATA || []).find(x => x.id === id); return e ? e.name : id; };
 
   // Steg 1: kind-väljare (bara när man kommer utan färdigt stopp)
@@ -138,6 +148,25 @@ export async function openTipForm(opts = {}) {
   function mapCenter() {
     try { const c = ctx.map.getCenter(); return { lat: +c.lat.toFixed(6), lng: +c.lng.toFixed(6) }; }
     catch (e) { return null; }
+  }
+
+  // ── Kartväljare: peka ut platsen (dra nålen eller tryck på kartan) ──────────
+  function setCoordTxt() {
+    const tx = card.querySelector('#tip-coord-txt');
+    if (tx) tx.textContent = coords ? `📍 ${coords.lat}, ${coords.lng}` : t('tip_no_coords');
+  }
+  function setCoords(lat, lng) { coords = { lat: +(+lat).toFixed(6), lng: +(+lng).toFixed(6) }; setCoordTxt(); }
+  function initPicker() {
+    const el = card.querySelector('#tip-map');
+    if (!el || !window.L) return;
+    const start = coords || mapCenter() || { lat: 58.327, lng: 15.13 };
+    if (!coords) setCoords(start.lat, start.lng);
+    miniMap = window.L.map(el, { zoomControl: true, attributionControl: false }).setView([start.lat, start.lng], 15);
+    window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(miniMap);
+    pickMarker = window.L.marker([start.lat, start.lng], { draggable: true }).addTo(miniMap);
+    pickMarker.on('dragend', () => { const ll = pickMarker.getLatLng(); setCoords(ll.lat, ll.lng); });
+    miniMap.on('click', (e) => { pickMarker.setLatLng(e.latlng); setCoords(e.latlng.lat, e.latlng.lng); });
+    setTimeout(() => { try { miniMap.invalidateSize(); } catch (e) {} }, 60);
   }
 
   // Steg 2 (minne/rättelse utan stopp): välj vilket stopp
@@ -166,45 +195,83 @@ export async function openTipForm(opts = {}) {
 
   // Steg 3: formuläret
   function renderForm() {
+    dropMiniMap();
     const fileInput = document.createElement('input');
     fileInput.type = 'file'; fileInput.accept = 'image/*';
-    const heading = kind === 'place' ? t('tip_kind_place')
+    const isPlace = kind === 'place';
+    const heading = editTip ? t('tip_edit_resubmit')
+      : isPlace ? t('tip_add_place')
       : kind === 'correction' ? `${t('tip_kind_correction')} · ${esc(stopName(stopId))}`
       : `${t('tip_kind_memory')} · ${esc(stopName(stopId))}`;
+    const hasMediaPreview = existingMedia && /\.(jpe?g|png|webp|gif)(\?|$)/i.test(existingMedia);
+    // Nyttjanderätt krävs alltid; "uppgifterna stämmer"-intyget krävs för platser.
+    const consentHtml = `<div class="tip-consent" id="tip-consent">
+        ${isPlace ? `<label class="tip-check"><input type="checkbox" id="tip-c-acc"> <span>${t('tip_consent_accuracy')}</span></label>` : ''}
+        <label class="tip-check"><input type="checkbox" id="tip-c-rights"> <span>${t('tip_consent_rights')}</span></label>
+      </div>`;
     card.innerHTML = `
       <button class="fb-x" id="c-x" aria-label="${en() ? 'Close' : 'Stäng'}">&times;</button>
       <h3>${heading}</h3>
-      <p class="fb-sub">${t('tip_form_sub')}</p>
-      <input class="fb-email" id="tip-title" placeholder="${kind === 'place' ? t('tip_place_name_ph') : t('tip_title_ph')}" aria-label="${t('tip_title_ph')}">
+      ${editTip && editTip.info_request
+        ? `<div class="tip-inforeq">📝 ${t('tip_info_requested')}<br><b>${esc(editTip.info_request)}</b></div>`
+        : `<p class="fb-sub">${t('tip_form_sub')}</p>`}
+      <input class="fb-email" id="tip-title" placeholder="${isPlace ? t('tip_place_name_ph') : t('tip_title_ph')}" aria-label="${t('tip_title_ph')}">
       <textarea class="fb-text" id="tip-body" rows="4" placeholder="${t('tip_body_ph')}" aria-label="${t('tip_body_ph')}"></textarea>
-      ${kind === 'place' ? `<div class="tip-coords" id="tip-coords">
-        <span id="tip-coord-txt">${coords ? `📍 ${coords.lat}, ${coords.lng}` : t('tip_no_coords')}</span>
-        <button class="om-link" id="tip-gps" type="button">📡 ${t('tip_use_gps')}</button>
-        <small class="fb-sub">${t('tip_coords_hint')}</small></div>` : ''}
-      <div class="contrib-photo-area" id="tip-photo-area"></div>
-      <button class="fb-cta" id="tip-photo-btn" type="button">${t('contrib_addphoto')}</button>
+      ${isPlace ? `<div class="tip-mapwrap">
+        <div class="tip-map" id="tip-map"></div>
+        <div class="tip-coords" id="tip-coords">
+          <span id="tip-coord-txt">${coords ? `📍 ${coords.lat}, ${coords.lng}` : t('tip_no_coords')}</span>
+          <button class="om-link" id="tip-gps" type="button">📡 ${t('tip_use_gps')}</button>
+        </div>
+        <small class="fb-sub">${t('tip_map_hint')}</small></div>` : ''}
+      <div class="contrib-photo-area" id="tip-photo-area">${hasMediaPreview ? `<div class="contrib-preview"><img src="${esc(existingMedia)}" alt=""></div>` : ''}</div>
+      <button class="fb-cta" id="tip-photo-btn" type="button">${existingMedia ? t('contrib_changephoto') : t('contrib_addphoto')}</button>
+      <small class="fb-sub" id="tip-photo-hint">${t('photo_enhance_hint')}</small>
       <input class="fb-email" id="tip-era" placeholder="${t('contrib_year')}" aria-label="${t('contrib_year')}">
       <input class="fb-email" id="tip-source" placeholder="${t('contrib_credit')}" aria-label="${t('contrib_credit')}">
+      ${consentHtml}
       <button class="cta" id="tip-send" style="margin:4px 0 0">${t('contrib_send')}</button>
       <p class="auth-fine" id="tip-msg"></p>`;
     card.querySelector('#c-x').onclick = close;
-    card.querySelector('#tip-photo-btn').onclick = () => fileInput.click();
-    fileInput.onchange = () => {
-      const f = fileInput.files && fileInput.files[0]; if (!f) return;
-      card.querySelector('#tip-photo-area').innerHTML = `<div class="contrib-optimizing">${t('optimizing')}</div>`;
+    if (editTip) {
+      const ti = card.querySelector('#tip-title'); if (ti) ti.value = editTip.title || '';
+      const bo = card.querySelector('#tip-body'); if (bo) bo.value = editTip.body || '';
+    }
+    // Förbättra + förhandsvisa en vald/inklistrad bild (delas av fil-val och paste)
+    const applyPhotoFile = (f) => {
+      if (!f || !/^image\//.test(f.type || '')) return;
+      const area = card.querySelector('#tip-photo-area');
+      if (area) area.innerHTML = `<div class="contrib-optimizing">${t('optimizing')}</div>`;
       ctx.optimizeImage(f, opt => {
         photo = opt;
-        card.querySelector('#tip-photo-area').innerHTML = `<div class="contrib-preview"><img src="${opt.thumb}" alt=""><span class="contrib-kb">~${opt.kb} kB</span></div>`;
-        card.querySelector('#tip-photo-btn').textContent = t('contrib_changephoto');
+        const a = card.querySelector('#tip-photo-area');
+        if (a) a.innerHTML = `<div class="contrib-preview"><img src="${opt.thumb}" alt=""><span class="contrib-kb">~${opt.kb} kB</span></div>`;
+        const btn = card.querySelector('#tip-photo-btn'); if (btn) btn.textContent = t('contrib_changephoto');
       });
     };
+    card.querySelector('#tip-photo-btn').onclick = () => fileInput.click();
+    fileInput.onchange = () => applyPhotoFile(fileInput.files && fileInput.files[0]);
+
+    // Klistra in bild (Ctrl/Cmd+V) var som helst i formuläret → samma förbättring
+    if (pasteHandler) document.removeEventListener('paste', pasteHandler);
+    pasteHandler = (e) => {
+      const items = e.clipboardData && e.clipboardData.items; if (!items) return;
+      for (const it of items){
+        if (it.type && it.type.indexOf('image/') === 0){
+          const f = it.getAsFile();
+          if (f){ e.preventDefault(); applyPhotoFile(f); break; }
+        }
+      }
+    };
+    document.addEventListener('paste', pasteHandler);
+    if (isPlace) initPicker();
     const gps = card.querySelector('#tip-gps');
     if (gps) gps.onclick = () => {
       if (!navigator.geolocation) { ctx.toast(en() ? 'Geolocation not supported' : 'Platstjänst stöds inte'); return; }
       ctx.toast(en() ? 'Locating…' : 'Letar position…');
       navigator.geolocation.getCurrentPosition(pos => {
-        coords = { lat: +pos.coords.latitude.toFixed(6), lng: +pos.coords.longitude.toFixed(6) };
-        const tx = card.querySelector('#tip-coord-txt'); if (tx) tx.textContent = `📍 ${coords.lat}, ${coords.lng}`;
+        setCoords(pos.coords.latitude, pos.coords.longitude);
+        if (miniMap && pickMarker) { miniMap.setView([coords.lat, coords.lng], 16); pickMarker.setLatLng([coords.lat, coords.lng]); }
       }, () => ctx.toast(en() ? 'Could not get position' : 'Kunde inte hämta position'), { enableHighAccuracy: true, timeout: 8000 });
     };
     card.querySelector('#tip-send').onclick = submit;
@@ -218,26 +285,46 @@ export async function openTipForm(opts = {}) {
     const body = (card.querySelector('#tip-body').value || '').trim();
     if (!title) { msg(t('tip_need_title'), false); return; }
     if (kind === 'place' && !coords) { msg(t('tip_need_coords'), false); return; }
+    // Samtycke: nyttjanderätt alltid; "uppgifterna stämmer" för platser.
+    const accEl = card.querySelector('#tip-c-acc');
+    const rightsEl = card.querySelector('#tip-c-rights');
+    if ((rightsEl && !rightsEl.checked) || (accEl && !accEl.checked)) { msg(t('tip_need_consent'), false); return; }
     const btn = card.querySelector('#tip-send'); btn.disabled = true; msg(t('tip_sending'), true);
     try {
-      let media_url = null;
+      let media_url = existingMedia;
       if (photo) media_url = await uploadPhoto(photo.full);
-      const row = {
-        kind, city: APP_CITY,
-        stop_ref: kind === 'place' ? null : stopId,
-        title, body: body || null, media_url,
-        lat: coords ? coords.lat : null, lng: coords ? coords.lng : null,
-        author_id: getUser().id,
-      };
       const era = (card.querySelector('#tip-era').value || '').trim();
       const source = (card.querySelector('#tip-source').value || '').trim();
-      if (era || source) row.body = [body, era && `(${era})`, source && `— ${source}`].filter(Boolean).join(' ');
-      const { error } = await supa.from('tips').insert(row);
-      if (error) throw error;
+      const fullBody = (era || source)
+        ? [body, era && `(${era})`, source && `— ${source}`].filter(Boolean).join(' ')
+        : (body || null);
+      if (editTip) {
+        const { error } = await supa.from('tips').update({
+          title, body: fullBody, media_url,
+          lat: coords ? coords.lat : null, lng: coords ? coords.lng : null,
+          consent: true, status: 'pending',
+        }).eq('id', editTip.id);
+        if (error) throw error;
+      } else {
+        const { error } = await supa.from('tips').insert({
+          kind, city: APP_CITY,
+          stop_ref: kind === 'place' ? null : stopId,
+          title, body: fullBody, media_url,
+          lat: coords ? coords.lat : null, lng: coords ? coords.lng : null,
+          consent: true,
+          author_id: getUser().id,
+        });
+        if (error) throw error;
+      }
+      dropMiniMap();
       card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">💛</div>
-        <p>${t('tip_thanks')}</p>
+        <p>${editTip ? t('tip_resubmit_thanks') : t('tip_thanks')}</p>
         <button class="cta" id="tip-done">${en() ? 'Close' : 'Stäng'}</button></div>`;
-      card.querySelector('#tip-done').onclick = () => { close(); if (stopId && ctx.openSheet && document.querySelector('#sheet').getAttribute('aria-hidden') === 'false') ctx.openSheet(stopId); };
+      card.querySelector('#tip-done').onclick = () => {
+        close();
+        if (opts.onSaved) opts.onSaved();
+        if (stopId && ctx.openSheet && document.querySelector('#sheet').getAttribute('aria-hidden') === 'false') ctx.openSheet(stopId);
+      };
     } catch (e) { btn.disabled = false; msg(e.message || String(e), false); }
   }
 
@@ -245,8 +332,11 @@ export async function openTipForm(opts = {}) {
 
   overlay.setAttribute('aria-hidden', 'false');
   if (ctx.markFocus) ctx.markFocus();
-  if (opts.stopId) renderForm(); else renderChooser();
+  if (editTip || opts.stopId || opts.kind) renderForm(); else renderChooser();
 }
+
+// Dedikerad ingång: "Lägg till plats" → hoppa direkt till plats-formuläret.
+export function openAddPlace(opts = {}) { return openTipForm({ kind: 'place', onSaved: opts.onSaved }); }
 
 // ── Granska-kö (Granskare+ / admin) ─────────────────────────────────────────
 export async function openReviewQueue() {
@@ -298,6 +388,7 @@ export async function openReviewQueue() {
           <button class="rev-ok ${myVote === 'approve' ? 'cast' : ''}" data-ok="${tp.id}">👍 ${t('approve')}</button>
           <button class="rev-no ${myVote === 'reject' ? 'cast' : ''}" data-no="${tp.id}">👎 ${t('reject')}</button>
           ${admin ? `<button class="rev-admin" data-pub="${tp.id}">⚡ ${t('admin_publish')}</button>
+                     <button class="rev-admin" data-info="${tp.id}">📝 ${t('admin_request_info')}</button>
                      <button class="rev-admin danger" data-rej="${tp.id}">⛔ ${t('admin_reject')}</button>` : ''}
         </div></div>`;
     }).join('');
@@ -311,6 +402,17 @@ export async function openReviewQueue() {
     card.querySelectorAll('[data-no]').forEach(b => b.onclick = () => vote(b.dataset.no, 'reject'));
     card.querySelectorAll('[data-pub]').forEach(b => b.onclick = () => adminDecide(b.dataset.pub, 'published'));
     card.querySelectorAll('[data-rej]').forEach(b => b.onclick = () => adminDecide(b.dataset.rej, 'rejected'));
+    card.querySelectorAll('[data-info]').forEach(b => b.onclick = () => requestInfo(b.dataset.info));
+  }
+
+  async function requestInfo(tipId) {
+    const note = window.prompt(t('admin_request_info_prompt'), '');
+    if (note == null || !note.trim()) return;
+    const { error } = await supa.rpc('admin_request_info', { p_tip_id: tipId, p_note: note.trim() });
+    if (error) { ctx.toast(error.message); return; }
+    ctx.toast('📝 ' + t('admin_request_info'));
+    await refreshCity();
+    load();
   }
 
   async function vote(tipId, v) {
@@ -348,10 +450,12 @@ export function mountTipsProfile(el, opts = {}) {
       : `<div class="review-lock">🔒 ${t('review_unlock_hint')}</div>`;
     wrap.innerHTML = `
       <h3 class="prof-h">${t('tip_my_section')}</h3>
-      <button class="cta" id="tp-add">➕ ${t('tip_add')}</button>
+      <button class="cta" id="tp-addplace">📍 ${t('tip_add_place')}</button>
+      <button class="fb-cta" id="tp-add">➕ ${t('tip_add')}</button>
       ${review}
       <div id="tp-mine" class="tp-mine"><div class="contrib-optimizing">${t('review_loading')}</div></div>`;
-    wrap.querySelector('#tp-add').onclick = () => openTipForm({});
+    wrap.querySelector('#tp-addplace').onclick = () => openTipForm({ kind: 'place', onSaved: loadMine });
+    wrap.querySelector('#tp-add').onclick = () => openTipForm({ onSaved: loadMine });
     const rv = wrap.querySelector('#tp-review'); if (rv) rv.onclick = openReviewQueue;
     loadMine();
   }
@@ -359,15 +463,27 @@ export function mountTipsProfile(el, opts = {}) {
   async function loadMine() {
     const box = wrap.querySelector('#tp-mine'); if (!box) return;
     const user = getUser(); if (!user) return;
-    const { data, error } = await supa.from('tips').select('id, kind, title, status, score, review_count, stop_ref, created_at')
+    const { data, error } = await supa.from('tips')
+      .select('id, kind, title, body, media_url, lat, lng, status, score, review_count, stop_ref, info_request, created_at')
       .eq('author_id', user.id).order('created_at', { ascending: false });
     if (error) { box.innerHTML = `<div class="auth-fine err">${esc(error.message)}</div>`; return; }
     if (!data || !data.length) { box.innerHTML = `<div class="screen-empty">${t('tip_none')}</div>`; return; }
-    const stat = { pending: t('status_pending'), published: t('status_published'), rejected: t('status_rejected'), withdrawn: t('status_withdrawn') };
-    box.innerHTML = data.map(tp => `<div class="tp-row">
-      <span class="tp-meta"><b>${esc(tp.title)}</b><small>${stat[tp.status] || tp.status}${tp.status === 'pending' ? ` · ${en() ? 'score' : 'poäng'} ${tp.score}` : ''}</small></span>
-      <span class="tp-status s-${tp.status}">${stat[tp.status] || tp.status}</span>
-    </div>`).join('');
+    const stat = { pending: t('status_pending'), published: t('status_published'), rejected: t('status_rejected'), withdrawn: t('status_withdrawn'), needs_info: t('status_needs_info') };
+    box.innerHTML = data.map(tp => {
+      const needs = tp.status === 'needs_info';
+      return `<div class="tp-row${needs ? ' tp-needs' : ''}">
+        <span class="tp-meta"><b>${esc(tp.title)}</b>
+          <small>${stat[tp.status] || tp.status}${tp.status === 'pending' ? ` · ${en() ? 'score' : 'poäng'} ${tp.score}` : ''}</small>
+          ${needs && tp.info_request ? `<small class="tp-inforeq">📝 ${esc(tp.info_request)}</small>` : ''}
+        </span>
+        ${needs ? `<button class="tp-resubmit" data-edit="${tp.id}">${t('tip_edit_resubmit')}</button>`
+                : `<span class="tp-status s-${tp.status}">${stat[tp.status] || tp.status}</span>`}
+      </div>`;
+    }).join('');
+    box.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => {
+      const tp = data.find(x => x.id === b.dataset.edit);
+      if (tp) openTipForm({ editTip: tp, onSaved: loadMine });
+    });
   }
 
   render();

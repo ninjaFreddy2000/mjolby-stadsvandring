@@ -24,7 +24,7 @@ const decode = (s) => String(s || '')
   .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
   .replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
-const res = await fetch(SRC, { headers: { 'User-Agent': 'StrosaBot/1.0 (stadsvandring.io events sync)' } });
+const res = await fetch(SRC, { headers: { 'User-Agent': 'StadsvandringBot/1.0 (stadsvandring.io events sync)' } });
 if (!res.ok) { console.error('Hämtning misslyckades:', res.status); process.exit(1); }
 const html = await res.text();
 

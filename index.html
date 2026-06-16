@@ -22,39 +22,46 @@
     manifest-src 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#F3EAD8">
-  <title>Strosa – Stadsvandringar i Mjölby &amp; Östergötland</title>
+  <title>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</title>
   <meta name="description" content="Upptäck Mjölby, Skänninge och Bjälbo en plats i taget — guidade stadsvandringar med karta, berättelser, stämplar och quiz. 47 sevärdheter och historiska platser i Östergötland.">
+  <meta name="google-site-verification" content="t_PqUAXYqyMRIV-S37225fo6P3xIQeQ9G5coLkvull8">
   <link rel="canonical" href="https://stadsvandring.io/">
+  <link rel="alternate" hreflang="sv" href="https://stadsvandring.io/">
+  <link rel="alternate" hreflang="en" href="https://stadsvandring.io/en">
+  <link rel="alternate" hreflang="x-default" href="https://stadsvandring.io/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
   <!-- Open Graph / Twitter (länkförhandsvisningar + en del AI/SERP-thumbnails) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stadsvandring">
   <meta property="og:locale" content="sv_SE">
-  <meta property="og:title" content="Strosa – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta property="og:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
   <meta property="og:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz. Upptäck sevärdheter och historiska platser i Mjölby, Skänninge och Bjälbo.">
   <meta property="og:url" content="https://stadsvandring.io/">
-  <meta property="og:image" content="https://stadsvandring.io/icons/icon-512.png">
+  <meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Strosa – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta name="twitter:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
   <meta name="twitter:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz i Mjölby, Skänninge och Bjälbo.">
-  <meta name="twitter:image" content="https://stadsvandring.io/icons/icon-512.png">
+  <meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
   <!-- Strukturerad data (JSON-LD är icke-exekverbar data → tillåten av script-src 'self') -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Strosa – Stadsvandring","alternateName":"Stadsvandring","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Guidade stadsvandringar i Mjölby, Skänninge och Bjälbo med karta, berättelser, stämplar och quiz."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Strosa Stadsvandring","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","areaServed":"Mjölby, Östergötland, Sverige"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Stadsvandring.io","alternateName":"Stadsvandring","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Guidade stadsvandringar i Mjölby, Skänninge och Bjälbo med karta, berättelser, stämplar och quiz."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stadsvandring.io","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","areaServed":"Mjölby, Östergötland, Sverige"}</script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="vendor/leaflet/markercluster.css">
+  <link rel="stylesheet" href="vendor/leaflet/markercluster-default.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ <a class="skip-link" href="#map">Hoppa till innehållet</a>
  <div id="app">
   <noscript>
     <div style="max-width:760px;margin:0 auto;padding:24px 20px;font-family:system-ui,sans-serif;color:#1b2a4a">
-      <h1>Strosa – Stadsvandringar i Mjölby &amp; Östergötland</h1>
-      <p>Strosa är en guidad stadsvandring som låter dig upptäcka Mjölby, Skänninge och Bjälbo en plats i taget — med karta, berättelser, stämplar och quiz. Appen kräver JavaScript, men du kan läsa om alla platser här:</p>
+      <h1>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</h1>
+      <p>Stadsvandring.io är en guidad stadsvandring som låter dig upptäcka Mjölby, Skänninge och Bjälbo en plats i taget — med karta, berättelser, stämplar och quiz. Appen kräver JavaScript, men du kan läsa om alla platser här:</p>
       <p><a href="/platser"><strong>➜ Bläddra bland alla 47 sevärdheter och historiska platser</strong></a> · <a href="/om">Om &amp; vanliga frågor</a></p>
       <p>Guidade vandringsturer: <a href="/tur/central">Centrala vandringen</a> (Mjölby, ca 2 km) och <a href="/tur/medeltidsringen">Medeltidsringen</a> (Skänninge &amp; Bjälbo).</p>
       <p>Bland platserna finns <a href="/p/mjolby-kyrka">Mjölby kyrka</a>, <a href="/p/svartan">Svartån</a>, <a href="/p/stora-torget">Stora torget</a>, <a href="/p/skanninge-mote-1248">Skänninge möte 1248</a> och <a href="/p/bjalbo-kyrka">Bjälbo kyrka</a> — kvarnbyn vid Svartån som blev järnvägsknut och regioncentrum i sydvästra Östergötland.</p>
@@ -78,8 +85,8 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM10 22l2-6 3 2v4m-1-11-3 1.5L9 16"/></svg>
       </span>
       <div>
-        <h1>Strosa</h1>
-        <p id="brand-sub">Stadsvandringar i Mjölby</p>
+        <h1>Stadsvandring.io</h1>
+        <p id="brand-sub">Mjölby</p>
       </div>
     </div>
   </header>
@@ -90,7 +97,7 @@
       <nav class="tours" id="tours" aria-label="Vandringar"></nav>
       <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
     </div>
-    <main id="map" aria-label="Karta"></main>
+    <main id="map" aria-label="Karta" tabindex="-1"></main>
     <button class="next-stop-btn" id="next-stop-btn" hidden>🧭 <span id="next-stop-label">Till nästa plats</span></button>
   </div>
 
@@ -218,11 +225,22 @@
     <div class="landing-card" id="landing-card"></div>
   </section>
 
+  <!-- PWA-installprompt (visas när webbläsaren signalerar installerbarhet) -->
+  <div class="install-banner" id="install-banner" hidden>
+    <span class="ib-icon" aria-hidden="true">📲</span>
+    <div class="ib-text"><b id="ib-title">Installera Stadsvandring.io</b><small id="ib-sub"></small></div>
+    <button class="ib-install" id="ib-install">Installera</button>
+    <button class="ib-x" id="ib-x" aria-label="Stäng">&times;</button>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
  </div>
 
-  <script src="vendor/leaflet/leaflet.js"></script>
-  <script src="vendor/qrcode.js"></script>
+  <!-- defer: laddas parallellt under HTML-parse, exekveras i dokumentordning före app.js-modulen
+       (som också är deferred) → L/markercluster/QR finns när app.js kör, men app-start fördröjs ej. -->
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script src="vendor/leaflet/markercluster.js" defer></script>
+  <script src="vendor/qrcode.js" defer></script>
   <!-- supabase-js vendor:ad lokalt (UMD → window.supabase). Inga tredjeparts-CDN i runtime. -->
   <script src="vendor/supabase.js" defer></script>
   <script src="app.js" type="module"></script>

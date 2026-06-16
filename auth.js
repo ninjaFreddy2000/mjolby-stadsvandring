@@ -4,6 +4,11 @@
 // session via getState()/getProfile().
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 
+// Google OAuth-knappen döljs tills providern faktiskt aktiverats i Supabase
+// (external_google_enabled). Annars ger knappen "provider is not enabled"-fel.
+// Sätt till true när Google OAuth-credentials lagts in i Supabase.
+const GOOGLE_OAUTH_ENABLED = false;
+
 let ctx = null;
 let supa = null;
 const state = { user: null, profile: null, ready: false };
@@ -128,7 +133,7 @@ export function openLogin() {
     }
     const overlay = document.querySelector('#auth');
     const card = document.querySelector('#auth-card');
-    let mode = 'magic';   // 'magic' | 'password' | 'signup'
+    let mode = 'signup';   // 'magic' | 'password' | 'signup' — instant (autoconfirm) default så ingen fastnar på ett uteblivet mejl
     let done = false;
     const close = (ok) => {
       if (done) return; done = true;
@@ -156,17 +161,17 @@ export function openLogin() {
         <button class="fb-x" id="auth-x" aria-label="${en ? 'Close' : 'Stäng'}">&times;</button>
         <h3>${t('auth_title')}</h3>
         <p class="fb-sub">${t('auth_sub')}</p>
-        <button class="auth-google" id="auth-google" type="button">
+        ${GOOGLE_OAUTH_ENABLED ? `<button class="auth-google" id="auth-google" type="button">
           <span class="g-mark">G</span> ${t('auth_google')}
         </button>
-        <div class="auth-or"><span>${t('auth_or')}</span></div>
+        <div class="auth-or"><span>${t('auth_or')}</span></div>` : ''}
         ${tabs}
         ${body}
         <button class="cta" id="auth-submit" style="margin:6px 0 0">${submitLabel}</button>
         ${mode === 'password' ? `<button class="auth-link" id="auth-forgot" type="button">${t('auth_forgot')}</button>` : ''}
         <p class="auth-fine" id="auth-msg"></p>`;
       card.querySelector('#auth-x').onclick = () => close(false);
-      card.querySelector('#auth-google').onclick = googleLogin;
+      const gb = card.querySelector('#auth-google'); if (gb) gb.onclick = googleLogin;
       card.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode = b.dataset.mode; render(); });
       card.querySelector('#auth-submit').onclick = submit;
       const fp = card.querySelector('#auth-forgot'); if (fp) fp.onclick = forgot;
@@ -332,10 +337,10 @@ export function mountAuthProfile(el, opts = {}) {
 
 export function shareApp() {
   const text = ctx && ctx.lang === 'en'
-    ? 'Explore the town with Strosa — city walks in Mjölby!'
-    : 'Utforska staden med Strosa — stadsvandringar i Mjölby!';
+    ? 'Explore the town with Stadsvandring.io — city walks in Mjölby!'
+    : 'Utforska staden med Stadsvandring.io — stadsvandringar i Mjölby!';
   try {
-    if (navigator.share) { navigator.share({ title: 'Strosa', text, url: SHARE_URL }).catch(() => {}); return; }
+    if (navigator.share) { navigator.share({ title: 'Stadsvandring.io', text, url: SHARE_URL }).catch(() => {}); return; }
     navigator.clipboard.writeText(text + ' ' + SHARE_URL);
     if (ctx && ctx.toast) ctx.toast(t('share_copied'));
   } catch (e) {}

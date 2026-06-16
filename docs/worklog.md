@@ -1,6 +1,327 @@
-# Arbetslogg — Strosa / Stadsvandring
+# Arbetslogg — Stadsvandring.io
 
 Logg över vad som görs, fel som uppstår och hur de löses. Senaste överst.
+
+---
+
+## 2026-06-14 — Namnbyte → Stadsvandring.io, Mjölby-only-demo, desktop-header (v56)
+
+Tre önskemål från Fredrik (inför att visa Mjölby kommun appen).
+
+- **Namnbyte Strosa → Stadsvandring.io:** alla användarvända förekomster i index.html, i18n.js,
+  manifest, app.js, auth.js, challenges.js, build-seo.mjs + alla genererade SEO-sidor (via BRAND).
+  Fixade dubbletter ("Stadsvandring.io · Stadsvandring" → bara namnet). **Rörde INTE `StrosaQR`**
+  (intern QR-global) eller `SITE_NAME`. Verifierat: 0 "Strosa" kvar live.
+- **Mjölby-only (temporärt):** ny flagga `MJOLBY_ONLY` (`= !SHOW_SOON_CITIES`, default på). Låser
+  `activeCity` till Mjölby, filtrerar `citiesInData()` + döljer "kommer snart"-städerna i både
+  städ-väljaren och landningssidan. Övriga städer/orter ligger kvar i koden (og-platserna kvar i
+  data + SEO för indexering). Sätts till false för att återaktivera. Verifierat i preview:
+  landningssidan visar bara Mjölby.
+- **Desktop-header:** var 140px men varumärkestexten tog bara nedre ~43px → ~88px tom bildyta
+  ovanför. Sänkte `.header-hero` till 96px på desktop (+ nav-railens `top:140px→96px`). Mobil orörd
+  (140px). Verifierat i preview (desktop + mobil).
+- **GSC-verifieringstaggen bevarad** genom alla index.html-ändringar (kontrollerat live). SW → v56.
+
+---
+
+## 2026-06-14 — Förbättringsloop: bild-sitemap (SEO/Google Images)
+
+Self-paced loop. Kompletterar GSC-sitemap-inskicket: lät platsfotona indexeras i Google Images.
+
+- `build-seo.mjs`: lade `xmlns:image`-namespace + `<image:image>`-element på de platssidor som har
+  foto (`EXTRA_IMAGES`). **17 bild-poster** i sitemap.xml. XML validerad (55/55 url-taggar).
+- Verifierat live: bild-poster + namespace serveras. (Ingen SW-bump — sitemap.xml ej i shell.)
+
+---
+
+## 2026-06-14 — Privat admin-analytics-dashboard (v55)
+
+Valde alternativ A (integritetsbevarande) på den redan insamlade förstaparts-datan — ingen GA,
+inga cookies, ingen CSP-ändring.
+
+- **RLS:** ny policy `events_select_admin` på `public.events` → bara inloggade admins
+  (`public.is_admin()` = `profiles.is_admin`) kan läsa; anon förblir insert-only. Applicerad via
+  Management-API (PAT).
+- **UI (`renderAdminAnalytics`):** admin-only kort i profilen som hämtar senaste events och
+  aggregerar klientsidan → sessioner, app-öppningar, incheckningar, turstarter, total, fel + topp-
+  listor (mest öppnade platser, per stad) + senaste js_errors + uppdatera-knapp. i18n sv/en, CSS.
+  SW → v55.
+- **Blockare:** 0 app-konton finns (0 användare/admins) → dashboarden visas inte förrän någon
+  registrerar ett app-konto och får `is_admin=true`. Kan inte skapa konto åt Fredrik (regel) — han
+  registrerar i appen, jag sätter admin-flaggan via PAT.
+- **Supabase secret-rotation:** dashboard-fliken var inloggad som *svenskaspokkartan*, men projektet
+  ligger under *fredrick.lundberg* → syns ej. Lågprioriterat (inget i appen använder secret-nyckeln).
+- **Resend:** 0 användare → ej brådskande än (signup kör autoconfirm utan mejl). Sätts upp vid volym.
+
+---
+
+## 2026-06-14 — Google Search Console: verifierad + sitemap inskickad (v54)
+
+Tillsammans med Fredrik (han inloggad i Chrome). Drev GSC-flödet i browsern.
+
+- **Property tillagd:** URL-prefix `https://stadsvandring.io/`.
+- **Verifiering:** valde HTML-fil först men `cleanUrls` i vercel.json gav 308-redirect på `.html`
+  (Googles verifierare vill ha direkt 200) → bytte till **HTML-tagg**. La
+  `<meta name="google-site-verification" content="t_PqUAXYqyMRIV-S37225fo6P3xIQeQ9G5coLkvull8">`
+  i index.html, deployade, klickade Verify → **"Ownership verified"** ✅. (Tog bort den oanvända
+  verifieringsfilen igen.)
+- **Sitemap inskickad:** `sitemap.xml` → **Status: Success, 55 sidor upptäckta** direkt. SW → v54.
+- Metataggen måste ligga kvar (finns i index.html-källan → överlever deployer).
+
+**Kvar (kräver Fredriks klick — säkerhetsregler):** Resend (konto + API-nyckel + klistra in i
+Supabase SMTP), rotera `sb_secret_…` (säkerhetsinställning, fredrick.lundberg-kontot). Flikar öppnade.
+
+---
+
+## 2026-06-14 — Förbättringsloop: PWA-manifest + app-genvägar (v53)
+
+Self-paced loop. (Analytics-valet A/B/C lämnat åt användaren — förgrep mig inte autonomt.)
+
+- **App-genvägar (shortcuts):** långtryck på den installerade ikonen ger nu snabbval — "Vandra"
+  (`./?tab=routes`), "Städer" (`./?tab=cities`), "Sparat" (`./?tab=saved`), med ikoner.
+- **Djuplänk-stöd i app.js:** init() läser `?tab=`-parametern och öppnar rätt flik direkt (validerad
+  mot kända flikar). Verifierat live: `?tab=routes` → Leder-skärmen ("Leder i Mjölby", 2 leder +
+  utmanings-CTA), `#explore` dolt, flik aktiv.
+- **Manifest-metadata:** `id` "/", `dir` "ltr", `categories` ["travel","education","lifestyle"]
+  (bättre installerbarhet/upptäckbarhet). SW → v53.
+- **Screenshots medvetet utelämnade** — har inga representativa app-skärmbilder (kart-fliken
+  timeoutar vid skärmdump); hellre inga än en missvisande platshållare.
+
+---
+
+## 2026-06-14 — Förbättringsloop: källor till og-*-posterna (v52)
+
+Self-paced loop. Berikade de 7 `og-*` (importerade perifera orter) som saknade källor.
+
+- Hittade & **HTTP-verifierade (200)** en auktoritativ källa per post innan inläggning:
+  Norra Vi kyrka → Wikipedia; Korpberget/Skuru → norravi.com (hembygd); Norra Vi vandringsled →
+  visitydre.se; Östgötaleden → ostgotaleden.se; Mullsjö → Wikipedia; Store Mosse nationalpark →
+  sverigesnationalparker.se.
+- Precis råtext-inläggning per post-ID (bevarat filformat), JSON validerad, SEO ombyggd.
+- **Resultat: alla 49 poster har nu minst en källa** (no_sources: 7 → 0). epok/snabbfakta för dessa
+  perifera poster lämnade tomma (innehållet är tunt; fyller hellre inte med fabricerat). SW → v52.
+
+**Sidonotis (på fråga):** appen är **inte** kopplad till Google Analytics (0 gtag/GTM-träffar).
+Den har förstaparts-analytics (`track()` → Supabase `events`): anonym session-UUID, inga cookies,
+ingen tredjepart, ingen PII. CSP `script-src 'self'` skulle dessutom blockera GA:s externa skript.
+
+---
+
+## 2026-06-14 — Förbättringsloop: datakvalitet + döda källänkar (v51)
+
+Self-paced loop. Granskade data.json (49 poster) + kontrollerade alla käll-URL:er mot HTTP-status.
+
+- **Fältkomplett:** sammanfattning/beskrivning/kategori = 100 % på alla 49. Saknade koordinater (8)
+  = personer/musikkårer/sägner (by design, ingen kartpunkt). De 7 `og-*` (importerade perifera
+  orter) saknar epok/snabbfakta/källor — noterat, ej fabricerat.
+- **Länkkontroll:** alla 42 unika käll-URL:er HTTP-testade. **7 trasiga hittade & fixade** med
+  verifierade ersättningar (alla 200):
+  - Döda domäner (DNS borta): `kvarnparken.com` → Wikipedia/Mjölby; `k-arv.se/pages/326` (enda
+    källan för 4 poster: skänninge-orten, S:ta Ingrids kloster, S:t Olofs kloster, Ture Lång) →
+    relevanta Wikipedia-artiklar (Ingrid av Skänninge, Petrus de Dacia, Ture Lång, Skänninge).
+  - 404: `fanerami.se/historia.php` → `fanerami.se/` (hemsidan lever); utgången Östgötadagarna-
+    länk för Bjälbo kyrka → `sv.wikipedia.org/wiki/Bjälbo_kyrka`.
+  - 3 "döda" var bot-blockerade **403** (Yelp/TripAdvisor/DigitaltMuseum-sök) → fungerar för riktiga
+    besökare, lämnade orörda.
+- Precis råtext-ersättning per post-ID (bevarade filformatet); JSON validerad; SEO ombyggd
+  (källorna syns på platssidorna + llms.txt). `image_source_pages`-proveniens (ej användarvänd,
+  images:[]) lämnad. SW → v51.
+
+---
+
+## 2026-06-14 — Förbättringsloop: offline-robusthet (v50)
+
+Self-paced loop. Granskade PWA:ns offline-beredskap (viktigt för en vandringsapp i fält).
+
+- **SW redan robust by design:** komplett SHELL (all appkod + data.json/events.json + vendor + ikoner
+  + header), network-first för shell med cache-fallback, cache-first + storlekstak för rutor/foton.
+  (Runtime-revision av cachen via Cache API hängde i automationskontexten — verktygsbegränsning, ej
+  app-fel; SW-koden granskad manuellt.)
+- **Ny offline-indikator (`setupConnectivity`):** diskret toppbjälke "📡 Offline – sparade platser
+  visas" när `offline`-event fyras (cachat innehåll visas ändå), kort "Online igen ✓"-toast vid
+  återanslutning. `role="status"` + `aria-live` för skärmläsare; sv/en. Verifierat live: bjälke
+  visas/döljs korrekt, ingen dubblett vid upprepat event, toast vid online.
+- **Hero-bildens onerror förbättrad:** hade redan `this.remove()` (→ illustrerad scen om foto ej
+  laddas offline), men kreditbubblan blev kvar ("📷 Foto: X" utan foto) → onerror tar nu bort även
+  krediten. SW → v50.
+
+---
+
+## 2026-06-14 — Förbättringsloop: prestandagranskning (v49)
+
+Self-paced loop. Mätte faktiska laddningsmått i live-appen (Navigation + Resource Timing).
+
+- **Utgångsläge redan bra:** TTFB 21 ms, DOM-interaktiv ~1,2 s, brotli-komprimering aktiv på alla
+  textassets (`content-encoding: br` — verifierat; mätningens encoded==decoded var en cache-artefakt,
+  inte saknad komprimering), SW-cache + runtime-cache för rutor/foton.
+- **En säker optimering:** vendor-skripten leaflet.js (144 kB), markercluster.js och qrcode.js låg
+  som **synkrona** `<script>` i body-slutet → laddades/exekverades sekventiellt och fördröjde
+  app-start. La `defer` → laddas parallellt under parse, exekveras i dokumentordning *före* app.js
+  (ES-modul, också deferred). **Noggrant verifierat live** att ordningen håller: `window.L` = object,
+  `markerClusterGroup` ✓, `StrosaQR.svg()` genererar giltig SVG ✓, karta + 17 markörer + 3 tur-chips,
+  inga konsol-fel.
+- **Medvetet orört:** header.jpg (248 kB, 1200×512) — designkänslig hero-illustration, vill inte
+  degradera den blint; laddas som CSS-bakgrund (ej render-blockerande) och cachas. supabase.js
+  (199 kB) behövs tidigt för analytics; redan `defer`. SW → v49.
+
+---
+
+## 2026-06-14 — Förbättringsloop: fler riktiga foton, omgång 2 (v48)
+
+Self-paced loop. Utökade fotosatsningen från v40 (8 platser) med 6 till → **14 av 49 platser**
+har nu riktiga foton.
+
+- **6 nya licens-verifierade Commons-foton** för kända platser som saknade bild: S:ta Ingrids
+  klosterruin, S:t Olofs kloster (Skänninge), Svaneholms borgruin, Öjebro stenvalvsbro, Norra Vi
+  kyrka, Gamla stadshuset (Mjölby). Licens + upphovsperson + **plats-kategori verifierad via
+  Commons-API** (t.ex. bekräftade att "Ög Svaneholm" är borgruinen i *Östergötland*, ej slottet i
+  Skåne). Alla fria (CC BY / CC BY-SA).
+- **Medvetet bortvalda:** Mjölbys "Stora Torget", hembygdsgården och Stadshotellet — Commons gav bara
+  Skänninge-/Linköping-bilder eller inga → hoppade hellre än att felattribuera plats.
+- Inkopplade i `EXTRA_IMAGES` (nu 17 nycklar) → visas i appens detaljvy + på SEO-platssidorna
+  (og:image, schema.org `image`, hero med attribution).
+- **Återanvände lärdom från v40:** `sips -Z 1000` blåser upp bilder som redan är ≤1000px → hämtade
+  om de tre små i original (Wikimedia-optimerade) i stället. Slutstorlekar 63–403 kB. SW → v48.
+- Verifierat live: alla 6 HTTP 200, hero + attribution på platssidorna.
+
+---
+
+## 2026-06-14 — Förbättringsloop: E2E-regressionstest (ingen ny kod)
+
+Self-paced loop. Efter 13 iterationers snabba ändringar (v34–v47) kördes ett E2E-smoktest av
+kärnflödena i live-appen (Chrome-DOM) för att fånga ev. regressioner.
+
+- **Struktur:** karta + Leaflet + 17 markörer ✓, 3 tur-chips ✓, 5 flikar ✓, tellerbar ✓, 2 flaggor ✓,
+  SW-controller aktiv ✓, skip-länk ✓, localStorage-nycklar ✓.
+- **Interaktiva flöden:** berättelse-panel → detaljvy öppnas (hero-foto + kredit) ✓; **incheckning**
+  la stämpel (5→6) ✓; **tur-start** öppnar tur-panel ✓; **Stadsutmaning**-CTA öppnar byggaren ✓;
+  profil visar badges (15 element) + utmaningssektion ✓.
+- **Inga konsol-fel** genom hela svepet (sidladdning + alla flöden). Testtillagd stämpel återställd.
+- **Resultat: 0 regressioner.** Allt fungerar; ingen kodändring behövdes.
+
+---
+
+## 2026-06-14 — Förbättringsloop: färgkontrast WCAG AA (v46–v47)
+
+Self-paced loop, iteration efter WCAG-grunden (v43). Mätte faktiska kontrastförhållanden i
+live-appen (egen WCAG-kontrastskanner i browsern) över alla huvudvyer + detaljvy.
+
+- **Två reella fel hittade & fixade** (resten av appen klarar AA — tokens `--ink/-2/-3`, `--muted`
+  klarar 4.5:1 på alla bakgrunder; emoji-pins är falska positiva då glyfer har egen färg):
+  1. **`--primary` falurött som liten text på pergament:** 4.23:1 (behöver 4.5). Hittade ljusaste
+     röda som klarar 4.5 på både pergament (#F3EAD8) och pergament-2 → **#BC4A2E → #AC3F22** (minimal
+     mörkning, nästan identiskt; *vit text på den blev bättre*, 4.63→5.51). Fixar ALLA röd-text-fall
+     i hela appen på en rad. Omgranskning: start/städer/leder/sparade/profil/berättelser = 0 fel.
+  2. **Foto-kredit i detaljvyn (`.hero .credit`):** vit text på scrim `rgba(0,0,0,.45)` → bara ~3,5:1
+     över ljusa fotopartier (himmel). Beräknade att scrim-alpha måste vara ≥0,54 → höjde till **.62**
+     + lätt text-shadow. Värsta fall (vit text över *rent vitt* foto) nu **6,2:1**.
+- Notice-boxens färger (#8a5a00/#5e4a14 på honey-soft) kontrollerade separat: 4,64 / 6,66 ✓.
+  SW-cache → v47.
+
+---
+
+## 2026-06-14 — Automatisk bildförbättring vid uppladdning/inklistring (v44–v45)
+
+Användarönskemål: uppladdade foton ska automatiskt bli snyggare — varm, färgglad
+"sommardags"-stil med klara färger; gamla svartvita ska bli tydligare; ska ske vid inklistring.
+
+- **Ny `enhancePhoto(canvas)`** (app.js, ren klientsida, canvas/ImageData — inget backend, inga
+  beroenden). Adaptiv:
+  - *Färgfoto:* auto-nivåer (klipp 0,4 % → sträck tonomfång), mjuk S-kurva-kontrast, lätt ljuslyft,
+    lyster/mättnad (×1.24 med vibrance-skydd så redan mättade färger inte spricker), **varm
+    vitbalans** (R×1.05 / B×0.95) och lätt unsharp-skärpa.
+  - *Gammalt svartvitt:* auto-detekteras (snitt-mättnad < 0.07) → starkare auto-nivåer + kontrast +
+    mer skärpa, förblir neutralt → tydligare/klarare.
+- **Inkopplad i båda bild-pipelines:** `optimizeImage` (contribute/tips — ersatte den svaga
+  CSS-filter-graden; tumnagel härleds nu från den förbättrade fullbilden) och `fileToThumb`
+  (foto-utmaningen). → all bilduppladdning förbättras automatiskt.
+- **Paste-stöd (Ctrl/Cmd+V):** contribute-formuläret lyssnar nu på `paste`, plockar bild ur
+  urklipp och kör samma förbättring; delad `applyPhotoFile` för fil-val och paste; listener städas
+  vid close. Ny hint-rad (`photo_enhance_hint`, sv/en) som förklarar auto-förbättring + paste.
+- **Bugg fångad i test & fixad:** första versionen lade värmen i tonkurvan *före* mättnaden →
+  mättnaden förstärkte befintliga färgstick och åt upp värmen (blåstickigt testfoto blev *kallare*).
+  Flyttade värmen till sista färgsteget efter mättnaden. Omtest: mättnad 0.41→0.97, kontrast 34→134,
+  värme +4.7 (nu pålitligt varmare); svartvitt korrekt detekterat, kontrast 80→255, neutralt. SW → v45.
+
+---
+
+## 2026-06-14 — Förbättringsloop: WCAG-tillgänglighet (v43)
+
+Self-paced loop, iteration efter foto-putsen (v42). DOM-baserad a11y-skanning av live-appen.
+
+- **Utgångsläge redan bra:** inga onamngivna kontroller, alla bilder har alt, landmarks
+  (main/nav/header), `html lang`, `prefers-reduced-motion` + `:focus-visible` i CSS, `aria-current`
+  på tabbar. Två reella brister hittades & fixades:
+- **Stadsutmaningens byggar-fält saknade programmatiska labels** (cb-f-title/-intro/-org/-start/-end,
+  cb-search): `<label>`-elementen fanns men utan `for`/`id`-koppling → skärmläsare läste dem inte
+  (WCAG 3.3.2/4.1.2). Kopplade alla via `for=`, gav sök-fältet `aria-label`, och `role="group"
+  aria-label` på org-typ-knapparna. Verifierat live: alla 6 fält har nu tillgängligt namn.
+- **Skip-länk (WCAG 2.4.1):** ny "Hoppa till innehållet" / "Skip to content" först i `<body>`, dold
+  tills tangentbordsfokus (`.skip-link:focus{top:0}`), hoppar till `<main id="map">`. Språkväxlad via
+  `applyI18n` (+ `skip_link`/`map_label` i i18n). 
+- **Felsökning (lärorik):** verifieringen visade `top:-100px` även vid fokus → grävde och fann
+  `document.activeElement===länken` men `matches(':focus')===false` och `document.hasFocus()===false`.
+  Slutsats: `:focus` kräver att sidan har system-fokus, vilket automationskontexten saknar →
+  **test-artefakt, inte bugg.** Regeln `.skip-link:focus{top:0px}` är korrekt och syns för riktig
+  tangentbordsanvändare. SW-cache → v43.
+
+---
+
+## 2026-06-14 — Förbättringsloop: putsade foto-vid-platsen-flödet (v42)
+
+Self-paced loop, iteration efter Stadsutmaningen (v41).
+
+- **Bugg (funktionell):** `sharePhoto` använde en hårdkodad **stale GitHub Pages-URL**
+  (`ninjafreddy2000.github.io/mjolby-stadsvandring/`) — delade foton länkade till en död sida.
+  Bytte till `SHARE_URL` importerad från config.js (kanoniska `stadsvandring.io`). Sökte igenom
+  hela koden — inga fler stale-referenser kvar.
+- **Språkblandning fixad:** toasts i foto-flödet var hårdkodad svenska (sparat/minne fullt/läsfel) →
+  i18n:ade med nya nycklar `photo_saved`, `photo_save_fail`, `photo_read_fail` (sv/en);
+  clipboard-toasten återanvänder befintlig `share_copied`.
+- **Varumärke:** delningstexten sa gamla "Mjölby Stadsvandring" + `#SkånskaLasse` → nu språkmedveten
+  Strosa-text ("Jag utforskar X med Strosa stadsvandring!" / "I'm exploring X with Strosa city
+  walks!", `#Strosa #Mjölby`), titel "Strosa".
+- Verifierat live: 0 förekomster av stale-URL, korrekt import, båda språkens delningstext serveras.
+  SW-cache → v42.
+
+---
+
+## 2026-06-14 — Förbättringsloop: synliggjorde Stadsutmaningen (v41)
+
+Self-paced loop, iteration efter fotona (v40).
+
+- **Problem:** Stadsutmaningen (challenges.js, 807 rader — geocaching-tävlingar med 4 uppgiftstyper,
+  länk/QR-delning, resultatkods-topplista) var helt byggd men **bara begravd i profil-fliken**
+  (`mountChallengeProfile`). Ingen upptäckte den.
+- **Fix:** ny exporterad `mountChallengeCTA(container)` i challenges.js → kompakt, tydligt CTA-kort
+  ("🏁 Stadsutmaning" + Skapa/Resultat-knappar) som nu ligger högst upp… nej, sist på **Leder-skärmen**
+  (`renderLeder`), som ett naturligt "skapa din egen"-flöde efter de guidade lederna. Återanvänder
+  befintlig i18n (`ch_section`, `ch_create_sub`, `ch_create`, `ch_results`) → sv/en utan nya strängar.
+  Ny `.ch-cta-card`-CSS som matchar designspråket.
+- **Verifierat live (Chrome-DOM):** Leder-fliken renderar kortet, rubrik "🏁 Stadsutmaning" + blurb,
+  Skapa-knappen öppnar byggaren (`aria-hidden=false`). SW-cache → v41.
+
+---
+
+## 2026-06-14 — Förbättringsloop: riktiga foton (Wikimedia) på nyckelplatser (v40)
+
+Self-paced loop, iteration efter engelska hubben (v39).
+
+- **8 riktiga, fritt licensierade foton** från Wikimedia Commons för de mest kända platserna
+  (Mjölby kyrka, järnvägsstationen, Svartån, Vårfrukyrkan Skänninge, Bjälbo kyrka, Högbystenen,
+  Mjölby centrum, Skänninge torg). Licens + upphovsperson **verifierade via Commons-API:t**
+  (`iiprop=extmetadata`) → korrekt attribution per bild (CC0 / CC BY / CC BY-SA, "Foto: X, licens,
+  Wikimedia Commons"). Inkopplade via `EXTRA_IMAGES` i content.js → visas i appens detaljvy.
+- **Även på SEO-platssidorna:** `build-seo.mjs` importerar nu `EXTRA_IMAGES` → riktig `og:image`,
+  schema.org `image` (ImageObject) och en hero-`<figure>` med attribution-caption på de 8 sidorna
+  (övriga faller tillbaka på og.jpg). `page()` fick en `image`-param.
+- **Buggar fångade & fixade:** (1) inline-`<img src="images/…">` på `/p/<slug>` skulle bli
+  `/p/images/…` (404) → absolut `/images/…`. (2) sips `formatOptions 70` *ökade* filstorleken
+  (omkodning av redan optimerade jpeg) → bytte till riktig nedskalning `sips -Z 1000` (hero visas
+  i ≤760px); 684K→292K osv. (3) Wikimedia 429/400-rate-limit vid omhämtning → återställde lokala
+  filer från **egen live-sajt** i stället (ingen limit), så lokalt = deployat.
+- **Självhostat** (CSP `img-src 'self'`); inga runtime-CDN:er. SW-cache → v40. Verifierat live:
+  alla 8 HTTP 200, optimerade storlekar, hero + attribution syns på platssidorna.
 
 ---
 

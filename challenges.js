@@ -1,4 +1,4 @@
-// Stadsutmaning — geocaching-tävlingar för Strosa.
+// Stadsutmaning — geocaching-tävlingar för Stadsvandring.io.
 // Helt klientsidan: tävlingen kodas i URL:ens hash, resultat delas som koder.
 // Isolerad modul: når app.js bara via context-objektet (se initChallenges).
 
@@ -148,6 +148,26 @@ export function mountChallengeProfile(container){
   renderRunHistory();
 }
 
+// Kompakt, upptäckbar ingång till Stadsutmaningen — tänkt att ligga högst upp på
+// Leder-skärmen så funktionen syns (annars är den begravd i profilen).
+export function mountChallengeCTA(container){
+  if (!container) return;
+  const card = document.createElement('div');
+  card.className = 'ch-cta-card';
+  card.innerHTML = `
+    <div class="ch-cta-text">
+      <h3>🏁 ${t('ch_section')}</h3>
+      <p>${t('ch_create_sub')}</p>
+    </div>
+    <div class="ch-cta-actions">
+      <button class="ch-btn-primary" id="ch-cta-create">🏁 ${t('ch_create')}</button>
+      <button class="ch-btn-ghost" id="ch-cta-results">🏆 ${t('ch_results')}</button>
+    </div>`;
+  container.appendChild(card);
+  card.querySelector('#ch-cta-create').onclick = openBuilder;
+  card.querySelector('#ch-cta-results').onclick = () => openResultsPicker();
+}
+
 function renderRunHistory(){
   const box = $('#ch-runs'); if (!box) return;
   const list = runs().slice().reverse();
@@ -182,23 +202,23 @@ function renderBuilder(){
   $('#cb-title').textContent = t('ch_builder_title');
   $('#cb-body').innerHTML = `
     <div class="cb-pad">
-      <label class="cb-l">${t('ch_field_title')}</label>
+      <label class="cb-l" for="cb-f-title">${t('ch_field_title')}</label>
       <input class="cb-in" id="cb-f-title" value="${esc(draft.title)}" placeholder="${esc(t('ch_title_ph'))}">
 
-      <label class="cb-l">${t('ch_field_intro')}</label>
+      <label class="cb-l" for="cb-f-intro">${t('ch_field_intro')}</label>
       <textarea class="cb-in cb-ta" id="cb-f-intro" rows="2" placeholder="${esc(t('ch_intro_ph'))}">${esc(draft.intro)}</textarea>
 
-      <label class="cb-l">${t('ch_field_org')}</label>
+      <label class="cb-l" for="cb-f-org">${t('ch_field_org')}</label>
       <input class="cb-in" id="cb-f-org" value="${esc(draft.org.name)}" placeholder="${esc(t('ch_org_ph'))}">
-      <div class="ch-seg" id="cb-org-kind">
+      <div class="ch-seg" id="cb-org-kind" role="group" aria-label="${esc(t('ch_field_org'))}">
         ${kinds.map(([k,l])=>`<button data-kind="${k}" class="${draft.org.kind===k?'on':''}">${l}</button>`).join('')}
       </div>
 
       <label class="cb-check"><input type="checkbox" id="cb-f-timed" ${draft.timed?'checked':''}> ${t('ch_timed')}</label>
       <div id="cb-window" class="${draft.timed?'':'cb-hidden'}">
-        <label class="cb-l">${t('ch_start_time')}</label>
+        <label class="cb-l" for="cb-f-start">${t('ch_start_time')}</label>
         <input class="cb-in" id="cb-f-start" type="datetime-local" value="${esc(draft.window.start)}">
-        <label class="cb-l">${t('ch_end_time')}</label>
+        <label class="cb-l" for="cb-f-end">${t('ch_end_time')}</label>
         <input class="cb-in" id="cb-f-end" type="datetime-local" value="${esc(draft.window.end)}">
       </div>
 
@@ -206,7 +226,7 @@ function renderBuilder(){
       <div id="cb-selected"></div>
 
       <h4 class="cb-h">${t('ch_add_stops')}</h4>
-      <input class="cb-in" id="cb-search" type="search" placeholder="${esc(t('ch_search_stops'))}">
+      <input class="cb-in" id="cb-search" type="search" placeholder="${esc(t('ch_search_stops'))}" aria-label="${esc(t('ch_search_stops'))}">
       <div id="cb-picker" class="cb-picker"></div>
 
       <button class="ch-btn-primary cb-generate" id="cb-generate">🔗 ${t('ch_generate')}</button>
@@ -440,7 +460,7 @@ function fallbackCopy(text){
 async function shareLink(challenge, link){
   const text = (isEn()?'Join the city challenge: ':'Var med i stadsutmaningen: ') + challenge.title;
   try {
-    if (navigator.share){ await navigator.share({ title:'Strosa', text, url: link }); return; }
+    if (navigator.share){ await navigator.share({ title:'Stadsvandring.io', text, url: link }); return; }
   } catch(e){ return; }
   copyText(link);
 }
@@ -703,7 +723,7 @@ function finish(){
   $('#ch-rescopy').onclick = () => copyText(code);
   $('#ch-resshare').onclick = async () => {
     const text = (isEn()?'My result in ':'Mitt resultat i ') + c.title + ': ' + score + '/' + rec.maxScore;
-    try { if (navigator.share){ await navigator.share({ title:'Strosa', text, url: resultLink }); return; } } catch(e){ return; }
+    try { if (navigator.share){ await navigator.share({ title:'Stadsvandring.io', text, url: resultLink }); return; } } catch(e){ return; }
     copyText(code);
   };
   $('#ch-resdone').onclick = () => { ctx.closePanel('#challenge-play'); play = null; };

@@ -7,7 +7,7 @@
   --paper:#F3EAD8; --paper-2:#ECE0C9; --card:#FFFDF7; --card-2:#FBF4E6;
   --ink:#2F2A20; --ink-2:#6E6452; --ink-3:#73694F;
   --line:rgba(47,42,32,.10); --line-strong:rgba(47,42,32,.16);
-  --primary:#BC4A2E; --primary-2:#9F3C23; --on-primary:#FFF3E8;
+  --primary:#AC3F22; --primary-2:#9F3C23; --on-primary:#FFF3E8;  /* primary minimalt mörkad → WCAG AA-kontrast även på pergament (4.5:1) */
   --honey:#E0A331; --honey-soft:#F6E2B0;
   --lake:#3E78A8; --lake-soft:#CDE4EE;
   --forest:#5E8C53; --forest-soft:#D7E5C9;
@@ -40,7 +40,7 @@ body{
 /* Appen som en centrerad telefon-ram — ger app-känsla även i webbläsare.
    transform skapar en containing block så fixed-paneler stannar inne i ramen. */
 #app{
-  position:relative;width:100%;max-width:430px;height:100dvh;height:100vh;
+  position:relative;width:100%;max-width:430px;height:100vh;height:100dvh;
   display:flex;flex-direction:column;overflow:hidden;
   background:var(--paper);
   background-image:radial-gradient(1200px 600px at 50% -10%, #F7EFDF 0%, #EFE5D0 55%, #E6DAC4 100%);
@@ -60,6 +60,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 /* Tillgänglighet */
 :focus-visible{outline:3px solid var(--lake);outline-offset:2px;border-radius:8px}
 .leaflet-bar a:focus-visible{outline-offset:-2px}
+/* Skip-länk (WCAG 2.4.1) — dold tills tangentbordsfokus */
+.skip-link{position:fixed;top:-100px;left:12px;z-index:4000;background:var(--primary);color:var(--on-primary);
+  padding:12px 18px;border-radius:0 0 12px 12px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px -6px rgba(0,0,0,.5);
+  transition:top .15s ease}
+.skip-link:focus{top:0}
 @media (prefers-reduced-motion: reduce){ *{transition-duration:.001ms!important;animation-duration:.001ms!important} }
 
 /* Illustrationens små rörelser */
@@ -81,23 +86,25 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   padding:12px 18px;background:var(--paper);z-index:600;
 }
 .header-hero{
-  position:relative;flex:none;height:140px;overflow:hidden;padding:0;display:block;
+  position:relative;flex:none;height:108px;overflow:hidden;padding:0;display:block;
   background:var(--paper);
 }
 .header-hero::before{   /* headerbilden */
   content:"";position:absolute;inset:0;
   background:url('images/header.jpg') center 34% / cover no-repeat;
 }
-.header-hero::after{    /* mjuk gradient: lätt scrim upptill + tonar ner i pergament */
+.header-hero::after{    /* mjuk gradient: lätt scrim upptill + tonar ner i pergament + ljusglow bak varumärket */
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,
-    rgba(18,28,42,.20) 0%, rgba(18,28,42,0) 24%,
-    rgba(243,234,216,0) 52%, rgba(243,234,216,.65) 82%, var(--paper) 100%);
+  background:
+    radial-gradient(120% 90% at 14% 100%, rgba(247,239,223,.92) 0%, rgba(247,239,223,.45) 30%, rgba(247,239,223,0) 58%),
+    linear-gradient(to bottom,
+      rgba(18,28,42,.20) 0%, rgba(18,28,42,0) 24%,
+      rgba(243,234,216,0) 50%, rgba(243,234,216,.72) 82%, var(--paper) 100%);
 }
 .header-hero .top-actions{position:absolute;top:12px;right:14px;z-index:2}
 .header-hero .brand{position:absolute;left:16px;bottom:9px;z-index:2}
-.header-hero h1{color:var(--primary);text-shadow:0 1px 0 rgba(255,253,247,.7)}
-.header-hero .brand p{color:var(--ink-2);text-shadow:0 1px 0 rgba(255,253,247,.7)}
+.header-hero h1{color:var(--primary);text-shadow:0 1px 2px rgba(255,253,247,.95),0 0 14px rgba(255,253,247,.85)}
+.header-hero .brand p{color:var(--ink-2);text-shadow:0 1px 2px rgba(255,253,247,.95),0 0 10px rgba(255,253,247,.7)}
 .header-hero .icon-btn,.header-hero .progress-btn{box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
 .header-hero .brand-mark{box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
@@ -174,6 +181,45 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   border:3px solid var(--card);box-shadow:0 6px 12px rgba(60,40,20,.4);display:grid;place-items:center;
 }
 .pin span{transform:rotate(-45deg);font-size:15px;line-height:1}
+/* Kart-kluster-bubbla (matchar appens palett) */
+.mc-wrap{background:none!important;border:none!important}
+.mc-bubble{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:var(--primary);color:#fff;font-family:var(--font-display);font-weight:800;font-size:15px;
+  border:2.5px solid var(--card);box-shadow:0 4px 12px -2px rgba(60,40,20,.5)}
+
+/* PWA-installprompt */
+/* Offline-indikator: diskret bjälke i toppen */
+.offline-bar{position:fixed;top:0;left:0;right:0;z-index:3000;
+  background:#2F2A20;color:#FBF4E6;font-size:12.5px;font-weight:600;text-align:center;
+  padding:calc(6px + env(safe-area-inset-top,0px)) 12px 6px;letter-spacing:.01em;
+  box-shadow:0 2px 10px -2px rgba(0,0,0,.5);animation:offlineIn .25s ease}
+@keyframes offlineIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.offline-bar{animation:none}}
+
+.install-banner{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(72px + env(safe-area-inset-bottom,0px));
+  z-index:1200;display:flex;align-items:center;gap:12px;width:min(440px,92vw);
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px;
+  box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.install-banner[hidden]{display:none}
+.install-banner .ib-icon{font-size:24px;flex:none}
+.install-banner .ib-text{flex:1;min-width:0}
+.install-banner .ib-text b{display:block;font-family:var(--font-display);font-size:14.5px;color:var(--ink)}
+.install-banner .ib-text small{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.4}
+.install-banner .ib-install{flex:none;border:none;background:var(--primary);color:#fff;font-family:var(--font-display);
+  font-weight:700;font-size:13.5px;border-radius:var(--r-pill);padding:9px 16px;cursor:pointer}
+.install-banner .ib-x{flex:none;border:none;background:none;color:var(--ink-3);font-size:20px;cursor:pointer;padding:0 2px;line-height:1}
+@media(min-width:1000px){ .install-banner{bottom:24px} }
+
+/* Utmärkelser / badges */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-bottom:6px}
+.ach{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;
+  background:var(--card-2);border:1.5px dashed var(--line);border-radius:var(--r-md);padding:12px 8px;opacity:.55}
+.ach.on{opacity:1;border-style:solid;border-color:var(--honey);background:var(--honey-soft)}
+.ach .ach-ic{font-size:26px;line-height:1;filter:grayscale(.6)}
+.ach.on .ach-ic{filter:none}
+.ach b{font-family:var(--font-display);font-size:12px;color:var(--ink);line-height:1.2}
+.ach small{font-size:11px;font-weight:700;color:var(--ink-3)}
+.ach.on small{color:var(--forest)}
 .pin.visited::after{
   content:"✓";position:absolute;top:-9px;right:-9px;width:18px;height:18px;border-radius:50%;
   background:var(--honey);color:#4a3000;font-size:12px;font-weight:800;display:grid;place-items:center;
@@ -196,8 +242,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 /* Hero-bild — fast höjd, beskuren mot motivet (övre delen) */
 .hero{position:relative;width:100%;height:240px;overflow:hidden;
   background:linear-gradient(160deg, var(--lake-soft), var(--forest-soft) 70%, var(--honey-soft))}
-.hero img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focal, center 30%)}
-.hero .credit{position:absolute;right:10px;bottom:10px;font-size:10px;color:#fff;background:rgba(0,0,0,.45);
+/* z-index:2 → fotot ligger ÖVER den illustrerade fallback-scenen (.hero-ph) och dess
+   emoji-badge. Faller bilden bort (onerror) tas img:en bort och illustrationen syns. */
+.hero img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focal, center 30%);position:relative;z-index:2}
+.hero .credit{position:absolute;right:10px;bottom:10px;z-index:3;font-size:10px;color:#fff;background:rgba(0,0,0,.62);
+  text-shadow:0 1px 2px rgba(0,0,0,.55);
   padding:3px 9px;border-radius:100px;backdrop-filter:blur(3px);max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hero-ph{position:absolute;inset:0;overflow:hidden}
 .hero-ph .ph-emoji{position:absolute;left:12px;bottom:12px;width:46px;height:46px;border-radius:var(--r-md);
@@ -396,7 +445,9 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 @media(min-width:1000px){
   /* Släpp telefon-mockupen: fyll hela skärmen, ingen telefonram */
   body{padding:0}
-  #app{max-width:none;width:100vw;height:100dvh;height:100vh;max-height:none;border-radius:0;box-shadow:none;
+  /* Lägre header på desktop — mindre tom bildyta ovanför varumärkestexten */
+  .header-hero{height:96px}
+  #app{max-width:none;width:100vw;height:100vh;height:100dvh;max-height:none;border-radius:0;box-shadow:none;
     background-image:radial-gradient(1600px 800px at 50% -10%, #F7EFDF 0%, #EFE5D0 55%, #E6DAC4 100%)}
   .accent-stripe{border-radius:0}
   #explore{flex-direction:row}
@@ -415,8 +466,18 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   /* Nästa-plats-knappen: nere till höger över kartan */
   .next-stop-btn{left:auto;right:24px;transform:none}
   .next-stop-btn:active{transform:scale(.96)}
-  /* Skärm-vyer (Leder/Profil/Städer): läsbar centrerad kolumn */
-  #screen{padding-left:max(24px,calc(50vw - 380px));padding-right:max(24px,calc(50vw - 380px))}
+  /* Primär-navigering som vänster-rail (desktop-app-mönster) istället för mobil bottenflik */
+  .tabbar{position:fixed;left:0;top:96px;bottom:0;width:84px;z-index:40;
+    flex-direction:column;justify-content:flex-start;align-items:stretch;gap:2px;
+    border-top:none;border-right:1px solid var(--line);padding:12px 0;background:var(--card)}
+  .tabbar button{flex:none;padding:11px 2px;border-radius:var(--r-md);margin:0 8px;gap:5px}
+  .tabbar button.on{background:var(--card-2)}
+  .tabbar button svg{width:22px;height:22px}
+  .tabbar button span{font-size:10px}
+  /* Skjut in innehållet till höger om railen */
+  #explore,#screen{margin-left:84px}
+  /* Skärm-vyer (Leder/Profil/Städer): läsbar centrerad kolumn (kompenserar för railen) */
+  #screen{padding-left:max(24px,calc((100vw - 84px)/2 - 360px));padding-right:max(24px,calc(50vw - 380px))}
 }
 #screen{flex:1;min-height:0;overflow-y:auto;padding:16px 18px calc(env(safe-area-inset-bottom) + 16px);background:var(--paper)}
 #screen[hidden]{display:none}
@@ -532,6 +593,23 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .ch-btn-primary[disabled]{opacity:.5;cursor:default;box-shadow:none}
 .ch-row2{display:flex;gap:10px}
 .ch-row2 .ch-btn-primary,.ch-row2 .ch-btn-ghost{flex:1}
+
+/* Upptäckbart CTA-kort på Leder-skärmen */
+.ch-cta-card{margin-top:18px;background:var(--card-2);border:1.5px solid var(--line);
+  border-radius:var(--r-lg);padding:16px 16px 14px;box-shadow:var(--shadow-sm)}
+.ch-cta-text h3{font-family:var(--font-display);font-size:16px;margin:0 0 4px;color:var(--ink)}
+.ch-cta-text p{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin:0 0 12px}
+.ch-cta-actions{display:flex;gap:8px}
+.ch-cta-actions .ch-btn-primary,.ch-cta-actions .ch-btn-ghost{flex:1;padding:12px;width:auto}
+
+/* Admin-statistik (dashboard) */
+.admin-stats{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.admin-list{list-style:none;margin:6px 0 14px;padding:0}
+.admin-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13.5px;
+  background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 12px;margin-bottom:6px}
+.admin-list li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-list li b{color:var(--primary);font-family:var(--font-display);flex:none}
+.admin-list.err li{font-size:11.5px;color:var(--ink-2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 
 /* Profil-sektion */
 .ch-prof{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
@@ -749,6 +827,23 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .tip-coords .om-link{margin:6px 0 2px}
 .tip-coords small{display:block;font-size:11.5px}
 .tip-stoplist{max-height:46vh;overflow-y:auto}
+
+/* Plats-formulär: kartväljare + samtycke + komplettering */
+.tip-mapwrap{margin:4px 0 2px}
+.tip-map{height:200px;border-radius:var(--r-md);border:1px solid var(--line);overflow:hidden;z-index:0}
+.tip-mapwrap .tip-coords{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.tip-mapwrap .tip-coords .om-link{margin:0;flex:none}
+.tip-mapwrap > small{display:block;font-size:11.5px;color:var(--ink-3);margin-top:5px}
+.tip-consent{display:flex;flex-direction:column;gap:8px;margin:10px 0 2px}
+.tip-check{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;line-height:1.4;color:var(--ink-2);cursor:pointer}
+.tip-check input{margin-top:2px;flex:none;width:17px;height:17px;accent-color:var(--primary)}
+.tip-inforeq{background:var(--honey-soft);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 13px;margin:2px 0 10px;font-size:13px;color:#5a4400}
+.tip-inforeq b{font-weight:700}
+.tp-status.s-needs_info{background:var(--honey-soft);color:#5a4400}
+.tp-row.tp-needs{border-color:var(--honey)}
+.tp-inforeq{display:block;font-size:11.5px;color:#5a4400;margin-top:3px;white-space:normal}
+.tp-resubmit{flex:none;font-size:12px;font-weight:700;padding:7px 12px;border-radius:var(--r-pill);
+  background:var(--primary);color:#fff;border:none;cursor:pointer}
 
 /* Granska-kö */
 .rev-kind{display:block;color:var(--ink-3);font-size:11.5px;margin-bottom:2px}

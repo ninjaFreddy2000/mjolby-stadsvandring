@@ -3,8 +3,40 @@
 import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
-import { initChallenges, detectChallengeInUrl, mountChallengeProfile } from './challenges.js';
-import { initAuth, mountAuthProfile, shareApp } from './auth.js';
+import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
+import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
+import { getSupabase, isConfigured, SHARE_URL } from './config.js';
+
+// ── Förstaparts-analytics (integritetsvänligt: ingen cookie/PII, bara anonyma
+// händelser till egen Supabase; obegränsat på free-tiern). Fire-and-forget. ──
+const SID_KEY = 'sv_sid';
+let _sid = null;
+function sid(){
+  if (_sid) return _sid;
+  try { _sid = localStorage.getItem(SID_KEY) || ''; } catch(_){}
+  if (!_sid){ _sid = (self.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Math.random()).slice(2); try { localStorage.setItem(SID_KEY, _sid); } catch(_){} }
+  return _sid;
+}
+async function track(name, props){
+  try {
+    if (!isConfigured()) return;
+    const supa = await getSupabase();
+    if (!supa) return;
+    supa.from('events').insert({ name, path: location.pathname, city: (typeof activeCity!=='undefined'?activeCity:null), props: props||null, session: sid() }).then(()=>{}, ()=>{});
+  } catch(e){}
+}
+// Lättvikts-felövervakning: logga JS-fel/avvisade promises till samma events-tabell
+// (varje unikt fel en gång per session) så produktionskrascher syns i datan.
+function setupErrorMonitoring(){
+  const seen = new Set();
+  const logErr = (msg, extra)=>{
+    const key = String(msg).slice(0,120);
+    if (seen.has(key)) return; seen.add(key);
+    track('js_error', { msg: String(msg).slice(0,300), ...extra });
+  };
+  window.addEventListener('error', e=>{ if (e && e.message) logErr(e.message, { src:(e.filename||'').split('/').pop(), line:e.lineno }); });
+  window.addEventListener('unhandledrejection', e=>{ const r=e&&e.reason; logErr(r&&r.message?r.message:String(r), { type:'promise' }); });
+}
 import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
          openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 
@@ -14,7 +46,12 @@ const tellerL = () => (lang === 'en' && TELLER_EN[ACTIVE_CITY]) ? TELLER_EN[ACTI
 const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 
 // ---------- Stad (man kan välja vilken stad man vandrar i) ----------
-let activeCity = localStorage.getItem('sv_city') || 'Mjölby';
+// TEMPORÄRT: lås appen till enbart Mjölby (för att visa Mjölby kommun en ren
+// Mjölby-demo). Övriga städer/orter ligger kvar i koden men döljs i väljaren och
+// filtreras bort som valbara. Sätt till true för att återaktivera fler städer.
+const SHOW_SOON_CITIES = false;
+const MJOLBY_ONLY = !SHOW_SOON_CITIES;
+let activeCity = MJOLBY_ONLY ? 'Mjölby' : (localStorage.getItem('sv_city') || 'Mjölby');
 const citySlug = s => String(s||'').toLowerCase()
   .replace(/[åä]/g,'a').replace(/ö/g,'o').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const cityOf = e => e.city || 'Mjölby';
@@ -108,7 +145,7 @@ const QUIZZES = {
 
 /* ---------- State ---------- */
 let DATA = [], ENTRIES = [], markersById = {};
-let map, markerLayer, routeLayer, meMarker;
+let map, markerLayer, plainLayer, routeLayer, meMarker;
 const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
@@ -132,11 +169,21 @@ const saveStamps = set => localStorage.setItem(STAMP_KEY, JSON.stringify([...set
 const saved = () => new Set(JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'));
 const typeOf = e => CATEGORY_TYPE[e.category] || 'story';
 const hasCoords = e => e.coordinates && typeof e.coordinates.lat === 'number';
-const imgUrl = e => (e.images && e.images[0] && e.images[0].url) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].url) || null;
-const imgCredit = e => (e.images && e.images[0] && e.images[0].attribution) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].attribution) || null;
-const imgFocal = e => (e.images && e.images[0] && e.images[0].focal) || (EXTRA_IMAGES[e.id] && EXTRA_IMAGES[e.id].focal) || null;
+// Välj hero-bild: självhostade EXTRA_IMAGES har ALLTID företräde (laddas alltid).
+// Postens egna images[] (ofta Google Photos-URL:er) ignoreras om de inte är laddbara
+// under vår CSP (img-src self/supabase) — annars skulle de bli trasiga bilder.
+const _loadableImg = u => !!u && !/googleusercontent|place-photos|\/maps\/|google\.com/i.test(u);
+const chosenImg = e => {
+  const ext = EXTRA_IMAGES[e.id];
+  if (ext) return ext;
+  const own = e.images && e.images[0];
+  return (own && _loadableImg(own.url)) ? own : null;
+};
+const imgUrl = e => { const i = chosenImg(e); return i ? i.url : null; };
+const imgCredit = e => { const i = chosenImg(e); return i ? (i.attribution || null) : null; };
+const imgFocal = e => { const i = chosenImg(e); return i ? (i.focal || null) : null; };
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
-/* ---------- Illustrerad Strosa-stadsscen (porterad från designen) ---------- */
+/* ---------- Illustrerad stadsscen (porterad från designen) ---------- */
 function svgHouse(x,y,w,h,wall,roof,hip){
   const rh=h*0.52;
   const r = hip
@@ -221,6 +268,7 @@ function stopThumb(e, badge){
 
 /* ---------- Init ---------- */
 async function init() {
+  setupErrorMonitoring();    // tidigt, så även tidiga fel fångas
   detectChallengeInUrl();   // fånga ev. #challenge=/#result= innan hashen rensas
 
   const res = await fetch('data.json');
@@ -238,11 +286,18 @@ async function init() {
   renderMarkers();
   wireUi();
   buildTabbar();
+  // PWA-genvägar / djuplänk: ?tab=routes|cities|saved|profile öppnar direkt rätt flik.
+  try {
+    const wantTab = new URLSearchParams(location.search).get('tab');
+    if (wantTab && ['cities','routes','saved','profile','home'].includes(wantTab) && wantTab!=='home') switchTab(wantTab);
+  } catch(_){}
   applyI18n();
   updateStampBadge();
   setupTeller();
   setupChallenges();
   setupAuthTips();
+  setupInstallPrompt();
+  setupConnectivity();
 
   if ('serviceWorker' in navigator) {
     const hadController = !!navigator.serviceWorker.controller;
@@ -257,6 +312,8 @@ async function init() {
 
   // Landningssida vid första besöket: välj/sök stad innan appen visas.
   if (!localStorage.getItem(LANDING_KEY)) openLanding();
+
+  track('app_open', { lang });
 }
 
 function buildMap() {
@@ -264,7 +321,17 @@ function buildMap() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19, attribution: '&copy; OpenStreetMap'
   }).addTo(map);
-  markerLayer = L.layerGroup().addTo(map);
+  // Kluster-grupp för bläddra-läget (löser nål-klumpen); plain-lager för aktiv tur (alla stopp syns).
+  markerLayer = L.markerClusterGroup({
+    maxClusterRadius: 46, spiderfyOnMaxZoom: true, showCoverageOnHover: false,
+    spiderfyDistanceMultiplier: 1.5, removeOutsideVisibleBounds: false,
+    iconCreateFunction: c => L.divIcon({
+      html:`<div class="mc-bubble">${c.getChildCount()}</div>`, className:'mc-wrap',
+      iconSize:[40,40], iconAnchor:[20,20],
+    }),
+  });
+  plainLayer = L.layerGroup();
+  map.addLayer(markerLayer); plainLayer.addTo(map);
   routeLayer = L.layerGroup().addTo(map);
 
   const Loc = L.Control.extend({
@@ -315,12 +382,15 @@ function visibleEntries(){
 
 function renderMarkers(){
   markerLayer.clearLayers();
+  plainLayer.clearLayers();
   markersById = {};
   const st = stamps();
+  // Under en aktiv tur: visa alla numrerade stopp individuellt (följ leden). Annars: klustra.
+  const target = activeTour ? plainLayer : markerLayer;
   visibleEntries().forEach(e=>{
     const m = L.marker([e.coordinates.lat, e.coordinates.lng], { icon: pinIcon(e, st.has(e.id)) })
       .on('click', ()=> openSheet(e.id));
-    m.addTo(markerLayer);
+    target.addLayer(m);
     markersById[e.id] = m;
   });
   drawRoute();
@@ -406,6 +476,7 @@ function navigateToNext(){
       if (navLayer) navLayer.clearLayers();
       map.setView(dest, Math.max(map.getZoom(),16), {animate:true});
       toast(`✓ ${t('nav_here')} ${next.name} 🎉`);
+      speak(`${t('nav_here')} ${next.name}.`);
       openSheet(next.id);
       return;
     }
@@ -420,6 +491,8 @@ function navigateToNext(){
       const distTxt=dist>=1000?(dist/1000).toFixed(1)+' km':dist+' m';
       try{ map.fitBounds(L.latLngBounds(line).pad(0.25), { maxZoom:17, animate:true }); }catch(e){}
       toast(`${t('nav_to')} ${next.name} · ${distTxt} · ~${mins} ${t('nav_min')}`);
+      speak(lang==='en' ? `Next stop: ${next.name}. About ${distTxt} away, ${mins} minutes on foot.`
+                        : `Nästa stopp: ${next.name}. Ungefär ${distTxt} bort, ${mins} minuters promenad.`);
     });
   }, ()=> toast(t('nav_geo_fail')), { enableHighAccuracy:true, timeout:10000 });
 }
@@ -438,8 +511,8 @@ function buildTours(){
   const cityCount = ENTRIES.filter(inCity).length;
   // Bara turer som har stopp i den valda staden
   const cityTours = Object.entries(TOURS).filter(([k,tr])=> DATA.filter(tr.test).some(inCity));
-  const chips = [['all', t('tours_all'), cityCount+' '+t('stops')]]
-    .concat(cityTours.map(([k,tr])=>[k, tourName(k), DATA.filter(tr.test).filter(inCity).length+' '+t('stops')]));
+  const chips = [['all', t('tours_all'), nStops(cityCount)]]
+    .concat(cityTours.map(([k,tr])=>[k, tourName(k), nStops(DATA.filter(tr.test).filter(inCity).length)]));
   wrap.innerHTML = chips.map(([k,name,sub])=>
     `<button class="tour-chip ${k==='all'?'active':''}" data-tour="${k}">${name}<small>${sub}</small></button>`
   ).join('');
@@ -496,6 +569,7 @@ function openTourPanel(key){
   $('#tour-start-label').textContent = t('start_walk');
   $('#tour-start').onclick = ()=>{
     activeTour = key;                 // säkerställ att turen är aktiv
+    track('tour_start', { tour: key });
     closePanel('#tour-panel');        // ta mig till vandringen (kartan med leden)
     renderMarkers();                  // visa turens stopp + gatuföljande led
     navigateToNext();                 // vägbeskrivning till första (ostämplade) stoppet
@@ -529,7 +603,9 @@ function citiesInData(){
   // Städer som faktiskt har stopp, med antal — i datans ordning (Mjölby först)
   const seen = new Map();
   DATA.forEach(e=>{ const c = cityOf(e); seen.set(c, (seen.get(c)||0) + (hasCoords(e)?1:0)); });
-  return [...seen.entries()].map(([name,count])=>({ name, count }));
+  let arr = [...seen.entries()].map(([name,count])=>({ name, count }));
+  if (MJOLBY_ONLY) arr = arr.filter(c=> c.name === 'Mjölby');   // temporär Mjölby-only-demo
+  return arr;
 }
 function setActiveCity(city){
   if (!city || city === activeCity) return;
@@ -545,6 +621,7 @@ function setActiveCity(city){
   setupTeller(false);          // byt berättare utan att tvinga upp introt
   renderMarkers();             // fitView centrerar om kartan till stadens stopp
   toast((lang==='en'?'Now exploring ':'Nu utforskar du ') + city + ' 🗺️');
+  track('city_change', { city });
 }
 
 /* ---------- Notis + tidslinje (per plats) ---------- */
@@ -601,6 +678,7 @@ function openSheet(id){
   if (!e) return;
   currentSheetId = id;
   sheetReturnTour = activeTour;           // kom vi från en tur? (för "tillbaka till turen")
+  track('stop_open', { id });
   const ty = TYPES[typeOf(e)];
   const st = stamps();
   const visited = st.has(id);
@@ -618,7 +696,7 @@ function openSheet(id){
     ? `<div class="hero">
          ${heroPh}
          <img src="${img}" alt="${e.name}" loading="eager" referrerpolicy="no-referrer"
-              ${focal?`style="object-position:${focal}"`:''} onerror="this.remove()">
+              ${focal?`style="object-position:${focal}"`:''} onerror="var c=this.nextElementSibling;if(c&&c.classList&&c.classList.contains('credit'))c.remove();this.remove()">
          ${credit?`<span class="credit">📷 ${credit}</span>`:''}
        </div>`
     : `<div class="hero">${heroPh}</div>`;
@@ -681,8 +759,9 @@ function openSheet(id){
 
 function toggleCheckin(id){
   const set = stamps();
-  if (set.has(id)){ set.delete(id); } else { set.add(id); toast('🏅 Stämpel insamlad!'); }
+  if (set.has(id)){ set.delete(id); } else { set.add(id); toast('🏅 Stämpel insamlad!'); track('checkin', { id }); }
   saveStamps(set);
+  setTimeout(checkNewBadges, 1100);   // ev. nytt märke (toastas efter stämpel-toasten)
   updateStampBadge();
   renderMarkers();
   openSheet(id); // refresh button + pin state (sheet stays focused over panels)
@@ -802,12 +881,13 @@ function startQuiz(tourKey){
 
 /* ---------- Fotoutmaning + delning ---------- */
 const PHOTO_KEY = 'mjolby_photos_v1';
-const SHARE_URL = 'https://ninjafreddy2000.github.io/mjolby-stadsvandring/';
+// SHARE_URL importeras från config.js (kanonisk domän) — tidigare fanns en stale
+// GitHub Pages-URL hårdkodad här som gjorde att delade foton länkade till en död sida.
 const photos = () => { try { return JSON.parse(localStorage.getItem(PHOTO_KEY) || '{}'); } catch(e){ return {}; } };
 function savePhoto(id, dataUrl){
   const p = photos(); p[id] = dataUrl;
   try { localStorage.setItem(PHOTO_KEY, JSON.stringify(p)); }
-  catch(e){ toast('Kunde inte spara bilden (minne fullt)'); }
+  catch(e){ toast(t('photo_save_fail')); }
 }
 function photoBlock(id){
   const p = photos()[id];
@@ -817,16 +897,106 @@ function photoBlock(id){
     </div>`;
   return `<button class="photo-cta" data-photo="${id}">${t('photo_cta')}</button>`;
 }
+
+/* ---------- Automatisk bildförbättring (canvas, klientsida) ----------
+   Körs på ALLA uppladdade/inklistrade foton. Adaptiv:
+   • Färgfoto  → varm "sommardags"-grade: auto-nivåer, varm vitbalans, lyster/mättnad,
+                 mjuk S-kurva-kontrast, lätt skärpa → klara, glada färger.
+   • Gammalt svartvitt → auto-nivåer + starkare kontrast + skärpa → tydligare/klarare.
+   Best-effort: vid fel lämnas bilden orörd. Canvas är same-origin (blob) → ej tainted. */
+function _clamp8(v){ return v<0?0:v>255?255:v; }
+function _sharpen(d, w, h, amount){
+  if (amount<=0 || w<3 || h<3) return;
+  const src = new Uint8ClampedArray(d);            // kopia för grannläsning
+  const a = amount, center = 1 + 4*a, row = w*4;
+  for (let y=1; y<h-1; y++){
+    for (let x=1; x<w-1; x++){
+      const i = (y*w + x)*4;
+      for (let c=0;c<3;c++){
+        const k = i+c;
+        d[k] = _clamp8(center*src[k] - a*(src[k-4] + src[k+4] + src[k-row] + src[k+row]));
+      }
+    }
+  }
+}
+function enhancePhoto(canvas){
+  try{
+    const ctx = canvas.getContext('2d', { willReadFrequently:true });
+    const w = canvas.width, h = canvas.height;
+    if (!w || !h) return;
+    const imgData = ctx.getImageData(0,0,w,h);
+    const d = imgData.data, N = d.length;
+
+    // 1. Mät luminans-histogram + genomsnittlig mättnad (gråskala?)
+    const hist = new Uint32Array(256);
+    let satSum = 0, satN = 0;
+    const sStep = 4 * Math.max(1, ((N/4)/40000)|0);  // sampla ~40k px
+    for (let i=0;i<N;i+=4){
+      const r=d[i], g=d[i+1], b=d[i+2];
+      hist[(r*0.299 + g*0.587 + b*0.114)|0]++;
+      if ((i % sStep) === 0){ const mx=Math.max(r,g,b), mn=Math.min(r,g,b); satSum += mx?(mx-mn)/mx:0; satN++; }
+    }
+    const isBW = (satSum/Math.max(1,satN)) < 0.07;
+
+    // 2. Auto-nivåer: klipp ~0,4 % i varje ände av luminans → sträck till fullt omfång
+    const total = N/4, clip = total*0.004;
+    let lo=0, hi=255, acc=0;
+    for (let v=0; v<256; v++){ acc+=hist[v]; if (acc>clip){ lo=v; break; } }
+    acc=0;
+    for (let v=255; v>=0; v--){ acc+=hist[v]; if (acc>clip){ hi=v; break; } }
+    if (hi-lo < 16){ lo=0; hi=255; }                 // redan brett omfång → rör inte
+    const span = hi-lo;
+
+    // 3. Tonkurva-LUT (lika för alla kanaler → ingen färgskift här): auto-nivåer →
+    //    S-kurva-kontrast → lätt ljuslyft.
+    const contrast = isBW ? 0.24 : 0.15;
+    const lift     = isBW ? 0.0  : 0.012;
+    const lut = new Uint8ClampedArray(256);
+    for (let v=0; v<256; v++){
+      let x = Math.min(1, Math.max(0, (v-lo)/span));   // auto-nivåer
+      const s = x*x*(3-2*x);                           // smoothstep
+      x = x + (s-x)*contrast;                          // mjuk S-kurva
+      x = x + lift*(1-x);                              // lätt ljuslyft
+      lut[v] = Math.round(Math.min(1, Math.max(0, x))*255);
+    }
+    for (let i=0;i<N;i+=4){ d[i]=lut[d[i]]; d[i+1]=lut[d[i+1]]; d[i+2]=lut[d[i+2]]; }
+
+    // 4. Lyster/mättnad + VARM vitbalans som sista färgsteg (färgfoto).
+    //    Värmen läggs EFTER mättnaden så den inte kan ätas upp/förstärkas bort.
+    if (!isBW){
+      const sat = 1.24, warmR = 1.05, warmB = 0.95;
+      for (let i=0;i<N;i+=4){
+        const r=d[i], g=d[i+1], b=d[i+2];
+        const y = r*0.299 + g*0.587 + b*0.114;
+        const mx=Math.max(r,g,b), mn=Math.min(r,g,b);
+        const cur = mx?(mx-mn)/mx:0;                   // lyster: boosta mindre där färgen redan är mättad
+        const k = 1 + (sat-1)*(1 - cur*0.6);
+        d[i]   = _clamp8((y+(r-y)*k)*warmR);
+        d[i+1] = _clamp8( y+(g-y)*k );
+        d[i+2] = _clamp8((y+(b-y)*k)*warmB);
+      }
+    }
+
+    // 5. Skärpa (unsharp) — mer för gamla svartvita, lätt för färg
+    _sharpen(d, w, h, isBW ? 0.5 : 0.32);
+
+    ctx.putImageData(imgData, 0, 0);
+  }catch(e){ /* förbättring är best-effort */ }
+}
+
 function fileToThumb(file, cb){
   const img = new Image(), url = URL.createObjectURL(file);
   img.onload = ()=>{
     const max = 640; let w = img.width, h = img.height;
     const s = Math.min(1, max/Math.max(w,h)); w = Math.round(w*s); h = Math.round(h*s);
     const c = document.createElement('canvas'); c.width = w; c.height = h;
-    c.getContext('2d').drawImage(img, 0, 0, w, h);
-    URL.revokeObjectURL(url); cb(c.toDataURL('image/jpeg', 0.72));
+    const cx = c.getContext('2d', { willReadFrequently:true });
+    cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = 'high';
+    cx.drawImage(img, 0, 0, w, h);
+    enhancePhoto(c);                       // automatisk varm/klar förbättring
+    URL.revokeObjectURL(url); cb(c.toDataURL('image/jpeg', 0.82));
   };
-  img.onerror = ()=>{ URL.revokeObjectURL(url); toast('Kunde inte läsa bilden'); };
+  img.onerror = ()=>{ URL.revokeObjectURL(url); toast(t('photo_read_fail')); };
   img.src = url;
 }
 function startPhoto(id){
@@ -838,7 +1008,7 @@ function startPhoto(id){
       savePhoto(id, dataUrl);
       const set = stamps();
       if (!set.has(id)){ set.add(id); saveStamps(set); updateStampBadge(); renderMarkers(); }
-      toast('📸 Foto sparat – stämpel klar!');
+      toast(t('photo_saved'));
       openSheet(id);
     });
   };
@@ -855,17 +1025,20 @@ function dataUrlToFile(dataUrl, name){
 }
 async function sharePhoto(id){
   const e = DATA.find(x=>x.id===id), p = photos()[id];
-  const text = `Jag utforskar ${e?e.name:'Mjölby'} med Mjölby Stadsvandring! #MjölbyStadsvandring #SkånskaLasse`;
+  const place = e ? e.name : 'Mjölby';
+  const text = lang==='en'
+    ? `I'm exploring ${place} with Stadsvandring.io! #Stadsvandring #Mjölby`
+    : `Jag utforskar ${place} med Stadsvandring.io! #Stadsvandring #Mjölby`;
   try {
     if (p && navigator.canShare){
-      const file = dataUrlToFile(p, 'mjolby.jpg');
+      const file = dataUrlToFile(p, 'strosa.jpg');
       if (file && navigator.canShare({ files:[file] })){
-        await navigator.share({ files:[file], text, title:'Mjölby Stadsvandring' }); return;
+        await navigator.share({ files:[file], text, title:'Stadsvandring.io' }); return;
       }
     }
-    if (navigator.share){ await navigator.share({ title:'Mjölby Stadsvandring', text, url: SHARE_URL }); return; }
+    if (navigator.share){ await navigator.share({ title:'Stadsvandring.io', text, url: SHARE_URL }); return; }
     await navigator.clipboard.writeText(text + ' ' + SHARE_URL);
-    toast('Länk kopierad – klistra in och dela!');
+    toast(t('share_copied'));
   } catch(err){ /* användaren avbröt delningen */ }
 }
 
@@ -887,6 +1060,8 @@ const CAT_LABEL_EN = {
   handel:'Retail', kafe_restaurang:'Café/Restaurant', hotell:'Hotel', industri_foretag:'Company',
 };
 const catLabel = e => (lang==='en' ? CAT_LABEL_EN : CAT_LABEL)[e.category] || '';
+// Antal stopp med korrekt singular/plural (svenska "stopp" är invariant; engelska "stop/stops").
+const nStops = (n) => `${n} ${(lang==='en' && n===1) ? 'stop' : t('stops')}`;
 function renderStories(filter){
   const q = (filter||'').toLowerCase().trim();
   const list = DATA.filter(e=>{
@@ -924,6 +1099,8 @@ function applyI18n(){
   const q = $('#stories-q'); if (q) q.setAttribute('placeholder', t('stories_search'));
   const pp = $('#progress-panel'); if (pp) pp.querySelector('.panel-head h2').textContent = t('act_progress');
   setText('#tour-quiz-btn', t('quiz_cta'));
+  setText('.skip-link', t('skip_link'));
+  const mp = $('#map'); if (mp) mp.setAttribute('aria-label', t('map_label'));
 }
 
 /* ---------- Stadens berättare (storyteller) ---------- */
@@ -1106,12 +1283,13 @@ function renderLeder(){
     return `<button class="led-card" data-led="${key}">
       <span class="led-thumb">${routeThumb(i)}</span>
       <span class="led-meta"><b>${tourName(key)}</b><small>${tourSub(key)}</small>
-        <span class="led-count">${list.length} ${t('stops')} · ${done} ✓</span></span>
+        <span class="led-count">${nStops(list.length)} · ${done} ✓</span></span>
     </button>`;
   }).join('');
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')} · ${activeCity}</p></div>`
     + (cards || `<div class="screen-empty">🚶<br>${(lang==='en'?'No guided routes in ':'Inga färdiga leder i ')+activeCity+(lang==='en'?' yet — explore freely on the map!':' än — utforska fritt på kartan!')}</div>`);
   $('#screen').querySelectorAll('.led-card').forEach(c=> c.onclick=()=> startLed(c.dataset.led));
+  mountChallengeCTA($('#screen'));   // upptäckbar ingång till Stadsutmaningen
 }
 function startLed(key){
   activeTour=key;
@@ -1131,7 +1309,7 @@ function renderCities(){
   const activeCards = have.map((c,i)=>{
     const sel = c.name===activeCity;
     const tours = Object.values(TOURS).filter(tr=>DATA.filter(tr.test).some(e=>cityOf(e)===c.name)).length;
-    const sub = `${c.count} ${t('stops')}${tours?` · ${tours} ${t('city_leder')}`:''}`;
+    const sub = `${nStops(c.count)}${tours?` · ${tours} ${t('city_leder')}`:''}`;
     return `<button class="led-card city-card ${sel?'selected':''}" data-pick="${c.name}" aria-pressed="${sel}">
       <span class="led-thumb">${routeThumb(seedFor(c.name,i))}</span>
       <span class="led-meta"><b>${c.name}${sel?` · ${t('city_current')}`:''}</b><small>${blurbFor(c.name)}</small>
@@ -1139,13 +1317,13 @@ function renderCities(){
     </button>`;
   }).join('');
 
-  // "Kommer snart"-städer (utan stopp ännu)
-  const soon = CITIES.filter(c=> c.status!=='active' && !haveNames.has(c.name)).map(c=>
+  // "Kommer snart"-städer (utan stopp ännu) — dolda när SHOW_SOON_CITIES=false
+  const soon = SHOW_SOON_CITIES ? CITIES.filter(c=> c.status!=='active' && !haveNames.has(c.name)).map(c=>
     `<button class="led-card city-card soon" data-soon="1">
       <span class="led-thumb">${routeThumb(c.seed)}<span class="city-lock">🔒</span></span>
       <span class="led-meta"><b>${c.name}</b><small>${c.blurb}</small>
         <span class="city-badge">${t('city_soon')}</span></span>
-    </button>`).join('');
+    </button>`).join('') : '';
 
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_pick')}</p></div>
     <button class="fb-cta" id="cities-locate" style="margin:0 0 14px">📍 ${t('land_locate')}</button>
@@ -1184,16 +1362,16 @@ function renderLandingList(filter){
   if(landNear) list=[...list].sort((a,b)=>(b.name===landNear)-(a.name===landNear));
   const cards=list.map((c,i)=>{
     const m=metaOf(c.name), tn=tourCount(c.name), near=c.name===landNear;
-    const sub=(m&&m.blurb)||`${c.count} ${t('stops')}`;
+    const sub=(m&&m.blurb)||`${nStops(c.count)}`;
     const badge=near ? `📍 ${t('land_geo_near').replace(':','').trim()}`
-                     : `${c.count} ${t('stops')}${tn?` · ${tn} ${t('city_leder')}`:''}`;
+                     : `${nStops(c.count)}${tn?` · ${tn} ${t('city_leder')}`:''}`;
     return `<button class="land-city ${near?'near':''}" data-city="${c.name}">
       <span class="lc-thumb">${routeThumb((m&&typeof m.seed==='number')?m.seed:i%3)}</span>
       <span class="lc-body"><b>${c.name}</b><small>${sub}</small></span>
       <span class="lc-badge">${badge}</span></button>`;
   }).join('');
   const haveNames=new Set(have.map(c=>c.name));
-  const soon=(!q ? CITIES.filter(c=>c.status!=='active' && !haveNames.has(c.name)) : []).map(c=>
+  const soon=((SHOW_SOON_CITIES && !q) ? CITIES.filter(c=>c.status!=='active' && !haveNames.has(c.name)) : []).map(c=>
     `<button class="land-city soon" data-soon="1">
       <span class="lc-thumb">${routeThumb(c.seed)}<span class="lc-lock">🔒</span></span>
       <span class="lc-body"><b>${c.name}</b><small>${c.blurb}</small></span>
@@ -1205,7 +1383,7 @@ function renderLandingList(filter){
 }
 function openLanding(){
   $('#landing-card').innerHTML = `
-    <div class="land-brand"><span class="mark">S</span> Strosa</div>
+    <div class="land-brand"><span class="mark">S</span> Stadsvandring.io</div>
     <div class="land-hero"><h1>${t('land_title')}</h1><p>${t('land_sub')}</p></div>
     <div class="land-search"><span class="land-mag">🔍</span>
       <input id="land-q" type="search" inputmode="search" autocomplete="off" placeholder="${t('land_search')}"></div>
@@ -1300,20 +1478,23 @@ function setContribStatus(cid, status){ const a=contribs(); const c=a.find(x=>x.
 function optimizeImage(file, cb){
   const img = new Image(), url = URL.createObjectURL(file);
   img.onload = ()=>{
-    const ENH = 'contrast(1.06) saturate(1.09) brightness(1.02)';
-    const draw = (cw, ch)=>{
-      const c=document.createElement('canvas'); c.width=cw; c.height=ch;
-      const x=c.getContext('2d'); x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
-      if ('filter' in x) x.filter = ENH;
-      x.drawImage(img, 0, 0, cw, ch); return c;
-    };
     let w=img.naturalWidth||img.width, h=img.naturalHeight||img.height;
     const s=Math.min(1, 1280/Math.max(w,h)); w=Math.max(1,Math.round(w*s)); h=Math.max(1,Math.round(h*s));
-    const c=draw(w,h);
+    // Rita fullbilden och förbättra EN gång (varm/klar grade resp. svartvit-klarhet)
+    const c=document.createElement('canvas'); c.width=w; c.height=h;
+    const x=c.getContext('2d', { willReadFrequently:true });
+    x.imageSmoothingEnabled=true; x.imageSmoothingQuality='high';
+    x.drawImage(img, 0, 0, w, h);
+    enhancePhoto(c);
     let q=0.85, full=c.toDataURL('image/jpeg', q);
     while (full.length>360000 && q>0.45){ q=Math.round((q-0.1)*100)/100; full=c.toDataURL('image/jpeg', q); }
+    // Tumnagel från den FÖRBÄTTRADE fullbilden (matchar exakt det användaren ser)
     const ts=Math.min(1, 560/Math.max(w,h));
-    const thumb=draw(Math.max(1,Math.round(w*ts)), Math.max(1,Math.round(h*ts))).toDataURL('image/jpeg', 0.74);
+    const tw=Math.max(1,Math.round(w*ts)), th=Math.max(1,Math.round(h*ts));
+    const tc=document.createElement('canvas'); tc.width=tw; tc.height=th;
+    const tx=tc.getContext('2d'); tx.imageSmoothingEnabled=true; tx.imageSmoothingQuality='high';
+    tx.drawImage(c, 0, 0, tw, th);
+    const thumb=tc.toDataURL('image/jpeg', 0.74);
     URL.revokeObjectURL(url);
     cb({ full, thumb, w, h, kb: Math.round(full.length*0.73/1024) });
   };
@@ -1421,6 +1602,43 @@ function renderSaved(){
     + (rows ? `<ol class="screen-list">${rows}</ol>` : `<div class="screen-empty">💛<br>${t('saved_empty')}</div>`);
   $('#screen').querySelectorAll('.stop-row[data-id]').forEach(r=> r.onclick=()=> openSheet(r.dataset.id));
 }
+
+/* ---------- Utmärkelser / badges (gamification, klientsida) ---------- */
+const BADGES = [
+  { id:'first',    icon:'👣', count:'stamps', target:1,  sv:['Första steget','Din första incheckning'],        en:['First step','Your first check-in'] },
+  { id:'five',     icon:'🧭', count:'stamps', target:5,  sv:['Upptäckare','5 platser besökta'],                  en:['Explorer','5 places visited'] },
+  { id:'ten',      icon:'🏅', count:'stamps', target:10, sv:['Stadsvandrare','10 platser besökta'],              en:['Town walker','10 places visited'] },
+  { id:'central',  icon:'🚂', tour:'central',            sv:['Centrala vandringen','Alla stopp på leden'],       en:['The Central Walk','All stops on the route'] },
+  { id:'medieval', icon:'🏰', tour:'medieval',           sv:['Medeltidsringen','Alla stopp på leden'],           en:['The Medieval Ring','All stops on the route'] },
+  { id:'cityall',  icon:'🌟', city:true,                 sv:['Ortskännare','Alla platser i staden besökta'],     en:['Local legend','Every place in town visited'] },
+  { id:'saver',    icon:'💛', count:'saved', target:5,   sv:['Samlare','5 sparade platser'],                     en:['Collector','5 saved places'] },
+];
+const BADGES_KEY = 'sv_badges_v1';
+const badgeName = b => (lang==='en'?b.en:b.sv)[0];
+const badgeDesc = b => (lang==='en'?b.en:b.sv)[1];
+function computeBadges(){
+  const st=stamps(), sv=saved();
+  const cityEnt = ENTRIES.filter(inCity);
+  return BADGES.map(b=>{
+    let cur=0, target=1;
+    if (b.count==='stamps'){ cur=st.size; target=b.target; }
+    else if (b.count==='saved'){ cur=sv.size; target=b.target; }
+    else if (b.tour){ const list=orderedTourEntries(b.tour).filter(hasCoords); cur=list.filter(e=>st.has(e.id)).length; target=Math.max(1,list.length); }
+    else if (b.city){ cur=cityEnt.filter(e=>st.has(e.id)).length; target=Math.max(1,cityEnt.length); }
+    return { ...b, cur, target, earned: cur>=target };
+  });
+}
+function checkNewBadges(){
+  const earnedNow = computeBadges().filter(b=>b.earned).map(b=>b.id);
+  let stored=[]; try { stored=JSON.parse(localStorage.getItem(BADGES_KEY)||'[]'); } catch(_){}
+  const fresh = earnedNow.filter(id=>!stored.includes(id));
+  try { localStorage.setItem(BADGES_KEY, JSON.stringify(earnedNow)); } catch(_){}
+  if (fresh.length){
+    const b = BADGES.find(x=>x.id===fresh[0]);
+    if (b) toast(`🏅 ${lang==='en'?'New badge':'Nytt märke'}: ${badgeName(b)}!`);
+  }
+}
+
 function renderProfil(){
   const on = tipsActive();
   const set=stamps(), sv=saved(), mine=myContribs();
@@ -1430,6 +1648,12 @@ function renderProfil(){
   const visitedHere = cityEnt.filter(e=>set.has(e.id)).length;
   const pct= total? Math.round(visitedHere/total*100):0;
   const grid = cityEnt.map(e=>{const got=set.has(e.id);return `<div class="stamp ${got?'on':''}" title="${e.name}">${got?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;}).join('');
+  const ach = computeBadges();
+  const achEarned = ach.filter(b=>b.earned).length;
+  const achGrid = ach.map(b=>`<div class="ach ${b.earned?'on':''}" title="${badgeDesc(b)}">
+      <span class="ach-ic">${b.icon}</span><b>${badgeName(b)}</b>
+      <small>${b.earned ? '✓' : `${Math.min(b.cur,b.target)}/${b.target}`}</small>
+    </div>`).join('');
   // Den lokala "bidragsgivare"-demobrickan visas bara i offline-läget (utan backend);
   // med riktiga konton ersätts den av kontokortet + nivå-systemet.
   const badge = (!on && mine.length) ? `<div class="contributor-badge">
@@ -1445,6 +1669,8 @@ function renderProfil(){
       <div class="prog-box"><b>${sv.size}</b><small>${t('prof_saved')}</small></div>
     </div>
     <div class="bar"><i style="width:${pct}%"></i></div>
+    <h3 class="prof-h">${t('prof_achievements')} · ${achEarned}/${ach.length}</h3>
+    <div class="ach-grid">${achGrid}</div>
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
     ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
@@ -1456,11 +1682,65 @@ function renderProfil(){
     mountTipsProfile($('#screen'), { onChange: renderProfil });
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
   }
+  renderAdminAnalytics($('#screen'));   // syns bara för admins
+}
+
+/* ---------- Admin-analytics (privat statistik på förstaparts-events) ----------
+   Bara synlig för inloggade admins (RLS: events_select_admin → public.is_admin()).
+   Ingen tredjepart, inga cookies — bara aggregering av den anonyma event-datan. */
+async function renderAdminAnalytics(container){
+  if (!container || !isAdmin() || !isConfigured()) return;
+  const supa = await getSupabase(); if (!supa) return;
+  const card = document.createElement('div');
+  card.className = 'admin-stats';
+  card.innerHTML = `<h3 class="prof-h">📊 ${t('admin_stats')}</h3><p class="ch-prof-sub">${t('admin_loading')}</p>`;
+  container.appendChild(card);
+  const { data, error } = await supa.from('events')
+    .select('name,city,session,props,ts').order('ts', { ascending:false }).limit(5000);
+  if (error){ card.innerHTML = `<h3 class="prof-h">📊 ${t('admin_stats')}</h3><p class="ch-prof-sub">${escapeHtml(error.message||'fel')}</p>`; return; }
+  const ev = data || [];
+  const n = name => ev.filter(e=>e.name===name).length;
+  const sessions = new Set(ev.map(e=>e.session)).size;
+  const opens = n('app_open'), checkins = n('checkin'), tours = n('tour_start');
+  // topplistor
+  const tally = (filter, key) => {
+    const m = {}; ev.filter(filter).forEach(e=>{ const k=key(e); if(k) m[k]=(m[k]||0)+1; });
+    return Object.entries(m).sort((a,b)=>b[1]-a[1]);
+  };
+  const topStops = tally(e=>e.name==='stop_open', e=>e.props && e.props.id).slice(0,8);
+  const byCity   = tally(e=>!!e.city, e=>e.city).slice(0,6);
+  const errs     = ev.filter(e=>e.name==='js_error').slice(0,5);
+  const nameOf = id => { const x=DATA.find(d=>d.id===id); return x?x.name:id; };
+  const stat = (v,l) => `<div class="prog-box"><b>${v}</b><small>${escapeHtml(l)}</small></div>`;
+  const list = (rows, fmt) => rows.length ? rows.map(fmt).join('') : `<li class="ch-empty">${t('admin_nodata')}</li>`;
+  card.innerHTML = `
+    <h3 class="prof-h">📊 ${t('admin_stats')}</h3>
+    <p class="ch-prof-sub">${t('admin_sub').replace('{n}', ev.length)}</p>
+    <div class="prog-stat">
+      ${stat(sessions, t('admin_sessions'))}
+      ${stat(opens, t('admin_opens'))}
+      ${stat(checkins, t('admin_checkins'))}
+    </div>
+    <div class="prog-stat" style="margin-top:8px">
+      ${stat(tours, t('admin_tours'))}
+      ${stat(ev.length, t('admin_events'))}
+      ${stat(errs.length, t('admin_errors'))}
+    </div>
+    <h4 class="cb-h" style="margin-top:16px">${t('admin_top_places')}</h4>
+    <ul class="admin-list">${list(topStops, ([id,c])=>`<li><span>${escapeHtml(nameOf(id))}</span><b>${c}</b></li>`)}</ul>
+    <h4 class="cb-h">${t('admin_by_city')}</h4>
+    <ul class="admin-list">${list(byCity, ([c,v])=>`<li><span>${escapeHtml(c)}</span><b>${v}</b></li>`)}</ul>
+    ${errs.length ? `<h4 class="cb-h">⚠️ ${t('admin_errors')}</h4><ul class="admin-list err">${
+      errs.map(e=>`<li><span>${escapeHtml((e.props&&e.props.msg)||'?').slice(0,60)}</span></li>`).join('')}</ul>` : ''}
+    <button class="ch-btn-ghost" id="admin-refresh" style="margin-top:12px">↻ ${t('admin_refresh')}</button>`;
+  const rb = card.querySelector('#admin-refresh');
+  if (rb) rb.onclick = ()=>{ card.remove(); renderAdminAnalytics(container); };
 }
 function toggleSave(id){
   const set=saved();
   if (set.has(id)) set.delete(id); else { set.add(id); toast('💛 '+t('saved')); }
   localStorage.setItem(SAVED_KEY, JSON.stringify([...set]));
+  setTimeout(checkNewBadges, 1100);
   const sb=$('#save-btn');
   if (sb){ const on=saved().has(id); sb.classList.toggle('on',on); sb.setAttribute('aria-label', on?t('saved'):t('save')); }
   if (activeTab==='saved') renderSaved();
@@ -1559,6 +1839,55 @@ let toastT;
 function toast(msg){
   const t=$('#toast'); t.textContent=msg; t.classList.add('show');
   clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+/* ---------- PWA-installprompt ---------- */
+let deferredInstallPrompt = null;
+/* Offline-indikator: diskret banner när nätet tappas (cachat innehåll visas ändå
+   tack vare service workern), kort "online igen"-toast när det kommer tillbaka.
+   Viktigt för en vandringsapp där signalen kan svaja i fält. */
+function setupConnectivity(){
+  let bar = null;
+  const show = ()=>{
+    if (bar) return;
+    bar = document.createElement('div');
+    bar.className = 'offline-bar';
+    bar.setAttribute('role','status');
+    bar.setAttribute('aria-live','polite');
+    bar.textContent = t('offline_msg');
+    document.body.appendChild(bar);
+  };
+  const hide = (announce)=>{
+    if (bar){ bar.remove(); bar = null; if (announce) toast(t('online_msg')); }
+  };
+  window.addEventListener('offline', show);
+  window.addEventListener('online', ()=>hide(true));
+  if (!navigator.onLine) show();
+}
+
+const PWA_DISMISS_KEY = 'sv_pwa_dismissed';
+function setupInstallPrompt(){
+  const banner = $('#install-banner');
+  if (!banner) return;
+  $('#ib-title').textContent = t('pwa_title');
+  $('#ib-sub').textContent = t('pwa_text');
+  $('#ib-install').textContent = t('pwa_install');
+  window.addEventListener('beforeinstallprompt', (e)=>{
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    try { if (localStorage.getItem(PWA_DISMISS_KEY)) return; } catch(_){}            // användaren har avböjt
+    if (matchMedia('(display-mode: standalone)').matches) return;                    // redan installerad
+    banner.hidden = false;
+  });
+  $('#ib-install').onclick = async ()=>{
+    banner.hidden = true;
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice.catch(()=>{});
+    deferredInstallPrompt = null;
+  };
+  $('#ib-x').onclick = ()=>{ banner.hidden = true; try { localStorage.setItem(PWA_DISMISS_KEY,'1'); } catch(_){} };
+  window.addEventListener('appinstalled', ()=>{ banner.hidden = true; });
 }
 
 function wireUi(){
