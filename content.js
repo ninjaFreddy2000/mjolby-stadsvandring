@@ -5,9 +5,34 @@
 // Extra bilder för poster som saknar foto i kunskapsdatabasen
 // (självhostade, fria bilder). Används som reservbild i detalj/lista.
 export const EXTRA_IMAGES = {
-  'skanska-lasse':        { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
-  'skanska-lasses-staty': { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
-  'skanska-lasses-hus':   { url:'images/skanska-lasse.jpg', attribution:'Public domain (Wikimedia Commons)', focal:'center top' },
+  'skanska-lasse':        { url:'images/skanska-lasse.jpg', attribution:'Foto: Stadsvandring.io', focal:'center 25%' },
+  'skanska-lasses-staty': { url:'images/skanska-lasse.jpg', attribution:'Foto: Stadsvandring.io', focal:'center 25%' },
+  'skanska-lasses-hus':   { url:'images/skanska-lasse.jpg', attribution:'Foto: Stadsvandring.io', focal:'center 25%' },
+  // Riktiga foton från Wikimedia Commons (fritt licensierade, självhostade i images/).
+  // Attribution = upphovsperson + licens, krav på CC BY/BY-SA; CC0 attribueras ändå av artighet.
+  'mjolby-kyrka':           { url:'images/mjolby-kyrka.jpg',           attribution:'Foto: Stadsvandring.io', focal:'center center' },
+  'mjolby-station':         { url:'images/mjolby-station.jpg',         attribution:'Foto: Jan Pešula, CC0, Wikimedia Commons',            focal:'center center' },
+  'svartan':                { url:'images/svartan.jpg',                attribution:'Foto: Stadsvandring.io', focal:'center 38%' },
+  'varfrukyrkan-skanninge': { url:'images/varfrukyrkan-skanninge.jpg', attribution:'Foto: Harri Blomberg, CC BY-SA 3.0, Wikimedia Commons', focal:'center 28%' },
+  'bjalbo-kyrka':           { url:'images/bjalbo-kyrka.jpg',           attribution:'Foto: Helen Simonsson, CC BY-SA 3.0, Wikimedia Commons', focal:'center center' },
+  'hogbystenen':            { url:'images/hogbystenen.jpg',            attribution:'Foto: Arkland, CC BY-SA 4.0, Wikimedia Commons',       focal:'center center' },
+  'mjolby-orten':           { url:'images/mjolby-orten.jpg',           attribution:'Foto: Harri Blomberg, CC BY 2.5, Wikimedia Commons',   focal:'center center' },
+  'skanninge-orten':        { url:'images/skanninge-orten.jpg',        attribution:'Foto: Harri Blomberg, CC BY-SA 3.0, Wikimedia Commons', focal:'center center' },
+  // Andra omgången (kloster, borgruin, bro, fler kyrkor/byggnader) — licens verifierad via Commons-API.
+  'sta-ingrids-kloster':              { url:'images/sta-ingrids-kloster.jpg',              attribution:'Foto: Västgöten, CC BY-SA 3.0, Wikimedia Commons',     focal:'center center' },
+  'st-olofs-kloster-petrus-de-dacia': { url:'images/st-olofs-kloster-petrus-de-dacia.jpg', attribution:'Foto: Harri Blomberg, CC BY-SA 3.0, Wikimedia Commons', focal:'center center' },
+  'svaneholms-borgruin':              { url:'images/svaneholms-borgruin.jpg',              attribution:'Foto: Falkonett, CC BY-SA 3.0, Wikimedia Commons',     focal:'center center' },
+  'ojebro-stenvalvsbro':              { url:'images/ojebro-stenvalvsbro.jpg',              attribution:'Foto: Jan Norrman, CC BY 2.5, Wikimedia Commons',      focal:'center center' },
+  'og-norra-vi-kyrka':                { url:'images/og-norra-vi-kyrka.jpg',                attribution:'Foto: Iin208, CC BY-SA 3.0, Wikimedia Commons',        focal:'center center' },
+  'gamla-stadshuset':                 { url:'images/gamla-stadshuset.jpg',                 attribution:'Foto: Stadsvandring.io', focal:'center 35%' },
+  // Egna foton (Fredrik, Mjölby-promenad 2026-06-14) — placerade via GPS-metadata.
+  'kvarnparken':                      { url:'images/kvarnparken.jpg',                      attribution:'Foto: Stadsvandring.io', focal:'center center' },
+  'mjolby-hembygdsgard':              { url:'images/mjolby-hembygdsgard.jpg',              attribution:'Foto: Stadsvandring.io', focal:'center 45%' },
+  'galleria-kvarnen':                 { url:'images/galleria-kvarnen.jpg',                 attribution:'Foto: Stadsvandring.io', focal:'center center' },
+  'mjolby-mejeri':                    { url:'images/mjolby-mejeri.jpg',                    attribution:'Foto: Stadsvandring.io', focal:'center center' },
+  'det-kom-en-gang-en-mjolnare':      { url:'images/det-kom-en-gang-en-mjolnare.jpg',      attribution:'Foto: Stadsvandring.io', focal:'center 28%' },
+  'carl-milles-staty':                { url:'images/carl-milles-staty.jpg',                attribution:'Foto: Stadsvandring.io', focal:'center 30%' },
+  'saga-biografen':                   { url:'images/saga-biografen.jpg',                   attribution:'Foto: Stadsvandring.io', focal:'center 32%' },
 };
 
 export const STORIES = {
@@ -66,7 +91,7 @@ export const STORIES = {
     'Allt började 1887 i ett uthus på Kungsvägen, där sadelmakaren Johannes Ohlsson från Skåne öppnade möbelaffär och blev pionjär för Mjölbys möbelindustri.\n\nGeneration efter generation har familjen Ohlsson hållit fast vid yrket — i dag i fjärde led, numera under namnet Mio vid Ryttarhagen nära E4. En mjölbysk möbelsaga som ännu inte tagit slut.',
 
   'mjolby-bryggeri':
-    'Här fanns en gång stadens stolthet i glas: Mjölby Bryggeri. Från 1927 ägdes det av Centralbryggeriet i Linköping och inriktades efterhand på svagdricka och läsk.\n\n1954 tystnade tapparna, och i början av 1980-talet revs allt. I dag finns inte ett byggnadsspår kvar — bara minnet av en doft av jäst och en klirrande lastbil full av läskbackar.',
+    'Vid Svartåns västra strand, i höjd med Norrgårdsholmen vid Bryggaregränd, låg en gång stadens stolthet i glas: Mjölby Bryggeri. I närmare hundra år dominerade den pampiga tegelanläggningen åstranden. Från 1927 ägdes den av Centralbryggeriet i Linköping och inriktades efterhand på svagdricka och läsk.\n\n1954 tystnade tapparna, och 1981 revs allt. I dag finns inte ett byggnadsspår kvar — bara minnet av en doft av jäst och en klirrande lastbil full av läskbackar.',
 
   'mjolby-ungdomsmusikkar':
     'Hör du blåset? Sedan 1956 har Mjölby Ungdomsmusikkår fått stadens unga att lyfta instrumenten, och i dag är de 120–140 musikanter och drillare — en av Sveriges främsta och största ungdomsorkestrar.\n\nDe färgar valborg, nationaldag och skolavslutning med mässing och puls. År 2026 fyller kåren 70 och bjuder in orkestrar från hela Europa till en jubileumsfestival den 7–9 augusti.',
@@ -126,7 +151,13 @@ export const STORIES = {
     'Den 28 maj 1771 förändrades Mjölby för alltid. På bara några timmar slukade en förödande brand nästan hela byn — kyrka, kvarnar, gårdar och hus föll för lågorna.\n\nÅteruppbyggnaden bekostades delvis av rikskollekter från kyrkor i både Sverige och Finland, och en ny kyrka togs i bruk 1775. Vid 1828 snurrade åter elva kvarnar. Genom en lycklig slump ritades en storskifteskarta bara tre och en halv månad före branden — och tack vare den känner vi än i dag den medeltida byplan som elden annars hade utplånat.',
 
   'dackefejden':
-    'Under Dackefejden 1542–43, Sveriges största folkresning, vällde upproret från Småland norrut — och just här, i Mjölby, nådde de upproriska sin nordligaste punkt.\n\nStå still ett ögonblick och tänk på att gränsen mellan kungamakt och uppror en gång gick rakt genom denna bygd.',
+    'Under Dackefejden 1542–43 — Sveriges största folkresning — vällde upproret från Smålands skogsbygder norrut, och just här i Mjölby nådde de upproriska sin allra nordligaste punkt. Nils Dacke hade rest allmogen mot Gustav Vasa: mot nya skatter, mot fogdarna och mot förbuden att fälla kungens ekar och sälja sina oxar.\n\nVintern 1542–43 drabbade hans bondehär samman med en kunglig styrka vid Kungshögarna här i Mjölby. Striden slutade oavgjort — men blev början på slutet. Sommaren 1543 spårades Dacke upp och dödades, och hans huvud sattes med en kopparkrona på en ekstubbe i Kalmar. Stå still ett ögonblick: här gick en gång gränsen mellan det gamla bondesamhället och en ny tids kungamakt.',
+
+  'kommunsammanslagningen-1971':
+    '1971 blev fem till en. Mjölby stad, Skänninge stad, Vifolka, större delen av Folkunga och en bit av Boberg fogades samman till dagens Mjölby kommun — och de fem gamla vapnen lever kvar som ett minne av bygderna som gick ihop.\n\nBakom sammanslagningen låg en rikstäckande reform från 1962. Mjölby valde att göra det frivilligt 1971, innan tvånget hann i kapp 1974. Samtidigt försvann de gamla orden stad, köping och municipalsamhälle — sedan dess heter allt helt enkelt kommun.',
+
+  'mjolby-mejeri':
+    'Utmed Kanikegatan står en byggnad vars sammanhållna fasad döljer en brokig historia. Här låg Mjölbys mejeri, i drift från sekelskiftet 1900 ända till 1961. Fasaden ser ut som ett enda hus, men är i själva verket lager på lager av om- och påbyggnader allt eftersom mejeriets behov växte.\n\nNär mjölkkannorna tystnat fick huset nytt liv som föreningslokal. Östergötlands museum dokumenterade byggnaden 1986 — ett stycke vardagsindustri mitt i staden.',
 
   'mjolby-ai-ff-vifolkavallen':
     'På Vifolkavallen slår Mjölbys fotbollshjärta. Mjölby AI FF bildades den 26 maj 1912 och har spelat sina hemmamatcher här i mer än ett sekel. Kom en matchdag, så hör du staden heja på sina egna.',
@@ -138,6 +169,20 @@ export const STORIES = {
 // Samma form som en contributor lämnar in (bild laddas till Supabase → img-URL).
 // Bilder utelämnade tills riktiga (fria/contributor-) bilder finns — text-först.
 export const TIMELINES = {
+  'mjolby-orten': [
+    { year: '1100-talet', title: 'Kvarnbyn föds', text: 'Forsarna i Svartån drar de första kvarnarna till platsen; byn omnämns som Mölloby — byn vid kvarnen.' },
+    { year: '1771', title: 'Stora branden', text: 'Branden förstör nästan hela byn och alla kvarnar utom två.' },
+    { year: '1828', title: 'Elva kvarnar', text: 'Kvarnarna har återuppstått — nu snurrar elva hjul vid ån.' },
+    { year: '1873', title: 'Järnvägen', text: 'Stambanan når Mjölby och kvarnbyn blir järnvägsknut.' },
+    { year: '1920', title: 'Stadsrättigheter', text: 'Mjölby blir stad, efter att ha varit stadssamhälle sedan 1900.' },
+    { year: '1971', title: 'Fem blev en', text: 'Mjölby, Skänninge, Vifolka, Folkunga och Boberg slås samman till Mjölby kommun.' },
+  ],
+  'dackefejden': [
+    { year: '1542', title: 'Upproret bryter ut', text: 'Nils Dacke reser allmogen i Småland och Östergötland mot Gustav Vasas skatter och fogdar.' },
+    { year: 'Vintern 1542–43', title: 'Striden vid Kungshögarna', text: 'Dackes bondehär möter en kunglig styrka i Mjölby. Striden slutar oavgjort — men blir början på slutet.' },
+    { year: 'Mars 1543', title: 'Dacke såras', text: 'Nils Dacke såras svårt i en drabbning nära Virserum i Småland.' },
+    { year: 'Sommaren 1543', title: 'Upproret krossas', text: 'Dacke spåras upp och dödas; hans huvud sätts med en kopparkrona på en ekstubbe i Kalmar.' },
+  ],
   'mjolby-kyrka': [
     { year: '1100-talet', title: 'Första stenkyrkan', text: 'En kyrka i kalk- och gråsten reses på byns högsta punkt och helgas åt sitt skydd.' },
     { year: '1771', title: 'Den stora branden', text: 'Branden förstör nästan hela kyrkan — men det medeltida tornet står kvar i röken.' },
