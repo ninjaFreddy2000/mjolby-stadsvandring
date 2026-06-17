@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v63';
+const CACHE = 'mjolby-stadsvandring-v64';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -44,6 +44,14 @@ function isShell(url){
 self.addEventListener('fetch', e=>{
   const req = e.request;
   if (req.method !== 'GET') return;
+
+  // Only manage our OWN (same-origin) assets. Third-party requests — map tiles,
+  // Supabase media, fonts — must go straight to the network. Proxying cross-origin
+  // no-cors requests through the SW broke tile loading: they came back failed/503
+  // even though the exact same tile loads fine natively. Don't touch them.
+  let sameOrigin = false;
+  try { sameOrigin = new URL(req.url).origin === self.location.origin; } catch (e2) {}
+  if (!sameOrigin) return;
 
   // App shell + navigations → NETWORK-FIRST (always get the latest; cache is offline fallback only).
   if (req.mode === 'navigate' || isShell(req.url)){
