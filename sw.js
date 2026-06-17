@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v62';
+const CACHE = 'mjolby-stadsvandring-v63';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -63,7 +63,7 @@ self.addEventListener('fetch', e=>{
   e.respondWith(
     caches.match(req).then(cached=>{
       const net = fetch(req).then(res=>{
-        if (res && res.status===200 && (req.url.startsWith(self.location.origin) || req.url.includes('tile.openstreetmap'))){
+        if (res && res.status===200 && (req.url.startsWith(self.location.origin) || req.url.includes('basemaps.cartocdn.com') || req.url.includes('tile.openstreetmap'))){
           const copy = res.clone();
           caches.open(RUNTIME).then(c=>c.put(req, copy).then(()=>trimCache(RUNTIME, RUNTIME_MAX)));
         }

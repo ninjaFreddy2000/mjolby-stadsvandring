@@ -319,8 +319,10 @@ async function init() {
 
 function buildMap() {
   map = L.map('map', { zoomControl:true }).setView([58.327, 15.13], 14);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '&copy; OpenStreetMap'
+  // Carto Voyager-basemap (gratis, ingen nyckel, tillåten för app-bruk). OSM:s egna
+  // tile-servrar (tile.openstreetmap.org) blockerar produktionsappar med 503 → använd inte dem.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; OpenStreetMap, &copy; CARTO'
   }).addTo(map);
   // Kluster-grupp för bläddra-läget (löser nål-klumpen); plain-lager för aktiv tur (alla stopp syns).
   markerLayer = L.markerClusterGroup({
