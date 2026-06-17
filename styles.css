@@ -447,7 +447,10 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   body{padding:0}
   /* Lägre header på desktop — mindre tom bildyta ovanför varumärkestexten */
   .header-hero{height:96px}
-  #app{max-width:none;width:100vw;height:100vh;height:100dvh;max-height:none;border-radius:0;box-shadow:none;
+  /* Contained app-ram (inte fullbredd): centrerad kolumn med ambient bakgrund i sidogutterna.
+     #app:s transform gör den till containing block → fixed rail/sheet följer med automatiskt. */
+  #app{max-width:1320px;width:100%;margin-inline:auto;height:100vh;height:100dvh;max-height:none;border-radius:0;
+    box-shadow:0 0 0 1px var(--line), 0 30px 90px -40px rgba(0,0,0,.7);
     background-image:radial-gradient(1600px 800px at 50% -10%, #F7EFDF 0%, #EFE5D0 55%, #E6DAC4 100%)}
   .accent-stripe{border-radius:0}
   #explore{flex-direction:row}
