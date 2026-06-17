@@ -121,6 +121,7 @@ export const STRINGS = {
     admin_request_info: 'Be om mer info', admin_request_info_prompt: 'Vad behöver kompletteras?',
     tip_info_requested: 'Granskaren bad om komplettering:',
     tip_edit_resubmit: 'Komplettera & skicka igen', tip_resubmit_thanks: 'Tack! Din komplettering skickas för ny granskning. 💛',
+    install_app: 'Installera appen', admin_dashboard: 'Admin',
     // Stadsutmaning
     ch_section: 'Stadsutmaning',
     ch_create_sub: 'Skapa en geocaching-tävling — skola, förening, företag eller kommun. Deltagarna utforskar staden och samlar poäng.',
@@ -281,6 +282,7 @@ export const STRINGS = {
     admin_request_info: 'Request more info', admin_request_info_prompt: 'What needs completing?',
     tip_info_requested: 'The reviewer asked for more info:',
     tip_edit_resubmit: 'Complete & resubmit', tip_resubmit_thanks: 'Thanks! Your update goes back for review. 💛',
+    install_app: 'Install the app', admin_dashboard: 'Admin',
     // City challenge
     ch_section: 'City challenge',
     ch_create_sub: 'Create a geocaching-style challenge — school, club, company or municipality. Players explore the town and earn points.',

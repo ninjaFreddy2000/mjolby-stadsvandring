@@ -39,6 +39,7 @@ function setupErrorMonitoring(){
 }
 import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
          openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
+import { initAdmin, openAdminDashboard, openInstallGuide, adminAvailable } from './admin.js';
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
 const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
@@ -1674,68 +1675,22 @@ function renderProfil(){
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
     ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
-    <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>`;
+    <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>
+    <button class="fb-cta" id="install-prof">📲 ${t('install_app')}</button>
+    ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">🛡️ ${t('admin_dashboard')}</button>` : ''}`;
   const tr=$('#to-review'); if (tr) tr.onclick = openReview;
   $('#fb-prof').onclick = openFeedback;
+  const ib=$('#install-prof'); if (ib) ib.onclick = openInstallGuide;
+  const ab=$('#admin-prof'); if (ab) ab.onclick = openAdminDashboard;
   mountChallengeProfile($('#screen'));
   if (on){
     mountTipsProfile($('#screen'), { onChange: renderProfil });
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
   }
-  renderAdminAnalytics($('#screen'));   // syns bara för admins
 }
 
-/* ---------- Admin-analytics (privat statistik på förstaparts-events) ----------
-   Bara synlig för inloggade admins (RLS: events_select_admin → public.is_admin()).
-   Ingen tredjepart, inga cookies — bara aggregering av den anonyma event-datan. */
-async function renderAdminAnalytics(container){
-  if (!container || !isAdmin() || !isConfigured()) return;
-  const supa = await getSupabase(); if (!supa) return;
-  const card = document.createElement('div');
-  card.className = 'admin-stats';
-  card.innerHTML = `<h3 class="prof-h">📊 ${t('admin_stats')}</h3><p class="ch-prof-sub">${t('admin_loading')}</p>`;
-  container.appendChild(card);
-  const { data, error } = await supa.from('events')
-    .select('name,city,session,props,ts').order('ts', { ascending:false }).limit(5000);
-  if (error){ card.innerHTML = `<h3 class="prof-h">📊 ${t('admin_stats')}</h3><p class="ch-prof-sub">${escapeHtml(error.message||'fel')}</p>`; return; }
-  const ev = data || [];
-  const n = name => ev.filter(e=>e.name===name).length;
-  const sessions = new Set(ev.map(e=>e.session)).size;
-  const opens = n('app_open'), checkins = n('checkin'), tours = n('tour_start');
-  // topplistor
-  const tally = (filter, key) => {
-    const m = {}; ev.filter(filter).forEach(e=>{ const k=key(e); if(k) m[k]=(m[k]||0)+1; });
-    return Object.entries(m).sort((a,b)=>b[1]-a[1]);
-  };
-  const topStops = tally(e=>e.name==='stop_open', e=>e.props && e.props.id).slice(0,8);
-  const byCity   = tally(e=>!!e.city, e=>e.city).slice(0,6);
-  const errs     = ev.filter(e=>e.name==='js_error').slice(0,5);
-  const nameOf = id => { const x=DATA.find(d=>d.id===id); return x?x.name:id; };
-  const stat = (v,l) => `<div class="prog-box"><b>${v}</b><small>${escapeHtml(l)}</small></div>`;
-  const list = (rows, fmt) => rows.length ? rows.map(fmt).join('') : `<li class="ch-empty">${t('admin_nodata')}</li>`;
-  card.innerHTML = `
-    <h3 class="prof-h">📊 ${t('admin_stats')}</h3>
-    <p class="ch-prof-sub">${t('admin_sub').replace('{n}', ev.length)}</p>
-    <div class="prog-stat">
-      ${stat(sessions, t('admin_sessions'))}
-      ${stat(opens, t('admin_opens'))}
-      ${stat(checkins, t('admin_checkins'))}
-    </div>
-    <div class="prog-stat" style="margin-top:8px">
-      ${stat(tours, t('admin_tours'))}
-      ${stat(ev.length, t('admin_events'))}
-      ${stat(errs.length, t('admin_errors'))}
-    </div>
-    <h4 class="cb-h" style="margin-top:16px">${t('admin_top_places')}</h4>
-    <ul class="admin-list">${list(topStops, ([id,c])=>`<li><span>${escapeHtml(nameOf(id))}</span><b>${c}</b></li>`)}</ul>
-    <h4 class="cb-h">${t('admin_by_city')}</h4>
-    <ul class="admin-list">${list(byCity, ([c,v])=>`<li><span>${escapeHtml(c)}</span><b>${v}</b></li>`)}</ul>
-    ${errs.length ? `<h4 class="cb-h">⚠️ ${t('admin_errors')}</h4><ul class="admin-list err">${
-      errs.map(e=>`<li><span>${escapeHtml((e.props&&e.props.msg)||'?').slice(0,60)}</span></li>`).join('')}</ul>` : ''}
-    <button class="ch-btn-ghost" id="admin-refresh" style="margin-top:12px">↻ ${t('admin_refresh')}</button>`;
-  const rb = card.querySelector('#admin-refresh');
-  if (rb) rb.onclick = ()=>{ card.remove(); renderAdminAnalytics(container); };
-}
+/* Admin-analytics flyttad till admin.js (openAdminDashboard) — konsoliderad där
+   tillsammans med användar- och förslagsöversikten. */
 function toggleSave(id){
   const set=saved();
   if (set.has(id)) set.delete(id); else { set.add(id); toast('💛 '+t('saved')); }
@@ -1949,6 +1904,7 @@ function setupAuthTips(){
       if (activeTab==='profile') renderProfil();
     },
   };
+  initAdmin(c);
   initAuth(c).then(()=> initTips(c));
 }
 
