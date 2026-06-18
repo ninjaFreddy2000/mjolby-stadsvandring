@@ -1,12 +1,12 @@
 # Stadsvandring.io
 
-> Guidade stadsvandringar i Mjölby, Norra Vi, Kinda, Mullsjö, Värnamo (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 50 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 80 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
 
 ## Om
 - Varumärke: Stadsvandring.io
-- Plats: Mjölby, Norra Vi, Kinda, Mullsjö, Värnamo (Östergötland, Sverige)
+- Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige)
 - Webbplats: https://stadsvandring.io
-- Innehåll: 50 kartlagda platser med beskrivning, epok, snabbfakta och källor.
+- Innehåll: 80 kartlagda platser med beskrivning, epok, snabbfakta och källor.
 
 ## Vandringsturer
 - [Centrala vandringen](https://stadsvandring.io/tur/central): Från stationen genom kvarnbyns hjärta — ca 2 km. 9 stopp.
@@ -53,19 +53,49 @@
 - [Stadsbranden 1771 (Mjölby)](https://stadsvandring.io/p/branden-1771): Branden som nästan utplånade kvarnbyn och som möjliggör att vi känner den medeltida byplanen.
 - [Dackefejden i Mjölby (1542–43) (Mjölby)](https://stadsvandring.io/p/dackefejden): Sveriges största folkresning nådde sin nordligaste punkt i Mjölby — vid Kungshögarna stod en drabbning vintern 1542–43.
 - [Mjölby AI FF / Vifolkavallen (Mjölby)](https://stadsvandring.io/p/mjolby-ai-ff-vifolkavallen): Ortens fotbollsklubb med hemmaplan på Vifolkavallen.
-- [Norra Vi kyrka (Norra Vi)](https://stadsvandring.io/p/og-norra-vi-kyrka): Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.
-- [Korpberget (Norra Vi)](https://stadsvandring.io/p/og-korpberget): Härifrån har ni en vacker vy över Norra Vi.
-- [Skuru (Norra Vi)](https://stadsvandring.io/p/og-skuru): Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.
-- [Norra Vi vandringsled (Norra Vi)](https://stadsvandring.io/p/og-norra-vi-vandringsled): Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.
+- [Norra Vi kyrka (Ydre)](https://stadsvandring.io/p/og-norra-vi-kyrka): Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.
+- [Korpberget (Ydre)](https://stadsvandring.io/p/og-korpberget): Härifrån har ni en vacker vy över Norra Vi.
+- [Skuru (Ydre)](https://stadsvandring.io/p/og-skuru): Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.
+- [Norra Vi vandringsled (Ydre)](https://stadsvandring.io/p/og-norra-vi-vandringsled): Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.
 - [Östgötaleden (Kinda)](https://stadsvandring.io/p/og-ostgotaleden): Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!
 - [Mullsjö (Mullsjö)](https://stadsvandring.io/p/og-mullsjo): I Mullsjö finns det plats för det som är viktigt.
 - [Store Mosse nationalpark (Värnamo)](https://stadsvandring.io/p/og-store-mosse-nationalpark): En kort bit från Värnamo ligger Store Mosse nationalpark, ett stort och öppet naturområde som bjuder på lugn och stillhet.
 - [Fem blev en — Mjölby kommun (1971) (Mjölby)](https://stadsvandring.io/p/kommunsammanslagningen-1971): 1971 slogs Mjölby stad, Skänninge stad och tre landskommuner samman till dagens Mjölby kommun.
 - [Mejeriet (Kanikegatan) (Mjölby)](https://stadsvandring.io/p/mjolby-mejeri): Mjölbys gamla mejeri vid Kanikegatan, i drift från sekelskiftet 1900 till 1961 och senare ombyggt till föreningslokal.
 - [Sagabiografen (Mjölby)](https://stadsvandring.io/p/saga-biografen): Mjölbys biograf från 1942 med ovanligt välbevarad funkisinteriör — återinvigd efter branden 2024.
+- [Motala (Motala)](https://stadsvandring.io/p/motala-orten): Östergötlands sjöstad vid Vättern — planerad kring Göta kanal och en gång hela Sveriges radioröst.
+- [Göta kanal genom Motala (Motala)](https://stadsvandring.io/p/motala-gota-kanal): Kanalens huvudort, där slussarna ligger mitt i stan och kanalbåtarna fortfarande glider förbi.
+- [Baltzar von Platens grav (Motala)](https://stadsvandring.io/p/motala-von-platens-grav): Mannen bakom Göta kanal vilar vid sitt eget verk — han hann aldrig se det färdigt.
+- [Charlottenborgs slott (Motala)](https://stadsvandring.io/p/motala-charlottenborgs-slott): Vitt herresäte vid Motala ström, omgivet av ett av stadens käraste promenadstråk.
+- [Sveriges Rundradiomuseum (Motala)](https://stadsvandring.io/p/motala-rundradiomuseum): Här berättas historien om hur Motala blev rösten som nådde hela Sverige.
+- [Motala Motormuseum (Motala)](https://stadsvandring.io/p/motala-motormuseum): Blanka bilar, motorcyklar och tidsbilder från svenskt 1900-tal — vid hamnen.
+- [Varamobaden (Motala)](https://stadsvandring.io/p/motala-varamon): En av norra Europas största insjöstränder — mjuk sand längs Vätterns kant.
+- [Motala Verkstad (Motala)](https://stadsvandring.io/p/motala-verkstad): Den industrimiljö som byggde Göta kanal — och lade grunden för svensk verkstadskonst.
+- [Hålebergets naturreservat (Motala)](https://stadsvandring.io/p/motala-haleberget): Branta hällmarker och tallskog en mil norr om staden, med vandringsleder runt berget.
+- [Bromossen naturreservat (Motala)](https://stadsvandring.io/p/motala-bromossen): Vidsträckt myrmark i skogarna mellan Motala, Borensberg och Godegård.
+- [Ydre (Ydre)](https://stadsvandring.io/p/ydre-orten): Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen.
+- [Urkons Håla, Norra Vi (Ydre)](https://stadsvandring.io/p/ydre-urkons-hala): Platsen där sägnen säger att den vilda urkon sparkade upp hela sjön Sommen.
+- [Bulegrottan, Östgötaleden (Ydre)](https://stadsvandring.io/p/ydre-bulegrottan): Jätten Bules grotta — en skreva i berget vid Östgötaleden söder om Österbymo.
+- [Asby-granen — Sveriges grövsta gran (Ydre)](https://stadsvandring.io/p/ydre-asby-granen): Den grövsta enkelstammiga granen i landet växer vid Hedners Park i Asby.
+- [Kungabordet, Stora Rödje (Ydre)](https://stadsvandring.io/p/ydre-kungabordet): Utsiktsplats längs Östgötaleden med en kunglig matrast i bagaget.
+- [Sunds Bruk, Bulsjöån (Ydre)](https://stadsvandring.io/p/ydre-sunds-bruk): Gammal bruksmiljö vid Bulsjöåns vatten, på gränsen mellan Norra Vi och Sund.
+- [Pukaberget utsiktsplats, Torpa (Ydre)](https://stadsvandring.io/p/ydre-pukaberget): Högt, brett och vackert över sjön Raklången i Torpa socken.
+- [Rocks Mosse naturreservat (Ydre)](https://stadsvandring.io/p/ydre-rocks-mosse): Myrmark med spång och utsiktstorn i nordöstra Norra Vi.
+- [Nääs Gårdsbryggeri (Ydre)](https://stadsvandring.io/p/ydre-naas-gardsbryggeri): Prisbelönt gårdshantverk där gammal gårdshistoria möter nya visioner.
+- [Torpöns naturreservat (Ydre)](https://stadsvandring.io/p/ydre-torpon): Blåmärkt vandringsled runt en ö i den stora sjön Sommen.
+- [Valdemarsvik (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-orten): Porten till Östergötlands skärgård — en stad längst inne i en lång havsvik.
+- [Harstena museum (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-harstena): Gammal fiskeby ute i skärgården, med byskola och trankokeri bevarade.
+- [Kvädöfjärdens naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-kvadofjarden): Östergötlands första marina naturreservat — en mosaik av skärgård under och över ytan.
+- [Gryts skärgård (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-gryts-skargard): Tusen och åter tusen öar, holmar, kobbar och skär — Östergötlands yttre arkipelag.
+- [Arnö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-arno): En ö som visar hur skärgårdslandskapet såg ut vid förra sekelskiftet.
+- [Väggö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-vaggo): En tyst tillflykt som länge varit viktig för skärgårdens havsörnar.
+- [Ämtö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-amto): En av Gryts största öar, format av människan i århundraden — ekhagar och stigar.
+- [Stjärnö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-stjarno): Holmar och halvö i Kattedalsfjärden, nära Valdemarsviks egen tröskel.
+- [Torrö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-torro): Längst söderut i Östergötlands skärgård — pinade tallar och öppet hav.
+- [Östgötaleden — skärgårdsetapperna (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-ostgotaleden): Östgötaledens kanske vackraste avsnitt går längs Valdemarsviks skärgårdskust.
 
 ## Index
 - [Om & vanliga frågor](https://stadsvandring.io/om): Vad Stadsvandring.io är, vilka orter som täcks och svar på vanliga frågor.
 - [Alla platser](https://stadsvandring.io/platser): Komplett lista över sevärdheter och platser.
-- [English overview](https://stadsvandring.io/en): English-language overview of all 50 places and the walking tours.
+- [English overview](https://stadsvandring.io/en): English-language overview of all 80 places and the walking tours.
 - [Sitemap](https://stadsvandring.io/sitemap.xml)

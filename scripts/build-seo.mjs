@@ -198,6 +198,11 @@ mkdirSync(placeDir, { recursive: true });
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${BASE}/platser`, priority: '0.8', changefreq: 'weekly' },
+  // Fristående marknadsföringssidor ("skyltfönstret") — handskrivna, ingår i sitemap.
+  { loc: `${BASE}/om-oss`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${BASE}/bidra`, priority: '0.7', changefreq: 'monthly' },
+  { loc: `${BASE}/partners`, priority: '0.7', changefreq: 'monthly' },
+  { loc: `${BASE}/orter`, priority: '0.7', changefreq: 'monthly' },
 ];
 
 for (const e of entries) {

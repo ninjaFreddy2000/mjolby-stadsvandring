@@ -27,7 +27,14 @@
    "musikkar",
    "handelse",
    "idrott",
-   "station"
+   "station",
+   "naturreservat",
+   "badplats",
+   "utsiktsplats",
+   "vandringsled",
+   "gardsbutik",
+   "slott",
+   "sevardhet"
   ],
   "sources_primary": [
    "https://sv.wikipedia.org/wiki/Mjölby",
@@ -1314,7 +1321,7 @@
   {
    "id": "og-norra-vi-kyrka",
    "name": "Norra Vi kyrka",
-   "city": "Norra Vi",
+   "city": "Ydre",
    "category": "kyrka",
    "coordinates": {
     "lat": 57.88498,
@@ -1332,8 +1339,8 @@
   {
    "id": "og-korpberget",
    "name": "Korpberget",
-   "city": "Norra Vi",
-   "category": "ort",
+   "city": "Ydre",
+   "category": "utsiktsplats",
    "coordinates": {
     "lat": 57.88318,
     "lng": 15.33066
@@ -1350,8 +1357,8 @@
   {
    "id": "og-skuru",
    "name": "Skuru",
-   "city": "Norra Vi",
-   "category": "ort",
+   "city": "Ydre",
+   "category": "byggnad",
    "coordinates": {
     "lat": 57.87736,
     "lng": 15.34242
@@ -1368,8 +1375,8 @@
   {
    "id": "og-norra-vi-vandringsled",
    "name": "Norra Vi vandringsled",
-   "city": "Norra Vi",
-   "category": "ort",
+   "city": "Ydre",
+   "category": "vandringsled",
    "coordinates": {
     "lat": 57.8835,
     "lng": 15.342
@@ -1516,6 +1523,832 @@
     "https://www.filmstaden.se/mjolby/biograf/saga/"
    ],
    "city": "Mjölby"
+  },
+  {
+   "id": "motala-orten",
+   "name": "Motala",
+   "category": "ort",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5371,
+    "lng": 15.0386
+   },
+   "era": "Köping 1823, stad 1881",
+   "summary": "Östergötlands sjöstad vid Vättern — planerad kring Göta kanal och en gång hela Sveriges radioröst.",
+   "description": "Där Göta kanal möter Vättern lät Baltzar von Platen rita en helt ny stad på 1820-talet, med raka gator och kanalen som pulsåder. Motala blev kanalbyggets huvudort och snart en industristad med eget rykte: här i Motala verkstad föddes mycket av den svenska verkstadskonsten.\n\nPå 1900-talet blev orten \"radions stad\" — det var härifrån långvågssändaren bar Sveriges Radio ut över landet. Idag är Motala mest känd för sin sjönära charm: Göta kanals slussar mitt i staden och Varamons milslånga sandstrand vid Vätterns kant.",
+   "key_facts": [
+    "Planerad stad vid Göta kanal på 1820-talet",
+    "Motala verkstad — en vagga för svensk verkstadsindustri",
+    "Kallades länge \"radions stad\" tack vare långvågssändaren",
+    "Vid Vätterns östra strand i västra Östergötland"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Motala",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Motala",
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-gota-kanal",
+   "name": "Göta kanal genom Motala",
+   "category": "vattendrag",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5384,
+    "lng": 15.0432
+   },
+   "era": "Kanalen invigd 1832",
+   "summary": "Kanalens huvudort, där slussarna ligger mitt i stan och kanalbåtarna fortfarande glider förbi.",
+   "description": "Göta kanal kallades \"Sveriges blå band\" och Motala dess huvudstad. Här, vid hamnen, kan du följa slussarna och se de vita kanalbåtarna passera precis som de gjort sedan invigningen 1832.\n\nKanalen var Baltzar von Platens livsverk — ett av 1800-talets största byggprojekt, grävt för hand av tusentals man. Promenadstråket längs vattnet binder ihop hela staden och leder förbi von Platens egen grav vid kanalkanten.",
+   "key_facts": [
+    "Göta kanal invigdes 1832",
+    "Motala kallas kanalens huvudstad",
+    "Byggdes till stor del för hand under tidigt 1800-tal"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Göta_kanal",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Göta_kanal",
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-von-platens-grav",
+   "name": "Baltzar von Platens grav",
+   "category": "person",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.539,
+    "lng": 15.0455
+   },
+   "era": "1766–1829",
+   "summary": "Mannen bakom Göta kanal vilar vid sitt eget verk — han hann aldrig se det färdigt.",
+   "description": "Baltzar von Platen drev fram Göta kanal med en envishet som blev legendarisk, men dog 1829, tre år innan kanalen stod klar. På egen begäran begravdes han intill kanalen i Motala, staden han själv ritat.\n\nStå en stund vid graven och blicka ut över vattnet: hela staden runt omkring är på sätt och vis hans monument.",
+   "key_facts": [
+    "Baltzar von Platen (1766–1829)",
+    "Ledde bygget av Göta kanal",
+    "Dog innan kanalen var färdig",
+    "Begravd vid kanalen i Motala"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Baltzar_von_Platen_(1766–1829)",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Baltzar_von_Platen_(1766–1829)"
+   ]
+  },
+  {
+   "id": "motala-charlottenborgs-slott",
+   "name": "Charlottenborgs slott",
+   "category": "byggnad",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5407,
+    "lng": 15.0641
+   },
+   "era": "1600-talet",
+   "summary": "Vitt herresäte vid Motala ström, omgivet av ett av stadens käraste promenadstråk.",
+   "description": "Charlottenborg ligger vackert intill Motala ström, där vattnet rinner ur Vättern på väg mot Boren. Slottet har funnits med i Motalabornas vardag i generationer och kantas idag av parkstigar och bryggor.\n\nTa en sväng runt byggnaden längs strömmen — det är en av de lugnaste platserna så nära stadens mitt.",
+   "key_facts": [
+    "Herresäte vid Motala ström",
+    "Intill ett populärt promenadstråk",
+    "En del av Motalas historia sedan 1600-talet"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitmotala.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-rundradiomuseum",
+   "name": "Sveriges Rundradiomuseum",
+   "category": "museum_hembygd",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5455,
+    "lng": 15.0428
+   },
+   "summary": "Här berättas historien om hur Motala blev rösten som nådde hela Sverige.",
+   "description": "När den stora långvågssändaren togs i bruk 1927 blev Motala synonymt med radio i Sverige — \"Motala\" var orden som inledde sändningarna och tog programmen ända ut till de minsta byar.\n\nPå Sveriges Rundradiomuseum får du följa den historien genom mottagare, sändarteknik och ljud från en tid då familjen samlades kring radion i finrummet.",
+   "key_facts": [
+    "Motalas långvågssändare togs i bruk 1927",
+    "Tog Sveriges Radio ut över hela landet",
+    "Museum om svensk radio- och sändarhistoria"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Motala_långvågsstation",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Motala_långvågsstation",
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-motormuseum",
+   "name": "Motala Motormuseum",
+   "category": "museum_hembygd",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5333,
+    "lng": 15.0373
+   },
+   "summary": "Blanka bilar, motorcyklar och tidsbilder från svenskt 1900-tal — vid hamnen.",
+   "description": "Motala Motormuseum är mer än en samling fordon: varje bil och motorcykel står i en miljö som tar dig tillbaka till sin tid, med radioapparater, leksaker och vardagsföremål runtomkring.\n\nDet ligger nere vid hamnen, ett stenkast från Göta kanal — lätt att kombinera med en promenad längs vattnet.",
+   "key_facts": [
+    "Klassiska bilar och motorcyklar i tidsmiljöer",
+    "Beläget vid Motala hamn",
+    "Nostalgi från svenskt 1900-tal"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitmotala.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-varamon",
+   "name": "Varamobaden",
+   "category": "badplats",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.565,
+    "lng": 14.979
+   },
+   "summary": "En av norra Europas största insjöstränder — mjuk sand längs Vätterns kant.",
+   "description": "Varamon är Motalas stolthet på sommaren: en flera kilometer lång sandstrand vid Vättern, räknad som en av de största insjöbadstränderna i norra Europa. Det grunda, klara vattnet och den vida sanden gör den till ett självklart mål för både badgäster och solnedgångspromenader.\n\nUtanför badsäsongen är den en vidsträckt, ljus plats att vandra på med Vättern öppen framför dig.",
+   "key_facts": [
+    "En av norra Europas största insjöbadstränder",
+    "Lång sandstrand vid Vättern",
+    "Populärt badmål norr om Motala centrum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Varamon",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Varamon",
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-verkstad",
+   "name": "Motala Verkstad",
+   "category": "byggnad",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5481,
+    "lng": 15.0852
+   },
+   "era": "Grundad 1822",
+   "summary": "Den industrimiljö som byggde Göta kanal — och lade grunden för svensk verkstadskonst.",
+   "description": "Motala Verkstad anlades 1822 för att tillverka allt som kanalbygget krävde: slussportar, broar, maskiner. Ur den växte en av Sveriges mest betydelsefulla verkstadsindustrier, och härifrån spreds kunnandet vidare ut i landet.\n\nDen gamla bruksmiljön vid Motala ström bär fortfarande spåren av den tid då Sverige industrialiserades — en plats att gå långsamt igenom.",
+   "key_facts": [
+    "Grundad 1822 för Göta kanal-bygget",
+    "En vagga för svensk verkstadsindustri",
+    "Historisk bruksmiljö vid Motala ström"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Motala_Verkstad",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Motala_Verkstad"
+   ]
+  },
+  {
+   "id": "motala-haleberget",
+   "name": "Hålebergets naturreservat",
+   "category": "naturreservat",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.6061,
+    "lng": 15.0173
+   },
+   "summary": "Branta hällmarker och tallskog en mil norr om staden, med vandringsleder runt berget.",
+   "description": "Håleberget reser sig knappt en mil norr om Motala och bjuder på två vandringsleder för den som vill ta sig runt och upp på berget. Uppifrån öppnar sig utsikten över skog och sjölandskap.\n\nReservatet är en lättillgänglig dos vildmark nära staden — barrskog, mossbeklädda block och tystnad.",
+   "key_facts": [
+    "Knappt en mil norr om Motala",
+    "Två vandringsleder runt och upp på berget",
+    "Hällmarker och tallskog"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "motala-bromossen",
+   "name": "Bromossen naturreservat",
+   "category": "naturreservat",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.6552,
+    "lng": 15.2291
+   },
+   "summary": "Vidsträckt myrmark i skogarna mellan Motala, Borensberg och Godegård.",
+   "description": "Bromossen ligger mellan Motala, Borensberg, Tjällmo och Godegård, omgiven av flera andra reservat i ett stort sammanhängande skogs- och våtmarkslandskap. Här får myren breda ut sig ostörd, med sitt eget ljus och sina egna fåglar.\n\nDet är en plats för den som söker stillhet — vidder av mosse och skog långt från vägar och brus.",
+   "key_facts": [
+    "Stor myrmark nordost om Motala",
+    "Gränsar till flera andra naturreservat",
+    "Rikt fågelliv i våtmarken"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.visitmotala.se"
+   ]
+  },
+  {
+   "id": "ydre-orten",
+   "name": "Ydre",
+   "category": "ort",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.8246,
+    "lng": 15.2733
+   },
+   "summary": "Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen.",
+   "description": "Ydre är en av Sveriges minst folkrika kommuner, en lugn bygd av sjöar och skog längst söderut i Östergötland, mot Smålandsgränsen. Huvudorten heter Österbymo, men själen finns lika mycket i socknarna runtomkring — Norra Vi, Asby, Sund, Svinhult och Västra Ryd.\n\nHär möter du landskapet som det varit länge: badvikar, utsiktsberg längs Östgötaleden och gamla sägner om jättar och förtrollade kor. Den stora sjön Sommen breder ut sig i norr med sina öar och vikar.",
+   "key_facts": [
+    "Östergötlands sydligaste kommun",
+    "Huvudort: Österbymo",
+    "En av Sveriges minst folkrika kommuner",
+    "Den stora sjön Sommen i norr"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Ydre_kommun",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Ydre_kommun",
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-urkons-hala",
+   "name": "Urkons Håla, Norra Vi",
+   "category": "sevardhet",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9081,
+    "lng": 15.3259
+   },
+   "summary": "Platsen där sägnen säger att den vilda urkon sparkade upp hela sjön Sommen.",
+   "description": "Sägnen berättar om Urkon — en lösgående, trivsam ko som en dag blev vild. I sitt raseri sparkade hon upp marken så våldsamt att det blev en grop, och gropen fylldes med vatten och växte till sjön Sommen.\n\nUrkons Håla i Norra Vi är platsen där historien sägs ha utspelat sig. Den är ett fint exempel på hur Ydrebygden bär sina berättelser i själva landskapet.",
+   "key_facts": [
+    "Knuten till sägnen om hur sjön Sommen blev till",
+    "Ligger i Norra Vi socken",
+    "En folklig berättelse buren i landskapet"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-bulegrottan",
+   "name": "Bulegrottan, Östgötaleden",
+   "category": "sevardhet",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.8464,
+    "lng": 15.3345
+   },
+   "summary": "Jätten Bules grotta — en skreva i berget vid Östgötaleden söder om Österbymo.",
+   "description": "Söder om Österbymo, längs Östgötaleden, ligger jätten Bules grotta. Den är mer en djup skreva i berget än en grotta, men sägnen har gett den namn och liv.\n\nPlatsen är ett naturligt stopp för den som vandrar leden — en påminnelse om att varje sten i Ydre tycks ha sin egen historia.",
+   "key_facts": [
+    "Sägenomspunnen \"grotta\" vid Östgötaleden",
+    "Söder om Österbymo",
+    "Knuten till jätten Bule"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-asby-granen",
+   "name": "Asby-granen — Sveriges grövsta gran",
+   "category": "sevardhet",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9052,
+    "lng": 15.2004
+   },
+   "summary": "Den grövsta enkelstammiga granen i landet växer vid Hedners Park i Asby.",
+   "description": "Nedanför församlingshemmet i Asby, i Hedners Park, står Asby-granen — av allt att döma den grövsta enkelstammiga granen i Sverige. Att stå vid dess fot ger en känsla av hur länge ett träd kan få stå om det får vara ifred.\n\nDet är ett litet men charmigt mål: en levande rekordhållare mitt i den vänliga Ydrebygden.",
+   "key_facts": [
+    "Sägs vara Sveriges grövsta enkelstammiga gran",
+    "Växer vid Hedners Park i Asby",
+    "Lättillgängligt besöksmål"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-kungabordet",
+   "name": "Kungabordet, Stora Rödje",
+   "category": "utsiktsplats",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.89,
+    "lng": 15.3588
+   },
+   "summary": "Utsiktsplats längs Östgötaleden med en kunglig matrast i bagaget.",
+   "description": "Vid Stora Rödje i Norra Vi socken ligger Kungabordet, en utsiktsplats längs Östgötaleden. Namnet kommer av att en nyvald kung enligt traditionen ska ha rastat och ätit just här.\n\nIdag är det vandraren som får njuta av utsikten och en paus — gärna med matsäck, i kunglig anda.",
+   "key_facts": [
+    "Utsiktsplats längs Östgötaleden",
+    "I Norra Vi socken",
+    "Namnet kommer av en kunglig rast"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-sunds-bruk",
+   "name": "Sunds Bruk, Bulsjöån",
+   "category": "byggnad",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.8558,
+    "lng": 15.3596
+   },
+   "summary": "Gammal bruksmiljö vid Bulsjöåns vatten, på gränsen mellan Norra Vi och Sund.",
+   "description": "Vid Bulsjöån, där Norra Vi och Sunds socknar möts, ligger Sunds Bruk. Vattnet som en gång drev bruket porlar fortfarande förbi, och en vandring längs ån tar dig genom en stilla, historisk miljö.\n\nDet är en plats där Ydres äldre näringsliv och naturen flätas samman.",
+   "key_facts": [
+    "Bruksmiljö vid Bulsjöån",
+    "På gränsen mellan Norra Vi och Sund",
+    "Vandringsstig längs ån"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-pukaberget",
+   "name": "Pukaberget utsiktsplats, Torpa",
+   "category": "utsiktsplats",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9445,
+    "lng": 15.0491
+   },
+   "summary": "Högt, brett och vackert över sjön Raklången i Torpa socken.",
+   "description": "Pukaberget ligger på nordvästra sidan av sjön Raklången i Torpa socken. Uppe på berget öppnar sig en hög och bred vy över vatten och skog — en av de finare utsikterna i västra Ydre.\n\nTa med fika och låt blicken vandra; det är en plats gjord för att stanna upp på.",
+   "key_facts": [
+    "Utsikt över sjön Raklången",
+    "I Torpa socken, västra Ydre",
+    "Hög och vid panoramavy"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-rocks-mosse",
+   "name": "Rocks Mosse naturreservat",
+   "category": "naturreservat",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9474,
+    "lng": 15.3623
+   },
+   "summary": "Myrmark med spång och utsiktstorn i nordöstra Norra Vi.",
+   "description": "I nordöstra delen av Norra Vi socken ligger Rocks mosse, ett reservat där en spång leder ut över den öppna myren och ett utsiktstorn ger överblick. Här får du komma riktigt nära våtmarkens liv utan att blöta ner fötterna.\n\nFågelsången och vidden gör det till ett tacksamt mål för en lugn naturstund.",
+   "key_facts": [
+    "Spång ut över öppen myr",
+    "Utsiktstorn över våtmarken",
+    "I nordöstra Norra Vi socken"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-naas-gardsbryggeri",
+   "name": "Nääs Gårdsbryggeri",
+   "category": "gardsbutik",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9538,
+    "lng": 15.0509
+   },
+   "summary": "Prisbelönt gårdshantverk där gammal gårdshistoria möter nya visioner.",
+   "description": "Hos Nääs Gårdsbryggeri vid sjön Raklången vävs gårdens gamla historia samman med nutida hantverk. Här bryggs prisbelönt öl på plats, och gården är ett fint exempel på det lokala företagandet som ger Ydrebygden liv.\n\nKombinera gärna besöket med en promenad ner till badplatsen vid Raklången strax intill.",
+   "key_facts": [
+    "Gårdsbryggeri vid sjön Raklången",
+    "Prisbelönt lokalt hantverk",
+    "Nära Näs badplats"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-torpon",
+   "name": "Torpöns naturreservat",
+   "category": "naturreservat",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.9546,
+    "lng": 15.1702
+   },
+   "summary": "Blåmärkt vandringsled runt en ö i den stora sjön Sommen.",
+   "description": "På Torpön i Torpa socken letar sig en blåmärkt vandringsled runt reservatet, genom skog och längs Sommens stränder. Sjön Sommen är en av Sveriges renaste och mest öländska insjöar, och Torpön ligger mitt i dess vackra labyrint av vikar.\n\nFärden ut till ön är en del av upplevelsen — och väl där väntar tystnad och vatten åt alla håll.",
+   "key_facts": [
+    "Blåmärkt vandringsled runt ön",
+    "På Torpön i sjön Sommen",
+    "I Torpa socken"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-orten",
+   "name": "Valdemarsvik",
+   "category": "ort",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.2052,
+    "lng": 16.6005
+   },
+   "summary": "Porten till Östergötlands skärgård — en stad längst inne i en lång havsvik.",
+   "description": "Valdemarsvik ligger där en smal, lång havsvik tränger djupt in i land och öppnar sig mot Gryts och Sankt Annas vidsträckta skärgård. Det gör orten till en naturlig port ut mot tusentals öar, kobbar och skär.\n\nStaden bär spår av sitt industriförflutna — garveri och bruk satte länge sin prägel här — men idag är det skärgården, hamnen och naturen runtomkring som drar besökaren.",
+   "key_facts": [
+    "Vid en lång havsvik in mot Gryts skärgård",
+    "Port till Östergötlands skärgård",
+    "Tidigare garveri- och industriort"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Valdemarsvik",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Valdemarsvik",
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-harstena",
+   "name": "Harstena museum",
+   "category": "museum_hembygd",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.2533,
+    "lng": 17.0106
+   },
+   "summary": "Gammal fiskeby ute i skärgården, med byskola och trankokeri bevarade.",
+   "description": "Harstena är en av skärgårdens mest älskade öar, en gammal fiske- och sälfångarby. På öns museum finns Byskolan från 1921 och ett trankokeri bevarat — fönster mot ett hårt men levande skärgårdsliv.\n\nResan ut med båt är halva upplevelsen; väl framme väntar knaggliga gränder, röda stugor och havet runtomkring.",
+   "key_facts": [
+    "Gammal fiskeby ute i Gryts skärgård",
+    "Byskolan byggd 1921",
+    "Bevarat trankokeri"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.valdemarsvik.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-kvadofjarden",
+   "name": "Kvädöfjärdens naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.0449,
+    "lng": 16.8237
+   },
+   "era": "Bildat 2007",
+   "summary": "Östergötlands första marina naturreservat — en mosaik av skärgård under och över ytan.",
+   "description": "Kvädöfjärden bildades 2007 som Östergötlands första marina naturreservat. Det skyddar inte bara öar och stränder utan också livet under vattenytan, i en ovanligt rik mosaik av skärgårdsmiljöer.\n\nHär möts ytter- och innerskärgård, och naturen får råda på både land och hav.",
+   "key_facts": [
+    "Östergötlands första marina naturreservat (2007)",
+    "Skyddar miljöer både över och under ytan",
+    "Rik skärgårdsmosaik"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-gryts-skargard",
+   "name": "Gryts skärgård",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.1942,
+    "lng": 17.0254
+   },
+   "summary": "Tusen och åter tusen öar, holmar, kobbar och skär — Östergötlands yttre arkipelag.",
+   "description": "Östergötlands skärgård är unik, och Gryts del av den hör till de vackraste: tusen och åter tusen öar, holmar, kobbar och skär som tillsammans bildar en hel värld av vatten och klippor.\n\nHärifrån når du klassiska skärgårdsöar som Harstena och Kättilö. Det är ett landskap som belönar både seglaren, paddlaren och den som bara vill sitta på en klippa och se havet.",
+   "key_facts": [
+    "Del av Östergötlands skärgård",
+    "Tusentals öar, holmar och skär",
+    "Port till öar som Harstena och Kättilö"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-arno",
+   "name": "Arnö naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.0985,
+    "lng": 16.7481
+   },
+   "summary": "En ö som visar hur skärgårdslandskapet såg ut vid förra sekelskiftet.",
+   "description": "Arnö naturreservat tar dig tillbaka i tiden och visar hur det öppna, betade skärgårdslandskapet såg ut runt förra sekelskiftet. Hagmarker, lövträd och stränder berättar om ett liv där människa och natur format varandra.\n\nDet är en plats att vandra långsamt på, med ett öga på det gamla kulturlandskapet.",
+   "key_facts": [
+    "Visar skärgårdslandskapet kring förra sekelskiftet",
+    "Betade hagmarker och lövträd",
+    "Lugn ö i Gryts skärgård"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-vaggo",
+   "name": "Väggö naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.2764,
+    "lng": 16.9125
+   },
+   "summary": "En tyst tillflykt som länge varit viktig för skärgårdens havsörnar.",
+   "description": "Väggö naturreservat har sedan länge spelat en viktig roll för havsörnens överlevnad i Östergötlands skärgård. Lugnet och de orörda miljöerna gör ön till en fristad för fågellivet.\n\nFör besökaren betyder det en stillhet utöver det vanliga — och kanske en glimt av en havsörn över trädtopparna.",
+   "key_facts": [
+    "Viktigt område för havsörn",
+    "Skyddad, lugn skärgårdsö",
+    "Rikt fågelliv"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-amto",
+   "name": "Ämtö naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.2609,
+    "lng": 16.8986
+   },
+   "summary": "En av Gryts största öar, format av människan i århundraden — ekhagar och stigar.",
+   "description": "Ämtö är en av de största öarna i Gryts skärgård, och dess natur bär tydliga spår av människan: ekhagar, ängar och gamla brukade marker varvas med skog och strand.\n\nMärkta stigar leder runt på ön och gör den till ett tacksamt mål för en hel dags utflykt i skärgården.",
+   "key_facts": [
+    "En av Gryts skärgårds största öar",
+    "Ekhagar och gammalt kulturlandskap",
+    "Märkta vandringsstigar"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-stjarno",
+   "name": "Stjärnö naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.1339,
+    "lng": 16.6879
+   },
+   "summary": "Holmar och halvö i Kattedalsfjärden, nära Valdemarsviks egen tröskel.",
+   "description": "Stjärnö naturreservat omfattar ön Stjärnholmen, den lilla Hingsthagsholmen och angränsande mark på halvön Stjärnö i Kattedalsfjärden. Det är en lättillgänglig bit skärgård nära Valdemarsvik.\n\nKlippor, vatten och tallskog möts här i en miljö som är typisk för den östgötska kusten.",
+   "key_facts": [
+    "Öar och halvö i Kattedalsfjärden",
+    "Nära Valdemarsviks tätort",
+    "Klippor och tallskog"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-torro",
+   "name": "Torrö naturreservat",
+   "category": "naturreservat",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.0196,
+    "lng": 16.7958
+   },
+   "summary": "Längst söderut i Östergötlands skärgård — pinade tallar och öppet hav.",
+   "description": "Torrö ligger allra längst söderut i Östergötlands skärgård. Här möter du ytterskärgårdens karga skönhet: vindpinade tallar, slipade klippor och havet öppet mot horisonten.\n\nDet är skärgård i sin mest ursprungliga form — för den som vill känna saltet och vidden.",
+   "key_facts": [
+    "Längst söderut i Östergötlands skärgård",
+    "Vindpinad ytterskärgårdsnatur",
+    "Öppet hav och slipade klippor"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.lansstyrelsen.se/ostergotland",
+     "source": "Länsstyrelsen Östergötland"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "valdemarsvik-ostgotaleden",
+   "name": "Östgötaleden — skärgårdsetapperna",
+   "category": "vandringsled",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.1753,
+    "lng": 16.8417
+   },
+   "summary": "Östgötaledens kanske vackraste avsnitt går längs Valdemarsviks skärgårdskust.",
+   "description": "Valdemarsviks del av Östgötaleden bjuder på flera slående vackra skärgårdsetapper, där leden följer kust och klippor med havet ständigt närvarande. Den varvar tät skog med öppna vyer ut mot fjärdarna.\n\nDela upp den i kortare turer eller vandra den i sträck — det är en av de finaste sätten att uppleva den östgötska kusten till fots.",
+   "key_facts": [
+    "Skärgårdsetapper längs Valdemarsviks kust",
+    "Del av Östgötaleden",
+    "Varvar skog med öppna havsvyer"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://ostgotaleden.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.valdemarsvik.se",
+    "https://ostgotaleden.se"
+   ]
   }
  ]
 }

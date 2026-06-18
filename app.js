@@ -50,8 +50,9 @@ const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 // TEMPORÄRT: lås appen till enbart Mjölby (för att visa Mjölby kommun en ren
 // Mjölby-demo). Övriga städer/orter ligger kvar i koden men döljs i väljaren och
 // filtreras bort som valbara. Sätt till true för att återaktivera fler städer.
-const SHOW_SOON_CITIES = false;
+const SHOW_SOON_CITIES = true;   // STAGING (gren orter-ostergotland): Östergötland-orterna synliga för granskning. Sätt false för Mjölby-only-demo.
 const MJOLBY_ONLY = !SHOW_SOON_CITIES;
+const MIN_CITY_STOPS = 9;        // en ort visas i stadsväljaren först när den har minst 9 stopp att besöka
 let activeCity = MJOLBY_ONLY ? 'Mjölby' : (localStorage.getItem('sv_city') || 'Mjölby');
 const citySlug = s => String(s||'').toLowerCase()
   .replace(/[åä]/g,'a').replace(/ö/g,'o').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
@@ -75,14 +76,17 @@ const CATEGORY_TYPE = {
   person:'story', konst_staty:'story', runsten:'story', klosterruin:'story',
   borgruin:'story', bro:'story', handelse:'story', station:'story',
   museum_hembygd:'assoc', musikkar:'assoc', idrott:'assoc',
-  handel:'biz', kafe_restaurang:'biz', hotell:'biz', industri_foretag:'biz',
+  handel:'biz', kafe_restaurang:'biz', hotell:'biz', industri_foretag:'biz', gardsbutik:'biz',
+  // natur- & utflyktstyper (Östergötland-orterna) — visas som berättelse-/sevärdhetsstopp
+  sevardhet:'story', naturreservat:'story', badplats:'story', utsiktsplats:'story', vandringsled:'story', slott:'story',
 };
 
 const CATEGORY_ICON = {
   ort:'📍', vattendrag:'🌊', kyrka:'⛪', byggnad:'🏛️', torg:'⛲', person:'👤',
   konst_staty:'🗿', runsten:'🪨', klosterruin:'🏚️', borgruin:'🏰', bro:'🌉',
   handelse:'📜', station:'🚉', museum_hembygd:'🏡', musikkar:'🎺', idrott:'⚽',
-  handel:'🛍️', kafe_restaurang:'☕', hotell:'🏨', industri_foretag:'🏭',
+  handel:'🛍️', kafe_restaurang:'☕', hotell:'🏨', industri_foretag:'🏭', gardsbutik:'🧺',
+  sevardhet:'📷', naturreservat:'🌲', badplats:'🏖️', utsiktsplats:'🔭', vandringsled:'🥾', slott:'🏰',
 };
 
 /* ---------- Tours ---------- */
@@ -608,6 +612,9 @@ function citiesInData(){
   DATA.forEach(e=>{ const c = cityOf(e); seen.set(c, (seen.get(c)||0) + (hasCoords(e)?1:0)); });
   let arr = [...seen.entries()].map(([name,count])=>({ name, count }));
   if (MJOLBY_ONLY) arr = arr.filter(c=> c.name === 'Mjölby');   // temporär Mjölby-only-demo
+  // En ort blir valbar först när den har minst MIN_CITY_STOPS stopp att besöka
+  // (Mjölby alltid med). Tunna seed-orter göms tills de byggts ut.
+  else arr = arr.filter(c=> c.name === 'Mjölby' || c.count >= MIN_CITY_STOPS);
   return arr;
 }
 function setActiveCity(city){
@@ -1109,8 +1116,11 @@ function applyI18n(){
 /* ---------- Stadens berättare (storyteller) ---------- */
 function setupTeller(auto = true){
   const bar = $('#tellerbar');
-  if (!TELLER){ bar.hidden = true; return; }   // staden saknar egen berättare
-  bar.hidden = false;
+  // OBS: .tellerbar har display:flex i CSS, vilket överkör [hidden] — toggla därför
+  // även style.display så orter utan egen berättare (t.ex. Östergötland-orterna) inte
+  // ärver föregående stads berättarbar.
+  if (!TELLER){ bar.hidden = true; bar.style.display = 'none'; bar.innerHTML = ''; return; }
+  bar.hidden = false; bar.style.display = '';
   bar.innerHTML =
     `<span class="tb-av">${tellerAvatar()}</span>
      <span class="tb-text">${t('teller_by')} <b>${TELLER.name}</b><small>${(tellerL()&&tellerL().role)||TELLER.role||''}</small></span>

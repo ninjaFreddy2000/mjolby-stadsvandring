@@ -3,3 +3,6 @@ node_modules/
 *.log
 .claude/
 .vercel
+
+# arbetsfil – scraper-export, committas ej
+.orter-raw.json
