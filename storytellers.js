@@ -172,3 +172,47 @@ export const STORYTELLERS = {
   //   greeting:'…', remarks:{}, fallbacks:['… {name} …'],
   // },
 };
+
+// ─────────────────────────────────────────────────────────────────────────
+//  GENERISK BERÄTTARE — "Din Stadsguide"
+//  Används för orter som ännu inte har en egen, namngiven lokal röst (som
+//  Skånska Lasse i Mjölby). Vänlig och neutral, anpassar texten efter staden.
+//  Skånska Lasse är medvetet ENBART Mjölby — den här tar vid för övriga orter.
+// ─────────────────────────────────────────────────────────────────────────
+export function defaultTeller(city) {
+  const ort = city || 'staden';
+  return {
+    cityId: null,
+    city: ort,
+    name: 'Din Stadsguide',
+    role: 'Din lokala guide',
+    avatar: '🧭',
+    accent: '#AC3F22',
+    voice: {
+      tagline: 'En vänlig röst som visar dig runt — i din egen takt.',
+      summary:
+        'Din Stadsguide är den lugna rösten i fickan som pekar ut vad som är ' +
+        'värt att stanna till vid. Inga krusiduller — bara platserna, ' +
+        'historierna och en känsla för vart du ska gå härnäst.',
+      traits: [
+        'Vänlig och hjälpsam',
+        'Lyfter det lokala och unika',
+        'Låter dig gå i din egen takt',
+      ],
+      phrases: [],
+      signoff: '— Din Stadsguide',
+    },
+    greeting:
+      `Hej och välkommen till ${ort}!\n\n` +
+      `Jag är din stadsguide här. Jag visar dig runt bland platser, byggnader ` +
+      `och berättelser — i din egen takt, helt utan brådska.\n\n` +
+      `Följ med, så upptäcker vi ${ort} en plats i taget.`,
+    fallbacks: [
+      'Stanna gärna till vid {name} en stund — det är värt det.',
+      '{name} har sin egen historia. Det mesta har det, om man tittar närmare.',
+      'Här vid {name} är det fint att dra ner på tempot och se sig omkring.',
+      'Glöm inte {name} — små platser bär ofta de bästa berättelserna.',
+      'Ta det lugnt vid {name}. Det bästa ser man sällan i farten.',
+    ],
+  };
+}

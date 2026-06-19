@@ -1,7 +1,7 @@
 // Mjölby Stadsvandring — PWA prototype
 // Data: mjolby_kunskapsdatabas.json (knowledge base)
 import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES } from './content.js';
-import { STORYTELLERS, ACTIVE_CITY } from './storytellers.js';
+import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
 import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
@@ -58,7 +58,8 @@ const citySlug = s => String(s||'').toLowerCase()
   .replace(/[åä]/g,'a').replace(/ö/g,'o').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 const cityOf = e => e.city || 'Mjölby';
 const inCity = e => cityOf(e) === activeCity;
-const tellerFor = city => STORYTELLERS[citySlug(city)] || null;
+// Mjölby har Skånska Lasse; övriga orter får den generiska "Din Stadsguide".
+const tellerFor = city => STORYTELLERS[citySlug(city)] || defaultTeller(city);
 
 let TELLER = tellerFor(activeCity);
 const TELLER_SEEN_KEY = 'mjolby_teller_seen_v1';
@@ -282,8 +283,13 @@ async function init() {
   DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
   ENTRIES = DATA.filter(hasCoords);
 
-  // Evenemang (build-tids-hämtade från Visit Mjölby). Bryt inte appen om filen saknas.
-  try { const ev = await (await fetch('events.json')).json(); EVENTS = ev.events || []; EVENTS_META = ev; } catch (e) { EVENTS = []; }
+  // Evenemang per ort (build-tids-hämtade från respektive Visit-sida). Stads-nycklat
+  // objekt: { "Mjölby": {source,sourceUrl,fetched,events:[…]}, "Motala": {…}, … }.
+  // Bakåtkompatibelt: en gammal platt fil tolkas som Mjölby. Bryt inte appen om filen saknas.
+  try {
+    const ev = await (await fetch('events.json')).json();
+    EVENTS_BY_CITY = (ev && Array.isArray(ev.events)) ? { 'Mjölby': ev } : (ev || {});
+  } catch (e) { EVENTS_BY_CITY = {}; }
 
   buildMap();
   buildTours();
@@ -640,11 +646,11 @@ function setActiveCity(city){
 // Riktiga evenemang från Visit Mjölby (hämtas vid build-tid → events.json).
 // EVENTS fylls i init(). Visas på ortens post (kategori 'ort') med VARJE evenemangs
 // egen arena/plats utskriven — ingen felaktig attribution till en specifik plats.
-let EVENTS = [];
-let EVENTS_META = null;
+let EVENTS_BY_CITY = {};
+function cityEventsMeta(e){ return (e && EVENTS_BY_CITY[e.city]) || null; }
 function eventsFor(e){
-  // Stadens ort-post visar hela kommunens program (idag: Mjölby; andra orter saknar feed).
-  if (e && e.category === 'ort' && /mjölby/i.test(e.city || e.name || '') && EVENTS.length) return EVENTS;
+  // Ortens post (kategori 'ort') visar hela kommunens program — per ort.
+  if (e && e.category === 'ort'){ const ce = EVENTS_BY_CITY[e.city]; if (ce && ce.events && ce.events.length) return ce.events; }
   return [];
 }
 function noticeHtml(id, e){
@@ -658,8 +664,9 @@ function noticeHtml(id, e){
   const icon = (n&&n.icon) || '🎉';
   const title = (n&&n.title) || (live.length ? (lang==='en'?`Events in ${e.name}`:`Evenemang i ${e.name}`) : (lang==='en'?'Events':'Evenemang'));
   const text = (n&&n.text) || '';
-  const srcUrl = (n&&n.url) || (EVENTS_META&&EVENTS_META.sourceUrl) || 'https://www.visitmjolby.se/evenemang';
-  const srcName = (n&&n.source) || (EVENTS_META&&EVENTS_META.source) || 'Visit Mjölby';
+  const ce = cityEventsMeta(e);
+  const srcUrl = (n&&n.url) || (ce&&ce.sourceUrl) || 'https://www.visitmjolby.se/evenemang';
+  const srcName = (n&&n.source) || (ce&&ce.source) || 'Visit Mjölby';
   return `<div class="notice">
     <div class="notice-h">${icon} ${title}</div>
     ${text?`<p>${text}</p>`:''}

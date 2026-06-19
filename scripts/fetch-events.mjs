@@ -43,12 +43,21 @@ while ((m = re.exec(html)) !== null) {
   events.push({ title, date, arena, url });
 }
 
-const out = {
+// events.json är stads-nycklat: { "Mjölby": {…}, "Motala": {…}, … }. Vi uppdaterar
+// ENBART Mjölby-nyckeln och bevarar övriga orters kurerade event.
+import { readFileSync } from 'node:fs';
+const EVENTS_FILE = join(ROOT, 'events.json');
+let all = {};
+try {
+  const prev = JSON.parse(readFileSync(EVENTS_FILE, 'utf8'));
+  all = (prev && Array.isArray(prev.events)) ? {} : (prev || {});  // migrera ev. gammal platt fil
+} catch { all = {}; }
+all['Mjölby'] = {
   source: 'Visit Mjölby',
   sourceUrl: SRC,
   fetched: new Date().toISOString().slice(0, 10),
   events,
 };
-writeFileSync(join(ROOT, 'events.json'), JSON.stringify(out, null, 1));
-console.log(`✓ ${events.length} evenemang → events.json`);
+writeFileSync(EVENTS_FILE, JSON.stringify(all, null, 1) + '\n');
+console.log(`✓ ${events.length} evenemang (Mjölby) → events.json · bevarade orter: ${Object.keys(all).filter(c => c !== 'Mjölby').join(', ') || 'inga'}`);
 events.forEach(e => console.log(`  • ${e.date.padEnd(24)} | ${e.arena.padEnd(20)} | ${e.title}`));

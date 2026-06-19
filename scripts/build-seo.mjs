@@ -29,6 +29,11 @@ const data = JSON.parse(readFileSync(join(ROOT, 'data.json'), 'utf8'));
 const isDemo = (e) => /^(demo|test)[-_]?/i.test(e.id || '') || /\b(demo|test)\b/i.test(e.id || '');
 const entries = (data.entries || []).filter((e) => !isDemo(e));
 
+// Evenemang per ort (stads-nycklat events.json) — renderas på ortssidan för
+// färskt, crawlbart lokalt innehåll (SEO/LLM). Saknas filen körs allt vidare.
+let EVENTS_BY_CITY = {};
+try { EVENTS_BY_CITY = JSON.parse(readFileSync(join(ROOT, 'events.json'), 'utf8')) || {}; } catch { EVENTS_BY_CITY = {}; }
+
 // ── helpers ───────────────────────────────────────────────────────────────
 const esc = (s) => String(s ?? '')
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
@@ -41,6 +46,22 @@ const slug = (s) => String(s).toLowerCase()
   .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
 const CITIES = [...new Set(entries.map(e => e.city).filter(Boolean))];
+
+// Evenemangssektion för en ortspost (kategori 'ort') — crawlbar lista.
+function eventsSectionHtml(e) {
+  if (!e || e.category !== 'ort') return '';
+  const ce = EVENTS_BY_CITY[e.city];
+  const evs = (ce && ce.events) || [];
+  if (!evs.length) return '';
+  const items = evs.map(ev =>
+    `<li><b>${esc(ev.date || '')}</b>${ev.date ? ' — ' : ''}` +
+    `<a href="${attr(ev.url || '#')}" rel="nofollow noopener" target="_blank">${esc(ev.title)}</a>` +
+    `${ev.arena ? ` <span class="muted">· ${esc(ev.arena)}</span>` : ''}</li>`).join('');
+  const intro = `Det händer alltid något i ${esc(e.city)} — här är ett urval ur kalendern${ce.source ? ` (källa: ${esc(ce.source)})` : ''}.`;
+  return `<div class="card"><h2>Evenemang i ${esc(e.city)}</h2><p>${intro}</p>` +
+    `<ul class="facts">${items}</ul>` +
+    `${ce.sourceUrl ? `<p><a class="cta ghost" href="${attr(ce.sourceUrl)}" rel="nofollow noopener" target="_blank">Fler evenemang ↗</a></p>` : ''}</div>`;
+}
 
 // Haversine-avstånd (km) för "närliggande platser" → internt länkgraf.
 function distKm(a, b) {
@@ -258,6 +279,7 @@ for (const e of entries) {
   ${e.summary ? `<p class="lead">${esc(e.summary)}</p>` : ''}
   ${e.description ? `<div class="card"><p>${esc(e.description)}</p></div>` : ''}
   ${facts ? `<div class="card"><h2>Snabbfakta</h2><ul class="facts">${facts}</ul></div>` : ''}
+  ${eventsSectionHtml(e)}
   <p>
     <a class="cta" href="/">Visa på kartan</a>
     <a class="cta ghost" href="/platser">Alla platser i ${esc(e.city || SITE_NAME)}</a>

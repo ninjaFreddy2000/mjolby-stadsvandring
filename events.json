@@ -1,79 +1,160 @@
 {
- "source": "Visit Mjölby",
- "sourceUrl": "https://www.visitmjolby.se/evenemang",
- "fetched": "2026-06-13",
- "events": [
-  {
-   "title": "Sommardans i Mjölby 2026",
-   "date": "13 Juni - 22 Augusti",
-   "arena": "Skogssjön",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-04-21-sommardans-i-mjolby-2026"
-  },
-  {
-   "title": "Pettson och Findus",
-   "date": "13 Juni - 19 September",
-   "arena": "Annat",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-03-30-pettson-och-findus"
-  },
-  {
-   "title": "Gatebil Summer Festival",
-   "date": "14 Juni",
-   "arena": "Mantorp Park",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-01-27-gatebil-summer-festival"
-  },
-  {
-   "title": "Syadagen i Sya Hembygdsgård",
-   "date": "14 Juni",
-   "arena": "Sya hembygdsgård",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-06-syadagen-i-sya-hembygdsgard"
-  },
-  {
-   "title": "Smaklabbet",
-   "date": "15 Juni - 12 Juli",
-   "arena": "Väderstad",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-03-02-smaklabbet"
-  },
-  {
-   "title": "Bibblan på glasscafé",
-   "date": "15 Juni - 17 Juni",
-   "arena": "Veta",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-25-bibblan-pa-glasscafe"
-  },
-  {
-   "title": "Föreläsning i Smaklabbet: Möt den smarta tekniken som säkerställer världens matproduktion",
-   "date": "15 Juni",
-   "arena": "Väderstad",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-06-10-forelasning-i-smaklabbet-mot-den-smarta-tekniken-som-sakerstaller-varldens-matproduktion"
-  },
-  {
-   "title": "Motormåndag - Tema Mopeder",
-   "date": "15 Juni",
-   "arena": "Västra Harg",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-06-motormandag---tema-mopeder"
-  },
-  {
-   "title": "Sarah Sheppard med superhjältar på bibblan!",
-   "date": "16 Juni",
-   "arena": "Mjölby bibliotek",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-13-sarah-sheppard-med-superhjaltar-pa-bibblan"
-  },
-  {
-   "title": "Föreläsning i Smaklabbet: Skapandet av en dröm – Valla Vingård med Lisa Klofsten, vinbonde",
-   "date": "16 Juni",
-   "arena": "Väderstad",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-22-forelasning-i-smaklabbet-skapandet-av-en-drom---valla-vingard-med-lisa-klofsten-vinbonde"
-  },
-  {
-   "title": "Föreläsning i Smaklabbet: Varför är måltiden så viktig? med Magnus Gröntoft, agronom och engagerad i svensk måltidskultur",
-   "date": "17 Juni",
-   "arena": "Väderstad",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-22-forelasning-i-smaklabbet-varfor-ar-maltiden-sa-viktig-med-magnus-grontoft-agronom-och-engagerad-i-svensk-maltidskultur"
-  },
-  {
-   "title": "Musik i Gästis: Nassim Al Fakir & Mjölby Ungdomsmusikkår",
-   "date": "17 Juni",
-   "arena": "Gästisparken",
-   "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-18-musik-i-gastis-nassim-al-fakir--mjolby-ungdomsmusikkar"
-  }
- ]
+ "Mjölby": {
+  "source": "Visit Mjölby",
+  "sourceUrl": "https://www.visitmjolby.se/evenemang",
+  "fetched": "2026-06-13",
+  "events": [
+   {
+    "title": "Sommardans i Mjölby 2026",
+    "date": "13 Juni - 22 Augusti",
+    "arena": "Skogssjön",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-04-21-sommardans-i-mjolby-2026"
+   },
+   {
+    "title": "Pettson och Findus",
+    "date": "13 Juni - 19 September",
+    "arena": "Annat",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-03-30-pettson-och-findus"
+   },
+   {
+    "title": "Gatebil Summer Festival",
+    "date": "14 Juni",
+    "arena": "Mantorp Park",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-01-27-gatebil-summer-festival"
+   },
+   {
+    "title": "Syadagen i Sya Hembygdsgård",
+    "date": "14 Juni",
+    "arena": "Sya hembygdsgård",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-06-syadagen-i-sya-hembygdsgard"
+   },
+   {
+    "title": "Smaklabbet",
+    "date": "15 Juni - 12 Juli",
+    "arena": "Väderstad",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-03-02-smaklabbet"
+   },
+   {
+    "title": "Bibblan på glasscafé",
+    "date": "15 Juni - 17 Juni",
+    "arena": "Veta",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-25-bibblan-pa-glasscafe"
+   },
+   {
+    "title": "Föreläsning i Smaklabbet: Möt den smarta tekniken som säkerställer världens matproduktion",
+    "date": "15 Juni",
+    "arena": "Väderstad",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-06-10-forelasning-i-smaklabbet-mot-den-smarta-tekniken-som-sakerstaller-varldens-matproduktion"
+   },
+   {
+    "title": "Motormåndag - Tema Mopeder",
+    "date": "15 Juni",
+    "arena": "Västra Harg",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-06-motormandag---tema-mopeder"
+   },
+   {
+    "title": "Sarah Sheppard med superhjältar på bibblan!",
+    "date": "16 Juni",
+    "arena": "Mjölby bibliotek",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-13-sarah-sheppard-med-superhjaltar-pa-bibblan"
+   },
+   {
+    "title": "Föreläsning i Smaklabbet: Skapandet av en dröm – Valla Vingård med Lisa Klofsten, vinbonde",
+    "date": "16 Juni",
+    "arena": "Väderstad",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-22-forelasning-i-smaklabbet-skapandet-av-en-drom---valla-vingard-med-lisa-klofsten-vinbonde"
+   },
+   {
+    "title": "Föreläsning i Smaklabbet: Varför är måltiden så viktig? med Magnus Gröntoft, agronom och engagerad i svensk måltidskultur",
+    "date": "17 Juni",
+    "arena": "Väderstad",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-22-forelasning-i-smaklabbet-varfor-ar-maltiden-sa-viktig-med-magnus-grontoft-agronom-och-engagerad-i-svensk-maltidskultur"
+   },
+   {
+    "title": "Musik i Gästis: Nassim Al Fakir & Mjölby Ungdomsmusikkår",
+    "date": "17 Juni",
+    "arena": "Gästisparken",
+    "url": "https://www.visitmjolby.se/evenemang/evenemang/2026-05-18-musik-i-gastis-nassim-al-fakir--mjolby-ungdomsmusikkar"
+   }
+  ]
+ },
+ "Motala": {
+  "source": "Motala Sjöstad",
+  "sourceUrl": "https://motalasjostad.se",
+  "fetched": "2026-06-19",
+  "events": [
+   {
+    "title": "Midsommardans i Borensberg",
+    "date": "19 juni",
+    "arena": "Skolgatan Borensberg",
+    "url": "https://motalasjostad.se/plats/skolgatan-borensberg/"
+   },
+   {
+    "title": "Midsommarfirande Furulid",
+    "date": "19 juni",
+    "arena": "Equmeniakyrkan Furulid",
+    "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
+   },
+   {
+    "title": "Motala bibliotek på Sommarklubben – Charlottenborg",
+    "date": "25 juni",
+    "arena": "Charlottenborgs Naridrottsplats",
+    "url": "https://motalasjostad.se/plats/charlottenborgs-naridrottsplats/"
+   },
+   {
+    "title": "Musikcafé med Violet Jangvik med familj",
+    "date": "28 juni",
+    "arena": "Equmeniakyrkan Furulid",
+    "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
+   },
+   {
+    "title": "Musik i sommarkväll",
+    "date": "30 juni",
+    "arena": "Motala Kyrka",
+    "url": "https://motalasjostad.se/plats/motala-kyrka/"
+   },
+   {
+    "title": "Workshop: Teckna fantasy!",
+    "date": "1 juli",
+    "arena": "Charlottenborgs Slott",
+    "url": "https://motalasjostad.se/plats/charlottenborgs-slott/"
+   },
+   {
+    "title": "Allsångskväll med familjen Hedström och Lennarth Nilsson",
+    "date": "5 juli",
+    "arena": "Equmeniakyrkan Furulid",
+    "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
+   },
+   {
+    "title": "Bibblan på Sommartorget",
+    "date": "8 juli",
+    "arena": "Stora Torget",
+    "url": "https://motalasjostad.se/plats/stora-torget/"
+   },
+   {
+    "title": "Sommarmusik med kvartett Castanea",
+    "date": "12 juli",
+    "arena": "Lillkyrkan Borensvagen 42 59162 Motala",
+    "url": "https://motalasjostad.se/plats/lillkyrkan-borensvagen-42-59162-motala/"
+   },
+   {
+    "title": "Målarveckor på slottet",
+    "date": "28 juli",
+    "arena": "Charlottenborgs Slott",
+    "url": "https://motalasjostad.se/plats/charlottenborgs-slott/"
+   },
+   {
+    "title": "Musikcafé Gunnel och Henrik Langemyr",
+    "date": "2 augusti",
+    "arena": "Equmeniakyrkan Furulid",
+    "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
+   },
+   {
+    "title": "Välgörenhetskonsert",
+    "date": "9 augusti",
+    "arena": "Equmeniakyrkan Furulid",
+    "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
+   }
+  ]
+ }
 }
