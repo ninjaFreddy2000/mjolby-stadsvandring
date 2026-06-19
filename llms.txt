@@ -1,12 +1,12 @@
 # Stadsvandring.io
 
-> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 80 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 84 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
 
 ## Om
 - Varumärke: Stadsvandring.io
 - Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige)
 - Webbplats: https://stadsvandring.io
-- Innehåll: 80 kartlagda platser med beskrivning, epok, snabbfakta och källor.
+- Innehåll: 84 kartlagda platser med beskrivning, epok, snabbfakta och källor.
 
 ## Vandringsturer
 - [Centrala vandringen](https://stadsvandring.io/tur/central): Från stationen genom kvarnbyns hjärta — ca 2 km. 9 stopp.
@@ -93,9 +93,13 @@
 - [Stjärnö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-stjarno): Holmar och halvö i Kattedalsfjärden, nära Valdemarsviks egen tröskel.
 - [Torrö naturreservat (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-torro): Längst söderut i Östergötlands skärgård — pinade tallar och öppet hav.
 - [Östgötaleden — skärgårdsetapperna (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-ostgotaleden): Östgötaledens kanske vackraste avsnitt går längs Valdemarsviks skärgårdskust.
+- [Motala kyrka (Motala)](https://stadsvandring.io/p/motala-kyrka): Stadens stora 1700-talskyrka — känd för en ovanligt rik orgelskatt.
+- [Gusums bruk (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-gusums-bruk): Bevarade trähus vid Gusumån minner om ett bruk känt för mässing, knappnålar och häktor.
+- [Högmåla knapp, Norra Vi (Ydre)](https://stadsvandring.io/p/ydre-hogmala-knapp): Utsiktsknapp över Norra Vi och Sommen — här tändes förr vårdkasar.
+- [Svensbo lövskog, Torpön (Ydre)](https://stadsvandring.io/p/ydre-svensbo-lovskog): Gammal lövskog på Torpön i sjön Sommen — en av bygdens finaste höstpromenader.
 
 ## Index
 - [Om & vanliga frågor](https://stadsvandring.io/om): Vad Stadsvandring.io är, vilka orter som täcks och svar på vanliga frågor.
 - [Alla platser](https://stadsvandring.io/platser): Komplett lista över sevärdheter och platser.
-- [English overview](https://stadsvandring.io/en): English-language overview of all 80 places and the walking tours.
+- [English overview](https://stadsvandring.io/en): English-language overview of all 84 places and the walking tours.
 - [Sitemap](https://stadsvandring.io/sitemap.xml)

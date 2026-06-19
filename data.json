@@ -1535,12 +1535,13 @@
    },
    "era": "Köping 1823, stad 1881",
    "summary": "Östergötlands sjöstad vid Vättern — planerad kring Göta kanal och en gång hela Sveriges radioröst.",
-   "description": "Där Göta kanal möter Vättern lät Baltzar von Platen rita en helt ny stad på 1820-talet, med raka gator och kanalen som pulsåder. Motala blev kanalbyggets huvudort och snart en industristad med eget rykte: här i Motala verkstad föddes mycket av den svenska verkstadskonsten.\n\nPå 1900-talet blev orten \"radions stad\" — det var härifrån långvågssändaren bar Sveriges Radio ut över landet. Idag är Motala mest känd för sin sjönära charm: Göta kanals slussar mitt i staden och Varamons milslånga sandstrand vid Vätterns kant.",
+   "description": "Där Göta kanal möter Vättern lät Baltzar von Platen rita en helt ny stad på 1820-talet, med raka gator och kanalen som pulsåder. Motala blev kanalbyggets huvudort och snart en industristad med eget rykte: här i Motala verkstad föddes mycket av den svenska verkstadskonsten.\n\nPå 1900-talet blev orten \"radions stad\" — det var härifrån långvågssändaren bar Sveriges Radio ut över landet. Idag är Motala mest känd för sin sjönära charm: Göta kanals slussar mitt i staden och Varamons milslånga sandstrand vid Vätterns kant.\n\nMotala har också fostrat kända namn — från Formel 1-föraren Reine Wisell och artisten Alexander Bard till genetikern Torbjörn Caspersson och deckarförfattaren Emelie Schepp.",
    "key_facts": [
     "Planerad stad vid Göta kanal på 1820-talet",
     "Motala verkstad — en vagga för svensk verkstadsindustri",
     "Kallades länge \"radions stad\" tack vare långvågssändaren",
-    "Vid Vätterns östra strand i västra Östergötland"
+    "Vid Vätterns östra strand i västra Östergötland",
+    "Födelseort för bl.a. F1-föraren Reine Wisell, artisten Alexander Bard och genetikern Torbjörn Caspersson"
    ],
    "images": [],
    "image_source_pages": [
@@ -1551,7 +1552,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Motala",
-    "https://www.visitmotala.se"
+    "https://www.visitmotala.se",
+    "https://www.wikidata.org/wiki/Q21717"
    ]
   },
   {
@@ -1820,7 +1822,8 @@
     "Östergötlands sydligaste kommun",
     "Huvudort: Österbymo",
     "En av Sveriges minst folkrika kommuner",
-    "Den stora sjön Sommen i norr"
+    "Den stora sjön Sommen i norr",
+    "Sägenrik bygd — Urkons håla, jätten Bules grotta och Sveriges grövsta gran i Asby"
    ],
    "images": [],
    "image_source_pages": [
@@ -2087,11 +2090,12 @@
     "lng": 16.6005
    },
    "summary": "Porten till Östergötlands skärgård — en stad längst inne i en lång havsvik.",
-   "description": "Valdemarsvik ligger där en smal, lång havsvik tränger djupt in i land och öppnar sig mot Gryts och Sankt Annas vidsträckta skärgård. Det gör orten till en naturlig port ut mot tusentals öar, kobbar och skär.\n\nStaden bär spår av sitt industriförflutna — garveri och bruk satte länge sin prägel här — men idag är det skärgården, hamnen och naturen runtomkring som drar besökaren.",
+   "description": "Valdemarsvik ligger där en smal, lång havsvik tränger djupt in i land och öppnar sig mot Gryts och Sankt Annas vidsträckta skärgård. Det gör orten till en naturlig port ut mot tusentals öar, kobbar och skär.\n\nStaden bär spår av sitt industriförflutna — garveri och bruk satte länge sin prägel här — men idag är det skärgården, hamnen och naturen runtomkring som drar besökaren.\n\nFrån bygden kommer stora namn: fotbollslegenden Nils Liedholm, som blev mästare och tränare i AC Milan, och fysikern Bengt Edlén från Gusum — mannen som tydde solkoronans gåtfulla spektrum.",
    "key_facts": [
     "Vid en lång havsvik in mot Gryts skärgård",
     "Port till Östergötlands skärgård",
-    "Tidigare garveri- och industriort"
+    "Tidigare garveri- och industriort",
+    "Hemtrakt åt fotbollslegenden Nils Liedholm (AC Milan) och fysikern Bengt Edlén från Gusum"
    ],
    "images": [],
    "image_source_pages": [
@@ -2102,7 +2106,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Valdemarsvik",
-    "https://www.valdemarsvik.se"
+    "https://www.valdemarsvik.se",
+    "https://www.wikidata.org/wiki/Q1238853"
    ]
   },
   {
@@ -2348,6 +2353,119 @@
    "sources": [
     "https://www.valdemarsvik.se",
     "https://ostgotaleden.se"
+   ]
+  },
+  {
+   "id": "motala-kyrka",
+   "name": "Motala kyrka",
+   "category": "kyrka",
+   "city": "Motala",
+   "coordinates": {
+    "lat": 58.5354,
+    "lng": 15.0387
+   },
+   "era": "1771–1774",
+   "summary": "Stadens stora 1700-talskyrka — känd för en ovanligt rik orgelskatt.",
+   "description": "Motala kyrka byggdes 1771–1774 och ersatte en medeltida stenkyrka från 1200-talet. Den ljusa, vitputsade hallkyrkan blandar gustaviansk stil med nygotik, och tornspiran restes 1844.\n\nDet verkligt ovanliga finns inuti: en orgelskatt med Pehr Schiörlins orgel från 1798–1800 bakom en bevarad fasad, kompletterad med ett stort nytt orgelverk på över 2 500 pipor. Här ryms också ett barockaltare från 1724, räddat ur den gamla kyrkan.",
+   "key_facts": [
+    "Byggd 1771–1774, ersatte en medeltida stenkyrka",
+    "Gustaviansk stil med nygotik; tornspira 1844",
+    "Rik orgelskatt — Schiörlin-orgel (1798–1800) + nytt verk med 2 546 pipor",
+    "Barockaltare från 1724 från föregående kyrka"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Motala_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Motala_kyrka"
+   ]
+  },
+  {
+   "id": "valdemarsvik-gusums-bruk",
+   "name": "Gusums bruk",
+   "category": "byggnad",
+   "city": "Valdemarsvik",
+   "coordinates": {
+    "lat": 58.273,
+    "lng": 16.498
+   },
+   "era": "Sedan 1653",
+   "summary": "Bevarade trähus vid Gusumån minner om ett bruk känt för mässing, knappnålar och häktor.",
+   "description": "Vid Gusumån anlades 1653 ett järnbruk för bland annat kanongjutning, och 1661 fick orten kungligt privilegium på ett mässingsbruk. Med tiden blev Gusum känt för sitt finsmide: nålar, knappnålar och häktor tillverkades här i fabriker som växte fram från 1742.\n\nDe gamla bruksbyggnaderna i trä från 1750-talet står kvar längs ån, och i Bruksparken kan du vandra bland spåren av flera hundra års industrihistoria. Härifrån kom också fysikern Bengt Edlén, mannen som löste gåtan om solkoronans spektrum.",
+   "key_facts": [
+    "Järnbruk från 1653, mässingsbruk med kungligt privilegium 1661",
+    "Känt för nålar, knappnålar och häktor",
+    "Bruksbyggnader i trä från 1750-talet bevarade vid Gusumån",
+    "Fysikern Bengt Edlén kom från Gusum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Gusums_bruk",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gusums_bruk",
+    "https://www.valdemarsvik.se"
+   ]
+  },
+  {
+   "id": "ydre-hogmala-knapp",
+   "name": "Högmåla knapp, Norra Vi",
+   "category": "utsiktsplats",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 57.87985,
+    "lng": 15.3286
+   },
+   "summary": "Utsiktsknapp över Norra Vi och Sommen — här tändes förr vårdkasar.",
+   "description": "Från Högmåla knapp öppnar sig utsikten över Norra Vi kyrkby och sjön Sommen. Här uppe tändes fordom vårdkasar — eldsignalerna som varnade bygderna för fara och bars vidare från höjd till höjd genom landet.\n\nLängs Norra Vi vandringsled är knappen ett naturligt stopp: ett rastbord, en kaffetår och en vid vy där historien känns nära.",
+   "key_facts": [
+    "Utsikt över Norra Vi och sjön Sommen",
+    "Plats för forna vårdkasar (eldsignaler)",
+    "Längs Norra Vi vandringsled"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.visitydre.se",
+     "source": "Visit/kommun"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
+   ]
+  },
+  {
+   "id": "ydre-svensbo-lovskog",
+   "name": "Svensbo lövskog, Torpön",
+   "category": "naturreservat",
+   "city": "Ydre",
+   "coordinates": {
+    "lat": 58.01088,
+    "lng": 15.14689
+   },
+   "summary": "Gammal lövskog på Torpön i sjön Sommen — en av bygdens finaste höstpromenader.",
+   "description": "På Torpön i sjön Sommen breder Svensbo lövskogs naturreservat ut sig, och en vandringsled letar sig genom gammal lövskog ut mot Sommens stränder. På hösten färgas markerna i guld och rött.\n\nDet är en stilla, karaktärsfull bit östgötsk natur — lövsus, sjöglimtar och tid att gå långsamt.",
+   "key_facts": [
+    "Lövskogsreservat på Torpön i sjön Sommen",
+    "Vandringsled genom gammal lövskog",
+    "Fin höstpromenad"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q16507344",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://www.visitydre.se"
    ]
   }
  ]
