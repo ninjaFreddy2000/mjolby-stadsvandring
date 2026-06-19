@@ -2467,6 +2467,2167 @@
    "sources": [
     "https://www.visitydre.se"
    ]
+  },
+  {
+   "id": "boxholm-orten",
+   "name": "Boxholm",
+   "category": "ort",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.189,
+    "lng": 15.054
+   },
+   "era": "Bruk sedan 1700-talet",
+   "summary": "Östgötsk bruksort vid Svartån, mellan slätten och sjön Sommens vikar.",
+   "description": "Boxholm växte kring sitt järnbruk vid Svartån och blev med tiden ett eget litet samhälle med stationssamhällets prägel. Runt orten breder ett stilla sjö- och skogslandskap ut sig, med Sommen som närmaste storsjö.\n\nFrån bygden kommer skalden Per Daniel Amadeus Atterbom, en av den svenska romantikens stora röster, född i Åsbo prästgård strax intill.",
+   "key_facts": [
+    "Bruksort vid Svartån",
+    "Skalden P.D.A. Atterbom föddes i Åsbo (Boxholm)",
+    "Vid sjön Sommens nordvästra vikar"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Boxholm",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1392898",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Boxholm",
+    "https://www.wikidata.org/wiki/Q1392898"
+   ]
+  },
+  {
+   "id": "boxholm-bruk",
+   "name": "Boxholms bruk & bruksmuseum",
+   "category": "byggnad",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.192,
+    "lng": 15.048
+   },
+   "summary": "Järnbruket som gav orten dess namn och liv — idag med ett eget bruksmuseum.",
+   "description": "Boxholms bruk var hjärtat i orten i generationer, och dess historia av järn och hantverk berättas idag i bruksmuseet. Här får du en känsla för hur ett helt samhälle en gång byggdes kring smältugnar och hammarslag.",
+   "key_facts": [
+    "Järnbruk som gav orten dess namn",
+    "Bruksmuseum berättar industrihistorien",
+    "Vid Svartån"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Boxholms_bruk",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Boxholms_bruk"
+   ]
+  },
+  {
+   "id": "boxholm-sommen",
+   "name": "Sjön Sommen",
+   "category": "vattendrag",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.0158,
+    "lng": 15.1769
+   },
+   "summary": "En av Sveriges renaste och mest förgrenade sjöar — en labyrint av öar och vikar.",
+   "description": "Sommen är en ovanligt klar och öländsk insjö som sträcker sig in i Boxholms kommun med vikar, holmar och branta stränder. Den är ett paradis för paddlare, fiskare och alla som söker stillhet på vattnet.",
+   "key_facts": [
+    "En av Sveriges renaste insjöar",
+    "Rik på öar, holmar och vikar",
+    "Delas med Ydre och Tranås"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Sommen",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sommen"
+   ]
+  },
+  {
+   "id": "boxholm-kyrka",
+   "name": "Boxholms kyrka",
+   "category": "kyrka",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.189,
+    "lng": 15.054
+   },
+   "summary": "Ortens kyrka, en samlande punkt i bruksamhället.",
+   "description": "Boxholms kyrka står mitt i samhället som en lugn fast punkt. Den hör till de yngre kyrkorna i bygden och speglar tiden då bruksorten växte till ett eget centrum.",
+   "key_facts": [
+    "Sockenkyrka i Boxholm",
+    "Samlingspunkt i bruksamhället"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Boxholms_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Boxholms_kyrka"
+   ]
+  },
+  {
+   "id": "boxholm-asbo-kyrka",
+   "name": "Åsbo kyrka",
+   "category": "kyrka",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.24,
+    "lng": 15.109
+   },
+   "summary": "Lantkyrka i Atterboms födelsebygd.",
+   "description": "I Åsbo, där skalden P.D.A. Atterbom föddes i prästgården 1790, står den gamla sockenkyrkan kvar bland åkrar och beteshagar. En stilla plats med litterär klang.",
+   "key_facts": [
+    "Sockenkyrka i Åsbo",
+    "Atterbom föddes i Åsbo prästgård 1790"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/%C3%85sbo_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%85sbo_kyrka"
+   ]
+  },
+  {
+   "id": "boxholm-malexanders-kyrka",
+   "name": "Malexanders kyrka",
+   "category": "kyrka",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.032,
+    "lng": 15.278
+   },
+   "summary": "Vit träkyrka vackert belägen vid sjön Sömmen i skogsbygden.",
+   "description": "Malexanders kyrka ligger naturskönt i den sydöstra skogsbygden, vid vatten och tystnad. Trakten runt omkring är en av kommunens mest orörda.",
+   "key_facts": [
+    "Kyrka i Malexanders skogsbygd",
+    "Naturskönt läge vid vatten"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Malexanders_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Malexanders_kyrka"
+   ]
+  },
+  {
+   "id": "boxholm-rinna-kyrka",
+   "name": "Rinna kyrka",
+   "category": "kyrka",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.285,
+    "lng": 14.959
+   },
+   "summary": "Medeltida ursprung på den bördiga slätten i norra kommunen.",
+   "description": "Rinna kyrka på slätten norr om Boxholm bär spår av medeltid och har vakat över bygdens bönder i sekler. Runt den ligger ett öppet odlingslandskap.",
+   "key_facts": [
+    "Kyrka med medeltida ursprung",
+    "På slätten i norra Boxholm"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Rinna_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Rinna_kyrka"
+   ]
+  },
+  {
+   "id": "boxholm-oejaren",
+   "name": "Sjön Öjaren",
+   "category": "vattendrag",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.136,
+    "lng": 15.203
+   },
+   "summary": "Stilla skogssjö för bad och fiske öster om Boxholm.",
+   "description": "Öjaren är en av de många skogssjöar som ger Boxholmsbygden dess lugn. En plats att doppa fötterna, kasta ut metspöt eller bara lyssna på skogen.",
+   "key_facts": [
+    "Skogssjö öster om Boxholm",
+    "Bad och fiske"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/%C3%96jaren%2C_%C3%96sterg%C3%B6tland",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%96jaren%2C_%C3%96sterg%C3%B6tland"
+   ]
+  },
+  {
+   "id": "boxholm-blaviks-kyrka",
+   "name": "Blåviks kyrka",
+   "category": "kyrka",
+   "city": "Boxholm",
+   "coordinates": {
+    "lat": 58.06,
+    "lng": 15.062
+   },
+   "summary": "Liten kyrka i den södra skogsbygden mot Tranåsgränsen.",
+   "description": "Blåviks kyrka ligger i den glesa, vackra skogsbygden i kommunens södra del. En stilla utflykt för den som vill se det riktigt lantliga Östergötland.",
+   "key_facts": [
+    "Kyrka i södra Boxholm",
+    "Glesbygd mot Tranås"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Bl%C3%A5viks_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Bl%C3%A5viks_kyrka"
+   ]
+  },
+  {
+   "id": "odeshog-orten",
+   "name": "Ödeshög",
+   "category": "ort",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.228,
+    "lng": 14.654
+   },
+   "summary": "Vid Vätterns sydspets och Ombergs fot — en av Sveriges rikaste trakter på forntid.",
+   "description": "Ödeshög ligger där slätten möter sjön Vättern och berget Omberg, omgivet av kanske mer fornhistoria per kvadratkilometer än någon annan svensk bygd. Här står Rökstenen med världens längsta runinskrift, här grundades landets första cistercienserkloster i Alvastra, och här lockar fågelsjön Tåkern.",
+   "key_facts": [
+    "Vid Vätterns sydspets och berget Omberg",
+    "Rökstenen — världens längsta runinskrift",
+    "Alvastra — Sveriges första cistercienserkloster"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/%C3%96desh%C3%B6g",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q510383",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%96desh%C3%B6g",
+    "https://www.wikidata.org/wiki/Q510383"
+   ]
+  },
+  {
+   "id": "odeshog-rokstenen",
+   "name": "Rökstenen",
+   "category": "runsten",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.295,
+    "lng": 14.775
+   },
+   "summary": "Världens mest kända runsten — den längsta kända runinskriften, ristad på 800-talet.",
+   "description": "Vid Röks kyrka står Rökstenen, ett av världens märkligaste fornminnen. Dess omkring 760 runor utgör den längsta kända runinskriften och rymmer gåtfulla rader om hjältar, kungar och kanske om kampen mot köld och mörker. Forskare tolkar den fortfarande.",
+   "key_facts": [
+    "Världens längsta kända runinskrift (~760 runor)",
+    "Ristad på 800-talet",
+    "Står vid Röks kyrka"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/R%C3%B6kstenen",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1392541",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/R%C3%B6kstenen",
+    "https://www.wikidata.org/wiki/Q1392541"
+   ]
+  },
+  {
+   "id": "odeshog-alvastra",
+   "name": "Alvastra klosterruin",
+   "category": "klosterruin",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.2817,
+    "lng": 14.6433
+   },
+   "summary": "Ruinerna av Sveriges första cistercienserkloster, grundat 1143 vid Ombergs fot.",
+   "description": "Alvastra kloster grundades 1143 av munkar från Frankrike och blev landets första cistercienserkloster. Idag står gråstensmurarna kvar som en stämningsfull ruin i hagmarken under Omberg — sten från klostret bars sedermera till bygget av Vadstena slott.",
+   "key_facts": [
+    "Sveriges första cistercienserkloster (1143)",
+    "Munkar kallade från Clairvaux i Frankrike",
+    "Ruin vid Ombergs västsluttning"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Alvastra_kloster",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q582622",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Alvastra_kloster",
+    "https://www.wikidata.org/wiki/Q582622"
+   ]
+  },
+  {
+   "id": "odeshog-omberg",
+   "name": "Omberg",
+   "category": "naturreservat",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.3003,
+    "lng": 14.6475
+   },
+   "summary": "Det sägenomspunna berget vid Vättern, med branta stup, bokskog och vid utsikt.",
+   "description": "Omberg reser sig brant ur Vätterns vatten och har i alla tider kallats ett trolskt och magiskt berg. Här möter du bokskog, sällsynta växter och utsiktspunkter där hela Östgötaslätten breder ut sig nedanför. Sägnen om bergsfrun Omma hör hit.",
+   "key_facts": [
+    "Brant berg vid Vätterns östra strand",
+    "Bokskog och rikt växtliv",
+    "Sägenomspunnet \"magiskt\" berg"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Omberg",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q2030574",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Omberg",
+    "https://www.wikidata.org/wiki/Q2030574"
+   ]
+  },
+  {
+   "id": "odeshog-takern",
+   "name": "Tåkern",
+   "category": "naturreservat",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.35,
+    "lng": 14.8
+   },
+   "summary": "En av Europas främsta fågelsjöar — grund, vassrik och full av liv.",
+   "description": "Tåkern är en vidsträckt, grund slättsjö och ett av norra Europas allra bästa fågelområden. Hundratusentals flyttfåglar rastar här vår och höst, och från fågeltorn och naturum kan du följa skådespelet på nära håll.",
+   "key_facts": [
+    "En av Europas främsta fågelsjöar",
+    "Grund, vassrik slättsjö",
+    "Fågeltorn och naturum för besökare"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/T%C3%A5kern",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1255550",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/T%C3%A5kern",
+    "https://www.wikidata.org/wiki/Q1255550"
+   ]
+  },
+  {
+   "id": "odeshog-heda-kyrka",
+   "name": "Heda kyrka",
+   "category": "kyrka",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.2864,
+    "lng": 14.7035
+   },
+   "summary": "En av Östergötlands bäst bevarade medeltidskyrkor, från 1200-talet.",
+   "description": "Heda kyrka hör till de märkligaste medeltidskyrkorna i landskapet, med murar och valv från 1200-talet och medeltida konst bevarad. Den står på slätten mellan Omberg och Rökstenen — mitt i det historiska hjärtat av Ödeshögsbygden.",
+   "key_facts": [
+    "Bevarad medeltidskyrka från 1200-talet",
+    "Medeltida konst och inventarier",
+    "På slätten nära Rökstenen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Heda_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Heda_kyrka"
+   ]
+  },
+  {
+   "id": "odeshog-kyrka",
+   "name": "Ödeshögs kyrka",
+   "category": "kyrka",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.228,
+    "lng": 14.6545
+   },
+   "summary": "Sockenkyrkan mitt i Ödeshög.",
+   "description": "Ödeshögs kyrka står centralt i orten och samlar bygden. Härifrån är det nära till både Vättern, Omberg och slättens alla forntida skatter.",
+   "key_facts": [
+    "Sockenkyrka i centrala Ödeshög"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/%C3%96desh%C3%B6gs_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%96desh%C3%B6gs_kyrka"
+   ]
+  },
+  {
+   "id": "odeshog-hastholmen",
+   "name": "Hästholmen",
+   "category": "sevardhet",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.275,
+    "lng": 14.74
+   },
+   "summary": "Gammal hamn- och lastageplats vid Vättern, en av Vätterns äldsta.",
+   "description": "Hästholmen vid Vätterns strand har varit hamn och handelsplats sedan medeltiden — en av de äldsta vid sjön. Idag är det en stillsam plats att se ut över det väldiga vattnet, med Omberg som fond.",
+   "key_facts": [
+    "Gammal hamnplats vid Vättern",
+    "En av Vätterns äldsta lastageplatser",
+    "Utsikt mot Omberg"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/H%C3%A4stholmen%2C_%C3%96desh%C3%B6gs_kommun",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/H%C3%A4stholmen%2C_%C3%96desh%C3%B6gs_kommun"
+   ]
+  },
+  {
+   "id": "odeshog-vattern",
+   "name": "Vättern vid Ödeshög",
+   "category": "vattendrag",
+   "city": "Ödeshög",
+   "coordinates": {
+    "lat": 58.26,
+    "lng": 14.6
+   },
+   "summary": "Sveriges näst största sjö, klar som glas, vid bygdens västra kant.",
+   "description": "Vid Ödeshögs västra sida öppnar sig Vättern, Sveriges näst största sjö och en av de klaraste och djupaste. Vattnet skiftar i blått och grönt och horisonten är nästan havslik. En storslagen fond till hela bygden.",
+   "key_facts": [
+    "Sveriges näst största sjö",
+    "Ovanligt klart och djupt vatten",
+    "Bygdens västra gräns"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/V%C3%A4ttern",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/V%C3%A4ttern"
+   ]
+  },
+  {
+   "id": "alingsas-orten",
+   "name": "Alingsås",
+   "category": "ort",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.93,
+    "lng": 12.533
+   },
+   "summary": "Sveriges \"fikastad\" med trähus, kaféer och en plats i potatisens svenska historia.",
+   "description": "Alingsås är känd som fikastaden, med fler kaféer per invånare än de flesta och en charmig trästadskärna. Här grundade Jonas Alströmer på 1700-talet sitt manufakturverk — och det var i hans försök som potatisen fick fäste i Sverige. Varje höst förvandlar ljuskonstevenemanget Lights in Alingsås staden till en scen av ljus.",
+   "key_facts": [
+    "Sveriges \"fikastad\" med rik kafékultur",
+    "Jonas Alströmer och potatisens svenska historia",
+    "Ljusfestivalen Lights in Alingsås varje höst"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Alings%C3%A5s",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q659831",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Alings%C3%A5s",
+    "https://www.wikidata.org/wiki/Q659831"
+   ]
+  },
+  {
+   "id": "alingsas-museum",
+   "name": "Alingsås museum",
+   "category": "museum_hembygd",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.9286,
+    "lng": 12.5326
+   },
+   "summary": "Stadens museum, där Alströmers manufakturstad och potatisens historia berättas.",
+   "description": "På Alingsås museum får du historien om manufakturstaden och om Jonas Alströmer, mannen som ville göra Sverige självförsörjande och som gav potatisen dess genombrott. En nyckel till att förstå varför Alingsås blev Alingsås.",
+   "key_facts": [
+    "Berättar om manufakturstaden Alingsås",
+    "Jonas Alströmer och potatisen",
+    "Stadshistoriskt museum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Alings%C3%A5s_museum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Alings%C3%A5s_museum"
+   ]
+  },
+  {
+   "id": "alingsas-nolhaga",
+   "name": "Nolhaga slott",
+   "category": "slott",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.933,
+    "lng": 12.518
+   },
+   "summary": "Vitt herresäte i en stor park med palmhus, djurhägn och promenadstråk.",
+   "description": "Nolhaga slott ligger i Nolhagaparken, stadens gröna vardagsrum med dammar, palmhus, djurhägn och vidsträckta gräsmattor. Slottet och parken är ett självklart mål för en lugn dag i Alingsås.",
+   "key_facts": [
+    "Herresäte i Nolhagaparken",
+    "Park med palmhus och djurhägn",
+    "Stadens gröna vardagsrum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Nolhaga_slott",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Nolhaga_slott"
+   ]
+  },
+  {
+   "id": "alingsas-grafsnas",
+   "name": "Gräfsnäs slottsruin",
+   "category": "slott",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 58.0768,
+    "lng": 12.4971
+   },
+   "summary": "Romantisk slottsruin i en park vid sjön Anten.",
+   "description": "Vid sjön Anten reser sig den stämningsfulla ruinen av Gräfsnäs slott, omgiven av en vacker slottspark. Platsen är ett populärt utflyktsmål och ändstation för veterantåget från Anten.",
+   "key_facts": [
+    "Slottsruin vid sjön Anten",
+    "Omgiven av slottspark",
+    "Ändpunkt för Anten–Gräfsnäs Järnväg"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Gr%C3%A4fsn%C3%A4s_slott",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gr%C3%A4fsn%C3%A4s_slott"
+   ]
+  },
+  {
+   "id": "alingsas-anten-grafsnas",
+   "name": "Anten–Gräfsnäs Järnväg",
+   "category": "sevardhet",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.9891,
+    "lng": 12.4406
+   },
+   "summary": "Ångande veteranjärnväg som rullar längs sjön Anten till slottsruinen.",
+   "description": "Anten–Gräfsnäs Järnväg är en bevarad smalspårig veteranjärnväg där ånglok och gamla vagnar tar dig på en tidsresa längs Antens strand, fram till Gräfsnäs slottsruin. Doften av kol och ljudet av ånga ingår.",
+   "key_facts": [
+    "Smalspårig veteranjärnväg",
+    "Ånglok längs sjön Anten",
+    "Slutar vid Gräfsnäs slottsruin"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Anten%E2%80%93Gr%C3%A4fsn%C3%A4s_J%C3%A4rnv%C3%A4g",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Anten%E2%80%93Gr%C3%A4fsn%C3%A4s_J%C3%A4rnv%C3%A4g"
+   ]
+  },
+  {
+   "id": "alingsas-mjorn",
+   "name": "Sjön Mjörn",
+   "category": "vattendrag",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.891,
+    "lng": 12.408
+   },
+   "summary": "Den stora sjön vid stadens fot, med bad, båtliv och öar.",
+   "description": "Mjörn breder ut sig sydväst om Alingsås och är stadens stora sjö för bad, segling och fiske. Med sina öar och vikar är den en vidsträckt blå granne till trästaden.",
+   "key_facts": [
+    "Alingsås stora sjö",
+    "Bad, segling och fiske",
+    "Öar och vikar"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Mj%C3%B6rn",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Mj%C3%B6rn"
+   ]
+  },
+  {
+   "id": "alingsas-fargensjoarna",
+   "name": "Färgensjöarnas naturreservat",
+   "category": "naturreservat",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.869,
+    "lng": 12.529
+   },
+   "summary": "Sprickdalslandskap med klara sjöar, branter och vandringsleder.",
+   "description": "Kring sjöarna Stora och Lilla Färgen breder ett dramatiskt sprickdalslandskap ut sig, med branta bergssidor, klart vatten och leder för den som vill vandra. En vild kontrast till stadens kaféer, alldeles intill.",
+   "key_facts": [
+    "Sprickdalslandskap kring Färgensjöarna",
+    "Branter, klart vatten och leder",
+    "Strax söder om Alingsås"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/F%C3%A4rgen",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/F%C3%A4rgen"
+   ]
+  },
+  {
+   "id": "alingsas-lights",
+   "name": "Lights in Alingsås",
+   "category": "handelse",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.93,
+    "lng": 12.534
+   },
+   "summary": "Internationell ljuskonst som varje höst gör hela staden till en utställning.",
+   "description": "Varje höst förvandlas Alingsås parker, gator och fasader till en scen för internationell ljusdesign. Lights in Alingsås har blivit ett av Nordens största evenemang i sitt slag och lockar besökare i mörkret att vandra från ljusverk till ljusverk.",
+   "key_facts": [
+    "Internationell ljuskonst varje höst",
+    "Ett av Nordens största ljusevenemang",
+    "Hela staden blir utställning"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Lights_in_Alings%C3%A5s",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Lights_in_Alings%C3%A5s"
+   ]
+  },
+  {
+   "id": "alingsas-stora-torget",
+   "name": "Stora torget",
+   "category": "torg",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.93,
+    "lng": 12.5335
+   },
+   "summary": "Hjärtat i fikastaden, omgivet av trähus och uteserveringar.",
+   "description": "Stora torget är navet i Alingsås, kantat av låga trähus, butiker och kaféer med uteserveringar. Härifrån sprider sig den trivsamma trästaden åt alla håll — en perfekt startpunkt för en fika-vandring.",
+   "key_facts": [
+    "Stadens centrala torg",
+    "Omgivet av trähus och kaféer",
+    "Navet i fikastaden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Alings%C3%A5s",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Alings%C3%A5s"
+   ]
+  },
+  {
+   "id": "alingsas-christinae",
+   "name": "Christinae kyrka",
+   "category": "kyrka",
+   "city": "Alingsås",
+   "coordinates": {
+    "lat": 57.9296,
+    "lng": 12.531
+   },
+   "summary": "Stadens 1600-talskyrka, uppkallad efter drottning Kristina.",
+   "description": "Christinae kyrka i centrala Alingsås bär drottning Kristinas namn och har vakat över staden sedan 1600-talet. Den är en lugn motpol till torgets liv alldeles intill.",
+   "key_facts": [
+    "Stadskyrka från 1600-talet",
+    "Uppkallad efter drottning Kristina",
+    "Centralt i Alingsås"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Christinae_kyrka%2C_Alings%C3%A5s",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Christinae_kyrka%2C_Alings%C3%A5s"
+   ]
+  },
+  {
+   "id": "goteborg-orten",
+   "name": "Göteborg",
+   "category": "ort",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.7072,
+    "lng": 11.9668
+   },
+   "summary": "Sveriges andra stad — hamnstaden vid Göta älv, med kanaler, kultur och västkustlynne.",
+   "description": "Göteborg grundades 1621 av Gustav II Adolf och planerades av holländare, vilket än idag syns i kanalerna genom centrum. Hamnen, varven och handeln gjorde staden stor, och dess avspända lynne och humor är legendariska. Härifrån kommer namn som Stellan Skarsgård, Alicia Vikander, Björn Ulvaeus, Karin Boye, Ruben Östlund — och PewDiePie.",
+   "key_facts": [
+    "Grundad 1621 av Gustav II Adolf",
+    "Holländskt planerad med kanaler",
+    "Sveriges näst största stad och stora hamnstad"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/G%C3%B6teborg",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q25287",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/G%C3%B6teborg",
+    "https://www.wikidata.org/wiki/Q25287"
+   ]
+  },
+  {
+   "id": "goteborg-liseberg",
+   "name": "Liseberg",
+   "category": "sevardhet",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6956,
+    "lng": 11.99
+   },
+   "summary": "Nordens mest besökta nöjespark, en älskad institution sedan 1923.",
+   "description": "Liseberg öppnade 1923 och har sedan dess varit Göteborgs stolthet — berg-och-dalbanor, trädgårdar, scener och jul- och halloweenfiranden lockar miljoner varje år. Trämonsterbanan Balder och utsikten från karusellerna hör till klassikerna.",
+   "key_facts": [
+    "Öppnade 1923",
+    "Nordens mest besökta nöjespark",
+    "Berg-och-dalbanor, trädgårdar och säsongsfiranden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Liseberg",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q660066",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Liseberg",
+    "https://www.wikidata.org/wiki/Q660066"
+   ]
+  },
+  {
+   "id": "goteborg-universeum",
+   "name": "Universeum",
+   "category": "museum_hembygd",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6956,
+    "lng": 11.9892
+   },
+   "summary": "Science center med regnskog, hajakvarium och rymd under samma tak.",
+   "description": "Universeum är Sveriges största science center, där du kan gå genom en levande regnskog, möta hajar i ett stort akvarium och utforska allt från rymd till havsdjup. Ett av landets mest populära familjemål.",
+   "key_facts": [
+    "Sveriges största science center",
+    "Levande regnskog och stort akvarium",
+    "Vid Korsvägen, granne med Liseberg"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Universeum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Universeum"
+   ]
+  },
+  {
+   "id": "goteborg-varldskultur",
+   "name": "Världskulturmuseet",
+   "category": "museum_hembygd",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6947,
+    "lng": 11.9892
+   },
+   "summary": "Modernt museum om människor, kulturer och de stora frågorna i världen.",
+   "description": "Världskulturmuseet tar sig an världen och dess kulturer med utställningar som vågar ställa svåra frågor om migration, identitet och rättvisa. En ung, fri och tankeväckande mötesplats i en pris­belönt byggnad.",
+   "key_facts": [
+    "Om världens kulturer och samtidsfrågor",
+    "Prisbelönt museibyggnad",
+    "Fri entré"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/V%C3%A4rldskulturmuseet",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/V%C3%A4rldskulturmuseet"
+   ]
+  },
+  {
+   "id": "goteborg-konstmuseum",
+   "name": "Göteborgs konstmuseum & Götaplatsen",
+   "category": "museum_hembygd",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6964,
+    "lng": 11.9806
+   },
+   "summary": "Stadens konstskatt vid Götaplatsen, där Poseidon vakar över Avenyn.",
+   "description": "Vid Götaplatsen, för änden av Kungsportsavenyn, står Göteborgs konstmuseum med en av Nordens främsta samlingar — inte minst av sekelskiftets nordiska konst. Framför trappan reser sig Carl Milles bronsfigur Poseidon, stadens kanske mest fotograferade landmärke.",
+   "key_facts": [
+    "En av Nordens främsta konstsamlingar",
+    "Vid Götaplatsen för änden av Avenyn",
+    "Milles staty Poseidon framför"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_konstmuseum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_konstmuseum"
+   ]
+  },
+  {
+   "id": "goteborg-botaniska",
+   "name": "Göteborgs botaniska trädgård",
+   "category": "naturreservat",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6829,
+    "lng": 11.9504
+   },
+   "summary": "En av Europas största botaniska trädgårdar, med växthus och vild natur.",
+   "description": "Göteborgs botaniska trädgård hör till de största i Europa, med tiotusentals växtarter, praktfulla växthus och ett angränsande naturreservat med skog och berg. En grön oas i alla årstider.",
+   "key_facts": [
+    "En av Europas största botaniska trädgårdar",
+    "Växthus och tiotusentals arter",
+    "Angränsande naturreservat"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_botaniska_tr%C3%A4dg%C3%A5rd",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_botaniska_tr%C3%A4dg%C3%A5rd"
+   ]
+  },
+  {
+   "id": "goteborg-slottsskogen",
+   "name": "Slottsskogen",
+   "category": "sevardhet",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.681,
+    "lng": 11.946
+   },
+   "summary": "Stadens stora folkpark med djur, ängar och pingviner — gratis och älskad.",
+   "description": "Slottsskogen är göteborgarnas vardagsrum utomhus: vidsträckta ängar, dammar, ett litet djurhägn med bland annat pingviner och älgar, och plats för picknick och konserter. En gratis grön lunga mitt i stan.",
+   "key_facts": [
+    "Stadens stora folkpark",
+    "Djurhägn med pingviner och älgar",
+    "Gratis och öppen för alla"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Slottsskogen",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Slottsskogen"
+   ]
+  },
+  {
+   "id": "goteborg-nya-alvsborg",
+   "name": "Nya Älvsborgs fästning",
+   "category": "sevardhet",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6861,
+    "lng": 11.8384
+   },
+   "summary": "Havsfästning på en ö i älvmynningen, nåbar med båt om sommaren.",
+   "description": "Ute i Göta älvs mynning ligger Nya Älvsborgs fästning på sin egen ö, byggd för att försvara staden mot angrepp från havet. Sommartid tar turbåtar dig ut till murar, kapell och fängelsehålor med utsikt över hamninloppet.",
+   "key_facts": [
+    "Havsfästning på ö i älvmynningen",
+    "Byggd för att försvara Göteborg",
+    "Nås med båt sommartid"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Nya_%C3%84lvsborg",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Nya_%C3%84lvsborg"
+   ]
+  },
+  {
+   "id": "goteborg-skansen-kronan",
+   "name": "Skansen Kronan",
+   "category": "sevardhet",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6961,
+    "lng": 11.9551
+   },
+   "summary": "Krönt skans på en höjd över Haga, med vid utsikt över staden.",
+   "description": "Skansen Kronan tronar på sin höjd ovanför stadsdelen Haga, en kraftig försvarsskans krönt av en förgylld krona. Uppe vid den öppnar sig en av de finaste utsikterna över Göteborgs tak.",
+   "key_facts": [
+    "Försvarsskans från 1600-talet",
+    "Krönt av en förgylld krona",
+    "Vid utsikt över staden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Skansen_Kronan",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Skansen_Kronan"
+   ]
+  },
+  {
+   "id": "goteborg-haga",
+   "name": "Haga",
+   "category": "sevardhet",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.699,
+    "lng": 11.956
+   },
+   "summary": "Göteborgs äldsta förstad — kullersten, landshövdingehus och berömda kanelbullar.",
+   "description": "Haga är Göteborgs charmigaste gamla stadsdel, med kullerstensgator, träbebyggelse och landshövdingehus. Idag fylld av kaféer, butiker och hantverk — och hem åt de legendariskt stora \"Hagabullarna\".",
+   "key_facts": [
+    "Göteborgs äldsta förstad",
+    "Kullersten och landshövdingehus",
+    "Kaféer och berömda kanelbullar"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Haga%2C_G%C3%B6teborg",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Haga%2C_G%C3%B6teborg"
+   ]
+  },
+  {
+   "id": "goteborg-feskekorka",
+   "name": "Feskekôrka",
+   "category": "byggnad",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.701,
+    "lng": 11.9578
+   },
+   "summary": "Fiskhallen som ser ut som en kyrka — ett av stadens mest älskade landmärken.",
+   "description": "Feskekôrka, \"fiskkyrkan\", är en saluhall för fisk och skaldjur i en byggnad från 1874 vars gotiska form gav den dess smeknamn. Här doftar det hav och västkust mitt i stan.",
+   "key_facts": [
+    "Fiskhall från 1874",
+    "Kyrkliknande arkitektur gav smeknamnet",
+    "Fisk och skaldjur vid kanalen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Feskek%C3%B6rka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Feskek%C3%B6rka"
+   ]
+  },
+  {
+   "id": "goteborg-masthuggskyrkan",
+   "name": "Masthuggskyrkan",
+   "category": "kyrka",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6971,
+    "lng": 11.9375
+   },
+   "summary": "Mäktig tegelkyrka på höjden med en av stadens vidaste utsikter.",
+   "description": "Masthuggskyrkan från 1914 reser sig på sin höjd över västra Göteborg, en nationalromantisk tegelkoloss som syns vida omkring. Från platån utanför ser du ut över älven, hamnen och hela staden.",
+   "key_facts": [
+    "Nationalromantisk kyrka från 1914",
+    "På höjden i Masthugget",
+    "En av stadens vidaste utsikter"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Masthuggskyrkan",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Masthuggskyrkan"
+   ]
+  },
+  {
+   "id": "goteborg-tradgardsforeningen",
+   "name": "Trädgårdsföreningen",
+   "category": "naturreservat",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.705,
+    "lng": 11.975
+   },
+   "summary": "Klassisk 1800-talspark vid Avenyn, med ett av Europas finaste palmhus.",
+   "description": "Trädgårdsföreningens park från 1842 är en grön juvel intill Avenyn, med rosarium, dammar och ett gjutjärns- och glaspalmhus som hör till de finaste i Europa. En oas för en paus mitt i city.",
+   "key_facts": [
+    "Parkanlagd 1842 vid Avenyn",
+    "Palmhus i gjutjärn och glas",
+    "Rosarium och dammar"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Tr%C3%A4dg%C3%A5rdsf%C3%B6reningen%2C_G%C3%B6teborg",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Tr%C3%A4dg%C3%A5rdsf%C3%B6reningen%2C_G%C3%B6teborg"
+   ]
+  },
+  {
+   "id": "goteborg-skargard",
+   "name": "Göteborgs södra skärgård",
+   "category": "naturreservat",
+   "city": "Göteborg",
+   "coordinates": {
+    "lat": 57.6167,
+    "lng": 11.7833
+   },
+   "summary": "Bilfria öar med klippbad och fiskelägen, en kort färjetur från stan.",
+   "description": "Göteborgs södra skärgård är en värld för sig: bilfria öar som Styrsö, Donsö och Vrångö med klippor, badvikar och röda fiskebodar. En kort färjetur från Saltholmen tar dig rakt ut i västkustens lugn.",
+   "key_facts": [
+    "Bilfria öar som Styrsö, Donsö och Vrångö",
+    "Klippbad och fiskelägen",
+    "Kort färjetur från staden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_sk%C3%A4rg%C3%A5rd",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_sk%C3%A4rg%C3%A5rd"
+   ]
+  },
+  {
+   "id": "stockholm-orten",
+   "name": "Stockholm",
+   "category": "ort",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3258,
+    "lng": 18.0708
+   },
+   "summary": "Sveriges huvudstad, byggd på fjorton öar där Mälaren möter Östersjön.",
+   "description": "Stockholm bredde först ut sig på den lilla ön Stadsholmen — dagens Gamla stan — och växte till en huvudstad på fjorton öar, kallad \"Nordens Venedig\". Vatten, broar och kvällsljus präglar staden, liksom slott, museer och en levande kultur. Härifrån kommer bland andra Greta Garbo och Avicii (Tim Bergling).",
+   "key_facts": [
+    "Byggd på fjorton öar mellan Mälaren och Östersjön",
+    "Gamla stan är medeltidskärnan",
+    "Sveriges huvudstad sedan medeltiden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Stockholm",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1754",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stockholm",
+    "https://www.wikidata.org/wiki/Q1754"
+   ]
+  },
+  {
+   "id": "stockholm-slott",
+   "name": "Stockholms slott",
+   "category": "slott",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3267,
+    "lng": 18.0717
+   },
+   "summary": "Ett av Europas största kungliga slott — kungens officiella residens i Gamla stan.",
+   "description": "Stockholms slott i barock reser sig över Gamla stan med över 600 rum och är ett av Europas största kungliga slott. Här hålls statsbesök och ceremonier, och högvaktsavlösningen på borggården är en daglig folksamlare.",
+   "key_facts": [
+    "Ett av Europas största kungliga slott",
+    "Över 600 rum i barockstil",
+    "Daglig högvaktsavlösning"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Stockholms_slott",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stockholms_slott"
+   ]
+  },
+  {
+   "id": "stockholm-gamla-stan",
+   "name": "Gamla stan & Stortorget",
+   "category": "torg",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.325,
+    "lng": 18.0708
+   },
+   "summary": "Medeltida gränder kring Stortorget, hjärtat där Stockholm en gång föddes.",
+   "description": "Gamla stan är en av Europas bäst bevarade medeltida stadskärnor — smala gränder, gavelhus i ockra och rött, och mitt i alltihop Stortorget med sina ikoniska fasader. Här grundades Stockholm på 1200-talet, och här skedde Stockholms blodbad 1520.",
+   "key_facts": [
+    "En av Europas bäst bevarade medeltidsstäder",
+    "Stortorget — stadens äldsta torg",
+    "Platsen för Stockholms blodbad 1520"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Gamla_stan",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gamla_stan"
+   ]
+  },
+  {
+   "id": "stockholm-storkyrkan",
+   "name": "Storkyrkan",
+   "category": "kyrka",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3258,
+    "lng": 18.0706
+   },
+   "summary": "Stockholms domkyrka, där kungar krönts och vigts sedan medeltiden.",
+   "description": "Storkyrkan intill slottet är stadens äldsta kyrka och dess domkyrka, med medeltida ursprung bakom barockfasaden. Inne väntar mästerverket Sankt Göran och draken i trä och den berömda tavlan Vädersolstavlan, Stockholms äldsta stadsbild.",
+   "key_facts": [
+    "Stockholms domkyrka, medeltida ursprung",
+    "Träskulpturen Sankt Göran och draken",
+    "Vädersolstavlan — stadens äldsta bild"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Storkyrkan",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Storkyrkan"
+   ]
+  },
+  {
+   "id": "stockholm-vasamuseet",
+   "name": "Vasamuseet",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3281,
+    "lng": 18.0914
+   },
+   "summary": "Det enda bevarade 1600-talsskeppet i världen — Sveriges mest besökta museum.",
+   "description": "Regalskeppet Vasa kantrade och sjönk på sin jungfrufärd 1628, bärgades nästan helt 1961 och står idag i sitt eget museum på Djurgården. Det är världens enda bevarade skepp från 1600-talet och Sveriges mest besökta museum.",
+   "key_facts": [
+    "Skeppet Vasa sjönk 1628, bärgades 1961",
+    "Världens enda bevarade 1600-talsskepp",
+    "Sveriges mest besökta museum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Vasamuseet",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q193553",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Vasamuseet",
+    "https://www.wikidata.org/wiki/Q193553"
+   ]
+  },
+  {
+   "id": "stockholm-skansen",
+   "name": "Skansen",
+   "category": "sevardhet",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3244,
+    "lng": 18.101
+   },
+   "summary": "Världens äldsta friluftsmuseum — Sverige i miniatyr, med djurpark.",
+   "description": "Skansen grundades 1891 som världens första friluftsmuseum och visar hus, gårdar och hantverk från hela Sverige, plus en djurpark med nordisk fauna. Här firas också nationaldagen och tänds julens ljus — en levande folkfest.",
+   "key_facts": [
+    "Världens äldsta friluftsmuseum (1891)",
+    "Hela Sverige i miniatyr",
+    "Djurpark med nordiska djur"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Skansen",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Skansen"
+   ]
+  },
+  {
+   "id": "stockholm-grona-lund",
+   "name": "Gröna Lund",
+   "category": "sevardhet",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3231,
+    "lng": 18.0961
+   },
+   "summary": "Klassiskt tivoli vid vattnet på Djurgården, även stor konsertscen.",
+   "description": "Gröna Lund, \"Grönan\", är Stockholms charmiga tivoli intill vattnet på Djurgården, med åkattraktioner inklämda mellan gamla träd och en av landets mest älskade konsertscener under sommarkvällarna.",
+   "key_facts": [
+    "Klassiskt tivoli på Djurgården",
+    "Åkattraktioner vid vattnet",
+    "Stor sommarkonsertscen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Gr%C3%B6na_Lund",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gr%C3%B6na_Lund"
+   ]
+  },
+  {
+   "id": "stockholm-nationalmuseum",
+   "name": "Nationalmuseum",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3286,
+    "lng": 18.0781
+   },
+   "summary": "Sveriges främsta konstmuseum, vid vattnet mittemot slottet.",
+   "description": "Nationalmuseum är landets största konst- och designmuseum, med verk av bland andra Rembrandt och svenska mästare som Carl Larsson och Anders Zorn. Den praktfulla 1800-talsbyggnaden ligger vackert vid Strömmen mittemot slottet.",
+   "key_facts": [
+    "Sveriges största konstmuseum",
+    "Rembrandt, Carl Larsson, Zorn m.fl.",
+    "Vid vattnet mittemot slottet"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Nationalmuseum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Nationalmuseum"
+   ]
+  },
+  {
+   "id": "stockholm-moderna",
+   "name": "Moderna Museet",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3264,
+    "lng": 18.0836
+   },
+   "summary": "Världsklass i modern konst på den gröna ön Skeppsholmen.",
+   "description": "Moderna Museet på Skeppsholmen rymmer en av Europas främsta samlingar av 1900- och 2000-talskonst — Picasso, Dalí, Matisse och svenska nyskapare. Öns lugn och utsikten över vattnet hör till upplevelsen.",
+   "key_facts": [
+    "En av Europas främsta samlingar modern konst",
+    "Picasso, Dalí, Matisse m.fl.",
+    "På ön Skeppsholmen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Moderna_museet",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Moderna_museet"
+   ]
+  },
+  {
+   "id": "stockholm-stadshus",
+   "name": "Stockholms stadshus",
+   "category": "byggnad",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3275,
+    "lng": 18.0547
+   },
+   "summary": "Stadens ikon vid Mälaren, där Nobelfesten hålls i Blå hallen.",
+   "description": "Stockholms stadshus i mörkrött tegel från 1923 är en av stadens mest kända byggnader, krönt av tre gyllene kronor. I Blå hallen hålls den årliga Nobelbanketten, och den Gyllene salen glittrar av guldmosaik. Tornet bjuder på storslagen utsikt.",
+   "key_facts": [
+    "Invigt 1923, tre kronor i tornet",
+    "Nobelbanketten hålls i Blå hallen",
+    "Gyllene salen med guldmosaik"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Stockholms_stadshus",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stockholms_stadshus"
+   ]
+  },
+  {
+   "id": "stockholm-nobel",
+   "name": "Nobel Prize Museum",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3252,
+    "lng": 18.0708
+   },
+   "summary": "Museet om Nobelpriset och dess pristagare, mitt på Stortorget.",
+   "description": "Vid Stortorget i Gamla stan berättar Nobel Prize Museum om Alfred Nobel och om de pristagare som format vetenskap, litteratur och fred. Stora idéer i en intim, medeltida miljö.",
+   "key_facts": [
+    "Om Nobelpriset och dess pristagare",
+    "Vid Stortorget i Gamla stan",
+    "Berättar om Alfred Nobels arv"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Nobelprismuseet",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Nobelprismuseet"
+   ]
+  },
+  {
+   "id": "stockholm-riddarholmskyrkan",
+   "name": "Riddarholmskyrkan",
+   "category": "kyrka",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3247,
+    "lng": 18.0647
+   },
+   "summary": "Medeltida klosterkyrka och de svenska kungarnas gravkyrka.",
+   "description": "Riddarholmskyrkan med sin genombrutna gjutjärnsspira är en av Stockholms äldsta byggnader och sedan sekler de svenska regenternas gravkyrka. Här vilar kungar från Magnus Ladulås till Gustav II Adolf.",
+   "key_facts": [
+    "En av Stockholms äldsta byggnader",
+    "Svenska kungars gravkyrka",
+    "Karakteristisk gjutjärnsspira"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Riddarholmskyrkan",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Riddarholmskyrkan"
+   ]
+  },
+  {
+   "id": "stockholm-abba",
+   "name": "ABBA The Museum",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.325,
+    "lng": 18.0964
+   },
+   "summary": "Interaktivt museum om världens mest kända popgrupp, på Djurgården.",
+   "description": "ABBA The Museum på Djurgården firar Sveriges största musikexport med kläder, instrument och interaktiva scener där du själv kan kliva in som femte ABBA-medlem. En glittrande tidsresa till svensk popsuccé.",
+   "key_facts": [
+    "Om popgruppen ABBA",
+    "Interaktivt — bli \"femte medlemmen\"",
+    "På Djurgården nära Gröna Lund"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Abbamuseet",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Abbamuseet"
+   ]
+  },
+  {
+   "id": "stockholm-fotografiska",
+   "name": "Fotografiska",
+   "category": "museum_hembygd",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3178,
+    "lng": 18.0847
+   },
+   "summary": "Internationellt fotomuseum i ett gammalt tullhus vid Stadsgårdskajen.",
+   "description": "Fotografiska visar världens främsta fotografer i ett ombyggt tullmagasin på Södermalms strand, med utsikt över inloppet. Ett av stadens mest populära museer, öppet långt in på kvällen.",
+   "key_facts": [
+    "Internationellt fotomuseum",
+    "I gammalt tullhus vid vattnet",
+    "Öppet sent på kvällen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Fotografiska",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Fotografiska"
+   ]
+  },
+  {
+   "id": "stockholm-kungstradgarden",
+   "name": "Kungsträdgården",
+   "category": "torg",
+   "city": "Stockholm",
+   "coordinates": {
+    "lat": 59.3319,
+    "lng": 18.0711
+   },
+   "summary": "Stadens stora mötesplats — körsbärsblom på våren, skridskor på vintern.",
+   "description": "Kungsträdgården, \"Kungsan\", är Stockholms gröna och livliga mötesplats mitt i city. På våren blommar körsbärsträden i japansk prakt, på vintern åker man skridskor, och året om hålls här konserter, marknader och folkliv.",
+   "key_facts": [
+    "Stadens stora mötesplats",
+    "Körsbärsblom på våren",
+    "Skridskobana på vintern"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Kungstr%C3%A4dg%C3%A5rden",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Kungstr%C3%A4dg%C3%A5rden"
+   ]
+  },
+  {
+   "id": "norrkoping-orten",
+   "name": "Norrköping",
+   "category": "ort",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.59,
+    "lng": 16.18
+   },
+   "summary": "Industristaden vid Motala ström, känd för sitt unika industrilandskap.",
+   "description": "Norrköping växte till en av Sveriges främsta industristäder kring Motala ströms forsar, med textilfabriker, pappersbruk och en arbetarkultur som satte sin prägel. Idag är det bevarade industrilandskapet i röd tegel stadens signum och en levande mötesplats för museer, högskola och kultur. Spårvagnarna hör till stadsbilden.",
+   "key_facts": [
+    "Gammal textil- och industristad",
+    "Byggd kring Motala ströms forsar",
+    "Känd för sitt bevarade industrilandskap"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Norrk%C3%B6ping",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q26795",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norrk%C3%B6ping",
+    "https://www.wikidata.org/wiki/Q26795"
+   ]
+  },
+  {
+   "id": "norrkoping-industrilandskapet",
+   "name": "Industrilandskapet",
+   "category": "byggnad",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.5905,
+    "lng": 16.181
+   },
+   "summary": "Röda tegelfabriker längs forsarna — en av Europas mest påkostade industrimiljöer.",
+   "description": "Industrilandskapet i Norrköping är en unik samling fabriksbyggnader i rött tegel som tätt följer Motala ströms forsar genom centrum. En gång hjärtat i textilindustrin, idag fyllt av museer, högskola, restauranger och scener — bevarad kraft och skönhet.",
+   "key_facts": [
+    "Tät industrimiljö längs Motala ström",
+    "Forna textil- och pappersfabriker",
+    "Idag museer, högskola och kultur"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Industrilandskapet",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Industrilandskapet"
+   ]
+  },
+  {
+   "id": "norrkoping-arbetets-museum",
+   "name": "Arbetets museum",
+   "category": "museum_hembygd",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.5892,
+    "lng": 16.18
+   },
+   "summary": "I den gula \"Strykjärnet\" mitt i forsen — om arbete och människors vardag.",
+   "description": "Arbetets museum ligger i den karakteristiska kilformade fabriksbyggnaden Strykjärnet, mitt ute i Motala ströms fors. Museet berättar om arbete, klass och vardagsliv, bland annat genom den gripande berättelsen om textilarbeterskan Alva.",
+   "key_facts": [
+    "I \"Strykjärnet\" mitt i forsen",
+    "Om arbete och vardagsliv",
+    "Fri entré"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Arbetets_museum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Arbetets_museum"
+   ]
+  },
+  {
+   "id": "norrkoping-visualisering",
+   "name": "Visualiseringscenter C",
+   "category": "museum_hembygd",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.5891,
+    "lng": 16.1773
+   },
+   "summary": "Science center och 3D-kupol som tar dig från kroppens insida till universum.",
+   "description": "Visualiseringscenter C i Industrilandskapet använder den senaste tekniken för att göra vetenskap synlig — i en stor 3D-domteater reser du genom kroppen, havet och rymden. Banbrytande och förbluffande.",
+   "key_facts": [
+    "Science center för visualisering",
+    "3D-domteater",
+    "I Industrilandskapet"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Norrk%C3%B6pings_visualiseringscenter",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norrk%C3%B6pings_visualiseringscenter"
+   ]
+  },
+  {
+   "id": "norrkoping-konstmuseum",
+   "name": "Norrköpings konstmuseum",
+   "category": "museum_hembygd",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.583,
+    "lng": 16.191
+   },
+   "summary": "Stark samling svensk 1900-talskonst, grundad av en tobaksfabrikör.",
+   "description": "Norrköpings konstmuseum rymmer en av landets bättre samlingar av svenskt 1900-tal, från modernismens pionjärer och framåt — grunden lades av tobaksfabrikören Pehr Swartz. Beläget i parkmiljö vid Kristinaplatsen.",
+   "key_facts": [
+    "Stark samling svensk 1900-talskonst",
+    "Grundad av fabrikören Pehr Swartz",
+    "I parkmiljö vid Kristinaplatsen"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Norrk%C3%B6pings_konstmuseum",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norrk%C3%B6pings_konstmuseum"
+   ]
+  },
+  {
+   "id": "norrkoping-kolmarden",
+   "name": "Kolmårdens djurpark",
+   "category": "sevardhet",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.665,
+    "lng": 16.466
+   },
+   "summary": "En av Europas största djurparker, vid Bråvikens strand.",
+   "description": "Kolmårdens djurpark vid Bråvikens norra strand hör till de största i Europa, med allt från delfiner och rovdjur till en safari du åker genom. Här finns också linbana över parken och äventyrsattraktioner — ett utflyktsmål för hela familjen.",
+   "key_facts": [
+    "En av Europas största djurparker",
+    "Safari, rovdjur och delfiner",
+    "Vid Bråvikens strand"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Kolm%C3%A5rdens_djurpark",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Kolm%C3%A5rdens_djurpark"
+   ]
+  },
+  {
+   "id": "norrkoping-lofstad",
+   "name": "Löfstad slott",
+   "category": "slott",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.55,
+    "lng": 16.041
+   },
+   "summary": "Tidskapsel av ett slott — bevarat precis som när den sista grevinnan dog 1926.",
+   "description": "Löfstad slott söder om Norrköping är ovanligt: när den sista ägaren, grevinnan Emilie Piper, dog 1926 testamenterades allt till eftervärlden orört. Att gå genom rummen är som att kliva rakt in i en svunnen tid, ner till möbler och porslin.",
+   "key_facts": [
+    "Bevarat orört sedan 1926",
+    "Testamenterat av grevinnan Emilie Piper",
+    "Slott med park söder om staden"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/L%C3%B6fstad_slott",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/L%C3%B6fstad_slott"
+   ]
+  },
+  {
+   "id": "norrkoping-himmelstalund",
+   "name": "Himmelstalunds hällristningar",
+   "category": "sevardhet",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.5934,
+    "lng": 16.145
+   },
+   "summary": "Tusentals bilder hugga i berget av bronsålderns människor.",
+   "description": "Vid Himmelstalund, en kort bit väster om centrum, ligger ett av Sveriges största hällristningsområden. På de släta berghällarna lämnade bronsålderns människor tusentals bilder — skepp, djur, människor och hjulkors — för över 3 000 år sedan.",
+   "key_facts": [
+    "Ett av Sveriges största hällristningsområden",
+    "Bilder från bronsåldern (~3 000 år)",
+    "Vid Motala ström väster om centrum"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Himmelstalund",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Himmelstalund"
+   ]
+  },
+  {
+   "id": "norrkoping-sankt-olai",
+   "name": "Sankt Olai kyrka",
+   "category": "kyrka",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.59,
+    "lng": 16.189
+   },
+   "summary": "Stadens domkyrka vid Olai kyrkogata, en barock pärla.",
+   "description": "Sankt Olai kyrka är Norrköpings äldsta församlingskyrka och stadens domkyrka, en ljus barockbyggnad i hjärtat av city. Ett lugn mitt i stadens puls.",
+   "key_facts": [
+    "Norrköpings domkyrka",
+    "Barockkyrka i centrum",
+    "Stadens äldsta församlingskyrka"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Sankt_Olai_kyrka%2C_Norrk%C3%B6ping",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Olai_kyrka%2C_Norrk%C3%B6ping"
+   ]
+  },
+  {
+   "id": "norrkoping-carl-johans-park",
+   "name": "Carl Johans park",
+   "category": "naturreservat",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.588,
+    "lng": 16.178
+   },
+   "summary": "Stadspark berömd för sina tiotusen kaktusar i sommarplanteringen.",
+   "description": "Carl Johans park vid järnvägsstationen är känd för sin spektakulära kaktusplantering: varje sommar planteras tusentals kaktusar ut i mönster — en folkkär tradition sedan tidigt 1900-tal som inte finns någon annanstans.",
+   "key_facts": [
+    "Berömd kaktusplantering varje sommar",
+    "Tusentals kaktusar i mönster",
+    "Tradition sedan tidigt 1900-tal"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Carl_Johans_park",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Carl_Johans_park"
+   ]
+  },
+  {
+   "id": "norrkoping-ostgotateatern",
+   "name": "Östgötateatern",
+   "category": "byggnad",
+   "city": "Norrköping",
+   "coordinates": {
+    "lat": 58.594,
+    "lng": 16.177
+   },
+   "summary": "Östergötlands stora scen, med anor i ett av landets äldsta teaterhus.",
+   "description": "Östgötateatern är landskapets största teater och spelar på flera scener i regionen. Dess hus i Norrköping hör till de klassiska svenska teaterbyggnaderna och har burit drama, komedi och musik i generationer.",
+   "key_facts": [
+    "Östergötlands största teater",
+    "Klassiskt teaterhus",
+    "Drama, komedi och musik"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/%C3%96stg%C3%B6tateatern",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%96stg%C3%B6tateatern"
+   ]
+  },
+  {
+   "id": "finspang-orten",
+   "name": "Finspång",
+   "category": "ort",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.706,
+    "lng": 15.776
+   },
+   "summary": "Bruksort i Östergötlands \"bergslag\", med rötter i kanoner och koppar.",
+   "description": "Finspång växte fram kring ett av landets viktigaste järnbruk, där kanoner göts som gjorde Sverige till en stormakt på 1600-talet. Här verkade Louis De Geer, \"den svenska industrins fader\", och bruksandan lever vidare i en stad som än idag är en högteknologisk industriort. Författaren Kerstin Ekman är född här.",
+   "key_facts": [
+    "Gammal bruksort känd för kanongjutning",
+    "Louis De Geer, \"svensk industris fader\"",
+    "Författaren Kerstin Ekman född i Finspång"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Finsp%C3%A5ng",
+     "source": "Wikipedia"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q616090",
+     "source": "Wikidata"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Finsp%C3%A5ng",
+    "https://www.wikidata.org/wiki/Q616090"
+   ]
+  },
+  {
+   "id": "finspang-slott",
+   "name": "Finspångs slott",
+   "category": "slott",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.7097,
+    "lng": 15.7708
+   },
+   "summary": "Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom.",
+   "description": "Finspångs slott restes på 1600- och 1700-talen som ett av landets förnämsta brukspalats, bekostat av förmögenheten från kanon- och järnbruket. Det vita stenslottet med sin park speglar en tid då Finspång var ett av Europas viktigaste vapensmedjor.",
+   "key_facts": [
+    "Förnämt brukspalats i sten",
+    "Byggt på kanongjutningens rikedom",
+    "Omgivet av slottspark"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Finsp%C3%A5ngs_slott",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Finsp%C3%A5ngs_slott"
+   ]
+  },
+  {
+   "id": "finspang-bruksparken",
+   "name": "Bruksparken",
+   "category": "naturreservat",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.7065,
+    "lng": 15.7745
+   },
+   "summary": "Grön park i brukets hjärta, längs vattnet mitt i staden.",
+   "description": "Bruksparken breder ut sig i Finspångs centrum, intill slottet och längs vattnet — en grön samlingsplats där bruksortens historia och dagens stadsliv möts. Här hålls evenemang och här strosar man en sommarkväll.",
+   "key_facts": [
+    "Stadens centrala park",
+    "Vid slottet och vattnet",
+    "Samlingsplats för evenemang"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Finsp%C3%A5ng",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Finsp%C3%A5ng"
+   ]
+  },
+  {
+   "id": "finspang-rejmyre-glasbruk",
+   "name": "Rejmyre glasbruk",
+   "category": "byggnad",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.829,
+    "lng": 15.932
+   },
+   "summary": "Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv.",
+   "description": "I Rejmyre, i kommunens norra skogsbygd, har glas blåsts sedan 1810. Det anrika glasbruket är ett av Sveriges äldsta i drift, med butik, utställning och hyttsill där du kan se hantverkarna forma glödande glas — och ibland prova själv.",
+   "key_facts": [
+    "Glasbruk sedan 1810",
+    "Ett av Sveriges äldsta i drift",
+    "Hyttvisning och glashantverk"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Reijmyre_glasbruk",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Reijmyre_glasbruk"
+   ]
+  },
+  {
+   "id": "finspang-rejmyre-kyrka",
+   "name": "Rejmyre kyrka",
+   "category": "kyrka",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.829,
+    "lng": 15.932
+   },
+   "summary": "Brukskyrkan i glasbrukssamhället Rejmyre.",
+   "description": "Rejmyre kyrka hör till glasbrukssamhället och speglar den bruksanda som format orten. En stillsam punkt i den norra skogsbygden.",
+   "key_facts": [
+    "Kyrka i glasbrukssamhället Rejmyre",
+    "I norra Finspång"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Rejmyre_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Rejmyre_kyrka"
+   ]
+  },
+  {
+   "id": "finspang-glan",
+   "name": "Sjön Glan",
+   "category": "vattendrag",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.622,
+    "lng": 15.96
+   },
+   "summary": "Stor sjö söder om Finspång, med bad, båtliv och fiske.",
+   "description": "Glan är den stora sjön söder om Finspång, en vidsträckt vattenspegel för bad, båtliv och fiske som binder samman bygden med Norrköping nedströms. Motala ström rinner vidare härifrån.",
+   "key_facts": [
+    "Stor sjö söder om Finspång",
+    "Bad, båtliv och fiske",
+    "Del av Motala ströms vattensystem"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Glan%2C_%C3%96sterg%C3%B6tland",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Glan%2C_%C3%96sterg%C3%B6tland"
+   ]
+  },
+  {
+   "id": "finspang-risinge-gamla-kyrka",
+   "name": "Risinge gamla kyrka",
+   "category": "kyrka",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.675,
+    "lng": 15.844
+   },
+   "summary": "Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\".",
+   "description": "Risinge gamla kyrka, kallad Sankta Maria, är en av traktens märkligaste medeltidskyrkor, rik på välbevarade kalkmålningar från flera århundraden. Att stiga in är som att bläddra i en målad bilderbok från medeltiden.",
+   "key_facts": [
+    "Medeltidskyrka (\"Sankta Maria\")",
+    "Praktfulla kalkmålningar",
+    "Söder om Finspång"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Risinge_gamla_kyrka",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Risinge_gamla_kyrka"
+   ]
+  },
+  {
+   "id": "finspang-stjarnvik",
+   "name": "Stjärnviks herrgård",
+   "category": "slott",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.707,
+    "lng": 15.851
+   },
+   "summary": "Vacker herrgård i bruksbygdens kulturlandskap.",
+   "description": "Stjärnviks herrgård ligger i det öppna kulturlandskapet öster om Finspång, en av flera ståtliga gårdar som hör till bruksbygdens historia. Ett stycke östgötsk herrgårdsidyll.",
+   "key_facts": [
+    "Herrgård öster om Finspång",
+    "Del av bruksbygdens kulturlandskap"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Stj%C3%A4rnvik",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stj%C3%A4rnvik"
+   ]
+  },
+  {
+   "id": "finspang-tisnaren",
+   "name": "Sjön Tisnaren",
+   "category": "vattendrag",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.946,
+    "lng": 15.94
+   },
+   "summary": "Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.",
+   "description": "Tisnaren i kommunens nordligaste del är en klar och öländsk skogssjö på gränsen mot Sörmland och Närke. Ett stillsamt vildmarksmål för paddling och fiske, långt från stadens brus.",
+   "key_facts": [
+    "Klar skogssjö i norra Finspång",
+    "På gränsen mot Södermanland",
+    "Paddling och fiske"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Tisnaren",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Tisnaren"
+   ]
+  },
+  {
+   "id": "finspang-hallestads-kyrka",
+   "name": "Hällestads kyrka",
+   "category": "kyrka",
+   "city": "Finspång",
+   "coordinates": {
+    "lat": 58.743,
+    "lng": 15.575
+   },
+   "summary": "Bergslagskyrka i den västra gruv- och skogsbygden.",
+   "description": "Hällestads kyrka ligger i den västra delen av kommunen, en bygd präglad av gruvor, skog och bruk. En kyrka med bergslagsprägel, vackert omgiven av skog.",
+   "key_facts": [
+    "Kyrka i västra Finspång",
+    "Gruv- och bruksbygd"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/H%C3%A4llestads_kyrka%2C_%C3%96sterg%C3%B6tland",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/H%C3%A4llestads_kyrka%2C_%C3%96sterg%C3%B6tland"
+   ]
   }
  ]
 }

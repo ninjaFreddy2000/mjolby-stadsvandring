@@ -1,12 +1,12 @@
 # Stadsvandring.io
 
-> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 84 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 162 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
 
 ## Om
 - Varumärke: Stadsvandring.io
-- Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik (Östergötland, Sverige)
+- Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång (Östergötland, Sverige)
 - Webbplats: https://stadsvandring.io
-- Innehåll: 84 kartlagda platser med beskrivning, epok, snabbfakta och källor.
+- Innehåll: 162 kartlagda platser med beskrivning, epok, snabbfakta och källor.
 
 ## Vandringsturer
 - [Centrala vandringen](https://stadsvandring.io/tur/central): Från stationen genom kvarnbyns hjärta — ca 2 km. 9 stopp.
@@ -97,9 +97,87 @@
 - [Gusums bruk (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-gusums-bruk): Bevarade trähus vid Gusumån minner om ett bruk känt för mässing, knappnålar och häktor.
 - [Högmåla knapp, Norra Vi (Ydre)](https://stadsvandring.io/p/ydre-hogmala-knapp): Utsiktsknapp över Norra Vi och Sommen — här tändes förr vårdkasar.
 - [Svensbo lövskog, Torpön (Ydre)](https://stadsvandring.io/p/ydre-svensbo-lovskog): Gammal lövskog på Torpön i sjön Sommen — en av bygdens finaste höstpromenader.
+- [Boxholm (Boxholm)](https://stadsvandring.io/p/boxholm-orten): Östgötsk bruksort vid Svartån, mellan slätten och sjön Sommens vikar.
+- [Boxholms bruk & bruksmuseum (Boxholm)](https://stadsvandring.io/p/boxholm-bruk): Järnbruket som gav orten dess namn och liv — idag med ett eget bruksmuseum.
+- [Sjön Sommen (Boxholm)](https://stadsvandring.io/p/boxholm-sommen): En av Sveriges renaste och mest förgrenade sjöar — en labyrint av öar och vikar.
+- [Boxholms kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-kyrka): Ortens kyrka, en samlande punkt i bruksamhället.
+- [Åsbo kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-asbo-kyrka): Lantkyrka i Atterboms födelsebygd.
+- [Malexanders kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-malexanders-kyrka): Vit träkyrka vackert belägen vid sjön Sömmen i skogsbygden.
+- [Rinna kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-rinna-kyrka): Medeltida ursprung på den bördiga slätten i norra kommunen.
+- [Sjön Öjaren (Boxholm)](https://stadsvandring.io/p/boxholm-oejaren): Stilla skogssjö för bad och fiske öster om Boxholm.
+- [Blåviks kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-blaviks-kyrka): Liten kyrka i den södra skogsbygden mot Tranåsgränsen.
+- [Ödeshög (Ödeshög)](https://stadsvandring.io/p/odeshog-orten): Vid Vätterns sydspets och Ombergs fot — en av Sveriges rikaste trakter på forntid.
+- [Rökstenen (Ödeshög)](https://stadsvandring.io/p/odeshog-rokstenen): Världens mest kända runsten — den längsta kända runinskriften, ristad på 800-talet.
+- [Alvastra klosterruin (Ödeshög)](https://stadsvandring.io/p/odeshog-alvastra): Ruinerna av Sveriges första cistercienserkloster, grundat 1143 vid Ombergs fot.
+- [Omberg (Ödeshög)](https://stadsvandring.io/p/odeshog-omberg): Det sägenomspunna berget vid Vättern, med branta stup, bokskog och vid utsikt.
+- [Tåkern (Ödeshög)](https://stadsvandring.io/p/odeshog-takern): En av Europas främsta fågelsjöar — grund, vassrik och full av liv.
+- [Heda kyrka (Ödeshög)](https://stadsvandring.io/p/odeshog-heda-kyrka): En av Östergötlands bäst bevarade medeltidskyrkor, från 1200-talet.
+- [Ödeshögs kyrka (Ödeshög)](https://stadsvandring.io/p/odeshog-kyrka): Sockenkyrkan mitt i Ödeshög.
+- [Hästholmen (Ödeshög)](https://stadsvandring.io/p/odeshog-hastholmen): Gammal hamn- och lastageplats vid Vättern, en av Vätterns äldsta.
+- [Vättern vid Ödeshög (Ödeshög)](https://stadsvandring.io/p/odeshog-vattern): Sveriges näst största sjö, klar som glas, vid bygdens västra kant.
+- [Alingsås (Alingsås)](https://stadsvandring.io/p/alingsas-orten): Sveriges "fikastad" med trähus, kaféer och en plats i potatisens svenska historia.
+- [Alingsås museum (Alingsås)](https://stadsvandring.io/p/alingsas-museum): Stadens museum, där Alströmers manufakturstad och potatisens historia berättas.
+- [Nolhaga slott (Alingsås)](https://stadsvandring.io/p/alingsas-nolhaga): Vitt herresäte i en stor park med palmhus, djurhägn och promenadstråk.
+- [Gräfsnäs slottsruin (Alingsås)](https://stadsvandring.io/p/alingsas-grafsnas): Romantisk slottsruin i en park vid sjön Anten.
+- [Anten–Gräfsnäs Järnväg (Alingsås)](https://stadsvandring.io/p/alingsas-anten-grafsnas): Ångande veteranjärnväg som rullar längs sjön Anten till slottsruinen.
+- [Sjön Mjörn (Alingsås)](https://stadsvandring.io/p/alingsas-mjorn): Den stora sjön vid stadens fot, med bad, båtliv och öar.
+- [Färgensjöarnas naturreservat (Alingsås)](https://stadsvandring.io/p/alingsas-fargensjoarna): Sprickdalslandskap med klara sjöar, branter och vandringsleder.
+- [Lights in Alingsås (Alingsås)](https://stadsvandring.io/p/alingsas-lights): Internationell ljuskonst som varje höst gör hela staden till en utställning.
+- [Stora torget (Alingsås)](https://stadsvandring.io/p/alingsas-stora-torget): Hjärtat i fikastaden, omgivet av trähus och uteserveringar.
+- [Christinae kyrka (Alingsås)](https://stadsvandring.io/p/alingsas-christinae): Stadens 1600-talskyrka, uppkallad efter drottning Kristina.
+- [Göteborg (Göteborg)](https://stadsvandring.io/p/goteborg-orten): Sveriges andra stad — hamnstaden vid Göta älv, med kanaler, kultur och västkustlynne.
+- [Liseberg (Göteborg)](https://stadsvandring.io/p/goteborg-liseberg): Nordens mest besökta nöjespark, en älskad institution sedan 1923.
+- [Universeum (Göteborg)](https://stadsvandring.io/p/goteborg-universeum): Science center med regnskog, hajakvarium och rymd under samma tak.
+- [Världskulturmuseet (Göteborg)](https://stadsvandring.io/p/goteborg-varldskultur): Modernt museum om människor, kulturer och de stora frågorna i världen.
+- [Göteborgs konstmuseum & Götaplatsen (Göteborg)](https://stadsvandring.io/p/goteborg-konstmuseum): Stadens konstskatt vid Götaplatsen, där Poseidon vakar över Avenyn.
+- [Göteborgs botaniska trädgård (Göteborg)](https://stadsvandring.io/p/goteborg-botaniska): En av Europas största botaniska trädgårdar, med växthus och vild natur.
+- [Slottsskogen (Göteborg)](https://stadsvandring.io/p/goteborg-slottsskogen): Stadens stora folkpark med djur, ängar och pingviner — gratis och älskad.
+- [Nya Älvsborgs fästning (Göteborg)](https://stadsvandring.io/p/goteborg-nya-alvsborg): Havsfästning på en ö i älvmynningen, nåbar med båt om sommaren.
+- [Skansen Kronan (Göteborg)](https://stadsvandring.io/p/goteborg-skansen-kronan): Krönt skans på en höjd över Haga, med vid utsikt över staden.
+- [Haga (Göteborg)](https://stadsvandring.io/p/goteborg-haga): Göteborgs äldsta förstad — kullersten, landshövdingehus och berömda kanelbullar.
+- [Feskekôrka (Göteborg)](https://stadsvandring.io/p/goteborg-feskekorka): Fiskhallen som ser ut som en kyrka — ett av stadens mest älskade landmärken.
+- [Masthuggskyrkan (Göteborg)](https://stadsvandring.io/p/goteborg-masthuggskyrkan): Mäktig tegelkyrka på höjden med en av stadens vidaste utsikter.
+- [Trädgårdsföreningen (Göteborg)](https://stadsvandring.io/p/goteborg-tradgardsforeningen): Klassisk 1800-talspark vid Avenyn, med ett av Europas finaste palmhus.
+- [Göteborgs södra skärgård (Göteborg)](https://stadsvandring.io/p/goteborg-skargard): Bilfria öar med klippbad och fiskelägen, en kort färjetur från stan.
+- [Stockholm (Stockholm)](https://stadsvandring.io/p/stockholm-orten): Sveriges huvudstad, byggd på fjorton öar där Mälaren möter Östersjön.
+- [Stockholms slott (Stockholm)](https://stadsvandring.io/p/stockholm-slott): Ett av Europas största kungliga slott — kungens officiella residens i Gamla stan.
+- [Gamla stan & Stortorget (Stockholm)](https://stadsvandring.io/p/stockholm-gamla-stan): Medeltida gränder kring Stortorget, hjärtat där Stockholm en gång föddes.
+- [Storkyrkan (Stockholm)](https://stadsvandring.io/p/stockholm-storkyrkan): Stockholms domkyrka, där kungar krönts och vigts sedan medeltiden.
+- [Vasamuseet (Stockholm)](https://stadsvandring.io/p/stockholm-vasamuseet): Det enda bevarade 1600-talsskeppet i världen — Sveriges mest besökta museum.
+- [Skansen (Stockholm)](https://stadsvandring.io/p/stockholm-skansen): Världens äldsta friluftsmuseum — Sverige i miniatyr, med djurpark.
+- [Gröna Lund (Stockholm)](https://stadsvandring.io/p/stockholm-grona-lund): Klassiskt tivoli vid vattnet på Djurgården, även stor konsertscen.
+- [Nationalmuseum (Stockholm)](https://stadsvandring.io/p/stockholm-nationalmuseum): Sveriges främsta konstmuseum, vid vattnet mittemot slottet.
+- [Moderna Museet (Stockholm)](https://stadsvandring.io/p/stockholm-moderna): Världsklass i modern konst på den gröna ön Skeppsholmen.
+- [Stockholms stadshus (Stockholm)](https://stadsvandring.io/p/stockholm-stadshus): Stadens ikon vid Mälaren, där Nobelfesten hålls i Blå hallen.
+- [Nobel Prize Museum (Stockholm)](https://stadsvandring.io/p/stockholm-nobel): Museet om Nobelpriset och dess pristagare, mitt på Stortorget.
+- [Riddarholmskyrkan (Stockholm)](https://stadsvandring.io/p/stockholm-riddarholmskyrkan): Medeltida klosterkyrka och de svenska kungarnas gravkyrka.
+- [ABBA The Museum (Stockholm)](https://stadsvandring.io/p/stockholm-abba): Interaktivt museum om världens mest kända popgrupp, på Djurgården.
+- [Fotografiska (Stockholm)](https://stadsvandring.io/p/stockholm-fotografiska): Internationellt fotomuseum i ett gammalt tullhus vid Stadsgårdskajen.
+- [Kungsträdgården (Stockholm)](https://stadsvandring.io/p/stockholm-kungstradgarden): Stadens stora mötesplats — körsbärsblom på våren, skridskor på vintern.
+- [Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-orten): Industristaden vid Motala ström, känd för sitt unika industrilandskap.
+- [Industrilandskapet (Norrköping)](https://stadsvandring.io/p/norrkoping-industrilandskapet): Röda tegelfabriker längs forsarna — en av Europas mest påkostade industrimiljöer.
+- [Arbetets museum (Norrköping)](https://stadsvandring.io/p/norrkoping-arbetets-museum): I den gula "Strykjärnet" mitt i forsen — om arbete och människors vardag.
+- [Visualiseringscenter C (Norrköping)](https://stadsvandring.io/p/norrkoping-visualisering): Science center och 3D-kupol som tar dig från kroppens insida till universum.
+- [Norrköpings konstmuseum (Norrköping)](https://stadsvandring.io/p/norrkoping-konstmuseum): Stark samling svensk 1900-talskonst, grundad av en tobaksfabrikör.
+- [Kolmårdens djurpark (Norrköping)](https://stadsvandring.io/p/norrkoping-kolmarden): En av Europas största djurparker, vid Bråvikens strand.
+- [Löfstad slott (Norrköping)](https://stadsvandring.io/p/norrkoping-lofstad): Tidskapsel av ett slott — bevarat precis som när den sista grevinnan dog 1926.
+- [Himmelstalunds hällristningar (Norrköping)](https://stadsvandring.io/p/norrkoping-himmelstalund): Tusentals bilder hugga i berget av bronsålderns människor.
+- [Sankt Olai kyrka (Norrköping)](https://stadsvandring.io/p/norrkoping-sankt-olai): Stadens domkyrka vid Olai kyrkogata, en barock pärla.
+- [Carl Johans park (Norrköping)](https://stadsvandring.io/p/norrkoping-carl-johans-park): Stadspark berömd för sina tiotusen kaktusar i sommarplanteringen.
+- [Östgötateatern (Norrköping)](https://stadsvandring.io/p/norrkoping-ostgotateatern): Östergötlands stora scen, med anor i ett av landets äldsta teaterhus.
+- [Finspång (Finspång)](https://stadsvandring.io/p/finspang-orten): Bruksort i Östergötlands "bergslag", med rötter i kanoner och koppar.
+- [Finspångs slott (Finspång)](https://stadsvandring.io/p/finspang-slott): Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom.
+- [Bruksparken (Finspång)](https://stadsvandring.io/p/finspang-bruksparken): Grön park i brukets hjärta, längs vattnet mitt i staden.
+- [Rejmyre glasbruk (Finspång)](https://stadsvandring.io/p/finspang-rejmyre-glasbruk): Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv.
+- [Rejmyre kyrka (Finspång)](https://stadsvandring.io/p/finspang-rejmyre-kyrka): Brukskyrkan i glasbrukssamhället Rejmyre.
+- [Sjön Glan (Finspång)](https://stadsvandring.io/p/finspang-glan): Stor sjö söder om Finspång, med bad, båtliv och fiske.
+- [Risinge gamla kyrka (Finspång)](https://stadsvandring.io/p/finspang-risinge-gamla-kyrka): Medeltida kyrka med praktfulla kalkmålningar — "Sankta Maria".
+- [Stjärnviks herrgård (Finspång)](https://stadsvandring.io/p/finspang-stjarnvik): Vacker herrgård i bruksbygdens kulturlandskap.
+- [Sjön Tisnaren (Finspång)](https://stadsvandring.io/p/finspang-tisnaren): Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.
+- [Hällestads kyrka (Finspång)](https://stadsvandring.io/p/finspang-hallestads-kyrka): Bergslagskyrka i den västra gruv- och skogsbygden.
 
 ## Index
 - [Om & vanliga frågor](https://stadsvandring.io/om): Vad Stadsvandring.io är, vilka orter som täcks och svar på vanliga frågor.
 - [Alla platser](https://stadsvandring.io/platser): Komplett lista över sevärdheter och platser.
-- [English overview](https://stadsvandring.io/en): English-language overview of all 84 places and the walking tours.
+- [English overview](https://stadsvandring.io/en): English-language overview of all 162 places and the walking tours.
 - [Sitemap](https://stadsvandring.io/sitemap.xml)
