@@ -22,11 +22,14 @@ enabled = false
 
 [auth]
 # Site URL + redirects for the live PWA. Add your local dev URL too if needed.
-site_url = "https://ninjafreddy2000.github.io/mjolby-stadsvandring/"
+site_url = "https://stadsvandring.io"
 additional_redirect_urls = [
-  "https://ninjafreddy2000.github.io/mjolby-stadsvandring/",
+  "https://stadsvandring.io",
+  "https://stadsvandring.io/**",
   "http://localhost:5173",
-  "http://127.0.0.1:5173"
+  "http://127.0.0.1:5173",
+  "http://localhost:8090",
+  "http://127.0.0.1:8090"
 ]
 enable_signup = true
 
