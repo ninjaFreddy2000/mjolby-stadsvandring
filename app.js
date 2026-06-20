@@ -1268,6 +1268,20 @@ function buildTabbar(){
      </button>`).join('');
   $('#tabbar').querySelectorAll('button').forEach(b=> b.onclick=()=> switchTab(b.dataset.tab));
   updateTabbar();
+  wireBrandHome();
+}
+// Logotypen/varumärket → startsidan (Städer-vyn där man väljer ort).
+function wireBrandHome(){
+  const brand = document.querySelector('.topbar .brand');
+  if (!brand || brand.dataset.wired) return;
+  brand.dataset.wired = '1';
+  brand.style.cursor = 'pointer';
+  brand.setAttribute('role', 'button');
+  brand.setAttribute('tabindex', '0');
+  brand.setAttribute('aria-label', lang==='en' ? 'Home — choose a town' : 'Till startsidan — välj stad');
+  const go = ()=> switchTab('cities');
+  brand.addEventListener('click', go);
+  brand.addEventListener('keydown', e=>{ if (e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
 }
 function updateTabbar(){
   $('#tabbar').querySelectorAll('button').forEach(b=>{
@@ -1696,8 +1710,20 @@ function renderProfil(){
     ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
     <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>
     <button class="fb-cta" id="install-prof">📲 ${t('install_app')}</button>
-    ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">🛡️ ${t('admin_dashboard')}</button>` : ''}`;
+    ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">🛡️ ${t('admin_dashboard')}</button>` : ''}
+    <h3 class="prof-h">Stadsvandring.io</h3>
+    <button class="fb-cta" id="prof-cities">🗺️ ${lang==='en'?'Choose a town':'Välj stad'}</button>
+    <a class="fb-cta" href="/blogg">📰 ${lang==='en'?'Read the blog':'Läs bloggen'}</a>
+    <a class="fb-cta" href="/om-oss">ℹ️ ${lang==='en'?'About us':'Om oss'}</a>
+    <div class="prof-social">
+      <span class="prof-social__label">${lang==='en'?'Follow us':'Följ oss'}</span>
+      <button class="soc-btn-app" data-soc="1" aria-label="Facebook — ${lang==='en'?'coming soon':'kommer snart'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.3l.4-2.8h-2.7V9.4c0-.8.3-1.4 1.5-1.4h1.3V5.1c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v2.2H7.7V14h2.2v7h3.6Z"/></svg></button>
+      <button class="soc-btn-app" data-soc="1" aria-label="Instagram — ${lang==='en'?'coming soon':'kommer snart'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></button>
+      <small class="prof-social__soon">${lang==='en'?'Coming soon':'Kommer snart'} 🌱</small>
+    </div>`;
   const tr=$('#to-review'); if (tr) tr.onclick = openReview;
+  const pc=$('#prof-cities'); if (pc) pc.onclick = ()=> switchTab('cities');
+  $('#screen').querySelectorAll('[data-soc]').forEach(b=> b.onclick=()=> toast(lang==='en'?'Coming soon on social media! 🌱':'Snart på sociala medier! 🌱'));
   $('#fb-prof').onclick = openFeedback;
   const ib=$('#install-prof'); if (ib) ib.onclick = openInstallGuide;
   const ab=$('#admin-prof'); if (ab) ab.onclick = openAdminDashboard;

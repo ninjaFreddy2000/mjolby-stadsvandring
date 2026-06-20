@@ -134,7 +134,7 @@ function schemaTypeFor(cat) {
 }
 
 // ── shared layout ───────────────────────────────────────────────────────────
-function page({ title, description, canonical, head = '', body, lang = 'sv', alts = '', footerHtml = null, image = `${BASE}/images/og.jpg` }) {
+function page({ title, description, canonical, head = '', body, lang = 'sv', alts = '', footerHtml = null, image = `${BASE}/images/og.jpg`, robots = 'index,follow,max-image-preview:large,max-snippet:-1' }) {
   const ogLocale = lang === 'en' ? 'en' : 'sv_SE';
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -145,7 +145,7 @@ function page({ title, description, canonical, head = '', body, lang = 'sv', alt
 <title>${esc(title)}</title>
 <meta name="description" content="${attr(description)}">
 <link rel="canonical" href="${attr(canonical)}">
-${alts}<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+${alts}<meta name="robots" content="${attr(robots)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${attr(SITE_NAME)}">
 <meta property="og:locale" content="${ogLocale}">
@@ -224,6 +224,10 @@ const urls = [
   { loc: `${BASE}/bidra`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${BASE}/partners`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${BASE}/orter`, priority: '0.7', changefreq: 'monthly' },
+  // Bloggen (handskriven) — index + inlägg.
+  { loc: `${BASE}/blogg`, priority: '0.7', changefreq: 'weekly' },
+  { loc: `${BASE}/blogg/elva-orter-pa-kartan`, priority: '0.6', changefreq: 'monthly' },
+  { loc: `${BASE}/blogg/sa-gor-du-en-stadsvandring`, priority: '0.6', changefreq: 'monthly' },
 ];
 
 for (const e of entries) {
