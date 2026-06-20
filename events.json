@@ -156,5 +156,81 @@
     "url": "https://motalasjostad.se/plats/equmeniakyrkan-furulid/"
    }
   ]
+ },
+ "Göteborg": {
+  "source": "Göteborg & Co",
+  "sourceUrl": "https://goteborg.com/sv/evenemang",
+  "recurring": true,
+  "events": [
+   {
+    "title": "Göteborgs Kulturkalas",
+    "date": "Augusti, årligen",
+    "arena": "Centrala Göteborg",
+    "url": "https://kulturkalaset.se"
+   },
+   {
+    "title": "Way Out West",
+    "date": "Augusti, årligen",
+    "arena": "Slottsskogen",
+    "url": "https://wayoutwest.se"
+   },
+   {
+    "title": "Liseberg — Halloween &amp; Jul på Liseberg",
+    "date": "Höst &amp; advent",
+    "arena": "Liseberg",
+    "url": "https://www.liseberg.se"
+   }
+  ]
+ },
+ "Stockholm": {
+  "source": "Visit Stockholm",
+  "sourceUrl": "https://www.visitstockholm.com/se/evenemang/",
+  "recurring": true,
+  "events": [
+   {
+    "title": "Nobelveckan",
+    "date": "December, årligen",
+    "arena": "Stadshuset m.fl.",
+    "url": "https://www.nobelprize.org"
+   },
+   {
+    "title": "Stockholm Pride",
+    "date": "Sommaren, årligen",
+    "arena": "Stockholm",
+    "url": "https://stockholmpride.org"
+   },
+   {
+    "title": "Körsbärsblom i Kungsträdgården",
+    "date": "April–maj",
+    "arena": "Kungsträdgården",
+    "url": "https://kungstradgarden.se"
+   }
+  ]
+ },
+ "Alingsås": {
+  "source": "Lights in Alingsås",
+  "sourceUrl": "https://lightsinalingsas.se",
+  "recurring": true,
+  "events": [
+   {
+    "title": "Lights in Alingsås",
+    "date": "September–oktober, årligen",
+    "arena": "Alingsås centrum &amp; parker",
+    "url": "https://lightsinalingsas.se"
+   }
+  ]
+ },
+ "Ydre": {
+  "source": "Visit Ydre",
+  "sourceUrl": "https://www.visitydre.se",
+  "recurring": true,
+  "events": [
+   {
+    "title": "Råås Kvarndagar",
+    "date": "Sommaren, årligen",
+    "arena": "Råås Kvarn, Torpa",
+    "url": "https://www.visitydre.se"
+   }
+  ]
  }
 }
