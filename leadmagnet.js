@@ -203,6 +203,51 @@ function initFaktaGate(data) {
   });
 }
 
+// ── Kommun-gate (M5 B2B-whitepaper) ───────────────────────────────────────
+// Annan köpare än M1/M3 → fångar namn, kommun och roll i leads.meta. Belönar
+// med hela whitepapern (reveal + window.print). magnet_type 'whitepaper'.
+function initKommunGate(data) {
+  const form = document.getElementById('lm-kommun-form');
+  if (!form) return;
+  const statusEl = document.getElementById('lm-kommun-status');
+  const reward = document.getElementById('lm-kommun-reward');
+  document.getElementById('lm-kommun-print')?.addEventListener('click', () => window.print());
+
+  const setStatus = (msg, kind = '') => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = 'lm-status' + (kind ? ' ' + kind : '');
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.email?.value || '').trim();
+    const name = (form.name?.value || '').trim();
+    const kommun = (form.kommun?.value || '').trim();
+    const roll = (form.roll?.value || '').trim();
+    const consent = !!form.consent?.checked;
+    if (!email || !name || !kommun) { setStatus('Fyll i namn, kommun och e-post.', 'err'); return; }
+    if (!isConfigured()) { setStatus('Inloggning är inte konfigurerad ännu.', 'err'); return; }
+
+    const btn = form.querySelector('button[type=submit]');
+    if (btn) btn.disabled = true;
+    setStatus('Skickar…');
+    const sb = await getSupabase();
+    if (!sb) { setStatus('Kunde inte nå servern. Försök igen.', 'err'); if (btn) btn.disabled = false; return; }
+
+    const { error } = await sb.from('leads').insert({
+      email, magnet_type: 'whitepaper',
+      city_slug: data?.citySlug || null, source_slug: data?.sourceSlug || 'for-kommuner',
+      consent_marketing: consent, meta: { name, kommun, roll },
+    });
+    if (error) { setStatus('Något gick fel: ' + error.message, 'err'); if (btn) btn.disabled = false; return; }
+
+    setStatus(`Tack ${name.split(' ')[0]}! Här är hela rapporten:`, 'ok');
+    form.hidden = true;
+    if (reward) reward.hidden = false;
+  });
+}
+
 // ── Bootstrap ─────────────────────────────────────────────────────────────
 function start() {
   const page = document.body?.getAttribute('data-lm-page');
@@ -210,6 +255,7 @@ function start() {
   if (page === 'teaser') { initMap(data); initGate(data); }
   else if (page === 'guide') { initGuide(); }
   else if (page === 'fakta') { initFaktaGate(data); }
+  else if (page === 'kommun') { initKommunGate(data); }
 }
 
 if (document.readyState === 'loading') {

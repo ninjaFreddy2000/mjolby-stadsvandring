@@ -856,6 +856,108 @@ ${jsonld(crumbLd)}`;
   urls.push({ loc: canonical, priority: '0.8', changefreq: 'monthly' });
 }
 
+// ── Leadmagnet M5: B2B-whitepaper för kommuner (/for-kommuner) ────────────────
+// Annan köpare än M1–M4. Publik, indexerbar värde-artikel (Article-schema) med
+// riktiga siffror från orterna vi redan har; gated whitepaper-PDF bakom en gate
+// som fångar namn/kommun/roll/e-post → in i uppföljningsflödet. P0 (intäktsväg).
+{
+  const nTowns = CITIES.length;
+  const nPlaces = entries.length;
+  const canonical = `${BASE}/for-kommuner`;
+  const ingress = `Digitala, självguidade stadsvandringar gör din kommuns historia tillgänglig dygnet runt — utan app att ladda ner, utan bemanning. Stadsvandring.io driver redan ${nTowns} orter och ${nPlaces}+ platser, och varje plats blir en sökbar, AI-citerbar sida som leder besökare till er.`;
+
+  const articleLd = {
+    '@context': 'https://schema.org', '@type': 'Article',
+    headline: 'Så ökar din kommun besöksnäringen med digitala stadsvandringar',
+    description: ingress, url: canonical, inLanguage: 'sv',
+    author: { '@type': 'Organization', name: BRAND },
+    publisher: { '@type': 'Organization', name: BRAND, url: `${BASE}/` },
+    mainEntityOfPage: canonical,
+  };
+  const crumbLd = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: 'För kommuner', item: canonical },
+    ],
+  };
+
+  const lmData = { sourceSlug: 'for-kommuner' };
+  const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
+
+  // Publik teaser (indexerbar) — problem, lösning, siffror.
+  const teaser = `
+<div class="card"><h2>Problemet</h2><p>Lokalhistorien finns — i arkiv, på skyltar, i hembygdsföreningars pärmar — men den är svår att hitta och ännu svårare att uppleva på plats. Besökaren googlar "vad se i ${esc(CITIES[0] || 'er ort')}" och möts av tunt eller utdaterat innehåll. Resultatet: kortare besök, mindre spendering, missad stolthet.</p></div>
+<div class="card"><h2>Lösningen</h2><p>En självguidad stadsvandring i mobilen: karta, stopp, berättelser och bilder — gratis och utan nedladdning. Varje stopp blir samtidigt en egen sökmotor- och AI-optimerad sida, så att kommunen syns när någon söker eller frågar en AI-assistent om orten.</p></div>
+<div class="card"><h2>Det här finns redan</h2><ul class="facts">
+<li><b>${nTowns} orter</b> och <b>${nPlaces}+ platser</b> live på stadsvandring.io.</li>
+<li><b>${lmCount} ortssidor</b> med nedladdningsbar PDF-vandring och ${faktaCount} publika faktabanker — byggda automatiskt ur öppna källor.</li>
+<li>Varje sida levereras som <b>statisk, server-renderad HTML</b> med strukturerad data (Schema.org) → kvalificerad för Googles rich results och AI-svar.</li>
+<li>Källattribuerat innehåll under fria licenser (Wikipedia/Wikidata m.fl.) — granskat innan publicering.</li>
+</ul></div>`;
+
+  // Gated whitepaper (reveal efter gate, printbar).
+  const whitepaper = `
+<div id="lm-kommun-reward" hidden>
+<h2 class="city-h">Hela rapporten</h2>
+<p class="no-print"><button id="lm-kommun-print" class="cta">💾 Spara rapporten som PDF</button></p>
+<div class="card"><h3>1. Så byggs innehållet</h3><p>Vi hämtar platser, koordinater och byggår från öppna källor (Wikidata, Wikipedia, OpenStreetMap, Riksantikvarieämbetet) och förädlar råfakta till lockande, citerbara texter. Inget publiceras automatiskt — varje ort granskas innan den går live, vilket skyddar mot faktafel och licensproblem.</p></div>
+<div class="card"><h3>2. Vad kommunen får</h3><ul class="facts">
+<li>En självguidad stadsvandring per tätort, med karta och berättelser.</li>
+<li>En publik faktabank som rankar på "[ortens] historia"-sökningar och citeras av AI-svarsmotorer.</li>
+<li>Sponsrade stopp för lokala företag — en intäktsdelningsmodell, inte en kostnad.</li>
+<li>Färskt, crawlbart evenemangsinnehåll kopplat till kommunens kalender.</li>
+</ul></div>
+<div class="card"><h3>3. Mätbar effekt</h3><p>Effekten följs i Search Console (indexerade sidor, organisk trafik per ort) och genom stickprov i ChatGPT/Perplexity på "[ort] historia"-frågor. Målet är att kommunen blir det självklara svaret — både i Google och i AI-assistenter.</p></div>
+<div class="card"><h3>4. Nästa steg</h3><p>Boka en 30-minuters demo där vi visar er ort live i verktyget och går igenom upplägg och prismodell. Svara på bekräftelsemejlet så hittar vi en tid.</p></div>
+</div>`;
+
+  const body = `
+<nav class="crumbs no-print"><a href="/">Hem</a> › För kommuner</nav>
+<div class="badges no-print"><span class="badge">🏛 För kommuner</span><span class="badge">Whitepaper</span><span class="badge">Besöksnäring</span></div>
+<h1>Så ökar din kommun besöksnäringen med digitala stadsvandringar</h1>
+<p class="lead">${esc(ingress)}</p>
+${teaser}
+
+<section class="gate card no-print" id="lm-kommun">
+  <h2>Ladda ner hela rapporten (gratis)</h2>
+  <p>Få case-siffror, metod och prismodell — och en konkret plan för er ort.</p>
+  <form id="lm-kommun-form" novalidate>
+    <input type="text" name="name" autocomplete="name" required placeholder="För- och efternamn" aria-label="Namn">
+    <input type="text" name="kommun" required placeholder="Kommun" aria-label="Kommun">
+    <input type="text" name="roll" autocomplete="organization-title" placeholder="Roll (t.ex. turismansvarig)" aria-label="Roll">
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@kommun.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Ni får kontakta mig om en demo (valfritt)</label>
+    <button type="submit" class="cta">Skicka mig rapporten →</button>
+    <p id="lm-kommun-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+${whitepaper}
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/platser">Se exempel på orterna</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>`;
+
+  const head = `<style>
+.gate input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+@media print{ .no-print{display:none !important} body{background:#fff} .wrap{max-width:100%;padding:0} header.site,footer.site{display:none} .card{border:0;padding:0;margin:0 0 12px} }
+</style>
+${FAKTA_ASSETS}
+${jsonld(articleLd)}
+${jsonld(crumbLd)}`;
+
+  writeFileSync(join(ROOT, 'for-kommuner.html'), page({
+    title: `Digitala stadsvandringar för kommuner — öka besöksnäringen | ${BRAND}`,
+    description: trunc(ingress, 158),
+    canonical, head, body, bodyAttrs: 'data-lm-page="kommun"',
+  }));
+  urls.push({ loc: canonical, priority: '0.8', changefreq: 'monthly' });
+  console.log('✓ leadmagnet M5 whitepaper (/for-kommuner)');
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
