@@ -43,7 +43,10 @@ import { initAdmin, openAdminDashboard, openInstallGuide, adminAvailable } from 
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
 const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
-const tellerL = () => (lang === 'en' && TELLER_EN[ACTIVE_CITY]) ? TELLER_EN[ACTIVE_CITY] : null;
+// Engelsk röstprofil hämtas för DEN AKTIVA berättaren (via dess cityId) — inte
+// den hårdkodade ACTIVE_CITY. Annars läckte Skånska Lasses engelska roll/replik
+// in på alla andra städer (som bara har "Din Stadsguide").
+const tellerL = () => (lang === 'en' && TELLER && TELLER.cityId && TELLER_EN[TELLER.cityId]) ? TELLER_EN[TELLER.cityId] : null;
 const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 
 // ---------- Stad (man kan välja vilken stad man vandrar i) ----------
@@ -328,7 +331,12 @@ async function init() {
 }
 
 function buildMap() {
-  map = L.map('map', { zoomControl:true }).setView([58.327, 15.13], 14);
+  // Starta direkt på den aktiva stadens centrum (inte alltid Mjölby) → ingen
+  // "blink" via fel stad innan fitView passar in. Snitt av stadens stopp.
+  const cc = (()=>{ const c=ENTRIES.filter(inCity).map(e=>e.coordinates);
+    if(!c.length) return [58.327,15.13];
+    return [c.reduce((s,x)=>s+x.lat,0)/c.length, c.reduce((s,x)=>s+x.lng,0)/c.length]; })();
+  map = L.map('map', { zoomControl:true }).setView(cc, 12);
   // Carto Voyager-basemap (gratis, ingen nyckel, tillåten för app-bruk). OSM:s egna
   // tile-servrar (tile.openstreetmap.org) blockerar produktionsappar med 503 → använd inte dem.
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
@@ -373,9 +381,15 @@ function buildMap() {
   });
   map.addControl(new Auto());
 
-  // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig
-  setTimeout(()=> map.invalidateSize(), 200);
-  window.addEventListener('resize', ()=> map.invalidateSize());
+  // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig.
+  // Vid första laddningen körs renderMarkers/fitView innan layouten är klar (#map
+  // har 0 höjd), så fitBounds hamnar i världsvy. Mät om storleken OCH passa in på
+  // nytt när ramen fått sina mått — annars fastnar kartan utzoomad.
+  const settleMap = ()=>{ try{ map.invalidateSize(); fitView(); }catch(e){} };
+  requestAnimationFrame(settleMap);
+  setTimeout(settleMap, 200);
+  setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 600);
+  window.addEventListener('resize', ()=> { try{ map.invalidateSize(); }catch(e){} });
 }
 
 function pinIcon(entry, visited){
@@ -514,6 +528,11 @@ function fitView(){
   const ms = Object.values(markersById);
   if (!ms.length) return;
   try { map.invalidateSize(); } catch(e){}
+  // Om kartramen ännu inte fått sina mått (0×0 vid första laddningen) skulle
+  // fitBounds räkna fram världsvy OCH lämna ett felplacerat spök-kluster. Hoppa
+  // då över — settleMap()/buildMap kör fitView igen så snart storleken är känd.
+  const sz = (map.getSize && map.getSize()) || { x:0, y:0 };
+  if (!sz.x || !sz.y) return;
   const grp = L.featureGroup(ms);
   map.fitBounds(grp.getBounds().pad(0.18), { maxZoom: activeTour==='central'?16:13 });
 }
