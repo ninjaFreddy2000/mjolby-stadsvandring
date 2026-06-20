@@ -160,12 +160,56 @@ function initGuide() {
   })();
 }
 
+// ── Faktabank-gate (M3) ───────────────────────────────────────────────────
+// Innehållet är publikt (det är AEO-poängen) — gaten fångar bara e-post för
+// nyhetsbrevet ("nästa orts faktabank") och belönar med en PDF (window.print).
+// Ingen karta, ingen guide-redirect.
+function initFaktaGate(data) {
+  const form = document.getElementById('lm-fakta-form');
+  if (!form) return;
+  const statusEl = document.getElementById('lm-fakta-status');
+  const reward = document.getElementById('lm-fakta-reward');
+  document.getElementById('lm-fakta-print')?.addEventListener('click', () => window.print());
+
+  const setStatus = (msg, kind = '') => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = 'lm-status' + (kind ? ' ' + kind : '');
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.email?.value || '').trim();
+    const consent = !!form.consent?.checked;
+    if (!email) { setStatus('Ange din e-postadress.', 'err'); return; }
+    if (!isConfigured()) { setStatus('Inloggning är inte konfigurerad ännu.', 'err'); return; }
+
+    const btn = form.querySelector('button[type=submit]');
+    if (btn) btn.disabled = true;
+    setStatus('Skickar…');
+    const sb = await getSupabase();
+    if (!sb) { setStatus('Kunde inte nå servern. Försök igen.', 'err'); if (btn) btn.disabled = false; return; }
+
+    const { error } = await sb.from('leads').insert({
+      email, magnet_type: 'faktabank',
+      city_slug: data?.citySlug || null, source_slug: data?.sourceSlug || null,
+      consent_marketing: consent,
+    });
+    if (error) { setStatus('Något gick fel: ' + error.message, 'err'); if (btn) btn.disabled = false; return; }
+
+    setStatus('Tack! Du står på listan. Här är hela faktabanken att spara:', 'ok');
+    form.hidden = true;
+    if (reward) reward.hidden = false;
+  });
+}
+
 // ── Bootstrap ─────────────────────────────────────────────────────────────
 function start() {
   const page = document.body?.getAttribute('data-lm-page');
   const data = readData();
   if (page === 'teaser') { initMap(data); initGate(data); }
   else if (page === 'guide') { initGuide(); }
+  else if (page === 'fakta') { initFaktaGate(data); }
 }
 
 if (document.readyState === 'loading') {

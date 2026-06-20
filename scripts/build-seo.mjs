@@ -738,6 +738,124 @@ ${facts}</article>`;
   lmCount++;
 }
 
+// ── Leadmagnet M3: faktabank per ort (/stadsvandring/<ort>/fakta) ─────────────
+// HELT PUBLIK, indexerbar Q&A-sida — det är AEO-poängen: den ska rankas och
+// citeras av AI-svarsmotorer. Byggd ur stoppens summary/era/key_facts. Varje
+// svar är fristående och citerbart med källattribuering. Gate fångar bara e-post
+// (nyhetsbrev) och belönar med PDF (window.print) — innehållet låses aldrig.
+const FAKTA_ASSETS = `<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>`;
+const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
+// era kan vara en platshållare ("—", "-", tomt) — bara verkligt innehåll (en
+// bokstav/siffra) ger en citerbar "Från vilken tid?"-fråga.
+const hasRealEra = (v) => /[0-9a-zA-ZåäöÅÄÖ]/.test(String(v || ''));
+const srcTag = (urls) => {
+  const u = Array.isArray(urls) ? urls.find(Boolean) : null;
+  return u ? ` <span class="src">Källa: <a href="${attr(u)}" rel="nofollow noopener" target="_blank">${esc(hostOf(u))}</a></span>` : '';
+};
+
+let faktaCount = 0;
+for (const city of CITIES) {
+  const cityEntries = entries.filter(e => e.city === city);
+  if (cityEntries.length < 6) continue;
+  const citySlug = slug(city);
+  const ortEntry = cityEntries.find(e => e.category === 'ort') || null;
+  const stops = cityEntries.filter(e => e !== ortEntry && (e.summary || e.description || (e.key_facts || []).length));
+  const centroid = ortEntry?.coordinates?.lat ? ortEntry.coordinates : centroidOf(stops);
+
+  // FAQPage-Q&A — fristående, citerbara. summary → "Vad är X?", era → "Från vilken tid?".
+  const faqs = [];
+  if (ortEntry?.summary) faqs.push({ q: `Vad är ${city} känt för?`, a: ortEntry.summary, src: ortEntry.sources });
+  if (hasRealEra(ortEntry?.era)) faqs.push({ q: `Hur gammal är ${city}?`, a: `${city}: ${ortEntry.era}.`, src: ortEntry.sources });
+  for (const s of stops) {
+    if (s.summary) faqs.push({ q: `Vad är ${s.name}?`, a: s.summary, src: s.sources });
+    if (hasRealEra(s.era)) faqs.push({ q: `Från vilken tid är ${s.name}?`, a: `${s.name}: ${s.era}.`, src: s.sources });
+  }
+  if (faqs.length < 10) continue;             // för tunn faktabank — hoppa
+  faktaCount++;
+
+  const canonical = `${BASE}/stadsvandring/${citySlug}/fakta`;
+  const lead = `${faqs.length} frågor och svar om ${city}: vad platserna är, när de byggdes och vilka som satt avtryck. En fri faktabank — använd, dela och citera den.`;
+
+  const faqLd = {
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
+  const placeLd = {
+    '@context': 'https://schema.org', '@type': 'Place', name: city,
+    ...(centroid ? { geo: { '@type': 'GeoCoordinates', latitude: centroid.lat, longitude: centroid.lng } } : {}),
+    url: `${BASE}/stadsvandring/${citySlug}`,
+  };
+  const crumbLd = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: `Stadsvandring i ${city}`, item: `${BASE}/stadsvandring/${citySlug}` },
+      { '@type': 'ListItem', position: 3, name: `Fakta om ${city}`, item: canonical },
+    ],
+  };
+
+  const lmData = { citySlug, sourceSlug: `stadsvandring/${citySlug}/fakta` };
+  const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
+
+  // Synlig Q&A (öppen, ej hopfälld → bäst för AI-extraktion) + snabbfakta-bullets.
+  const qaHtml = faqs.map(f => `<div class="qa"><h2>${esc(f.q)}</h2><p>${esc(f.a)}${srcTag(f.src)}</p></div>`).join('\n');
+  const snabbfakta = stops.filter(s => (s.key_facts || []).length).map(s =>
+    `<div class="card"><h3>${esc(s.name)}</h3><ul class="facts">${s.key_facts.map(k => `<li>${esc(k)}</li>`).join('')}</ul>${srcTag(s.sources) ? `<p class="muted">${srcTag(s.sources)}</p>` : ''}</div>`).join('\n');
+
+  const body = `
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/${citySlug}">Stadsvandring i ${esc(city)}</a> › Fakta</nav>
+<div class="badges no-print"><span class="badge">💡 Faktabank</span><span class="badge">📍 ${esc(city)}</span><span class="badge">${faqs.length} frågor &amp; svar</span></div>
+<h1>Fakta om ${esc(city)} — historia, sevärdheter &amp; årtal</h1>
+<p class="lead">${esc(lead)}</p>
+
+${qaHtml}
+
+${snabbfakta ? `<h2 class="city-h">Snabbfakta plats för plats</h2>\n${snabbfakta}` : ''}
+
+<section class="gate card no-print" id="lm-fakta">
+  <h2>Få nästa orts faktabank — och denna som PDF</h2>
+  <p>Lämna din e-post så skickar vi nya faktabanker när de släpps, och du kan spara hela ${esc(city)}-samlingen som PDF direkt.</p>
+  <form id="lm-fakta-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler faktabanker och stadsvandringar (valfritt)</label>
+    <button type="submit" class="cta">Ja tack — håll mig uppdaterad →</button>
+    <p id="lm-fakta-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-fakta-reward" hidden><button id="lm-fakta-print" class="cta">💾 Spara faktabanken som PDF</button></p>
+</section>
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/${citySlug}">Stadsvandringen i ${esc(city)}</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>`;
+
+  const head = `<style>
+.qa{margin:0 0 6px}
+.qa h2{font-size:18px;margin:18px 0 4px}
+.qa p{margin:0 0 6px}
+.src{font-size:13px;color:var(--muted)}
+.qa .src a{color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+@media print{ .no-print{display:none !important} body{background:#fff} .wrap{max-width:100%;padding:0} header.site,footer.site{display:none} .card{border:0;padding:0;margin:0 0 12px} }
+</style>
+${FAKTA_ASSETS}
+${jsonld(faqLd)}
+${jsonld(placeLd)}
+${jsonld(crumbLd)}`;
+
+  mkdirSync(join(lmDir, citySlug), { recursive: true });
+  writeFileSync(join(lmDir, citySlug, 'fakta.html'), page({
+    title: `Fakta om ${city} — historia, årtal & sevärdheter | ${BRAND}`,
+    description: trunc(`${faqs.length} frågor och svar om ${city}: historia, byggår och sevärdheter. Fri faktabank att läsa, dela och citera.`, 158),
+    canonical, head, body, bodyAttrs: 'data-lm-page="fakta"',
+  }));
+  urls.push({ loc: canonical, priority: '0.8', changefreq: 'monthly' });
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -812,6 +930,7 @@ console.log(`✓ ${pageCount} platssidor (/p/*.html)`);
 console.log(`✓ platser.html`);
 console.log(`✓ en.html (engelsk hub, hreflang ↔ /)`);
 console.log(`✓ leadmagnet M1 (${lmCount} orter: teaser + gatad guide)`);
+console.log(`✓ leadmagnet M3 faktabank (${faktaCount} orter, publik AEO-yta)`);
 console.log(`✓ sitemap.xml (${urls.length} url:er)`);
 console.log(`✓ robots.txt`);
 console.log(`✓ llms.txt`);
