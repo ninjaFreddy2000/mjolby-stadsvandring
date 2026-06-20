@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Ydre — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen. Karta, 15 stopp och nedladdningsbar PDF-guide — gratis.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/ydre">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Ydre — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen. Karta, 15 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/ydre">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Ydre — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen. Karta, 15 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"ydre","sourceSlug":"stadsvandring/ydre","centroid":{"lat":57.8246,"lng":15.2733},"stops":[{"name":"Norra Vi kyrka","lat":57.88498,"lng":15.35044},{"name":"Korpberget","lat":57.88318,"lng":15.33066},{"name":"Skuru","lat":57.87736,"lng":15.34242}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Ydre","description":"Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen.","url":"https://stadsvandring.io/stadsvandring/ydre","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":15,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Norra Vi kyrka","description":"Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.","url":"https://stadsvandring.io/p/og-norra-vi-kyrka","geo":{"@type":"GeoCoordinates","latitude":57.88498,"longitude":15.35044}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Korpberget","description":"Härifrån har ni en vacker vy över Norra Vi.","url":"https://stadsvandring.io/p/og-korpberget","geo":{"@type":"GeoCoordinates","latitude":57.88318,"longitude":15.33066}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Skuru","description":"Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.","url":"https://stadsvandring.io/p/og-skuru","geo":{"@type":"GeoCoordinates","latitude":57.87736,"longitude":15.34242}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Norra Vi vandringsled","description":"Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.","url":"https://stadsvandring.io/p/og-norra-vi-vandringsled","geo":{"@type":"GeoCoordinates","latitude":57.8835,"longitude":15.342}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Urkons Håla, Norra Vi","description":"Platsen där sägnen säger att den vilda urkon sparkade upp hela sjön Sommen.","url":"https://stadsvandring.io/p/ydre-urkons-hala","geo":{"@type":"GeoCoordinates","latitude":57.9081,"longitude":15.3259}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Bulegrottan, Östgötaleden","description":"Jätten Bules grotta — en skreva i berget vid Östgötaleden söder om Österbymo.","url":"https://stadsvandring.io/p/ydre-bulegrottan","geo":{"@type":"GeoCoordinates","latitude":57.8464,"longitude":15.3345}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Asby-granen — Sveriges grövsta gran","description":"Den grövsta enkelstammiga granen i landet växer vid Hedners Park i Asby.","url":"https://stadsvandring.io/p/ydre-asby-granen","geo":{"@type":"GeoCoordinates","latitude":57.9052,"longitude":15.2004}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kungabordet, Stora Rödje","description":"Utsiktsplats längs Östgötaleden med en kunglig matrast i bagaget.","url":"https://stadsvandring.io/p/ydre-kungabordet","geo":{"@type":"GeoCoordinates","latitude":57.89,"longitude":15.3588}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sunds Bruk, Bulsjöån","description":"Gammal bruksmiljö vid Bulsjöåns vatten, på gränsen mellan Norra Vi och Sund.","url":"https://stadsvandring.io/p/ydre-sunds-bruk","geo":{"@type":"GeoCoordinates","latitude":57.8558,"longitude":15.3596}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Pukaberget utsiktsplats, Torpa","description":"Högt, brett och vackert över sjön Raklången i Torpa socken.","url":"https://stadsvandring.io/p/ydre-pukaberget","geo":{"@type":"GeoCoordinates","latitude":57.9445,"longitude":15.0491}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Rocks Mosse naturreservat","description":"Myrmark med spång och utsiktstorn i nordöstra Norra Vi.","url":"https://stadsvandring.io/p/ydre-rocks-mosse","geo":{"@type":"GeoCoordinates","latitude":57.9474,"longitude":15.3623}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Nääs Gårdsbryggeri","description":"Prisbelönt gårdshantverk där gammal gårdshistoria möter nya visioner.","url":"https://stadsvandring.io/p/ydre-naas-gardsbryggeri","geo":{"@type":"GeoCoordinates","latitude":57.9538,"longitude":15.0509}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Torpöns naturreservat","description":"Blåmärkt vandringsled runt en ö i den stora sjön Sommen.","url":"https://stadsvandring.io/p/ydre-torpon","geo":{"@type":"GeoCoordinates","latitude":57.9546,"longitude":15.1702}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Högmåla knapp, Norra Vi","description":"Utsiktsknapp över Norra Vi och Sommen — här tändes förr vårdkasar.","url":"https://stadsvandring.io/p/ydre-hogmala-knapp","geo":{"@type":"GeoCoordinates","latitude":57.87985,"longitude":15.3286}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Svensbo lövskog, Torpön","description":"Gammal lövskog på Torpön i sjön Sommen — en av bygdens finaste höstpromenader.","url":"https://stadsvandring.io/p/ydre-svensbo-lovskog","geo":{"@type":"GeoCoordinates","latitude":58.01088,"longitude":15.14689}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Ydre känt för?","acceptedAnswer":{"@type":"Answer","text":"Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen."}},{"@type":"Question","name":"Är stadsvandringen i Ydre gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 15 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Ydre?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 15 sevärdheter i Ydre — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Norra Vi kyrka?","acceptedAnswer":{"@type":"Answer","text":"Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet."}},{"@type":"Question","name":"Vad är Korpberget?","acceptedAnswer":{"@type":"Answer","text":"Härifrån har ni en vacker vy över Norra Vi."}},{"@type":"Question","name":"Vad är Skuru?","acceptedAnswer":{"@type":"Answer","text":"Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet."}},{"@type":"Question","name":"Vad är Norra Vi vandringsled?","acceptedAnswer":{"@type":"Answer","text":"Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Ydre","item":"https://stadsvandring.io/stadsvandring/ydre"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Ydre</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Ydre</span><span class="badge">15 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Ydre — gratis karta &amp; guide</h1>
+<p class="lead">Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Ydre"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/og-norra-vi-kyrka"><img src="/images/og-norra-vi-kyrka.jpg" alt="Norra Vi kyrka" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px"><b>1. Norra Vi kyrka</b><span>Kyrka · Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä…</span></a>
+<a class="tile" href="/p/og-korpberget"><b>2. Korpberget</b><span>utsiktsplats · Härifrån har ni en vacker vy över Norra Vi.</span></a>
+<a class="tile" href="/p/og-skuru"><b>3. Skuru</b><span>Byggnad · Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade…</span></a>
+</div>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 15 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/ydre/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/ydre/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Vad är Ydre känt för?</summary><p>Östergötlands sydligaste hörn — sjöar, djupa skogar och sägner kring Sommen.</p></details>
+<details class="faq"><summary>Är stadsvandringen i Ydre gratis?</summary><p>Ja. Karta, alla 15 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Ydre?</summary><p>Vandringen samlar 15 sevärdheter i Ydre — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Norra Vi kyrka?</summary><p>Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.</p></details>
+<details class="faq"><summary>Vad är Korpberget?</summary><p>Härifrån har ni en vacker vy över Norra Vi.</p></details>
+<details class="faq"><summary>Vad är Skuru?</summary><p>Mangårdsbyggnaden uppfördes omkring 1880, ladugården 1937 och den gamla timrade boden någon gång under 1800-talet.</p></details>
+<details class="faq"><summary>Vad är Norra Vi vandringsled?</summary><p>Hembygdsföreningen i Norra Vi har märkt ut en vandringsled som utgår från Norra Vi kyrka med början i västlig riktning.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

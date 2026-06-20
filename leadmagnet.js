@@ -46,7 +46,21 @@ function initMap(data) {
     if (s.name) m.bindPopup(`<b>${s.name}</b>`);
     group.push([s.lat, s.lng]);
   }
-  if (group.length > 1) map.fitBounds(group, { padding: [30, 30], maxZoom: 15 });
+
+  // Leaflet beräknar storleken vid init. Om containern ännu saknar bredd (t.ex.
+  // layout inte klar) blir kartan tom — invalidateSize() + om-fit när bredd finns
+  // löser det robust. Vi kör direkt, vid load, och via ResizeObserver tills bredd>0.
+  const fit = () => {
+    map.invalidateSize();
+    if (group.length > 1) map.fitBounds(group, { padding: [30, 30], maxZoom: 15 });
+    else map.setView([lat, lng], 14);
+  };
+  fit();
+  window.addEventListener('load', fit);
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(() => { if (node.clientWidth > 0) { fit(); ro.disconnect(); } });
+    ro.observe(node);
+  }
 }
 
 // ── Signup-gate (teaser) ─────────────────────────────────────────────────

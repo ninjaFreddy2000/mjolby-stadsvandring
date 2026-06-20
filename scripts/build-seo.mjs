@@ -134,7 +134,7 @@ function schemaTypeFor(cat) {
 }
 
 // ── shared layout ───────────────────────────────────────────────────────────
-function page({ title, description, canonical, head = '', body, lang = 'sv', alts = '', footerHtml = null, image = `${BASE}/images/og.jpg`, robots = 'index,follow,max-image-preview:large,max-snippet:-1' }) {
+function page({ title, description, canonical, head = '', body, lang = 'sv', alts = '', footerHtml = null, image = `${BASE}/images/og.jpg`, robots = 'index,follow,max-image-preview:large,max-snippet:-1', bodyAttrs = '' }) {
   const ogLocale = lang === 'en' ? 'en' : 'sv_SE';
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -194,7 +194,7 @@ figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit
 figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
-<body>
+<body${bodyAttrs ? ' ' + bodyAttrs : ''}>
 <div class="wrap">
 <header class="site">
   <a class="mark" href="/" aria-label="${attr(BRAND)} — hem">S</a>
@@ -518,6 +518,218 @@ for (const t of TOURS) {
   urls.push({ loc: canonical, priority: '0.8', changefreq: 'monthly' });
 }
 
+// ── Leadmagnet M1: PDF-stadsvandring per ort (/stadsvandring/<ort>) ───────────
+// Per kvalificerad ort (≥6 poster) genereras TVÅ sidor:
+//   • teaser  /stadsvandring/<ort>        — PUBLIK, indexerbar (SEO/AEO-ytan):
+//       ingress, Leaflet-karta, 3 stopp, FAQ, TouristTrip+FAQPage-JSON-LD,
+//       och signup-gaten som fångar e-post (leads) + skickar magic-länk.
+//   • guide   /stadsvandring/<ort>/guide  — NOINDEX, gatad: hela vandringen +
+//       "Spara som PDF" (window.print). Låses upp av inloggad session.
+// Klientlogiken ligger i /leadmagnet.js (CSP script-src 'self' → ingen inline-JS).
+const lmDir = join(ROOT, 'stadsvandring');
+if (existsSync(lmDir)) rmSync(lmDir, { recursive: true, force: true });
+mkdirSync(lmDir, { recursive: true });
+
+const imgFor = (e) => EXTRA_IMAGES[e.id] || null;
+const centroidOf = (list) => {
+  const pts = list.map(e => e.coordinates).filter(c => c?.lat && c?.lng);
+  if (!pts.length) return null;
+  return { lat: pts.reduce((s, c) => s + c.lat, 0) / pts.length,
+           lng: pts.reduce((s, c) => s + c.lng, 0) / pts.length };
+};
+
+const LM_ASSETS = `<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>`;
+
+let lmCount = 0;
+for (const city of CITIES) {
+  const cityEntries = entries.filter(e => e.city === city);
+  if (cityEntries.length < 6) continue;            // för tunt för en meningsfull vandring
+
+  const citySlug = slug(city);
+  const ortEntry = cityEntries.find(e => e.category === 'ort') || null;
+  const stops = cityEntries.filter(e => e !== ortEntry && e.coordinates?.lat && e.coordinates?.lng);
+  if (stops.length < 3) continue;
+  const teaserStops = stops.slice(0, 3);
+  const centroid = ortEntry?.coordinates?.lat ? ortEntry.coordinates : centroidOf(stops);
+  const canonical = `${BASE}/stadsvandring/${citySlug}`;
+  const guidePath = `/stadsvandring/${citySlug}/guide`;
+  const ingress = ortEntry?.summary
+    || `Upptäck ${city} till fots: ${stops.length} sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.`;
+  const ld = imgFor(ortEntry || teaserStops[0] || {});
+  const ogImg = ld ? `${BASE}/${ld.url}` : `${BASE}/images/og.jpg`;
+
+  // FAQ — fristående, citerbara svar (AEO-bränsle + FAQPage-JSON-LD).
+  const faqs = [];
+  if (ortEntry?.summary) faqs.push({ q: `Vad är ${city} känt för?`, a: ortEntry.summary });
+  faqs.push({ q: `Är stadsvandringen i ${city} gratis?`,
+    a: `Ja. Karta, alla ${stops.length} stopp och hela guiden är gratis på ${BRAND}. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.` });
+  faqs.push({ q: `Hur många sevärdheter ingår i stadsvandringen i ${city}?`,
+    a: `Vandringen samlar ${stops.length} sevärdheter i ${city} — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.` });
+  for (const s of stops.slice(0, 4)) if (s.summary) faqs.push({ q: `Vad är ${s.name}?`, a: s.summary });
+
+  // ── JSON-LD ──
+  const tripLd = {
+    '@context': 'https://schema.org', '@type': 'TouristTrip',
+    name: `Stadsvandring i ${city}`, description: ingress, url: canonical, touristType: 'Sightseeing',
+    itinerary: {
+      '@type': 'ItemList', numberOfItems: stops.length,
+      itemListElement: stops.map((s, i) => ({
+        '@type': 'ListItem', position: i + 1,
+        item: {
+          '@type': 'TouristAttraction', name: s.name,
+          ...(s.summary ? { description: trunc(s.summary, 160) } : {}),
+          url: `${BASE}/p/${slug(s.id || s.name)}`,
+          ...(s.coordinates?.lat ? { geo: { '@type': 'GeoCoordinates', latitude: s.coordinates.lat, longitude: s.coordinates.lng } } : {}),
+        },
+      })),
+    },
+  };
+  const faqLd = {
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
+  const crumbLd = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Stadsvandringar', item: `${BASE}/platser` },
+      { '@type': 'ListItem', position: 3, name: `Stadsvandring i ${city}`, item: canonical },
+    ],
+  };
+
+  // ── CSP-säkert data-block till leadmagnet.js (karta + gate-metadata) ──
+  const lmData = {
+    citySlug, sourceSlug: `stadsvandring/${citySlug}`,
+    centroid: centroid ? { lat: centroid.lat, lng: centroid.lng } : null,
+    stops: teaserStops.map(s => ({ name: s.name, lat: s.coordinates.lat, lng: s.coordinates.lng })),
+  };
+  const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
+
+  // ── teaser-body ──
+  const stopCard = (s, i) => {
+    const im = imgFor(s);
+    return `<a class="tile" href="/p/${slug(s.id || s.name)}">` +
+      (im ? `<img src="/${attr(im.url)}" alt="${attr(s.name)}" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px">` : '') +
+      `<b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
+  };
+  const faqHtml = faqs.map(f => `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n');
+
+  const teaserBody = `
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › ${esc(city)}</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 ${esc(city)}</span><span class="badge">${stops.length} stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i ${esc(city)} — gratis karta &amp; guide</h1>
+<p class="lead">${esc(ingress)}</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i ${attr(city)}"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+${teaserStops.map(stopCard).join('\n')}
+</div>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla ${stops.length} stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="${attr(guidePath)}" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="${attr(guidePath)}">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+${faqHtml}
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>`;
+
+  const lmHead = `<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+${LM_ASSETS}
+${jsonld(tripLd)}
+${jsonld(faqLd)}
+${jsonld(crumbLd)}`;
+
+  writeFileSync(join(lmDir, `${citySlug}.html`), page({
+    title: `Stadsvandring i ${city} — gratis karta, guide & PDF | ${BRAND}`,
+    description: trunc(`${ingress} Karta, ${stops.length} stopp och nedladdningsbar PDF-guide — gratis.`, 158),
+    canonical, image: ogImg, head: dataBlock + '\n' + lmHead, body: teaserBody,
+    bodyAttrs: 'data-lm-page="teaser"',
+  }));
+  urls.push({ loc: canonical, priority: '0.85', changefreq: 'monthly', image: ogImg, imageTitle: `Stadsvandring i ${city}` });
+
+  // ── gatad guide (noindex) ──
+  const fullStop = (s, i) => {
+    const im = imgFor(s);
+    const facts = Array.isArray(s.key_facts) && s.key_facts.length
+      ? `<ul class="facts">${s.key_facts.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '';
+    return `<article class="card stop">
+<h3>${i + 1}. ${esc(s.name)}</h3>
+<div class="badges"><span class="badge">${esc(CAT_LABEL[s.category] || s.category || '')}</span>${s.era ? `<span class="badge">${esc(s.era)}</span>` : ''}</div>
+${im ? `<img src="/${attr(im.url)}" alt="${attr(s.name)}" loading="lazy" style="width:100%;max-height:280px;object-fit:cover;border-radius:10px;margin:4px 0 12px">` : ''}
+<p>${esc(s.description || s.summary || '')}</p>
+${facts}</article>`;
+  };
+  const guideBody = `
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/${citySlug}">Stadsvandring i ${esc(city)}</a> › Hela guiden</nav>
+
+<section id="lm-locked" class="card lock no-print">
+  <h1>Hela stadsvandringen i ${esc(city)}</h1>
+  <p>Den fullständiga guiden låses upp när du angett din e-post. Det tar tio sekunder och är gratis.</p>
+  <p><a class="cta" href="/stadsvandring/${citySlug}#lm-gate">Lås upp via e-post →</a></p>
+</section>
+
+<div id="lm-guide-full" hidden>
+  <div class="badges no-print"><span class="badge">🚶 Hela vandringen</span><span class="badge">📍 ${esc(city)}</span><span class="badge">${stops.length} stopp</span></div>
+  <h1>Stadsvandring i ${esc(city)} — hela guiden</h1>
+  <p class="lead">${esc(ingress)}</p>
+  <p class="no-print"><button id="lm-print" class="cta">💾 Spara som PDF / skriv ut</button></p>
+  ${stops.map(fullStop).join('\n')}
+  <footer class="guide-foot"><p>Källa: ${esc(BRAND)} — ${esc(city)}. Innehåll från Wikipedia/Wikidata m.fl. under fria licenser.</p></footer>
+</div>`;
+
+  const guideHead = `<style>
+.stop h3{font-size:20px;margin:0 0 6px}
+.lock{text-align:center}
+@media print{
+  .no-print{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:100%;padding:0}
+  header.site,footer.site{display:none}
+  .card{border:0;box-shadow:none;padding:0;margin:0 0 18px;break-inside:avoid}
+  .badge{border:1px solid #ccc}
+}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>`;
+
+  // Teaser = stadsvandring/<ort>.html → /stadsvandring/<ort> (cleanUrls).
+  // Guide  = stadsvandring/<ort>/guide.html → /stadsvandring/<ort>/guide.
+  // <ort>.html och katalogen <ort>/ samexisterar utan kollision (ingen
+  // <ort>/index.html finns), så båda rena URL:erna löser rätt fil direkt.
+  mkdirSync(join(lmDir, citySlug), { recursive: true });
+  writeFileSync(join(lmDir, citySlug, 'guide.html'), page({
+    title: `Hela stadsvandringen i ${city} (PDF) | ${BRAND}`,
+    description: `Hela den självguidade stadsvandringen i ${city} — alla ${stops.length} stopp att spara som PDF.`,
+    canonical: `${BASE}${guidePath}`, robots: 'noindex,nofollow', head: guideHead, body: guideBody,
+    bodyAttrs: 'data-lm-page="guide"',
+  }));
+  lmCount++;
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -591,6 +803,7 @@ writeFileSync(join(ROOT, 'llms.txt'), llms);
 console.log(`✓ ${pageCount} platssidor (/p/*.html)`);
 console.log(`✓ platser.html`);
 console.log(`✓ en.html (engelsk hub, hreflang ↔ /)`);
+console.log(`✓ leadmagnet M1 (${lmCount} orter: teaser + gatad guide)`);
 console.log(`✓ sitemap.xml (${urls.length} url:er)`);
 console.log(`✓ robots.txt`);
 console.log(`✓ llms.txt`);

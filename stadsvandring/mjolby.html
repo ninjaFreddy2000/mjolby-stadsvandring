@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Mjölby — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland. Karta, 34 stopp och nedladdningsbar PDF-guide — gratis.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/mjolby">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Mjölby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland. Karta, 34 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/mjolby">
+<meta property="og:image" content="https://stadsvandring.io/images/mjolby-orten.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Mjölby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland. Karta, 34 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/mjolby-orten.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"mjolby","sourceSlug":"stadsvandring/mjolby","centroid":{"lat":58.325,"lng":15.131},"stops":[{"name":"Svartån","lat":58.3245,"lng":15.129},{"name":"Mjölby kyrka","lat":58.3260763,"lng":15.1310782},{"name":"Mjölby järnvägsstation","lat":58.3227753,"lng":15.1322308}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Mjölby","description":"Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland.","url":"https://stadsvandring.io/stadsvandring/mjolby","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":34,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Svartån","description":"Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande.","url":"https://stadsvandring.io/p/svartan","geo":{"@type":"GeoCoordinates","latitude":58.3245,"longitude":15.129}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Mjölby kyrka","description":"Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771.","url":"https://stadsvandring.io/p/mjolby-kyrka","geo":{"@type":"GeoCoordinates","latitude":58.3260763,"longitude":15.1310782}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Mjölby järnvägsstation","description":"Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.","url":"https://stadsvandring.io/p/mjolby-station","geo":{"@type":"GeoCoordinates","latitude":58.3227753,"longitude":15.1322308}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mjölby Stadshotell (gamla Järnvägshotellet)","description":"Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst.","url":"https://stadsvandring.io/p/mjolby-stadshotell","geo":{"@type":"GeoCoordinates","latitude":58.3227463,"longitude":15.1335195}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Stora Torget","description":"Byns historiska hjärta, vid det gamla vägskälet mot Småland.","url":"https://stadsvandring.io/p/stora-torget","geo":{"@type":"GeoCoordinates","latitude":58.3251203,"longitude":15.1310293}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Mjölby hembygdsgård (Norrgårdsholmen)","description":"Faluröda museihus på en holme i ån, med en fin intarsiasamling.","url":"https://stadsvandring.io/p/mjolby-hembygdsgard","geo":{"@type":"GeoCoordinates","latitude":58.328396,"longitude":15.1295005}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Galleria Kvarnen","description":"Stadens galleria, vars namn nickar åt kvarnarvet.","url":"https://stadsvandring.io/p/galleria-kvarnen","geo":{"@type":"GeoCoordinates","latitude":58.3255114,"longitude":15.1250723}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Gamla Stadshuset / Stadshuset i Mjölby","description":"Stadshuset nära gallerian och biblioteket; framför entrén står en Carl Milles-skulptur.","url":"https://stadsvandring.io/p/gamla-stadshuset","geo":{"@type":"GeoCoordinates","latitude":58.3248271,"longitude":15.125268}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Kvarnparken","description":"Park och anläggning vid ån med restaurang, pub och statyn av Skånska Lasse.","url":"https://stadsvandring.io/p/kvarnparken","geo":{"@type":"GeoCoordinates","latitude":58.3226542,"longitude":15.1253061}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Konditori Hörnet","description":"Mysigt, centralt klassiskt konditori intill biblioteket.","url":"https://stadsvandring.io/p/konditori-hornet","geo":{"@type":"GeoCoordinates","latitude":58.3249291,"longitude":15.1226492}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Linds (bageri & konditori)","description":"Café och konditori med eget bageri i Galleria Kvarnen.","url":"https://stadsvandring.io/p/linds-mjolby","geo":{"@type":"GeoCoordinates","latitude":58.3256406,"longitude":15.1256978}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Statyn av Skånska Lasse","description":"Staty i Kvarnparken över ortens folkkäre bondkomiker.","url":"https://stadsvandring.io/p/skanska-lasses-staty","geo":{"@type":"GeoCoordinates","latitude":58.326445,"longitude":15.1268935}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Potatisrondellen (Mjölbypotäten)","description":"Ortens mest omtalade symbol: en jättelik King Edward-potatis i en rondell.","url":"https://stadsvandring.io/p/potatisrondellen","geo":{"@type":"GeoCoordinates","latitude":58.32282,"longitude":15.0939495}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Mjölby Intarsia / Fanerami AB","description":"Träinläggnings­företaget som klädde atlantångare och bankpalats i intarsia.","url":"https://stadsvandring.io/p/mjolby-intarsia-fanerami","geo":{"@type":"GeoCoordinates","latitude":58.3159719,"longitude":15.1116332}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Ols Möbler (idag Mio Mjölby)","description":"Möbeldynasti som startade 1887 och fortfarande drivs av samma familj.","url":"https://stadsvandring.io/p/ols-mobler-mio","geo":{"@type":"GeoCoordinates","latitude":58.3308934,"longitude":15.1098531}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Mjölby Bryggeri (historiskt)","description":"Ortens anrika bryggeri, sedermera inriktat på svagdricka och läsk.","url":"https://stadsvandring.io/p/mjolby-bryggeri","geo":{"@type":"GeoCoordinates","latitude":58.328,"longitude":15.1285}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Carl Milles-skulptur (dansande figurer), Stadshuset","description":"Skulptur av den världskände Carl Milles framför Stadshusets entré.","url":"https://stadsvandring.io/p/carl-milles-staty","geo":{"@type":"GeoCoordinates","latitude":58.3248271,"longitude":15.125268}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Bjälbo kyrka","description":"Folkungaättens gårdskyrka och Birger jarls trakt — med ett mäktigt medeltida torn.","url":"https://stadsvandring.io/p/bjalbo-kyrka","geo":{"@type":"GeoCoordinates","latitude":58.372155,"longitude":15.0052593}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Högbystenen (Ög 81)","description":"En av Sveriges främsta runstenar, näst efter Rökstenen i Östergötland.","url":"https://stadsvandring.io/p/hogbystenen","geo":{"@type":"GeoCoordinates","latitude":58.3605469,"longitude":15.0995262}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Skänninge","description":"En av Sveriges äldsta städer och ett medeltida kraftcentrum, idag del av Mjölby kommun.","url":"https://stadsvandring.io/p/skanninge-orten","geo":{"@type":"GeoCoordinates","latitude":58.3925,"longitude":15.085}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Skänninge möte 1248","description":"Kyrkomöte som införde prästcelibat och stärkte kyrkans makt i Sverige.","url":"https://stadsvandring.io/p/skanninge-mote-1248","geo":{"@type":"GeoCoordinates","latitude":58.3925,"longitude":15.085}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Vårfrukyrkan ('Garpekyrkan'), Skänninge","description":"De tyska köpmännens mäktiga tegelkyrka — en av få stora medeltida tegelkyrkor i Östergötland.","url":"https://stadsvandring.io/p/varfrukyrkan-skanninge","geo":{"@type":"GeoCoordinates","latitude":58.3947888,"longitude":15.0867153}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"S:ta Ingrids klosterruin","description":"Sveriges första kvinnliga dominikankloster.","url":"https://stadsvandring.io/p/sta-ingrids-kloster","geo":{"@type":"GeoCoordinates","latitude":58.3982617,"longitude":15.0827455}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"S:t Olofs kloster & Petrus de Dacia","description":"Dominikankonventet i Skänninge där 'Sveriges förste författare' verkade.","url":"https://stadsvandring.io/p/st-olofs-kloster-petrus-de-dacia","geo":{"@type":"GeoCoordinates","latitude":58.3925,"longitude":15.085}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Lindbladsparken & bysten av A.F. Lindblad","description":"Park i Skänninge med en byst av tonsättaren Adolf Fredrik Lindblad.","url":"https://stadsvandring.io/p/lindbladsparken-byst","geo":{"@type":"GeoCoordinates","latitude":58.3943436,"longitude":15.0828304}}},{"@type":"ListItem","position":26,"item":{"@type":"TouristAttraction","name":"Ture Lång (Rolandsstaty), Skänninge","description":"Ståljätte på Skänninges torg, symbol för rättsskipning i medeltida tysk tradition.","url":"https://stadsvandring.io/p/ture-lang","geo":{"@type":"GeoCoordinates","latitude":58.395489,"longitude":15.086764}}},{"@type":"ListItem","position":27,"item":{"@type":"TouristAttraction","name":"Svaneholms borgruin","description":"Ruinerna av en 1300-talsborg på en udde i Kilarpesjön.","url":"https://stadsvandring.io/p/svaneholms-borgruin","geo":{"@type":"GeoCoordinates","latitude":58.2703521,"longitude":15.2830875}}},{"@type":"ListItem","position":28,"item":{"@type":"TouristAttraction","name":"Öjebro stenvalvsbro","description":"Gammal stenvalvsbro i den forna kvarnbyn Öjebro.","url":"https://stadsvandring.io/p/ojebro-stenvalvsbro","geo":{"@type":"GeoCoordinates","latitude":58.3784,"longitude":15.1957}}},{"@type":"ListItem","position":29,"item":{"@type":"TouristAttraction","name":"Stadsbranden 1771","description":"Branden som nästan utplånade kvarnbyn och som möjliggör att vi känner den medeltida byplanen.","url":"https://stadsvandring.io/p/branden-1771","geo":{"@type":"GeoCoordinates","latitude":58.3256,"longitude":15.131}}},{"@type":"ListItem","position":30,"item":{"@type":"TouristAttraction","name":"Dackefejden i Mjölby (1542–43)","description":"Sveriges största folkresning nådde sin nordligaste punkt i Mjölby — vid Kungshögarna stod en drabbning vintern 1542–43.","url":"https://stadsvandring.io/p/dackefejden","geo":{"@type":"GeoCoordinates","latitude":58.325,"longitude":15.131}}},{"@type":"ListItem","position":31,"item":{"@type":"TouristAttraction","name":"Mjölby AI FF / Vifolkavallen","description":"Ortens fotbollsklubb med hemmaplan på Vifolkavallen.","url":"https://stadsvandring.io/p/mjolby-ai-ff-vifolkavallen","geo":{"@type":"GeoCoordinates","latitude":58.3293077,"longitude":15.1514487}}},{"@type":"ListItem","position":32,"item":{"@type":"TouristAttraction","name":"Fem blev en — Mjölby kommun (1971)","description":"1971 slogs Mjölby stad, Skänninge stad och tre landskommuner samman till dagens Mjölby kommun.","url":"https://stadsvandring.io/p/kommunsammanslagningen-1971","geo":{"@type":"GeoCoordinates","latitude":58.325,"longitude":15.131}}},{"@type":"ListItem","position":33,"item":{"@type":"TouristAttraction","name":"Mejeriet (Kanikegatan)","description":"Mjölbys gamla mejeri vid Kanikegatan, i drift från sekelskiftet 1900 till 1961 och senare ombyggt till föreningslokal.","url":"https://stadsvandring.io/p/mjolby-mejeri","geo":{"@type":"GeoCoordinates","latitude":58.3243,"longitude":15.1335}}},{"@type":"ListItem","position":34,"item":{"@type":"TouristAttraction","name":"Sagabiografen","description":"Mjölbys biograf från 1942 med ovanligt välbevarad funkisinteriör — återinvigd efter branden 2024.","url":"https://stadsvandring.io/p/saga-biografen","geo":{"@type":"GeoCoordinates","latitude":58.3255,"longitude":15.1309}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Mjölby känt för?","acceptedAnswer":{"@type":"Answer","text":"Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland."}},{"@type":"Question","name":"Är stadsvandringen i Mjölby gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 34 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Mjölby?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 34 sevärdheter i Mjölby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Svartån?","acceptedAnswer":{"@type":"Answer","text":"Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande."}},{"@type":"Question","name":"Vad är Mjölby kyrka?","acceptedAnswer":{"@type":"Answer","text":"Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771."}},{"@type":"Question","name":"Vad är Mjölby järnvägsstation?","acceptedAnswer":{"@type":"Answer","text":"Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum."}},{"@type":"Question","name":"Vad är Mjölby Stadshotell (gamla Järnvägshotellet)?","acceptedAnswer":{"@type":"Answer","text":"Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Mjölby","item":"https://stadsvandring.io/stadsvandring/mjolby"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Mjölby</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Mjölby</span><span class="badge">34 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Mjölby — gratis karta &amp; guide</h1>
+<p class="lead">Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Mjölby"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/svartan"><img src="/images/svartan.jpg" alt="Svartån" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px"><b>1. Svartån</b><span>Vattendrag · Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande.</span></a>
+<a class="tile" href="/p/mjolby-kyrka"><img src="/images/mjolby-kyrka.jpg" alt="Mjölby kyrka" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px"><b>2. Mjölby kyrka</b><span>Kyrka · Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsb…</span></a>
+<a class="tile" href="/p/mjolby-station"><img src="/images/mjolby-station.jpg" alt="Mjölby järnvägsstation" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px"><b>3. Mjölby järnvägsstation</b><span>Station · Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.</span></a>
+</div>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 34 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/mjolby/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/mjolby/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Vad är Mjölby känt för?</summary><p>Gammal kvarnby vid Svartån som blev järnvägsknut och regioncentrum för sydvästra Östergötland.</p></details>
+<details class="faq"><summary>Är stadsvandringen i Mjölby gratis?</summary><p>Ja. Karta, alla 34 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Mjölby?</summary><p>Vandringen samlar 34 sevärdheter i Mjölby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Svartån?</summary><p>Ån vars forsar gav Mjölby dess kvarnar och hela dess existensberättigande.</p></details>
+<details class="faq"><summary>Vad är Mjölby kyrka?</summary><p>Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771.</p></details>
+<details class="faq"><summary>Vad är Mjölby järnvägsstation?</summary><p>Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.</p></details>
+<details class="faq"><summary>Vad är Mjölby Stadshotell (gamla Järnvägshotellet)?</summary><p>Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>
