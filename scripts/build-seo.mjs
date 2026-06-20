@@ -231,6 +231,8 @@ const urls = [
   { loc: `${BASE}/blogg`, priority: '0.7', changefreq: 'weekly' },
   { loc: `${BASE}/blogg/elva-orter-pa-kartan`, priority: '0.6', changefreq: 'monthly' },
   { loc: `${BASE}/blogg/sa-gor-du-en-stadsvandring`, priority: '0.6', changefreq: 'monthly' },
+  { loc: `${BASE}/blogg/ostergotlands-ovantade-platser`, priority: '0.6', changefreq: 'monthly' },
+  { loc: `${BASE}/blogg/fran-storstad-till-by`, priority: '0.6', changefreq: 'monthly' },
 ];
 
 for (const e of entries) {
