@@ -218,7 +218,7 @@ mkdirSync(placeDir, { recursive: true });
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
-  { loc: `${BASE}/karta`, priority: '0.6', changefreq: 'weekly' },   // appen (kartan/PWA)
+  // OBS: /karta (appen) är medvetet noindex → ingår INTE i sitemap.
   { loc: `${BASE}/platser`, priority: '0.8', changefreq: 'weekly' },
   // Fristående marknadsföringssidor ("skyltfönstret") — handskrivna, ingår i sitemap.
   { loc: `${BASE}/bidra`, priority: '0.7', changefreq: 'monthly' },

@@ -29,7 +29,9 @@
   <link rel="alternate" hreflang="sv" href="https://stadsvandring.io/karta">
   <link rel="alternate" hreflang="en" href="https://stadsvandring.io/en">
   <link rel="alternate" hreflang="x-default" href="https://stadsvandring.io/karta">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <!-- Appen (JS-skal) ska INTE konkurrera i sök — all rank-kraft ligger på roten,
+       /platser och /p/*. follow → länkkraft flödar vidare till innehållssidorna. -->
+  <meta name="robots" content="noindex,follow">
   <!-- Open Graph / Twitter (länkförhandsvisningar + en del AI/SERP-thumbnails) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stadsvandring">
