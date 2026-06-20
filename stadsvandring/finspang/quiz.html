@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Quiz: Hur väl känner du Finspång? | Stadsvandring.io</title>
+<meta name="description" content="Tror du att du kan din ort? Testa 8 frågor om Finspång — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/finspang/quiz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Quiz: Hur väl känner du Finspång? | Stadsvandring.io">
+<meta property="og:description" content="Tror du att du kan din ort? Testa 8 frågor om Finspång — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/finspang/quiz">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz: Hur väl känner du Finspång? | Stadsvandring.io">
+<meta name="twitter:description" content="Tror du att du kan din ort? Testa 8 frågor om Finspång — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+.quiz .qq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:0 0 14px}
+.quiz legend{font-weight:600;padding:0 4px}
+.quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:9px;cursor:pointer;border:1px solid transparent}
+.quiz label:hover{background:#faf6ec}
+.quiz.graded label{cursor:default}
+.quiz .opt-correct{background:#e7f6ec;border-color:#1a7f37}
+.quiz .opt-wrong{background:#fdeceb;border-color:#b3261e}
+.quiz-result{font-size:20px;font-weight:700;color:var(--accent);margin:8px 0}
+.quiz .cta{border:0;cursor:pointer}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.sharetext{background:#faf6ec;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-style:italic}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+.src{font-size:13px;color:var(--muted)}.src a{color:var(--muted)}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Quiz","name":"Quiz: Hur väl känner du Finspång?","about":{"@type":"Place","name":"Finspång"},"educationalLevel":"beginner","url":"https://stadsvandring.io/stadsvandring/finspang/quiz","hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Finspångs slott?","acceptedAnswer":{"@type":"Answer","text":"Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom."},"suggestedAnswer":[{"@type":"Answer","text":"Grön park i brukets hjärta, längs vattnet mitt i staden."},{"@type":"Answer","text":"Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv."},{"@type":"Answer","text":"Brukskyrkan i glasbrukssamhället Rejmyre."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Bruksparken?","acceptedAnswer":{"@type":"Answer","text":"Grön park i brukets hjärta, längs vattnet mitt i staden."},"suggestedAnswer":[{"@type":"Answer","text":"Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv."},{"@type":"Answer","text":"Brukskyrkan i glasbrukssamhället Rejmyre."},{"@type":"Answer","text":"Stor sjö söder om Finspång, med bad, båtliv och fiske."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Rejmyre glasbruk?","acceptedAnswer":{"@type":"Answer","text":"Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv."},"suggestedAnswer":[{"@type":"Answer","text":"Brukskyrkan i glasbrukssamhället Rejmyre."},{"@type":"Answer","text":"Stor sjö söder om Finspång, med bad, båtliv och fiske."},{"@type":"Answer","text":"Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\"."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Rejmyre kyrka?","acceptedAnswer":{"@type":"Answer","text":"Brukskyrkan i glasbrukssamhället Rejmyre."},"suggestedAnswer":[{"@type":"Answer","text":"Stor sjö söder om Finspång, med bad, båtliv och fiske."},{"@type":"Answer","text":"Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\"."},{"@type":"Answer","text":"Vacker herrgård i bruksbygdens kulturlandskap."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Sjön Glan?","acceptedAnswer":{"@type":"Answer","text":"Stor sjö söder om Finspång, med bad, båtliv och fiske."},"suggestedAnswer":[{"@type":"Answer","text":"Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\"."},{"@type":"Answer","text":"Vacker herrgård i bruksbygdens kulturlandskap."},{"@type":"Answer","text":"Klar, öländsk skogssjö i norr, på gränsen mot Södermanland."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Risinge gamla kyrka?","acceptedAnswer":{"@type":"Answer","text":"Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\"."},"suggestedAnswer":[{"@type":"Answer","text":"Vacker herrgård i bruksbygdens kulturlandskap."},{"@type":"Answer","text":"Klar, öländsk skogssjö i norr, på gränsen mot Södermanland."},{"@type":"Answer","text":"Bergslagskyrka i den västra gruv- och skogsbygden."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Stjärnviks herrgård?","acceptedAnswer":{"@type":"Answer","text":"Vacker herrgård i bruksbygdens kulturlandskap."},"suggestedAnswer":[{"@type":"Answer","text":"Klar, öländsk skogssjö i norr, på gränsen mot Södermanland."},{"@type":"Answer","text":"Bergslagskyrka i den västra gruv- och skogsbygden."},{"@type":"Answer","text":"Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Sjön Tisnaren?","acceptedAnswer":{"@type":"Answer","text":"Klar, öländsk skogssjö i norr, på gränsen mot Södermanland."},"suggestedAnswer":[{"@type":"Answer","text":"Bergslagskyrka i den västra gruv- och skogsbygden."},{"@type":"Answer","text":"Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom."},{"@type":"Answer","text":"Grön park i brukets hjärta, längs vattnet mitt i staden."}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Finspångs slott?","acceptedAnswer":{"@type":"Answer","text":"Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom."}},{"@type":"Question","name":"Vad är Bruksparken?","acceptedAnswer":{"@type":"Answer","text":"Grön park i brukets hjärta, längs vattnet mitt i staden."}},{"@type":"Question","name":"Vad är Rejmyre glasbruk?","acceptedAnswer":{"@type":"Answer","text":"Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv."}},{"@type":"Question","name":"Vad är Rejmyre kyrka?","acceptedAnswer":{"@type":"Answer","text":"Brukskyrkan i glasbrukssamhället Rejmyre."}},{"@type":"Question","name":"Vad är Sjön Glan?","acceptedAnswer":{"@type":"Answer","text":"Stor sjö söder om Finspång, med bad, båtliv och fiske."}},{"@type":"Question","name":"Vad är Risinge gamla kyrka?","acceptedAnswer":{"@type":"Answer","text":"Medeltida kyrka med praktfulla kalkmålningar — \"Sankta Maria\"."}},{"@type":"Question","name":"Vad är Stjärnviks herrgård?","acceptedAnswer":{"@type":"Answer","text":"Vacker herrgård i bruksbygdens kulturlandskap."}},{"@type":"Question","name":"Vad är Sjön Tisnaren?","acceptedAnswer":{"@type":"Answer","text":"Klar, öländsk skogssjö i norr, på gränsen mot Södermanland."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Finspång","item":"https://stadsvandring.io/stadsvandring/finspang"},{"@type":"ListItem","position":3,"name":"Quiz om Finspång","item":"https://stadsvandring.io/stadsvandring/finspang/quiz"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="quiz">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/finspang">Stadsvandring i Finspång</a> › Quiz</nav>
+<div class="badges no-print"><span class="badge">🧠 Quiz</span><span class="badge">📍 Finspång</span><span class="badge">8 frågor</span></div>
+<h1>Quiz: Hur väl känner du Finspång?</h1>
+<p class="lead">Tror du att du kan din ort? Testa 8 frågor om Finspång — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsbara resultat.</p>
+
+<form id="lm-quiz" class="quiz">
+<fieldset class="qq" data-q data-correct="0">
+<legend>1. Vad är Finspångs slott?</legend>
+<label><input type="radio" name="q0" value="0"> <span>Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom.</span></label>
+<label><input type="radio" name="q0" value="1"> <span>Grön park i brukets hjärta, längs vattnet mitt i staden.</span></label>
+<label><input type="radio" name="q0" value="2"> <span>Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv.</span></label>
+<label><input type="radio" name="q0" value="3"> <span>Brukskyrkan i glasbrukssamhället Rejmyre.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>2. Vad är Bruksparken?</legend>
+<label><input type="radio" name="q1" value="0"> <span>Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv.</span></label>
+<label><input type="radio" name="q1" value="1"> <span>Grön park i brukets hjärta, längs vattnet mitt i staden.</span></label>
+<label><input type="radio" name="q1" value="2"> <span>Brukskyrkan i glasbrukssamhället Rejmyre.</span></label>
+<label><input type="radio" name="q1" value="3"> <span>Stor sjö söder om Finspång, med bad, båtliv och fiske.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>3. Vad är Rejmyre glasbruk?</legend>
+<label><input type="radio" name="q2" value="0"> <span>Brukskyrkan i glasbrukssamhället Rejmyre.</span></label>
+<label><input type="radio" name="q2" value="1"> <span>Stor sjö söder om Finspång, med bad, båtliv och fiske.</span></label>
+<label><input type="radio" name="q2" value="2"> <span>Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv.</span></label>
+<label><input type="radio" name="q2" value="3"> <span>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>4. Vad är Rejmyre kyrka?</legend>
+<label><input type="radio" name="q3" value="0"> <span>Stor sjö söder om Finspång, med bad, båtliv och fiske.</span></label>
+<label><input type="radio" name="q3" value="1"> <span>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;.</span></label>
+<label><input type="radio" name="q3" value="2"> <span>Vacker herrgård i bruksbygdens kulturlandskap.</span></label>
+<label><input type="radio" name="q3" value="3"> <span>Brukskyrkan i glasbrukssamhället Rejmyre.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="0">
+<legend>5. Vad är Sjön Glan?</legend>
+<label><input type="radio" name="q4" value="0"> <span>Stor sjö söder om Finspång, med bad, båtliv och fiske.</span></label>
+<label><input type="radio" name="q4" value="1"> <span>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;.</span></label>
+<label><input type="radio" name="q4" value="2"> <span>Vacker herrgård i bruksbygdens kulturlandskap.</span></label>
+<label><input type="radio" name="q4" value="3"> <span>Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>6. Vad är Risinge gamla kyrka?</legend>
+<label><input type="radio" name="q5" value="0"> <span>Vacker herrgård i bruksbygdens kulturlandskap.</span></label>
+<label><input type="radio" name="q5" value="1"> <span>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;.</span></label>
+<label><input type="radio" name="q5" value="2"> <span>Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.</span></label>
+<label><input type="radio" name="q5" value="3"> <span>Bergslagskyrka i den västra gruv- och skogsbygden.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>7. Vad är Stjärnviks herrgård?</legend>
+<label><input type="radio" name="q6" value="0"> <span>Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.</span></label>
+<label><input type="radio" name="q6" value="1"> <span>Bergslagskyrka i den västra gruv- och skogsbygden.</span></label>
+<label><input type="radio" name="q6" value="2"> <span>Vacker herrgård i bruksbygdens kulturlandskap.</span></label>
+<label><input type="radio" name="q6" value="3"> <span>Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>8. Vad är Sjön Tisnaren?</legend>
+<label><input type="radio" name="q7" value="0"> <span>Bergslagskyrka i den västra gruv- och skogsbygden.</span></label>
+<label><input type="radio" name="q7" value="1"> <span>Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom.</span></label>
+<label><input type="radio" name="q7" value="2"> <span>Grön park i brukets hjärta, längs vattnet mitt i staden.</span></label>
+<label><input type="radio" name="q7" value="3"> <span>Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.</span></label>
+</fieldset>
+<p><button type="button" id="lm-quiz-grade" class="cta">Rätta quizet →</button></p>
+<p id="lm-quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+</form>
+
+<section class="gate card" id="lm-quiz-gate" hidden>
+  <h2>Lås upp och dela ditt resultat</h2>
+  <p>Ange din e-post så får du ett delningsbart resultat — och nästa orts quiz när det släpps.</p>
+  <form id="lm-quiz-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler quiz och stadsvandringar (valfritt)</label>
+    <button type="submit" class="cta">Visa mitt resultat →</button>
+    <p id="lm-quiz-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-quiz-share" hidden>
+    <p id="lm-quiz-sharetext" class="sharetext"></p>
+    <button type="button" id="lm-quiz-copy" class="cta ghost">📋 Kopiera resultatet</button>
+  </div>
+</section>
+
+<h2 class="city-h">Facit &amp; källor</h2>
+<p class="muted">Rätt svar på alla frågor — öppna när du spelat klart.</p>
+<details class="faq"><summary>Vad är Finspångs slott?</summary><p>Praktfullt brukspalats i sten, byggt på kanongjutningens rikedom. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Finsp%C3%A5ngs_slott" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Bruksparken?</summary><p>Grön park i brukets hjärta, längs vattnet mitt i staden. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Finsp%C3%A5ng" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Rejmyre glasbruk?</summary><p>Anrikt glasbruk sedan 1810 — glashantverk du kan se och prova själv. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Reijmyre_glasbruk" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Rejmyre kyrka?</summary><p>Brukskyrkan i glasbrukssamhället Rejmyre. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Rejmyre_kyrka" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Sjön Glan?</summary><p>Stor sjö söder om Finspång, med bad, båtliv och fiske. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Glan%2C_%C3%96sterg%C3%B6tland" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Risinge gamla kyrka?</summary><p>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Risinge_gamla_kyrka" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Stjärnviks herrgård?</summary><p>Vacker herrgård i bruksbygdens kulturlandskap. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Stj%C3%A4rnvik" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Sjön Tisnaren?</summary><p>Klar, öländsk skogssjö i norr, på gränsen mot Södermanland. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Tisnaren" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/finspang/fakta">Faktabanken om Finspång</a> <a class="cta ghost" href="/stadsvandring/finspang">Stadsvandringen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -958,6 +958,143 @@ ${jsonld(crumbLd)}`;
   console.log('✓ leadmagnet M5 whitepaper (/for-kommuner)');
 }
 
+// ── Leadmagnet M2: quiz "Hur väl känner du <ort>?" (/stadsvandring/<ort>/quiz) ─
+// "Vad är X?"-frågor där rätt svar är platsens riktiga summary och distraktorerna
+// är ANDRA platsers riktiga summaries — inget påhittat, deterministiskt, inget API.
+// Spelbart utan konto; det delningsbara resultatet fångas via e-postgate (magnet
+// 'quiz'). Facit i collapsed <details> (indexerbart men spoilar ej spelaren).
+let quizCount = 0;
+for (const city of CITIES) {
+  const cityEntries = entries.filter(e => e.city === city);
+  if (cityEntries.length < 6) continue;
+  const citySlug = slug(city);
+  const ortEntry = cityEntries.find(e => e.category === 'ort') || null;
+  const quizStops = cityEntries.filter(e => e !== ortEntry && e.summary && e.coordinates?.lat);
+  if (quizStops.length < 5) continue;            // för få för ett vettigt quiz
+
+  const N = Math.min(8, quizStops.length);
+  const questions = [];
+  for (let i = 0; i < N; i++) {
+    const s = quizStops[i];
+    const distract = [quizStops[(i + 1) % quizStops.length], quizStops[(i + 2) % quizStops.length], quizStops[(i + 3) % quizStops.length]];
+    const correctPos = i % 4;
+    const options = []; let di = 0;
+    for (let p = 0; p < 4; p++) options.push(p === correctPos ? s : distract[di++]);
+    questions.push({
+      q: `Vad är ${s.name}?`,
+      correct: correctPos,
+      options: options.map(o => trunc(o.summary, 90)),
+      answer: trunc(s.summary, 90),
+      explain: s.summary, src: s.sources,
+    });
+  }
+  quizCount++;
+
+  const canonical = `${BASE}/stadsvandring/${citySlug}/quiz`;
+  const intro = `Tror du att du kan din ort? Testa ${N} frågor om ${city} — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsbara resultat.`;
+
+  const quizLd = {
+    '@context': 'https://schema.org', '@type': 'Quiz',
+    name: `Quiz: Hur väl känner du ${city}?`, about: { '@type': 'Place', name: city },
+    educationalLevel: 'beginner', url: canonical,
+    hasPart: questions.map(q => ({
+      '@type': 'Question', eduQuestionType: 'Multiple choice', name: q.q,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+      suggestedAnswer: q.options.map((o, i) => i === q.correct ? null : { '@type': 'Answer', text: o }).filter(Boolean),
+    })),
+  };
+  const faqLd = {
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: questions.map(q => ({ '@type': 'Question', name: q.q,
+      acceptedAnswer: { '@type': 'Answer', text: q.explain } })),
+  };
+  const crumbLd = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+      { '@type': 'ListItem', position: 2, name: `Stadsvandring i ${city}`, item: `${BASE}/stadsvandring/${citySlug}` },
+      { '@type': 'ListItem', position: 3, name: `Quiz om ${city}`, item: canonical },
+    ],
+  };
+
+  const lmData = { citySlug, cityName: city, sourceSlug: `stadsvandring/${citySlug}/quiz` };
+  const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
+
+  const quizHtml = questions.map((q, qi) => `<fieldset class="qq" data-q data-correct="${q.correct}">
+<legend>${qi + 1}. ${esc(q.q)}</legend>
+${q.options.map((o, oi) => `<label><input type="radio" name="q${qi}" value="${oi}"> <span>${esc(o)}</span></label>`).join('\n')}
+</fieldset>`).join('\n');
+
+  const facitHtml = questions.map(q => `<details class="faq"><summary>${esc(q.q)}</summary><p>${esc(q.explain)}${srcTag(q.src)}</p></details>`).join('\n');
+
+  const body = `
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/${citySlug}">Stadsvandring i ${esc(city)}</a> › Quiz</nav>
+<div class="badges no-print"><span class="badge">🧠 Quiz</span><span class="badge">📍 ${esc(city)}</span><span class="badge">${N} frågor</span></div>
+<h1>Quiz: Hur väl känner du ${esc(city)}?</h1>
+<p class="lead">${esc(intro)}</p>
+
+<form id="lm-quiz" class="quiz">
+${quizHtml}
+<p><button type="button" id="lm-quiz-grade" class="cta">Rätta quizet →</button></p>
+<p id="lm-quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+</form>
+
+<section class="gate card" id="lm-quiz-gate" hidden>
+  <h2>Lås upp och dela ditt resultat</h2>
+  <p>Ange din e-post så får du ett delningsbart resultat — och nästa orts quiz när det släpps.</p>
+  <form id="lm-quiz-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler quiz och stadsvandringar (valfritt)</label>
+    <button type="submit" class="cta">Visa mitt resultat →</button>
+    <p id="lm-quiz-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-quiz-share" hidden>
+    <p id="lm-quiz-sharetext" class="sharetext"></p>
+    <button type="button" id="lm-quiz-copy" class="cta ghost">📋 Kopiera resultatet</button>
+  </div>
+</section>
+
+<h2 class="city-h">Facit &amp; källor</h2>
+<p class="muted">Rätt svar på alla frågor — öppna när du spelat klart.</p>
+${facitHtml}
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/${citySlug}/fakta">Faktabanken om ${esc(city)}</a> <a class="cta ghost" href="/stadsvandring/${citySlug}">Stadsvandringen</a></p>`;
+
+  const head = `<style>
+.quiz .qq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:0 0 14px}
+.quiz legend{font-weight:600;padding:0 4px}
+.quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:9px;cursor:pointer;border:1px solid transparent}
+.quiz label:hover{background:#faf6ec}
+.quiz.graded label{cursor:default}
+.quiz .opt-correct{background:#e7f6ec;border-color:#1a7f37}
+.quiz .opt-wrong{background:#fdeceb;border-color:#b3261e}
+.quiz-result{font-size:20px;font-weight:700;color:var(--accent);margin:8px 0}
+.quiz .cta{border:0;cursor:pointer}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.sharetext{background:#faf6ec;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-style:italic}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+.src{font-size:13px;color:var(--muted)}.src a{color:var(--muted)}
+</style>
+${FAKTA_ASSETS}
+${jsonld(quizLd)}
+${jsonld(faqLd)}
+${jsonld(crumbLd)}`;
+
+  mkdirSync(join(lmDir, citySlug), { recursive: true });
+  writeFileSync(join(lmDir, citySlug, 'quiz.html'), page({
+    title: `Quiz: Hur väl känner du ${city}? | ${BRAND}`,
+    description: trunc(intro, 158),
+    canonical, head, body, bodyAttrs: 'data-lm-page="quiz"',
+  }));
+  urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly' });
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -1033,6 +1170,7 @@ console.log(`✓ platser.html`);
 console.log(`✓ en.html (engelsk hub, hreflang ↔ /)`);
 console.log(`✓ leadmagnet M1 (${lmCount} orter: teaser + gatad guide)`);
 console.log(`✓ leadmagnet M3 faktabank (${faktaCount} orter, publik AEO-yta)`);
+console.log(`✓ leadmagnet M2 quiz (${quizCount} orter)`);
 console.log(`✓ sitemap.xml (${urls.length} url:er)`);
 console.log(`✓ robots.txt`);
 console.log(`✓ llms.txt`);

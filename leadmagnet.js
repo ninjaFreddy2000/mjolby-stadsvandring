@@ -248,6 +248,67 @@ function initKommunGate(data) {
   });
 }
 
+// ── Quiz (M2) ──────────────────────────────────────────────────────────────
+// Frågorna är server-renderade (data-correct på varje fieldset) → spelbara och
+// läsbara utan JS. Här läggs rättning, poäng och e-postgaten för det delningsbara
+// resultatet (magnet_type 'quiz', meta {score,total}).
+function initQuiz(data) {
+  const root = document.getElementById('lm-quiz');
+  if (!root) return;
+  const fsets = [...root.querySelectorAll('[data-q]')];
+  const resultEl = document.getElementById('lm-quiz-result');
+  const gate = document.getElementById('lm-quiz-gate');
+
+  document.getElementById('lm-quiz-grade')?.addEventListener('click', () => {
+    let score = 0;
+    for (const fs of fsets) {
+      const correct = Number(fs.getAttribute('data-correct'));
+      const labels = [...fs.querySelectorAll('label')];
+      labels.forEach((l, i) => { l.classList.remove('opt-correct', 'opt-wrong'); if (i === correct) l.classList.add('opt-correct'); });
+      const chosen = fs.querySelector('input:checked');
+      if (chosen) { const ci = Number(chosen.value); if (ci === correct) score++; else labels[ci]?.classList.add('opt-wrong'); }
+    }
+    root.classList.add('graded');
+    if (resultEl) { resultEl.textContent = `Du fick ${score} av ${fsets.length} rätt!`; resultEl.hidden = false; }
+    if (gate) { gate.hidden = false; gate.setAttribute('data-score', String(score)); }
+    resultEl?.scrollIntoView({ block: 'center' });
+  });
+
+  const form = document.getElementById('lm-quiz-form');
+  const statusEl = document.getElementById('lm-quiz-status');
+  const share = document.getElementById('lm-quiz-share');
+  const setStatus = (msg, kind = '') => { if (statusEl) { statusEl.textContent = msg; statusEl.className = 'lm-status' + (kind ? ' ' + kind : ''); } };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.email?.value || '').trim();
+    const consent = !!form.consent?.checked;
+    const score = Number(gate?.getAttribute('data-score') || 0);
+    if (!email) { setStatus('Ange din e-postadress.', 'err'); return; }
+    if (!isConfigured()) { setStatus('Inloggning är inte konfigurerad ännu.', 'err'); return; }
+    const btn = form.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+    setStatus('Skickar…');
+    const sb = await getSupabase();
+    if (!sb) { setStatus('Kunde inte nå servern. Försök igen.', 'err'); if (btn) btn.disabled = false; return; }
+    const { error } = await sb.from('leads').insert({
+      email, magnet_type: 'quiz', city_slug: data?.citySlug || null,
+      source_slug: data?.sourceSlug || null, consent_marketing: consent,
+      meta: { score, total: fsets.length },
+    });
+    if (error) { setStatus('Något gick fel: ' + error.message, 'err'); if (btn) btn.disabled = false; return; }
+    const txt = `Jag fick ${score}/${fsets.length} på quizet "Hur väl känner du ${data?.cityName || ''}?" på stadsvandring.io${data?.sourceSlug ? ' — ' + location.origin + '/' + data.sourceSlug : ''}`;
+    const out = document.getElementById('lm-quiz-sharetext'); if (out) out.textContent = txt;
+    setStatus('Tack! Här är ditt delningsbara resultat:', 'ok');
+    form.hidden = true;
+    if (share) share.hidden = false;
+  });
+
+  document.getElementById('lm-quiz-copy')?.addEventListener('click', () => {
+    const txt = document.getElementById('lm-quiz-sharetext')?.textContent || '';
+    navigator.clipboard?.writeText(txt);
+  });
+}
+
 // ── Bootstrap ─────────────────────────────────────────────────────────────
 function start() {
   const page = document.body?.getAttribute('data-lm-page');
@@ -256,6 +317,7 @@ function start() {
   else if (page === 'guide') { initGuide(); }
   else if (page === 'fakta') { initFaktaGate(data); }
   else if (page === 'kommun') { initKommunGate(data); }
+  else if (page === 'quiz') { initQuiz(data); }
 }
 
 if (document.readyState === 'loading') {
