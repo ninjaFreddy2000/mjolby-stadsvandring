@@ -39,6 +39,9 @@ const esc = (s) => String(s ?? '')
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const attr = (s) => esc(s);
+// Bild-url kan vara self-hostad (relativ) eller en absolut Wikimedia-URL.
+const imgSrc = (u) => /^https?:\/\//.test(u) ? u : '/' + u;            // för <img src>
+const imgAbs = (u) => /^https?:\/\//.test(u) ? u : `${BASE}/${u}`;     // för og:image/schema
 const jsonld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 const trunc = (s, n) => { s = String(s || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; };
 const slug = (s) => String(s).toLowerCase()
@@ -249,7 +252,10 @@ for (const e of entries) {
   if (sames.length) ld.sameAs = sames;
   // Riktigt foto (Wikimedia, self-hostat) → og:image + schema.org image på sidan.
   const ex = EXTRA_IMAGES[e.id];
-  const photoUrl = ex ? `${BASE}/${ex.url}` : undefined;
+  // url kan vara antingen self-hostad (relativ) eller en absolut Wikimedia-URL.
+  const isAbs = ex && /^https?:\/\//.test(ex.url);
+  const photoUrl = ex ? (isAbs ? ex.url : `${BASE}/${ex.url}`) : undefined;  // absolut för og:image/schema
+  const photoSrc = ex ? (isAbs ? ex.url : `/${ex.url}`) : undefined;          // för <img src>
   if (photoUrl) ld.image = photoUrl;
 
   // JSON-LD: breadcrumb
@@ -279,7 +285,7 @@ for (const e of entries) {
     ${e.era ? `<span class="badge">${esc(e.era)}</span>` : ''}
   </div>
   <h1>${esc(e.name)}</h1>
-  ${photoUrl ? `<figure class="hero"><img src="/${attr(ex.url)}" alt="${attr(e.name)}" width="1280" loading="eager"${ex.focal ? ` style="object-position:${attr(ex.focal)}"` : ''}>${ex.attribution ? `<figcaption>📷 ${esc(ex.attribution)}</figcaption>` : ''}</figure>` : ''}
+  ${photoUrl ? `<figure class="hero"><img src="${attr(photoSrc)}" alt="${attr(e.name)}" width="1280" loading="eager" referrerpolicy="no-referrer"${ex.focal ? ` style="object-position:${attr(ex.focal)}"` : ''}>${ex.attribution ? `<figcaption>📷 ${esc(ex.attribution)}</figcaption>` : ''}</figure>` : ''}
   ${e.summary ? `<p class="lead">${esc(e.summary)}</p>` : ''}
   ${e.description ? `<div class="card"><p>${esc(e.description)}</p></div>` : ''}
   ${facts ? `<div class="card"><h2>Snabbfakta</h2><ul class="facts">${facts}</ul></div>` : ''}
@@ -559,7 +565,7 @@ for (const city of CITIES) {
   const ingress = ortEntry?.summary
     || `Upptäck ${city} till fots: ${stops.length} sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.`;
   const ld = imgFor(ortEntry || teaserStops[0] || {});
-  const ogImg = ld ? `${BASE}/${ld.url}` : `${BASE}/images/og.jpg`;
+  const ogImg = ld ? imgAbs(ld.url) : `${BASE}/images/og.jpg`;
 
   // FAQ — fristående, citerbara svar (AEO-bränsle + FAQPage-JSON-LD).
   const faqs = [];
@@ -613,7 +619,7 @@ for (const city of CITIES) {
   const stopCard = (s, i) => {
     const im = imgFor(s);
     return `<a class="tile" href="/p/${slug(s.id || s.name)}">` +
-      (im ? `<img src="/${attr(im.url)}" alt="${attr(s.name)}" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px">` : '') +
+      (im ? `<img src="${attr(imgSrc(im.url))}" referrerpolicy="no-referrer" alt="${attr(s.name)}" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px">` : '') +
       `<b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
   };
   const faqHtml = faqs.map(f => `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n');
@@ -679,7 +685,7 @@ ${jsonld(crumbLd)}`;
     return `<article class="card stop">
 <h3>${i + 1}. ${esc(s.name)}</h3>
 <div class="badges"><span class="badge">${esc(CAT_LABEL[s.category] || s.category || '')}</span>${s.era ? `<span class="badge">${esc(s.era)}</span>` : ''}</div>
-${im ? `<img src="/${attr(im.url)}" alt="${attr(s.name)}" loading="lazy" style="width:100%;max-height:280px;object-fit:cover;border-radius:10px;margin:4px 0 12px">` : ''}
+${im ? `<img src="${attr(imgSrc(im.url))}" referrerpolicy="no-referrer" alt="${attr(s.name)}" loading="lazy" style="width:100%;max-height:280px;object-fit:cover;border-radius:10px;margin:4px 0 12px">` : ''}
 <p>${esc(s.description || s.summary || '')}</p>
 ${facts}</article>`;
   };
