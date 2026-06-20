@@ -106,6 +106,13 @@ const TOURS = {
     sequence: ['bjalbo-kyrka','hogbystenen','skanninge-orten','varfrukyrkan-skanninge',
                'sta-ingrids-kloster','ture-lang','svaneholms-borgruin'],
   },
+  // Generisk "Centrumslinga" för orter utan egen kurerad tur: bara de centrala
+  // stoppen (≤3 km från ortens centrum, ≥4 st), ordnade som en promenadslinga.
+  // CENTRAL_BY_CITY (id-lista per stad, redan ordnad) fylls i init().
+  centrum: {
+    generic: true,
+    test: e => { const ids = CENTRAL_BY_CITY[cityOf(e)]; return !!ids && ids.indexOf(e.id) >= 0; },
+  },
 };
 
 /* ---------- Demo sponsor offers (prototype illustration) ---------- */
@@ -155,6 +162,43 @@ const QUIZZES = {
 /* ---------- State ---------- */
 let DATA = [], ENTRIES = [], markersById = {};
 let map, markerLayer, plainLayer, routeLayer, meMarker;
+// Generisk centrumslinga: id-lista (redan promenadordnad) per stad. Fylls i init().
+let CENTRAL_BY_CITY = {};
+const CURATED_TOUR_CITIES = new Set(['Mjölby']);   // har egna kurerade turer → ingen generisk
+const CENTRAL_RADIUS_KM = 3, CENTRAL_MIN_STOPS = 4;
+function distKm(a, b){
+  if (!a || !b) return Infinity;
+  const R = 6371, r = x => x*Math.PI/180;
+  const dLat = r(b.lat-a.lat), dLng = r(b.lng-a.lng);
+  const s = Math.sin(dLat/2)**2 + Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s));
+}
+// Girig närmaste-granne-ordning från en startpunkt → en rimlig promenadslinga.
+function nearestNeighborOrder(items, start){
+  const left = items.slice(), out = []; let cur = start;
+  while (left.length){
+    let bi = 0, bd = Infinity;
+    left.forEach((e,i)=>{ const d = distKm(cur, e.coordinates); if (d < bd){ bd = d; bi = i; } });
+    cur = left[bi].coordinates; out.push(left.splice(bi,1)[0]);
+  }
+  return out;
+}
+// Bygg CENTRAL_BY_CITY: per stad (ej kurerad) de centrala stoppen, promenadordnade.
+function computeCentralTours(){
+  CENTRAL_BY_CITY = {};
+  const byCity = {};
+  ENTRIES.forEach(e => { const c = cityOf(e); (byCity[c] = byCity[c] || []).push(e); });
+  for (const [city, arr] of Object.entries(byCity)){
+    if (CURATED_TOUR_CITIES.has(city)) continue;
+    const ortE = arr.find(e => e.category === 'ort');
+    const centre = ortE ? ortE.coordinates
+      : { lat: arr.reduce((s,e)=>s+e.coordinates.lat,0)/arr.length, lng: arr.reduce((s,e)=>s+e.coordinates.lng,0)/arr.length };
+    const central = arr.filter(e => distKm(e.coordinates, centre) <= CENTRAL_RADIUS_KM);
+    if (central.length >= CENTRAL_MIN_STOPS){
+      CENTRAL_BY_CITY[city] = nearestNeighborOrder(central, centre).map(e => e.id);
+    }
+  }
+}
 const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
@@ -285,6 +329,7 @@ async function init() {
   // Filtrera bort demo-/testdata ur hela appen (karta, städer, berättelser).
   DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
   ENTRIES = DATA.filter(hasCoords);
+  computeCentralTours();   // generiska centrumslingor per ort (för icke-kurerade städer)
 
   // Evenemang per ort (build-tids-hämtade från respektive Visit-sida). Stads-nycklat
   // objekt: { "Mjölby": {source,sourceUrl,fetched,events:[…]}, "Motala": {…}, … }.
@@ -427,6 +472,12 @@ function renderMarkers(){
 
 function orderedTourEntries(tourKey){
   const t = TOURS[tourKey];
+  // Generisk centrumslinga: använd den förberäknade, redan ordnade id-listan för
+  // den AKTIVA staden (annars skulle DATA.filter(test) blanda flera städer).
+  if (t.generic){
+    const ids = CENTRAL_BY_CITY[activeCity] || [];
+    return ids.map(id => DATA.find(e => e.id === id)).filter(Boolean);
+  }
   let list = DATA.filter(t.test);
   if (t.sequence){
     const idx = id => { const i = t.sequence.indexOf(id); return i<0?99:i; };
