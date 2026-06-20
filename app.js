@@ -1714,7 +1714,7 @@ function renderProfil(){
     <h3 class="prof-h">Stadsvandring.io</h3>
     <button class="fb-cta" id="prof-cities">🗺️ ${lang==='en'?'Choose a town':'Välj stad'}</button>
     <a class="fb-cta" href="/blogg">📰 ${lang==='en'?'Read the blog':'Läs bloggen'}</a>
-    <a class="fb-cta" href="/om-oss">ℹ️ ${lang==='en'?'About us':'Om oss'}</a>
+    <a class="fb-cta" href="/">ℹ️ ${lang==='en'?'About us':'Om oss'}</a>
     <div class="prof-social">
       <span class="prof-social__label">${lang==='en'?'Follow us':'Följ oss'}</span>
       <button class="soc-btn-app" data-soc="1" aria-label="Facebook — ${lang==='en'?'coming soon':'kommer snart'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.3l.4-2.8h-2.7V9.4c0-.8.3-1.4 1.5-1.4h1.3V5.1c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v2.2H7.7V14h2.2v7h3.6Z"/></svg></button>

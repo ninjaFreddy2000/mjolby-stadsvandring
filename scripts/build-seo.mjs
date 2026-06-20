@@ -203,7 +203,7 @@ figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
 ${body}
 <footer class="site">
 ${footerHtml || `  <p><strong>${esc(BRAND)}</strong> — guidade stadsvandringar i ${esc(CITIES.join(', '))}. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
-  <p><a href="/">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>`}
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>`}
 </footer>
 </div>
 </body>
@@ -218,9 +218,9 @@ mkdirSync(placeDir, { recursive: true });
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${BASE}/karta`, priority: '0.6', changefreq: 'weekly' },   // appen (kartan/PWA)
   { loc: `${BASE}/platser`, priority: '0.8', changefreq: 'weekly' },
   // Fristående marknadsföringssidor ("skyltfönstret") — handskrivna, ingår i sitemap.
-  { loc: `${BASE}/om-oss`, priority: '0.9', changefreq: 'monthly' },
   { loc: `${BASE}/bidra`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${BASE}/partners`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${BASE}/orter`, priority: '0.7', changefreq: 'monthly' },
@@ -285,7 +285,7 @@ for (const e of entries) {
   ${facts ? `<div class="card"><h2>Snabbfakta</h2><ul class="facts">${facts}</ul></div>` : ''}
   ${eventsSectionHtml(e)}
   <p>
-    <a class="cta" href="/">Visa på kartan</a>
+    <a class="cta" href="/karta">Visa på kartan</a>
     <a class="cta ghost" href="/platser">Alla platser i ${esc(e.city || SITE_NAME)}</a>
   </p>
   ${nearbyHtml}
@@ -322,7 +322,7 @@ ${Object.entries(byCity).map(([city, list]) => `
 <div class="grid two">
 ${list.map(e => `<a class="tile" href="/p/${slug(e.id || e.name)}"><b>${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.era ? ' · ' + esc(e.era) : ''}</span></a>`).join('\n')}
 </div>`).join('\n')}
-<p style="margin-top:30px"><a class="cta" href="/">Öppna kartan &amp; appen</a></p>`;
+<p style="margin-top:30px"><a class="cta" href="/karta">Öppna kartan &amp; appen</a></p>`;
 
 const indexLd = {
   '@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -372,7 +372,7 @@ const omBody = `
 </div>
 <h2 class="city-h">Vanliga frågor</h2>
 ${faqs.map(f => `<div class="card"><h2>${esc(f.q)}</h2><p>${esc(f.a)}</p></div>`).join('\n')}
-<p style="margin-top:24px"><a class="cta" href="/">Öppna kartan &amp; appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
+<p style="margin-top:24px"><a class="cta" href="/karta">Öppna kartan &amp; appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
 writeFileSync(join(ROOT, 'om.html'), page({
   title: `Om Stadsvandring.io – Guidade stadsvandringar i ${CITIES[0]} | Vanliga frågor`,
   description: trunc(`Vad är Stadsvandring.io? En gratis webbapp för guidade stadsvandringar i ${CITIES.join(', ')} med karta, berättelser, stämplar och quiz. Svar på vanliga frågor.`, 158),
@@ -415,7 +415,7 @@ const enBody = `
 <p class="lead">Stadsvandring.io is a free web app (PWA) for self-guided walking tours in ${esc(CITIES.join(', '))} and the surrounding Östergötland countryside. Explore ${entries.length} sights, buildings, people and historic events one place at a time — with an interactive map, walking routes, collectible stamps and quizzes.</p>
 <div class="card">
   <p>No installation needed: Stadsvandring.io runs straight in your browser on phone and desktop, and you can switch between <strong>English and Swedish</strong> at any time inside the app. Below is an English overview of every place. The full place articles are written in Swedish — open the app and tap the flag to read them in English.</p>
-  <p style="margin:14px 0 0"><a class="cta" href="/">Open the map &amp; app</a> <a class="cta ghost" href="/platser">All places (Swedish)</a></p>
+  <p style="margin:14px 0 0"><a class="cta" href="/karta">Open the map &amp; app</a> <a class="cta ghost" href="/platser">All places (Swedish)</a></p>
 </div>
 <h2 class="city-h">Walking tours</h2>
 <div class="grid">
@@ -430,7 +430,7 @@ ${list.map(e => {
   return `  <div class="tile"><b>${esc(e.name)}</b><span>${esc(cat)}${s ? ' · ' + esc(s) : ''}</span></div>`;
 }).join('\n')}
 </div>`).join('\n')}
-<p style="margin-top:30px"><a class="cta" href="/">Open the map &amp; app</a></p>`;
+<p style="margin-top:30px"><a class="cta" href="/karta">Open the map &amp; app</a></p>`;
 
 const enLd = {
   '@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -445,7 +445,7 @@ const enLd = {
   },
 };
 const enFooter = `  <p><strong>${esc(BRAND)}</strong> — self-guided walking tours in ${esc(CITIES.join(', '))}, Sweden. Discover sights, history and stories one place at a time.</p>
-  <p><a href="/">Open the map &amp; app</a> · <a href="/">Svenska</a></p>`;
+  <p><a href="/karta">Open the map &amp; app</a> · <a href="/">Svenska</a></p>`;
 writeFileSync(join(ROOT, 'en.html'), page({
   title: `Mjölby walking tours — self-guided city walks in Sweden | ${BRAND}`,
   description: trunc(`Free self-guided walking tours in ${CITIES.join(', ')}, Sweden. ${entries.length} sights, buildings and historic places with a map, routes, stamps and quizzes. In English and Swedish.`, 158),
@@ -509,7 +509,7 @@ for (const t of TOURS) {
 <div class="card"><p>${esc(t.intro)}</p></div>
 <h2 class="city-h">Stopp längs vägen</h2>
 <div class="grid">${stopsHtml}</div>
-<p style="margin-top:24px"><a class="cta" href="/">Starta vandringen i appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
+<p style="margin-top:24px"><a class="cta" href="/karta">Starta vandringen i appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
   writeFileSync(join(turDir, `${t.slug}.html`), page({
     title: `${t.name} – guidad stadsvandring i ${t.area} | ${BRAND}`,
     description: trunc(`${t.sub} ${t.stops.length} stopp med karta, berättelser och quiz i ${BRAND}.`, 158),
@@ -644,7 +644,7 @@ ${teaserStops.map(stopCard).join('\n')}
 <h2 class="city-h">Vanliga frågor</h2>
 ${faqHtml}
 
-<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/">Öppna kartan &amp; appen</a></p>`;
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>`;
 
   const lmHead = `<style>
 .lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}

@@ -18,8 +18,8 @@ export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable
 // Vilken stad denna installation gäller (matchar data.json-id:n och tips.city).
 export const APP_CITY = 'mjolby';
 
-// Publik dela-URL (återanvänds av profil/dela).
-export const SHARE_URL = 'https://stadsvandring.io/';
+// Publik dela-URL (återanvänds av profil/dela). Appen bor på /karta; webbplatsen på roten.
+export const SHARE_URL = 'https://stadsvandring.io/karta';
 
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 

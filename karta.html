@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <!-- Content Security Policy (defense-in-depth mot XSS + supply chain). GitHub Pages
+       kan inte sätta HTTP-headers, så vi sätter den via meta (på Vercel sätts den även
+       som riktig header via vercel.json). script-src är 'self' — ALL JS (Leaflet,
+       supabase-js, qrcode) är nu vendor:ad lokalt, ingen tredjeparts-CDN i runtime.
+       Kvar externt: Google Fonts (CSS+filer) + OpenStreetMap-kartrutor + Supabase (API).
+       OBS: frame-ancestors/clickjacking-skydd kräver HTTP-header — sätts via vercel.json. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    base-uri 'self';
+    object-src 'none';
+    form-action 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org https://*.supabase.co;
+    connect-src 'self' https://*.supabase.co wss://*.supabase.co https://routing.openstreetmap.de;
+    worker-src 'self';
+    manifest-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F3EAD8">
+  <title>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</title>
+  <meta name="description" content="Upptäck Mjölby, Skänninge och Bjälbo en plats i taget — guidade stadsvandringar med karta, berättelser, stämplar och quiz. 47 sevärdheter och historiska platser i Östergötland.">
+  <meta name="google-site-verification" content="t_PqUAXYqyMRIV-S37225fo6P3xIQeQ9G5coLkvull8">
+  <link rel="canonical" href="https://stadsvandring.io/karta">
+  <link rel="alternate" hreflang="sv" href="https://stadsvandring.io/karta">
+  <link rel="alternate" hreflang="en" href="https://stadsvandring.io/en">
+  <link rel="alternate" hreflang="x-default" href="https://stadsvandring.io/karta">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <!-- Open Graph / Twitter (länkförhandsvisningar + en del AI/SERP-thumbnails) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stadsvandring">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta property="og:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz. Upptäck sevärdheter och historiska platser i Mjölby, Skänninge och Bjälbo.">
+  <meta property="og:url" content="https://stadsvandring.io/karta">
+  <meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
+  <meta name="twitter:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz i Mjölby, Skänninge och Bjälbo.">
+  <meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+  <!-- Strukturerad data (JSON-LD är icke-exekverbar data → tillåten av script-src 'self') -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Stadsvandring.io","alternateName":"Stadsvandring","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Guidade stadsvandringar i Mjölby, Skänninge och Bjälbo med karta, berättelser, stämplar och quiz."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stadsvandring.io","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","areaServed":"Mjölby, Östergötland, Sverige"}</script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="vendor/leaflet/markercluster.css">
+  <link rel="stylesheet" href="vendor/leaflet/markercluster-default.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <a class="skip-link" href="#map">Hoppa till innehållet</a>
+ <div id="app">
+  <noscript>
+    <div style="max-width:760px;margin:0 auto;padding:24px 20px;font-family:system-ui,sans-serif;color:#1b2a4a">
+      <h1>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</h1>
+      <p>Stadsvandring.io är en guidad stadsvandring som låter dig upptäcka Mjölby, Skänninge och Bjälbo en plats i taget — med karta, berättelser, stämplar och quiz. Appen kräver JavaScript, men du kan läsa om alla platser här:</p>
+      <p><a href="/platser"><strong>➜ Bläddra bland alla 47 sevärdheter och historiska platser</strong></a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+      <p>Guidade vandringsturer: <a href="/tur/central">Centrala vandringen</a> (Mjölby, ca 2 km) och <a href="/tur/medeltidsringen">Medeltidsringen</a> (Skänninge &amp; Bjälbo).</p>
+      <p>Bland platserna finns <a href="/p/mjolby-kyrka">Mjölby kyrka</a>, <a href="/p/svartan">Svartån</a>, <a href="/p/stora-torget">Stora torget</a>, <a href="/p/skanninge-mote-1248">Skänninge möte 1248</a> och <a href="/p/bjalbo-kyrka">Bjälbo kyrka</a> — kvarnbyn vid Svartån som blev järnvägsknut och regioncentrum i sydvästra Östergötland.</p>
+    </div>
+  </noscript>
+  <div class="accent-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header class="topbar header-hero">
+    <div class="top-actions">
+      <div class="lang-switch" id="lang-switch" role="group" aria-label="Språk / Language">
+        <button class="flag-btn" data-lang="sv" aria-label="Svenska" title="Svenska">🇸🇪</button>
+        <button class="flag-btn" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+      </div>
+      <button id="stories-btn" class="icon-btn" aria-label="Alla berättelser" title="Personer & berättelser">📖</button>
+      <button id="progress-btn" class="progress-btn" aria-label="Min progress">
+        <span id="stamp-count">0</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+      </button>
+    </div>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM10 22l2-6 3 2v4m-1-11-3 1.5L9 16"/></svg>
+      </span>
+      <div>
+        <h1>Stadsvandring.io</h1>
+        <p id="brand-sub">Mjölby</p>
+      </div>
+    </div>
+  </header>
+
+  <div id="explore">
+    <div class="sidebar" id="sidebar">
+      <button class="tellerbar" id="tellerbar" hidden></button>
+      <nav class="tours" id="tours" aria-label="Vandringar"></nav>
+      <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
+    </div>
+    <main id="map" aria-label="Karta" tabindex="-1"></main>
+    <button class="next-stop-btn" id="next-stop-btn" hidden>🧭 <span id="next-stop-label">Till nästa plats</span></button>
+  </div>
+
+  <section id="screen" hidden aria-label="Vy"></section>
+
+  <nav class="tabbar" id="tabbar" aria-label="Huvudmeny"></nav>
+
+  <!-- Stop detail sheet -->
+  <section class="sheet" id="sheet" aria-hidden="true" aria-modal="true" role="dialog">
+    <span class="sheet-grip" aria-hidden="true"></span>
+    <button class="sheet-close" id="sheet-close" aria-label="Stäng">&times;</button>
+    <button class="save-btn" id="save-btn" aria-label="Spara">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z" fill="currentColor"/></svg>
+    </button>
+    <div class="sheet-inner" id="sheet-inner"></div>
+  </section>
+
+  <!-- Tour panel -->
+  <section class="panel" id="tour-panel" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="tour-title"></h2>
+      <button class="panel-close" id="tour-close" aria-label="Stäng">&times;</button>
+    </div>
+    <p class="panel-sub" id="tour-sub"></p>
+    <button class="cta tour-start" id="tour-start">▶&nbsp; <span id="tour-start-label">Starta vandringen</span></button>
+    <button class="quest-toggle" id="quest-toggle" aria-pressed="false">🗺️ Quest-läge</button>
+    <ol class="stop-list" id="tour-stops"></ol>
+    <button class="cta" id="tour-quiz-btn">Testa dina kunskaper — quiz</button>
+  </section>
+
+  <!-- Stories / people panel -->
+  <section class="panel" id="stories-panel" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Personer &amp; berättelser</h2>
+      <button class="panel-close" id="stories-close" aria-label="Stäng">&times;</button>
+    </div>
+    <p class="panel-sub">Alla platser, personer och händelser — även de som inte har en egen nål på kartan.</p>
+    <div class="stories-search"><input id="stories-q" type="search" placeholder="Sök…" aria-label="Sök berättelser"></div>
+    <ol class="stop-list" id="stories-list"></ol>
+  </section>
+
+  <!-- Progress / stamps panel -->
+  <section class="panel" id="progress-panel" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Mina stämplar</h2>
+      <button class="panel-close" id="progress-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div id="progress-body"></div>
+  </section>
+
+  <!-- Sponsor / value dashboard -->
+  <section class="panel" id="sponsor-panel" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Sponsorpanel</h2>
+      <button class="panel-close" id="sponsor-close" aria-label="Stäng">&times;</button>
+    </div>
+    <p class="panel-sub">Det här betalar en sponsor för: <b>mätbar fottrafik</b>. Varje incheckning i ett affärsstopp räknas automatiskt.</p>
+    <div id="sponsor-body"></div>
+  </section>
+
+  <!-- Quiz overlay -->
+  <section class="quiz" id="quiz" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="quiz-card" id="quiz-card"></div>
+  </section>
+
+  <!-- Storyteller overlay (intro + röstprofil) -->
+  <section class="teller" id="teller" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="teller-card" id="teller-card"></div>
+  </section>
+
+  <!-- Feedback ("Tyck till") -->
+  <section class="fb" id="feedback" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="fb-card"></div>
+  </section>
+
+  <!-- Bidra (contribute photo/text) -->
+  <section class="fb" id="contribute" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="contrib-card"></div>
+  </section>
+
+  <!-- Granska förslag (review) -->
+  <section class="fb" id="review" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="review-card"></div>
+  </section>
+
+  <!-- Logga in / skapa konto -->
+  <section class="fb" id="auth" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="auth-card"></div>
+  </section>
+
+  <!-- Admin-dashboard (endast admin) -->
+  <section class="fb" id="admin" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="admin-card"></div>
+  </section>
+
+  <!-- Installera som app — guide (öppen för alla) -->
+  <section class="fb" id="install" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="fb-card" id="install-card"></div>
+  </section>
+
+  <!-- Stadsutmaning: byggare (arrangör) -->
+  <section class="panel" id="challenge-builder" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cb-title">Stadsutmaning</h2>
+      <button class="panel-close" id="cb-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cb-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: spelläge (elev) -->
+  <section class="panel" id="challenge-play" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cp-title">Stadsutmaning</h2>
+      <button class="panel-close" id="cp-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cp-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: resultat / topplista (arrangör) -->
+  <section class="panel" id="challenge-results" aria-hidden="true">
+    <div class="panel-head">
+      <h2 id="cr-title">Resultat</h2>
+      <button class="panel-close" id="cr-close" aria-label="Stäng">&times;</button>
+    </div>
+    <div class="ch-scroll" id="cr-body"></div>
+  </section>
+
+  <!-- Stadsutmaning: uppgiftsmodal -->
+  <section class="ch-task" id="challenge-task" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="ch-task-modal" id="ct-card"></div>
+  </section>
+
+  <!-- Landningssida: välj/sök stad (visas vid första besök) -->
+  <section class="landing" id="landing" aria-hidden="true">
+    <div class="landing-card" id="landing-card"></div>
+  </section>
+
+  <!-- PWA-installprompt (visas när webbläsaren signalerar installerbarhet) -->
+  <div class="install-banner" id="install-banner" hidden>
+    <span class="ib-icon" aria-hidden="true">📲</span>
+    <div class="ib-text"><b id="ib-title">Installera Stadsvandring.io</b><small id="ib-sub"></small></div>
+    <button class="ib-install" id="ib-install">Installera</button>
+    <button class="ib-x" id="ib-x" aria-label="Stäng">&times;</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ </div>
+
+  <!-- defer: laddas parallellt under HTML-parse, exekveras i dokumentordning före app.js-modulen
+       (som också är deferred) → L/markercluster/QR finns när app.js kör, men app-start fördröjs ej. -->
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script src="vendor/leaflet/markercluster.js" defer></script>
+  <script src="vendor/qrcode.js" defer></script>
+  <!-- supabase-js vendor:ad lokalt (UMD → window.supabase). Inga tredjeparts-CDN i runtime. -->
+  <script src="vendor/supabase.js" defer></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

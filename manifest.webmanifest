@@ -1,10 +1,10 @@
 {
-  "id": "/",
+  "id": "/karta",
   "name": "Stadsvandring.io",
   "short_name": "Stadsvandring.io",
   "description": "Upptäck Mjölby, Skänninge och Bjälbo — en plats i taget. Karta, vandringar, stämplar och quiz.",
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "/karta",
+  "scope": "/karta",
   "display": "standalone",
   "orientation": "portrait",
   "dir": "ltr",
@@ -21,21 +21,21 @@
       "name": "Starta en vandring",
       "short_name": "Vandra",
       "description": "Visa vandringsleder",
-      "url": "./?tab=routes",
+      "url": "/karta?tab=routes",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Välj stad",
       "short_name": "Städer",
       "description": "Byt stad att utforska",
-      "url": "./?tab=cities",
+      "url": "/karta?tab=cities",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Sparade platser",
       "short_name": "Sparat",
       "description": "Dina sparade platser",
-      "url": "./?tab=saved",
+      "url": "/karta?tab=saved",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]

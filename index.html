@@ -2,12 +2,6 @@
 <html lang="sv">
 <head>
   <meta charset="utf-8">
-  <!-- Content Security Policy (defense-in-depth mot XSS + supply chain). GitHub Pages
-       kan inte sätta HTTP-headers, så vi sätter den via meta (på Vercel sätts den även
-       som riktig header via vercel.json). script-src är 'self' — ALL JS (Leaflet,
-       supabase-js, qrcode) är nu vendor:ad lokalt, ingen tredjeparts-CDN i runtime.
-       Kvar externt: Google Fonts (CSS+filer) + OpenStreetMap-kartrutor + Supabase (API).
-       OBS: frame-ancestors/clickjacking-skydd kräver HTTP-header — sätts via vercel.json. -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     base-uri 'self';
@@ -16,243 +10,485 @@
     script-src 'self';
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' data: blob: https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org https://*.supabase.co;
-    connect-src 'self' https://*.supabase.co wss://*.supabase.co https://routing.openstreetmap.de;
-    worker-src 'self';
+    img-src 'self' data: blob:;
+    connect-src 'self';
     manifest-src 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#F3EAD8">
-  <title>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</title>
-  <meta name="description" content="Upptäck Mjölby, Skänninge och Bjälbo en plats i taget — guidade stadsvandringar med karta, berättelser, stämplar och quiz. 47 sevärdheter och historiska platser i Östergötland.">
-  <meta name="google-site-verification" content="t_PqUAXYqyMRIV-S37225fo6P3xIQeQ9G5coLkvull8">
+  <title>Stadsvandring.io – Upptäck din stad, en berättelse i taget</title>
+  <meta name="description" content="Stadsvandring.io är en gratis webbapp som väcker lokalhistorien till liv – till fots. Karta med fyra sorters stopp, en lokal berättare, stämplar och quiz. Vi började i Mjölby och växer ort för ort.">
   <link rel="canonical" href="https://stadsvandring.io/">
-  <link rel="alternate" hreflang="sv" href="https://stadsvandring.io/">
-  <link rel="alternate" hreflang="en" href="https://stadsvandring.io/en">
-  <link rel="alternate" hreflang="x-default" href="https://stadsvandring.io/">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-  <!-- Open Graph / Twitter (länkförhandsvisningar + en del AI/SERP-thumbnails) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stadsvandring">
   <meta property="og:locale" content="sv_SE">
-  <meta property="og:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
-  <meta property="og:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz. Upptäck sevärdheter och historiska platser i Mjölby, Skänninge och Bjälbo.">
+  <meta property="og:title" content="Stadsvandring.io – Upptäck din stad, en berättelse i taget">
+  <meta property="og:description" content="En varm, gratis webbapp som får ut folk i sina egna städer – till fots. Karta, berättelser, stämplar och quiz. Vi började i Mjölby.">
   <meta property="og:url" content="https://stadsvandring.io/">
   <meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland">
-  <meta name="twitter:description" content="Guidade stadsvandringar med karta, berättelser, stämplar och quiz i Mjölby, Skänninge och Bjälbo.">
+  <meta name="twitter:title" content="Stadsvandring.io – Upptäck din stad, en berättelse i taget">
+  <meta name="twitter:description" content="En varm, gratis webbapp som får ut folk i sina egna städer – till fots. Karta, berättelser, stämplar och quiz.">
   <meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
-  <!-- Strukturerad data (JSON-LD är icke-exekverbar data → tillåten av script-src 'self') -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Stadsvandring.io","alternateName":"Stadsvandring","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Guidade stadsvandringar i Mjölby, Skänninge och Bjälbo med karta, berättelser, stämplar och quiz."}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stadsvandring.io","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","areaServed":"Mjölby, Östergötland, Sverige"}</script>
-  <link rel="manifest" href="manifest.webmanifest">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stadsvandring.io","url":"https://stadsvandring.io/","logo":"https://stadsvandring.io/icons/icon-512.png","description":"Gratis webbapp för guidade stadsvandringar. Vi får ut folk i sina egna städer – till fots – och låter lokalhistorien komma till liv där den faktiskt hände.","areaServed":"Mjölby, Östergötland, Sverige","email":"hej@stadsvandring.io","sameAs":["https://stadsvandring.io/"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Stadsvandring.io","url":"https://stadsvandring.io/","inLanguage":"sv-SE","description":"Gratis webbapp för guidade stadsvandringar i svenska städer och byar — karta, berättelser, stämplar och quiz."}</script>
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="vendor/leaflet/markercluster.css">
-  <link rel="stylesheet" href="vendor/leaflet/markercluster-default.css">
+  <link rel="icon" href="icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="webbsida.css">
 </head>
 <body>
- <a class="skip-link" href="#map">Hoppa till innehållet</a>
- <div id="app">
-  <noscript>
-    <div style="max-width:760px;margin:0 auto;padding:24px 20px;font-family:system-ui,sans-serif;color:#1b2a4a">
-      <h1>Stadsvandring.io – Stadsvandringar i Mjölby &amp; Östergötland</h1>
-      <p>Stadsvandring.io är en guidad stadsvandring som låter dig upptäcka Mjölby, Skänninge och Bjälbo en plats i taget — med karta, berättelser, stämplar och quiz. Appen kräver JavaScript, men du kan läsa om alla platser här:</p>
-      <p><a href="/platser"><strong>➜ Bläddra bland alla 47 sevärdheter och historiska platser</strong></a> · <a href="/om">Om &amp; vanliga frågor</a></p>
-      <p>Guidade vandringsturer: <a href="/tur/central">Centrala vandringen</a> (Mjölby, ca 2 km) och <a href="/tur/medeltidsringen">Medeltidsringen</a> (Skänninge &amp; Bjälbo).</p>
-      <p>Bland platserna finns <a href="/p/mjolby-kyrka">Mjölby kyrka</a>, <a href="/p/svartan">Svartån</a>, <a href="/p/stora-torget">Stora torget</a>, <a href="/p/skanninge-mote-1248">Skänninge möte 1248</a> och <a href="/p/bjalbo-kyrka">Bjälbo kyrka</a> — kvarnbyn vid Svartån som blev järnvägsknut och regioncentrum i sydvästra Östergötland.</p>
-    </div>
-  </noscript>
-  <div class="accent-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
-  <header class="topbar header-hero">
-    <div class="top-actions">
-      <div class="lang-switch" id="lang-switch" role="group" aria-label="Språk / Language">
-        <button class="flag-btn" data-lang="sv" aria-label="Svenska" title="Svenska">🇸🇪</button>
-        <button class="flag-btn" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+<a class="skip-link" href="#huvudinnehall">Hoppa till innehållet</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Stadsvandring.io – startsida">
+      <span class="brand__mark" aria-hidden="true">S</span>
+      <span class="brand__name">Stadsvandring<span class="dot">.io</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Huvudmeny">
+      <a class="nav-link" href="/" aria-current="page">Hem</a>
+      <a class="nav-link" href="/bidra">Bidra</a>
+      <a class="nav-link" href="/partners">Partners</a>
+      <a class="nav-link" href="/orter">Lägg till din ort</a>
+      <a class="btn btn--primary btn--md" href="/karta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5-2V4l5 2 6-2 5 2v14l-5-2-6 2z"/><path d="M9 6v14M15 4v14"/></svg>
+        Öppna appen
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="huvudinnehall">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-rubrik">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__cloud hero__cloud--1" aria-hidden="true"></div>
+    <div class="hero__cloud hero__cloud--2" aria-hidden="true"></div>
+    <svg class="hero__landscape" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0 150 Q360 90 720 130 T1440 110 V360 H0Z" fill="#D9E5C9"></path>
+      <path d="M-20 230 C 200 200 360 280 640 270 S 1100 220 1460 280" fill="none" stroke="#BBD7E7" stroke-width="46" stroke-linecap="round" opacity=".9"></path>
+      <path d="M0 210 Q380 160 760 200 T1440 185 V360 H0Z" fill="#C6DBB1"></path>
+      <path d="M0 280 Q420 245 820 280 T1440 270 V360 H0Z" fill="#B4D09C"></path>
+      <path d="M700 360 C 690 320 760 300 740 270 S 690 235 720 205" fill="none" stroke="#E7D6B0" stroke-width="26" stroke-linecap="round"></path>
+      <g>
+        <rect x="150" y="206" width="62" height="52" rx="4" fill="#FBF4E6"></rect>
+        <path d="M144 208l37-26 37 26z" fill="#AC3F22"></path>
+        <rect x="166" y="224" width="14" height="14" fill="#3E78A8" opacity=".5"></rect>
+        <rect x="232" y="222" width="52" height="40" rx="4" fill="#FBF4E6"></rect>
+        <path d="M226 224l32-22 32 22z" fill="#C9663F"></path>
+      </g>
+      <g>
+        <rect x="1040" y="200" width="58" height="62" rx="4" fill="#FBF4E6"></rect>
+        <path d="M1034 202l35-30 35 30z" fill="#9A3B52"></path>
+        <rect x="1062" y="150" width="16" height="54" fill="#FBF4E6"></rect>
+        <path d="M1058 150l12-26 12 26z" fill="#9A3B52"></path>
+        <rect x="1067" y="120" width="6" height="14" fill="#E0A331"></rect>
+      </g>
+      <g>
+        <rect x="1180" y="222" width="56" height="42" rx="4" fill="#FBF4E6"></rect>
+        <path d="M1174 224l34-22 34 22z" fill="#AC3F22"></path>
+      </g>
+      <g>
+        <rect x="356" y="232" width="7" height="22" fill="#7A5B3A"></rect><circle cx="359" cy="222" r="18" fill="#5E8C53"></circle>
+        <rect x="980" y="236" width="7" height="22" fill="#7A5B3A"></rect><circle cx="983" cy="226" r="16" fill="#6B9A5C"></circle>
+        <rect x="560" y="246" width="6" height="18" fill="#7A5B3A"></rect><circle cx="563" cy="238" r="13" fill="#5E8C53"></circle>
+      </g>
+    </svg>
+
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Gratis webbapp · ingen nedladdning</span>
+        <h1 id="hero-rubrik">Upptäck din stad — <span class="accent">en berättelse i taget.</span></h1>
+        <p class="hero__sub">Strosa runt bland sevärdheter, byggnader och historier på en levande karta. Lyssna på din lokala berättare, samla stämplar längs vägen och testa dig själv med quiz.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="/karta">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5-2V4l5 2 6-2 5 2v14l-5-2-6 2z"/><path d="M9 6v14M15 4v14"/></svg>
+            Öppna kartan
+          </a>
+          <a class="btn btn--outline btn--lg" href="#sa-funkar">
+            Se hur det funkar
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AC3F22" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+        </div>
+        <p class="hero__legend">
+          <span class="hero__dots" aria-hidden="true">
+            <span style="background:#3E78A8;"></span>
+            <span style="background:#5E8C53;"></span>
+            <span style="background:#E0A331;"></span>
+            <span style="background:#9A3B52;"></span>
+          </span>
+          Fyra sorters stopp på samma karta
+        </p>
       </div>
-      <button id="stories-btn" class="icon-btn" aria-label="Alla berättelser" title="Personer & berättelser">📖</button>
-      <button id="progress-btn" class="progress-btn" aria-label="Min progress">
-        <span id="stamp-count">0</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-      </button>
+      <div class="hero__art">
+        <!-- App-mockup: kartan -->
+        <div class="phone" role="img" aria-label="Skärmbild av appen: en karta över Mjölby med fyra färgade stopp-nålar och en berättarbubbla från Skånska Lasse.">
+          <div class="phone__frame"><div class="phone__screen">
+            <svg class="phone__map" viewBox="0 0 278 588" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="278" height="588" fill="#F0E7D2"></rect>
+              <ellipse cx="56" cy="120" rx="74" ry="58" fill="#E2EBD2"></ellipse>
+              <ellipse cx="232" cy="300" rx="78" ry="66" fill="#E2EBD2"></ellipse>
+              <ellipse cx="70" cy="470" rx="84" ry="70" fill="#E7EDDB"></ellipse>
+              <path d="M-20 250 C 60 230, 90 330, 150 340 S 250 300, 320 360" fill="none" stroke="#BCD6E6" stroke-width="26" stroke-linecap="round" opacity=".75"></path>
+              <path d="M-20 250 C 60 230, 90 330, 150 340 S 250 300, 320 360" fill="none" stroke="#9DC2DA" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"></path>
+              <g stroke="#E4D8BC" stroke-width="9" stroke-linecap="round">
+                <path d="M40 0 L70 588"></path><path d="M150 -10 L120 600"></path><path d="M230 0 L255 588"></path>
+                <path d="M-10 90 L290 70"></path><path d="M-10 200 L290 220"></path><path d="M-10 420 L290 440"></path><path d="M-10 520 L290 510"></path>
+              </g>
+              <g fill="#EBDFC3">
+                <rect x="92" y="96" width="26" height="22" rx="3"></rect><rect x="170" y="150" width="22" height="26" rx="3"></rect>
+                <rect x="58" y="300" width="24" height="20" rx="3"></rect><rect x="196" y="430" width="26" height="24" rx="3"></rect>
+              </g>
+            </svg>
+            <div class="phone__topbar" aria-hidden="true">
+              <span class="phone__chip"><span class="phone__chip-dot"><i></i></span>Mjölby</span>
+              <span class="phone__chip phone__chip--star"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E0A331"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.5 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>7</span>
+            </div>
+            <div class="phone__pin phone__pin--1" aria-hidden="true"><span class="map-pin map-pin--sjo"><span class="map-pin__ring"></span><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 5a2 2 0 012-2h5v16H6a2 2 0 00-2 2V5z"/><path d="M20 5a2 2 0 00-2-2h-5v16h5a2 2 0 012 2V5z"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--2" aria-hidden="true"><span class="map-pin map-pin--skog"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 21s-7-4.5-7-9.5A4 4 0 0112 8a4 4 0 017 3.5C19 16.5 12 21 12 21z"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--3" aria-hidden="true"><span class="map-pin map-pin--honung"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 8h13a3 3 0 010 6h-1v3a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path d="M8 3v3M12 3v3"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--4" aria-hidden="true"><span class="map-pin map-pin--bar"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span></span></div>
+            <div class="phone__bottom" aria-hidden="true">
+              <div class="phone-narrator">
+                <span style="flex-shrink:0;">
+                  <svg width="46" height="46" viewBox="0 0 48 48"><circle cx="24" cy="25" r="22" fill="#5E8C53" opacity=".14"></circle><path d="M11 30c0-7 6-12 13-12s13 5 13 12v2H11z" fill="#E7C9A2"></path><circle cx="24" cy="24" r="11.5" fill="#EFD3AE"></circle><circle cx="19" cy="27" r="2.2" fill="#E59A86" opacity=".65"></circle><circle cx="29" cy="27" r="2.2" fill="#E59A86" opacity=".65"></circle><circle cx="20.5" cy="23" r="1.3" fill="#3a2f22"></circle><circle cx="27.5" cy="23" r="1.3" fill="#3a2f22"></circle><path d="M18 28c2 2 4 2 6 1 2 1 4 1 6-1-1.5 2.2-4 2.6-6 1.6-2 1-4.5.6-6-1.6z" fill="#6E5436"></path><path d="M12 18c1-6 6-9 12-9s11 3 12 9c-3-2-8-3-12-3s-9 1-12 3z" fill="#3E78A8"></path></svg>
+                </span>
+                <span style="flex:1;min-width:0;">
+                  <span class="phone-narrator__name" style="display:block;">Skånska Lasse</span>
+                  <span class="phone-narrator__line" style="display:block;">”Hör om Gamla torget…”</span>
+                </span>
+                <span class="phone-narrator__play"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M8 5v14l11-7z"/></svg></span>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
     </div>
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM10 22l2-6 3 2v4m-1-11-3 1.5L9 16"/></svg>
-      </span>
+  </section>
+
+  <!-- ============ VISION ============ -->
+  <section class="section--cream vision" aria-labelledby="vision-rubrik">
+    <div class="vision__inner">
+      <div class="vision__art" aria-hidden="true">
+        <!-- Skånska Lasse -->
+        <svg viewBox="0 0 220 250" width="100%" height="100%" style="overflow:visible;display:block;">
+          <ellipse cx="110" cy="244" rx="64" ry="9" fill="#2F2A20" opacity=".12"></ellipse>
+          <path d="M58 150c-12 6-18 20-16 38l16 2c0-14 4-22 12-28z" fill="#7A5B3A"></path>
+          <path d="M162 150c12 6 18 20 16 38l-16 2c0-14-4-22-12-28z" fill="#7A5B3A"></path>
+          <path d="M62 132c0-10 14-18 48-18s48 8 48 18c10 14 14 50 12 106H50c-2-56 2-92 12-106z" fill="#FBF4E6"></path>
+          <path d="M62 132c0-10 14-18 48-18s48 8 48 18c10 14 14 50 12 106H50c-2-56 2-92 12-106z" fill="none" stroke="#AC3F22" stroke-width="3" opacity=".5"></path>
+          <path d="M92 116l18 26 18-26-8-4h-20z" fill="#FFFDF7"></path>
+          <g><circle cx="74" cy="168" r="3.2" fill="#9A3B52"></circle><circle cx="146" cy="168" r="3.2" fill="#3E78A8"></circle><circle cx="70" cy="206" r="3.2" fill="#5E8C53"></circle><circle cx="150" cy="206" r="3.2" fill="#E0A331"></circle><circle cx="88" cy="226" r="3" fill="#E0A331"></circle><circle cx="132" cy="226" r="3" fill="#9A3B52"></circle></g>
+          <g>
+            <rect x="70" y="158" width="22" height="60" rx="6" fill="#AC3F22"></rect><rect x="128" y="158" width="22" height="60" rx="6" fill="#AC3F22"></rect>
+            <g fill="#FBF4E6"><rect x="92" y="160" width="9" height="56"></rect><rect x="110" y="160" width="9" height="56"></rect></g>
+            <g stroke="#C7A86F" stroke-width="2"><path d="M101 160v56M119 160v56M96 160l8 56M114 160l8 56" fill="none" opacity=".5"></path></g>
+            <g fill="#FFFDF7"><circle cx="80" cy="170" r="2.4"></circle><circle cx="80" cy="180" r="2.4"></circle><circle cx="80" cy="190" r="2.4"></circle></g>
+            <g fill="#2F2A20"><rect x="136" y="166" width="8" height="4" rx="2"></rect><rect x="136" y="176" width="8" height="4" rx="2"></rect><rect x="136" y="186" width="8" height="4" rx="2"></rect></g>
+          </g>
+          <circle cx="80" cy="206" r="11" fill="#EFD3AE"></circle><circle cx="140" cy="206" r="11" fill="#EFD3AE"></circle>
+          <rect x="98" y="104" width="24" height="22" rx="10" fill="#E7C9A2"></rect>
+          <circle cx="110" cy="76" r="46" fill="#EFD3AE"></circle>
+          <circle cx="65" cy="78" r="8" fill="#E7C9A2"></circle><circle cx="155" cy="78" r="8" fill="#E7C9A2"></circle>
+          <circle cx="84" cy="86" r="8" fill="#E59A86" opacity=".55"></circle><circle cx="136" cy="86" r="8" fill="#E59A86" opacity=".55"></circle>
+          <circle cx="94" cy="70" r="4" fill="#3a2f22"></circle><circle cx="126" cy="70" r="4" fill="#3a2f22"></circle>
+          <circle cx="95.4" cy="68.6" r="1.3" fill="#fff"></circle><circle cx="127.4" cy="68.6" r="1.3" fill="#fff"></circle>
+          <path d="M86 60q8-5 16-1M118 59q8-4 16 1" stroke="#6E5436" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          <path d="M110 74q5 6 0 11" stroke="#D9A877" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          <path d="M88 92c6 7 14 7 22 3 8 4 16 4 22-3-5 9-15 11-22 6-7 5-17 3-22-6z" fill="#6E5436"></path>
+          <path d="M98 104q12 7 24 0" stroke="#B5705A" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+          <path d="M62 56c2-22 20-34 48-34s46 12 48 34c-3-4-8-6-12-6-5-7-18-12-36-12s-31 5-36 12c-4 0-9 2-12 6z" fill="#3E78A8"></path>
+          <path d="M58 56c0-5 4-9 10-9 4 0 7 2 9 5-8 1-14 3-19 4z" fill="#345f86"></path>
+          <ellipse cx="110" cy="34" rx="14" ry="6" fill="#345f86"></ellipse>
+        </svg>
+      </div>
+      <div class="vision__copy">
+        <span class="eyebrow">Varför vi finns</span>
+        <h2 id="vision-rubrik">Vi vill få ut folk i sina egna städer — till fots.</h2>
+        <p>Vi tror att varje gata, kvarn och torg bär på en berättelse. Lokalhistoria blir levande när den är promenadvänlig, gratis och rolig — när den möter dig precis där den faktiskt hände.</p>
+        <p>Vi bygger ett verktyg enkelt nog att alla kan bidra, och skalbart nog att rymma både en stor stad och en liten by.</p>
+        <div class="value-row">
+          <div class="value-card"><div class="value-card__big" style="color:#5E8C53;">Nära</div><div class="value-card__sub">din egen hembygd</div></div>
+          <div class="value-card"><div class="value-card__big" style="color:#AC3F22;">Gratis</div><div class="value-card__sub">för alla, alltid</div></div>
+          <div class="value-card"><div class="value-card__big" style="color:#3E78A8;">För alla</div><div class="value-card__sub">ingen app att ladda ner</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="hill-divider" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 Q360 10 720 38 T1440 28 V70Z" fill="#F3EAD8"></path></svg>
+
+  <!-- ============ SÅ FUNKAR APPEN (flikar) ============ -->
+  <section id="sa-funkar" class="feature" aria-labelledby="feature-rubrik">
+    <div class="feature__head">
+      <span class="eyebrow">Så funkar appen</span>
+      <h2 id="feature-rubrik">Allt du behöver för en bra vandring</h2>
+      <div class="tablist" role="tablist" aria-label="Appens funktioner">
+        <button class="tab" id="tab-karta" role="tab" data-accent="sjo" aria-selected="true" aria-controls="panel-karta">Karta</button>
+        <button class="tab" id="tab-berattare" role="tab" data-accent="terra" aria-selected="false" aria-controls="panel-berattare" tabindex="-1">Berättare</button>
+        <button class="tab" id="tab-stamplar" role="tab" data-accent="honung" aria-selected="false" aria-controls="panel-stamplar" tabindex="-1">Stämplar &amp; quiz</button>
+        <button class="tab" id="tab-turer" role="tab" data-accent="skog" aria-selected="false" aria-controls="panel-turer" tabindex="-1">Turer</button>
+      </div>
+    </div>
+    <div class="feature__body">
+      <div class="feature__text">
+        <div class="tabpanel" id="panel-karta" role="tabpanel" data-accent="sjo" aria-labelledby="tab-karta" tabindex="0">
+          <span class="feat-tag feat-tag--sjo">Fyra sorters stopp</span>
+          <h3>En karta, fyra sorters berättelser</h3>
+          <p>Allt ligger på samma karta — du ser direkt vad som finns runt hörnet och kan välja din egen väg.</p>
+          <ul class="feat-points">
+            <li>Berättelser om platser, hus och personer</li>
+            <li>Föreningar och hembygdsgårdar</li>
+            <li>Caféer, butiker och hantverk</li>
+            <li>Toaletter, parkering och laddning</li>
+          </ul>
+        </div>
+        <div class="tabpanel" id="panel-berattare" role="tabpanel" data-accent="terra" aria-labelledby="tab-berattare" tabindex="0" hidden>
+          <span class="feat-tag feat-tag--terra">Hör Skånska Lasse</span>
+          <h3>En lokal röst som guidar dig</h3>
+          <p>Varje stad får sin egen berättare. I Mjölby är det Skånska Lasse — dragspel, blommig väst och fyndig folklig humor.</p>
+          <ul class="feat-points">
+            <li>Spelas upp automatiskt via GPS</li>
+            <li>Äkta dialekt och varm humor</li>
+            <li>Historien kommer till liv där den hände</li>
+            <li>Lyssna medan du går — händerna fria</li>
+          </ul>
+        </div>
+        <div class="tabpanel" id="panel-stamplar" role="tabpanel" data-accent="honung" aria-labelledby="tab-stamplar" tabindex="0" hidden>
+          <span class="feat-tag feat-tag--honung">Samla &amp; testa dig själv</span>
+          <h3>Samla stämplar, lär dig något nytt</h3>
+          <p>Varje besökt plats ger en digital stämpel. Testa dig själv med små quiz och se hur väl du känner din stad.</p>
+          <ul class="feat-points">
+            <li>En stämpel för varje plats du besöker</li>
+            <li>Korta quiz som gör lärandet roligt</li>
+            <li>Följ din egen samling över tid</li>
+            <li>Perfekt för familjepromenaden</li>
+          </ul>
+        </div>
+        <div class="tabpanel" id="panel-turer" role="tabpanel" data-accent="skog" aria-labelledby="tab-turer" tabindex="0" hidden>
+          <span class="feat-tag feat-tag--skog">Tematiska vandringar</span>
+          <h3>Färdiga turer, steg för steg</h3>
+          <p>Följ tematiska vandringar som leder dig längs gatorna — från stopp till stopp, i din egen takt.</p>
+          <ul class="feat-points">
+            <li>Tematiska rutter genom staden</li>
+            <li>Tydlig väg mellan varje stopp</li>
+            <li>Funkar offline när du väl laddat den</li>
+            <li>Börja och pausa när det passar dig</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature__phone">
+        <div class="phone" role="img" aria-label="Appens karta med fyra färgade stopp-nålar.">
+          <div class="phone__frame"><div class="phone__screen">
+            <svg class="phone__map" viewBox="0 0 278 588" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="278" height="588" fill="#F0E7D2"></rect>
+              <ellipse cx="56" cy="120" rx="74" ry="58" fill="#E2EBD2"></ellipse>
+              <ellipse cx="232" cy="300" rx="78" ry="66" fill="#E2EBD2"></ellipse>
+              <ellipse cx="70" cy="470" rx="84" ry="70" fill="#E7EDDB"></ellipse>
+              <path d="M-20 250 C 60 230, 90 330, 150 340 S 250 300, 320 360" fill="none" stroke="#BCD6E6" stroke-width="26" stroke-linecap="round" opacity=".75"></path>
+              <path d="M-20 250 C 60 230, 90 330, 150 340 S 250 300, 320 360" fill="none" stroke="#9DC2DA" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"></path>
+              <g stroke="#E4D8BC" stroke-width="9" stroke-linecap="round">
+                <path d="M40 0 L70 588"></path><path d="M150 -10 L120 600"></path><path d="M230 0 L255 588"></path>
+                <path d="M-10 90 L290 70"></path><path d="M-10 200 L290 220"></path><path d="M-10 420 L290 440"></path><path d="M-10 520 L290 510"></path>
+              </g>
+              <g fill="#EBDFC3">
+                <rect x="92" y="96" width="26" height="22" rx="3"></rect><rect x="170" y="150" width="22" height="26" rx="3"></rect>
+                <rect x="58" y="300" width="24" height="20" rx="3"></rect><rect x="196" y="430" width="26" height="24" rx="3"></rect>
+              </g>
+            </svg>
+            <div class="phone__topbar" aria-hidden="true">
+              <span class="phone__chip"><span class="phone__chip-dot"><i></i></span>Mjölby</span>
+              <span class="phone__chip phone__chip--star"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E0A331"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.5 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>7</span>
+            </div>
+            <div class="phone__pin phone__pin--1" aria-hidden="true"><span class="map-pin map-pin--sjo"><span class="map-pin__ring"></span><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 5a2 2 0 012-2h5v16H6a2 2 0 00-2 2V5z"/><path d="M20 5a2 2 0 00-2-2h-5v16h5a2 2 0 012 2V5z"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--2" aria-hidden="true"><span class="map-pin map-pin--skog"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 21s-7-4.5-7-9.5A4 4 0 0112 8a4 4 0 017 3.5C19 16.5 12 21 12 21z"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--3" aria-hidden="true"><span class="map-pin map-pin--honung"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 8h13a3 3 0 010 6h-1v3a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path d="M8 3v3M12 3v3"/></svg></span></span></div>
+            <div class="phone__pin phone__pin--4" aria-hidden="true"><span class="map-pin map-pin--bar"><span class="map-pin__head"><svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span></span></div>
+            <div class="phone__bottom" aria-hidden="true">
+              <div class="phone-narrator">
+                <span style="flex-shrink:0;">
+                  <svg width="46" height="46" viewBox="0 0 48 48"><circle cx="24" cy="25" r="22" fill="#5E8C53" opacity=".14"></circle><path d="M11 30c0-7 6-12 13-12s13 5 13 12v2H11z" fill="#E7C9A2"></path><circle cx="24" cy="24" r="11.5" fill="#EFD3AE"></circle><circle cx="19" cy="27" r="2.2" fill="#E59A86" opacity=".65"></circle><circle cx="29" cy="27" r="2.2" fill="#E59A86" opacity=".65"></circle><circle cx="20.5" cy="23" r="1.3" fill="#3a2f22"></circle><circle cx="27.5" cy="23" r="1.3" fill="#3a2f22"></circle><path d="M18 28c2 2 4 2 6 1 2 1 4 1 6-1-1.5 2.2-4 2.6-6 1.6-2 1-4.5.6-6-1.6z" fill="#6E5436"></path><path d="M12 18c1-6 6-9 12-9s11 3 12 9c-3-2-8-3-12-3s-9 1-12 3z" fill="#3E78A8"></path></svg>
+                </span>
+                <span style="flex:1;min-width:0;">
+                  <span class="phone-narrator__name" style="display:block;">Skånska Lasse</span>
+                  <span class="phone-narrator__line" style="display:block;">”Hör om Gamla torget…”</span>
+                </span>
+                <span class="phone-narrator__play"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M8 5v14l11-7z"/></svg></span>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STOPPTYPS-LEGEND ============ -->
+  <section class="section--sand legend" aria-labelledby="legend-rubrik">
+    <div class="legend__head">
+      <h2 id="legend-rubrik">Fyra färger, fyra sorters stopp</h2>
+      <p class="legend__lead">Du ser direkt vad som finns runt hörnet — en historia, en förening, ett café eller praktisk hjälp på vägen.</p>
+    </div>
+    <div class="legend__grid">
+      <div class="legend-card">
+        <div class="legend-card__pin"><span class="mini-pin mini-pin--sjo"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 5a2 2 0 012-2h5v16H6a2 2 0 00-2 2V5z"/><path d="M20 5a2 2 0 00-2-2h-5v16h5a2 2 0 012 2V5z"/></svg></span></div>
+        <div class="legend-card__name">Berättelse</div>
+        <div class="legend-card__desc">Platser, byggnader, personer och historia.</div>
+      </div>
+      <div class="legend-card">
+        <div class="legend-card__pin"><span class="mini-pin mini-pin--skog"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 21s-7-4.5-7-9.5A4 4 0 0112 8a4 4 0 017 3.5C19 16.5 12 21 12 21z"/></svg></span></div>
+        <div class="legend-card__name">Förening</div>
+        <div class="legend-card__desc">Hembygd, sport och kultur — den varma vägen in.</div>
+      </div>
+      <div class="legend-card">
+        <div class="legend-card__pin"><span class="mini-pin mini-pin--honung"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M4 8h13a3 3 0 010 6h-1v3a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path d="M8 3v3M12 3v3"/></svg></span></div>
+        <div class="legend-card__name">Affär</div>
+        <div class="legend-card__desc">Café, butik och hantverk med erbjudanden.</div>
+      </div>
+      <div class="legend-card">
+        <div class="legend-card__pin"><span class="mini-pin mini-pin--bar"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFDF7"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span></div>
+        <div class="legend-card__name">InfoPunkt</div>
+        <div class="legend-card__desc">Toalett, parkering och laddning — praktisk nytta.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENKELT & SKALBART ============ -->
+  <section class="scalable" aria-labelledby="scalable-rubrik">
+    <div class="scalable__inner">
+      <div class="scalable__blob" aria-hidden="true"></div>
+      <div class="scalable__content">
+        <span class="eyebrow eyebrow--honung">Enkelt &amp; skalbart</span>
+        <h2 id="scalable-rubrik">En ny ort? Det är bara att lägga till.</h2>
+        <p>Allt bygger på en delad kunskapsbas. Ingen app att ladda ner — det funkar direkt i webbläsaren, på mobil och dator. Både den stora staden och den lilla byn får plats.</p>
+        <div class="scalable__grid">
+          <div class="scalable-card"><div class="scalable-card__t">Ingen nedladdning</div><div class="scalable-card__d">öppna länken, börja gå</div></div>
+          <div class="scalable-card"><div class="scalable-card__t">Mobil &amp; dator</div><div class="scalable-card__d">funkar överallt</div></div>
+          <div class="scalable-card"><div class="scalable-card__t">By eller stad</div><div class="scalable-card__d">samma enkla verktyg</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRE VÄGAR ============ -->
+  <section class="section--cream paths" aria-labelledby="paths-rubrik">
+    <div class="paths__head">
+      <h2 id="paths-rubrik">Tre vägar att vara med</h2>
+      <p class="paths__lead">Vare sig du vill upptäcka, dela din kunskap eller sätta din verksamhet på kartan.</p>
+    </div>
+    <div class="paths__grid">
+      <div class="path-card path-card--sjo">
+        <div class="path-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Invånare &amp; nyfikna</h3>
+        <p>Utforska din stad, samla stämplar och föreslå platser du tycker borde finnas med.</p>
+        <a class="path-card__link" href="/karta">Öppna kartan →</a>
+      </div>
+      <div class="path-card path-card--skog">
+        <div class="path-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-9.6A4 4 0 0112 8a4 4 0 017 3.4C19 16.4 12 21 12 21z"/></svg></div>
+        <h3>Hembygd &amp; föreningar</h3>
+        <p>Lägg in era bilder, berättelser och platser. Den varma vägen in för nya besökare.</p>
+        <a class="path-card__link" href="/bidra">Så bidrar ni →</a>
+      </div>
+      <div class="path-card path-card--honung">
+        <div class="path-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13a3 3 0 010 6h-1v3a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path d="M8 3v3M12 3v3"/></svg></div>
+        <h3>Företag &amp; butiker</h3>
+        <p>Bli partner och få en egen plats på kartan, där besökare redan rör sig till fots.</p>
+        <a class="path-card__link" href="/partners">Bli partner →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOCIALT BEVIS ============ -->
+  <section class="proof" aria-label="Siffror och omdömen">
+    <div class="proof__inner">
+      <div class="stats">
+        <div class="stat"><div class="stat__num stat__num--terra">3</div><div class="stat__label">orter i gång</div></div>
+        <div class="stat"><div class="stat__num stat__num--skog">120+</div><div class="stat__label">platser att upptäcka</div></div>
+        <div class="stat"><div class="stat__num stat__num--sjo">0 kr</div><div class="stat__label">för dig som vandrar</div></div>
+        <div class="stat"><div class="stat__num stat__num--honung">∞</div><div class="stat__label">orter får plats</div></div>
+      </div>
+      <figure class="quote">
+        <svg class="quote__mark" width="40" height="40" viewBox="0 0 24 24" fill="#E0A331" aria-hidden="true"><path d="M10 11H6.5C6.5 8 8 7 10 7V4C5 4 3 7 3 11v7h7v-7zm11 0h-3.5C17.5 8 19 7 21 7V4c-5 0-7 3-7 7v7h7v-7z"/></svg>
+        <blockquote><p>”Plötsligt såg jag min hemstad med nya ögon. Vi gick en söndagspromenad och stannade vid varenda kvarn.”</p></blockquote>
+        <figcaption class="quote__by">Besökare i Mjölby</figcaption>
+        <div class="quote__src">I samarbete med lokalhistoriska källor — Wikipedia, mjölby.se och hembygdsföreningarnas eget material.</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CTA-BAND ============ -->
+  <section class="cta-band" aria-labelledby="cta-rubrik">
+    <div class="cta-band__inner">
+      <div class="cta-band__blob cta-band__blob--1" aria-hidden="true"></div>
+      <div class="cta-band__blob cta-band__blob--2" aria-hidden="true"></div>
+      <div class="cta-band__content">
+        <h2 id="cta-rubrik">Snöret är knutet. Skorna på?</h2>
+        <p>Öppna kartan och låt staden berätta — eller sätt din egen ort på kartan.</p>
+        <div class="cta-band__actions">
+          <a class="btn btn--on-terra btn--lg" href="/karta">Öppna kartan</a>
+          <a class="btn btn--ghost btn--lg" href="/orter">Lägg till din ort</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__about">
+      <div class="site-footer__brand">
+        <span class="brand__mark" aria-hidden="true">S</span>
+        <span class="site-footer__brand-name">Stadsvandring.io</span>
+      </div>
+      <p>Få ut folk i sina egna städer — till fots — och låt historien komma till liv där den faktiskt hände.</p>
+    </div>
+    <div class="site-footer__cols">
       <div>
-        <h1>Stadsvandring.io</h1>
-        <p id="brand-sub">Mjölby</p>
+        <div class="site-footer__col-title">Utforska</div>
+        <div class="site-footer__links">
+          <a class="foot-link" href="/karta">Öppna appen &amp; välj stad</a>
+          <a class="foot-link" href="/platser">Alla platser</a>
+          <a class="foot-link" href="/blogg">Bloggen</a>
+          <a class="foot-link" href="/">Om oss</a>
+        </div>
+      </div>
+      <div>
+        <div class="site-footer__col-title">Var med</div>
+        <div class="site-footer__links">
+          <a class="foot-link" href="/bidra">Bidra</a>
+          <a class="foot-link" href="/partners">Partners</a>
+          <a class="foot-link" href="/orter">Lägg till din ort</a>
+        </div>
+      </div>
+      <div>
+        <div class="site-footer__col-title">Kontakt</div>
+        <div class="site-footer__links">
+          <a class="foot-link" href="mailto:hej@stadsvandring.io">hej@stadsvandring.io</a>
+          <a class="foot-link" href="mailto:partner@stadsvandring.io">partner@stadsvandring.io</a>
+        </div>
+      </div>
+      <div>
+        <div class="site-footer__col-title">Följ oss</div>
+        <div class="site-footer__social">
+          <!-- Konton skapas inom kort. När de är live: byt <span> mot
+               <a href="https://www.facebook.com/stadsvandring.io"> resp. instagram.com/stadsvandring.io -->
+          <span class="soc-btn" role="link" aria-disabled="true" aria-label="Facebook – kommer snart" title="Facebook – kommer snart"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.3l.4-2.8h-2.7V9.4c0-.8.3-1.4 1.5-1.4h1.3V5.1c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v2.2H7.7V14h2.2v7h3.6Z"/></svg></span>
+          <span class="soc-btn" role="link" aria-disabled="true" aria-label="Instagram – kommer snart" title="Instagram – kommer snart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+        </div>
+        <div class="soc-soon">Kommer snart 🌱</div>
       </div>
     </div>
-  </header>
-
-  <div id="explore">
-    <div class="sidebar" id="sidebar">
-      <button class="tellerbar" id="tellerbar" hidden></button>
-      <nav class="tours" id="tours" aria-label="Vandringar"></nav>
-      <div class="filters" id="filters" aria-label="Filtrera stopptyper"></div>
-    </div>
-    <main id="map" aria-label="Karta" tabindex="-1"></main>
-    <button class="next-stop-btn" id="next-stop-btn" hidden>🧭 <span id="next-stop-label">Till nästa plats</span></button>
   </div>
+  <div class="site-footer__legal">© 2026 Stadsvandring.io · Gjort med värme i Mjölby</div>
+</footer>
 
-  <section id="screen" hidden aria-label="Vy"></section>
-
-  <nav class="tabbar" id="tabbar" aria-label="Huvudmeny"></nav>
-
-  <!-- Stop detail sheet -->
-  <section class="sheet" id="sheet" aria-hidden="true" aria-modal="true" role="dialog">
-    <span class="sheet-grip" aria-hidden="true"></span>
-    <button class="sheet-close" id="sheet-close" aria-label="Stäng">&times;</button>
-    <button class="save-btn" id="save-btn" aria-label="Spara">
-      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z" fill="currentColor"/></svg>
-    </button>
-    <div class="sheet-inner" id="sheet-inner"></div>
-  </section>
-
-  <!-- Tour panel -->
-  <section class="panel" id="tour-panel" aria-hidden="true">
-    <div class="panel-head">
-      <h2 id="tour-title"></h2>
-      <button class="panel-close" id="tour-close" aria-label="Stäng">&times;</button>
-    </div>
-    <p class="panel-sub" id="tour-sub"></p>
-    <button class="cta tour-start" id="tour-start">▶&nbsp; <span id="tour-start-label">Starta vandringen</span></button>
-    <button class="quest-toggle" id="quest-toggle" aria-pressed="false">🗺️ Quest-läge</button>
-    <ol class="stop-list" id="tour-stops"></ol>
-    <button class="cta" id="tour-quiz-btn">Testa dina kunskaper — quiz</button>
-  </section>
-
-  <!-- Stories / people panel -->
-  <section class="panel" id="stories-panel" aria-hidden="true">
-    <div class="panel-head">
-      <h2>Personer &amp; berättelser</h2>
-      <button class="panel-close" id="stories-close" aria-label="Stäng">&times;</button>
-    </div>
-    <p class="panel-sub">Alla platser, personer och händelser — även de som inte har en egen nål på kartan.</p>
-    <div class="stories-search"><input id="stories-q" type="search" placeholder="Sök…" aria-label="Sök berättelser"></div>
-    <ol class="stop-list" id="stories-list"></ol>
-  </section>
-
-  <!-- Progress / stamps panel -->
-  <section class="panel" id="progress-panel" aria-hidden="true">
-    <div class="panel-head">
-      <h2>Mina stämplar</h2>
-      <button class="panel-close" id="progress-close" aria-label="Stäng">&times;</button>
-    </div>
-    <div id="progress-body"></div>
-  </section>
-
-  <!-- Sponsor / value dashboard -->
-  <section class="panel" id="sponsor-panel" aria-hidden="true">
-    <div class="panel-head">
-      <h2>Sponsorpanel</h2>
-      <button class="panel-close" id="sponsor-close" aria-label="Stäng">&times;</button>
-    </div>
-    <p class="panel-sub">Det här betalar en sponsor för: <b>mätbar fottrafik</b>. Varje incheckning i ett affärsstopp räknas automatiskt.</p>
-    <div id="sponsor-body"></div>
-  </section>
-
-  <!-- Quiz overlay -->
-  <section class="quiz" id="quiz" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="quiz-card" id="quiz-card"></div>
-  </section>
-
-  <!-- Storyteller overlay (intro + röstprofil) -->
-  <section class="teller" id="teller" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="teller-card" id="teller-card"></div>
-  </section>
-
-  <!-- Feedback ("Tyck till") -->
-  <section class="fb" id="feedback" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="fb-card"></div>
-  </section>
-
-  <!-- Bidra (contribute photo/text) -->
-  <section class="fb" id="contribute" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="contrib-card"></div>
-  </section>
-
-  <!-- Granska förslag (review) -->
-  <section class="fb" id="review" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="review-card"></div>
-  </section>
-
-  <!-- Logga in / skapa konto -->
-  <section class="fb" id="auth" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="auth-card"></div>
-  </section>
-
-  <!-- Admin-dashboard (endast admin) -->
-  <section class="fb" id="admin" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="admin-card"></div>
-  </section>
-
-  <!-- Installera som app — guide (öppen för alla) -->
-  <section class="fb" id="install" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="fb-card" id="install-card"></div>
-  </section>
-
-  <!-- Stadsutmaning: byggare (arrangör) -->
-  <section class="panel" id="challenge-builder" aria-hidden="true">
-    <div class="panel-head">
-      <h2 id="cb-title">Stadsutmaning</h2>
-      <button class="panel-close" id="cb-close" aria-label="Stäng">&times;</button>
-    </div>
-    <div class="ch-scroll" id="cb-body"></div>
-  </section>
-
-  <!-- Stadsutmaning: spelläge (elev) -->
-  <section class="panel" id="challenge-play" aria-hidden="true">
-    <div class="panel-head">
-      <h2 id="cp-title">Stadsutmaning</h2>
-      <button class="panel-close" id="cp-close" aria-label="Stäng">&times;</button>
-    </div>
-    <div class="ch-scroll" id="cp-body"></div>
-  </section>
-
-  <!-- Stadsutmaning: resultat / topplista (arrangör) -->
-  <section class="panel" id="challenge-results" aria-hidden="true">
-    <div class="panel-head">
-      <h2 id="cr-title">Resultat</h2>
-      <button class="panel-close" id="cr-close" aria-label="Stäng">&times;</button>
-    </div>
-    <div class="ch-scroll" id="cr-body"></div>
-  </section>
-
-  <!-- Stadsutmaning: uppgiftsmodal -->
-  <section class="ch-task" id="challenge-task" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="ch-task-modal" id="ct-card"></div>
-  </section>
-
-  <!-- Landningssida: välj/sök stad (visas vid första besök) -->
-  <section class="landing" id="landing" aria-hidden="true">
-    <div class="landing-card" id="landing-card"></div>
-  </section>
-
-  <!-- PWA-installprompt (visas när webbläsaren signalerar installerbarhet) -->
-  <div class="install-banner" id="install-banner" hidden>
-    <span class="ib-icon" aria-hidden="true">📲</span>
-    <div class="ib-text"><b id="ib-title">Installera Stadsvandring.io</b><small id="ib-sub"></small></div>
-    <button class="ib-install" id="ib-install">Installera</button>
-    <button class="ib-x" id="ib-x" aria-label="Stäng">&times;</button>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
- </div>
-
-  <!-- defer: laddas parallellt under HTML-parse, exekveras i dokumentordning före app.js-modulen
-       (som också är deferred) → L/markercluster/QR finns när app.js kör, men app-start fördröjs ej. -->
-  <script src="vendor/leaflet/leaflet.js" defer></script>
-  <script src="vendor/leaflet/markercluster.js" defer></script>
-  <script src="vendor/qrcode.js" defer></script>
-  <!-- supabase-js vendor:ad lokalt (UMD → window.supabase). Inga tredjeparts-CDN i runtime. -->
-  <script src="vendor/supabase.js" defer></script>
-  <script src="app.js" type="module"></script>
+<script src="webbsida.js" defer></script>
 </body>
 </html>

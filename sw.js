@@ -1,12 +1,14 @@
-const CACHE = 'mjolby-stadsvandring-v65';
+const CACHE = 'mjolby-stadsvandring-v66';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
 const RUNTIME = 'mjolby-runtime-v1';
 const RUNTIME_MAX = 250;   // max antal cachade rutor/foton; äldsta vräks (FIFO)
 
+// Appen bor på /karta (karta.html). Roten ('/') är webbplatsens startsida (statisk,
+// behöver inte cachas för offline). Vi förladdar app-skalet via ./karta.html.
 const SHELL = [
-  './', './index.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
+  './karta', './karta.html', './styles.css', './app.js', './content.js', './storytellers.js', './i18n.js', './data.json',
   './events.json', './challenges.js', './config.js', './auth.js', './tips.js',
   './vendor/qrcode.js', './vendor/supabase.js', './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css',
   './vendor/leaflet/markercluster.js', './vendor/leaflet/markercluster.css', './vendor/leaflet/markercluster-default.css',
@@ -61,7 +63,7 @@ self.addEventListener('fetch', e=>{
       fetch(req, { cache: 'no-store' }).then(res=>{
         if (res && res.status===200){ const copy=res.clone(); caches.open(CACHE).then(c=>c.put(req, copy)); }
         return res;
-      }).catch(()=> caches.match(req).then(c=> c || caches.match('./index.html')))
+      }).catch(()=> caches.match(req).then(c=> c || caches.match('./karta.html')))
     );
     return;
   }
