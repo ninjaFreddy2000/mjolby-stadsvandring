@@ -5780,6 +5780,1986 @@
     "https://www.visitgavle.se/sv/stromvallens-historia"
    ],
    "city": "Gävle"
+  },
+  {
+   "id": "borgholm-sandviks-kvarn",
+   "name": "Sandviks Kvarn",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.072392,
+    "lng": 16.858681
+   },
+   "summary": "En av världens största väderkvarnar, en åtta våningar hög holländare som flyttades till Sandvik och återuppfördes på en grund av öländsk kalksten.",
+   "description": "Vid hamnen i Sandvik på Ölands västkust står en av världens största väderkvarnar och utan jämförelse den största i Norden. Den är av holländsk typ, vilket innebär att bara hättan med vingarna kan vridas mot vinden. Kvarnen byggdes ursprungligen 1856 i utkanten av Vimmerby, men efter några år blåste vingarna ner och byggnaden kom att användas till annat. År 1885 såldes den, och den nye ägaren lät plocka ner hela träkonstruktionen, märka delarna och frakta dem till Sandvik. Där restes kvarnen på nytt på en två våningar hög grund av öländsk kalksten. Till skillnad från de små stubbkvarnar som malde till husbehov var kvarnen i Sandvik en tullkvarn, dit folk fick betala för malningen med pengar eller säd. Byggnaden består av åtta våningar och är omkring 26 meter hög, med 24 meter mellan vingspetsarna. I dag rymmer den restaurang och är ett populärt familjemål.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sandvikskvarn.se/kvarnhistoria/"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "pitea-storstrand-pitea",
+   "name": "Storstrand, Piteå",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 65.335988,
+    "lng": 21.395755
+   },
+   "summary": "En stilla plats vid Piteälven några kilometer från centrum, utgångspunkt för vandring och friluftsliv längs älv och kust.",
+   "description": "Bara några kilometer från Piteå centrum, men avskilt från stadens brus, ligger Storstrand vackert och tyst invid Piteälven. Här möts älvlandskap och kust, och platsen är en naturlig utgångspunkt för den som vill ut i Piteås natur till fots. De flesta av traktens vandringsleder är lättgångna, så att i stort sett vem som helst kan upptäcka både den vildmarksartade skogen och de höjder som bjuder utsikt över omgivningarna. Längre ut väntar Bottenvikens skärgård, en av Sveriges mest säregna naturmiljöer med sitt bräckta vatten och en ständig landhöjning som föder nya rev, grynnor och småöar ur havet. Längs kusten varvas långa sandstränder med genuina kulturmiljöer och spår efter forntida liv. Storstrand och stigarna däromkring ger en lugn ingång till just detta möte mellan älv, hav och norrländsk skog.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.pitea.se/invanare/fritid-kultur/fritid-och-natur/friluftsliv-och-utesport/Skargard/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "varberg-naturum-getteron",
+   "name": "Naturum Getterön",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 57.126459,
+    "lng": 12.252526
+   },
+   "summary": "Besökscentrum och porten till Hallands naturreservat, beläget vid ett av Nordeuropas bästa fågelområden.",
+   "description": "Naturum Getterön är porten till Hallands naturreservat och ligger mitt i ett av Nordeuropas bästa fågelområden. Här kan besökaren komma naturen nära utan kikare i hand: stora fönster och utställningar vänder sig mot våtmarkerna där fåglarna rör sig, och personalen erbjuder guidade turer, föreläsningar och aktiviteter för både nyfikna nybörjare och erfarna skådare. Inne finns butik och ett kafé med en storslagen utsikt över området, en plats där man kan slå sig ner och låta blicken vandra över vassen och vattnet. Naturum fungerar som ett nav för att förstå och uppleva landskapet på Getterön, där omkring 170 fågelarter rastar eller häckar varje år. För familjer, fågelintresserade och tillresta är det en naturlig startpunkt för ett besök i reservatet, och en plats där naturens äventyr får ta sin början.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.naturumgetteron.se/"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "falkenberg-falkenbergs-radhus",
+   "name": "Falkenbergs rådhus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.9,
+    "lng": 12.491
+   },
+   "summary": "Stadens rådhus från 1826 vid Rådhustorget, som rymt skola, fängelse, brandredskap och tingssal.",
+   "description": "Falkenbergs rådhus vid Rådhustorget speglar stadens utveckling under nära två sekel. Den nuvarande byggnaden uppfördes 1826, sedan ett tidigare rådhus av trä från 1760 blivit både förfallet och för trångt. Det nya huset blev en knutpunkt för stadens samhällsliv och rymde långt mer än mötesrum. På nedre våningen inrymdes Falkenbergs äldsta skola, Pedagogien, tillsammans med rektorsbostad, stadens fängelseceller, brandredskap och mått och vikter, medan övervåningen hade häradsrättens tingssal och en festsal. En större ombyggnad gjordes 1872–1874 och en mindre tillbyggnad 1913. Sedan stadens förvaltning flyttat till det nya stadshuset fortsatte rådhuset att tjäna offentligheten, bland annat som polisstation mellan 1946 och 1971 och senare som kommunala kontor. Byggnaden påminner om hur många funktioner ett rådhus en gång samlade under samma tak, och hör till de självklara hållpunkterna för den som vill förstå Falkenbergs borgerliga historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Falkenbergs_r%C3%A5dhus"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "falkenberg-torngrens-krukmakeri",
+   "name": "Törngrens krukmakeri",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.899,
+    "lng": 12.497
+   },
+   "summary": "Sveriges äldsta krukmakeri, grundat 1789 och drivet av samma familj i sju generationer.",
+   "description": "Törngrens krukmakeri grundades 1789 och räknas som Sveriges äldsta i sitt slag, drivet av samma släkt i sju generationer. Det är ett av Falkenbergs starkaste minnen från den tid då staden var ett regionalt centrum för krukmakeri. Under 1800-talets mitt arbetade som mest tretton verkstäder samtidigt i staden, en blomstring som hängde nära samman med den rika tillgången på lera längs Ätrans stränder. Yrket gick i arv från far till son, och medan de övriga verkstäderna en efter en lades ned överlevde Törngrens in i modern tid. Tillverkningen pågick ända till 2014, och krukmakeriet brukar nämnas som Nordeuropas näst äldsta. Byggnaden ägs alltjämt av samma familj. Att besöka platsen är att kliva rakt in i en svensk hantverkstradition som spänner över mer än två sekel, och att förstå hur lerans gåvor formade både stadens näringsliv och dess identitet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://falkenberg.se/en/se-gora/sevardheter/byggnader-kulturmiljoer/torngrens-krukmakeri/"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "varberg-paskbergsskogen-varberg",
+   "name": "Påskbergsskogen, Varberg",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.097443,
+    "lng": 12.269616
+   },
+   "summary": "Planterad rekreationsskog i sydöstra Varberg, anlagd på 1870-talet på en tidigare ljunghed.",
+   "description": "I sydöstra Varberg ligger Påskbergsskogen, ett populärt motions- och rekreationsområde som föddes ur en framsynt idé. Här växte ursprungligen bara ljung på den kala, ödsliga marken, men på 1870-talet tog rektorn Herman Rodhe initiativet att förvandla trakten till skog. Tack vare den planteringen reser sig i dag en lummig skog där det en gång låg en karg hed, och i den västligaste delen, Gamla Påskberget, står en fem meter hög minnessten till denne långsynte mans ära. Skogen genomkorsas av ett rikt nät av vandrings-, cykel- och motionsstigar, däribland ett elljusspår, och här finns en damm där man kan mata änder samt ett arboretum med 120–130 olika trädslag, många försedda med informationsskyltar. För Varbergsbor är skogen en grön lunga och ett av stadens mest använda områden för motion och friluftsliv året om.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/P%C3%A5skbergsskogen_i_Varberg"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "marstrand-arvidsvik-koon",
+   "name": "Arvidsvik, Koön",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.890106,
+    "lng": 11.59593
+   },
+   "summary": "Badvik på Koön mitt emot Marstrandsön, en av platserna där Marstrands badortsliv en gång tog sin början.",
+   "description": "Arvidsvik ligger på Koön, strax öster om Marstrandsön, och har länge varit en omtyckt badplats. Stadsdelen kallas också Ringen. Just badanläggningen i Arvidsvik räknas som en av utgångspunkterna för Marstrand som badort, och viken har en plats i den svenska friluftsbadets historia. Redan under 1930-talet fanns här en vattenrutschbana, vilket gjorde Arvidsvik till ett av landets tidiga rekreationsbad med sådana attraktioner. Bakgrunden var att Svenska Turistföreningen från 1922 inventerat kustområden för att hitta lämpliga badplatser, och under 1920- och 1930-talen anlades många bad längs landets kuster och insjöar i takt med att simkunnighet och friluftsliv blev allt viktigare. Med sina klippor och sin närhet till färjeläget mot Marstrandsön är Arvidsvik fortfarande en uppskattad plats för bad och solbad, och en av Koöns mest besökta vikar under sommarmånaderna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Arvidsvik"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "marstrand-batellet-marstrand",
+   "name": "Båtellet, Marstrand",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.888682,
+    "lng": 11.578566
+   },
+   "summary": "Marstrands gamla varmbadhus från 1858, den äldsta bevarade byggnaden från badortsepoken.",
+   "description": "Båtellet, ursprungligen Marstrands varmbadhus, uppfördes 1858 och är den äldsta bevarade byggnaden från ortens tid som kurort. Badbolaget hade då snabbt expanderat sin verksamhet, byggt ett nytt kallbadhus 1856 och kort därefter detta större varmbadhus. Det allra första kombinerade bad- och societetshuset från 1843 omvandlades samtidigt till enbart societetshus. Kring varmbadhuset låg en badhuspark med små byggnader för gymnastik, biljard och kägelspel, samt sommarrestaurangen Alphyddan. Vid sekelskiftet 1900 var varmbadhuset flitigt besökt, inte minst av kung Oscar II som tillbringade sina somrar på Marstrand. Byggnaden har sedermera kompletterats med en simhall men har bevarat sin karaktär och har byggnadsminnesstatus. Båtellet är ett påtagligt minne av den tid då läkare ordinerade saltbad och frisk havsluft, och då Marstrand blev en av landets förnämsta badorter.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.bohuslansmuseum.se/samlingar-och-historia/gamla-historiska-artiklar/badorten-marstrand/"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "pitea-stadsberget-pitea",
+   "name": "Stadsberget, Piteå",
+   "category": "utsiktsplats",
+   "coordinates": {
+    "lat": 65.317245,
+    "lng": 21.483263
+   },
+   "summary": "Ett uppmärksammat parkeringshus i trä från 2015 som blivit stadens mötesplats och utsiktspunkt med vy över Piteå och skärgården.",
+   "description": "Stadsberget är knappast ett vanligt berg, och knappast ett vanligt parkeringshus. Byggnaden, ritad av White Arkitekter tillsammans med Henning Larsen och färdig 2015, började som ett uppdrag att skapa fler parkeringsplatser i centrala Piteå men växte till något helt annat. Bakom de 228 bilplatserna i fem våningar valde man trä som det dominerande materialet, en hyllning till regionens starka tradition av skogsbruk och timmerbyggande. Det är taket som gör platsen speciell. Där uppe öppnar sig en vid utsikt över staden och Piteå skärgård, och taklandskapet förvandlas efter årstid: planteringar och blommor om sommaren, amfiteater för uppträdanden, och om vintern en snöfylld backe där pulkaåkning och varm choklad hör till. Från ett trist parkeringsuppdrag blev Stadsberget på så vis en av Piteås mest omtalade samlingsplatser.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://whitearkitekter.com/project/stadsberget/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "marstrand-marstrands-hamn",
+   "name": "Marstrands hamn",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.888779,
+    "lng": 11.585944
+   },
+   "summary": "Djup och skyddad naturhamn som präglat Marstrand sedan medeltiden, idag en av Sveriges mest stämningsfulla gästhamnar och seglingens centrum.",
+   "description": "Marstrands hamn har varit ortens livsnerv ända sedan medeltiden. Den djupa och skyddade hamnen, som sällan fryser, gjorde Marstrand till en viktig knutpunkt för handel och sjöfart längs Bohuskusten redan när staden omnämns i skrift på 1200-talet. Sill, salt och varor passerade kajerna under stadens många blomstringsperioder. På 1800-talet upptäckte den svenska överklassen ön som sommarvistelse, och seglingen blev en del av Marstrands identitet. Idag rymmer gästhamnen omkring trehundra platser och fylls snabbt under högsommaren, då segelbåtar ligger tätt längs bryggorna och flaggor från ett dussintal nationer vajar i kvällsbrisen. Sedan 1994 arrangeras här GKSS Match Cup Sweden, en av världens största matchracingtävlingar och en del av World Match Racing Tour. Hamnen förenar på så vis stadens långa maritima historia med ett pulserande sommarliv och Marstrands rykte som svensk seglingshuvudstad.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.marstrandsgasthamn.se/sv/event"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "karlskrona-wamoparken",
+   "name": "Wämöparken",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.181971,
+    "lng": 15.614127
+   },
+   "summary": "Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade gamla blekingegårdar.",
+   "description": "Wämöparken på Vämö är en älskad kombination av kultur, natur och nöje, och har varit ett populärt utflyktsmål i mer än ett sekel. Idén om en folkets park på platsen föddes i början av 1900-talet, och gnistan kom från en stor och lyckad hembygdsfest i Karlskrona 1908. Parken och dess kaffestuga öppnade 1910, och föreningen Wämöparken drev verksamheten under de följande decennierna med målet att inte bara erbjuda rekreation utan också samla in minnen av gammal blekingsk kultur. Hit har ett tiotal äldre byggnader från olika trakter i Blekinge flyttats för att bevaras, så att besökaren kan vandra mellan stugor och gårdar från skilda tider. Idag rymmer parken också en uppskattad djurpark med grisar, getter, kaniner och ankor, lekplatser för de minsta samt vackra vandringsleder. Det är en plats där historia, djur och natur smälter samman till en lugn dag utomhus.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://blekingemuseum.se/wamoparken-historik-start/wamoparken-historik/"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "halmstad-ovraby-kyrkoruin-halmstad",
+   "name": "Övraby kyrkoruin, Halmstad",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 56.696422,
+    "lng": 12.873055
+   },
+   "summary": "Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan staden flyttades på 1300-talet.",
+   "description": "Innan Halmstad låg vid Nissans mynning fanns staden i området som i dag kallas Övraby, ett namn som betyder den övre byn. Här tros en stavkyrka ha rests redan på 1000-talet, och den ersattes på 1100-talet av en stenkyrka som sedan byggdes om i flera omgångar. Fynd från trakten visar att området var bebott under 1000- och 1100-talet. På 1320-talet började staden flyttas till sitt nuvarande läge, dominikanermunkar grundade klostret Sankt Katarina, och 1322 fick orten stadsprivilegier som några år senare kom att bära namnet Halmstad. För det gamla Övraby kom slutet under nordiska sjuårskriget på 1560-talet, då platsen ödelades vid en svensk attack och sedan dess legat öde. Utgrävningar har avslöjat spår av en medeltida borg samt keramik och mynt. I dag står kyrkoruinen kvar som ett stämningsfullt minne av Halmstads allra äldsta historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%96vraby_kyrkoruin"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "smogen-hallo-kapell",
+   "name": "Hållö kapell",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 58.335906,
+    "lng": 11.217708
+   },
+   "summary": "Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet.",
+   "description": "På ön Hållö, omgiven av granithällar och öppet hav, finns ett litet och oväntat kapell. Det inreddes 2007 av arkitekten Rolf Åsberg i det gamla maskinhus som tidigare hört till fyrplatsens verksamhet. Där tekniken en gång höll fyrens utrustning igång samlas i dag besökare till andakt, stillhet och vigslar i en av Bohusläns mest avskilda miljöer. Kapellet ligger ett stycke från fyren och nås efter en vandring över öns kuperade hällmarker, där havet ständigt är närvarande. Att en industribyggnad förvandlats till ett rum för eftertanke speglar Hållös skiftande historia, från fyrvaktarnas slit och en radiopejlstation som senare blev vandrarhem till dagens besöksö. För den som vandrar ut till kapellet blir resan dit minst lika minnesvärd som platsen själv, med vind, fågelskrik och vidsträckt utsikt över Skagerrak.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://hallokapell.com/hallo/"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "borgholm-lange-erik",
+   "name": "Långe Erik",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.366422,
+    "lng": 17.090947
+   },
+   "summary": "Ölands norra fyr från 1845, en 32 meter hög byggnadsminnesmärkt fyr på en liten ö vid öns nordspets.",
+   "description": "Vid Ölands nordspets reser sig fyren Långe Erik, officiellt Ölands norra udde, på den lilla ön Stora Grundet i Grankullaviken. Den 32 meter höga fyren byggdes 1845 efter ritningar av H. Byström och uppfördes av Jonas Jonsson. Första gången den tändes, den 1 november 1845, lyste den med spegellinser och en lykta som brann på rovolja. Tekniken förbättrades efter hand: på 1880-talet kom en fotogenlampa och 1906 byggdes lanterninen om med en urverksdriven roterande lins. Ön knöts samman med Öland genom en liten bro 1965, och på 1940-talet fick fyrplatsen elektricitet. Sedan 1976 är fyren helt automatiserad. Varifrån smeknamnet Långe Erik kommer är okänt, men det antas ha bildats i analogi med Långe Jan på öns södra udde. Sedan 1933 är fyren skyddad som byggnadsminne och utgör ett älskat utflyktsmål.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/L%C3%A5nge_Erik"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "borgholm-neptuni-akrar",
+   "name": "Neptuni åkrar",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.348096,
+    "lng": 17.029527
+   },
+   "summary": "Ett vidsträckt klapperstensfält norr om Byxelkrok som lyser blått av blåeld om sommaren, med vikingatida gravar och utsikt mot Blå Jungfrun.",
+   "description": "Norr om Byxelkrok breder ett vidsträckt klapperstensfält ut sig längs kusten. Namnet Neptuni åkrar gav Carl von Linné platsen under sin ölandsresa 1741, och naturreservatet omfattar i dag omkring 20 hektar. På sommaren förvandlas de grå fälten till ett blått hav när blåelden blommar, en växt som faktiskt inte är ursprunglig på Öland. År 1934 lossades en båtlast grus från Ven i Byxelkrok, och i gruset följde frön av blåeld med som sedan spred sig över ön. Här ligger också Ölands nordligaste vikingatida gravfält i ett monumentalt landskap med vida vyer över Kalmarsund. Mot väster syns nationalparken Blå Jungfrun, den sägenomspunna granitön som även kallas Blåkulla. Kombinationen av böljande strandvallar, fornlämningar och färgprakt gör Neptuni åkrar till ett av öns mest besökta naturområden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/neptuni-akrar.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "karlskrona-badplats-lango",
+   "name": "Badplats - Långö",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.182002,
+    "lng": 15.583077
+   },
+   "summary": "En populär badplats med två vikar, gräsytor och volleybollplan.",
+   "description": "Bara tjugo minuters promenad från centrala Karlskrona ligger Långö badplats med sina två badvikar och stora gräsytor. En stor volleybollplan gör platsen särskilt populär bland ungdomar.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitkarlskrona.se/sv/badplats-lango"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "vastervik-gamla-radhuset-vastervik",
+   "name": "Gamla rådhuset, Västervik",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.7575,
+    "lng": 16.6385
+   },
+   "summary": "Ståtligt rådhus från 1790-talet som fortfarande sätter sin prägel på Stora torget.",
+   "description": "Vid Stora torget mitt i Västervik står stadens gamla rådhus, uppfört åren 1793-1796. Det reslig byggnaden hör till de hus som starkast präglar stadskärnan och vittnar om en tid då Västervik var en betydande sjöfarts- och handelsstad. Rådhuset uppfördes i en sober, harmonisk stil typisk för det sena 1700-talet och har under mer än två sekel varit en samlingspunkt för stadens styre och offentliga liv. Att ett så pass påkostat rådhus restes vittnar om stadens ekonomiska kraft under denna epok, då sjöfart och handel gav välstånd åt borgerskapet. Byggnaden ramar in torget tillsammans med stadens övriga äldre hus och bildar en sammanhållen historisk miljö i hjärtat av Västervik. För besökaren är rådhuset en naturlig hållpunkt på en vandring genom den gamla stadskärnan, där 1700- och 1800-talets Västervik ännu går att avläsa i fasaderna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/V%C3%A4sterviks_stad"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "pitea-bole-pitea-kommun",
+   "name": "Böle, Piteå kommun",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 65.386152,
+    "lng": 21.322539
+   },
+   "summary": "En urgammal by vid Piteälven i Infjärdsbygden, med spår av människor sedan bronsåldern och en knutpunkt för väg och järnväg.",
+   "description": "Byn Böle vid Piteälven hör till de allra äldsta bygderna i trakten. Här finns spår efter fiske, jakt och jordbruk ända sedan bronsåldern, och de tidigaste tecknen på människor sägs vara omkring 4000 år gamla. Själva namnet Böle betyder boställe eller gård, och i skrift dyker byn upp första gången i Stockholms stads tänkebok 1505. Under lång tid fick man ta sig över Piteälven med färja eller båt, men åren 1915–1917 byggdes äntligen en broförbindelse. Ungefär samtidigt, när järnvägen drogs genom byn 1915 och en stationsbyggnad med magasin och godshantering anlades, blev Böle en knutpunkt i Infjärdsbygden. Här möts alltså en svindlande lång förhistoria och det tidiga 1900-talets kommunikationer på en och samma plats. För besökaren är Böle en påminnelse om hur länge människor levt, brukat och rört sig genom landskapet kring Piteälven.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/B%C3%B6le,_Pite%C3%A5_kommun"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "marstrand-societetshuset-marstrand",
+   "name": "Societetshuset Marstrand",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.888253,
+    "lng": 11.579873
+   },
+   "summary": "Praktfullt societetshus i nyrenässans av trä från 1886, en symbol för Marstrands glansdagar som mondän badort.",
+   "description": "Vid det norra hamninloppet reser sig Societetshuset, ritat av arkitekten Adrian Crispin Peterson och uppfört i trä 1886. Det avlöste ett äldre, betydligt mindre badhus och societetshus från 1843 och blev mer än dubbelt så stort som föregångaren. Här samlades badortens fina societet till middagar, baler och konserter under den tid då Marstrand var en av Sveriges mest eftertraktade sommarorter. Badlivet hade tagit fart sedan ångbåtsförbindelsen med Göteborg etablerats 1850, och populariteten nådde sin höjdpunkt när kung Oscar II nästan varje sommar mellan 1887 och 1907 förlade en del av säsongen hit. Det eleganta huset med sin utsikt över inloppet blev en mötesplats för kungligheter, konstnärer och förmögna gäster. Societetshuset förklarades som byggnadsminne 1978 och fungerar än idag som en levande del av Marstrands kultur- och nöjesliv.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Societetshuset_i_Marstrand"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "pitea-pitholmen",
+   "name": "Pitholmen",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 65.303,
+    "lng": 21.515
+   },
+   "summary": "En ö i Piteå skärgård strax utanför centrum, en gång den givna vägen in till staden via det smala sundet.",
+   "description": "Pitholmen ligger alldeles intill Piteå centrum, en ö i skärgården som förr räknades som en halvö. Idag skiljs den från fastlandet av den smala Strömsundskanalen, medan Piteälven flyter förbi vid Pitsund i söder. Platsen har gamla anor: i 1539 års landskapshandling för Västerbottens län kallades byn Pithaholmen och hade 19 registrerade gårdar med ett tjugotal män. Just här gick länge själva färdvägen till och från Piteå stad, eftersom sundet mellan fastlandet och ön var som smalast på den här punkten. Därför anlades en färjestation, och generationer av resenärer passerade Pitholmen på väg in mot staden. Marken bär också vidare in i Piteås senare historia, eftersom delar av hemmanet Pitholm köptes in när Furunäsets stora sjukhus skulle byggas. Att besöka Pitholmen är att stå vid stadens gamla port mot vattnet, där skärgård, by och färdväg en gång flöt samman.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Pitholmen"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "falkenberg-vinbergs-kyrka",
+   "name": "Vinbergs kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.926951,
+    "lng": 12.545486
+   },
+   "summary": "Nygotisk granitkyrka från 1899 vid en gammal sockenby där författaren Olof von Dalin föddes.",
+   "description": "Vinbergs kyrka står i ett landskap som brukats kontinuerligt sedan järnåldern, på den bördiga slätten kring Vinån. Här restes den första kyrkan redan på 1100-talet, men sedan den blivit för trång revs den gamla helgedomen år 1900. Kvar finns en minnessten med inskriften 1100–1900 och en kyrkport från 1810. Den nuvarande kyrkan stod färdig 1899, ritad i nygotisk stil av den kände göteborgsarkitekten Adrian C. Peterson och uppförd av oregelbundna granitstenar i så kallat cyklopmurverk. Den hör till de få Petersonkyrkor där både insida och utsida bevarats i närmast ursprungligt skick. Runt kyrkan lever den gamla sockenmiljön kvar med ödekyrkogård, prästgård från 1797 och kyrkstallar från 1920-talet. Just i prästgården föddes på 1700-talet Olof von Dalin, en av tidens stora språk- och kulturpersonligheter. Vinbergs kyrkby framstår därför som ett litet historiskt hjärta i Falkenbergs kommun.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Vinbergs_kyrka"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "karlskrona-bjorkholmen-karlskrona",
+   "name": "Björkholmen, Karlskrona",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.161991,
+    "lng": 15.572501
+   },
+   "summary": "Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans spillvirke.",
+   "description": "Björkholmen är Karlskronas äldsta bevarade stadsdel och en levande påminnelse om örlogstidens vardag. Här bodde förr varvsarbetarna, eftersom Karlskronavarvet ligger alldeles intill, och de första av dem kallades pillemasare. De timrade sina små låga stugor av spillvirke från flottan, ek av högsta kvalitet, vilket är skälet till att många hus står kvar i gott skick än idag. Gatorna bär namn antingen efter olika fartygstyper eller efter berömda amiraler, så att man bokstavligen vandrar genom flottans historia. När den stora stadsbranden härjade Karlskrona 1790 klarade sig Björkholmen undan lågorna, och stadsdelen är därför ett av de bästa exemplen på hur arbetarna levde under varvets storhetstid. Numera är de pittoreska kvarteren en eftertraktad och välbevarad miljö, en viktig del av världsarvet Örlogsstaden Karlskrona, där trånga gränder och blomstrande gårdar bjuder in till långsamma promenader.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Bj%C3%B6rkholmen,_Karlskrona"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "smogen-hovenaset",
+   "name": "Hovenäset",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.371191,
+    "lng": 11.295922
+   },
+   "summary": "Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet.",
+   "description": "Hovenäset är ett gammalt kustsamhälle i Sotenäs med rötter långt tillbaka i tiden. Namnet, skrivet Hauganaese redan 1391, kommer av det fornvästsvenska ordet haugr, som betydde hög och syftade på höjden på näsets berg. Från början av 1700-talet och in på 1900-talet var Hovenäset ett renodlat fiskeläge. Därefter och fram till 1960-talet utvecklades fraktsjöfarten gradvis och orten blev ett typiskt skutsamhälle. Många invånare var samtidigt stenhuggare och fiskare, och i de så kallade vadlagen, som fiskade sill på senvintern, fanns upp till 15–18 man i varje. På Hovenäset fanns fem sådana vadlag, och på Skäret låg ett eget trankokeri. I samhällets historia möts alltså fiske, sjöfart och stenindustri, tre näringar som format livet längs hela denna del av bohuskusten och som fortfarande syns i bebyggelsen.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.vastsverige.com/sotenas/artiklar/hovenaset/"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "marstrand-paradisparken-marstrand",
+   "name": "Paradisparken, Marstrand",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.887412,
+    "lng": 11.583983
+   },
+   "summary": "Romantisk park framför Grand Hotel med gamla träd och musikpaviljong, anlagd på mark som en gång var öppen exercisplats.",
+   "description": "Paradisparken framför Grand Hotel Marstrand bär ett namn med en överraskande bakgrund. Kvarteret var bebott fram till 1824, då en förödande brand jämnade hela området med marken. Under några decennier därefter användes platsen som exercisplats för Carlstens fästning och låg helt öppen och kal. Här satt också fiskare och rensade sill, och deras tunnor förvarades på platsen så att lukten lär ha varit olidlig. För att platsen åter skulle bli omtyckt gav man den sitt sköna namn, Paradisparken. Med tiden planterades träd som idag är minst hundra till hundrafemtio år gamla, och parken fick klassiskt romantiska inslag med blomsterplanteringar och en musikpaviljong. När kung Oscar II tillbringade en sommarmånad på Marstrand varje år fick parken nästan kunglig glans. Idag är de välansade gräsmattorna en uppskattad plats för både soldyrkare och skuggsökare under sommardagarna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.kungalv.se/kultur--fritid/utomhusaktiviteter/parker/paradisparken/"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "halmstad-tylosand-halmstad",
+   "name": "Tylösand, Halmstad",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.64854,
+    "lng": 12.731778
+   },
+   "summary": "Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare och smugglare till internationell semesterort.",
+   "description": "Tylösand är i dag synonymt med långa sandstränder och sommarliv, men trakten var länge svårtillgänglig och besöktes mest av fiskare och smugglare. Vändpunkten kom 1915, då hovfotografen Johan Hallberg lät bygga Restaurang Tylösand med den franska badorten Trouville som förebild. Verksamheten växte snabbt och kom efter några år att omfatta hotell, pensionat och ett uppvärmt badhus. Det stora genombrottet som internationell badort brukar knytas till den stora Halmstadutställningen 1929, samma år som Halmstadgruppen introducerade surrealismen i Sverige. Sedan 1995 har orten skrivit ett nytt kapitel sedan affärsmannen Björn Nordstrand och popstjärnan Per Gessle tog över Hotel Tylösand. Stranden hör till de drygt fyra mil badvänlig kust som präglar Halmstad, och området kring Tylösand är fortfarande ett av Sveriges mest kända sommarmål med bad, golf och kustnära promenader.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tyl%C3%B6sand"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "karlskrona-stortorget-karlskrona",
+   "name": "Stortorget, Karlskrona",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.161128,
+    "lng": 15.586607
+   },
+   "summary": "Ett av norra Europas största torg, hjärtat i den planerade örlogsstaden, inramat av kyrkor och offentliga byggnader.",
+   "description": "På Trossös högsta punkt breder Stortorget ut sig som ett av norra Europas största torg, en öppen yta som vittnar om de stora ambitionerna när staden ritades. När den nya stadsplanen fastställdes 1683 arbetade Erik Dahlbergh tillsammans med Tessin den äldre och Carl Magnus Stuart, och de hämtade idéer från den romerska barocken: ett monumentalt torg, breda raka gator och kvarter i strikt rutmönster. Här samlades den civila stadens viktigaste funktioner, religion och rättskipning, kring ett centrum högt över hamnen. Mitt på torget reser sig statyn av Karl XI, mannen som bara tjugofyra år gammal fick ge namn åt Sveriges nya stolthet i det nyligen erövrade Blekinge. Statyn blev folkkär genom Selma Lagerlöfs Nils Holgersson. Runt torget står Fredrikskyrkan och Trefaldighetskyrkan vända mot varandra, och tillsammans bildar de en av landets mest helgjutna barockmiljöer.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.karlskrona.se/varldsarvet-orlogsstaden-karlskrona/varldsarvet-orlogsstaden-karlskrona/orlogsstaden-karlskronas-historia/"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "pitea-pite-havsbad",
+   "name": "Pite Havsbad",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 65.238501,
+    "lng": 21.564778
+   },
+   "summary": "Norrbottens egen riviera vid Piteälvens utlopp, med en kilometerlång sandstrand och en av Sveriges största camping- och konferensanläggningar.",
+   "description": "Vid Bottenviken, omkring en mil sydost om Piteå centrum, breder en av Norrlands mest oväntade badstränder ut sig. Allt började blygsamt på 1940-talet med en kiosk och några enkla stugor invid den långgrunda sandstranden. Under tre somrar i rad på 1950-talet uppmättes faktiskt Sveriges varmaste badvatten just här, och smeknamnet Norrbottens riviera fastnade. Sedan dess har platsen vuxit till en av landets största camping- och konferensanläggningar med hundratals stugor och rum, tusentals tältplatser och ett äventyrsbad som invigdes 1995. Den långa, grunda sandstranden gör vattnet ovanligt varmt för att ligga så här långt norrut, och solens sena kvällsljus sommartid förstärker rivierakänslan. Här möts barnfamiljernas semesteridyll och Bottenvikens speciella natur, där landhöjningen ständigt skjuter nya rev och sandbankar ur havet alldeles utanför badstranden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Pite_havsbad"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "falkenberg-tullbron",
+   "name": "Tullbron",
+   "category": "bro",
+   "coordinates": {
+    "lat": 56.902996,
+    "lng": 12.494324
+   },
+   "summary": "Stenvalvsbro i fem bågar över Ätran, byggd på 1750-talet och fortfarande i daglig trafik.",
+   "description": "Mitt i Falkenberg spänner Tullbron sina fem stenvalv över Ätran, en av Sveriges äldsta brukade stenbroar. När den gamla träbron förföll på 1750-talet fick landshövdingen kungligt tillstånd att låta resa något hållbarare, och slottsarkitekten Carl Cronstedt ritade en knappt åttio meter lång konstruktion. Murarmästaren Friedrich August Rex drev igenom att bron lades just här, där berget gick i dagen och kunde bära tyngden. Bygget pågick från 1756 och stod i huvudsak färdigt mot 1761. Namnet minner om att resenärer ända fram till 1914 fick betala tull för att komma in i staden. Bron har lagats vid flera tillfällen, senast på 1990-talet, men bär ännu dagligen tusentals fordon. Att stanna mitt på valvet och se laxfiskarna nedanför ger en känsla av kontinuitet som få platser i staden kan mäta sig med.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Tullbron"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "smogen-gravarne",
+   "name": "Gravarne",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.358502,
+    "lng": 11.248634
+   },
+   "summary": "Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske och stenexport.",
+   "description": "Gravarne är det gamla namnet på den ort som i dag heter Kungshamn, ett byte som skedde 1963. Här, vid Sotenäsets sydligaste spets, växte en av kustens viktigaste fiskeplatser fram. De första bosättningarna kan knytas till 1500-talets sillperiod och en tidig tullstation, medan ett mer varaktigt samhälle etablerades under den stora sillperioden från mitten av 1700-talet. Gravarne var inte bara ett betydande fiskeläge för havsfiske, bland annat garnfiske av makrill, utan också en viktig exporthamn för stenindustrins produkter från trakten. Genom konservindustrin, med Abba i spetsen, blev orten en motor i bygdens näringsliv. Namnbytet till Kungshamn speglade en vilja att samla de gamla fiskelägena Gravarne, Bäckevik och Fisketången under ett gemensamt namn. För den som vandrar här ekar fortfarande Gravarnes historia av sill, sten och konserver.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "http://faktoider.blogspot.com/2015/06/gravarne.html"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "halmstad-sankt-nikolai-kyrka-halmstad",
+   "name": "Sankt Nikolai kyrka, Halmstad",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.673304,
+    "lng": 12.856422
+   },
+   "summary": "Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade byggnaden från Halmstads medeltid.",
+   "description": "När Halmstad flyttades till sitt nuvarande läge vid Nissan på 1320-talet ingick en kyrka i den nya stadsplanen, och Sankt Nikolai kyrka går därmed tillbaka till 1300-talet. Den är uppkallad efter de sjöfarandes skyddshelgon och nämns första gången 1432, då påven Eugenius IV utfärdade ett avlatsbrev för dem som besökte Jungfru Marias kapell i kyrkan. Den storslagna byggnaden, färdig mot slutet av 1400-talet, hänger samman med Halmstads roll i Kalmarunionen: enligt unionstraktatet från 1397 skulle kungavalen hållas i staden tack vare dess centrala läge mellan de tre rikena, och då behövdes en kyrka som rymde mötesdelegaterna. Rester av en ännu äldre kyrka har hittats under tornet. I dag är Sankt Nikolai den enda byggnad från medeltiden som finns kvar i Halmstad och en viktig del av stadens identitet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Nikolai_kyrka,_Halmstad"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "varberg-subbe-fyr",
+   "name": "Subbe fyr",
+   "category": "utsiktsplats",
+   "coordinates": {
+    "lat": 57.0996,
+    "lng": 12.2375
+   },
+   "summary": "Liten infartsfyr på udden Subbe norr om Apelviken med fin utsikt över Kattegatt.",
+   "description": "På udden Subbe, som skjuter ut i havet norr om Apelviken i södra Varberg, står Subbe fyr. Det är en av infartsfyrarna till Varbergs hamn och har genom åren visat vägen för sjöfarten in mot kusten. Fyren är liten till växten men desto mer omtyckt som utflyktsmål, för från klipporna runt omkring öppnar sig en vidsträckt utsikt över Kattegatt där blicken kan vandra ända ut mot horisonten. Hit kommer Varbergsbor och besökare för att se solen sjunka i havet, känna saltstänk från vågorna mot klipporna och följa surfarna nere i Apelviken. Platsen knyter samman strandpromenaden med det öppna kustlandskapet och hör till de finaste utsiktspunkterna i staden. En kort promenad längs vattnet räcker för att nå fyren, och få platser fångar Varbergs förhållande till havet lika tydligt som denna lilla udde.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.tripadvisor.com/Attraction_Review-g189892-d15158057-Reviews-Subbe_Fyr-Varberg_Varberg_Municipality_Halland_County_West_Coast.html"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "vastervik-vasterviks-museum",
+   "name": "Västerviks Museum",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 57.766131,
+    "lng": 16.644131
+   },
+   "summary": "Stadens kulturhistoriska museum på Kulbacken, med tonvikt på marinhistoria och fynd från regalskeppet Mars.",
+   "description": "Högt uppe på Kulbacken ligger Västerviks Museum, stadens kulturhistoriska museum som grundades 1933. Här står marinhistorien i centrum, och en av de mest spännande utställningarna handlar om regalskeppet Mars Makalös och 1500-talets sjökrig. Bland föremålen finns bärgade bronskanoner och skeppsvirke som berättar om en tid då Tjustkusten var en farled mitt i nordiska maktstrider. Museet skildrar också stadens vardagsliv, sjöfart och hantverk genom århundradena. Kring museet breder Kulbackens grönska ut sig, och här reser sig också Unos torn, ett 15 meter högt utsiktstorn som invigdes 1997. Tornet bekostades av tandläkaren Uno Malmberg från Gamleby och bjuder på en milsvid utsikt över både staden och den glittrande skärgården. Tillsammans gör museet och tornet Kulbacken till en självklar startpunkt för den som vill förstå Västerviks historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.vasterviksmuseum.se/"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "marstrand-marstrands-kyrka",
+   "name": "Marstrands kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.886309,
+    "lng": 11.582844
+   },
+   "summary": "Medeltida kyrka från sent 1200-tal, ursprungligen knuten till ett franciskanerkonvent och helgad åt jungfru Maria.",
+   "description": "Marstrands kyrka hör till de äldsta byggnaderna på ön och vittnar om stadens medeltida storhet. Platsen omnämns första gången 1291 i samband med en klosterkyrka, och runt år 1300 uppfördes här ett franciskanerkonvent i sten. Kyrkan, som restes under 1200-talets senare hälft eller kring sekelskiftet 1300, var helgad åt jungfru Maria och kallades länge Mariakyrkan. Sannolikt tjänade den samtidigt som församlingskyrka för Marstrandsborna. Klostret bestod fram till reformationen, då munkväsendet avvecklades och byggnaderna fick nya öden. Genom århundradena har kyrkan byggts om och förändrats, men dess grå stenmurar bär fortfarande spår av den katolska medeltiden. På den gamla kyrkogården intill har arkeologer påträffat lämningar som berättar om generationer av sjöfarare, fiskare och köpmän. För besökaren är kyrkan en stilla påminnelse om att Marstrand var en levande stad långt före badortens tid.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Marstrands_kyrka"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "halmstad-tjuvahalan-halmstad",
+   "name": "Tjuvahålan, Halmstad",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.64122,
+    "lng": 12.734007
+   },
+   "summary": "Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smugglare och sjörövare.",
+   "description": "Tjuvahålan är en liten havsvik och sandstrand vid kusten utanför Halmstad, och namnet vittnar om dess brokiga förflutna. Viken ligger väl gömd i lä nedanför höjderna Flaggberget och Svärjareberget, tidigare kända under namn som Tjuvahålsberget och Helvetesberget, och var därför skyddad från insyn från fartyg ute till havs. Det dolda läget gjorde platsen idealisk för olaglig verksamhet, och i slutet av 1700-talet blev den svårtillgängliga viken en landstigningsplats för smugglare och sjörövare, vilket gav den dess namn. Till slut tröttnade myndigheterna på smugglingen och en tullstation uppfördes på 1870-talet, vilket satte stopp för den illegala trafiken. Sedan dess har viken förvandlats fullständigt: på 1920-talet blev camping ovanför Tjuvahålan populär och turisterna bodde i tält, och på 1930-talet byggdes små stugor. Den forna ödemarken är i dag en idyllisk badvik längs kusten.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Tjuvah%C3%A5lan"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "borgholm-sollidens-slott",
+   "name": "Sollidens slott",
+   "category": "slott",
+   "coordinates": {
+    "lat": 56.8654,
+    "lng": 16.634574
+   },
+   "summary": "Kungafamiljens sommarresidens på Öland, en italienskinspirerad villa från 1906 omgiven av berömda trädgårdar.",
+   "description": "Strax söder om Borgholm ligger kungafamiljens sommarbostad Solliden. Slottet uppfördes 1906 åt dåvarande kronprinsessan Victoria, som led av dålig hälsa och fann lindring i Ölands milda klimat och stillhet. Hon hämtade inspiration från villan San Michele på Capri, och arkitekten Torben Grut, mest känd för Stockholms stadion, ritade den vita, italienskt präglade byggnaden. Efter Victorias död tog Gustaf V över ansvaret och öppnade slottsparken för allmänheten. Han testamenterade i sin tur Solliden till arvprinsen Carl Gustaf, som i dag äger och förvaltar anläggningen. Slottet ägs privat av kungen och här tillbringar kungaparet stora delar av sina somrar tillsammans med övriga i den kungliga familjen. Slottsparken med sina omsorgsfullt anlagda trädgårdar är öppen för besökare under sommarmånaderna och hör till Ölands mest besökta sevärdheter.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sollidensslott.se/om-sollidens-slott/sollidens-historia/"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "karlskrona-bastion-aurora-karlskrona",
+   "name": "Bastion Aurora, Karlskrona",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.157411,
+    "lng": 15.593377
+   },
+   "summary": "Bevarad barockbastion från tidigt 1700-tal, en av få förverkligade delar av stadens planerade befästningsring.",
+   "description": "Bastion Aurora färdigställdes omkring 1704 och utgör en av de tydligaste resterna av Karlskronas tänkta befästningsring. I stads- och befästningsplanen från 1683, utarbetad av krigsrådet Erik Dahlbergh och generalkvartermästaren Carl Magnus Stuart, ingick sex bastioner som skulle omsluta stadens centrala delar. Av brist på pengar och tid byggdes dock bara tre: Kungshall, Drottningshall och Aurora. Bastion Aurora är försedd med ett täckt galleri med kanonöppningar och en kasematt med ett litet klocktorn på sitt norra hörn. I början av 1750-talet uppfördes baracker inne i bastionen för de handelssjömän som tidvis togs in i flottans tjänst, och 1756 övertogs lokalerna av flottans sjukhus, som blev kvar där ända till slutet av 1800-talet. Idag öppnas bastionen, en del av den gamla muren kring örlogsvarvet, ofta för olika arrangemang som större musikkonserter, och utgör en stämningsfull historisk kuliss vid Kungsbron.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.karlskrona.se/varldsarvet-orlogsstaden-karlskrona/karta/karta-over-varldsarvet/bastion-aurora/"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "karlskrona-fredrikskyrkan-karlskrona",
+   "name": "Fredrikskyrkan, Karlskrona",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.161123,
+    "lng": 15.588153
+   },
+   "summary": "Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.",
+   "description": "Mitt på Stortorget lyser Fredrikskyrkan med sin gula fasad och sina två torn, en av den svenska barockens praktfullaste skapelser. Ritningarna gjordes redan på 1690-talet av rikets dåvarande överarkitekt Nicodemus Tessin den yngre, och kyrkan blev hans största kyrkobygge. Som förebild för fasaden tog han Santa Trinità dei Monti i Rom, vilket märks i den italienska elegansen. Grunden lades 1720 och stod färdig året därpå, men först 1744 kunde kyrkan invigas, då i närvaro av kronprins Adolf Fredrik och prinsessan Lovisa Ulrika. Namnet hedrar kung Fredrik I. Tornen var ursprungligen tänkta att kröna med spiror, men dessa kom på plats först 1758. Inuti möts besökaren av ett ljust och högrest kyrkorum, planerat som en basilika i form av ett latinskt kors. Kyrkan ingår i världsarvet Örlogsstaden Karlskrona, infört på UNESCO:s lista 1998.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Fredrikskyrkan"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "varberg-varbergs-kallbadhus",
+   "name": "Varbergs kallbadhus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.108821,
+    "lng": 12.241017
+   },
+   "summary": "Karakteristiskt badhus i orientaliserande träarkitektur med lökkupoler, en av Varbergs mest älskade symboler.",
+   "description": "Vid vattenlinjen står kallbadhuset med sina lökkupoler och fina snickerier, ett av de tydligaste minnesmärkena från tiden då Varberg var en mondän kurort. Det första badhuset uppfördes 1866 utifrån tanken på ett ståtligare bad än de enkla anläggningar som funnits tidigare. Men det utsatta läget vid havet straffade sig: stormarna slet sönder byggnaden flera gånger, och en byggnadsinspektör avfärdade en av versionerna som rena lappverket. Julstormen mellan juldagen och annandagen 1902 ödelade badhuset, och året därpå restes den nuvarande byggnaden med den dekorativa utformning vi ser i dag. Här badar man fortfarande könsuppdelat i öppna bassänger med direktkontakt med Kattegatt, och bastubad följt av ett dopp i det kalla havet hör till de mest uppskattade upplevelserna i staden, året runt.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://visitvarberg.se/uppleva/kallbadhuset"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "smogen-kleven-smogen",
+   "name": "Kleven, Smögen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.351865,
+    "lng": 11.221023
+   },
+   "summary": "Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid det gamla sundet.",
+   "description": "Kleven hör till hjärtat av det gamla Smögen, där samhället en gång växte fram i det smala sundet mellan Smögenön och holmen Kleven. Husen restes tätt intill vattnet och sjöbodarna placerades i täta grupper längs strandkanten, allt för att vara nära fisken och fångsten. Resultatet blev en oreglerad, organiskt framvuxen bebyggelse med slingrande, smala gränder mellan bostadshus och bodar, en miljö som myndigheterna senare värnade om just för dess karaktär som fiskeläge. På Holländarbacken finns lämningar efter stenkretsar som tros markera Smögens allra första bosättning, troligen från det stora sillfiskets tid på 1500-talet. Att vandra genom Kleven är att röra sig genom århundraden av kustkultur, där varje vinkel och trappa berättar om ett liv format av sill, salt och hav.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.sotenas.se/download/18.3c95fd2518359764beb530ae/1664796007543/Program%20f%C3%B6r%20gamla%20delen%20av%20Sm%C3%B6gen.pdf"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "karlskrona-kungsholms-fort",
+   "name": "Kungsholms fort",
+   "category": "slott",
+   "coordinates": {
+    "lat": 56.106959,
+    "lng": 15.587848
+   },
+   "summary": "Sjöfästning vid inloppet till Karlskrona, i militärt bruk i över 300 år och alltjämt vaktande örlogsstaden.",
+   "description": "Vid det smala inloppet till Karlskronas skärgård, mellan öarna Aspö och Tjurkö, ligger Kungsholms fort och bevakar farleden in mot flottbasen. Anläggningen brukar kallas världens äldsta kontinuerligt befästa militära plats och har varit i bruk i över trehundra år. Bygget inleddes på Karl XI:s order, och redan i juli 1680 stod de första kanonerna på plats. Den ursprungliga femuddiga bastionsbefästningen ritades av Erik Dahlbergh, samme man som lade ut stadens gatunät. Arbetet pågick fram till 1741 då fästningen färdigställdes som ett sjökastell. Under 1820-talet moderniserades den och fick sitt nuvarande utseende med den karakteristiska kärntornsbyggnaden, hamnbassängen och vaktbyggnaderna. På 1870-talet förstärktes fortet med jordvallar och torra gravar för att stå emot den nya tidens räfflade kanoner. Området är fortfarande militärt och besöks med guidad båttur från staden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Kungsholms_fort"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "karlskrona-stumholmen-karlskrona",
+   "name": "Stumholmen, Karlskrona",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.159921,
+    "lng": 15.597688
+   },
+   "summary": "Tidigare stängd militärö, idag en grön stadsdel med marinmuseum, badplats och välbevarad flottbebyggelse.",
+   "description": "I över trehundra år var Stumholmen ett stängt militärt område dit allmänheten saknade tillträde. Redan från 1683 användes ön som segelflottans förrådsplats och magasinsö, en plats där flottans utrustning, proviant och materiel förvarades inom murarna. Här uppfördes en rad byggnader som kompletterade örlogsvarvet på Trossö, och spåren av denna verksamhet präglar fortfarande ön med sina ljusgula längor och sin strama planering. Först 1993 öppnades Stumholmen för den civila staden och förvandlades till en av Karlskronas mest uppskattade stadsdelar. Idag samsas den gamla flottbebyggelsen med bostäder, grönska och en populär badplats, och längst ut på en pir ligger Marinmuseum som öppnade i sin nuvarande byggnad 1997. Att vandra över Stumholmen är att röra sig genom örlogsstadens historia, från sluten militärzon till öppet promenadstråk vid vattnet, och hela ön ingår i världsarvet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Stumholmen"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "halmstad-halmstads-radhus",
+   "name": "Halmstads rådhus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.674776,
+    "lng": 12.919931
+   },
+   "summary": "Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopierat ända bort till Norwich i England.",
+   "description": "Halmstads rådhus ligger på södra sidan av Stora torg och invigdes den 18 september 1938. Det ritades av arkitekterna Yngve Ahlbom och Nils Sterner och ersatte ett äldre rådhus från 1863 vid Hamngatan, som senare revs. Byggnaden är fortfarande säte för kommunens politiska ledning och förvaltning. Konstnärligt knyter rådhuset an till stadens stolta modernistarv: medlemmar ur Halmstadgruppen skapade flera intarsiaarbeten som infogades i interiören, och urtavlan mot torget pryds av klockor som belagts med bladguld. En tillbyggnad mot slottet, ritad av Carl Nyrén, stod klar 1982. Rådhuset har också fått ett oväntat eko utomlands: 1951 uppfördes Norfolk House i engelska Norwich med en fasad utformad som en spegelvänd kopia av Halmstads rådhus, sedan en brittisk affärsman imponerats av byggnaden under ett besök på 1940-talet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Halmstads_r%C3%A5dhus"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "varberg-hallands-kulturhistoriska-museum",
+   "name": "Hallands kulturhistoriska museum",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 57.105979,
+    "lng": 12.23953
+   },
+   "summary": "Länets kulturhistoriska museum i Varbergs fästning, grundat 1916 och hem för Bockstensmannen.",
+   "description": "I den västra längan av Varbergs fästning ligger Hallands kulturhistoriska museum, länets stora museum för regionens historia. Det grundades 1916 och har sedan dess vuxit till en av landskapets viktigaste kulturinstitutioner, väl placerad innanför fästningens mäktiga murar med havet och berget som granne. Museet berättar Hallands historia genom föremål, miljöer och utställningar som spänner över allt från medeltid till modern tid. Den mest kända och mest besökta utställningen är ägnad Bockstensmannen, Skandinaviens mest berömda mosslik, vars välbevarade dräkt utgör den enda kompletta uppsättningen medeltida manskläder som finns bevarad i Europa. Här ryms också guidade visningar av själva fästningen, föreläsningar och tillfälliga utställningar. För besökaren blir museet en naturlig nyckel till att förstå både Varbergs och hela Hallands långa och dramatiska historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://museumhalland.se/en/hallands-kulturhistoriska-museum/"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "borgholm-borgholms-slottsruin",
+   "name": "Borgholms slottsruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 56.870718,
+    "lng": 16.644676
+   },
+   "summary": "Nordens kanske mäktigaste slottsruin reser sig på en klinta ovanför Borgholm och bär spår av åtta sekel av makt, krig och förfall.",
+   "description": "På en kalkstensklint ovanför staden tronar en av Sveriges mest storslagna borgruiner. Redan i slutet av 1100-talet restes här en kastal som med tiden växte till en befäst borg, klar under 1200-talet. Läget mitt emot Kalmar gjorde slottet militärt viktigt under unionstiden, och i striderna mellan Sverige och Danmark skadades det svårt. Under Karl Gustavs tid på 1650-talet leddes en ståtlig ombyggnad i barockstil av Nicodemus Tessin den äldre, men planerna fullbordades aldrig. Efter att slottet stått öde inrättades en klädesfabrik i en av längorna, och 1806 antändes taket av en gnista. Branden lämnade endast murarna kvar. Sedan mitten av 1800-talet vårdas ruinen av staten och är i dag ett populärt utflyktsmål där konserter, teaterföreställningar och andra kulturevenemang hålls regelbundet under sommaren. Från murkrönet öppnar sig en milsvid utsikt över Kalmarsund och det öländska landskapet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Borgholms_slottsruin"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "falkenberg-doktorspromenaden",
+   "name": "Doktorspromenaden",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.898,
+    "lng": 12.495
+   },
+   "summary": "Cirka två kilometer lång strandstig längs Ätrans södra strand, anlagd 1862 av en egensinnig stadsläkare.",
+   "description": "Doktorspromenaden slingrar sig knappt två kilometer längs Ätrans södra strand och hör till Falkenbergs mest omtyckta promenadstråk. Den anlades 1862 av stadsläkaren Gustaf Adam Ehrengranat, som ville ge stadsborna en plats för avkopplande vandringar och bekostade arbetet ur egen ficka. Historien om hur stigen kom till är minst sagt frejdig: marken tillhörde godset Herting, och Ehrengranat lät enligt traditionen anlägga vägen utan att fråga ägaren, hans egen vän, om lov. Han ska ha instruerat arbetarna att strunta i alla bud om att stoppa arbetet och till och med skickat med karlar som höll godsägarens folk på avstånd. Resultatet blev en lummig stig som ännu bär hans titel. I dag kantas promenaden av rikt växtliv, och längs vattnet kan man ofta se laxfiskare stå i strömmen. Stråket binder samman stadens grönska med ån som format hela Falkenbergs historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Doktorspromenaden"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "marstrand-pater-noster-hamneskar",
+   "name": "Pater Noster, Hamneskär",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.89568,
+    "lng": 11.466379
+   },
+   "summary": "Resligt järntorn från 1868 på den karga klippön Hamneskär, byggt för att varna sjöfarare för de fruktade Pater Nosterskären.",
+   "description": "Längst ut i havsbandet väster om Marstrand står Pater Noster, en av Sveriges mest kända fyrar. Redan på 1720- och 1750-talen hade kungliga brev tagit upp behovet av en fyr som kunde varna för de farliga Pater Nosterskären, men först 1868 tändes den för första gången, natten till den första november. Samtidigt släcktes den gamla fyren på Carlsten. Det smäckra järntornet, drygt trettio meter högt, tillverkades vid Ludvigsbergs mekaniska verkstad och är av den öppna pelartyp som kallas Heidenstammare. Det var dessutom ett av de första större svenska föremålen som galvaniserades som rostskydd. Hela fyranläggningen kostade över 124 000 riksdaler. Under 1900-talet förföll fyren, men efter en omfattande räddningsinsats restaurerades den och blev statligt byggnadsminne 2015. Idag är ön ett populärt utflyktsmål för den som söker havets ensliga skönhet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Pater_Noster_(fyr)"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "falkenberg-skrea-strand",
+   "name": "Skrea strand",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.886531,
+    "lng": 12.503573
+   },
+   "summary": "Falkenbergs långa sandstrand med badhytter och brygga, som blev semesterort i samband med järnvägens ankomst.",
+   "description": "Skrea strand är Falkenbergs vidsträckta sandstrand, ungefär två kilometer lång och med en lång brygga som sträcker sig ut i Kattegatt. Strandlivet växte fram när järnvägen nådde staden i slutet av 1800-talet och badresor till västkusten blev på modet. Från 1910-talet började stadsborna göra utflykter hit, och snart öppnade ett kafé. Enligt traditionen lät en cyklist vid namn Ernst Andersson uppföra en av de första badhytterna, tänkt som omklädningsrum och förvaring av strandstolar. Hytterna ägdes till en början av de mer välbärgade familjerna. Under 1920-talet byggdes vägen ut och antalet badgäster steg kraftigt, och på 1930-talet tillkom hotell och restaurang, däribland Hotell Strandbaden vars första byggnad stod klar 1937. I dag finns omkring sextonhundra badhytter längs stranden, och platsen är fortfarande hjärtat i Falkenbergs sommarliv, en levande fortsättning på mer än ett sekel av badtradition.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skrea_strand"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "vastervik-batsmansstugorna-vastervik",
+   "name": "Båtsmansstugorna, Västervik",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.757175,
+    "lng": 16.642194
+   },
+   "summary": "En rad små röda 1700-talsstugor byggda åt båtsmännen i Tjusts båtsmanskompani.",
+   "description": "Längs en grusad gångväg i Västervik ligger Båtsmansstugorna, en samling små röda stugor som andas 1700-tal. De byggdes som bostäder åt båtsmännen i Tjusts båtsmanskompani, en del av det indelningsverk där staden var skyldig att hålla ett visst antal båtsmän redo för flottans räkning. De första åtta stugorna restes i slutet av 1740-talet, och de blev hem för sjömän och deras familjer under en tid då Sveriges örlogsflotta vilade på just sådana lokalt försörjda manskap. Idag bildar de täta små husen, omgivna av träd och blommor, en av stadens mest stämningsfulla miljöer. Här kan besökaren vandra förbi knutarna på den vackra grusgången, slå sig ner på ett kafé eller övernatta på vandrarhem. Stugorna är ett levande minne av en epok då sjöförsvaret och stadens vardag var tätt sammanflätade.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://trippa.se/tripp/vastervik/batsmansstugorna-vastervik"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "smogen-smogens-kyrka",
+   "name": "Smögens kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 58.356024,
+    "lng": 11.225316
+   },
+   "summary": "Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt för havsklimatets slitage.",
+   "description": "Mitt på Smögenön reser sig den nygotiska kyrkan, uppförd 1904–1905 efter ritningar av göteborgsarkitekten Adrian C. Peterson. Byggnaden har ett långhus med ett femsidigt kor i öster och ett torn i väster, en värdig samlingspunkt för ett fiskeläge som vid sekelskiftet växte snabbt. Det utsatta havsklimatet satte tidigt sina spår: redan 1910 krävdes den första reparationen, och vid en åtgärd 1944 var tornet och västfasadens gavlar så frostskadade att delar fick rivas. Interiören har förändrats över tid, bland annat fick kyrkorummet tunnvalv vid en restaurering 1927. På 1950-talet smyckades korfönstren med glasmålningar av Ernst Söderberg, och 1960 installerades en ny orgel. Kyrkan vittnar om både fromhet och om den ständiga kampen mot vind, salt och fukt på Bohusläns yttersta kust.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sm%C3%B6gens_kyrka"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "falkenberg-morups-tange-fyr",
+   "name": "Morups Tånge fyr",
+   "category": "utsiktsplats",
+   "coordinates": {
+    "lat": 56.923221,
+    "lng": 12.359444
+   },
+   "summary": "Drygt 27 meter hög fyr från 1843 vid kusten söder om Glommen, omgiven av naturreservat.",
+   "description": "Morups Tånge reser sig vid kusten strax söder om Glommen, en drygt 27 meter hög fyr som tändes första gången den 1 november 1843. Farvattnet här har länge haft dåligt rykte: under ett sekel hade ett tjugotal fartyg förlist på reven utanför tången, och innan fyren fanns navigerade fiskarna efter ett stort flyttblock, Glomstenen, som landmärke. När ljuset väl tändes kunde det skära genom mörkret många sjömil ut i Kattegatt, och linsen sägs vara den äldsta ännu brukade i Sverige. Kring fyren växte ett litet fiskeläge fram, det som i dag är Glommen, och de flesta husen omkring restes på 1870-talet. Numera omges fyren av ett naturreservat med karg ljunghed och rikt fågelliv, och i en av de röda stugorna finns ett litet fyr- och fiskemuseum. Platsen är ett av Hallands mest stämningsfulla utflyktsmål, där havsvinden och fyrens historia möts.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Morups_T%C3%A5nge"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "varberg-varberg",
+   "name": "Varberg",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.105741,
+    "lng": 12.250295
+   },
+   "summary": "Varberg är en kurortstad på den halländska kusten som lockar med en alldeles särskild stämning – här finns plats för både stora upplevelser och stilla stunder.",
+   "description": "Få svenska städer bjuder på en sådan blandning av själfull atmosfär och ren avkoppling som Varberg. Längs gatorna och vid havet hittar du lätt platser som känns skapade för romantikens skull – oavsett om du söker de storslagna vyerna eller de små, intima ögonblicken gömda runt ett gathörn.\n\nSom sedan länge etablerad kurort har Varberg en stark tradition av välmående och återhämtning. Här kan du lägga vardagens stress åt sidan och unna dig en stund i stadens spa-anläggningar – ett besök som passar lika bra för ett soloäventyr som för en gemensam paus med någon du håller av.\n\nSommartid blommar Varberg ut på ett sätt som gör staden svår att motstå. Oavsett om det är ditt första besök eller ett i raden av återkomster finns alltid något nytt att upptäcka i den här lilla kurortspärlan vid Västkusten.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://visitvarberg.se/"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "falkenberg-hertingforsen",
+   "name": "Hertingforsen",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.905,
+    "lng": 12.485
+   },
+   "summary": "Forssträcka i Ätran vid Herting där ett gammalt kraftverk rivits för att ge fri vandringsväg åt laxen.",
+   "description": "Vid Herting i östra delen av Falkenberg bryter Ätran fram i forsar som länge varit förknippade med både fiske och kraft. Här fanns sedan gammalt en laxfisketplats och en kvarn, och platsen bär också ett mörkt minne: den 2 juni 1777 omkom tre barn när deras roddbåt drogs över fallet. I början av 1900-talet byggdes ett kraftverk vid forsen och senare ytterligare ett, vilket under ett sekel hindrade fiskens vandring uppströms. Efter påtryckningar beslöt kommunen, som äger anläggningen, att riva stora delar av kraftverket. Därmed öppnades åter fri väg för lax, ål och andra arter att ta sig förbi. I dag är Hertingforsen ett exempel på hur en hårt utnyttjad fors återförts mot ett mer naturligt tillstånd, och ett populärt utflyktsmål där besökare kan följa det strömmande vattnet och se livet i ån återvända.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://falkenberg.se/se-gora/naturen/naturattraktioner/hertingforsen/"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "vastervik-sankta-gertruds-kyrka-vastervik",
+   "name": "Sankta Gertruds kyrka, Västervik",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.759551,
+    "lng": 16.634109
+   },
+   "summary": "Stadens medeltida kyrka, byggd på 1450-talet, som efter ett halvsekel som magasin återinvigdes 1933.",
+   "description": "När Västervik 1433 flyttades till sitt nuvarande läge gav Erik av Pommern staden ett år utan skatt så att en kyrka kunde byggas. Sankta Gertruds kyrka stod klar i slutet av 1450-talet med kor, sakristia och långhus. Vid danskarnas anfall 1612 brann staden och kyrkans korvalv störtade in; vid återuppbyggnaden ersattes valvet av ett plant tak. Tornet med sin höga, smala spira tillkom omkring 1670, och på 1730- och 1760-talen byggdes kyrkan ut med korsarmar i norr och söder. Den sista högmässan i sin gamla roll hölls 1905, varefter kyrkan bland annat tjänade som spannmålsmagasin under första världskriget. Under hungerkravallerna 1917 stormade svältande Västerviksbor byggnaden, bara för att finna att spannmålet grott och blivit oätligt. Efter en omfattande upprustning återinvigdes kyrkan som gudstjänstrum den 18 juni 1933.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankta_Gertruds_kyrka,_V%C3%A4stervik"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "varberg-brunnsparken-varberg",
+   "name": "Brunnsparken, Varberg",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.106114,
+    "lng": 12.249416
+   },
+   "summary": "Grön park vid kyrkan med ursprung i Varbergs tidiga brunns- och kurorthistoria.",
+   "description": "Brunnsparken intill kyrkan bär i sitt namn minnet av tiden då Varberg blev en hälsoort. Allt började med Svartekällan i Apelviken, vars vatten ansågs hälsobringande och som lockade människor att resa hit för att dricka ur källan. Det enkla badhus som vuxit upp kring källan flyttades 1837 till platsen vid kyrkan, och området fick då namnet Brunnsparken. Här samlades kurgästerna för att dricka brunn och kurera sig, och parken blev en av de tidigaste platserna i den utveckling som senare skulle göra Varberg till en mondän badort med societetsliv, kallbadhus och parker. När den finare societeten med tiden sökte sig mot Societetsparken levde Brunnsparken vidare som grön plats mitt i staden. I dag är den en lugn oas i centrum, och en pålitlig vägvisare tillbaka till de hälsokällor och brunnstraditioner som en gång gav staden dess rykte.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Varberg"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "marstrand-koon-marstrand",
+   "name": "Koön, Marstrand",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.890525,
+    "lng": 11.607116
+   },
+   "summary": "Grannön till Marstrandsön, dit fastlandets väg når och varifrån den lilla färjan tar besökaren över sundet.",
+   "description": "Koön är den ö som binder samman Marstrand med fastlandet, och det är hit bilvägen leder innan den korta färjeturen tar vid. Den isfria hamnen ligger mellan Koön och Marstrandsön, och över det smala sundet går Marstrandsfärjan dygnet runt på bara ett par minuter. Färjetrafiken har lång historia: Marstrands Mekaniska Verkstad ansvarade för den 1911–1966, därefter tog Marstrands stad över, och sedan 1971 sköts färjan av Kungälvs kommun. Den första färjan, kallad Spårvagnen eller Hamnfärjan I, byggdes 1911 och var i drift till omkring 1960. Under 1900-talet skedde mycket av Marstrands utbyggnad just på Koön, eftersom den bilfria huvudön hade begränsat utrymme. Här finns idag bostäder, badplatser som Arvidsvik och vandringsleder med vid utsikt över skärgården. Koön är porten till Marstrand och en del av upplevelsen redan innan man stiger ombord på färjan.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.kungalv.se/trafik--gator/kollektivtrafik/marstrandsfarjan/"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "falkenberg-stafsinge-kyrka",
+   "name": "Stafsinge kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.919652,
+    "lng": 12.486663
+   },
+   "summary": "Nyklassicistisk kyrka från 1865 i en bygd som var ett viktigt maktcentrum redan under medeltiden.",
+   "description": "Stafsinge kyrka berättar om en bygd som var betydelsefull långt innan Falkenberg blev stad. Omkring sjuhundra meter norr om dagens kyrka låg en medeltida stenkyrka, troligen uppförd på 1100-talet och helgad åt den norske helgonkungen Sankt Olof. I den större historien framträder Stafsinge som ett tidigt stormanscentrum, och Falkenberg tros ha vuxit fram vid Ätrans mynning delvis i konkurrens med denna äldre maktplats. Den gamla kyrkan byggdes om 1793 och revs slutligen 1863, varvid inventarier och byggnadsmaterial såldes på auktion, däribland triumfkrucifixet som dock senare återköptes. Den nuvarande kyrkan uppfördes 1862–1865 i sen nyklassicistisk stil, ritad av arkitekten Albert Theodor Gellerstedt. Den är byggd av vitputsad gråsten med ett västtorn krönt av en smal kopparklädd lanternin, och på 1930-talet installerades en flygfyr i lanterninen. Kyrkan restaurerades 1936 och står som ett värdigt minne över en uråldrig bygd.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stafsinge_kyrka"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "smogen-vajern",
+   "name": "Väjern",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.380099,
+    "lng": 11.265163
+   },
+   "summary": "Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark koppling till sillfisket.",
+   "description": "Väjern är ett litet fiskeläge som ligger alldeles före Kungshamns norra infart och som på senare år vuxit betydligt med ny bebyggelse. Den första bosättningen skedde vid Klevekilen, där det fanns folk redan i mitten av 1600-talet. Invånarna levde då troligen av både fiske och jordbruk, men under sillperioden mot slutet av 1700-talet kunde många försörja sig enbart på fisket. Det fick människor att flytta närmare havet, och samhället tog form i takt med att fångsterna lockade. Väjern ligger i en dalgång som tidigare var täckt av vatten, vilket en gång gjorde det möjligt att ta sjövägen dit från Hovenäset. I dag är Väjern en blandning av gammalt och nytt, där den ursprungliga fiskelägeskaraktären finns kvar samtidigt som orten lever vidare som ett attraktivt kustsamhälle i Sotenäs.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.vastsverige.com/sotenas/artiklar/vajern/"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "pitea-radhustorget-pitea",
+   "name": "Rådhustorget, Piteå",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 65.315918,
+    "lng": 21.483386
+   },
+   "summary": "Ett av Sveriges enda bevarade torg från 1600-talet, format efter stadsplanen från 1667 och idag av riksintresse för kulturmiljövården.",
+   "description": "Mitt i Piteå ligger ett torg som ser nästan likadant ut som när den nya staden planerades. Efter branden 1666 flyttades Piteå från Öjebyn till Häggholmen, och 1667 lade lantmätaren Jonas Persson Gedda ut en rätvinklig rutnätsplan med en huvudgata korsad av fyra tvärgator, som bildade tio rektangulära kvarter. Genom att skära ut hörn ur fyra av kvarteren skapades en kvadratisk öppen yta, stadens samlingspunkt. Planen följde återupptäckta antika och renässansideal, och vid torget restes två symmetriska fondbyggnader, rådhuset och trivialskolan, inspirerade av barockens Rom. Resultatet är en stadsplanekonst av ovanligt hög klass för sin tid. Rådhustorget hör idag till de mycket få bevarade 1600-talstorgen i landet och är klassat som riksintresse för kulturmiljövården, en plats där stadens grundläggning fortfarande går att avläsa rakt i marken.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://kulturmiljonorrbotten.com/2022/04/08/radhustorget-i-pitea-och-stadsplanen-fran-1667/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "varberg-apelviken-varberg",
+   "name": "Apelviken, Varberg",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.083852,
+    "lng": 12.267222
+   },
+   "summary": "Långgrund vik söder om Varbergs centrum, känd som en av Nordens mest populära surfplatser.",
+   "description": "Söder om Varbergs centrum öppnar sig Apelviken, en långgrund vik som blivit ett begrepp långt utanför Halland. De jämna, pålitliga vindarna och det öppna läget mot Kattegatt har gjort viken till en av Nordens mest populära platser för surfing, kitesurfing och vindsurfing, och under vågfyllda dagar pricksätts havet av brädor och segel. Men Apelviken har en längre historia än så: redan under kurorttiden lockades människor hit av Svartekällan, en källa i trakten vars vatten ansågs hälsobringande att dricka. Det milda, grunda vattnet gör viken lika omtyckt av barnfamiljer och badare som av surfare, och den breda strandremsan inbjuder till långa promenader. Strax norr om viken sticker udden Subbe ut i havet. Med sitt vidöppna kustlandskap är Apelviken en av Varbergs mest älskade utflyktsplatser, sommar som vinter.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://svenskadestinationer.se/halland/att-gora-i-varberg"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "vastervik-sankt-petri-kyrka-vastervik",
+   "name": "Sankt Petri kyrka, Västervik",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.755856,
+    "lng": 16.638968
+   },
+   "summary": "Nygotisk tegelkyrka från början av 1900-talet, mäktigt placerad på terrasser ovanför staden.",
+   "description": "Sankt Petri kyrka uppfördes 1903-1905 i rött tegel och sandsten och invigdes 1905 av biskop Carl Wilhelm Charleville. Bygget föregicks av en närmast hundraårig strid om var stadens nya kyrka skulle ligga, och först efter långa diskussioner föll valet på den höjd där kyrkan idag tronar över Västervik på sina väldiga terrasser. Arkitekt var Adolf Emil Melander, och kyrkan med terrasser kostade omkring 380 000 kronor. Den nygotiska stilen syns tydligt i de trekopplade fönstren, rosettfönstret och mittskeppets tunnvalv av trä, som ger kyrkorummet en luftig resning. Till invigningen byggde Åkerman & Lund en orgel med 28 stämmor, och 1968 tillkom ett större instrument från Marcussen & Søn med 41 stämmor. Kyrkan blev snabbt stadens nya andliga och visuella landmärke och hör fortfarande till de byggnader som sätter prägel på Västerviks siluett.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Petri_kyrka,_V%C3%A4stervik"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "karlskrona-karlskrona-radhus",
+   "name": "Karlskrona rådhus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.161242,
+    "lng": 15.584782
+   },
+   "summary": "Nyklassicistisk byggnad som ramar in Stortorget, idag säte för Blekinge tingsrätt.",
+   "description": "Karlskrona rådhus är en av de monumentala byggnader som ger Stortorget dess högtidliga inramning, och här har idag Blekinge tingsrätt sitt säte. Tankar på ett rådhus fanns med redan i den ursprungliga stadsplanen från 1683, men bygget kom igång på allvar först efter den förödande stadsbranden 1790. Rådhuset stod färdigt 1798, och som trolig arkitekt nämns Thure Wennberg. Byggnaden uppfördes i nyklassicistisk stil med stram och balanserad form, väl anpassad till torgets stora skala. Vid om- och tillbyggnader 1905 och 1915, efter ritningar av Gustaf Adolf Lindberg, tillkom den portik mot torget som idag pryder fasaden. Samma tillbyggnader gjorde rådhuset till en sluten fyrkant med kringbyggd innergård, den utformning huset har än idag. Som en del av Örlogsstaden Karlskrona, upptagen på UNESCO:s världsarvslista 1998, hör rådhuset till de byggnader som tillsammans speglar stadens roll som centrum för rättskipning.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Karlskrona_r%C3%A5dhus"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "vastervik-spotorget-vastervik",
+   "name": "Spötorget, Västervik",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.757627,
+    "lng": 16.639012
+   },
+   "summary": "Centralt torg med rötter i stadens bryggeri- och handelshistoria, idag en mötesplats mitt i Västervik.",
+   "description": "Spötorget hör till Västerviks centrala platser och bär på en historia tätt knuten till stadens näringsliv. Torget hette ursprungligen Brädtorget och hade länge en triangulär form, präglad av en gammal bryggeribyggnad som låg snett över ytan. Här verkade Centralbryggeriet, ett av stadens äldsta företag med rötter ända tillbaka till 1818. När bryggeriverksamheten lades ned under andra hälften av 1950-talet såldes fastigheten till staden, och i samband med att den gamla bryggaren revs blev torget rektangulärt och fick sin nuvarande form. På platsen växte ett nytt Västervik fram med Folkets hus och stadsbibliotek, och en av byggnaderna bär än idag namnet Bryggaren som ett minne av den forna verksamheten. Genom åren har Spötorget varit föremål för många visioner och planer om hur det ska bli en levande central mötesplats för Västerviksborna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.vt.se/nyheter/vastervik/artikel/spotorget-for-lange-sedan/r2n03p7r"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "borgholm-boda-sand",
+   "name": "Böda sand",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.274557,
+    "lng": 17.053814
+   },
+   "summary": "Ölands längsta sandstrand på öns nordöstra kust, omgiven av flygsandsdyner och uråldrig sandtallskog.",
+   "description": "På Ölands nordöstra kust ligger Böda sand, öns längsta sandstrand med nära två mil av vit, mjuk sand. Stranden är en av Ölands mest populära och kantas av tallskogar och naturreservat som inbjuder till vandring och cykling. Området kring stranden ingår i naturreservatet Bödakustens östra, som varit skyddat sedan 1998 och omfattar drygt tusen hektar mellan Trollskogen i norr och Böda sands camping i söder. Landskapet präglas helt av sand, med upp till tio meter höga dyner och flygsandfält som sträcker sig in i landet. Dynområdet hör till Sveriges största och hyser flera sällsynta arter som är knutna till sandiga miljöer. Få platser i landet har sandtallskog som den i Böda, med både ståtliga och knotiga, silvergrå stammar där de äldsta tallarna är närmare 200 år gamla. Området lockar både badgäster och naturälskare.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/bodakustens-ostra.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "smogen-sandon-smogen",
+   "name": "Sandön, Smögen",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 58.364361,
+    "lng": 11.227399
+   },
+   "summary": "Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära isslipade hällar.",
+   "description": "Strax väster om Hasselösund ligger Sandön, en långsträckt och bågformad ö som blivit ett av Smögens mest älskade badställen. Ön är över 1,5 kilometer lång och består av bohusgranit, starkt präglad av inlandsisens arbete. Här finns slipade hällar, rännor, skålformer och en grupp jättegrytor på östra delen, vars diameter varierar mellan 1,3 och 3 meter. Naturreservatet bildades 1986 och omfattar omkring 134 hektar, med Sotenäs kommun som förvaltare. Badplatsen erbjuder både sandstrand och bryggor med badtrappor, medan den västra delen är mer klippig med små broar emellan och storslagen havsutsikt. Vattenkvaliteten har under flera år bedömts som utmärkt. Sandön förenar lättillgängligt familjebad i öster med vild kustnatur i väster, och de blankslipade hällarna berättar en geologisk historia som är många tusen år äldre än fiskeläget intill.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/vastra-gotaland/besoksmal/naturreservat/sandon.html"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "smogen-smogens-lotsutkik",
+   "name": "Smögens lotsutkik",
+   "category": "utsiktsplats",
+   "coordinates": {
+    "lat": 58.354,
+    "lng": 11.222
+   },
+   "summary": "Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över hamninlopp och hav.",
+   "description": "Högt uppe på Smögens berg står den gamla lotsutkiken, en plats där människor i generationer spanade efter segel i horisonten. Den första utkiken restes redan 1878, och den nuvarande träbyggnaden i schweizerstil uppfördes 1899. Härifrån kunde lotsarna överblicka kusten åt norr, söder och väster och tidigt upptäcka fartyg på väg in från Skagerrak. Under 1930-talet moderniserades anläggningen med en utkik på en hög ställning av armerad betong och en utvändig trätrappa. Lotsutkiken var i bruk ända till 1969, då snabbare lotsbåtar gjorde att verksamheten kunde samlas på annat håll. Sedan den 3 juni 1997 är byggnaden skyddad som byggnadsminne. Vägen upp belönas med en av Smögens vackraste vyer, och själva huset minner om en tid då sjösäkerheten vilade på vaksamma ögon snarare än radar.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sm%C3%B6gens_lotsutkik"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "karlskrona-repslagarbanan-karlskrona",
+   "name": "Repslagarbanan, Karlskrona",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.15146,
+    "lng": 15.584776
+   },
+   "summary": "Sveriges längsta träbyggnad på örlogsvarvet, 300 meter lång, där flottans rep och tågvirke en gång slogs.",
+   "description": "På Karlskrona örlogsvarv ligger en av världsarvets mest häpnadsväckande byggnader: repslagarbanan från 1690, med sin längd på trehundra meter Sveriges längsta byggnad i trä. Bygget hör till den intensiva uppbyggnaden av varvet under 1690-talet, då även stapelbäddar, smedjor, snickerier och bildhuggarverkstäder restes för att förse flottan med fartyg. I den oändligt långa träbyggnaden, vars gavlar murades i tegel med putsad fasad, slogs rep, tågvirke och linor för örlogsskeppens behov. Varje segelfartyg krävde åtskilliga kilometer rep för att fungera, från grova ankartrossar till finare linor i riggen, och en bana av denna längd behövdes för att kunna spinna de allra längsta tågvirkena i ett stycke. Att gå längs byggnadens fasad ger en konkret känsla för flottans enorma materielbehov och för den hantverksskicklighet som krävdes. Repslagarbanan är ett av örlogsvarvets verkliga klenoder och en bärande del av världsarvet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Karlskronavarvet"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "smogen-hallo-fyr",
+   "name": "Hållö fyr",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.3275,
+    "lng": 11.2105
+   },
+   "summary": "Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen.",
+   "description": "På den karga ön Hållö utanför Smögen står Bohusläns äldsta bevarade fyrtorn. Fyren tändes för första gången den 1 november 1842 för att göra den olycksdrabbade kusten säkrare för sjöfarten. Tornet höjer sig drygt 39 meter över havet och byggdes ut 1868. År 1948 elektrifierades fyren, och sedan 1969 är den obemannad. Runt fyren ligger ett dramatiskt landskap av slipade granithällar, jättegrytor och små badvikar, format av inlandsisens framfart. Hållö och den omgivande skärgården är naturreservat sedan 1975. Hit tar sig besökare med färja från Smögenbryggan eller Kungshamn, och väl uppe vid fyren möts man av en milsvid utsikt över Skagerrak. Platsen förenar industrihistoria och vild natur, och 175-årsjubileet 2017 firades som en hyllning till den fyrvaktarvardag som en gång rådde här ute.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/H%C3%A5ll%C3%B6"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "pitea-ojeby-kyrkstad",
+   "name": "Öjeby kyrkstad",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 65.346476,
+    "lng": 21.395116
+   },
+   "summary": "En av landets största kyrkstäder med levande kyrkstugetradition, vars rötter går tillbaka till den medeltida marknadsplats som lade grunden för Piteå.",
+   "description": "Kring kyrkan i Öjebyn klungar sig en av Sveriges största kyrkstäder, ett tätt nät av små röda timrade stugor. Hit reste sockenborna förr från avlägsna byar för att hinna med både gudstjänst, marknad och ting, och övernattade i sina stugor när vägen hem var för lång. Platsen har djupa rötter: redan under medeltiden låg här en marknadsplats som blev själva grunden till att Piteå fick stadsprivilegier 1621. När staden bildades flyttades kyrkstugorna längre bort från kyrkan för att ge plats åt borgarnas bodar och hus. Trots stadsflytt och bränder lever kyrkstadstraditionen kvar, och av de omkring 266 stugor som dokumenterades 1804 står ännu runt 150 byggnader bevarade. Att vandra mellan de smala gränderna är att kliva rakt in i norrländsk folktro, fromhet och handelshistoria på en och samma gång.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://piteamuseum.nu/kyrkor/kyrkstaden-i-ojebyn/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "varberg-societetsparken-varberg",
+   "name": "Societetsparken, Varberg",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.106911,
+    "lng": 12.243875
+   },
+   "summary": "Lummig kurortspark från sent 1800-tal med skuggande träd och slingrande gångar nära havet.",
+   "description": "Societetsparken anlades i slutet av 1800-talet när Varberg vuxit fram som en välbesökt kurort. De eleganta badgästerna på den tiden var inte intresserade av att sola, tvärtom, så det ansågs viktigt att skapa parker med skuggande träd där societeten kunde promenera, lyssna på musik och umgås. Parken hette från början Badhusparken och var inhägnad med entréavgift; först 1921 togs avgiften bort så att vem som helst kunde ströva längs de lövrika gångarna. Här fanns mat, musikunderhållning, dans och nöjen, lekplats, kägelbana och gymnastiksal. I dag är parken en grön oas mitt i staden, ett stenkast från strandpromenaden och kallbadhuset, och dess centrala plats i Varbergs nöjesliv lever vidare med uteservering och sommarkonserter under de gamla kronorna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Societetsparken"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "halmstad-picassoparken-halmstad",
+   "name": "Picassoparken, Halmstad",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.673281,
+    "lng": 12.860771
+   },
+   "summary": "Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av få Picassoverk i offentlig miljö i Sverige.",
+   "description": "I en park vid Nissan står Kvinnohuvud, en femton meter hög skulptur i blästrad betong som Pablo Picasso ligger bakom. Verket restes 1971-72 och utfördes av den norske betongskulptören Carl Nesjar, som arbetade på uppdrag av Picasso enligt en metod konstnärerna utvecklat tillsammans. Motivet anses föreställa Picassos sista hustru Jacqueline Roque, och formspråket har sin bakgrund i en period då Picasso experimenterade med att riva papper för att skapa siluetter. Halmstad fick verket som en av ett mindre antal städer världen över med en monumental Picassoskulptur i det offentliga rummet. Mottagandet var till en början kyligt och stundtals hånfullt, och skulpturen anklagades felaktigt för att inte vara äkta. Med tiden har stämningen vänt, och i dag är Kvinnohuvud en självklar del av stadens identitet och en uppskattad mötesplats i parken som bär konstnärens namn.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Kvinnohuvud"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "borgholm-horns-kustvag",
+   "name": "Horns kustväg",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.224396,
+    "lng": 16.955395
+   },
+   "summary": "En av Ölands vackraste vägsträckor genom naturreservatet Horns kungsgård, med klippkust, Hornsjön och rikt fågelliv.",
+   "description": "Längs västkusten norr om Borgholm slingrar sig Horns kustväg, av många räknad som en av Ölands allra finaste vägsträckor. Den går genom naturreservatet Horns kungsgård, ett av öns största och mest varierade, med klippig kust och vid utsikt över Kalmarsund, lövskogar, öppna betesmarker och Ölands största sjö Hornsjön. Sjön är en utmärkt fågelsjö där bland annat skäggdopping, brun kärrhök, sothöna och vattenrall häckar, och havsörn ses ofta jaga över vattnet. Längs själva kustvägen är fågelskådningen storslagen, med arter som svärta, sjöorre, storskrake, knölsvan, storlom och smålom. Vid Horns udde samlas övervintrande lommar, svarthakedoppingar och framför allt sjöorrar i flockar på tusentals fåglar innan de i slutet av maj lämnar platsen för Ryssland. Sträckan bjuder på ett av öns mest fågelrika och natursköna avsnitt året runt.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/horns-kungsgard.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "marstrand-strandverket-marstrand",
+   "name": "Strandverket, Marstrand",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 57.882982,
+    "lng": 11.58535
+   },
+   "summary": "Tidigare försvarsanläggning från 1850-talet vid södra hamninloppet, idag en konsthall för samtidskonst.",
+   "description": "Södra Strandverket byggdes 1852–1857 för att stärka försvaret av det södra inloppet till Marstrands hamn och ersätta äldre kanonbatterier som Gustavsborg. Anläggningen bestod av två byggnader med kanonbatterier som kunde beskjuta både Albrektsunds kanal och hamninloppet. Bestyckningen omfattade hela 46 kanoner och här tjänstgjorde omkring 170 soldater. Tillsammans med Carlstens fästning avfördes Strandverket 1882 ur rikets fasta försvar, och därefter har byggnaderna haft skiftande öden, bland annat som färgfabrik och nödbostäder. Marinen utnyttjade lokalerna ända in på 1960-talet, då de renoverades. Sedan 1935 är anläggningen statligt byggnadsminne. År 2012 öppnade här en konsthall, med tidningsmannen Peter Hjörne som huvudfinansiär, där samtidskonst inom främst fotografi och skulptur visas. Strandverket förenar på så vis Marstrands militära förflutna med ett levande kulturliv vid havet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/S%C3%B6dra_strandverket"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "varberg-varbergs-fastning",
+   "name": "Varbergs fästning",
+   "category": "slott",
+   "coordinates": {
+    "lat": 57.106037,
+    "lng": 12.240007
+   },
+   "summary": "Mäktig befästning på berget Vardberget som gett både staden och fästningen dess namn, med rötter i slutet av 1200-talet.",
+   "description": "Högt på Vardberget reser sig fästningen som har vakat över kusten i mer än 700 år. Grunden lades i slutet av 1280-talet av Jakob Nielsen, en landsflyktig dansk greve som behövde skydd, och under medeltiden bytte borgen härskare och ibland till och med rike gång på gång. I nästan tre sekler var trakten dansk, och under nordiska sjuårskriget sköts den gamla stenborgen sönder av svenska trupper 1565. Därefter byggdes ett av Europas modernaste försvarsverk upp med hjälp av omkring tusen bönder, ett arbete som drog ut till 1618. Vid freden i Brömsebro 1645 blev Halland svenskt. Senare blev fästningen fängelse, som mest med livstidsfångar, innan den sista fångavdelningen stängde 1931. I dag rymmer murarna museum, vandrarhem och restauranger med vidsträckt havsutsikt.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Varbergs_f%C3%A4stning"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "karlskrona-trefaldighetskyrkan-karlskrona",
+   "name": "Trefaldighetskyrkan, Karlskrona",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.160587,
+    "lng": 15.58598
+   },
+   "summary": "Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.",
+   "description": "Vid Stortorget står Heliga Trefaldighets kyrka, i folkmun kallad Tyska kyrkan eftersom den fram till 1800-talets mitt tillhörde Karlskronas tyska församling. Den ovanliga runda formen går tillbaka på ritningar av Nicodemus Tessin den yngre, som hämtade inspiration från Pantheon i Rom och därmed gav staden en av få svenska kyrkor i denna form. Bygget inleddes 1697 och kyrkan invigdes 1709, om än ännu ofärdig. Församlingen hade bildats 1689 och bestod fram till 1847, då den uppgick i stadsförsamlingen. Den stora stadsbranden 1790 ödelade kyrkan så att endast murarna stod kvar som en ruin. Återuppbyggnaden skedde efter Olof Tempelmans ritningar, och den nya kupolen utformades i nyklassicistisk anda. Tillsammans med Fredrikskyrkan räknas Trefaldighetskyrkan till de främsta monumenten över klassisk romersk barock i Sverige.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Trefaldighetskyrkan,_Karlskrona"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "smogen-sotekanalen",
+   "name": "Sotekanalen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.409195,
+    "lng": 11.259977
+   },
+   "summary": "Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invigd 1935.",
+   "description": "Sotekanalen är en grävd och sprängd farled som löper innanför halvön Ramsvikslandet längst i väster på Sotenäset. Med sina cirka 4 800 meter sträcker den sig från Kungshamn i söder till Hunnebostrand i norr. Idén föddes i slutet av 1800-talet, då man ville skapa en skyddad led innanför den ökända och olycksdrabbade Sotefjorden. År 1913 lade två bohuslänningar fram en motion i riksdagen, som samma år beslutade att kanalen skulle byggas. Efter omfattande utredningar fattade regeringen 1931 sitt beslut, men arbetet hade redan inletts 1930. Den 15 juli 1935 invigdes kanalen av kronprins Gustaf Adolf. När Ramsvikslandet skars av från fastlandet fick ön i stället nås via en svängbro. Behovet var stort: redan året efter öppningen passerade 9 700 båtar kanalen, ett tydligt bevis på hur efterlängtad den skyddade leden var.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sotekanalen"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "borgholm-byrums-raukar",
+   "name": "Byrums raukar",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.225181,
+    "lng": 16.954651
+   },
+   "summary": "Ett av Ölands mest fotograferade naturminnen, ett hundratal kalkstenspelare formade av havet längs nordvästkusten.",
+   "description": "Längs Ölands nordvästra kust står omkring 120 raukar som vakter mot Kalmarsund. Pelarna har formats under årmiljoner ur öns kalksten, vars historia började för över 490 miljoner år sedan när Sveriges berggrund låg söder om ekvatorn och täcktes av ett varmt, grunt hav med korallrev. Vågorna har sedan slipat fram de meterhöga stenfigurerna, som i den södra delen reser sig upp till fyra meter för att avta till knappt en meter längst i norr. I kalkstenen kan man hitta gott om fossil efter bläckfiskar, så kallade orthoceratiter. I den karga miljön trivs torktåliga och solälskande örter som blåklocka, jungfrulin och backtimjan. Området blev naturreservat redan 1935 och förvaltas av länsstyrelsen. En stor parkering söder om rauk-området gör platsen lättillgänglig för besökare.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/byrums-raukar.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "falkenberg-gamla-stan-falkenberg",
+   "name": "Gamla stan, Falkenberg",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.8995,
+    "lng": 12.496
+   },
+   "summary": "Falkenbergs äldsta stadsdel med kullerstensgränder, trähus och tolv kulturhistoriska skyltar att följa.",
+   "description": "Gamla stan är Falkenbergs äldsta stadsdel och ligger söder om dagens centrum, kring Sankt Laurentii kyrka. Här bevaras mycket av den gamla stadskaraktären med snirklande gränder, sneda trähus och inslag av korsvirke. Den låga träbebyggelsen härrör mestadels från 1800-talet, men platsen var stadens kärna långt dessförinnan: fram till mitten av 1700-talet låg själva centrum just kring den medeltida kyrkan, innan ett nytt torg med rådhus anlades längre norrut vid Storgatan. I kvarteren finns också den doftande rosenträdgården och spannmålsrian som i dag rymmer Rian designmuseum. Genom området löper en kulturhistorisk vandring med tolv skyltar som berättar om stadens olika epoker, så att en promenad nästan blir som att gå genom ett utomhusmuseum. Att ströva i Gamla stan är att uppleva hur Falkenberg vuxit fram vid Ätran, från medeltida kyrkby till levande småstad med bevarad själ.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gamla_stan,_Falkenberg"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "borgholm-knisa-mosse",
+   "name": "Knisa mosse",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.053666,
+    "lng": 16.841809
+   },
+   "summary": "En av få odikade våtmarker på Öland och öns första fågelskyddsområde, med fågeltorn och en vandringsled runt myren.",
+   "description": "Knisa mosse i Borgholms kommun rymmer något ovanligt på Öland: en våtmark som aldrig dikats ut. I dag är den en av öns få myrar som fått behålla sitt naturliga vatten, och redan 1931 utsågs platsen till Ölands första fågelskyddsområde. Från fågeltornet har man god överblick över myren, och runt reservatet löper en vandringsled på omkring 4,7 kilometer. Längs den kan man uppleva flera olika naturtyper, från våtmark och torr betesmark till kustmiljö och ädellövskog, vilket ger plats åt en stor mångfald av djur och växter. Här kan man bland annat hitta orkidéer som honungsblomster, ängsnycklar och myggblomster. Den rika blandningen av miljöer gör platsen särskilt värdefull för fågellivet. Tänk på att delar av reservatet har tillträdesförbud mellan den 1 april och 15 augusti för att skydda häckande fåglar.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/knisa-mosse.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "falkenberg-sankt-laurentii-kyrka",
+   "name": "Sankt Laurentii kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.901016,
+    "lng": 12.494258
+   },
+   "summary": "Falkenbergs äldsta byggnad, en medeltidskyrka från omkring år 1300, uppkallad efter den romerske diakonen Laurentius.",
+   "description": "Sankt Laurentii kyrka är Falkenbergs enda bevarade byggnad från medeltiden och restes omkring år 1300, under den tid då Halland tillhörde Danmark. Den uppkallades efter Laurentius, en romersk diakon från 200-talet. Ursprungligen var kyrkan liten och tornlös med högt sittande fönster och en enda ingång i söder, en utformning som gjorde att den kunde tjäna som skydd i orostider för stadens dåvarande par hundra invånare. På 1400-talet förlängdes långhuset och ett lågt trappgaveltorn tillkom. Under nordiska sjuårskriget brändes kyrkan ned men byggdes åter upp. När en ny stadskyrka stod färdig i slutet av 1800-talet övergavs den gamla, och i stället för att rivas inreddes den en tid till gymnastiksal för skolan, komplett med ribbstolar och rep. Först på 1920-talet återställdes den och återinvigdes som kyrkorum. I dag är den ett stillsamt vittnesbörd om stadens äldsta historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Laurentii_kyrka,_Falkenberg"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "halmstad-prins-bertils-stig-halmstad",
+   "name": "Prins Bertils stig, Halmstad",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.651371,
+    "lng": 12.802009
+   },
+   "summary": "Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegård, uppkallad efter prins Bertil.",
+   "description": "Prins Bertils stig är en markerad vandringsled som löper från Halmstads slott, förbi Tylösand och vidare till Möllegård. Den är arton kilometer lång och följer till största delen kusten mot Kattegatt, förbi klippor, tallskog och badvikar. Leden bär namnet efter prins Bertil, hertig av Halland, som hade ett sommarhus i Tylösand och tillsammans med sin hustru prinsessan Lilian ofta sågs på Halmstads golfbana. Stigen togs fram under 1990-talet på initiativ av kommunens parkmästare Ragnar Johansson och stod färdig för invigning 1998, året efter att prins Bertil avlidit. Syftet var att binda samman den vackra kuststräckan mellan Halmstad och Möllegård och göra den lätt att uppleva till fots. I dag är leden en av Hallands mest omtyckta vandringar och en utmärkt väg att upptäcka både stadens slott och den natursköna kusten kring Tylösand på samma promenad.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Prins_Bertils_stig"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "varberg-societetshuset-varberg",
+   "name": "Societetshuset, Varberg",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.106707,
+    "lng": 12.242952
+   },
+   "summary": "Praktfullt societetshus från 1886 i orientaliserande träarkitektur, ett av västkustens bäst bevarade.",
+   "description": "Mitt i Societetsparken ligger ett av västkustens finaste och bäst bevarade societetshus, uppfört 1886 efter ritningar av göteborgsarkitekten Adrian Crispin Peterson. Byggnaden har en utformning som leker med drag från Alhambra och bär tydliga orientaliserande detaljer, en stil som var på modet i kurortssverige under det sena 1800-talet. Bygget tog tre år och stod färdigt samtidigt som Varberg blomstrade som badort. Huset blev en samlingspunkt för det burgna folk som kom för att kurera sig och förströ sig: här bjöds mat, musik, dans och förlustelser för de förmögna kurgästerna. Den ljusa, snickarglada träarkitekturen knyter samman parken med kallbadhuset och hör till stadens mest karaktäristiska byggnader. Än i dag fylls huset av liv med restaurang, kafé och scen, och förblir en pulserande del av Varbergs nöjesliv.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://varbergsfastighets.se/fastigheter/fastighetsbestand/societetshuset"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "vastervik-stegeholms-slottsruin",
+   "name": "Stegeholms slottsruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.7556,
+    "lng": 16.6395
+   },
+   "summary": "Medeltida borgruin på Slottsholmen som en gång vaktade infarten till Västervik och idag är festivalscen mitt i staden.",
+   "description": "På Slottsholmen reser sig resterna av Stegeholm, en befäst borg som anlades före 1370 för att vakta det grunda vattnet där Gamlebyviken möter havet. Borgen bytte ägare många gånger genom medeltiden och stod i centrum för maktkamper mellan svenska stormän, danska härar och kungar som Erik av Pommern. När staden 1433 flyttades från Gamleby till sitt nuvarande läge växte den fram i skydd av borgen. Königsmarcksläkten lät senare uppföra ett ståtligt palats på platsen, men det förstördes tillsammans med staden när en dansk-holländsk flotta brände Västervik 1677. Ruinen förföll och stadsborna fick på 1700-talet hämta sten ur murarna. Från 1881 började man rusta upp holmen med planteringar. Sedan 1966 fylls ruinen varje sommar av musik när Visfestivalen håller till just här.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Stegeholm"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "smogen-smogenbryggan",
+   "name": "Smögenbryggan",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.353936,
+    "lng": 11.221376
+   },
+   "summary": "Den långa träbryggan längs den gamla fiskehamnens norra sida, sommartid en av Bohusläns mest besökta sevärdheter.",
+   "description": "Smögenbryggan löper längs norra sidan av den gamla fiskehamnen, där täta rader av sjöbodar och magasin en gång rymde fångst, redskap och saltad sill. Hamnen omnämndes i skrift redan 1594, och under 1800-talet växte Smögen till ett av kustens livligaste fiskelägen. Bryggan var arbetsplats långt innan den blev flanörstråk: här lossades fisk, lagades nät och packades skaldjur. Friköpen av tomterna inleddes 1908, och i dag äger kommunen större delen av bryggdäcket medan sjöbodarna är privata. Sedan 1987 är hamnmiljön av riksintresse för kulturminnesvård. På sommaren förvandlas de rödmålade bodarna till butiker, glasskiosker och kaféer, och bryggan fylls av människor som flanerar längs vattnet. Men den smala passagen och husens placering tätt intill kajen berättar fortfarande om ett samhälle som byggdes helt på havets villkor, där varje meter mark var dyrbar och allt liv kretsade kring fångsten. Att gå längs Smögenbryggan är att följa i fiskarnas fotspår genom århundraden av kustkultur.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sm%C3%B6genbryggan"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "karlskrona-amiralitetskyrkan-ulrica-pia",
+   "name": "Amiralitetskyrkan Ulrica Pia",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.156796,
+    "lng": 15.590977
+   },
+   "summary": "En mäktig träkyrka i Karlskrona, invigd 1685 för amiralitetsförsamlingen.",
+   "description": "Amiralitetskyrkan Ulrica Pia hör till Sveriges största träkyrkor. Den restes snabbt som ett provisorium för amiralitetsförsamlingen och invigdes 1685, bara år efter att den togs med i Karlskronas första stads- och befästningsplan. Centralkyrkan i trä, som tros vara ritad av Erik Dahlbergh, rymde omkring 4 000 personer.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitkarlskrona.se/sv/amiralitetskyrkan-ulrica-pia-och-gubben-rosenbom"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "borgholm-borgholms-kyrka",
+   "name": "Borgholms kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.88023,
+    "lng": 16.656239
+   },
+   "summary": "Stadens kyrka i natursten från 1879, byggd i en egen medeltidsinspirerad stil med torn placerat mitt på byggnaden.",
+   "description": "När Borgholm grundades 1816 saknade staden helt en egen kyrka, och invånarna fick ta sig till Köpings eller Räpplinge kyrka för att fira gudstjänst. Först 1879 stod Borgholms kyrka klar, ritad av Ernst Jacobsson vid Överintendentsämbetet, medan byggmästaren A. Chronwall i Kalmar ledde arbetet. Kyrkan murades i natursten med putsad fasad i en särpräglad medeltidsstil med rundbågefriser och strävpelare, och tornet placerades mitt på byggnaden. Lösningen var praktisk: den östra delen blev kyrksal och den västra fungerade som skolsal. Kyrkan renoverades 1935, men sitt nuvarande utseende fick den vid en genomgripande ombyggnad 1960-61 då arkitekten Carl Hampus Bergman ritade den nya inredningen. I dag är kyrkan en tydlig landmärkesbyggnad i stadsbilden och en levande församlingskyrka inom Norra Ölands pastorat, väl synlig för den som närmar sig staden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Borgholms_kyrka"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "falkenberg-rian-designmuseum",
+   "name": "Rian designmuseum",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 56.898973,
+    "lng": 12.494723
+   },
+   "summary": "Falkenbergs designmuseum, inrymt i en spannmålsria från 1865 nedströms Tullbron.",
+   "description": "Rian är Falkenbergs museum för form och design, men byggnaden i sig berättar lika mycket som utställningarna. Den restes 1865 i traditionell timmerteknik och fungerade då som spannmålsria, en torklada från den tid då Falkenberg var en betydande exporthamn för säd. Det höga, spetsiga taket gav plats åt torkningen, och en vindflöjel sitter ännu kvar på nocken. Huset ligger vid Ätran strax nedanför Tullbron, i utkanten av Gamla stan, och dess vitkalkade väggar och frilagda bjälkar ger en rustik inramning åt det moderna innehållet. I dag visar Rian växlande utställningar om allt från industridesign till hantverk, vanligen tre per år, och samlar form, kulturhistoria och offentlig konst under ett tak. Entrén till bottenvåningen med kafé och designbutik är fri, och här ordnas guidningar, föreläsningar och temavandringar i staden. Museet förenar på så vis Falkenbergs handelshistoria med en levande samtida formtradition.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://falkenberg.se/se-gora/sevardheter/museum/rian/"
+   ],
+   "city": "Falkenberg"
+  },
+  {
+   "id": "varberg-traslovslage",
+   "name": "Träslövsläge",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.058094,
+    "lng": 12.28027
+   },
+   "summary": "Anrikt fiskeläge söder om Varberg, först omnämnt på 1500-talet och i dag sammanvuxet med staden.",
+   "description": "Strax söder om Varberg ligger Träslövsläge, ett gammalt fiskeläge med rötter långt tillbaka i tiden. Platsen omnämns första gången som fiskeby åren 1558–1559, då under namnet Tøllen, och fisket har genom seklerna präglat livet och bebyggelsen i samhället. Här möter besökaren det typiska halländska kustsamhället med hamn, sjöbodar och en stark förankring i havet, och fisket har länge satt sin prägel på orten. Med tiden har Varberg vuxit söderut, och sedan 2015 räknas Träslövsläge tillsammans med Södra Näs som sammanvuxet med staden. Trots närheten till centrum behåller läget sin egen karaktär av kustby, och hamnen är ett trivsamt mål för den som vill uppleva fiskelägets atmosfär, se båtarna och njuta av havet. Träslövsläge är en levande påminnelse om de fiskenäringar som format hela Hallandskusten.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/halland/samhalle/kulturmiljo/lar-kanna-din-by/varberg/traslovslage-och-gamla-kopstad.html"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "halmstad-halmstads-slott",
+   "name": "Halmstads slott",
+   "category": "slott",
+   "coordinates": {
+    "lat": 56.671545,
+    "lng": 12.857288
+   },
+   "summary": "Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidigt 1600-tal, när Halland ännu var danskt.",
+   "description": "När bygget av Halmstads slott inleddes 1595 låg staden i Danmark, och det var den unge kungen Kristian IV som ville ha en ståtlig residensbyggnad för sina besök. Arbetet leddes först av byggmästaren Hans van Steenwinckel den äldre, men när han avled mitt under uppförandet togs ansvaret över av hans lärjunge Willum Cornelissen, och slottet stod i stort sett färdigt mot slutet av 1610-talet. Anläggningen byggdes kring en borggård och hör till den stil som i dansk arkitekturhistoria fått namn efter just Kristian IV. Till utseendet påminner slottet mer om tidens danska herrgårdar än om de praktfulla kungaslotten. Efter freden i Brömsebro 1645 blev Halland svenskt, och slottet har sedan dess haft skiftande funktioner. I dag är det residens för landshövdingen i Hallands län och en av stadens mest karakteristiska byggnader vid vattnet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Halmstads_slott"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "borgholm-kopings-kyrka",
+   "name": "Köpings kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 56.878071,
+    "lng": 16.718705
+   },
+   "summary": "En medeltida kyrka i Köpingsvik på platsen för Ölands gamla handelscentrum, med rötter i 1100-talet och tidiga kristna gravmonument.",
+   "description": "I Köpingsvik strax norr om Borgholm ligger Köpings kyrka på en plats som under järnåldern var ett betydande handelscentrum på Öland. Runt kyrkan finns flera fornlämningar, däribland en stor grupp kristna gravmonument från 1000-talet, vilket fått forskare att tro att en träkyrka stod här redan då. Den första stenkyrkan började byggas i mitten av 1100-talet, först med kor och absid i sten medan långhuset tycks ha varit av trä. Snart murades även långhus och västtorn i sten, och kyrkan fick för sin tid enorma mått, nära 42 meter lång. Under sent 1100-tal och tidigt 1200-tal byggdes den om till en så kallad klövsadelkyrka med torn i båda ändar. Ett vapenhus restes i söder kring mitten av 1200-talet och en sakristia i norr omkring år 1300. När Borgholm grundades 1816 fick stadsborna länge söka sig hit för att fira gudstjänst.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/K%C3%B6pings_kyrka,_%C3%96land"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "vastervik-hammarsbadet-gamleby",
+   "name": "Hammarsbadet, Gamleby",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.892,
+    "lng": 16.402
+   },
+   "summary": "Välutrustad bad- och campingplats vid Gamlebyviken i Västerviks kommun.",
+   "description": "Vid Gamlebyviken i Gamleby, en del av Västerviks kommun, ligger Hammarsbadet, en av traktens mest uppskattade badplatser. Här möts besökaren av en inhägnad badvik med bryggor, en flytande lekflotte och ett hopptorn som lockar både barn och modiga ungdomar. Den sköna stranden vid vikens lugna vatten gör platsen särskilt barnvänlig, och runt omkring finns det mesta man kan önska av en välordnad badplats: lekplats, lagun, skuggande träd och gott om parkering. Till anläggningen hör också restaurang, butik och fria toaletter, och intill ligger en camping som gör det möjligt att stanna längre än en dagstur. Gamlebyviken har historiskt varit en viktig farled in mot det gamla Västervik vid Gamleby, och idag är Hammarsbadet framför allt en plats för sommarliv, bad och avkoppling i en vacker vik på Smålandskusten.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Hammarsbadet"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "vastervik-visans-hus-vastervik",
+   "name": "Visans hus, Västervik",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.7585,
+    "lng": 16.637
+   },
+   "summary": "Plats knuten till Visfestivalens arv och Västerviks roll som vissångens stad sedan 1966.",
+   "description": "Västervik kallas ofta vissångens stad, och berättelsen om det knyts till Visfestivalen som startade 1966. Bakom festivalen stod den tyskfödde musikern Hansi Schwarz, som förvandlade en liten bohemisk tillställning för visdiktare och folkmusiker till en av Sveriges viktigaste musikinstitutioner. Festivalen hölls från början i borgruinen mellan Slottsholmen och Kulbacken, och vissångens ställning i staden har sedan dess vuxit till ett kulturarv som besökaren kan följa längs Visvägen, en vandringsväg som berättar om festivalens historia och om de artister som format den. Schwarz vurmade för att skapa en välkomnande miljö för musikerna och tog dem under många år ut i Västerviks vackra skärgård för att hämta ro mellan spelningarna. Idag förs traditionen vidare av hans son Calle Åstrand. För den musikintresserade är platserna kring visans Västervik ett levande minne av hur en hel stad kom att andas ton och text.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visfestivalen_i_V%C3%A4stervik"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "varberg-varbergs-kyrka",
+   "name": "Varbergs kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.105975,
+    "lng": 12.250685
+   },
+   "summary": "Stadens största och äldsta kyrka, uppförd i gustaviansk stil 1769–1772 efter en förödande stadsbrand.",
+   "description": "Varbergs kyrka är stadens största och äldsta kyrka och bär spår av en dramatisk vändpunkt i ortens historia. Den 18 maj 1767 härjades Varberg av en svår stadsbrand som bland annat ödelade den äldre Caroli kyrka från 1600-talet. I dess ställe restes en ny stenkyrka i tidens gustavianska stil, byggd mellan 1769 och 1772 efter ritningar av Friedrich August Rex och invigd 1772. Kyrkan är enskeppig med ett rektangulärt långhus och ett femsidigt kor som vänder sig österut, medan det västra tornet kröns av en urtavla och en luftig, öppen lanternin som syns vida omkring. Den ljusa, harmoniska arkitekturen speglar 1700-talets ideal och gör byggnaden till ett av stadens tydligaste historiska landmärken. Kyrkan hör till Göteborgs stift och har i mer än 250 år varit en samlingspunkt mitt i Varberg, nära den gamla brunnsmiljön.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Varbergs_kyrka"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "borgholm-trollskogen",
+   "name": "Trollskogen",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.352705,
+    "lng": 17.122531
+   },
+   "summary": "Ett naturreservat på Ölands nordöstra udde med knotiga, vindpinade tallar, gamla ekar och ett fartygsvrak vid stranden.",
+   "description": "På Ölands nordöstra udde ligger Trollskogen, en gammal beteshävdad barrskog som blev naturreservat 1998 och omfattar drygt 260 hektar. Namnet förstår man genast: vinden har vridit och knotat tallarna till sägenlika gestalter, och bland dem står gamla, grova ekar. Udden har varit viktig för människor sedan förhistorisk tid tack vare rika fiskevatten och den skyddade hamnen i Grankullaviken. Här finns gravar med ett tiotal bronsåldershögar, och på 1400-talet var viken en betydelsefull flottbas varifrån stora delar av Östersjön kunde kontrolleras. Skansarna med skjutvärn är lämningar från den tiden. På strandsidan ligger vraket efter skonaren Swiks som sjönk 1926, och tvärs genom skogens södra del löper en 230 meter lång stenmur som länge antagits vara en jaktmur från Johan III:s tid. Mäktiga klapperstensvallar vittnar om hav, vind och inlandsis.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/trollskogen.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "halmstad-norre-port-halmstad",
+   "name": "Norre Port, Halmstad",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.678214,
+    "lng": 12.858854
+   },
+   "summary": "Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fyra ursprungliga portar.",
+   "description": "Norre Port stod klar 1601 som en del av den omfattande upprustning av Halmstads befästningar som danske kungen Kristian IV satte igång under 1600-talets första år. Samma arkitekt som ritade slottet, Hans van Steenwinckel, lär ha format porten, och den byggdes medvetet snedställd i förhållande till Storgatan så att en angripare inte skulle kunna skjuta rakt in i staden längs gatan. Av de fyra portar som en gång släppte in resande genom stadsvallarna är detta den enda som finns kvar. När ett rivningsbeslut för vallar och portar togs 1737 försvann det mesta av befästningarna, och på 1870-talet var även Norre Port nära att rivas innan riksantikvarien ingrep och staden tvingades backa. Porten renoverades 2005 och förklarades som byggnadsminne 2007. I dag räknas den som ett av Halmstads främsta historiska landmärken.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norre_Port"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "halmstad-hallandsgarden-halmstad",
+   "name": "Hallandsgården, Halmstad",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 56.681972,
+    "lng": 12.854878
+   },
+   "summary": "Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild från Skansen.",
+   "description": "Hallandsgården är ett friluftsmuseum på Galgberget mitt i Halmstad, där gamla byggnader från landskapets alla delar samlats. Platsen har en mörk förhistoria: Galgberget var länge stadens avrättningsplats, en plats halmstadborna undvek, men i slutet av 1800-talet förvandlades den med skogsplantering och nationalromantikens nyväckta friluftsintresse till ett rekreationsområde. Museet kom till på initiativ av Hallands Museiförening och dess drivande kraft, fabrikören Alfred W. Wallberg, som mött Skansens grundare Artur Hazelius och inspirerats av anläggningen i Stockholm. På midsommarafton den 23 juni 1925 invigdes Hallandsgården, och omkring 5 000 personer kom trots att man bara tryckt 2 000 biljetter. Byggnaderna fördes hit mellan 1920- och 1940-talet och omfattar bland annat en ryggåsstuga från Hörsås, en väderkvarn från Morup och en gammal skola från Eldsberga. I dag är museet ett populärt utflyktsmål med utsikt över staden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Hallandsg%C3%A5rden"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "smogen-bohus-malmon",
+   "name": "Bohus-Malmön",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 58.339286,
+    "lng": 11.321569
+   },
+   "summary": "Granitö i Sotenäs där Sveriges första granitstenbrott startade 1842 och formade hela samhället.",
+   "description": "Bohus-Malmön är en granitö i Sotenäs vars historia är oupplösligt förbunden med sten. År 1842 startades här Sveriges första granitstenbrott, sedan Carl August Kullgren och ingenjören Nils Ericson fått rätten att bryta sten på Draget. Stenen användes bland annat när Ericson byggde Trollhätte kanal och dess slussar. Företaget utvecklades till Kullgrens Enka, som med tiden blev Nordens största i sin bransch. Stenindustrins expansion fick befolkningen att växa kraftigt, från 736 personer år 1900 till en topp på hela 1 688 invånare 1913. Namnet Bohus-Malmön kommer från postadressen, som ändrades 1938 när postkontoret flyttade till fiskeläget på ön. Stenindustrin lades slutligen ner 1977–78, men spåren finns kvar i övergivna stenbrott, lämningar och berättelser. I dag är ön en levande sommarö där natur, badklippor och industrihistoria möts i ett dramatiskt granitlandskap.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Malm%C3%B6n,_Soten%C3%A4s_kommun"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "pitea-pitea-stadskyrka",
+   "name": "Piteå stadskyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 65.318376,
+    "lng": 21.483631
+   },
+   "summary": "Den enda byggnaden som finns kvar från den nya stadens äldsta tid, räddad undan branden 1721 tack vare sitt läge på fastlandet.",
+   "description": "När Piteå hade flyttats till sitt nya läge behövde den unga staden en egen kyrka. År 1686 stod den färdig, men av rädsla för trängsel och eldsvådor valde stadsborna att resa den på fastlandet norr om själva staden i stället för inne bland husen. Det beslutet skulle visa sig ödesdigert lyckosamt. När Piteå brändes 1721 under kriget mot Ryssland förstördes hela den täta stadsbebyggelsen på Häggholmen, men kyrkan låg tryggt på fastlandet och undgick lågorna. Därmed är stadskyrkan den enda byggnad som ännu finns kvar från stadens allra äldsta tid, ett stycke bevarad 1600-talshistoria mitt i en stad som annars gång på gång fått byggas upp på nytt efter bränder. Att stiga in i kyrkorummet är att möta den enda fysiska länken till det Piteå som föddes på 1600-talet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://piteamuseum.nu/kyrkor/pitea-stads-kyrka/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "vastervik-hasselo-tjusts-skargard",
+   "name": "Hasselö, Tjusts skärgård",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.8284,
+    "lng": 16.74569
+   },
+   "summary": "Anrik skärgårdsö i Tjusts skärgård med gammalt fiskeläge och levande sommarliv, en av Västerviks mest kända öar.",
+   "description": "Ute i Tjusts skärgård ligger Hasselö, en av Västerviks mest kända och tillgängliga öar. Ön omtalas första gången 1429, då den tillföll Karl Knutsson Bonde, och både Hasselö och grannön Sladö var bebodda redan under 1400-talet. Omkring 1600 fanns här lotsar, och 1630 bodde fyra hushåll på ön. Hasselö växte till skärgårdens samlingspunkt, och 1880 var det Loftahammars sockens största fiskeläge med 27 fiskare. I början av 1900-talet bodde omkring 300 personer på ön, men efter andra världskriget minskade befolkningen snabbt; den sista affären stängde 1970 och skolan lades ned 1976. Genom landhöjningen hade Hasselö med tiden vuxit ihop med Sladö, men 2005 grävdes sundet mellan öarna åter upp för att förbättra vattnets syresättning. Idag är Hasselö en levande sommarö med butik, mat och boende, och en självklar utflykt för den som vill uppleva Västerviks skärgård.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Hassel%C3%B6,_Tjusts_sk%C3%A4rg%C3%A5rd"
+   ],
+   "city": "Västervik"
+  },
+  {
+   "id": "pitea-furunaset-pitea",
+   "name": "Furunäset, Piteå",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 65.290847,
+    "lng": 21.486811
+   },
+   "summary": "Övre Norrlands stora hospital från 1893, ritat av Axel Kumlien, idag hotell och konferens men präglat av en tung mentalvårdshistoria.",
+   "description": "På udden Furunäset, på gammal mark från hemmanet Pitholm, restes på 1880-talet en av Norrlands mest storslagna och svåra institutioner. Bakgrunden var ett riksdagsbeslut redan 1823 om att samla landets mentalvård i stora centralhospital, och efter att Medicinalstyrelsen letat efter lämplig plats köptes här in omkring 138 hektar mark. Den ansedde vårdbyggnadsarkitekten Axel Kumlien ritade en fyrlängad anläggning kring en rektangulär gård, en lösning som skulle skydda mot det norrländska klimatet. När Piteå hospital och asyl invigdes 1893 var det ett av landets modernaste sjukhus och det största i övre Norrland, med hela landsdelen som upptagningsområde. Som mest vårdades runt 800 patienter här i mitten av 1950-talet. När sjukhuset lades ned 1987 gick avvecklingen snabbt och hårt. Idag rymmer de gamla byggnaderna hotell, restaurang och kontor, men murarna bär ännu på tunga minnen.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://piteamuseum.nu/kulturmiljo/furunasets-sjukhus/"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "smogen-kungshamn",
+   "name": "Kungshamn",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.360817,
+    "lng": 11.251142
+   },
+   "summary": "Sotenäs kommuns centralort, vuxen ur de gamla fiskelägena Gravarne, Bäckevik och Fisketången och känd för sin fiskindustri.",
+   "description": "Kungshamn är Sotenäs kommuns centralort och har vuxit samman av de äldre fiskelägena Gravarne, Bäckevik och Fisketången. Fram till 1963 hette samhället Gravarne, och namnbytet markerade en ny tid. De första bosättningarna växte fram vid 1500-talets sillperiod och en tullstation, men ett mer varaktigt fiskeläge etablerades under den stora sillperioden i mitten av 1700-talet. Vid sidan av havsfiske, bland annat makrillfiske med garn, blev orten också en viktig exporthamn för stenindustrins produkter. Kungshamn är framför allt känt för sin fiskindustri: Abba Seafood ligger alldeles vid Smögenbron, och sedan 1920 har bolagets produkter tillverkats här. År 1962 genomfördes en av svensk konservindustris största sammanslagningar när Abba gick samman med Sveriges Förenade Konservfabriker. Än i dag präglas Kungshamn av sjöfart, fiske och en levande hamn.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kungshamn"
+   ],
+   "city": "Smögen"
+  },
+  {
+   "id": "halmstad-norre-katts-park-halmstad",
+   "name": "Norre Katts park, Halmstad",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.678299,
+    "lng": 12.860002
+   },
+   "summary": "Halmstads gröna pärla vid Nissan, anlagd på gamla befästningsmarker och nöjesplats för stadsborna i snart 200 år.",
+   "description": "Norre Katts park har vuxit fram på mark som en gång hörde till stadens försvar. När befästningarna revs på 1730-talet såldes området på auktion 1737, och delar av rivningsmassorna lades här innan platsen blev åkermark där man odlade tobak och potatis. Den verkliga förvandlingen kom 1843, då gästgivaren A. J. Sjögren köpte marken och anlade en nöjesanläggning med gräsmattor, alléer, fruktträd, restaurang, kägelbana och danspaviljong, kallad Tivoli. När området var till salu 1858 gick konsul Göran Hammar och flera andra borgare samman för att bevara det åt stadsborna, och så småningom övergick parken i stadens ägo. År 1865 utvidgades anläggningen och en restaurang byggdes på den gamla bastionen. Namnet Norre Katts park infördes 1918. I snart två sekler har platsen varit ett kärt rekreations- och nöjesområde i hjärtat av Halmstad.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Norre_Katts_Park"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "karlskrona-drottningskars-kastell",
+   "name": "Drottningskärs kastell",
+   "category": "slott",
+   "coordinates": {
+    "lat": 56.110309,
+    "lng": 15.564352
+   },
+   "summary": "Välbevarad kastellfästning vid Aspö, räknad som ett av den svenska fortifikationskonstens främsta verk.",
+   "description": "På skäret Drottningskär utanför Aspö reser sig ett av den svenska befästningskonstens mästerverk. Kastellet började byggas 1680 som en följd av Karl XI:s beslut att flytta flottans huvudbas till Blekinge och grunda Karlskrona, och bakom ritningarna stod ingenjören och arkitekten Erik Dahlbergh. Anläggningen restes i etapper ända till 1769. Dess kärna är ett tre våningar högt kärntorn för kanoner och manskap, omgivet av fyra bastioner uppkallade efter svenska drottningar: Maria, Hedvig, Ulrica och Christina. Konstruktionen lät kanoner placeras i tre nivåer, så att hela fyrtiofyra pjäser samtidigt kunde beskjuta fientliga fartyg som närmade sig inloppet. Fram till 1820-talet var Drottningskär den yttre försvarslinjens huvudfäste, innan rollen togs över av Kungsholms fort. Eftersom kastellet aldrig utsattes för beskjutning är det idag exceptionellt välbevarat och har varit statligt byggnadsminne sedan 1935.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Drottningsk%C3%A4rs_kastell"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "varberg-getterons-naturreservat",
+   "name": "Getteröns naturreservat",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.133488,
+    "lng": 12.242046
+   },
+   "summary": "Ett av norra Europas främsta fågelområden alldeles utanför Varbergs centrum, skyddat som Natura 2000.",
+   "description": "Strax utanför Varbergs centrum breder Getterön ut sig, ett vidsträckt våtmarks- och kustlandskap som hör till norra Europas allra främsta fågelområden. Reservatet omfattar runt 350 hektar och är skyddat som Natura 2000-område. Här rastar eller häckar varje år inte mindre än omkring 170 fågelarter, närmare hälften av alla arter som regelbundet besöker Sverige, och det gör platsen till en magnet för fågelskådare under hela året. Grunda vatten, vassbälten och betade strandängar skapar en rik miljö där allt från vadare och änder till rovfåglar trivs. Gömslen och stigar gör det lätt att komma nära fågellivet utan att störa. Området är en av Varbergs mest kända naturpärlor, och med vidsträckta vyer över vattnet och ett myllrande djurliv är det ett självklart mål för den som vill uppleva Hallandskustens natur.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/halland/besoksmal/naturreservat/vastra-getteron.html"
+   ],
+   "city": "Varberg"
+  },
+  {
+   "id": "marstrand-bohus-fastning",
+   "name": "Bohus fästning",
+   "category": "slott",
+   "coordinates": {
+    "lat": 57.861824,
+    "lng": 12.000011
+   },
+   "summary": "Medeltida gränsfästning från 1308 på en klippa i Nordre älv vid Kungälv, som gett namn åt landskapet Bohuslän och aldrig erövrats i strid.",
+   "description": "Bohus fästning reser sig på en fyrtio meter hög klippa på Bagaholmen i Nordre älv, i sydöstra Kungälv knappt två mil norr om Göteborg. Den började byggas 1308 av den norske kungen Håkon V Magnusson för att stärka försvaret av Norges dåvarande sydgräns, och det är fästningen som gett landskapet Bohuslän dess namn. Enligt Erikskrönikan ska det ha varit den danske greven Jacob som föreslog att en borg skulle uppföras på klippan Älvebacken. Den var först av trä men byggdes snart om i sten för att bli starkare. Under sin sjuhundraåriga historia har fästningen kontrollerats av Norge, Danmark-Norge och Sverige, och den har belägrats minst fjorton gånger utan att någonsin erövras i strid. Senare användes den även som fruktat fängelse. Idag är Bohus fästning en av Kungälvs kommuns främsta sevärdheter, med torn, murar och en vidsträckt utsikt över älvlandskapet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Bohus_f%C3%A4stning"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "marstrand-marstrandson",
+   "name": "Marstrandsön",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.886668,
+    "lng": 11.573997
+   },
+   "summary": "Den historiska huvudön med drygt tusenårig historia, från norsk sillstad och frihamn till mondän badort.",
+   "description": "Marstrandsön är hjärtat i hela orten och bär på en historia som sträcker sig långt över tusen år tillbaka. Ön grundades som en norsk stad på 1200-talet i takt med att sillfisket expanderade, och 1310 fick Marstrand stadsprivilegier av den norske kungen Håkon V. Läget ytterst i skärgården, med en djup hamn som sällan fryser, gjorde ön till en knutpunkt för handel och sjöfart längs västkusten. Flera stora sillperioder förde med sig rikedom, och under 1500-talet var Marstrand centrum för sillhandeln i Bohuslän. När Gustav III 1775 gjorde ön till Skandinaviens första frihamn rådde här religionsfrihet och fritt näringsliv. Idag möter besökaren ett bilfritt samhälle med trånga gränder, trähus och Carlstens fästning på krönet. Marstrandsön förenar levande badortsliv med en kulturhistoria som få svenska orter kan mäta sig med.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.marstrand.se/historia/"
+   ],
+   "city": "Marstrand"
+  },
+  {
+   "id": "pitea-norrfjardens-kyrka",
+   "name": "Norrfjärdens kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 65.422283,
+    "lng": 21.491706
+   },
+   "summary": "Församlingskyrkan i Norrfjärden, vars första träkyrka av stadionarkitekten Torben Grut brann efter ett blixtnedslag och ersattes 1967.",
+   "description": "När Piteå landsförsamling delades 1905 bildades två nya församlingar, Hortlax och Norrfjärden, och byn behövde en egen kyrka. Den första församlingskyrkan invigdes vid midsommar 1913 och hade ritats av den namnkunnige Stockholmsarkitekten Torben Grut, mest känd som mannen bakom Stockholms stadion. Det var en träkyrka med rektangulärt långhus, smalare kor och torn i väster, krönt av ett brant spåntak och med rödmålade, spånklädda väggar, en stämningsfull norrländsk träkyrka av sin tid. Ödet var dock obarmhärtigt. Den 2 augusti 1963 slog blixten ned och kyrkan brann ned till grunden. En ny kyrka, ritad av arkitekten Göte Lundström med en plan som anspelar på den fornromerska basilikan, togs i bruk 1967. Platsen rymmer på så vis två kyrkohistorier i en: den förlorade träkyrkan och den modernare efterträdaren som restes ur dess aska.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norrfj%C3%A4rdens_kyrka"
+   ],
+   "city": "Piteå"
+  },
+  {
+   "id": "karlskrona-rosenbom",
+   "name": "Rosenbom",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 56.157021,
+    "lng": 15.590911
+   },
+   "summary": "En fattigbössa formad som en båtsman, utanför Amiralitetskyrkan.",
+   "description": "Utanför kyrkan i Karlskrona står den berömda fattigbössan Rosenbom, formad som en båtsman. Figuren snidades av amiralitetsbildhuggaren Johan Törnström och har blivit en av stadens mest kända symboler.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitkarlskrona.se/sv/amiralitetskyrkan-ulrica-pia-och-gubben-rosenbom"
+   ],
+   "city": "Karlskrona"
+  },
+  {
+   "id": "halmstad-mjellby-konstmuseum-halmstad",
+   "name": "Mjellby konstmuseum, Halmstad",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 56.678971,
+    "lng": 12.773929
+   },
+   "summary": "Halmstadgruppens museum strax utanför staden, Nordens museum för surrealism, med rötter i en privat konstgård från 1980.",
+   "description": "Mjellby konstmuseum är hemvist för Halmstadgruppen, de sex konstnärer som 1929 förde den moderna och surrealistiska konsten till Sverige. Gruppen, med bland andra bröderna Erik och Axel Olson samt Waldemar Lorentzon, reste till Paris och Berlin för att studera tidens mest radikala konst och arbetade sedan parallellt med de franska surrealisterna. Flera av dem ställde ut tillsammans med Salvador Dalí, bland annat på den internationella surrealistutställningen i London 1936. Till skillnad från de franska surrealisterna släppte halmstadkonstnärerna in både det religiösa och det halländska kustlandskapet i sina målningar, där fyndskräp, fiskeredskap och Kattegatts vatten återkommer som symboler. Museet startade 1980 som den privata konstgården Mjällby, grundad av Erik Olsons dotter Viveka Bosson i Mjällbys gamla skola, och skänktes till Halmstads kommun 1997. Efter en ombyggnad har det profilerat sig som Nordens surrealistmuseum.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Mjellby_konstmuseum_%E2%80%93_Halmstadgruppens_museum"
+   ],
+   "city": "Halmstad"
+  },
+  {
+   "id": "borgholm-halltorps-hage",
+   "name": "Halltorps hage",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 56.793,
+    "lng": 16.601
+   },
+   "summary": "En av Nordeuropas mest värdefulla lövskogar med jätteekar, söder om Borgholm, hem för några av Sveriges största skalbaggar.",
+   "description": "Söder om Borgholm ligger Halltorps hage, ett naturreservat som rymmer en av Nordeuropas mest värdefulla lövskogar. Reservatet bildades 1979 och omfattar nära 200 hektar, varav en del är vattenområde. Här växer mäktiga jätteekar, avenbokskog, ädellövskog och strandängar, och området hör till landets mest artrika. De gamla, grova ekarna är livsmiljö för tre av Sveriges största skalbaggar: läderbagge, ekoxe och större ekbock. På marken kan man hitta orkidéer som Sankt Pers nycklar. Halltorps hage utgör den södra delen av ett mer eller mindre sammanhängande lövskogsbälte som sträcker sig ända upp mot Borgholm. Reservatet är lättillgängligt med väl markerade stigar, och här finns även en handikappanpassad led. Området ingår i EU:s ekologiska nätverk av skyddade områden, Natura 2000, och är ett uppskattat mål för både botaniker och fågelskådare.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/kalmar/besoksmal/naturreservat/halltorp.html"
+   ],
+   "city": "Borgholm"
+  },
+  {
+   "id": "marstrand-carlstens-fastning",
+   "name": "Carlstens fästning",
+   "category": "slott",
+   "coordinates": {
+    "lat": 57.886217,
+    "lng": 11.577162
+   },
+   "summary": "Mäktig stenfästning som kröner Marstrandsöns högsta klippa, byggd för att försvara Bohuslän efter att landskapet blivit svenskt 1658.",
+   "description": "När Bohuslän vid freden i Roskilde 1658 övergick till Sverige beslöt Karl X Gustav att trygga den isfria hamnen med en fästning. Först restes en provisorisk träskans på berget, men från 1660-talet växte ett rundtorn i sten fram som fick namnet Carlsten. Arbetet utfördes till stor del av straffångar, och under nästan två sekel präglades platsen av hårt slavarbete. Den mest omtalade fången var mästertjuven Lasse-Maja, som satt här i början av 1800-talet. Fästningen togs två gånger av fiender, av norske ståthållaren Gyldenlöwe 1677 och av amiral Tordenskjold 1719, men återlämnades båda gångerna genom fredsförhandlingar snarare än strid. År 1882 avfördes Carlsten ur rikets fasta försvar. Idag är den Marstrands främsta sevärdhet, med guidade turer genom murar, fängelsehålor och utsikten över skärgården.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Karlstens_f%C3%A4stning"
+   ],
+   "city": "Marstrand"
   }
  ]
 }
