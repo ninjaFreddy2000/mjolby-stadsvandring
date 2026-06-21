@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Boxholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.285" lon="14.959"><name>Rinna kyrka</name><desc>Medeltida ursprung på den bördiga slätten i norra kommunen.</desc></wpt>
+  <wpt lat="58.24" lon="15.109"><name>Åsbo kyrka</name><desc>Lantkyrka i Atterboms födelsebygd.</desc></wpt>
+  <wpt lat="58.1872" lon="15.0516"><name>Boxholms kyrka</name><desc>Ortens kyrka, en samlande punkt i bruksamhället.</desc></wpt>
+  <wpt lat="58.06" lon="15.062"><name>Blåviks kyrka</name><desc>Liten kyrka i den södra skogsbygden mot Tranåsgränsen.</desc></wpt>
+  <wpt lat="58.032" lon="15.278"><name>Malexanders kyrka</name><desc>Vit träkyrka vackert belägen vid sjön Sömmen i skogsbygden.</desc></wpt>
+  <rte><name>Kyrkostigen i Boxholm</name>
+    <rtept lat="58.285" lon="14.959"><name>Rinna kyrka</name></rtept>
+    <rtept lat="58.24" lon="15.109"><name>Åsbo kyrka</name></rtept>
+    <rtept lat="58.1872" lon="15.0516"><name>Boxholms kyrka</name></rtept>
+    <rtept lat="58.06" lon="15.062"><name>Blåviks kyrka</name></rtept>
+    <rtept lat="58.032" lon="15.278"><name>Malexanders kyrka</name></rtept>
+  </rte>
+</gpx>

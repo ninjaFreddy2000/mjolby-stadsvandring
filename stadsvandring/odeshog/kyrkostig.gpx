@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Ödeshög</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.2864" lon="14.7035"><name>Heda kyrka</name><desc>En av Östergötlands bäst bevarade medeltidskyrkor, från 1200-talet.</desc></wpt>
+  <wpt lat="58.2817" lon="14.6433"><name>Alvastra klosterruin</name><desc>Ruinerna av Sveriges första cistercienserkloster, grundat 1143 vid Ombergs fot.</desc></wpt>
+  <wpt lat="58.228" lon="14.6545"><name>Ödeshögs kyrka</name><desc>Sockenkyrkan mitt i Ödeshög.</desc></wpt>
+  <rte><name>Kyrkostigen i Ödeshög</name>
+    <rtept lat="58.2864" lon="14.7035"><name>Heda kyrka</name></rtept>
+    <rtept lat="58.2817" lon="14.6433"><name>Alvastra klosterruin</name></rtept>
+    <rtept lat="58.228" lon="14.6545"><name>Ödeshögs kyrka</name></rtept>
+  </rte>
+</gpx>

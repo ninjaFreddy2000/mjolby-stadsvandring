@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Göteborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.6964" lon="11.9806"><name>Göteborgs konstmuseum &amp; Götaplatsen</name><desc>Stadens konstskatt vid Götaplatsen, där Poseidon vakar över Avenyn.</desc></wpt>
+  <wpt lat="57.6956" lon="11.9892"><name>Universeum</name><desc>Science center med regnskog, hajakvarium och rymd under samma tak.</desc></wpt>
+  <wpt lat="57.6947" lon="11.9892"><name>Världskulturmuseet</name><desc>Modernt museum om människor, kulturer och de stora frågorna i världen.</desc></wpt>
+  <rte><name>Konstrundan i Göteborg</name>
+    <rtept lat="57.6964" lon="11.9806"><name>Göteborgs konstmuseum &amp; Götaplatsen</name></rtept>
+    <rtept lat="57.6956" lon="11.9892"><name>Universeum</name></rtept>
+    <rtept lat="57.6947" lon="11.9892"><name>Världskulturmuseet</name></rtept>
+  </rte>
+</gpx>

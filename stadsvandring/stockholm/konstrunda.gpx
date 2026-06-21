@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Stockholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.3286" lon="18.0781"><name>Nationalmuseum</name><desc>Sveriges främsta konstmuseum, vid vattnet mittemot slottet.</desc></wpt>
+  <wpt lat="59.3264" lon="18.0836"><name>Moderna Museet</name><desc>Världsklass i modern konst på den gröna ön Skeppsholmen.</desc></wpt>
+  <wpt lat="59.3281" lon="18.0914"><name>Vasamuseet</name><desc>Det enda bevarade 1600-talsskeppet i världen — Sveriges mest besökta museum.</desc></wpt>
+  <wpt lat="59.325" lon="18.0964"><name>ABBA The Museum</name><desc>Interaktivt museum om världens mest kända popgrupp, på Djurgården.</desc></wpt>
+  <wpt lat="59.3178" lon="18.0847"><name>Fotografiska</name><desc>Internationellt fotomuseum i ett gammalt tullhus vid Stadsgårdskajen.</desc></wpt>
+  <wpt lat="59.3252" lon="18.0708"><name>Nobel Prize Museum</name><desc>Museet om Nobelpriset och dess pristagare, mitt på Stortorget.</desc></wpt>
+  <rte><name>Konstrundan i Stockholm</name>
+    <rtept lat="59.3286" lon="18.0781"><name>Nationalmuseum</name></rtept>
+    <rtept lat="59.3264" lon="18.0836"><name>Moderna Museet</name></rtept>
+    <rtept lat="59.3281" lon="18.0914"><name>Vasamuseet</name></rtept>
+    <rtept lat="59.325" lon="18.0964"><name>ABBA The Museum</name></rtept>
+    <rtept lat="59.3178" lon="18.0847"><name>Fotografiska</name></rtept>
+    <rtept lat="59.3252" lon="18.0708"><name>Nobel Prize Museum</name></rtept>
+  </rte>
+</gpx>

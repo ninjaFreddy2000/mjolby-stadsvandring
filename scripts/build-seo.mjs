@@ -1095,6 +1095,152 @@ ${jsonld(crumbLd)}`;
   urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly' });
 }
 
+// ── Leadmagnet M4: tematiska rutter (/stadsvandring/<ort>/<tema>) ─────────────
+// Kategori-härledda teman (spökvandringen i specen kräver Spökkartan-data som
+// inte finns här). Teaser-karta + 3 stopp publikt; gated = hela rutten + en
+// RIKTIG GPX-fil (statisk, genererad ur koordinaterna). HowTo + TouristTrip.
+const THEME_DEFS = [
+  { slug: 'kyrkostig', emoji: '⛪', cats: ['kyrka', 'klosterruin', 'borgruin'],
+    title: (t) => `Kyrkostigen i ${t}`, intro: (t) => `Kyrkor, kloster och ruiner i ${t} — en vandring genom ortens äldsta och mest andliga byggnadsarv.` },
+  { slug: 'industrihistoria', emoji: '🏭', cats: ['industri_foretag', 'station', 'bro'],
+    title: (t) => `Industrihistoria i ${t}`, intro: (t) => `Fabriker, järnväg och broar som byggde ${t} — följ spåren av industrialiseringen till fots.` },
+  { slug: 'konstrunda', emoji: '🎨', cats: ['konst_staty', 'museum_hembygd'],
+    title: (t) => `Konstrundan i ${t}`, intro: (t) => `Statyer, konst och museer i ${t} — en runda för dig som vill se ortens kreativa sida.` },
+  { slug: 'fikarunda', emoji: '☕', cats: ['kafe_restaurang', 'hotell', 'handel'],
+    title: (t) => `Fikarundan i ${t}`, intro: (t) => `Caféer, konditorier och mysiga stopp i ${t} — planera pauserna lika noga som själva vandringen.` },
+];
+
+// Greedy nearest-neighbour från nordligaste stoppet → en gångbar sekvens.
+function nnOrder(list) {
+  const pts = list.filter(s => s.coordinates?.lat && s.coordinates?.lng);
+  if (pts.length <= 2) return pts;
+  const remaining = pts.slice().sort((a, b) => b.coordinates.lat - a.coordinates.lat);
+  const ordered = [remaining.shift()];
+  while (remaining.length) {
+    const last = ordered[ordered.length - 1].coordinates;
+    let bi = 0, bd = Infinity;
+    remaining.forEach((s, i) => { const d = distKm(last, s.coordinates); if (d < bd) { bd = d; bi = i; } });
+    ordered.push(remaining.splice(bi, 1)[0]);
+  }
+  return ordered;
+}
+
+function buildGpx(name, stops) {
+  const wpts = stops.map(s => `  <wpt lat="${s.coordinates.lat}" lon="${s.coordinates.lng}"><name>${esc(s.name)}</name>${s.summary ? `<desc>${esc(trunc(s.summary, 200))}</desc>` : ''}</wpt>`).join('\n');
+  const rtepts = stops.map(s => `    <rtept lat="${s.coordinates.lat}" lon="${s.coordinates.lng}"><name>${esc(s.name)}</name></rtept>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="${esc(BRAND)}" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>${esc(name)}</name><link href="${BASE}"><text>${esc(BRAND)}</text></link></metadata>
+${wpts}
+  <rte><name>${esc(name)}</name>
+${rtepts}
+  </rte>
+</gpx>
+`;
+}
+
+let themeCount = 0;
+for (const city of CITIES) {
+  const cityEntries = entries.filter(e => e.city === city);
+  if (cityEntries.length < 6) continue;
+  const citySlug = slug(city);
+  for (const def of THEME_DEFS) {
+    const matched = cityEntries.filter(e => def.cats.includes(e.category) && e.coordinates?.lat && e.coordinates?.lng);
+    if (matched.length < 3) continue;
+    const themeStops = nnOrder(matched);
+    const teaserStops = themeStops.slice(0, 3);
+    const centroid = centroidOf(themeStops);
+    const title = def.title(city);
+    const intro = def.intro(city);
+    const canonical = `${BASE}/stadsvandring/${citySlug}/${def.slug}`;
+    const gpxUrl = `/stadsvandring/${citySlug}/${def.slug}.gpx`;
+
+    // GPX-fil (statisk, gated via reveal i klienten).
+    mkdirSync(join(lmDir, citySlug), { recursive: true });
+    writeFileSync(join(lmDir, citySlug, `${def.slug}.gpx`), buildGpx(title, themeStops));
+
+    const howToLd = {
+      '@context': 'https://schema.org', '@type': 'HowTo', name: title, description: intro,
+      step: themeStops.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name,
+        text: s.summary || s.name, url: `${BASE}/p/${slug(s.id || s.name)}` })),
+    };
+    const tripLd = {
+      '@context': 'https://schema.org', '@type': 'TouristTrip', name: title, description: intro,
+      url: canonical, touristType: 'Sightseeing',
+      itinerary: { '@type': 'ItemList', numberOfItems: themeStops.length,
+        itemListElement: themeStops.map((s, i) => ({ '@type': 'ListItem', position: i + 1,
+          item: { '@type': 'TouristAttraction', name: s.name, url: `${BASE}/p/${slug(s.id || s.name)}` } })) },
+    };
+    const crumbLd = {
+      '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Hem', item: `${BASE}/` },
+        { '@type': 'ListItem', position: 2, name: `Stadsvandring i ${city}`, item: `${BASE}/stadsvandring/${citySlug}` },
+        { '@type': 'ListItem', position: 3, name: title, item: canonical },
+      ],
+    };
+
+    const lmData = { citySlug, theme: def.slug, sourceSlug: `stadsvandring/${citySlug}/${def.slug}`,
+      centroid: centroid ? { lat: centroid.lat, lng: centroid.lng } : null,
+      stops: themeStops.map(s => ({ name: s.name, lat: s.coordinates.lat, lng: s.coordinates.lng })) };
+    const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
+
+    const card = (s, i) => `<a class="tile" href="/p/${slug(s.id || s.name)}"><b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
+    const fullList = themeStops.map((s, i) => `<li><a href="/p/${slug(s.id || s.name)}"><b>${i + 1}. ${esc(s.name)}</b></a>${s.summary ? ' — ' + esc(trunc(s.summary, 120)) : ''}</li>`).join('\n');
+
+    const body = `
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/${citySlug}">Stadsvandring i ${esc(city)}</a> › ${esc(def.slug)}</nav>
+<div class="badges"><span class="badge">${def.emoji} Tematisk rutt</span><span class="badge">📍 ${esc(city)}</span><span class="badge">${themeStops.length} stopp</span></div>
+<h1>${esc(title)}</h1>
+<p class="lead">${esc(intro)}</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över ${attr(title)}"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+${teaserStops.map(card).join('\n')}
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla ${themeStops.length} stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="${attr(gpxUrl)}" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts">${fullList}</ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/${citySlug}">Stadsvandringen i ${esc(city)}</a> <a class="cta ghost" href="/stadsvandring/${citySlug}/fakta">Faktabanken</a></p>`;
+
+    const head = `<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+${LM_ASSETS}
+${jsonld(howToLd)}
+${jsonld(tripLd)}
+${jsonld(crumbLd)}`;
+
+    writeFileSync(join(lmDir, citySlug, `${def.slug}.html`), page({
+      title: `${title} — tematisk stadsvandring | ${BRAND}`,
+      description: trunc(`${intro} ${themeStops.length} stopp med karta och GPX.`, 158),
+      canonical, image: `${BASE}/images/og.jpg`, head: dataBlock + '\n' + head, body,
+      bodyAttrs: 'data-lm-page="tema"',
+    }));
+    urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly' });
+    themeCount++;
+  }
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -1171,6 +1317,7 @@ console.log(`✓ en.html (engelsk hub, hreflang ↔ /)`);
 console.log(`✓ leadmagnet M1 (${lmCount} orter: teaser + gatad guide)`);
 console.log(`✓ leadmagnet M3 faktabank (${faktaCount} orter, publik AEO-yta)`);
 console.log(`✓ leadmagnet M2 quiz (${quizCount} orter)`);
+console.log(`✓ leadmagnet M4 tematiska rutter (${themeCount} rutter + GPX)`);
 console.log(`✓ sitemap.xml (${urls.length} url:er)`);
 console.log(`✓ robots.txt`);
 console.log(`✓ llms.txt`);

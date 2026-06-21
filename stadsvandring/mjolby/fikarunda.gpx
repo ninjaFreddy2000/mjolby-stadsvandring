@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Fikarundan i Mjölby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.3256406" lon="15.1256978"><name>Linds (bageri &amp; konditori)</name><desc>Café och konditori med eget bageri i Galleria Kvarnen.</desc></wpt>
+  <wpt lat="58.3255114" lon="15.1250723"><name>Galleria Kvarnen</name><desc>Stadens galleria, vars namn nickar åt kvarnarvet.</desc></wpt>
+  <wpt lat="58.3249291" lon="15.1226492"><name>Konditori Hörnet</name><desc>Mysigt, centralt klassiskt konditori intill biblioteket.</desc></wpt>
+  <wpt lat="58.3226542" lon="15.1253061"><name>Kvarnparken</name><desc>Park och anläggning vid ån med restaurang, pub och statyn av Skånska Lasse.</desc></wpt>
+  <wpt lat="58.3227463" lon="15.1335195"><name>Mjölby Stadshotell (gamla Järnvägshotellet)</name><desc>Timmerhotell mitt emot stationen, byggt strax efter järnvägens ankomst.</desc></wpt>
+  <rte><name>Fikarundan i Mjölby</name>
+    <rtept lat="58.3256406" lon="15.1256978"><name>Linds (bageri &amp; konditori)</name></rtept>
+    <rtept lat="58.3255114" lon="15.1250723"><name>Galleria Kvarnen</name></rtept>
+    <rtept lat="58.3249291" lon="15.1226492"><name>Konditori Hörnet</name></rtept>
+    <rtept lat="58.3226542" lon="15.1253061"><name>Kvarnparken</name></rtept>
+    <rtept lat="58.3227463" lon="15.1335195"><name>Mjölby Stadshotell (gamla Järnvägshotellet)</name></rtept>
+  </rte>
+</gpx>

@@ -309,6 +309,40 @@ function initQuiz(data) {
   });
 }
 
+// ── Tematisk rutt-gate (M4) ───────────────────────────────────────────────
+// Teaser-karta + 3 stopp publikt; e-postgate låser upp hela rutten + GPX-fil
+// (magnet_type 'tema'). GPX:en är en riktig statisk fil — gaten avslöjar bara
+// nedladdningslänken.
+function initTemaGate(data) {
+  const form = document.getElementById('lm-tema-form');
+  if (!form) return;
+  const statusEl = document.getElementById('lm-tema-status');
+  const full = document.getElementById('lm-tema-full');
+  const setStatus = (msg, kind = '') => { if (statusEl) { statusEl.textContent = msg; statusEl.className = 'lm-status' + (kind ? ' ' + kind : ''); } };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.email?.value || '').trim();
+    const consent = !!form.consent?.checked;
+    if (!email) { setStatus('Ange din e-postadress.', 'err'); return; }
+    if (!isConfigured()) { setStatus('Inloggning är inte konfigurerad ännu.', 'err'); return; }
+    const btn = form.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+    setStatus('Skickar…');
+    const sb = await getSupabase();
+    if (!sb) { setStatus('Kunde inte nå servern. Försök igen.', 'err'); if (btn) btn.disabled = false; return; }
+    const { error } = await sb.from('leads').insert({
+      email, magnet_type: 'tema', city_slug: data?.citySlug || null,
+      source_slug: data?.sourceSlug || null, consent_marketing: consent,
+      meta: { theme: data?.theme || null },
+    });
+    if (error) { setStatus('Något gick fel: ' + error.message, 'err'); if (btn) btn.disabled = false; return; }
+    setStatus('Klart! Hela rutten och GPX-filen är upplåsta:', 'ok');
+    form.hidden = true;
+    if (full) full.hidden = false;
+    full?.scrollIntoView({ block: 'start' });
+  });
+}
+
 // ── Bootstrap ─────────────────────────────────────────────────────────────
 function start() {
   const page = document.body?.getAttribute('data-lm-page');
@@ -318,6 +352,7 @@ function start() {
   else if (page === 'fakta') { initFaktaGate(data); }
   else if (page === 'kommun') { initKommunGate(data); }
   else if (page === 'quiz') { initQuiz(data); }
+  else if (page === 'tema') { initMap(data); initTemaGate(data); }
 }
 
 if (document.readyState === 'loading') {

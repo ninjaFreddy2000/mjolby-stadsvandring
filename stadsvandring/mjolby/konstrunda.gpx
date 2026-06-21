@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Mjölby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.395489" lon="15.086764"><name>Ture Lång (Rolandsstaty), Skänninge</name><desc>Ståljätte på Skänninges torg, symbol för rättsskipning i medeltida tysk tradition.</desc></wpt>
+  <wpt lat="58.3943436" lon="15.0828304"><name>Lindbladsparken &amp; bysten av A.F. Lindblad</name><desc>Park i Skänninge med en byst av tonsättaren Adolf Fredrik Lindblad.</desc></wpt>
+  <wpt lat="58.328396" lon="15.1295005"><name>Mjölby hembygdsgård (Norrgårdsholmen)</name><desc>Faluröda museihus på en holme i ån, med en fin intarsiasamling.</desc></wpt>
+  <wpt lat="58.326445" lon="15.1268935"><name>Statyn av Skånska Lasse</name><desc>Staty i Kvarnparken över ortens folkkäre bondkomiker.</desc></wpt>
+  <wpt lat="58.3248271" lon="15.125268"><name>Carl Milles-skulptur (dansande figurer), Stadshuset</name><desc>Skulptur av den världskände Carl Milles framför Stadshusets entré.</desc></wpt>
+  <wpt lat="58.32282" lon="15.0939495"><name>Potatisrondellen (Mjölbypotäten)</name><desc>Ortens mest omtalade symbol: en jättelik King Edward-potatis i en rondell.</desc></wpt>
+  <rte><name>Konstrundan i Mjölby</name>
+    <rtept lat="58.395489" lon="15.086764"><name>Ture Lång (Rolandsstaty), Skänninge</name></rtept>
+    <rtept lat="58.3943436" lon="15.0828304"><name>Lindbladsparken &amp; bysten av A.F. Lindblad</name></rtept>
+    <rtept lat="58.328396" lon="15.1295005"><name>Mjölby hembygdsgård (Norrgårdsholmen)</name></rtept>
+    <rtept lat="58.326445" lon="15.1268935"><name>Statyn av Skånska Lasse</name></rtept>
+    <rtept lat="58.3248271" lon="15.125268"><name>Carl Milles-skulptur (dansande figurer), Stadshuset</name></rtept>
+    <rtept lat="58.32282" lon="15.0939495"><name>Potatisrondellen (Mjölbypotäten)</name></rtept>
+  </rte>
+</gpx>
