@@ -4628,6 +4628,1158 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/H%C3%A4llestads_kyrka%2C_%C3%96sterg%C3%B6tland"
    ]
+  },
+  {
+   "id": "gavle-hogbo-brukshotell-spa",
+   "name": "Högbo Brukshotell & Spa",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.672569,
+    "lng": 16.813331
+   },
+   "summary": "Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken.",
+   "description": "Norr om Sandviken, omgivet av djupgröna skogar, sjö och frodig åkermark, ligger Högbo Brukshotell & Spa. Platsen kallas Gästriklands friluftsparadis och har något för både outdoorälskaren och den som helst njuter av lugnet – många järn i den gamla brukselden, som det heter.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/hogbo-brukshotell-spa-0"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "norrkoping-himmelstalund-2",
+   "name": "Himmelstalund",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.59345,
+    "lng": 16.145682
+   },
+   "summary": "Ett vidsträckt parkområde vid Motala ström med en herrgård från 1730-talet och spår av en gammal brunnsmiljö.",
+   "description": "Himmelstalund är ett stort och luftigt grönområde vid Motala ström strax väster om Norrköpings centrum, en plats där stadens historia sträcker sig långt tillbaka. Namnet finns dokumenterat redan 1384, som Hemblastad, och syftar på en bebyggelse som en gång låg i området. Egendomen blev säteri under 1600-talet men brändes av ryssarna 1719, och den nuvarande huvudbyggnaden uppfördes på 1730-talet. En särskild roll spelade den hälsokälla som upptäcktes 1708 av stadsläkaren Magnus Gabriel von Block; över källan byggdes på 1730-talet en brunnspaviljong, och Himmelstalund blev en uppskattad brunnsmiljö. I början av 1930-talet köpte Norrköpings stad området, och idag är Himmelstalunds herrgård ett skyddat byggnadsminne. Området är ett populärt utflyktsmål med park, idrottsanläggningar och bad, och en lugn motvikt till industristadens täta kvarter.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.norrkopingshistoria.se/himmelstadlunds-herrgard-och-brunnsmiljo/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-gotlands-museum-fornsalen",
+   "name": "Gotlands Museum (Fornsalen)",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 57.6397,
+    "lng": 18.2918
+   },
+   "summary": "Öns stora kulturhistoriska museum, känt för sina världsunika bildstenar och vikingatida silverskatter.",
+   "description": "Gotlands Museum, ofta kallat Fornsalen efter sitt ursprungliga namn, är ett av landets största och mest besökta regionala museer. Det grundades 1875 av Gotlands Fornvänner, med P. A. Säve som drivande kraft. Här ryms öns historia under ett tak, med samlingar på flera hundra tusen föremål. Stoltheten är bildstenshallen, som rymmer landets största samling av bildstenar, dekorerade stenhällar från järnåldern fyllda av mytologiska motiv. Av de omkring femhundra som hittats i Sverige kommer den allra största delen från just Gotland. Museet visar också vikingatida silverskatter, kyrkokonst och rustningar med koppling till den danska invasionen 1361. För den som vill förstå Visby och Gotland på djupet är ett besök här en given utgångspunkt, gärna i början av vistelsen så att resten av staden faller på plats.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.gotlandsmuseum.se/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-knappingsborg",
+   "name": "Knäppingsborg",
+   "category": "vandringsled",
+   "coordinates": {
+    "lat": 58.589151,
+    "lng": 16.185187
+   },
+   "summary": "Från mytomspunnen klippa i Strömmen via medeltidsborg och snusfabrik till en av Norrköpings mest stämningsfulla stadsmiljöer.",
+   "description": "Få platser i Norrköping bär på så många lager av historia som Knäppingsborg. Allt börjar vid en mytomspunnen klippa i Strömmen, som under medeltiden gav namn åt en borg på platsen. Sedan dess har området bytt skepnad gång på gång – bland annat har här tillverkats snus – innan det blev den pittoreska kvartersmiljö som lockar besökare i dag, med restauranger och liv kring det lilla torget. Att strosa genom Knäppingsborg är att röra sig genom flera epoker på några få minuter: medeltidens befästning, industrialismens fabriksliv och nutidens mötesplats ligger sida vid sida. Det är just den blandningen av sägen, industri och stadsliv som gör platsen till ett tacksamt stopp på en vandring genom Norrköpings historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.klingsbergsforlag.se/guidning-knappingsborg/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "norrkoping-norrkopings-radhus",
+   "name": "Norrköpings rådhus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.592032,
+    "lng": 16.187143
+   },
+   "summary": "Stadens pampiga rådhus från tidigt 1900-tal med ett 68 meter högt torn och klockspel, en av Norrköpings tydligaste märkesbyggnader.",
+   "description": "Norrköpings rådhus är en av stadens mest iögonfallande byggnader och ett tydligt uttryck för det självmedvetande industristaden hade vid förra sekelskiftet. Det ritades av professor Isak Gustaf Clason, mannen bakom bland annat Nordiska museet i Stockholm, och uppfördes åren 1907–1910. Bygget tog mer än tre år och kostade omkring 1,7 miljoner kronor, en betydande summa för tiden. Fasaderna är klädda i mörkt helsingborgstegel med listverk och sockel av granit, och tornet höjer sig 68 meter över staden med ett klockspel i toppen. Rådhuset invigdes den 28 november 1910 och ersatte ett betydligt blygsammare föregångare från 1734, som revs 1906 för att lämna plats åt sin ståtligare efterträdare. Byggnaden tjänar än idag som rådhus och hör till stadens mest fotograferade landmärken.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Norrk%C3%B6pings_r%C3%A5dhus"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "finspang-rejmyre-och-havla",
+   "name": "Rejmyre och Hävla",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.830057,
+    "lng": 15.931367
+   },
+   "summary": "Bygden vid kommungränsen mot Norrköping, med Rejmyre som den största orten utanför Finspångs tätort.",
+   "description": "I sydöstra delen av kommunen, nära gränsen mot Norrköping, ligger Rejmyre och Hävla med omnejd. Rejmyre är den största orten utanför Finspångs tätort och har också det bredaste samlade utbudet av service och handel på landsbygden. Orten är framför allt känd för sitt anrika glasbruk, grundat 1810 och ännu i drift, som genom åren gjort Rejmyre till ett begrepp långt utanför Östergötland. Tillsammans bildar Rejmyre och Hävla en levande bruksbygd där hantverkstraditionen och det dagliga livet löper sida vid sida.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/landsbygd-och-orter/rejmyre-och-havla"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "finspang-finspangs-haxprocesser",
+   "name": "Finspångs häxprocesser",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.716,
+    "lng": 15.772
+   },
+   "summary": "1617 ägde en av landets tidigaste och största häxprocesser rum i Finspång – åtta kvinnor avrättades i det som i dag kallas Trollkärringeskogen.",
+   "description": "Våren 1617 inleddes i Finspång en av Sveriges tidigaste och mest omfattande häxprocesser. Åtta kvinnor anklagades för förbund med djävulen och resor till Blåkulla, och efter tortyr och sammanlagt fyra tingsförhandlingar – med ett trettiotal deltagare – var domarna fastställda sommaren samma år. Kvinnorna avrättades på en plats norr om dagens centralort som ännu bär namnet Trollkärringeskogen, och en av dem hann dö redan under förhören. Men Finspångsprocessen var bara en av flera. I grannsocknen Hällestad avrättades en kvinna 1620, och så sent som 1699 dömdes och avrättades där även en man för samröre med den onde – ett av de senare exemplen i landet. Tillsammans vittnar processerna om hur trolldomsrädslan drog fram genom Finspångstrakten under hela 1600-talet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/historia-och-kommunvapen/finspangs-haxprocesser"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "visby-stora-torget",
+   "name": "Stora Torget",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.640644,
+    "lng": 18.295995
+   },
+   "summary": "Innerstadens hjärta sedan 1500-talet, en mötesplats med medeltida rötter och S:ta Karins ruin som fond.",
+   "description": "Stora Torget är innerstadens naturliga samlingspunkt, kantat av kaféer och med den vackra S:ta Karins ruin som blickfång. Stenläggning och fynd tyder på att här fanns en marknads- och samlingsplats redan under 1300-talet, och vid utgrävningar på 1920-talet hittades en gammal brunn flera meter ner under dagens torgyta. Som stadens centrala torg trädde platsen fram på allvar under 1500-talet, sedan äldre handelsplatser längre ner mot hamnen övergivits. Till torget knyts också den dramatiska berättelsen om Valdemar Atterdags brandskattning 1361, då danskarna enligt sägnen ställde upp stora kar och krävde att borgarna fyllde dem med silver och guld för att skona staden. Historikerna är skeptiska till sägnen, som dyker upp först på 1600-talet, men den lever vidare. Idag pulserar torget av folkliv hela sommaren.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/platser/stora-torget/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-bergsbron-norrkoping",
+   "name": "Bergsbron, Norrköping",
+   "category": "bro",
+   "coordinates": {
+    "lat": 58.589768,
+    "lng": 16.178321
+   },
+   "summary": "En av Norrköpings äldsta broövergångar över Strömmen, vars nuvarande monumentala betongbro stod färdig 1901.",
+   "description": "Bergsbron hör till de äldsta broövergångarna över Motala ström i Norrköping och har en historia full av ras och återuppbyggnad. Bron kom till som en del av den nya stadsplan som antogs under drottning Kristinas förmyndarregering 1641 och byggdes i början av 1640-talet, då under namnet Västra bron. Den var troligen den tredje fasta passagen över Strömmen, efter Gamlebro och Saltängsbron. Den ursprungliga bron rasade 1661 och byggdes upp på nytt, och 1775 restes en ny bro av huggen gråsten. En häftig vårflod i april 1788 åstadkom stor förödelse på stadens broar och slet bort fyra av Bergsbrons stenvalv. Den nuvarande, monumentala bron uppfördes i betong 1901, 145 meter lång och 13 meter bred, och fick några år senare även spårvägstrafik. Från bron har man en av de finaste vyerna över forsen och industrilandskapet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Bergsbron"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-sankt-hans-och-sankt-pers-kyrkoruiner",
+   "name": "Sankt Hans och Sankt Pers kyrkoruiner",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.638085,
+    "lng": 18.292831
+   },
+   "summary": "Två sammanbyggda kyrkor som tillsammans en gång var Visbys största helgedom.",
+   "description": "Vid hörnet av S:t Hansgatan och Hästgatan ligger resterna av två kyrkor som byggdes ihop så tätt att det idag är svårt att avgöra var den ena slutar och den andra börjar. Tillsammans var S:t Hans och S:t Per Visbys största kyrka. S:t Hans hör till öns äldsta stenkyrkor och kan ha rests redan omkring år 1060, vilket gör platsen till en av stadens absolut äldsta. När den blev för trång byggdes S:t Per till strax söder om, omkring mitten av 1100-talet. Kyrkorna revs delvis under 1600-talet och försvann sedan från kartorna i flera sekel. Först på 1900-talet grävdes ruinerna fram, ett tålamodsprövande arbete som med insatser under 1980-talet pågick i drygt åtti år innan murarna åter syntes ovan jord.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Hans_och_Sankt_Pers_kyrkoruiner"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "finspang-sonstorp",
+   "name": "Sonstorp",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.724621,
+    "lng": 15.634397
+   },
+   "summary": "Ett stationssamhälle tolv kilometer väster om Finspång, framvuxet i järnvägens spår under 1800-talet.",
+   "description": "Tolv kilometer väster om Finspångs tätort ligger Sonstorp, ett av kommunens yngre samhällen. Orten är ett så kallat stationssamhälle, det vill säga en bebyggelse som växte fram i takt med att järnvägen drogs genom trakten under 1800-talet. Som på så många andra håll i Sverige blev stationen en motor för orten: kring den samlades bostäder, handel och arbete, och järnvägen knöt samman Sonstorp med både bruken i norr och städerna i söder. Än i dag bär samhället prägel av sin tillkomsthistoria, med järnvägen som den röda tråd kring vilken orten en gång byggdes.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/landsbygd-och-orter/sonstorp"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "visby-kapitelhusgarden",
+   "name": "Kapitelhusgården",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.6414,
+    "lng": 18.2948
+   },
+   "summary": "Medeltida gårdsmiljö nära domkyrkan som varje sommar förvandlas till ett av Medeltidsveckans nav.",
+   "description": "Kapitelhusgården nära domkyrkan är en stämningsfull gårdsmiljö med medeltida byggnader, däribland en sval 1200-talsbyggnad som en gång hörde till biskopens miljö. Idag är platsen mest känd som ett av de självklara naven under Medeltidsveckan, Sveriges största historiska festival som hållits sedan 1984. Under festivalveckan öppnar gården varje dag med marknad och grill, och under dagarna hålls kurser, föreläsningar och uppträdanden. På kvällarna fylls gården till brädden och lyses upp av eld, medan sång och skratt hörs långt in på natten. Här uppträder musiker både ute och inne, ibland sällskapade av berättare, gycklare, dansare och trollkarlar. Resten av året drivs platsen som medeltidskrog och restaurang. Att kliva in på Kapitelhusgården är att för en stund kliva tillbaka till hansestadens dagar, med dofter, ljud och mat ur en svunnen tid.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.medeltidsveckan.se/venues/kapitelhusgarden/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-sankt-lars-kyrkoruin",
+   "name": "Sankt Lars kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.641378,
+    "lng": 18.295205
+   },
+   "summary": "Ovanlig korskyrkoruin med bysantinska drag och ett gåtfullt system av gångar inne i murarna.",
+   "description": "S:t Lars sticker ut bland Visbys ruiner genom sin form. Istället för den tyska modellen med torn i väster byggdes kyrkan som en korskyrka med ett centralt torn, en plan som för tankarna till de ortodoxa kyrkorna i öst. Den uppfördes under 1200-talets förra hälft och blev församlingskyrka för befolkningen i de centrala kvarteren. Det mest fascinerande döljer sig i själva murarna: ett invecklat system av trappor, gångar och läktare som löper genom väggarna och gör att den nyfikne nästan kan ta sig runt hela byggnaden inuti stenen. Liksom de övriga kyrkorna övergavs S:t Lars vid reformationen på 1500-talet och förföll till ruin. Grannruinen Drotten ligger alldeles intill, och de två brukar kallas systerkyrkor. För den äventyrlige är gångarna i murarna en oväntad upptäckt mitt i staden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Lars_kyrkoruin,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-fargargarden-norrkoping",
+   "name": "Färgargården, Norrköping",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 58.587781,
+    "lng": 16.167469
+   },
+   "summary": "Sveriges enda friluftsmuseum helt ägnat åt färgerihantverket, beläget vid Motala ström i utkanten av det gamla industrilandskapet.",
+   "description": "Vid Motala ström, i kanten av Norrköpings forna textilstad, ligger Färgargården, ett litet friluftsmuseum som berättar om ett hantverk som var nära förbundet med stadens industri. Museet grundades av Svenska färgeritekniska riksförbundet på mark som staden skänkte, och invigdes den 20 maj 1939. Huvudbyggnaden köptes från Dala-Floda i Dalarna och flyttades till platsen. Färgargården visar hur en färgaremästare bodde, arbetade och levde vid mitten av 1800-talet och är Sveriges enda friluftsmuseum helt ägnat åt det historiska färgeriet. Idag är gården en del av Norrköpings stadsmuseum. Genom tidstrogen hantverk, trädgårdsodling, matlagning och aktiviteter levandegörs en färgarefamiljs vardag i 1800-talets slut. Läget intill strömmen, där en gång färgerier och fabriker trängdes, gör besöket extra stämningsfullt och knyter samman hantverket med stadens industriarv.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.norrkopingsstadsmuseum.se/utstallning/fargargarden-friluftsmuseum-2/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-drottens-kyrkoruin",
+   "name": "Drottens kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.641725,
+    "lng": 18.295359
+   },
+   "summary": "Systerkyrka till S:t Lars, ursprungligen helgad åt Heliga Treenigheten och omspunnen av en gammal sägen.",
+   "description": "Drotten ligger intill S:t Lars vid Syskongatan, och de båda kallas systerkyrkor. Drotten byggdes omkring 1240 som församlingskyrka och helgades åt den heliga Treenigheten. Ordet drott betyder ungefär furste eller herre och tolkades här som en hänvisning till Gud själv. En seglivad sägen berättar om en rik köpman vars två döttrar var så osams att de inte kunde dela kyrka, varför han lät bygga två helgedomar bredvid varandra. Tydliga brandspår i murverket vittnar om att kyrkan eldhärjades, troligen i samband med lübeckarnas anfall på 1520-talet, och med den danska reformationen blev en återuppbyggnad aldrig av. Tornet kom från 1700-talet och framåt att användas som upplag. Idag står ruinen öppen för besök under sommarhalvåret och bjuder på en stilla stund mitt i innerstaden.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Drottens_kyrkoruin,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-soderport",
+   "name": "Söderport",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.634801,
+    "lng": 18.291914
+   },
+   "summary": "Stadens södra huvudport och idag en av de mest använda infarterna till innerstaden.",
+   "description": "Söderport är en av de portar genom vilka man fortfarande passerar in i den medeltida staden, och för många besökare blir den första mötet med innerstadens kullerstensgränder. Till skillnad från Norderport och Österport, som hör till de äldsta porttornen och restes redan på 1280-talet kort efter att landmuren byggts, tycks Söderport ha tillkommit i ett senare skede. Inga spår av någon tidigare port har påträffats här, vilket tyder på att den anlades först omkring 1300- till 1350-talet, ungefär när muren förhöjdes och förstärktes. Portarna var stadens kontrollerade öppningar mot omvärlden, där folk, varor och nyheter passerade in och ut. Att gå genom Söderport idag är att följa i fotspåren av sekler av köpmän, bönder och resenärer på väg in mot torg och hamn.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/ringmuren/soderport/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "boxholm-ekeby-kyrka",
+   "name": "Ekeby kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 58.251727,
+    "lng": 15.046319
+   },
+   "summary": "Medeltida kyrka från 1100-talet med fyra tusenåriga runstenar på kyrkogården och ett fornlämningsrikt landskap runt omkring.",
+   "description": "Ekeby kyrka hör till de äldsta byggnaderna i bygden, med murverk som går tillbaka till 1100-talet. Genom seklen har den byggts om i flera omgångar. Per Ribbing lät 1652 uppföra ett tegelkor som senare blev gravkapell för den adliga ätten Ribbing, och tornet restes på 1750-talet, enligt traditionen efter ritningar knutna till Carl Hårleman. Inne i kyrkan finns äldre konstskatter, bland annat en altartavla från 1693 av David Klöcker Ehrenstrahl samt flera begravningsvapen från Ribbingsläkten. Störst intryck gör kanske de fyra runstenarna på kyrkogården, omkring tusen år gamla. Mest känd är Ög 67 i röd granit, ungefär 130 centimeter hög, med inskriften om hur Sverker reste stenen efter Karna. Norr om kyrkan breder ett fornlämningsrikt landskap ut sig med stensträngar, stensättningar och skålgropar, ett spår av järnålderns bönder.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Ekeby_kyrka,_%C3%96sterg%C3%B6tland"
+   ],
+   "city": "Boxholm"
+  },
+  {
+   "id": "norrkoping-hedvigs-kyrka",
+   "name": "Hedvigs kyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 58.592811,
+    "lng": 16.187918
+   },
+   "summary": "Norrköpings tyska kyrka från 1673, uppförd för stadens tysktalande befolkning och uppkallad efter drottning Hedvig Eleonora.",
+   "description": "Hedvigs kyrka kallas ofta Tyska kyrkan, och namnet pekar rakt mot dess ursprung. Under 1600-talet ökade antalet norrköpingsbor av tyskt ursprung kraftigt, och 1660 beviljade före detta drottning Kristina den tyska församlingen privilegier. Kyrkan invigdes 1673 och var avsedd för den tysktalande befolkningen i staden. Den fick sitt namn efter drottning Hedvig Eleonora, som på flera sätt stöttade bygget. Kyrkan uppfördes i en förenklad barockstil med korta, breda proportioner och kraftiga strävpelare. När ryska trupper härjade Norrköping 1719 skadades den svårt men byggdes åter upp, och under riksdagen 1799–1800 användes den som mötessal. Den tyska församlingens historia avslutades 1814 då den sista tyskspråkiga gudstjänsten hölls. Den senaste större renoveringen gjordes 1959, då 1600-talsfasaden återställdes. Kyrkan firade nyligen 350 år.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Hedvigs_kyrka"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-sankt-clemens-kyrkoruin",
+   "name": "Sankt Clemens kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.643147,
+    "lng": 18.296147
+   },
+   "summary": "En av Visbys äldsta kyrkplatser, helgad åt sjöfararnas skyddshelgon och belägen intill botaniska trädgården.",
+   "description": "S:t Clemens ligger i norra Visby, alldeles intill DBW:s botaniska trädgård. Helgonet Clemens var sjöfararnas skyddspatron, ett passande namn i en stad som levde på handeln över havet. Den ruin man ser idag restes kring mitten av 1200-talet och hör till stadens äldsta, men platsen har djupare rötter än så. Här fanns en gammal kultplats med ursprung redan på 1000-talet, och kyrkan hade flera föregångare, den äldsta en enkel romansk landsortskyrka. De tidigaste gravstenarna är från 1100-talet. S:t Clemens var främst församlingskyrka för gotlänningarna i stadens norra del. Efter reformationen på 1530-talet övergavs kyrkan och fick som så många andra ruiner tjäna som stall, uthus och stenbrott innan den blev det fridfulla besöksmål den är idag, omgiven av trädgårdens grönska.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Clemens_kyrkoruin,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "finspang-ljusfallshammar-och-grytgol",
+   "name": "Ljusfallshammar och Grytgöl",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.78811,
+    "lng": 15.493705
+   },
+   "summary": "Två bruksorter i Finspångs nordvästra hörn, vid gränsen mot Örebro län.",
+   "description": "Längst upp i Finspångs kommuns nordvästra del, där länsgränsen mot Örebro tar vid, ligger bruksorterna Ljusfallshammar och Grytgöl med tillsammans drygt niohundrafemtio invånare. Liksom så många orter i denna del av Östergötland har de sin upprinnelse i järnet och vattenkraften – namnens hammare och bruk berättar om en tid då forsarna drev smedjor och masugnar. I dag är de lugna landsbygdsorter, men landskapet runt omkring, med sjöar, skogar och spåren efter den gamla bruksverksamheten, bär fortfarande vittnesbörd om bergslagsbygdens arbetsamma historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/landsbygd-och-orter/ljusfallshammar-och-grytgol"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "gavle-gamla-kyrkogarden",
+   "name": "Gamla kyrkogården",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.674681,
+    "lng": 17.119328
+   },
+   "summary": "En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar bland gravkor och kapell i skiftande stilar.",
+   "description": "Gamla kyrkogården togs i bruk 1808 och hette till en början tvärtom Nya kyrkogården. Bakgrunden var att man förbjudit gravsättning inne i kyrkorna 1783 och helt inne i städerna 1815 – krig och farsoter hade dessutom fyllt de gamla gravplatserna. Kyrkogårdens äldsta byggnad är det kvadratiska Enneska gravkoret från 1821, uppfört av grosshandlaren Per Ennes åt sin familj. Tjugo år senare anlades Stora allén tillsammans med det centralt placerade Elfbrinkska kapellet. Den som vandrar bland stenarna passerar flera av stadens betydande släkter: här vilar familjen Engwall, grundarna av kafferosteriet som i dag heter Gevalia. Spana också efter Garbergs runda gravkor, familjen Bångs öppna gravmonument och det gotiska tegelbårhuset från 1896 – tillsammans ger de en kortfattad lektion i 1800-talets gravkonst.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/gamla-kyrkogarden"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "visby-dbw-s-botaniska-tradgard",
+   "name": "DBW:s botaniska trädgård",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.644012,
+    "lng": 18.294238
+   },
+   "summary": "Frodig trädgård från 1855, anlagd av Sällskapet De Badande Wännerna och en grön oas i norra innerstaden.",
+   "description": "DBW:s botaniska trädgård är en lummig oas i norra innerstaden, känd för sitt milda klimat och sina växter som annars sällan trivs så här långt norrut. Trädgården anlades 1855 av Sällskapet De Badande Wännerna, ett herrsällskap som bildats i Visby 1814 med syftet att verka nyttigt för det allmänna. Namnet kom av att verksamheten började med badutflykter till Snäckviken norr om staden. Initiativet till trädgården kom från en magister som ville ge den uppväxande generationen levande kunskap om naturen. I början fungerade den mest som handelsträdgård med frukt- och parkträd, buskar och nyttoväxter, och här bedrevs även trädgårdsundervisning. Sin nuvarande form fick trädgården vid en genomgripande renovering på 1930-talet. Sedan 1970-talet sköter kommunen driften, medan sällskapets trädgårdsstyrelse ännu ansvarar för det botaniska innehållet. Intill ligger S:t Clemens ruin.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visby_botaniska_tr%C3%A4dg%C3%A5rd"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "finspang-finspangs-bruk-och-kanontillverkningen",
+   "name": "Finspångs bruk och kanontillverkningen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.7053,
+    "lng": 15.774
+   },
+   "summary": "Vid forsen i Finspång lade Willem de Besche och Louis De Geer på 1600-talet grunden till ett av landets mest berömda styckebruk – och till dagens industristad.",
+   "description": "När Willem de Besche och Louis De Geer på 1600-talet började gjuta kanoner i Finspång föddes ett kronobruk vars produkter, \"stycken\", gav platsen namnet styckebruk. Att verksamheten just hamnade här var ingen slump. Mellan sjöarna Bönnern och Dovern föll vattnet femton meter med ett jämnt flöde året om, och kraften togs tillvara av hammare och blåsbälgar – i början av 1800-talet snurrade ett tjugotal vattenhjul i strömmen. Runt om låg vidsträckta skogar som gav träkol till järnframställningen, och från gruvorna i trakten kom malmen, om än inte alltid av den kvalitet som kanongjutningen krävde. Avgörande var också närheten till Norrköping: tunga laster fördes med båt och pråm över Skuten, Dovern och Glan in till Fiskeby och vidare ut genom hamnen. Tillverkningen pågick ända till 1912 och blev grogrund för flera av de industrier som ännu präglar Finspång.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/historia-och-kommunvapen/finspangs-bruk-och-kanontillverkningen"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "boxholm-oringe-hallkista",
+   "name": "Öringe hällkista",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.227,
+    "lng": 15.105
+   },
+   "summary": "En stenåldersgrav från omkring 2000 f.Kr. på en höjd i Åsbo, ett av kommunens äldsta minnesmärken över forntida människor.",
+   "description": "På en liten höjd i Åsbo, väster om landsväg 32, vilar Öringe hällkista, en stenåldersgrav daterad till omkring 2000 år före vår tideräkning. Hällkistan är en gravform av resta och lagda stenhällar som bildade en kammare för de döda, och den hör till de allra äldsta spåren av människor i Boxholmstrakten. Landskapet runt omkring ligger i den södra utkanten av Östgötaslätten, på höjder mellan ungefär 105 och 135 meter över havet, i ett mjukt böljande jordbruks- och skogslandskap som genomkorsas av Svartån och dess biflöde Lillån. Åsbo socken är ovanligt rik på forntid: här finns två hällkistor från stenåldern, gravrösen och stensättningar från bronsåldern samt ett stort antal gravfält och stensträngar från järnåldern. Öringe hällkista är därför inte bara en enskild grav, utan en nyckel till en bygd som varit befolkad i flera tusen år.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/%C3%85sbo_socken"
+   ],
+   "city": "Boxholm"
+  },
+  {
+   "id": "boxholm-boxholms-sateri",
+   "name": "Boxholms säteri",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.213853,
+    "lng": 15.018146
+   },
+   "summary": "Herrgården vid Svartån som gett hela orten dess namn, grundad på 1590-talet av Gustav Vasas svåger Arvid Gustafsson Stenbock.",
+   "description": "Boxholms säteri är platsen där ortens namn föddes. På 1590-talet lät riksrådet och friherren Arvid Gustafsson Stenbock, svåger till Gustav Vasa, uppföra en herrgård invid Svartån i södra Östergötland. Han kallade den Bocksholm, där förleden anspelade på honom själv och efterleden på det holmlika läget vid vattnet. Egendomen hörde till hans friherreskap, donerad omkring 1594, men Arvid stod på kung Sigismunds sida och landsförvisades 1596, varefter gården från 1599 tillföll kronan. Genom det vattendrag som rinner genom området mellan Sjögarpesjön och Svartån fanns kraften som senare skulle utnyttjas industriellt. År 1778 köptes Bocksholm av Carl Daniel Burén, vars släkt drev järnbruk i norra Östergötland, och därmed knöts gården till den brukstradition som gjorde Boxholm känt. Anläggningen består i dag av en huvudbyggnad med fyra flyglar och bär på fyra sekel av östgötsk herrgårdshistoria.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Boxholms_s%C3%A4teri"
+   ],
+   "city": "Boxholm"
+  },
+  {
+   "id": "gavle-hotell-boulogne",
+   "name": "Hotell Boulogne",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.674337,
+    "lng": 17.133647
+   },
+   "summary": "Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen.",
+   "description": "Hotell Boulogne är det lilla hotellet med den stora charmen – prisvärt och personligt, i en lugn och trivsam miljö. Läget är bland Gävles bästa, med utsikt mot Gavleån, Carl Milles berömda änglar och stadsoasen Boulognerskogen, och med nära till city, konserthuset och teatern.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/hotell-boulogne"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "visby-visby-ringmur",
+   "name": "Visby ringmur",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.64,
+    "lng": 18.2952
+   },
+   "summary": "Den omkring 3,4 kilometer långa medeltida stadsmuren är Nordeuropas bäst bevarade och själva sinnebilden för Visby.",
+   "description": "Ringmuren slingrar sig kring hela innerstaden och är det första man lägger märke till när man närmar sig Visby. Den restes i flera skeden: strandmuren mot havet kom till omkring mitten av 1200-talet, landmuren under 1270- och 1280-talen, sannolikt i skuggan av öns inre konflikter. På 1300-talet höjdes muren med några meter och förstärktes med en rad torn. På sina ställen reser den sig elva meter över marken, och ursprungligen fanns nära ett trettiotal marktorn samt ett tjugotal mindre sadeltorn, varav flertalet ännu står kvar. Sedan tidigt 1800-tal är muren skyddad och 1995 blev den, tillsammans med staden innanför, upptagen på Unescos världsarvslista. En promenad runt muren, som tar ungefär en timme, är som att vandra genom århundraden av handel, krig och hantverk.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visby_ringmur"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "gavle-hedenstugan-bed-breakfast-hotell",
+   "name": "Hedenstugan Bed & Breakfast Hotell",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.940273,
+    "lng": 17.04812
+   },
+   "summary": "Ett charmigt lanthotell med bastu, badtunna och lokal mat.",
+   "description": "Hedenstugan är ett charmigt hotell på landet, med ljusa och smakfullt inredda rum för avkoppling. I den rofyllda trädgården finns bastu och badtunna, och i restaurangen lagas smakrika rätter på färska, lokala råvaror – middag bokas i förväg.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/hedenstugan-bed-breakfast-hotell"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "visby-almedalen",
+   "name": "Almedalen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.640867,
+    "lng": 18.290854
+   },
+   "summary": "Visbys grönskande strandpark, som under medeltiden var stadens hamn och idag är politikerveckans skådeplats.",
+   "description": "Almedalen är Visbys mest kända park, en grön remsa mellan innerstaden och havet. Här, där besökare nu strosar bland gräsmattor och almar, låg under medeltiden stadens hamn. Från 1100-talet och flera sekler framåt strömmade fartyg hit för att lasta och lossa varor i en av Östersjöns viktigaste handelsplatser. När landhöjningen med tiden gjorde hamnen för grund tvingades man anlägga en ny längre bort, och den gamla hamnen torrlades på 1800-talet. På 1870-talet planterades almar på platsen, vilket gav den namnet Almedalen. Förvandlingen till stadspark tog fart på 1950-talet. Sedan ett oplanerat möte 1968, då Olof Palme talade i parken, har Almedalen blivit liktydigt med den årliga politikerveckan, ett av landets största demokratiska evenemang som varje sommar fyller staden med debatt och liv.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/platser/almedalen/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-norderport",
+   "name": "Norderport",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.644685,
+    "lng": 18.301061
+   },
+   "summary": "En av ringmurens äldsta portar, där landsvägen från norra Gotland en gång ledde in i staden.",
+   "description": "Norderport hör till de äldsta tornen i Visby ringmur. Det var genom denna port som landsvägen från öns norra delar nådde fram till staden, en av de viktigaste infarterna under medeltiden. Tillsammans med Österport räknas Norderport till murens äldsta porttorn, uppförda kort efter att den så kallade gamla muren rests, troligen kring 1280-talet. Dateringarna har kunnat preciseras med hjälp av årsringar i bevarat trävirke. Portarna byggdes som en del av det stora befästningsarbete som följde på öns inre stridigheter mot slutet av 1200-talet. Idag är Norderport en stämningsfull punkt på en vandring längs muren, och under sommarens medeltidsvecka är trakten kring den norra muren och gravarna en av festivalens livligaste skådeplatser, med läger, marknad och tornerspel kring de gamla murarna och gravarna.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/ringmuren/norderport/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "finspang-hafla-hammarsmedja",
+   "name": "Häfla hammarsmedja",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.7862,
+    "lng": 15.6192
+   },
+   "summary": "Ett av Sveriges bäst bevarade järnbruk i Hällestads Bergslag, där allt lämnades orört den dag smedjan tystnade 1924.",
+   "description": "Den 6 juni 1924, efter 242 år, gjordes den sista arbetsdagen vid Häfla Övre Bruk. Smederna låste dörren och gick hem – och lät allt stå kvar: härdar, hammare och verktyg. Just därför är Häfla hammarsmedja i dag en sällsynt komplett industrimiljö från 1920-talet och räknas som ett av landets bäst bevarade järnbruk. Anläggningen ligger i Hällestads Bergslag i norra Östergötland, mellan sjöarna Regnaren och Vagnaren, och anlades redan 1682 av urpatronen Jacob Flemming. Att platsen är unik insåg man tidigt: Tekniska museet förklarade bruket som industriminne 1934, och 1990 blev det byggnadsminne. Här står den enda bevarade räckhammaren av den typ som Sven Rinman beskrev 1788 – en väldig konstruktion i grovt virke som först efter en ombyggnad 1799 fick plats inne i smedjan. Den senare smälthammaren från 1836 är i grunden en vidareutveckling av samma idé.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/historia-och-kommunvapen/hafla-hammarsmedja"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "gavle-farnebofjardens-nationalpark",
+   "name": "Färnebofjärdens Nationalpark",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 60.286972,
+    "lng": 16.882002
+   },
+   "summary": "En artrik nationalpark där norrländsk barrskog möter sydliga lövskogar.",
+   "description": "En vandring vid Dalälven genom Färnebofjärdens nationalpark bjuder på ett möte mellan landskapstyper – myrmarker och barrskog med norrländsk karaktär samsas med sydliga lövskogar med inslag av ek och lind. Här finns över 250 fågelarter, och med lite tur kan du få syn på både skogslämmel och lodjur.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/upptack-naturen-i-host"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "norrkoping-louis-de-geer-konsert-kongress",
+   "name": "Louis De Geer konsert & kongress",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.588173,
+    "lng": 16.184206
+   },
+   "summary": "Ett pappersbruk vid Strömmen som blev konserthus och hemmascen för Norrköpings Symfoniorkester.",
+   "description": "Konserthuset bär namn efter industrimannen Louis De Geer och ligger i Holmens forna pappersbruk vid Motala ström. De äldsta delarna uppfördes i två etapper 1927 och 1930 efter ritningar av arkitekten Ivar Tengbom, och här tillverkades papper ända till 1986. När fabriken tystnade föddes tanken att ge huset ett nytt liv som kulturhus. Ett konsortium med kommunen och flera byggherrar bildades, och efter att första spadtaget tagits 1992 stod konserthuset färdigt och invigdes den 13 oktober 1994. Arkitekterna lät industrikaraktären leva kvar: den stora salen, De Geerhallen med plats för cirka 1 380 åhörare, ligger i den gamla massaberedningen, och foajén i den tidigare pappersmaskinshallen. Den mest påtagliga förändringen är de stora fönstren, som låter besökarna se rakt ut över de brusande vattenfallen. Idag är huset hemmascen för Norrköpings Symfoniorkester.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Louis_De_Geer_(konserthus)"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "gavle-stromdalens-vardshus",
+   "name": "Strömdalens värdshus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.673746,
+    "lng": 17.126849
+   },
+   "summary": "En försvunnen nöjesplats vid Gavleån där värdshus, folkpark och arbetarrörelsens talare avlöste varandra under sjuttio år.",
+   "description": "På andra sidan Gavleån, dit en tidigare bro ledde, låg en gång Strömdalens värdshus. Det restes 1888 på en plats där det förr stått ett tegelbruk, och runt huset växte snart en park med danslada, kägelbana och musikpaviljong. Tänk dig en ljum sommarkväll på verandan, med ton efter ton från scenen. Branden 1894 lade huset i aska, men redan 1900 invigdes ett nytt värdshus med en förstklassig restaurang. När Folkets hus-rörelsen tog över fastigheten i början av 1900-talet blev stället en folkpark, och talare som Hjalmar Branting drog stora skaror; hit kom också gästande orkestrar och kringresande teatersällskap. Sedan restaurangen lagts ned på 1940-talet tog idrottsföreningarna över lokalerna, innan det förfallna värdshuset till sist revs 1958.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/stromdalens-vardshus"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "norrkoping-hallristningar-i-norrkoping",
+   "name": "Hällristningar i Norrköping",
+   "category": "museum_hembygd",
+   "coordinates": {
+    "lat": 58.600692,
+    "lng": 16.10814
+   },
+   "summary": "Ingen annan stad i världen har så många hällristningar inom sina gränser – över 7000 forntida bilder i berget kring Motala ström.",
+   "description": "Norrköping bär på en hemlighet ristad i sten: ingen annan stad i världen rymmer fler hällristningar inom sina gränser. Kring Motala ström, främst i stadens västra utkant, har forntidens människor lämnat efter sig ett myller av bilder – sammanlagt över 7000 ristningar fördelade på en rad olika platser. Det gör området till ett av landets största och förnämsta. Främst bland dem är Himmelstalund, vars drygt 1700 figurer hör till de största samlade hällristningsytorna i hela Skandinavien. Här kan du följa skepp, människor och djur som någon mejslade in i hällen för tusentals år sedan, och med lite fantasi ana de berättelser och riter som en gång hörde till bilderna. Ristningar finns även på flera andra ställen i och utanför staden, så ett besök kan lätt bli en vandring genom Norrköpings allra äldsta historia.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.norrkopingsstadsmuseum.se/upplev/om-museet/kulturhistoriska-miljoer/hallristningar/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "finspang-hallestad-och-borggard",
+   "name": "Hällestad och Borggård",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.741654,
+    "lng": 15.572227
+   },
+   "summary": "Bygden drygt en mil väster om Finspång, sammansatt av Hällestad kyrkby, stationssamhället och Borggård – i hjärtat av Hällestads Bergslag.",
+   "description": "Drygt fjorton kilometer väster om Finspångs tätort ligger Hällestad och Borggård, en bygd som egentligen består av flera delar: den gamla Hällestad kyrkby, det yngre Hällestad stationssamhälle och orten Borggård. Området hör till Hällestads Bergslag, en trakt med djupa rötter i järnhanteringen, och här finns bland annat den unika Häfla hammarsmedja bevarad. Kyrkbyn vittnar om bygdens äldre historia, medan stationssamhället visar hur järnvägen formade orten under industrialismen. Tillsammans speglar Hällestad och Borggård den östgötska bergslagsbygdens långa väg från smideshärdar till modern landsbygd.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/landsbygd-och-orter/hallestad-och-borggard"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "finspang-finspangs-folkets-park",
+   "name": "Finspångs Folkets Park",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.706161,
+    "lng": 15.760597
+   },
+   "summary": "Nöjesparken där finspångsborna roade sig i sextio år – och där Frank Sinatra oväntat klev upp på scenen en majkväll 1953.",
+   "description": "Från 1912 och fram till början av 1970-talet var Finspångs Folkets Park samhällets självklara nöjesplats, dit man gick för dans, musik och samvaro. Genom parkens sextioåriga historia passerade många artister, men den mest omtalade av dem alla var utan tvekan Frank Sinatra, som en lördagskväll i maj 1953 stod på scenen i lilla Finspång. Att en av världens största sångare uppträdde just här har sedan dess blivit en kär lokal historia, en påminnelse om den tid då Folkets parker runt om i landet kunde locka stjärnor av högsta rang. I dag lever minnet av parken kvar som en del av Finspångs folkliga kulturhistoria.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://finspang.se/kommunochpolitik/kommunfakta/historia-och-kommunvapen/frank-sinatra-och-finspangs-folkets-park"
+   ],
+   "city": "Finspång"
+  },
+  {
+   "id": "visby-packhusplan",
+   "name": "Packhusplan",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.640304,
+    "lng": 18.292795
+   },
+   "summary": "Liten plats vid Strandgatan med rötter i medeltidens handelsstad och dess väldiga packhus.",
+   "description": "Packhusplan vid Strandgatan har fått sitt namn efter de medeltida packhus som en gång stod tätt här intill. Under Visbys storhetstid var detta ett av stadens viktigaste områden, då kallat Rolandstorget. Strandgatan var huvudgatan, och längs den reste sig rad efter rad av höga, vitputsade stenhus med trappstegsgavlar mot gatan, byggnader som mest fungerade som lager och magasin för köpmännens varor. Husen murades i kalksten, materialet som fanns rikligt runt staden. Trakten norr om gatan var den allra tätast bebyggda. Här i närheten låg också stadens rådhus, i folkmun kallat Vinhuset, eftersom stadens vin lagrades och såldes i dess källare. Att stå på Packhusplan är att stå mitt i hjärtat av den medeltida handelsstaden, omgiven av byggnader som vittnar om en tid då Strandgatan kallades sin tids Manhattan.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/platser/packhusplan/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-kakenhus-campus-norrkoping",
+   "name": "Kåkenhus, Campus Norrköping",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.589914,
+    "lng": 16.177266
+   },
+   "summary": "En gammal textilfabrik vid Strömmen som idag är symbolbyggnad för Linköpings universitets Campus Norrköping.",
+   "description": "Kåkenhus hör till de byggnader som tydligast visar hur Norrköpings industriarv getts nytt innehåll. Huset växte fram när staden utvecklades till industristad kring sekelskiftet 1900, först för Bergsbro textilfabrik och senare för yllekoncernen YFA, Förenade Yllefabrikerna. Det är egentligen inte ett hus utan sju sammanbyggda huskroppar, varav den äldsta är från 1890. I källaren står ännu vattenkraftverket kvar som under många år försåg fabriken med elektricitet. Under sin historia har huset rymt både textilproduktion och, senare, elektroniktillverkning av Ericsson. På 1990-talet tog Akademiska Hus över byggnaden, och en omfattande upprustning gjorde om den till universitetslokaler för Linköpings universitet, med stor omsorg om de kulturhistoriska värdena. Idag är Kåkenhus campusområdets främsta symbolbyggnad, vackert belägen vid strömmen mitt i industrilandskapet, där studenter rör sig i forna fabrikssalar.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Industrilandskapet"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-burmeisterska-huset",
+   "name": "Burmeisterska huset",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.639233,
+    "lng": 18.291631
+   },
+   "summary": "Sveriges kanske bäst bevarade borgarhem från 1600-talet, byggt av en lübeckköpman.",
+   "description": "Burmeisterska huset vid hörnet av Strandgatan och Donners plats är ett av Visbys mest påkostade gamla köpmanshus. Det uppfördes 1652–1654 av Hans Burmeister, en köpman som flyttat in från Lübeck och köpt en stor tomt i utmärkt läge. Huvudbyggnaden är knuttimrad med en utkragande övervåning, korsvirkesgavlar och tegeltak, och räknas som ett av landets bäst bevarade borgarhem från 1600-talet. Burmeister blev en framgångsrik affärsman och var länge öns störste importör av kramvaror, som han till stor del köpte hem från Lübeck och sålde vidare till andra Visbyköpmän. I bottenvåningens handelsbod erbjöds varorna på en disk som, likt under medeltiden, kunde fällas ut mot gatan som en lucka där varorna radades upp för förbipasserande. Idag ger huset en sällsynt levande inblick i en köpmansfamiljs vardag för flera sekler sedan.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Burmeisterska_huset"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-sankta-maria-domkyrka",
+   "name": "Sankta Maria domkyrka",
+   "category": "kyrka",
+   "coordinates": {
+    "lat": 57.641866,
+    "lng": 18.298063
+   },
+   "summary": "Visbys enda medeltida kyrka som fortfarande är i bruk, ursprungligen rest för tyska gästande köpmän.",
+   "description": "Sankta Maria reser sina karakteristiska torn över innerstaden och är den enda av Visbys många medeltida kyrkor som överlevde reformationen som levande gudstjänstrum. Bygget tog sin början kring 1190, troligen sedan tyska gästande köpmän hamnat i konflikt med de bofasta och behövt en egen helgedom. Medel samlades in ombord på de tyska handelsskeppen i hamnen, vilket gjorde att arbetet drog ut på tiden. När kyrkan invigdes 1225 var den en treskeppig romansk basilika, men redan kort därefter byggdes den om och förändrades under medeltidens lopp. Under en lång period hade församlingen två kyrkoherdar, en för tysktalande och en för gutniska bor. Sedan 1572 är den stiftets domkyrka. Idag är den ett självklart riktmärke i stadssiluetten och en stillsam plats mitt i sommarvimlet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visby_domkyrka"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-dalmanstornet",
+   "name": "Dalmanstornet",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.641626,
+    "lng": 18.300517
+   },
+   "summary": "Ett av ringmurens portторn på den östra sidan, byggt kring en äldre portöppning.",
+   "description": "Dalmanstornet hör till ringmurens östra sträckning och vetter mot Östergravar, de gröna vallgravarna utanför muren. Det reser sig omkring sjutton meter högt och kröns av ett tegeltak. Tornet är byggt kring en äldre portöppning i muren, och hör till de torn som gör den östra murlinjen så pampig att blicka upp mot. Här, bortom turiststråken inne i staden, går det att uppleva ringmuren från utsidan i lugn och ro, med grässluttningarna och gravarna som en grön ram kring de grå kalkstensmurarna. En promenad längs Östergravar förbi Dalmanstornet ger en god känsla för hur väldig befästningen tedde sig för den som närmade sig staden landvägen under medeltiden, och hur mycket arbete som en gång lades ner på att göra Visby ointagligt mot fiender.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visby_ringmur"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "boxholm-stralsnas-jarnvagsstation",
+   "name": "Strålsnäs järnvägsstation",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.2378,
+    "lng": 15.0436
+   },
+   "summary": "Före detta järnvägsstation invigd av kung Oscar II 1874, uppkallad efter säteriet vars ägare skänkte marken.",
+   "description": "Strålsnäs järnvägsstation är en före detta station i Boxholms kommun med ovanligt fina anor. När järnvägen drogs genom bygden invigdes stationen den 17 november 1874 av ingen mindre än kung Oscar II. Marken till stationsbygget skänktes av lantmätaren Sjögreen, och platsen fick namnet Strålsnäs efter hans säteri. Stationen blev en knutpunkt för den lilla orten och band samman jordbruksbygden med det större järnvägsnätet under en tid då järnvägen förändrade hela landsbygdens villkor. Området kring Strålsnäs har också haft betydelse som upplags- och lastplats, och järnvägsmiljön vittnar om hur transporterna en gång formade samhället. I dag stannar inga persontåg längre här, men stationshuset och spårmiljön står kvar som ett minne av järnvägens guldålder i Östergötland. För den som vandrar Östgötaleden mellan Boxholm och Strålsnäs blir den gamla stationen en påtaglig länk till 1800-talets framstegsoptimism.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Str%C3%A5lsn%C3%A4s_j%C3%A4rnv%C3%A4gsstation"
+   ],
+   "city": "Boxholm"
+  },
+  {
+   "id": "visby-karleksporten",
+   "name": "Kärleksporten",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.6388,
+    "lng": 18.2998
+   },
+   "summary": "En liten mur­öppning som blivit Visbys romantiska symbol, full av inristade kärleksförklaringar.",
+   "description": "Kärleksporten är en av ringmurens charmigaste och mest besökta öppningar, belägen mellan strandpromenaden och botaniska trädgården. Den togs upp 1872 i ett rivet murparti, ungefär där fiskarbefolkningen redan brukade passera. Ursprungligen kallades den Tjärporten, eftersom man under medeltiden tjärade rep i området. Med tiden har porten istället blivit en symbol för kärlek och romantik. Den som går genom den tillsammans med sin käraste förväntas stanna till för en kyss, och stenarna i valvet är fyllda av inristade namn, hjärtan och kärleksförklaringar från olika tider. Här möts det vardagligt funktionella, en genväg genom muren, och det romantiskt laddade på ett sätt som få platser i staden gör. En liten plats med stort symbolvärde, och en självklar anhalt på en vandring längs västra muren.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.guteinfo.com/?id=1257&s=Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "gavle-boulognerskogen",
+   "name": "Boulognerskogen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.672903,
+    "lng": 17.120076
+   },
+   "summary": "Gävles folkkära strövpark mellan Gavleån och Gamla kyrkogården, där idrott, musik och kaféliv satt sin prägel sedan 1800-talet.",
+   "description": "När Gävle stad 1865 löste marken Kroknäs hage från kyrkan fick staden en grön lunga som snart döptes om till Boulognerskogen. Till skillnad från den noggrant planerade Stadsträdgården intill lät man här skogen stå tämligen orörd – bara gång- och ridstigar drogs fram mellan träden. Platsen blev tidigt en arena för idrott och nöje: 1907 avgjordes Sveriges allra första SM-final i bandy här, och 1952 samlade ett terräng-SM i löpning närmare 6 000 åskådare. Vid förra sekelskiftet låg som mest fem kaféer i parken; av dem står i dag bara Sommarro kvar, rest 1923. Stanna gärna till vid scenen från 1956 och föreställ dig den musik och det folkliv som i mer än hundra år gjort Boulognerskogen till gävlebornas naturliga mötesplats.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/boulognerskogens-historia"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "norrkoping-tyska-torget",
+   "name": "Tyska torget",
+   "category": "vandringsled",
+   "coordinates": {
+    "lat": 58.592579,
+    "lng": 16.186817
+   },
+   "summary": "Hertig Johans torg från 1600-talet som blev Norrköpings politiska och ekonomiska hjärta, omgivet av stadens viktigaste byggnader.",
+   "description": "I början av 1600-talet lät hertig Johan anlägga den öppna plats som i dag heter Tyska torget. Namnet fick det efter den tyska församlingens kyrka, Hedvigs kyrka, och med tiden växte torget till stadens politiska och ekonomiska centrum. Runt det reser sig ännu en rad av de byggnader som format Norrköpings historia – inte minst rådhuset, vars trappa fortfarande är en självklar samlingspunkt. Att gå ett varv kring Tyska torget är därför att läsa stadens historia i fasader och portaler: här möts maktens, handelns och kyrkans Norrköping på en och samma plats. Stanna gärna en stund mitt på torget och låt blicken vandra över husen – var och ett har sin egen berättelse att bidra med.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.klingsbergsforlag.se/guidning-tyska-torget/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-visby-hamn",
+   "name": "Visby hamn",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.639993,
+    "lng": 18.290156
+   },
+   "summary": "Stadens livsnerv mot havet, idag färjehamn och gästhamn där öns förbindelse med fastlandet möts.",
+   "description": "Visby hamn är staden mot havet, porten där Gotland möter omvärlden. Här lägger Gotlandsfärjorna till, och i den inre hamnen trängs fritidsbåtar i en livlig gästhamn med hundratals platser. Hamnens historia är samtidigt stadens historia. Den ursprungliga medeltida hamnen låg där Almedalen breder ut sig idag, en lagun med två inlopp, ett smalare i norr vid Kruttornet och ett bredare i söder. När landhöjningen gjorde lagunen för grund för de djupgående fartygen anlades med tiden en ny hamn söderut, nedanför Visborgs slott. Reguljär färjetrafik mot fastlandet har bedrivits sedan tidigt 1900-tal, och Gotlandsbolaget med sina rötter i 1865 har präglat sjöfarten ända sedan ångbåtarnas tid. Idag trafikeras leden av moderna fartyg som kan gå på flytande natur- och biogas. Vid hamnen börjar och slutar de flesta Visbybesök.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Visby_hamn"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-sankta-karins-kyrkoruin",
+   "name": "Sankta Karins kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.6404,
+    "lng": 18.2957
+   },
+   "summary": "Vacker klosterruin vid Stora Torget, en gång kyrka i Sveriges första franciskankonvent.",
+   "description": "Få ruiner är så fotograferade som S:ta Karin vid Stora Torget, med sina höga spetsbågiga fönster mot torgvimlet. Kyrkan hörde till gråbrödernas, franciskanernas, kloster, som grundades i Visby 1233 och räknas som det första i sitt slag i landet. Den första klosterkyrkan restes kring mitten av 1200-talet, men den ruin vi ser idag är till stor del resultatet av omfattande ombyggnader under 1300-talet, då kyrkan fick sin nuvarande omfattning. En egenhet är att valven murades i tegel, ovanligt i ett Visby där det mesta restes i kalksten. Klostret var i bruk ända in på 1520-talet, tills reformationen nådde Gotland och bröderna lämnade både kloster och kyrka. Idag används ruinen bland annat för evenemang och utgör en stämningsfull fond åt torget.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/ruiner/sta-karin/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-sankt-nicolai-kyrkoruin",
+   "name": "Sankt Nicolai kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.644166,
+    "lng": 18.298032
+   },
+   "summary": "Mäktig klosterruin efter dominikanernas konvent, idag en uppskattad scen för konserter och föreställningar.",
+   "description": "S:t Nicolai i stadens norra del var kyrka i dominikanernas, svartbrödernas, kloster. Munkarna kom till Visby på 1220-talet och tog över och byggde om kyrkan till en konventskyrka. Helgonet Nikolaus, sjöfararnas skyddspatron, fick ge platsen sitt namn. När lübeckarna angrep staden 1525 drabbades klostret av eld, och vid reformationen några år senare stängdes Gotlands kloster och kyrkan övergavs. Sedan 1929 har ruinen återigen fyllts av liv, då den blivit scen för musikdramatik och konserter, inte minst det berömda Petrus de Dacia-spelet. Åren kring 2012 byggdes platsen om till en täckt scen, ibland kallad Kultudralen, som invigdes på nationaldagen. Här har sångare som Malena Ernman och Viktoria Tolstoy uppträtt bland de gamla murarna, och en sommarkväll i ruinen hör till stadens starkaste upplevelser.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankt_Nicolai_kyrkoruin,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-medeltidens-norrkoping",
+   "name": "Medeltidens Norrköping",
+   "category": "vandringsled",
+   "coordinates": {
+    "lat": 58.5949,
+    "lng": 16.182
+   },
+   "summary": "Av medeltidsstaden syns nästan ingenting ovan jord – men kyrkor, borg, rådhus och kvarnar går att spåra för den som vet var man ska leta.",
+   "description": "Av det medeltida Norrköping finns i dag i stort sett ingenting kvar ovan jord, och ändå är stadens äldsta skede långt ifrån glömt. På senare år har en rad spektakulära arkeologiska fynd lyft fram medeltiden ur marken och gett nya pusselbitar till hur staden en gång såg ut. Med lite vägledning går det att stega ut platserna för de medeltida kyrkorna, för borgen, rådhuset och kvarnarna – och att hitta den sista bevarade resten av den medeltida stadsplanen mitt i dagens stadsbild. En naturlig utgångspunkt är Louis De Geer-statyn på Gamla torget, varifrån det medeltida Norrköping kan anas i gatusträckningar och kvartersgränser. Det är en historia som mer än någon annan måste berättas fram, eftersom så lite av den syns med blotta ögat.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.klingsbergsforlag.se/medeltidsvandring/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-helige-andes-kyrkoruin",
+   "name": "Helige Andes kyrkoruin",
+   "category": "klosterruin",
+   "coordinates": {
+    "lat": 57.643068,
+    "lng": 18.298376
+   },
+   "summary": "Visbys mest egenartade kyrkoruin med en åttkantig, tvåvåningshög planlösning.",
+   "description": "Helge ands ruin räknas till de mest säregna i Visby tack vare sin oktogon, en åttkantig sal i två våningar. Från övervåningen kunde besökare följa gudstjänsten genom öppningar ner mot koret. Varför kyrkan byggdes i två plan är omtvistat; en teori är att den fungerade som sjukhuskyrka, där smittsamma kunde hållas åtskilda på övervåningen. Kyrkan restes i början av 1200-talet och hörde samman med ett helgeandshus, en medeltida inrättning för fattiga, gamla och sjuka som fanns i de flesta städer. En tradition vill koppla kyrkan till biskop Albert av Riga och de pilgrimer och korsfarare som var på väg österut. Den åttkantiga formen gör ruinen omöjlig att förväxla med någon annan i staden och belönar ett besök rikligt, inte minst för den som intresserar sig för medeltidens kyrkobyggande.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Helige_Andes_kyrkoruin,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "norrkoping-industrilandskapet-i-norrkoping",
+   "name": "Industrilandskapet i Norrköping",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.5897,
+    "lng": 16.1808
+   },
+   "summary": "Ett tätt kvarter av gamla fabriksbyggnader längs Motala ström, ett av Europas bäst bevarade minnesmärken över textilindustrins storhetstid.",
+   "description": "Få platser berättar Sveriges industrihistoria så samlat som kvarteren kring Strömmen mitt i Norrköping. Vattnet faller över tjugo meter på sin väg genom staden, och denna kraft drog redan på medeltiden hit kvarnar och hantverk. Under 1800-talet exploderade textilindustrin, och Norrköpings fabriker svarade tidvis för en mycket stor del av landets ylleproduktion. De flesta byggnaderna restes mellan ungefär 1850 och 1920, då skorstenar och tegelfasader trängdes utmed forsen. På 1950-talet sysselsatte textilen ännu tusentals människor, men konkurrensen utifrån blev övermäktig och det sista textilföretaget lade ner på 1970-talet. I stället för rivning bevarades husen och fylldes med nytt liv. Idag rymmer landskapet universitet, museer, konsert- och kongressanläggning samt kunskapsföretag, samtidigt som forsen och de röda och gula fabrikerna ger en stark känsla av en svunnen tid.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.norrkopingsstadsmuseum.se/upplev/om-museet/kulturhistoriska-miljoer/industrilandskapet/"
+   ],
+   "city": "Norrköping"
+  },
+  {
+   "id": "visby-jungfrutornet",
+   "name": "Jungfrutornet",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.64631,
+    "lng": 18.295561
+   },
+   "summary": "Ringmurens minsta torn, men det mest sägenomspunna, med flera dramatiska berättelser knutna till sitt namn.",
+   "description": "Jungfrutornet är ringmurens minsta torn och desto rikare på sägner. Det byggdes på 1400-talet för att förstärka strandmuren, både dess försvar och dess något svaga konstruktion. Under 1800-talet vävdes flera dramatiska berättelser kring det lilla tornet. Den mest spridda handlar om guldsmeden Nils dotter, som enligt sägnen ska ha murats in levande i tornet som straff för att ha förrått staden till Valdemar Atterdag och danskarna 1361. En annan version berättar om en nunna från Solberga kloster som efter att gång på gång ha brutit sitt kyskhetslöfte dömdes till samma öde. Mer prosaiskt menar somliga att namnet kommer av det gamla rymdmåttet en jungfru, ett kärl med bred botten som smalnar uppåt, precis som tornet gör. Sant eller sägen, platsen pirrar.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/ringmuren/jungfrutornet/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "gavle-hotell-alderholmen",
+   "name": "Hotell Alderholmen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.676335,
+    "lng": 17.155254
+   },
+   "summary": "Åtta moderna rum i ett gammalt hamnmagasin vid Gavleån.",
+   "description": "I ett av Gävles gamla hamnmagasin ryms Hotell Alderholmen med åtta moderna rum i maritim miljö. Strax utanför löper kajkanten längs Gavleån, och en kort promenad bort ligger bostadsområdet Gävle Strand med flera restauranger och caféer.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/hotell-alderholmen"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "visby-donners-plats",
+   "name": "Donners plats",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.638967,
+    "lng": 18.291231
+   },
+   "summary": "Centralt torg nära hamnen, uppkallat efter handelshuset Donner och med rötter ända ner i vikingatiden.",
+   "description": "Donners plats ligger centralt i gamla stan, ett stenkast från Almedalen och gästhamnen. Namnet kommer av handelshuset Donner, som under tre generationer hade sitt säte i det Donnerska huset i torgets nordvästra hörn. Platsen har bytt namn flera gånger genom seklerna; under medeltiden kallades den Vattenhämtartorget, på 1500-talet Handelstorget och på 1600-talet Wolters plats. Att torget en gång var stadens marknadstorg förklaras av närheten till den gamla hamnen. Här har spår av en vikingatida gravplats påträffats, som togs ur bruk kring mitten av 1000-talet, ungefär samtidigt som de första tecknen på fast bosättning i Visby kan skönjas. Sedan biltrafiken i innerstaden begränsades på 1980-talet har Donners plats åter blivit en livlig mötesplats och en av stadens trevligaste platser att slå sig ner på.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Donners_plats"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "gavle-stadstradgarden",
+   "name": "Stadsträdgården",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.673922,
+    "lng": 17.123981
+   },
+   "summary": "Gävles äldsta anlagda park, format från 1840-talet med slingrande gångar, öppna ängar och de pittoreska Prostholmarna.",
+   "description": "Stadsträdgårdens första delar anlades i början av 1840-talet, tätt intill staden, och växte sedan västerut ända bort mot kyrkogården. Den äldsta parten fick slingrande grusgångar runt gräsmattor och blomrabatter, medan den nyare delen ritades med vägar i mjuka bågar mellan ängsmark och träddungar – allt för att ge besökaren största möjliga naturkänsla mitt i staden. Stora allén planterades 1842 och bär sedan 1987 författarinnan Agnes von Krusenstjernas namn. Framför dig ligger Prostholmarna, ett litet öområde som i dag vilar stilla men kring förra sekelskiftet sjöd av liv. Redan 1878 restes här parkens första serveringskiosk, sedermera känd som Café Solglimten, som höll öppet i nära hundra år. Intill fanns en scen och en rikt utsmyckad paviljong i kinesisk stil.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/stadstradgardens-historia"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "boxholm-torpon-naturreservat",
+   "name": "Torpön naturreservat",
+   "category": "naturreservat",
+   "coordinates": {
+    "lat": 57.951169,
+    "lng": 15.183835
+   },
+   "summary": "Öar och stränder i Sommen med fågelliv, restaurerad kolmila och kolarkoja som påminner om traktens forna kolningsarbete.",
+   "description": "Torpön och de omgivande öarna i Sommen utgör ett naturreservat som förenar rik natur med kulturhistoria. På de mindre holmarna häckar fiskgjuse och rödspov, och ibland ses havsörn och storlom dra över vattnet. Naturvärdena hör till de finaste vid sjön, och området är en av flera skyddade pärlor i Sommens skärgård. Men reservatet berättar också om människans arbete i skogarna. Under 1800-talet var kolningen omfattande i trakten, och kolet behövdes för järnframställningen vid Boxholms bruk. Torpöns hembygdsförening har återställt både en kolmila och en kolarkoja på en ursprunglig plats inne i reservatet, så att besökaren kan ana den möda och kunskap som låg bakom milorna. Vid Torpöns norra udde ligger Sjön Sommens naturum, där man kan lära mer om naturen och kulturen på ön och i Sommenbygden. Här möts fågelsång, glittrande vatten och spåren av en svunnen arbetsvardag.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.lansstyrelsen.se/ostergotland/besoksmal/naturreservat/torpon-naturreservat.html"
+   ],
+   "city": "Boxholm"
+  },
+  {
+   "id": "gavle-gastrikeleden",
+   "name": "Gästrikeleden",
+   "category": "vandringsled",
+   "coordinates": {
+    "lat": 60.473206,
+    "lng": 17.291012
+   },
+   "summary": "En lång led med lägerplatser och vidsträckta utsiktsvyer.",
+   "description": "Gästrikeleden sträcker sig 30 mil genom landskapet och varvar häftiga vandringsupplevelser med magiska lägerplatser och hisnande utsikter. Du väljer själv etapplängd och innehåll efter vad som passar dig och ditt sällskap, så att äventyret blir precis så långt eller kort du vill.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/upptack-naturen-i-host"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "visby-kruttornet",
+   "name": "Kruttornet",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.642275,
+    "lng": 18.291369
+   },
+   "summary": "Ringmurens äldsta torn och en av Nordens äldsta bevarade profanbyggnader, rest som kastal vid den gamla hamnen.",
+   "description": "Kruttornet är ringmurens äldsta del och uppfördes redan kring 1160 som en fristående kastal, ett försvarstorn vid den dåvarande hamnen där Almedalen nu breder ut sig. Det räknas som en av Nordens äldsta bevarade profana byggnader. Tornet byggdes klokt för försvar: någon port i marknivå fanns inte, bara en liten lucka högt upp på väggen som man nådde via en stege som sedan drogs in, vilket gjorde det svårt för angripare att ta sig in. Strandmuren kom senare att dras mellan denna och en annan kastal. Namnet är yngre än byggnaden: först 1710, sedan Visborgs slott sprängts, inreddes tornet till krutförråd och fick då sitt nuvarande namn. Idag står det som en robust och tystlåten väktare vid den gamla hamninfarten.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.mittvisby.se/ringmuren/kruttornet/"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "visby-gamla-apoteket",
+   "name": "Gamla apoteket",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 57.641293,
+    "lng": 18.293128
+   },
+   "summary": "Ett medeltida packhus från slutet av 1200-talet, sägs vara Sveriges äldsta hus fortfarande i bruk som hyresfastighet.",
+   "description": "Gamla Apoteket vid hörnet av Strandgatan och Lybska gränd är ett av Nordens bäst bevarade medeltida stenhus. Det restes mot slutet av 1200-talet, en tid då Visby var rikt och de gotländska köpmännen drev livlig handel. Läget nära den gamla hamnen och torgen var väl valt. Ursprungligen byggdes på tomten två höga packhus, av vilka det södra finns kvar och utgör dagens byggnad. Trävirke har daterats till omkring 1290. Den höga västra gaveln mot Strandgatan reser sig omkring tjugotvå meter, och inuti finns fyra lagervåningar med bevarade lastluckor, ett tydligt minne av husets ursprung som varumagasin. Från slutet av 1700-talet och fram till 1897 fanns ett apotek i huset, vilket gett det dess namn. Det sägs vara Sveriges äldsta byggnad som fortfarande används som hyresfastighet.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Gamla_apoteket,_Visby"
+   ],
+   "city": "Visby"
+  },
+  {
+   "id": "gavle-centralteatern-folkets-hus",
+   "name": "CentralTeatern, Folkets Hus",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.672484,
+    "lng": 17.151703
+   },
+   "summary": "Ett centralt kulturhus i Gävle med anor i arbetarrörelsen, där teater, opera, film och fest samsats under samma tak.",
+   "description": "Mitt i Gävle, med gångavstånd till både centrum och centralstationen, ligger CentralTeatern i stadens Folkets hus. Bakom väggarna ryms omkring tre tusen kvadratmeter som genom åren använts till nästan allt: teater och operett, opera och biograf, bröllop, dans och fest, men också möten, utbildningar och beslut av mer formellt slag. Huset håller på att förvandlas till ett renodlat kulturhus, tänkt som en plats där vem som helst kan forma sin egen kultur. Hjärtat är den ljusa teatersalongen med sin nostalgiska känsla av 1960-tal, där publiken kan ta del av föreläsningar, konserter, film, opera och teater. På bottenplanet finns dessutom en restaurang, ibland med en pianist som spelar till lunchen.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/centralteatern-folkets-hus"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "gavle-stortorget",
+   "name": "Stortorget",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.674595,
+    "lng": 17.141916
+   },
+   "summary": "Gävles centrala torg, känt som platsen för den berömda Gävlebocken.",
+   "description": "Stortorget är en av Gävles centrala samlingsplatser. Mest känt är torget kanske som platsen för Gävlebocken – varje år i slutet av november samlas Gävlebor och besökare här för att inviga den jättelika halmbocken, en tradition som väckt uppmärksamhet långt utanför Sveriges gränser.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/stora-delar-av-trafiken-i-centrala-gavle-leds-om-nar-gavlebocken-invigs"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "gavle-goransson-arena",
+   "name": "Göransson Arena",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.607504,
+    "lng": 16.770399
+   },
+   "summary": "En av landets största inomhusarenor, mitt i ett av Sveriges mest anrika idrottsområden.",
+   "description": "På Jernvallen i Sandviken – ett idrottsområde med lång och stolt historia – reser sig Göransson Arena. Med plats för omkring 10 000 personer och en golvyta flera gånger större än en vanlig sporthall är den ett nav för allt från elitidrott till stora evenemang och mässor. För den idrottsintresserade är en match eller tävling här ett självklart stopp i Sandviken.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/en/goransson-arena"
+   ],
+   "city": "Gävle"
+  },
+  {
+   "id": "gavle-stromvallen",
+   "name": "Strömvallen",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 60.67238,
+    "lng": 17.128447
+   },
+   "summary": "Gävles klassiska idrottsarena från 1923, ritad i 1920-talsklassicism och en gång löparlegenden Gunder Häggs hemmaplan.",
+   "description": "Att idrotten slog rot tidigt i Gävle hänger samman med stadens livliga sjöfart och kontakter med omvärlden. Redan 1882 bildades Gävle Gymnasie IF och Gefle IF, men någon riktig idrottsplats fanns inte – man tränade på läroverkets gårdsplan och tävlade i löpning längs Stora allén i Stadsträdgården. 1903 invigdes Strömdalens idrottsplats med fotbollsplan, kast- och hoppbanor, tennisgård och löparbana. Tjugo år senare, 1923, stod det modernare Strömvallen färdigt efter ritningar av arkitekten Erik Vestergren, vars läktare i tidstypisk 1920-talsklassicism hämtat intryck från Stockholms stadion. Som mest fylldes läktarna i början av 1940-talet, när medel- och långdistanslöparen Gunder Hägg gjorde arenan till sin hemmaplan och var närmast oslagbar. Sedan 1984 är Strömvallen en renodlad fotbollsarena.",
+   "key_facts": [],
+   "images": [],
+   "image_source_pages": [],
+   "sources": [
+    "https://www.visitgavle.se/sv/stromvallens-historia"
+   ],
+   "city": "Gävle"
   }
  ]
 }
