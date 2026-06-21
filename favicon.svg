@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Stadsvandring.io">
+  <rect width="32" height="32" rx="7.5" fill="#AC3F22"/>
+  <!-- Kartnål (en plats att gå till) -->
+  <path d="M16 4.4c-4.3 0-7.6 3.3-7.6 7.5 0 5.3 6.4 11 7.1 11.6a.8.8 0 0 0 1 0c.7-.6 7.1-6.3 7.1-11.6 0-4.2-3.3-7.5-7.6-7.5z" fill="#FFFDF7"/>
+  <circle cx="16" cy="11.9" r="3.2" fill="#AC3F22"/>
+  <!-- Liten vandringsstig under nålen -->
+  <path d="M11.2 26.4q4.8 2 9.6 0" fill="none" stroke="#FFFDF7" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="0.2 3"/>
+</svg>
