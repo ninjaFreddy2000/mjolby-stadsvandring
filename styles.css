@@ -532,6 +532,14 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .soc-btn-app{width:40px;height:40px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
 .soc-btn-app:hover{color:#AC3F22;border-color:#AC3F22}
 .prof-social__soon{color:#8E856D;font-size:12.5px}
+/* Hauntedplaces cross-sell (spökvandringar) — Hauntedplaces lila varumärke */
+.hp-cross{display:flex;align-items:center;gap:14px;margin-top:20px;padding:15px 18px;border-radius:16px;text-decoration:none;background:linear-gradient(135deg,#3a2d6b 0%,#6d5bd0 100%);box-shadow:0 8px 22px rgba(109,91,208,.38);transition:filter .2s ease,transform .2s ease}
+.hp-cross:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hp-cross:active{transform:scale(.99)}
+.hp-cross__ic{flex-shrink:0;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+.hp-cross__txt{display:flex;flex-direction:column;min-width:0}
+.hp-cross__txt b{color:#fff;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.25}
+.hp-cross__txt small{color:#ddd6f7;font-size:13px;margin-top:2px}
 
 /* Feedback-overlay */
 .fb{position:fixed;inset:0;z-index:1400;background:rgba(47,42,32,.5);backdrop-filter:blur(4px);display:none;padding:20px;overflow-y:auto}

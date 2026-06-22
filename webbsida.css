@@ -472,8 +472,8 @@ section { position: relative; }
 .ghostbanner__inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
 .ghostbanner__eyebrow {
   display: inline-block; font-family: var(--head); font-weight: 600; font-size: 13px;
-  letter-spacing: .14em; text-transform: uppercase; color: #9DE7C4;
-  background: rgba(157,231,196,.1); border: 1px solid rgba(157,231,196,.28);
+  letter-spacing: .14em; text-transform: uppercase; color: #B6A8F0;
+  background: rgba(141,123,232,.12); border: 1px solid rgba(141,123,232,.32);
   padding: 6px 14px; border-radius: 999px;
 }
 .ghostbanner h2 {
@@ -488,12 +488,12 @@ section { position: relative; }
 .ghostbanner__cta {
   display: inline-flex; align-items: center; gap: 8px; margin-top: 30px;
   font-family: var(--head); font-weight: 600; font-size: 17px; text-decoration: none;
-  color: #16121f; background: #9DE7C4; padding: 15px 28px; border-radius: 999px;
-  box-shadow: 0 0 0 rgba(157,231,196,.0); transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  color: #FFFFFF; background: linear-gradient(135deg, #8E7BE8, #6D5BD0); padding: 15px 28px; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(109,91,208,.35); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 .ghostbanner__cta:hover {
-  background: #B6F0D5; transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(157,231,196,.35);
+  filter: brightness(1.08); transform: translateY(-2px);
+  box-shadow: 0 12px 34px rgba(141,123,232,.5);
 }
 
 /* Hill divider */

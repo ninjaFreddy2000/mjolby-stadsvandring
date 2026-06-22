@@ -1790,7 +1790,11 @@ function renderProfil(){
       <button class="soc-btn-app" data-soc="1" aria-label="Facebook — ${lang==='en'?'coming soon':'kommer snart'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.3l.4-2.8h-2.7V9.4c0-.8.3-1.4 1.5-1.4h1.3V5.1c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v2.2H7.7V14h2.2v7h3.6Z"/></svg></button>
       <button class="soc-btn-app" data-soc="1" aria-label="Instagram — ${lang==='en'?'coming soon':'kommer snart'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></button>
       <small class="prof-social__soon">${lang==='en'?'Coming soon':'Kommer snart'} 🌱</small>
-    </div>`;
+    </div>
+    <a class="hp-cross" href="https://hauntedplaces.io" target="_blank" rel="noopener">
+      <span class="hp-cross__ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 40 40" fill="none"><path d="M8 32V20a12 12 0 0 1 24 0v12c0 2.2-2.4 1.7-3.7.4-1.3 1.4-2.7 1.4-4 0-1.3 1.4-2.7 1.4-4 0-1.3 1.4-2.7 1.4-4 .1C12.3 33.7 8 34.2 8 32Z" fill="#fff"/><circle cx="15.5" cy="19" r="2" fill="#3b2f6e"/><circle cx="24.5" cy="19" r="2" fill="#3b2f6e"/></svg></span>
+      <span class="hp-cross__txt"><b>${lang==='en'?'Want a scarier walk?':'Vill du ha en läskigare vandring?'}</b><small>${lang==='en'?'Ghost walks from Hauntedplaces →':'Spökvandringar från Hauntedplaces →'}</small></span>
+    </a>`;
   const tr=$('#to-review'); if (tr) tr.onclick = openReview;
   const pc=$('#prof-cities'); if (pc) pc.onclick = ()=> switchTab('cities');
   $('#screen').querySelectorAll('[data-soc]').forEach(b=> b.onclick=()=> toast(lang==='en'?'Coming soon on social media! 🌱':'Snart på sociala medier! 🌱'));
