@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Quiz: Hur väl känner du Halmstad? | Stadsvandring.io</title>
+<meta name="description" content="Tror du att du kan din ort? Testa 8 frågor om Halmstad — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/halmstad/quiz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Quiz: Hur väl känner du Halmstad? | Stadsvandring.io">
+<meta property="og:description" content="Tror du att du kan din ort? Testa 8 frågor om Halmstad — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/halmstad/quiz">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz: Hur väl känner du Halmstad? | Stadsvandring.io">
+<meta name="twitter:description" content="Tror du att du kan din ort? Testa 8 frågor om Halmstad — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delnings…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+.quiz .qq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:0 0 14px}
+.quiz legend{font-weight:600;padding:0 4px}
+.quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:9px;cursor:pointer;border:1px solid transparent}
+.quiz label:hover{background:#faf6ec}
+.quiz.graded label{cursor:default}
+.quiz .opt-correct{background:#e7f6ec;border-color:#1a7f37}
+.quiz .opt-wrong{background:#fdeceb;border-color:#b3261e}
+.quiz-result{font-size:20px;font-weight:700;color:var(--accent);margin:8px 0}
+.quiz .cta{border:0;cursor:pointer}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.sharetext{background:#faf6ec;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-style:italic}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+.src{font-size:13px;color:var(--muted)}.src a{color:var(--muted)}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Quiz","name":"Quiz: Hur väl känner du Halmstad?","about":{"@type":"Place","name":"Halmstad"},"educationalLevel":"beginner","url":"https://stadsvandring.io/stadsvandring/halmstad/quiz","hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Övraby kyrkoruin, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan…"},"suggestedAnswer":[{"@type":"Answer","text":"Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare o…"},{"@type":"Answer","text":"Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…"},{"@type":"Answer","text":"Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Tylösand, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare o…"},"suggestedAnswer":[{"@type":"Answer","text":"Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…"},{"@type":"Answer","text":"Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…"},{"@type":"Answer","text":"Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Sankt Nikolai kyrka, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…"},"suggestedAnswer":[{"@type":"Answer","text":"Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…"},{"@type":"Answer","text":"Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…"},{"@type":"Answer","text":"Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Tjuvahålan, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…"},"suggestedAnswer":[{"@type":"Answer","text":"Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…"},{"@type":"Answer","text":"Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…"},{"@type":"Answer","text":"Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Halmstads rådhus?","acceptedAnswer":{"@type":"Answer","text":"Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…"},"suggestedAnswer":[{"@type":"Answer","text":"Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…"},{"@type":"Answer","text":"Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…"},{"@type":"Answer","text":"Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Picassoparken, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…"},"suggestedAnswer":[{"@type":"Answer","text":"Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…"},{"@type":"Answer","text":"Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…"},{"@type":"Answer","text":"Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Prins Bertils stig, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…"},"suggestedAnswer":[{"@type":"Answer","text":"Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…"},{"@type":"Answer","text":"Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…"},{"@type":"Answer","text":"Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Halmstads slott?","acceptedAnswer":{"@type":"Answer","text":"Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…"},"suggestedAnswer":[{"@type":"Answer","text":"Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…"},{"@type":"Answer","text":"Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild…"},{"@type":"Answer","text":"Halmstads gröna pärla vid Nissan, anlagd på gamla befästningsmarker och nöjesplats för st…"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Övraby kyrkoruin, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan staden flyttades på 1300-talet."}},{"@type":"Question","name":"Vad är Tylösand, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare och smugglare till internationell semesterort."}},{"@type":"Question","name":"Vad är Sankt Nikolai kyrka, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade byggnaden från Halmstads medeltid."}},{"@type":"Question","name":"Vad är Tjuvahålan, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smugglare och sjörövare."}},{"@type":"Question","name":"Vad är Halmstads rådhus?","acceptedAnswer":{"@type":"Answer","text":"Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopierat ända bort till Norwich i England."}},{"@type":"Question","name":"Vad är Picassoparken, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av få Picassoverk i offentlig miljö i Sverige."}},{"@type":"Question","name":"Vad är Prins Bertils stig, Halmstad?","acceptedAnswer":{"@type":"Answer","text":"Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegård, uppkallad efter prins Bertil."}},{"@type":"Question","name":"Vad är Halmstads slott?","acceptedAnswer":{"@type":"Answer","text":"Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidigt 1600-tal, när Halland ännu var danskt."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Halmstad","item":"https://stadsvandring.io/stadsvandring/halmstad"},{"@type":"ListItem","position":3,"name":"Quiz om Halmstad","item":"https://stadsvandring.io/stadsvandring/halmstad/quiz"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="quiz">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/halmstad">Stadsvandring i Halmstad</a> › Quiz</nav>
+<div class="badges no-print"><span class="badge">🧠 Quiz</span><span class="badge">📍 Halmstad</span><span class="badge">8 frågor</span></div>
+<h1>Quiz: Hur väl känner du Halmstad?</h1>
+<p class="lead">Tror du att du kan din ort? Testa 8 frågor om Halmstad — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsbara resultat.</p>
+
+<form id="lm-quiz" class="quiz">
+<fieldset class="qq" data-q data-correct="0">
+<legend>1. Vad är Övraby kyrkoruin, Halmstad?</legend>
+<label><input type="radio" name="q0" value="0"> <span>Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan…</span></label>
+<label><input type="radio" name="q0" value="1"> <span>Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare o…</span></label>
+<label><input type="radio" name="q0" value="2"> <span>Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…</span></label>
+<label><input type="radio" name="q0" value="3"> <span>Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>2. Vad är Tylösand, Halmstad?</legend>
+<label><input type="radio" name="q1" value="0"> <span>Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…</span></label>
+<label><input type="radio" name="q1" value="1"> <span>Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare o…</span></label>
+<label><input type="radio" name="q1" value="2"> <span>Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…</span></label>
+<label><input type="radio" name="q1" value="3"> <span>Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>3. Vad är Sankt Nikolai kyrka, Halmstad?</legend>
+<label><input type="radio" name="q2" value="0"> <span>Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…</span></label>
+<label><input type="radio" name="q2" value="1"> <span>Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…</span></label>
+<label><input type="radio" name="q2" value="2"> <span>Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade…</span></label>
+<label><input type="radio" name="q2" value="3"> <span>Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>4. Vad är Tjuvahålan, Halmstad?</legend>
+<label><input type="radio" name="q3" value="0"> <span>Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…</span></label>
+<label><input type="radio" name="q3" value="1"> <span>Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…</span></label>
+<label><input type="radio" name="q3" value="2"> <span>Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…</span></label>
+<label><input type="radio" name="q3" value="3"> <span>Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smu…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="0">
+<legend>5. Vad är Halmstads rådhus?</legend>
+<label><input type="radio" name="q4" value="0"> <span>Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopiera…</span></label>
+<label><input type="radio" name="q4" value="1"> <span>Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…</span></label>
+<label><input type="radio" name="q4" value="2"> <span>Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…</span></label>
+<label><input type="radio" name="q4" value="3"> <span>Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>6. Vad är Picassoparken, Halmstad?</legend>
+<label><input type="radio" name="q5" value="0"> <span>Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…</span></label>
+<label><input type="radio" name="q5" value="1"> <span>Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av f…</span></label>
+<label><input type="radio" name="q5" value="2"> <span>Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…</span></label>
+<label><input type="radio" name="q5" value="3"> <span>Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>7. Vad är Prins Bertils stig, Halmstad?</legend>
+<label><input type="radio" name="q6" value="0"> <span>Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…</span></label>
+<label><input type="radio" name="q6" value="1"> <span>Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…</span></label>
+<label><input type="radio" name="q6" value="2"> <span>Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegå…</span></label>
+<label><input type="radio" name="q6" value="3"> <span>Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>8. Vad är Halmstads slott?</legend>
+<label><input type="radio" name="q7" value="0"> <span>Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fy…</span></label>
+<label><input type="radio" name="q7" value="1"> <span>Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild…</span></label>
+<label><input type="radio" name="q7" value="2"> <span>Halmstads gröna pärla vid Nissan, anlagd på gamla befästningsmarker och nöjesplats för st…</span></label>
+<label><input type="radio" name="q7" value="3"> <span>Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidig…</span></label>
+</fieldset>
+<p><button type="button" id="lm-quiz-grade" class="cta">Rätta quizet →</button></p>
+<p id="lm-quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+</form>
+
+<section class="gate card" id="lm-quiz-gate" hidden>
+  <h2>Lås upp och dela ditt resultat</h2>
+  <p>Ange din e-post så får du ett delningsbart resultat — och nästa orts quiz när det släpps.</p>
+  <form id="lm-quiz-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler quiz och stadsvandringar (valfritt)</label>
+    <button type="submit" class="cta">Visa mitt resultat →</button>
+    <p id="lm-quiz-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-quiz-share" hidden>
+    <p id="lm-quiz-sharetext" class="sharetext"></p>
+    <button type="button" id="lm-quiz-copy" class="cta ghost">📋 Kopiera resultatet</button>
+  </div>
+</section>
+
+<h2 class="city-h">Facit &amp; källor</h2>
+<p class="muted">Rätt svar på alla frågor — öppna när du spelat klart.</p>
+<details class="faq"><summary>Vad är Övraby kyrkoruin, Halmstad?</summary><p>Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan staden flyttades på 1300-talet. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/%C3%96vraby_kyrkoruin" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Tylösand, Halmstad?</summary><p>Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare och smugglare till internationell semesterort. <span class="src">Källa: <a href="https://en.wikipedia.org/wiki/Tyl%C3%B6sand" rel="nofollow noopener" target="_blank">en.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Sankt Nikolai kyrka, Halmstad?</summary><p>Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade byggnaden från Halmstads medeltid. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Sankt_Nikolai_kyrka,_Halmstad" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Tjuvahålan, Halmstad?</summary><p>Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smugglare och sjörövare. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Tjuvah%C3%A5lan" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Halmstads rådhus?</summary><p>Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopierat ända bort till Norwich i England. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Halmstads_r%C3%A5dhus" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Picassoparken, Halmstad?</summary><p>Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av få Picassoverk i offentlig miljö i Sverige. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Kvinnohuvud" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Prins Bertils stig, Halmstad?</summary><p>Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegård, uppkallad efter prins Bertil. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Prins_Bertils_stig" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Halmstads slott?</summary><p>Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidigt 1600-tal, när Halland ännu var danskt. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Halmstads_slott" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/halmstad/fakta">Faktabanken om Halmstad</a> <a class="cta ghost" href="/stadsvandring/halmstad">Stadsvandringen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

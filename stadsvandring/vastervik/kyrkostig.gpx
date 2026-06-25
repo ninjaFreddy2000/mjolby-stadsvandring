@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Västervik</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.759551" lon="16.634109"><name>Sankta Gertruds kyrka, Västervik</name><desc>Stadens medeltida kyrka, byggd på 1450-talet, som efter ett halvsekel som magasin återinvigdes 1933.</desc></wpt>
+  <wpt lat="57.755856" lon="16.638968"><name>Sankt Petri kyrka, Västervik</name><desc>Nygotisk tegelkyrka från början av 1900-talet, mäktigt placerad på terrasser ovanför staden.</desc></wpt>
+  <wpt lat="57.7556" lon="16.6395"><name>Stegeholms slottsruin</name><desc>Medeltida borgruin på Slottsholmen som en gång vaktade infarten till Västervik och idag är festivalscen mitt i staden.</desc></wpt>
+  <rte><name>Kyrkostigen i Västervik</name>
+    <rtept lat="57.759551" lon="16.634109"><name>Sankta Gertruds kyrka, Västervik</name></rtept>
+    <rtept lat="57.755856" lon="16.638968"><name>Sankt Petri kyrka, Västervik</name></rtept>
+    <rtept lat="57.7556" lon="16.6395"><name>Stegeholms slottsruin</name></rtept>
+  </rte>
+</gpx>

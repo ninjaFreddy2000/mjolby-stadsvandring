@@ -79,6 +79,7 @@ const CATEGORY_TYPE = {
   ort:'story', vattendrag:'story', kyrka:'story', byggnad:'story', torg:'story',
   person:'story', konst_staty:'story', runsten:'story', klosterruin:'story',
   borgruin:'story', bro:'story', handelse:'story', station:'story',
+  torn:'story', stadsport:'story', historia:'story',
   museum_hembygd:'assoc', musikkar:'assoc', idrott:'assoc',
   handel:'biz', kafe_restaurang:'biz', hotell:'biz', industri_foretag:'biz', gardsbutik:'biz',
   // natur- & utflyktstyper (Östergötland-orterna) — visas som berättelse-/sevärdhetsstopp
@@ -89,6 +90,7 @@ const CATEGORY_ICON = {
   ort:'📍', vattendrag:'🌊', kyrka:'⛪', byggnad:'🏛️', torg:'⛲', person:'👤',
   konst_staty:'🗿', runsten:'🪨', klosterruin:'🏚️', borgruin:'🏰', bro:'🌉',
   handelse:'📜', station:'🚉', museum_hembygd:'🏡', musikkar:'🎺', idrott:'⚽',
+  torn:'🗼', stadsport:'🚪', historia:'📖',
   handel:'🛍️', kafe_restaurang:'☕', hotell:'🏨', industri_foretag:'🏭', gardsbutik:'🧺',
   sevardhet:'📷', naturreservat:'🌲', badplats:'🏖️', utsiktsplats:'🔭', vandringsled:'🥾', slott:'🏰',
 };

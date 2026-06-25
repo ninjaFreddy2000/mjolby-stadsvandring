@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Falkenberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.926951" lon="12.545486"><name>Vinbergs kyrka</name><desc>Nygotisk granitkyrka från 1899 vid en gammal sockenby där författaren Olof von Dalin föddes.</desc></wpt>
+  <wpt lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name><desc>Nyklassicistisk kyrka från 1865 i en bygd som var ett viktigt maktcentrum redan under medeltiden.</desc></wpt>
+  <wpt lat="56.901016" lon="12.494258"><name>Sankt Laurentii kyrka</name><desc>Falkenbergs äldsta byggnad, en medeltidskyrka från omkring år 1300, uppkallad efter den romerske diakonen Laurentius.</desc></wpt>
+  <rte><name>Kyrkostigen i Falkenberg</name>
+    <rtept lat="56.926951" lon="12.545486"><name>Vinbergs kyrka</name></rtept>
+    <rtept lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name></rtept>
+    <rtept lat="56.901016" lon="12.494258"><name>Sankt Laurentii kyrka</name></rtept>
+  </rte>
+</gpx>

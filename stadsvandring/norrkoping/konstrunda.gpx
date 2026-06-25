@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Konstrundan i Norrköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
-  <wpt lat="58.5892" lon="16.18"><name>Arbetets museum</name><desc>I den gula &quot;Strykjärnet&quot; mitt i forsen — om arbete och människors vardag.</desc></wpt>
+  <wpt lat="58.600692" lon="16.10814"><name>Hällristningar i Norrköping</name><desc>Ingen annan stad i världen har så många hällristningar inom sina gränser – över 7000 forntida bilder i berget kring Motala ström.</desc></wpt>
+  <wpt lat="58.587781" lon="16.167469"><name>Färgargården, Norrköping</name><desc>Sveriges enda friluftsmuseum helt ägnat åt färgerihantverket, beläget vid Motala ström i utkanten av det gamla industrilandskapet.</desc></wpt>
   <wpt lat="58.5891" lon="16.1773"><name>Visualiseringscenter C</name><desc>Science center och 3D-kupol som tar dig från kroppens insida till universum.</desc></wpt>
+  <wpt lat="58.5892" lon="16.18"><name>Arbetets museum</name><desc>I den gula &quot;Strykjärnet&quot; mitt i forsen — om arbete och människors vardag.</desc></wpt>
   <wpt lat="58.583" lon="16.191"><name>Norrköpings konstmuseum</name><desc>Stark samling svensk 1900-talskonst, grundad av en tobaksfabrikör.</desc></wpt>
   <rte><name>Konstrundan i Norrköping</name>
-    <rtept lat="58.5892" lon="16.18"><name>Arbetets museum</name></rtept>
+    <rtept lat="58.600692" lon="16.10814"><name>Hällristningar i Norrköping</name></rtept>
+    <rtept lat="58.587781" lon="16.167469"><name>Färgargården, Norrköping</name></rtept>
     <rtept lat="58.5891" lon="16.1773"><name>Visualiseringscenter C</name></rtept>
+    <rtept lat="58.5892" lon="16.18"><name>Arbetets museum</name></rtept>
     <rtept lat="58.583" lon="16.191"><name>Norrköpings konstmuseum</name></rtept>
   </rte>
 </gpx>

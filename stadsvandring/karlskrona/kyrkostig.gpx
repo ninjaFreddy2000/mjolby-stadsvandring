@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Karlskrona</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name><desc>Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.</desc></wpt>
+  <wpt lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name><desc>Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.</desc></wpt>
+  <wpt lat="56.156796" lon="15.590977"><name>Amiralitetskyrkan Ulrica Pia</name><desc>En mäktig träkyrka i Karlskrona, invigd 1685 för amiralitetsförsamlingen.</desc></wpt>
+  <rte><name>Kyrkostigen i Karlskrona</name>
+    <rtept lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name></rtept>
+    <rtept lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name></rtept>
+    <rtept lat="56.156796" lon="15.590977"><name>Amiralitetskyrkan Ulrica Pia</name></rtept>
+  </rte>
+</gpx>

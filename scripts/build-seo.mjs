@@ -95,6 +95,9 @@ const CAT_LABEL = {
   konst_staty: 'Konst & staty', runsten: 'Runsten', klosterruin: 'Klosterruin',
   borgruin: 'Borgruin', bro: 'Bro', musikkar: 'Musikkår', handelse: 'Händelse',
   idrott: 'Idrott', station: 'Station',
+  torn: 'Torn', stadsport: 'Stadsport', historia: 'Historia',
+  sevardhet: 'Sevärdhet', slott: 'Slott', naturreservat: 'Naturreservat',
+  badplats: 'Badplats', utsiktsplats: 'Utsiktsplats', vandringsled: 'Vandringsled',
 };
 
 // Kategori → engelsk etikett (för den engelska hub-sidan /en)
@@ -106,6 +109,9 @@ const CAT_LABEL_EN = {
   konst_staty: 'Art & statue', runsten: 'Rune stone', klosterruin: 'Monastery ruin',
   borgruin: 'Castle ruin', bro: 'Bridge', musikkar: 'Marching band', handelse: 'Event',
   idrott: 'Sport', station: 'Station',
+  torn: 'Tower', stadsport: 'Town gate', historia: 'History',
+  sevardhet: 'Attraction', slott: 'Castle', naturreservat: 'Nature reserve',
+  badplats: 'Bathing spot', utsiktsplats: 'Viewpoint', vandringsled: 'Hiking trail',
 };
 
 // Engelska sammanfattningar för de få poster som saknas i SUMMARY_EN (i18n.js).
@@ -126,7 +132,8 @@ const enSummary = (e) => SUMMARY_EN[e.id] || EN_EXTRA[e.id] || '';
 // Kategori → Schema.org-typ (Place-subtyper får geo; Person/CreativeWork inte)
 function schemaTypeFor(cat) {
   if (cat === 'person') return { type: 'Person', place: false };
-  if (cat === 'handelse') return { type: 'CreativeWork', place: false };
+  if (cat === 'handelse' || cat === 'historia') return { type: 'CreativeWork', place: false };
+  if (cat === 'torn' || cat === 'stadsport') return { type: 'LandmarksOrHistoricalBuildings', place: true };
   if (cat === 'kyrka') return { type: 'Church', place: true };
   if (cat === 'klosterruin' || cat === 'borgruin') return { type: 'LandmarksOrHistoricalBuildings', place: true };
   if (cat === 'museum_hembygd') return { type: 'Museum', place: true };

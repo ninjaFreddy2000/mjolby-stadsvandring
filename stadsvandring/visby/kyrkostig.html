@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Visby — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv. 11 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/visby/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Visby — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv. 11 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/visby/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Visby — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv. 11 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"visby","theme":"kyrkostig","sourceSlug":"stadsvandring/visby/kyrkostig","centroid":{"lat":57.64190445454545,"lng":18.29697736363636},"stops":[{"name":"Sankt Görans kyrkoruin","lat":57.6475,"lng":18.3033},{"name":"Sankt Nicolai kyrkoruin","lat":57.644119,"lng":18.298061},{"name":"Helige Andes kyrkoruin","lat":57.643056,"lng":18.298333},{"name":"Sankt Clemens kyrkoruin","lat":57.643056,"lng":18.296111},{"name":"Sankt Olofs kyrkoruin","lat":57.643889,"lng":18.294167},{"name":"Drottens kyrkoruin","lat":57.641758,"lng":18.2952},{"name":"Sankt Lars kyrkoruin","lat":57.641386,"lng":18.295033},{"name":"Sankt Hans och Sankt Pers kyrkoruiner","lat":57.6409,"lng":18.2949},{"name":"Sankta Karins kyrkoruin","lat":57.640278,"lng":18.295556},{"name":"Sankta Maria domkyrka","lat":57.641667,"lng":18.2975},{"name":"Solberga klosterruin","lat":57.63334,"lng":18.29859}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Visby","description":"Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Sankt Görans kyrkoruin","text":"Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.","url":"https://stadsvandring.io/p/visby-sankt-gorans-kyrkoruin"},{"@type":"HowToStep","position":2,"name":"Sankt Nicolai kyrkoruin","text":"Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.","url":"https://stadsvandring.io/p/visby-sankt-nicolai-kyrkoruin"},{"@type":"HowToStep","position":3,"name":"Helige Andes kyrkoruin","text":"Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.","url":"https://stadsvandring.io/p/visby-helige-andes-kyrkoruin"},{"@type":"HowToStep","position":4,"name":"Sankt Clemens kyrkoruin","text":"En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.","url":"https://stadsvandring.io/p/visby-sankt-clemens-kyrkoruin"},{"@type":"HowToStep","position":5,"name":"Sankt Olofs kyrkoruin","text":"Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.","url":"https://stadsvandring.io/p/visby-sankt-olofs-kyrkoruin"},{"@type":"HowToStep","position":6,"name":"Drottens kyrkoruin","text":"Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.","url":"https://stadsvandring.io/p/visby-drottens-kyrkoruin"},{"@type":"HowToStep","position":7,"name":"Sankt Lars kyrkoruin","text":"Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.","url":"https://stadsvandring.io/p/visby-sankt-lars-kyrkoruin"},{"@type":"HowToStep","position":8,"name":"Sankt Hans och Sankt Pers kyrkoruiner","text":"Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.","url":"https://stadsvandring.io/p/visby-sankt-hans-och-sankt-pers-kyrkoruiner"},{"@type":"HowToStep","position":9,"name":"Sankta Karins kyrkoruin","text":"Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.","url":"https://stadsvandring.io/p/visby-sankta-karins-kyrkoruin"},{"@type":"HowToStep","position":10,"name":"Sankta Maria domkyrka","text":"Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.","url":"https://stadsvandring.io/p/visby-sankta-maria-domkyrka"},{"@type":"HowToStep","position":11,"name":"Solberga klosterruin","text":"Cisterciensnunnornas kloster utanför Söderport – det var på dess mark slaget 1361 stod.","url":"https://stadsvandring.io/p/visby-solberga-klosterruin"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Visby","description":"Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/visby/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":11,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Sankt Görans kyrkoruin","url":"https://stadsvandring.io/p/visby-sankt-gorans-kyrkoruin"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Sankt Nicolai kyrkoruin","url":"https://stadsvandring.io/p/visby-sankt-nicolai-kyrkoruin"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Helige Andes kyrkoruin","url":"https://stadsvandring.io/p/visby-helige-andes-kyrkoruin"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Sankt Clemens kyrkoruin","url":"https://stadsvandring.io/p/visby-sankt-clemens-kyrkoruin"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Sankt Olofs kyrkoruin","url":"https://stadsvandring.io/p/visby-sankt-olofs-kyrkoruin"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Drottens kyrkoruin","url":"https://stadsvandring.io/p/visby-drottens-kyrkoruin"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Sankt Lars kyrkoruin","url":"https://stadsvandring.io/p/visby-sankt-lars-kyrkoruin"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Sankt Hans och Sankt Pers kyrkoruiner","url":"https://stadsvandring.io/p/visby-sankt-hans-och-sankt-pers-kyrkoruiner"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sankta Karins kyrkoruin","url":"https://stadsvandring.io/p/visby-sankta-karins-kyrkoruin"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Sankta Maria domkyrka","url":"https://stadsvandring.io/p/visby-sankta-maria-domkyrka"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Solberga klosterruin","url":"https://stadsvandring.io/p/visby-solberga-klosterruin"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Visby","item":"https://stadsvandring.io/stadsvandring/visby"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Visby","item":"https://stadsvandring.io/stadsvandring/visby/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/visby">Stadsvandring i Visby</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Visby</span><span class="badge">11 stopp</span></div>
+<h1>Kyrkostigen i Visby</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Visby — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Visby"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/visby-sankt-gorans-kyrkoruin"><b>1. Sankt Görans kyrkoruin</b><span>Kyrka · Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.</span></a>
+<a class="tile" href="/p/visby-sankt-nicolai-kyrkoruin"><b>2. Sankt Nicolai kyrkoruin</b><span>Klosterruin · Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och s…</span></a>
+<a class="tile" href="/p/visby-helige-andes-kyrkoruin"><b>3. Helige Andes kyrkoruin</b><span>Kyrka · Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett me…</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 11 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/visby/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/visby-sankt-gorans-kyrkoruin"><b>1. Sankt Görans kyrkoruin</b></a> — Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.</li>
+<li><a href="/p/visby-sankt-nicolai-kyrkoruin"><b>2. Sankt Nicolai kyrkoruin</b></a> — Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.</li>
+<li><a href="/p/visby-helige-andes-kyrkoruin"><b>3. Helige Andes kyrkoruin</b></a> — Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.</li>
+<li><a href="/p/visby-sankt-clemens-kyrkoruin"><b>4. Sankt Clemens kyrkoruin</b></a> — En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.</li>
+<li><a href="/p/visby-sankt-olofs-kyrkoruin"><b>5. Sankt Olofs kyrkoruin</b></a> — Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.</li>
+<li><a href="/p/visby-drottens-kyrkoruin"><b>6. Drottens kyrkoruin</b></a> — Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.</li>
+<li><a href="/p/visby-sankt-lars-kyrkoruin"><b>7. Sankt Lars kyrkoruin</b></a> — Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.</li>
+<li><a href="/p/visby-sankt-hans-och-sankt-pers-kyrkoruiner"><b>8. Sankt Hans och Sankt Pers kyrkoruiner</b></a> — Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.</li>
+<li><a href="/p/visby-sankta-karins-kyrkoruin"><b>9. Sankta Karins kyrkoruin</b></a> — Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.</li>
+<li><a href="/p/visby-sankta-maria-domkyrka"><b>10. Sankta Maria domkyrka</b></a> — Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.</li>
+<li><a href="/p/visby-solberga-klosterruin"><b>11. Solberga klosterruin</b></a> — Cisterciensnunnornas kloster utanför Söderport – det var på dess mark slaget 1361 stod.</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/visby">Stadsvandringen i Visby</a> <a class="cta ghost" href="/stadsvandring/visby/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

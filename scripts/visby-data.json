@@ -1,0 +1,722 @@
+[
+  {
+    "id": "visby-visby-ringmur",
+    "name": "Visby ringmur",
+    "category": "byggnad",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640320, "lng": 18.294400 },
+    "era": "Medeltid (1200-talet)",
+    "summary": "Nordeuropas bäst bevarade medeltida stadsmur, cirka 3,4 km lång med ett trettiotal bevarade torn.",
+    "description": "Visby ringmur är en av Europas främsta medeltida befästningar och själva symbolen för staden. Muren är ungefär 3,4 kilometer lång och på sina ställen upp till elva meter hög. Den äldsta delen är Kruttornet vid hamnen, medan själva landmuren restes på 1270- och 1280-talen, ursprungligen bara fem till sex meter hög med skyttegångar. Under 1300-talet höjdes muren ytterligare tre till fyra meter och försågs med ett tjugotal sadeltorn, de karakteristiska tornen som tycks rida på murkrönet. Sammanlagt fanns ursprungligen omkring 29 marktorn och drygt 20 sadeltorn; idag återstår runt 27 marktorn och 9 sadeltorn samt flera stadsportar. Att gotlänningarna byggde en mur också mot landsidan brukar tolkas som ett tecken på spänningar mellan stadens borgare och böndernas Gotland. Gå hela varvet runt muren och titta upp mot tornens namn: Kruttornet, Silverhättan, Långa Lisa och Kajsartornet.",
+    "key_facts": [
+      "Cirka 3,4 km lång, upp till 11 meter hög",
+      "Landmuren byggd på 1270-80-talen, höjd på 1300-talet",
+      "Ursprungligen ~29 marktorn och drygt 20 sadeltorn",
+      "Idag ca 27 marktorn och 9 sadeltorn bevarade",
+      "Del av världsarvet Hansestaden Visby sedan 1995"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-kruttornet",
+    "name": "Kruttornet",
+    "category": "torn",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640280, "lng": 18.294440 },
+    "era": "Medeltid (ca 1160)",
+    "summary": "Ringmurens äldsta torn, byggt ca 1160 som fristående kastal vid hamnen – Nordens äldsta bevarade profanbyggnad.",
+    "description": "Kruttornet vid Almedalen är det äldsta tornet i Visby ringmur och räknas som en av Nordens äldsta bevarade profana byggnader, uppfört omkring 1160–1161. Det byggdes som en fristående kastal som vaktade den medeltida hamnen, där Almedalens park ligger idag. Från tornets krön kunde armborstskyttar skjuta rakt ner i inkommande båtar. Tornet var ursprungligen helt slutet utan ingång i marknivå – man tog sig in via en stege som drogs upp, vilket gjorde det mycket svårt för angripare att tränga in. Namnet Kruttornet är yngre: efter att Visborgs slott sprängdes 1679–1710 gjordes tornet om till krutförråd, en funktion det behöll fram till mitten av 1800-talet. När du står vid foten av tornet bredvid Almedalen står du alltså vid stadens äldsta vakttorn och vid platsen för den gamla handelshamnen.",
+    "key_facts": [
+      "Byggt ca 1160–1161 som fristående kastal",
+      "Nordens äldsta bevarade profanbyggnad",
+      "Vaktade den medeltida hamnen vid nuvarande Almedalen",
+      "Ingång endast via uppdragbar stege",
+      "Användes som krutförråd från 1700-talet, därav namnet"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Kruttornet", "https://sv.wikipedia.org/wiki/Visby_ringmur"]
+  },
+  {
+    "id": "visby-jungfrutornet",
+    "name": "Jungfrutornet",
+    "category": "torn",
+    "city": "Visby",
+    "coordinates": { "lat": 57.636500, "lng": 18.292500 },
+    "era": "Medeltid (1400-talet)",
+    "summary": "Torn i ringmuren förknippat med sägnen om jungfrun som förrådde Visby till Valdemar Atterdag och murades in levande.",
+    "description": "Jungfrutornet är ett av ringmurens mest sägenomspunna torn. Enligt en gammal folksägen – och det ska understrykas att det är en sägen, inte historia – kom den danske kungen Valdemar Atterdag till Gotland förklädd till köpman omkring 1360 för att speja. Han mötte den rike bonden Ung-Hanse, vars unga vackra dotter han förförde. När Valdemar 1361 återvände och brandskattade Gotland ska flickan ha hjälpt honom genom att smuggla ut nycklarna till stadsportarna nattetid. Kungen lovade ta henne med sig men övergav henne, och stadsborna ska som straff ha murat in henne levande i tornet, som därefter fått namnet Jungfrutornet. Idag vet man att tornet inte ens fanns på Valdemars tid – det byggdes på 1400-talet för att stärka Strandmurens försvar – och namnet kommer kanske snarare av det gamla rymdmåttet jungfru. Sägnen berättas fortfarande varje sommar under Medeltidsveckan.",
+    "key_facts": [
+      "Byggt på 1400-talet, inte under Valdemars tid",
+      "Sägnen: jungfrun förrådde staden och murades in levande",
+      "Förknippas med Ung-Hanses dotter och Valdemar Atterdag",
+      "Namnet kan komma av rymdmåttet 'jungfru' (8,2 cl)",
+      "Legenden återberättas under Medeltidsveckan"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Unghanses_dotter", "https://sv.wikipedia.org/wiki/Visby_ringmur"]
+  },
+  {
+    "id": "visby-dalmanstornet",
+    "name": "Dalmanstornet",
+    "category": "torn",
+    "city": "Visby",
+    "coordinates": { "lat": 57.637200, "lng": 18.293500 },
+    "era": "Medeltid (1300-talet)",
+    "summary": "Ett av de högsta tornen i ringmurens landparti, ett välbevarat marktorn nära Söderport.",
+    "description": "Dalmanstornet är ett av de mest framträdande marktornen i Visby ringmurs sydöstra landparti, inte långt från Söderport. Det hör till de kraftiga rektangulära torn som byggdes in i muren under befästningsskedet kring 1300, då ett tjugotal stora marktorn restes mellan stadsportarna för att förstärka försvaret mot landsidan. Tornen sköt fram framför muren så att försvararna kunde beskjuta angripare från sidan längs murlivet. Tornet bär ett personnamn, ett mönster som återkommer för flera av murens torn. När du promenerar längs murens utsida på landsidan är Dalmanstornet en av de stora silhuetter som tornar upp sig över vallgraven och de öppna grönytorna utanför staden. Härifrån är det nära till Korsbetningen, slagfältet från 1361.",
+    "key_facts": [
+      "Kraftigt marktorn i ringmurens landparti",
+      "Hör till tornen byggda kring 1300",
+      "Ligger nära Söderport och Korsbetningen",
+      "Sköt fram framför muren för flankerande eld",
+      "Del av världsarvets befästningssystem"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-silverhattan",
+    "name": "Silverhättan",
+    "category": "torn",
+    "city": "Visby",
+    "coordinates": { "lat": 57.642500, "lng": 18.297000 },
+    "era": "Senmedeltid (1398-1408)",
+    "summary": "Ringmurens yngsta torn, uppfört under Tyska ordens tid kring sekelskiftet 1400.",
+    "description": "Silverhättan är det yngsta tornet i Visby ringmur, byggt ungefär 1398–1408 under den period då Tyska orden (Deutscher Orden) hade makten över Gotland efter att ha fördrivit sjörövarna vitaliebröderna. Tornet är ett av de torn som restes för att modernisera och förstärka befästningen i en orolig tid då Östersjön plågades av kapare och stormakter slogs om ön. Namnet Silverhättan, med sin blanka klang, har gett tornet en plats i stadens folkliga namnflora vid sidan av torn som Långa Lisa och Kajsartornet. Tillsammans berättar tornens olika åldrar – från Kruttornets 1100-tal till Silverhättans tidiga 1400-tal – hela den medeltida befästningskonstens utveckling längs samma mur. Tornet ligger i murens norra parti och är ett bra exempel på ringmurens sista byggnadsskede.",
+    "key_facts": [
+      "Ringmurens yngsta torn",
+      "Byggt ca 1398–1408",
+      "Uppfört under Tyska ordens tid på Gotland",
+      "Del av murens sista stora byggnadsskede",
+      "Ligger i ringmurens norra parti"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur"]
+  },
+  {
+    "id": "visby-norderport",
+    "name": "Norderport",
+    "category": "stadsport",
+    "city": "Visby",
+    "coordinates": { "lat": 57.643500, "lng": 18.294500 },
+    "era": "Medeltid (ca 1289)",
+    "summary": "En av ringmurens äldsta stadsportar, daterad till omkring 1289, infart till staden norrifrån.",
+    "description": "Norderport är en av de äldsta stadsportarna i Visby ringmur. Dendrokronologiska dateringar – årsringsanalyser av träet i konstruktionen – har visat att porten uppfördes omkring 1289, vilket gör den till en av de tidigast färdigställda portarna tillsammans med Österport (tidigast 1286). Genom Norderport gick den medeltida infarten till staden norrifrån, och porten var en av flera kontrollpunkter där handel, tullar och människor passerade in och ut genom muren. Idag är Norderport en av de naturliga ingångarna när man kommer till innerstaden från norr, och murvalvet ger en stark känsla av att verkligen kliva in i en medeltida stad. Från porten har man också fin överblick över hur muren med sina torn löper i båda riktningar.",
+    "key_facts": [
+      "En av ringmurens äldsta portar, ca 1289",
+      "Daterad med dendrokronologi (årsringar)",
+      "Medeltida infart till staden norrifrån",
+      "Samtida med Österport (tidigast 1286)",
+      "Ingång till innerstaden från norr idag"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur"]
+  },
+  {
+    "id": "visby-soderport",
+    "name": "Söderport",
+    "category": "stadsport",
+    "city": "Visby",
+    "coordinates": { "lat": 57.635800, "lng": 18.296500 },
+    "era": "Medeltid (1200-1300-talet)",
+    "summary": "Ringmurens södra stadsport, infart söderifrån nära slagfältet Korsbetningen.",
+    "description": "Söderport är ringmurens södra huvudinfart och en av de mest använda portarna än idag, eftersom mycket trafik når Visby innerstad söderifrån. Porten ingår i det befästningssystem som byggdes ut under sent 1200-tal och 1300-tal, då muren förstärktes med porttorn och marktorn längs landsidan. Strax utanför Söderport ligger Korsbetningen, ängsmarken där slaget vid Visby stod den 27 juli 1361 och där tusentals gotländska bönder stupade mot Valdemar Atterdags här. Att gå ut genom Söderport är därför också att kliva ut på det historiska slagfältet, där stenkorset Valdemarskorset restes till minne av de fallna. Porten knyter på så vis ihop stadens befästning med en av de mest dramatiska händelserna i Gotlands historia.",
+    "key_facts": [
+      "Ringmurens södra huvudport",
+      "Del av befästningen från sent 1200-tal och 1300-tal",
+      "Ligger nära slagfältet Korsbetningen (1361)",
+      "Viktig infart till innerstaden än idag",
+      "Nära Valdemarskorset"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur", "https://sv.wikipedia.org/wiki/Slaget_vid_Visby"]
+  },
+  {
+    "id": "visby-karleksporten",
+    "name": "Kärleksporten",
+    "category": "stadsport",
+    "city": "Visby",
+    "coordinates": { "lat": 57.638400, "lng": 18.290200 },
+    "era": "Medeltid",
+    "summary": "Liten romantisk port i ringmuren nära strandsidan och DBW:s botaniska trädgård.",
+    "description": "Kärleksporten är en av ringmurens mindre och mest charmiga genomgångar, belägen mot strandsidan i närheten av DBW:s botaniska trädgård. Till skillnad från de stora portarna som Norderport och Söderport är detta en smal valvöppning i muren, en av flera mindre portöppningar som band samman staden innanför muren med stranden och hamnpartiet utanför. Det romantiska namnet har gjort porten till ett älskat motiv och en populär plats för bröllopsfoton och promenader i kvällsljuset, särskilt eftersom den ligger nära den frodiga botaniska trädgården och Strandpromenaden. Här syns tydligt hur ringmuren inte bara var ett försvarsverk utan också en del av vardagslivet, med små portar för dem som rörde sig mellan stad och strand.",
+    "key_facts": [
+      "Liten valvport i ringmuren mot strandsidan",
+      "Ligger nära DBW:s botaniska trädgård",
+      "Populär plats för bröllops- och kvällspromenader",
+      "Visar murens vardagliga småportar",
+      "Del av världsarvet Hansestaden Visby"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_ringmur", "https://sv.wikipedia.org/wiki/DBW:s_botaniska_tr%C3%A4dg%C3%A5rd"]
+  },
+  {
+    "id": "visby-sankta-maria-domkyrka",
+    "name": "Sankta Maria domkyrka",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.641667, "lng": 18.297500 },
+    "era": "Medeltid (invigd 1225)",
+    "summary": "Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.",
+    "description": "Sankta Maria, Visby domkyrka, är den enda av stadens många medeltida kyrkor som fortfarande är i bruk. Bygget inleddes omkring 1190 och kyrkan invigdes den 27 juli 1225 av biskopen i Linköping. Den restes ursprungligen för tillresta tyska köpmän, för att skilja dem från de fast bosatta tyskarna i Sankt Nicolai. Ända fram till 1429 hade kyrkan två församlingar, en tysktalande och en gotländsk. Kyrkan började som en romansk basilika men byggdes omkring 1250–1260 om till hallkyrka. Den fick domkyrkostatus 1572 när Visby stift inrättades som ett danskt stift; efter freden i Brömsebro 1645 kom Gotland till Sverige. De tre tornen är ett av Visbys mest kända silhuettmotiv – västtornet är cirka 58 meter högt och fick sin trälykta 1746, medan östtornen är drygt 54 meter. Stig in och titta upp i valven, och lägg märke till de många medeltida gravstenarna i golvet.",
+    "key_facts": [
+      "Invigd 27 juli 1225 av biskopen i Linköping",
+      "Byggd för tillresta tyska köpmän",
+      "Domkyrka sedan 1572 (Visby stift)",
+      "Tre torn, västtornet ca 58 meter högt",
+      "Stadens enda bevarade medeltidskyrka i bruk"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby_domkyrka", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankt-nicolai-kyrkoruin",
+    "name": "Sankt Nicolai kyrkoruin",
+    "category": "klosterruin",
+    "city": "Visby",
+    "coordinates": { "lat": 57.644119, "lng": 18.298061 },
+    "era": "Medeltid (1200-talet)",
+    "summary": "Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.",
+    "description": "Sankt Nicolai är Visbys största kyrkoruin och en mäktig påminnelse om stadens medeltida storhet. Den uppfördes omkring 1215–1220 som sockenkyrka, men redan 1228 övertogs den skadade kyrkan av dominikanerbröderna, svartbröderna, som gjorde den till sin klosterkyrka. Den nuvarande västra gaveln är dendrokronologiskt daterad till 1251, och ett gotiskt kor tillkom omkring 1400, delvis finansierat av rådmannen Jacob Knarre. Kyrkan och klostret brändes av Visbys egna försvarare under lübeckarnas angrepp 1525 och förföll därefter; på 1790-talet plockades byggnadsmaterial från ruinen. Idag är Sankt Nicolai en av stadens mest använda kulturscener, med en fast scen och läktare i västpartiet. Här hade musikdramat 'Petrus de Dacia' premiär den 4 augusti 1929 och spelades sedan i hundratals föreställningar – ett av Sveriges mest spelade utomhusdramer.",
+    "key_facts": [
+      "Visbys största kyrkoruin",
+      "Dominikanernas (svartbrödernas) klosterkyrka från 1228",
+      "Västgaveln daterad till 1251",
+      "Brändes 1525 under lübeckarnas angrepp",
+      "Scen för 'Petrus de Dacia' från 1929"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Sankt_Nicolai_kyrkoruin,_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankta-karins-kyrkoruin",
+    "name": "Sankta Karins kyrkoruin",
+    "category": "klosterruin",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640278, "lng": 18.295556 },
+    "era": "Medeltid (1200-1400-talet)",
+    "summary": "Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.",
+    "description": "Sankta Karins kyrkoruin reser sig vid Stora Torget och är ett av Visbys vackraste gotiska monument. Den byggdes av franciskanorden, gråbröderna, för det konvent som grundades 1233, och den första kyrkan stod färdig omkring 1250. Under medeltiden byggdes den ut till en treskeppig hallkyrka med slanka pelare och valv av tegel i stället för det vanliga gotländska kalkstenet. Ett nytt kor stod klart 1388 och invigdes 1391, och byggandet fortsatte långt in på 1400-talet men blev aldrig riktigt färdigt. Kyrkan var helgad åt bland andra Katarina av Alexandria, Maria Magdalena och Frans av Assisi. Efter reformationen övergavs kyrkan och förföll. Idag förvaltas ruinen av Gotlands museum och används till konserter och teater, och vintertid har den till och med spolats som skridskobana. De höga, smala fönsteröppningarna mot torget är ett klassiskt Visbymotiv.",
+    "key_facts": [
+      "Franciskanernas (gråbrödernas) klosterkyrka",
+      "Konventet grundat 1233, första kyrkan ca 1250",
+      "Treskeppig hallkyrka med valv av tegel",
+      "Nytt kor klart 1388, invigt 1391",
+      "Ligger vid Stora Torget, förvaltas av Gotlands museum"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Sankta_Katarina_kyrkoruin", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-drottens-kyrkoruin",
+    "name": "Drottens kyrkoruin",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.641758, "lng": 18.295200 },
+    "era": "Medeltid (ca 1240)",
+    "summary": "Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.",
+    "description": "Drottens kyrkoruin ligger granne med S:t Lars och bildar tillsammans med den ett av Visbys mest fotograferade ruinpar. Kyrkan var egentligen helgad åt S:t Trinitatis, Heliga Trefaldigheten; namnet Drotten kommer av det gamla ordet 'drott' som betyder härskare eller furste. Den byggdes omkring 1240, troligen som sockenkyrka för tyska invånare, och byggdes om och ut under medeltiden. Kyrkan övergavs 1528 när stadens köpmän började föra bort dess inventarier i samband med reformationen. Ruinen har ribbvalv som tros ha inspirerat liknande valv i Lokrume kyrkas kor. Framför nordfasaden står en bronsbyst av uppfinnaren och gotlänningen Christopher Polhem, gjord av Theodor Lundberg och avtäckt 1911. Idag används ruinen flitigt för konserter, teater, bröllop och föreläsningar, bland annat under Almedalsveckan.",
+    "key_facts": [
+      "Helgad åt Heliga Trefaldigheten (S:t Trinitatis)",
+      "Byggd ca 1240, namnet betyder 'härskare'",
+      "Övergavs 1528 vid reformationen",
+      "Bronsbyst av Christopher Polhem avtäckt 1911",
+      "Granne med S:t Lars kyrkoruin"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Drottens_kyrkoruin,_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankt-lars-kyrkoruin",
+    "name": "Sankt Lars kyrkoruin",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.641386, "lng": 18.295033 },
+    "era": "Medeltid (ca 1210-1220)",
+    "summary": "Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.",
+    "description": "Sankt Lars kyrkoruin, granne med Drotten, är en av Visbys mest säregna ruiner. Koret kan gå tillbaka till 1100-talet, men själva kyrkan restes troligen omkring 1210–1220 i den centralförsamling som inrättades när Visbys befolkning växte. Det märkliga med S:t Lars är arkitekturen: kyrkan har tydliga förebilder i ortodoxa, bysantinska kyrkor, med tjocka murar som rymmer inbyggda trappor och gångar man kan klättra i. Sannolikt var det inte en rysk kyrka, utan en byggnad ritad av en arkitekt påverkad av östlig kyrkokonst – ett spår av Visbys vidsträckta handelskontakter österut. Kyrkan är uppkallad efter martyren Laurentius men kallades ibland S:t Anna efter jungfru Marias mor. Efter reformationen övergavs kyrkan. Idag används ruinen för konserter och stämningsfulla arrangemang, och de trånga gångarna i murarna gör den till en av de mest spännande ruinerna att utforska.",
+    "key_facts": [
+      "Byggd ca 1210–1220, koret möjligen från 1100-talet",
+      "Arkitektur inspirerad av ortodoxa/bysantinska kyrkor",
+      "Tjocka murar med inbyggda trappor och gångar",
+      "Uppkallad efter martyren Laurentius",
+      "Övergavs efter reformationen, används nu för konserter"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Sankt_Lars_kyrkoruin,_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankt-clemens-kyrkoruin",
+    "name": "Sankt Clemens kyrkoruin",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.643056, "lng": 18.296111 },
+    "era": "Medeltid (1000-1200-talet)",
+    "summary": "En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.",
+    "description": "Sankt Clemens hör till de allra äldsta kyrkorna i Visby. De äldsta delarna kan gå tillbaka till omkring 1060-talet, när staden delades i två församlingar. Kyrkan var sockenkyrka för gotlänningarna i den norra församlingen och helgades åt Sankt Clemens, sjöfararnas skyddshelgon – ett passande val för de sjöfarande gotlänningar som höll till här. Kyrkan byggdes om och ut under medeltiden och fick så småningom det utseende som ruinen idag antyder. Att den ägnades åt just Clemens säger något om hur central sjöfarten och handeln var för Visbyborna; deras kulturella influenser kom främst från kontinenten. Ruinen ligger i de norra delarna av innerstaden, och äldre ritningar från 1807 visar hur kyrkan en gång såg ut. Idag är platsen en stillsam ruin mitt i den medeltida stadsväven, ofta använd för mindre arrangemang.",
+    "key_facts": [
+      "En av Visbys äldsta kyrkor, delar från ca 1060",
+      "Helgad åt sjöfararnas skyddshelgon Clemens",
+      "Sockenkyrka för gotlänningarna i norra församlingen",
+      "Ligger i norra delen av innerstaden",
+      "Äldre ritningar bevarade från 1807"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Sankt_Clemens_kyrkoruin,_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-helige-andes-kyrkoruin",
+    "name": "Helige Andes kyrkoruin",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.643056, "lng": 18.298333 },
+    "era": "Medeltid (tidigt 1200-tal)",
+    "summary": "Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.",
+    "description": "Helige Andes kyrka, ofta kallad Helge And, är en av Visbys märkligaste kyrkoruiner. Den byggdes i början av 1200-talet och är en åttkantig tvåvåningskyrka med ett gemensamt kor – en arkitektur som saknar motsvarighet i Sverige. Förebilderna sägs vara Karl den stores palatskapell i Aachen och liknande byggnader från korstågstiden. Just söder om kyrkan låg ett helgeandshus, en medeltida välgörenhetsinrättning som tog hand om fattiga och sjuka, tog emot hittebarn och gav livslång vård mot betalning; det fanns på plats senast 1299 då det nämns i skrift. Kyrkans egentliga identitet är omdiskuterad – en stark teori är att den i själva verket var Sankt Jakobs kyrka, omnämnd 1226 under den tyske biskopen Albert av Riga. Att kliva in i den åttkantiga ruinen och se de två våningarna ovanpå varandra ger en stark känsla av medeltidens internationella Visby.",
+    "key_facts": [
+      "Åttkantig tvåvåningskyrka, unik i Sverige",
+      "Byggd i början av 1200-talet",
+      "Förebild: Karl den stores kapell i Aachen",
+      "Kopplad till ett helgeandshus (vård av fattiga och sjuka)",
+      "Möjligen identisk med Sankt Jakobs kyrka (1226)"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Helige_Andes_kyrkoruin,_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankt-hans-och-sankt-pers-kyrkoruiner",
+    "name": "Sankt Hans och Sankt Pers kyrkoruiner",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640900, "lng": 18.294900 },
+    "era": "Medeltid (1100-1200-talet)",
+    "summary": "Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.",
+    "description": "Sankt Hans och Sankt Pers kyrkoruiner ligger nära varandra i den centrala delen av innerstaden och bildar tillsammans ett av Visbys mest besökta ruinpartier. De var båda sockenkyrkor under medeltiden, byggda när staden delades upp i ett stort antal församlingar – Visby hade en gång ett tjugotal kyrkor innanför muren, ett ovanligt rikt kyrkobestånd som vittnar om stadens rikedom under hansatiden. Efter reformationen övergavs de flesta av dessa kyrkor och förföll till de ruiner som idag ger staden epitetet 'ruinernas stad'. Sankt Hans-ruinen är särskilt välkänd eftersom den idag ramar in en populär trädgårdskrog, där gäster sitter bland murarna och rosorna. Här möts på ett typiskt Visbysätt medeltidens kyrkoarkitektur och nutidens stadsliv, och de gröna ruinträdgårdarna hör till stadens mest älskade miljöer.",
+    "key_facts": [
+      "Två medeltida sockenkyrkor nära varandra",
+      "Visby hade ett tjugotal kyrkor innanför muren",
+      "Övergavs efter reformationen",
+      "Sankt Hans ramar idag in en känd trädgårdskrog",
+      "Bidrar till epitetet 'ruinernas stad'"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-sankt-olofs-kyrkoruin",
+    "name": "Sankt Olofs kyrkoruin",
+    "category": "kyrka",
+    "city": "Visby",
+    "coordinates": { "lat": 57.643889, "lng": 18.294167 },
+    "era": "Medeltid (1200-talet)",
+    "summary": "Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.",
+    "description": "Sankt Olofs kyrkoruin ligger vackert inbäddad i den södra delen av DBW:s botaniska trädgård och hör till de mer undanskymda men stämningsfulla av Visbys kyrkoruiner. Kyrkan var en av stadens många medeltida helgedomar och helgades åt den norske helgonkungen Olav den helige, ett populärt skyddshelgon i hela Norden och särskilt bland sjöfarande. Liksom de övriga sockenkyrkorna övergavs den efter reformationen och förvandlades långsamt till ruin. Det som gör S:t Olof så speciell att besöka idag är miljön: ruinen omges av den frodiga botaniska trädgårdens mullbärsträd, blommor och exotiska växter, så att medeltida murverk och grönskande planteringar smälter samman. Det är en av de platser där Visbys två kännetecken – rosorna och ruinerna – verkligen möts på samma fläck.",
+    "key_facts": [
+      "Belägen i DBW:s botaniska trädgård",
+      "Helgad åt helgonkungen Olav den helige",
+      "En av Visbys många medeltida sockenkyrkor",
+      "Övergavs efter reformationen",
+      "Omgiven av trädgårdens grönska och rosor"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/DBW:s_botaniska_tr%C3%A4dg%C3%A5rd", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-slaget-vid-visby-1361",
+    "name": "Slaget vid Visby 1361",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.633719, "lng": 18.299114 },
+    "era": "Medeltid (27 juli 1361)",
+    "summary": "Det blodiga slaget då Valdemar Atterdags här slog Gotlands bönder utanför muren – ca 1800 stupade.",
+    "description": "Den 27 juli 1361 utspelade sig ett av Sveriges blodigaste medeltidsslag utanför Visby ringmur, på ängsmarken Korsbetningen vid Söderport. Den danske kungen Valdemar Atterdag landsteg på Gotland med en yrkesarmé på omkring 2000 man. Mot dem stod en ungefär lika stor men dåligt utrustad gotländsk bondehär, där många var gamla män och unga pojkar. Resultatet blev en massaker: enligt en Visbykälla föll omkring 1800 gotlänningar mot bara cirka 300 danskar. Stadens borgare lät porten förbli stängd och köpte sig fri. Slaget är världsberömt tack vare de arkeologiska fynden: när massgravarna grävdes ut från 1905 och framför allt 1928–1930 under ledning av Bengt Thordeman och Poul Nørlund hade de döda inte plundrats utan begravts med rustning kvar. Man fann över 1100 individer, hundratals ringbrynjehuvor och kompletta rustningar – de enda bevarade 1300-talsrustningarna i Europa. Stenkorset Valdemarskorset restes på platsen till de fallnas minne.",
+    "key_facts": [
+      "27 juli 1361, Korsbetningen utanför Söderport",
+      "Valdemar Atterdags ~2000 man mot lika många bönder",
+      "Ca 1800 gotlänningar och ca 300 danskar stupade",
+      "Massgravar utgrävda 1905 och 1928–1930",
+      "Unika bevarade 1300-talsrustningar; Valdemarskorset restes"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Slaget_vid_Visby", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-korsbetningen-massgravar",
+    "name": "Korsbetningen och massgravarna",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.634000, "lng": 18.299500 },
+    "era": "Medeltid (1361), utgrävt 1900-talet",
+    "summary": "Slagfältet utanför Söderport där massgravarna från 1361 grävdes ut och chockade hela forskarvärlden.",
+    "description": "Korsbetningen är ängsmarken strax utanför Söderport som gett namn åt slaget 1361. Namnet betyder att markerna vid korset användes som betesmark för stadsbornas boskap, och korset syftar på stenmonumentet Valdemarskorset som restes ungefär tio år efter slaget. Det är här de döda från slaget begravdes i hast i flera massgravar, och det är dessa gravar som gjort platsen världsberömd. När gravarna öppnades i början av 1900-talet – med stora utgrävningar 1905 och 1928–1930 ledda av Bengt Thordeman – blev det en vetenskaplig sensation. De döda hade i sommarvärmen begravts så snabbt att de inte hunnit plundras: de bar fortfarande ringbrynjor, brynjehuvor och plåtrustningar. Sammanlagt påträffades resterna av över 1100 människor. Fynden är idag ovärderliga för forskningen om medeltida krigföring och skador, och delar visas på Gotlands museum och Historiska museet i Stockholm.",
+    "key_facts": [
+      "Slagfält och massgravar från slaget 1361",
+      "Namnet kommer av betesmark vid Valdemarskorset",
+      "Utgrävningar 1905 och 1928–1930",
+      "Över 1100 individer funna, många i full rustning",
+      "Begravdes så snabbt att de inte plundrades"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Slaget_vid_Visby"]
+  },
+  {
+    "id": "visby-valdemar-atterdag",
+    "name": "Valdemar Atterdag",
+    "category": "person",
+    "city": "Visby",
+    "coordinates": { "lat": 57.637100, "lng": 18.286500 },
+    "era": "Medeltid (1361)",
+    "summary": "Dansk kung som erövrade Gotland och brandskattade Visby 1361 – en av stadens mest ödesdigra gestalter.",
+    "description": "Valdemar Atterdag, dansk kung från 1340, är för alltid förknippad med Visby genom sitt fälttåg sommaren 1361. Sedan han slagit den gotländska bondehären vid Korsbetningen den 27 juli tågade han in i den rika hansestaden. Enligt en seglivad tradition lät han brandskatta staden – ställa upp ölkar på torget som borgarna fick fylla med silver och guld för att slippa plundring – men historiska fakta kring själva brandskattningen är osäkra. Säkert är att Gotland och Visby underkastade sig och att staden förlorade mycket av sin ställning som östersjöhandelns nav. Valdemar lever också kvar i folksägnen om Jungfrutornet, där han sägs ha förfört Ung-Hanses dotter och förmått henne att förråda staden. Historia och legend har på så vis vävts samman kring honom, och hans namn bärs av stenkorset Valdemarskorset utanför Söderport. Koordinaterna pekar mot Stora Torget, där brandskattningen enligt traditionen ska ha skett.",
+    "key_facts": [
+      "Dansk kung som erövrade Gotland 1361",
+      "Segrade vid Korsbetningen 27 juli 1361",
+      "Sägs ha brandskattat Visby (faktan osäker)",
+      "Central i sägnen om Jungfrutornet",
+      "Valdemarskorset bär hans namn"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Slaget_vid_Visby", "https://sv.wikipedia.org/wiki/Visby", "https://sv.wikipedia.org/wiki/Unghanses_dotter"]
+  },
+  {
+    "id": "visby-unghanses-dotter-legenden",
+    "name": "Legenden om Unghanses dotter",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.636500, "lng": 18.292500 },
+    "era": "Sägen (knuten till 1361)",
+    "summary": "Gotländsk folksägen om jungfrun som förrådde Visby av kärlek och murades in levande i ringmuren.",
+    "description": "En av Gotlands mest älskade folksägner kretsar kring Unghanses dotter – och det är just en sägen, inte historia. Enligt berättelsen kom kung Valdemar Atterdag till Gotland förklädd till köpman omkring 1360 för att speja. Han mötte den rike domaren Ung-Hanse, vars unga dotter han förförde. När kungen avslöjades körde Ung-Hanse bort honom, men flickan hade redan förälskat sig. När Valdemar 1361 återvände och plundrade ön ska hon ha hjälpt honom in i staden, övertygad om att han skulle ta henne med sig. Han övergav henne dock, och de förbittrade stadsborna grep henne och murade in henne levande i tornet som sedan kallats Jungfrutornet. Sägnen är en klassisk berättelse om kärlek, svek och straff, och den lever vidare år efter år under Visbys Medeltidsvecka – trots att tornet i verkligheten byggdes först på 1400-talet, långt efter Valdemars tid.",
+    "key_facts": [
+      "Folksägen, ej historisk händelse",
+      "Valdemar Atterdag förförde Ung-Hanses dotter",
+      "Hon ska ha förrått staden 1361",
+      "Murades enligt sägnen in levande i Jungfrutornet",
+      "Tornet byggdes i verkligheten först på 1400-talet"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Unghanses_dotter", "https://sv.wikipedia.org/wiki/Visby_ringmur"]
+  },
+  {
+    "id": "visby-hansestaden-varldsarv",
+    "name": "Världsarvet Hansestaden Visby",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640600, "lng": 18.296400 },
+    "era": "Medeltid / Världsarv sedan 1995",
+    "summary": "Visby innerstad togs upp på Unescos världsarvslista 1995 som ett enastående exempel på en muromgärdad hansestad.",
+    "description": "Visby innerstad fördes in på Unescos världsarvslista 1995 under namnet Hansestaden Visby. Motiveringen var att staden är ett synnerligen framstående exempel på en nordeuropeisk, muromgärdad handelsstad där den medeltida stadsbilden behållits ovanligt intakt. Det som gör Visby unikt är helheten: den nästan kompletta ringmuren med sina torn och portar, de många kyrkoruinerna, domkyrkan Sankta Maria och inte minst de bevarade medeltida packhusen och köpmansgårdarna längs gränderna ner mot hamnen. Paradoxalt nog är det stadens fattigdom efter hansatidens slut som räddat den – när andra städer rev och byggde nytt stod Visby kvar, och därför kan man idag vandra i en stadsmiljö som i mycket är medeltida. Att gå genom innerstaden är att röra sig genom ett levande världsarv, där varje gränd och varje ruin berättar om Östersjöns rikaste handelsstad.",
+    "key_facts": [
+      "På Unescos världsarvslista sedan 1995",
+      "Namnet: Hansestaden Visby",
+      "Enastående exempel på muromgärdad nordeuropeisk handelsstad",
+      "Komplett ringmur, kyrkoruiner och medeltida packhus",
+      "Bevarad tack vare stadens fattigdom efter hansatiden"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-rosornas-och-ruinernas-stad",
+    "name": "Rosornas och ruinernas stad",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640600, "lng": 18.296000 },
+    "era": "Genom historien",
+    "summary": "Visbys älskade epitet, som fångar mötet mellan medeltida kyrkoruiner och den frodiga blomsterstaden.",
+    "description": "'Rosornas och ruinernas stad' är Visbys mest kända epitet och fångar precis det som gör staden så omtyckt. Ruinerna är de många medeltida kyrkorna – Visby hade en gång ett tjugotal kyrkor innanför muren – som efter reformationen övergavs och långsamt förföll till de pittoreska ruiner som idag står kvar mitt i stadsväven. Rosorna syftar på den frodiga grönska och de klängrosor som breder ut sig längs husväggar, i gränderna och i de gröna ruinträdgårdarna, gynnade av Gotlands milda klimat. Att stadens fattigdom under flera hundra år bevarade den medeltida bebyggelsen är en del av samma berättelse: ingen hade råd att riva och bygga nytt. Resultatet är en av Nordens mest stämningsfulla stadsmiljöer, där blommande rosor klättrar uppför hundraåriga murar och gamla kyrkoruiner badar i sommarljus. Epitetet sammanfattar varför Visby räknas som en av Sveriges vackraste städer.",
+    "key_facts": [
+      "Visbys mest kända epitet",
+      "Ruinerna: stadens många övergivna medeltidskyrkor",
+      "Rosorna: frodig grönska i Gotlands milda klimat",
+      "Bebyggelsen bevarad genom århundraden av fattigdom",
+      "Symbol för stadens unika atmosfär"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-hansatiden",
+    "name": "Visby under hansatiden",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.638500, "lng": 18.291000 },
+    "era": "Medeltid (1100-1300-talet)",
+    "summary": "Under medeltiden var Visby ett av Östersjöns rikaste handelsnav och ett centrum i Hansan.",
+    "description": "Under hög- och senmedeltiden var Visby ett av Östersjöns absolut viktigaste handelscentra och en av Hanseförbundets nyckelstäder. Redan på 1100-talet hade staden blivit ett nav för den framväxande tyska Hansan, och i gränderna trängdes både gutniska och tyska köpmän. Gotlänningarna var länge det tongivande befolkningsskiktet, men spänningen mellan gutar och tyskar märks i att flera kyrkor hade dubbla församlingar – en för gotlänningar och en för tyskar. Stadens namn kommer av 'vi' (en hednisk offerplats) och 'by', och i Gutasagan från omkring 1230 kallas platsen bara 'Wi', den heliga platsen. Rikedomen från handeln med skinn, vax, tjära och varor från öst byggde den ringmur, de kyrkor och de packhus som vi ser idag. När Valdemar Atterdag erövrade ön 1361 och handelsvägarna förändrades började stadens storhetstid att blekna, men den medeltida stadsbilden lever kvar som ett minne av epoken.",
+    "key_facts": [
+      "Östersjöns rikaste handelsstad under medeltiden",
+      "Centrum i tyska Hanseförbundet redan på 1100-talet",
+      "Både gutniska och tyska köpmän, dubbla församlingar",
+      "Namnet av 'vi' (offerplats) och 'by'",
+      "Storhetstiden bröts av Valdemar Atterdag 1361"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-gotlands-museum-fornsalen",
+    "name": "Gotlands museum (Fornsalen)",
+    "category": "museum_hembygd",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639656, "lng": 18.292446 },
+    "era": "Grundat 1875",
+    "summary": "Gotlands stora kulturhistoriska museum med bildstenar och världens största vikingatida silverskatt.",
+    "description": "Gotlands museum, med huvudbyggnaden Fornsalen vid Strandgatan, är öns stora kulturhistoriska museum och en självklar punkt på varje Visbyvandring. Det grundades 1875 som Gotlands Fornsal av Föreningen Gotlands Fornvänner, med Pehr Arvid Säve som förste intendent. Här samlas Gotlands historia från stenålder till nutid, och samlingarna omfattar omkring 450 000 föremål, varav merparten förvaras i magasinet Visborg som öppnade 2014. Bland klenoderna finns de berömda gotländska bildstenarna, mäktiga ristade stenmonument från järnålder och vikingatid, samt Spillingsskatten – världens största vikingatida silverskatt, hittad i en åker på norra Gotland. Museet driver också Gotlands konstmuseum och flera gårdar som Kapitelhusgården, Petes och Kattlunds. Ett besök ger nyckeln till att förstå allt annat man ser i staden: ringmuren, kyrkoruinerna och hansatidens Visby blir begripliga först när man sett föremålen och berättelserna här.",
+    "key_facts": [
+      "Grundat 1875 som Gotlands Fornsal",
+      "Ca 450 000 föremål i samlingarna",
+      "Spillingsskatten – världens största vikingatida silverskatt",
+      "Berömda gotländska bildstenar",
+      "Ligger vid Strandgatan i innerstaden"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Gotlands_museum", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-spillingsskatten",
+    "name": "Spillingsskatten",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639656, "lng": 18.292446 },
+    "era": "Vikingatid (nedlagd ca 870-tal)",
+    "summary": "Världens största vikingatida silverskatt, funnen på Gotland och utställd på Gotlands museum.",
+    "description": "Spillingsskatten är världens största kända vikingatida silverskatt och en av de absoluta höjdpunkterna att se på Gotlands museum i Visby. Skatten påträffades i en åker vid Spillings på norra Gotland och består av en enorm mängd silver – armringar, spiralringar och framför allt tusentals mynt, många präglade i den arabiska och islamiska världen. Just de många orientaliska mynten är ett slående bevis på hur långväga gotländska köpmäns handelsnätverk sträckte sig under vikingatiden, ända bort till kalifatens marknader. Att en sådan rikedom grävdes ner och aldrig hämtades igen ger en gåtfull mänsklig dimension åt fyndet. För besökaren i Visby knyter Spillingsskatten ihop berättelsen om Gotland som en handelns ö långt innan ringmuren ens var byggd – rikedomen som senare skulle göra Visby till Östersjöns främsta hansestad har djupa rötter i vikingatidens silverströmmar.",
+    "key_facts": [
+      "Världens största vikingatida silverskatt",
+      "Funnen vid Spillings på norra Gotland",
+      "Innehåller tusentals mynt, många arabiska/islamiska",
+      "Vittnar om Gotlands långväga handel österut",
+      "Utställd på Gotlands museum (Fornsalen)"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Gotlands_museum"]
+  },
+  {
+    "id": "visby-stora-torget",
+    "name": "Stora Torget",
+    "category": "sevardhet",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640300, "lng": 18.295800 },
+    "era": "Medeltid till nutid",
+    "summary": "Visbys livfulla huvudtorg, ramat av Sankta Karins kyrkoruin och fullt av uteserveringar.",
+    "description": "Stora Torget är Visbys naturliga hjärta och har varit stadens samlingsplats sedan medeltiden. Här pulserar livet under sommaren, med uteserveringar, marknadsstånd och människor som rör sig mellan gränderna. Torgets stora blickfång är Sankta Karins kyrkoruin, franciskanernas gotiska klosterkyrka, vars höga och smala fönsteröppningar reser sig direkt mot torget och ger platsen dess karaktär. Enligt traditionen var det på just ett torg i Visby som Valdemar Atterdag lät ställa upp kar som borgarna fick fylla med silver vid brandskattningen 1361 – en berättelse som ofta knyts till Stora Torget även om de exakta historiska detaljerna är osäkra. Runt torget och i kvarteren intill finns flera av stadens kyrkoruiner och äldsta byggnader. För en stadsvandring är Stora Torget den självklara utgångspunkten, en plats där medeltida ruiner och modernt folkliv möts mitt i världsarvet.",
+    "key_facts": [
+      "Visbys medeltida huvudtorg",
+      "Domineras av Sankta Karins kyrkoruin",
+      "Knyts till sägnen om Valdemars brandskattning",
+      "Livligt med uteserveringar sommartid",
+      "Central utgångspunkt i innerstaden"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby", "https://sv.wikipedia.org/wiki/Sankta_Katarina_kyrkoruin"]
+  },
+  {
+    "id": "visby-almedalen",
+    "name": "Almedalen",
+    "category": "sevardhet",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640556, "lng": 18.290833 },
+    "era": "Medeltid (hamn) / nutid (park)",
+    "summary": "Park på den medeltida hamnens plats, idag mest känd för den politiska Almedalsveckan.",
+    "description": "Almedalen är idag en grönskande park nedanför Kruttornet, men under medeltiden låg här Visbys gamla hamn. Mot den tidens handelsgata Strandgatan vette nio portar från hamnen, och det var via denna hamn som hansestadens rikedomar strömmade in och ut. Med tiden grundades hamnen upp och förvandlades till den park som finns idag, omgiven av institutioner som Almedalsbiblioteket, kongresshallen Wisby Strand och Uppsala universitets Campus Gotland. Vid Kruttornet, ringmurens äldsta torn, hålls varje sommar invigningen av Medeltidsveckan. Mest berömd är Almedalen ändå för Almedalsveckan, den årliga politiska vecka som blivit Sveriges största mötesplats för politik och samhällsdebatt. Att vandra i Almedalen är att stå mitt i lager av historia: medeltida hamn, hansatidens handel och modern svensk demokrati på en och samma plats vid vattnet.",
+    "key_facts": [
+      "Park på den medeltida hamnens plats",
+      "Nio hamnportar vette mot Strandgatan",
+      "Ligger nedanför Kruttornet",
+      "Plats för Medeltidsveckans invigning",
+      "Känd för den politiska Almedalsveckan"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Almedalen", "https://sv.wikipedia.org/wiki/Kruttornet"]
+  },
+  {
+    "id": "visby-dbw-s-botaniska-tradgard",
+    "name": "DBW:s botaniska trädgård",
+    "category": "sevardhet",
+    "city": "Visby",
+    "coordinates": { "lat": 57.643889, "lng": 18.294167 },
+    "era": "Anlagd 1855",
+    "summary": "Frodig botanisk trädgård från 1855 med exotiska växter, mullbärsträd och Sankt Olofs kyrkoruin.",
+    "description": "DBW:s botaniska trädgård är en av Visbys gröna pärlor, anlagd 1855 av sällskapet DBW – De Badande Wännerna, en av stadens äldsta välgörenhetsföreningar. Magister Hans Petter Gustavsson tog initiativet, och trädgården fick sin nuvarande utformning vid en stor ombyggnad i början av 1930-talet. Tack vare Gotlands milda klimat trivs här exotiska och ovanliga växter som annars har svårt att klara sig så här långt norrut, däribland mullbärsträd. Mitt i grönskan ligger Sankt Olofs kyrkoruin, så att medeltida murverk och blommande planteringar smälter samman på ett mycket Visbytypiskt sätt. Trädgården drivs av DBW i samverkan med Region Gotland och är öppen som en allmän park. Den nämns till och med i Ulf Lundells debutroman 'Jack' från 1976. För besökaren är trädgården en stilla, doftande oas innanför ringmuren, perfekt att vila i mellan ruinerna.",
+    "key_facts": [
+      "Anlagd 1855 av sällskapet DBW (De Badande Wännerna)",
+      "Nuvarande form från ombyggnad på 1930-talet",
+      "Exotiska växter och mullbärsträd i Gotlands milda klimat",
+      "Rymmer Sankt Olofs kyrkoruin",
+      "Nämns i Ulf Lundells roman 'Jack' (1976)"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/DBW:s_botaniska_tr%C3%A4dg%C3%A5rd"]
+  },
+  {
+    "id": "visby-burmeisterska-huset",
+    "name": "Burmeisterska huset",
+    "category": "byggnad",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639240, "lng": 18.291550 },
+    "era": "Stormaktstid (1652-1654)",
+    "summary": "Praktfull köpmansgård vid Strandgatan från 1650-talet med rikt målade väggar och tak.",
+    "description": "Burmeisterska huset vid Strandgatan 9 är en av Visbys förnämsta bevarade köpmansgårdar och ett lysande exempel på 1600-talets borgerliga prakt. Det lät uppföras 1652–1654 av köpmannen Hans Burmeister från Lübeck, och en flygel tillkom troligen på 1670-talet. Husets stora skatt finns inuti: hela väggar är bemålade med pastorala landskapsmotiv, och även taket i övre salen är dekorerat – en ovanligt välbevarad interiör som ger en direkt inblick i hur en rik köpmansfamilj levde under stormaktstiden. Från 1906 har staden använt huset som museum, turistbyrå, butik och restaurang. En stor restaurering gjordes på 1940-talet efter dokumentation av konsthistorikern Gunnar Svahnström och arkeologen Greta Arwidsson, och huset byggnadsminnesförklarades 1994. Att kliva in i Burmeisterska huset är att gå rakt in i 1600-talet, med de målade väggarnas idylliska landskap runt omkring sig.",
+    "key_facts": [
+      "Uppfört 1652–1654 av köpmannen Hans Burmeister",
+      "Ligger vid Strandgatan 9",
+      "Väggar och tak bemålade med pastorala landskap",
+      "Byggnadsminne sedan 1994",
+      "Använt som museum och utställningslokal sedan 1906"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Burmeisterska_huset"]
+  },
+  {
+    "id": "visby-strandgatan-packhusen",
+    "name": "Strandgatan och de medeltida packhusen",
+    "category": "byggnad",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639000, "lng": 18.291500 },
+    "era": "Medeltid",
+    "summary": "Hansatidens viktigaste handelsgata, kantad av höga medeltida packhus och köpmansgårdar.",
+    "description": "Strandgatan var hansatidens viktigaste handelsgata i Visby, dragen parallellt med strandkanten där den gamla hamnen låg. Längs gatan reser sig några av Nordens bäst bevarade medeltida packhus och köpmansgårdar – höga stenhus i flera våningar där köpmännen bodde högst upp och förvarade sina varor i de övre magasinsvåningarna, med hissbommar för att vinscha upp gods. Många av husen går tillbaka till 1200- och 1300-talen, och de berättar konkret om den handel som gjorde staden så rik. Det är denna täta rad av medeltida packhus, tillsammans med ringmuren och kyrkoruinerna, som ligger bakom Visbys världsarvsstatus. Vid Strandgatan ligger också Gotlands museum (Fornsalen) och den praktfulla Burmeisterska gården. En promenad längs gatan är som att vandra genom hansatidens affärskvarter, med blicken uppåt mot de gamla lastluckorna och gavlarna.",
+    "key_facts": [
+      "Hansatidens viktigaste handelsgata",
+      "Kantad av Nordens bäst bevarade medeltida packhus",
+      "Köpmännen bodde överst, varor i magasinsvåningarna",
+      "Många hus från 1200- och 1300-talen",
+      "Central del av världsarvet"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-packhusplan",
+    "name": "Packhusplan",
+    "category": "sevardhet",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640100, "lng": 18.290900 },
+    "era": "Medeltid till nutid",
+    "summary": "Öppen plats vid hamnsidan av innerstaden, en gång lastplats för hansatidens varor.",
+    "description": "Packhusplan är en öppen plats i den västra, hamnvända delen av Visby innerstad, vid foten av de gränder som leder upp mot Stora Torget. Namnet minner om platsens funktion under hansatiden, då hamnen och de stora packhusen låg alldeles intill och varor lastades och lagrades här. Idag är platsen en livlig knutpunkt mellan den moderna hamnen, Strandgatan och innerstadens gränder, en naturlig samlingsplats för både besökare och Visbybor. Härifrån är det nära till Kruttornet, Almedalen och Gotlands museum. Att stå på Packhusplan och se ut mot hamnen är att förstå själva grundförutsättningen för Visbys existens: havet och handeln. Det var hit fartygen kom med skinn, vax, salt och lyxvaror, och härifrån strömmade rikedomen som byggde den medeltida staden innanför muren.",
+    "key_facts": [
+      "Öppen plats i innerstadens hamnvända del",
+      "Namnet minner om hansatidens packhus",
+      "Knutpunkt mellan hamn, Strandgatan och gränderna",
+      "Nära Kruttornet och Almedalen",
+      "Symbol för stadens koppling till havet och handeln"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-donners-plats",
+    "name": "Donners plats",
+    "category": "sevardhet",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639900, "lng": 18.290700 },
+    "era": "1700-tal till nutid",
+    "summary": "Torgplats nära hamnen uppkallad efter den inflytelserika köpmannasläkten Donner.",
+    "description": "Donners plats ligger i den nedre, hamnvända delen av Visby innerstad, en livlig torgmiljö nära Packhusplan och hamnen. Platsen har fått sitt namn efter den förmögna köpmannasläkten Donner, som under 1700-talet hörde till Visbys mest inflytelserika familjer. Mest känd är Jean Donner och hans släkt, vars handelshus präglade stadens ekonomiska liv. Vid platsen ligger flera äldre byggnader, butiker och restauranger, och den fungerar idag som en av innerstadens populära mötesplatser nära kajen. Donners plats påminner om att Visbys historia inte tog slut med medeltiden – även under 1700- och 1800-talen fanns här köpmän och handelshus som satte sin prägel på staden, även om den aldrig återfick hansatidens forna glans. Som punkt på en stadsvandring binder platsen ihop den moderna hamnen med innerstadens äldre kvarter.",
+    "key_facts": [
+      "Torg i innerstadens hamnvända del",
+      "Uppkallat efter köpmannasläkten Donner",
+      "Donnersläkten inflytelserik på 1700-talet",
+      "Livlig mötesplats nära hamnen idag",
+      "Vittnar om Visbys handel efter medeltiden"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-gamla-apoteket",
+    "name": "Gamla apoteket",
+    "category": "byggnad",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640400, "lng": 18.293800 },
+    "era": "Medeltid",
+    "summary": "Ett av Visbys mest påkostade medeltida stenhus, en gång stadens apotek.",
+    "description": "Gamla apoteket är ett av Visbys mest framträdande medeltida stenhus, beläget i innerstaden nära Stora Torget. Byggnaden hör till de stora köpmansgårdar i sten som restes under hansatidens glansdagar, och dess höga gavel och kraftiga murverk vittnar om ägarnas rikedom. Namnet kommer av att huset under senare århundraden inrymde stadens apotek, en av Visbys viktiga institutioner. Som så många av de medeltida husen i staden har byggnaden flera våningar med ursprung i tiden då övervåningarna användes som magasin för handelsvaror. Idag är Gamla apoteket en uppskattad del av stadsbilden och ett tydligt exempel på den civila, profana medeltidsarkitektur som tillsammans med kyrkoruinerna och ringmuren gör Visby till ett världsarv. Det är ett av de hus man gärna stannar till vid för att beundra hur ett rikt köpmanshus såg ut för många hundra år sedan.",
+    "key_facts": [
+      "Påkostat medeltida stenhus i innerstaden",
+      "Höga gavlar och kraftigt murverk",
+      "Inrymde stadens apotek under senare tid",
+      "Ursprungligen köpmansgård med magasinsvåningar",
+      "Del av världsarvets profana medeltidsbebyggelse"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-kapitelhusgarden",
+    "name": "Kapitelhusgården",
+    "category": "museum_hembygd",
+    "city": "Visby",
+    "coordinates": { "lat": 57.641200, "lng": 18.296800 },
+    "era": "Medeltid / levande museum",
+    "summary": "Medeltida gårdsmiljö nära domkyrkan, idag ett levande museum med hantverk och medeltidsliv.",
+    "description": "Kapitelhusgården är en medeltida gårdsmiljö i kvarteren kring domkyrkan Sankta Maria och drivs idag av Gotlands museum som ett levande museum. Här får besökaren kliva rakt in i medeltiden: i gårdens byggnader och på dess innergård visas gammalt hantverk, matlagning över öppen eld, dräkter och lekar, och under sommaren och framför allt under Medeltidsveckan myllrar platsen av liv. Namnet anknyter till domkapitlet och kyrkans närhet. Som komplement till de tysta kyrkoruinerna och museets montrar erbjuder Kapitelhusgården en mer handgriplig och pedagogisk upplevelse av hur människor levde, arbetade och åt i det medeltida Visby. Det är en särskilt uppskattad plats för barnfamiljer och för alla som vill förstå vardagslivet bakom de mäktiga murarna och kyrkorna. Gården hör till de gårdar och anläggningar som Gotlands museum förvaltar runt om på ön.",
+    "key_facts": [
+      "Medeltida gårdsmiljö nära domkyrkan",
+      "Drivs av Gotlands museum som levande museum",
+      "Visar hantverk, matlagning och medeltidsliv",
+      "Centrum för aktiviteter under Medeltidsveckan",
+      "Pedagogisk komplettering till ruiner och montrar"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Gotlands_museum", "https://sv.wikipedia.org/wiki/Visby"]
+  },
+  {
+    "id": "visby-medeltidsveckan",
+    "name": "Medeltidsveckan",
+    "category": "historia",
+    "city": "Visby",
+    "coordinates": { "lat": 57.640300, "lng": 18.295800 },
+    "era": "Nutid (sedan 1984)",
+    "summary": "Visbys stora årliga medeltidsfestival som fyller den gamla staden med riddare, marknad och historia.",
+    "description": "Varje sommar förvandlas Visbys innerstad under Medeltidsveckan, ett av Nordens största historiska evenemang. Under festivalveckan fylls gränder, torg och kyrkoruiner av människor i medeltida dräkt, marknadsstånd, gycklare, musik, riddarspel och tornerspel. Invigningen hålls traditionellt vid Kruttornet och Almedalen, och staden blir för en vecka en levande kuliss för medeltiden – passande nog, eftersom miljön redan är ett medeltida världsarv. En central berättelse under veckan är just slaget 1361 och sägnen om Jungfrutornet, som återberättas och gestaltas år efter år. Många av kyrkoruinerna, som Sankt Nicolai och Sankta Karin, används som scener för föreställningar. Medeltidsveckan har gjort Visby till en samlingsplats för historieintresserade från hela världen och knyter på ett livfullt sätt ihop stadens autentiska medeltida miljö med berättandet om dess dramatiska förflutna.",
+    "key_facts": [
+      "Ett av Nordens största historiska evenemang",
+      "Invigs traditionellt vid Kruttornet och Almedalen",
+      "Marknad, riddarspel, gyckel och dräkter",
+      "Slaget 1361 och Jungfrutornets sägen gestaltas",
+      "Kyrkoruiner används som scener"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Visby", "https://sv.wikipedia.org/wiki/Kruttornet", "https://sv.wikipedia.org/wiki/Unghanses_dotter"]
+  },
+  {
+    "id": "visby-christopher-polhem",
+    "name": "Christopher Polhem",
+    "category": "person",
+    "city": "Visby",
+    "coordinates": { "lat": 57.641758, "lng": 18.295200 },
+    "era": "Stormaktstid (1661-1751)",
+    "summary": "Sveriges store uppfinnare och 'mekanikens fader', född på Gotland, hyllad med en byst vid Drotten.",
+    "description": "Christopher Polhem (1661–1751), ofta kallad den svenska mekanikens fader, är en av de mest berömda personer som har sina rötter på Gotland. Han föddes på ön och blev en av Sveriges genom tiderna mest betydelsefulla uppfinnare och ingenjörer, känd för bland annat sina mekaniska konstruktioner, gruvmaskiner, lås och det berömda 'mekaniska alfabetet'. Hans gärning hörde till stormaktstidens Sverige och lade grunden för svensk teknik- och industrihistoria. I Visby hedras han med en bronsbyst, skapad av skulptören Theodor Lundberg och avtäckt 1911, som står framför nordfasaden av Drottens kyrkoruin. För besökaren knyter Polhem ihop Gotland med den svenska vetenskaps- och industrihistorien: bredvid de medeltida ruinerna får man en påminnelse om att ön också fostrat ett av landets största tekniska snillen. Bysten vid Drotten är en fin anhalt för den som vandrar mellan kyrkoruinerna.",
+    "key_facts": [
+      "1661–1751, 'den svenska mekanikens fader'",
+      "Med rötter på Gotland",
+      "Uppfinnare av lås, gruvmaskiner och det mekaniska alfabetet",
+      "Bronsbyst av Theodor Lundberg avtäckt 1911",
+      "Bysten står vid Drottens kyrkoruin"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Drottens_kyrkoruin,_Visby"]
+  },
+  {
+    "id": "visby-pehr-arvid-save",
+    "name": "Pehr Arvid Säve",
+    "category": "person",
+    "city": "Visby",
+    "coordinates": { "lat": 57.639656, "lng": 18.292446 },
+    "era": "1800-talet (1811-1887)",
+    "summary": "Gotländsk lärare, folkminnessamlare och Gotlands museums grundare och förste intendent.",
+    "description": "Pehr Arvid Säve (1811–1887) är en av de viktigaste personerna bakom att Gotlands kulturarv bevarats och dokumenterats. Han var lärare, fornforskare och en outtröttlig samlare av gotländska folkminnen, sägner, dialektord och föremål. När Gotlands Fornsal – kärnan i dagens Gotlands museum – grundades 1875 blev Säve dess förste intendent och ledde verksamheten fram till 1887. Tack vare hans insatser räddades en stor mängd kunskap om gammalt gotländskt liv, traditioner och berättelser som annars kunde ha gått förlorad, och många av föremålen i Fornsalens samlingar har sin bakgrund i hans samlararbete. Just sägnerna han tecknade ner – som berättelsen om Unghanses dotter och Jungfrutornet – lever vidare än idag. För besökaren i Visby är Säve mannen som gav staden dess minne: utan honom hade vi vetat långt mindre om Gotlands rika folkkultur och historia.",
+    "key_facts": [
+      "1811–1887, gotländsk lärare och fornforskare",
+      "Grundade Gotlands Fornsal 1875",
+      "Förste intendent (1875–1887)",
+      "Stor samlare av folkminnen och sägner",
+      "Bevarade berättelser som den om Jungfrutornet"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Gotlands_museum", "https://sv.wikipedia.org/wiki/Unghanses_dotter"]
+  },
+  {
+    "id": "visby-bengt-thordeman",
+    "name": "Bengt Thordeman",
+    "category": "person",
+    "city": "Visby",
+    "coordinates": { "lat": 57.633719, "lng": 18.299114 },
+    "era": "1900-talet (1893-1990)",
+    "summary": "Arkeologen som ledde de epokgörande utgrävningarna av massgravarna vid Korsbetningen.",
+    "description": "Bengt Thordeman (1893–1990) var den svenske arkeolog som för all framtid knöt sitt namn till slaget vid Visby 1361. Under utgrävningarna av massgravarna vid Korsbetningen 1928–1930, som han ledde tillsammans med den danske historikern Poul Nørlund, dokumenterades fynden med då nyskapande fotografiska metoder. Det man fann blev en världssensation: de stupade gotländska bönderna hade begravts i sommarvärmen så snabbt att de inte hunnit plundras, och bar fortfarande sina ringbrynjor och plåtrustningar. Sammanlagt påträffades resterna av över 1100 individer. Thordemans vetenskapliga publikation om rustningarna från Visby blev ett internationellt standardverk inom forskningen om medeltida vapen och rustningar och citeras än idag. För besökaren vid Korsbetningen är det Thordemans arbete som gör att slagfältet kan berätta sin gripande historia – det var hans grävning som väckte de döda till liv för eftervärlden.",
+    "key_facts": [
+      "1893–1990, svensk arkeolog",
+      "Ledde utgrävningarna vid Korsbetningen 1928–1930",
+      "Arbetade tillsammans med Poul Nørlund",
+      "Dokumenterade rustningarna i ett internationellt standardverk",
+      "Fynd av över 1100 individer i full rustning"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Slaget_vid_Visby"]
+  },
+  {
+    "id": "visby-visby-hamn",
+    "name": "Visby hamn",
+    "category": "vattendrag",
+    "city": "Visby",
+    "coordinates": { "lat": 57.638500, "lng": 18.286500 },
+    "era": "Medeltid till nutid",
+    "summary": "Stadens livsnerv mot havet – från medeltida handelshamn vid Almedalen till dagens färjehamn.",
+    "description": "Visby hamn har i alla tider varit stadens livsnerv mot Östersjön. Under medeltiden låg den egentliga hamnen vid det som idag är parken Almedalen, där nio portar vette mot handelsgatan Strandgatan och Kruttornet vakade över infarten. Det var via denna hamn som hansestadens enorma rikedom strömmade in: skinn, vax, tjära och lyxvaror från öst och väst. När den gamla hamnen så småningom grundades upp flyttades verksamheten västerut till den nuvarande hamnen, som idag är Gotlands port mot fastlandet med färjeförbindelser till Nynäshamn och Oskarshamn samt kryssningstrafik. För de flesta besökare är hamnen den första anblicken av Visby – ringmuren och de tre domkyrkotornen reser sig som en silhuett bakom kajen. Att anlända sjövägen, precis som hansatidens köpmän, är fortfarande det vackraste sättet att möta staden.",
+    "key_facts": [
+      "Stadens viktigaste förbindelse med havet",
+      "Medeltida hamn låg vid nuvarande Almedalen",
+      "Nio portar vette mot Strandgatan",
+      "Idag färjehamn mot Nynäshamn och Oskarshamn",
+      "Ringmuren och domkyrkan syns från sjösidan"
+    ],
+    "sources": ["https://sv.wikipedia.org/wiki/Almedalen", "https://sv.wikipedia.org/wiki/Kruttornet", "https://sv.wikipedia.org/wiki/Visby"]
+  }
+]

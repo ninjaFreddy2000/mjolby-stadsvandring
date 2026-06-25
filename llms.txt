@@ -1,12 +1,12 @@
 # Stadsvandring.io
 
-> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 162 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
+> Guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik (Östergötland, Sverige). En webbapp (PWA) med karta, vandringsturer, stämplar, quiz och en kunskapsdatabas över 362 sevärdheter, byggnader, personer och historiska händelser. Innehållet är på svenska.
 
 ## Om
 - Varumärke: Stadsvandring.io
-- Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång (Östergötland, Sverige)
+- Plats: Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik (Östergötland, Sverige)
 - Webbplats: https://stadsvandring.io
-- Innehåll: 162 kartlagda platser med beskrivning, epok, snabbfakta och källor.
+- Innehåll: 362 kartlagda platser med beskrivning, epok, snabbfakta och källor.
 
 ## Vandringsturer
 - [Centrala vandringen](https://stadsvandring.io/tur/central): Från stationen genom kvarnbyns hjärta — ca 2 km. 9 stopp.
@@ -97,11 +97,11 @@
 - [Gusums bruk (Valdemarsvik)](https://stadsvandring.io/p/valdemarsvik-gusums-bruk): Bevarade trähus vid Gusumån minner om ett bruk känt för mässing, knappnålar och häktor.
 - [Högmåla knapp, Norra Vi (Ydre)](https://stadsvandring.io/p/ydre-hogmala-knapp): Utsiktsknapp över Norra Vi och Sommen — här tändes förr vårdkasar.
 - [Svensbo lövskog, Torpön (Ydre)](https://stadsvandring.io/p/ydre-svensbo-lovskog): Gammal lövskog på Torpön i sjön Sommen — en av bygdens finaste höstpromenader.
-- [Boxholm (Boxholm)](https://stadsvandring.io/p/boxholm-orten): Östgötsk bruksort vid Svartån, mellan slätten och sjön Sommens vikar.
-- [Boxholms bruk & bruksmuseum (Boxholm)](https://stadsvandring.io/p/boxholm-bruk): Järnbruket som gav orten dess namn och liv — idag med ett eget bruksmuseum.
+- [Boxholm (Boxholm)](https://stadsvandring.io/p/boxholm-orten): Östgötsk bruksort vid Svartån där det fria samhället växte fram i kamp mot järnbrukets järnhand.
+- [Boxholms bruk & bruksmuseum (Gropa kvarn) (Boxholm)](https://stadsvandring.io/p/boxholm-bruk): Vagga för svensk järnvägselektrifiering — bruksmuseet i den gamla kvarnen från 1777.
 - [Sjön Sommen (Boxholm)](https://stadsvandring.io/p/boxholm-sommen): En av Sveriges renaste och mest förgrenade sjöar — en labyrint av öar och vikar.
-- [Boxholms kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-kyrka): Ortens kyrka, en samlande punkt i bruksamhället.
-- [Åsbo kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-asbo-kyrka): Lantkyrka i Atterboms födelsebygd.
+- [Boxholms kyrka (Brukskyrkan) (Boxholm)](https://stadsvandring.io/p/boxholm-kyrka): Nygotisk brukskyrka byggd av 200 000 slaggstenar från valsverket — en av landets mest ovanliga.
+- [Åsbo kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-asbo-kyrka): Höjdkyrka över Åsboåns dal med 1200-talsdopfunt — bygden där skalden Atterbom verkade.
 - [Malexanders kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-malexanders-kyrka): Vit träkyrka vackert belägen vid sjön Sömmen i skogsbygden.
 - [Rinna kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-rinna-kyrka): Medeltida ursprung på den bördiga slätten i norra kommunen.
 - [Sjön Öjaren (Boxholm)](https://stadsvandring.io/p/boxholm-oejaren): Stilla skogssjö för bad och fiske öster om Boxholm.
@@ -175,9 +175,209 @@
 - [Stjärnviks herrgård (Finspång)](https://stadsvandring.io/p/finspang-stjarnvik): Vacker herrgård i bruksbygdens kulturlandskap.
 - [Sjön Tisnaren (Finspång)](https://stadsvandring.io/p/finspang-tisnaren): Klar, öländsk skogssjö i norr, på gränsen mot Södermanland.
 - [Hällestads kyrka (Finspång)](https://stadsvandring.io/p/finspang-hallestads-kyrka): Bergslagskyrka i den västra gruv- och skogsbygden.
+- [Högbo Brukshotell & Spa (Gävle)](https://stadsvandring.io/p/gavle-hogbo-brukshotell-spa): Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken.
+- [Himmelstalund (Norrköping)](https://stadsvandring.io/p/norrkoping-himmelstalund-2): Ett vidsträckt parkområde vid Motala ström med en herrgård från 1730-talet och spår av en gammal brunnsmiljö.
+- [Gotlands museum (Fornsalen) (Visby)](https://stadsvandring.io/p/visby-gotlands-museum-fornsalen): Gotlands stora kulturhistoriska museum med bildstenar och världens största vikingatida silverskatt.
+- [Knäppingsborg (Norrköping)](https://stadsvandring.io/p/norrkoping-knappingsborg): Från mytomspunnen klippa i Strömmen via medeltidsborg och snusfabrik till en av Norrköpings mest stämningsfulla stadsmiljöer.
+- [Norrköpings rådhus (Norrköping)](https://stadsvandring.io/p/norrkoping-norrkopings-radhus): Stadens pampiga rådhus från tidigt 1900-tal med ett 68 meter högt torn och klockspel, en av Norrköpings tydligaste märkesbyggnader.
+- [Rejmyre och Hävla (Finspång)](https://stadsvandring.io/p/finspang-rejmyre-och-havla): Bygden vid kommungränsen mot Norrköping, med Rejmyre som den största orten utanför Finspångs tätort.
+- [Finspångs häxprocesser (Finspång)](https://stadsvandring.io/p/finspang-finspangs-haxprocesser): 1617 ägde en av landets tidigaste och största häxprocesser rum i Finspång – åtta kvinnor avrättades i det som i dag kallas Trollkärringesko…
+- [Stora Torget (Visby)](https://stadsvandring.io/p/visby-stora-torget): Visbys livfulla huvudtorg, ramat av Sankta Karins kyrkoruin och fullt av uteserveringar.
+- [Bergsbron, Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-bergsbron-norrkoping): En av Norrköpings äldsta broövergångar över Strömmen, vars nuvarande monumentala betongbro stod färdig 1901.
+- [Sankt Hans och Sankt Pers kyrkoruiner (Visby)](https://stadsvandring.io/p/visby-sankt-hans-och-sankt-pers-kyrkoruiner): Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.
+- [Sonstorp (Finspång)](https://stadsvandring.io/p/finspang-sonstorp): Ett stationssamhälle tolv kilometer väster om Finspång, framvuxet i järnvägens spår under 1800-talet.
+- [Kapitelhusgården (Visby)](https://stadsvandring.io/p/visby-kapitelhusgarden): Medeltida gårdsmiljö nära domkyrkan, idag ett levande museum med hantverk och medeltidsliv.
+- [Sankt Lars kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankt-lars-kyrkoruin): Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.
+- [Färgargården, Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-fargargarden-norrkoping): Sveriges enda friluftsmuseum helt ägnat åt färgerihantverket, beläget vid Motala ström i utkanten av det gamla industrilandskapet.
+- [Drottens kyrkoruin (Visby)](https://stadsvandring.io/p/visby-drottens-kyrkoruin): Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.
+- [Söderport (Visby)](https://stadsvandring.io/p/visby-soderport): Ringmurens södra stadsport, infart söderifrån nära slagfältet Korsbetningen.
+- [Ekeby kyrka (Boxholm)](https://stadsvandring.io/p/boxholm-ekeby-kyrka): Medeltida patronatskyrka med 1100-talsdopfunt och den rörliga "Fattiggubben" från 1686.
+- [Hedvigs kyrka (Norrköping)](https://stadsvandring.io/p/norrkoping-hedvigs-kyrka): Norrköpings tyska kyrka från 1673, uppförd för stadens tysktalande befolkning och uppkallad efter drottning Hedvig Eleonora.
+- [Sankt Clemens kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankt-clemens-kyrkoruin): En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.
+- [Ljusfallshammar och Grytgöl (Finspång)](https://stadsvandring.io/p/finspang-ljusfallshammar-och-grytgol): Två bruksorter i Finspångs nordvästra hörn, vid gränsen mot Örebro län.
+- [Gamla kyrkogården (Gävle)](https://stadsvandring.io/p/gavle-gamla-kyrkogarden): En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar bland gravkor och kapell i skiftande stilar.
+- [DBW:s botaniska trädgård (Visby)](https://stadsvandring.io/p/visby-dbw-s-botaniska-tradgard): Frodig botanisk trädgård från 1855 med exotiska växter, mullbärsträd och Sankt Olofs kyrkoruin.
+- [Finspångs bruk och kanontillverkningen (Finspång)](https://stadsvandring.io/p/finspang-finspangs-bruk-och-kanontillverkningen): Vid forsen i Finspång lade Willem de Besche och Louis De Geer på 1600-talet grunden till ett av landets mest berömda styckebruk – och till…
+- [Öringe hällkista (Boxholm)](https://stadsvandring.io/p/boxholm-oringe-hallkista): En stenåldersgrav från omkring 2000 f.Kr. på en höjd i Åsbo, ett av kommunens äldsta minnesmärken över forntida människor.
+- [Boxholms säteri (Boxholm)](https://stadsvandring.io/p/boxholm-boxholms-sateri): Sätesgården som gav orten dess namn — anlagd av Gustav Vasas svåger Arvid Stenbock.
+- [Hotell Boulogne (Gävle)](https://stadsvandring.io/p/gavle-hotell-boulogne): Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen.
+- [Visby ringmur (Visby)](https://stadsvandring.io/p/visby-visby-ringmur): Nordeuropas bäst bevarade medeltida stadsmur, cirka 3,4 km lång med ett trettiotal bevarade torn.
+- [Hedenstugan Bed & Breakfast Hotell (Gävle)](https://stadsvandring.io/p/gavle-hedenstugan-bed-breakfast-hotell): Ett charmigt lanthotell med bastu, badtunna och lokal mat.
+- [Almedalen (Visby)](https://stadsvandring.io/p/visby-almedalen): Park på den medeltida hamnens plats, idag mest känd för den politiska Almedalsveckan.
+- [Norderport (Visby)](https://stadsvandring.io/p/visby-norderport): En av ringmurens äldsta stadsportar, daterad till omkring 1289, infart till staden norrifrån.
+- [Häfla hammarsmedja (Finspång)](https://stadsvandring.io/p/finspang-hafla-hammarsmedja): Ett av Sveriges bäst bevarade järnbruk i Hällestads Bergslag, där allt lämnades orört den dag smedjan tystnade 1924.
+- [Färnebofjärdens Nationalpark (Gävle)](https://stadsvandring.io/p/gavle-farnebofjardens-nationalpark): En artrik nationalpark där norrländsk barrskog möter sydliga lövskogar.
+- [Louis De Geer konsert & kongress (Norrköping)](https://stadsvandring.io/p/norrkoping-louis-de-geer-konsert-kongress): Ett pappersbruk vid Strömmen som blev konserthus och hemmascen för Norrköpings Symfoniorkester.
+- [Strömdalens värdshus (Gävle)](https://stadsvandring.io/p/gavle-stromdalens-vardshus): En försvunnen nöjesplats vid Gavleån där värdshus, folkpark och arbetarrörelsens talare avlöste varandra under sjuttio år.
+- [Hällristningar i Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-hallristningar-i-norrkoping): Ingen annan stad i världen har så många hällristningar inom sina gränser – över 7000 forntida bilder i berget kring Motala ström.
+- [Hällestad och Borggård (Finspång)](https://stadsvandring.io/p/finspang-hallestad-och-borggard): Bygden drygt en mil väster om Finspång, sammansatt av Hällestad kyrkby, stationssamhället och Borggård – i hjärtat av Hällestads Bergslag.
+- [Finspångs Folkets Park (Finspång)](https://stadsvandring.io/p/finspang-finspangs-folkets-park): Nöjesparken där finspångsborna roade sig i sextio år – och där Frank Sinatra oväntat klev upp på scenen en majkväll 1953.
+- [Packhusplan (Visby)](https://stadsvandring.io/p/visby-packhusplan): Öppen plats vid hamnsidan av innerstaden, en gång lastplats för hansatidens varor.
+- [Kåkenhus, Campus Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-kakenhus-campus-norrkoping): En gammal textilfabrik vid Strömmen som idag är symbolbyggnad för Linköpings universitets Campus Norrköping.
+- [Burmeisterska huset (Visby)](https://stadsvandring.io/p/visby-burmeisterska-huset): Praktfull köpmansgård vid Strandgatan från 1650-talet med rikt målade väggar och tak.
+- [Sankta Maria domkyrka (Visby)](https://stadsvandring.io/p/visby-sankta-maria-domkyrka): Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.
+- [Dalmanstornet (Visby)](https://stadsvandring.io/p/visby-dalmanstornet): Ett av de högsta tornen i ringmurens landparti, ett välbevarat marktorn nära Söderport.
+- [Strålsnäs järnvägsstation (Boxholm)](https://stadsvandring.io/p/boxholm-stralsnas-jarnvagsstation): Stationssamhälle som kung Oscar II invigde 1874 — med bank, brandkår och vapenfabrik.
+- [Kärleksporten (Visby)](https://stadsvandring.io/p/visby-karleksporten): Liten romantisk port i ringmuren nära strandsidan och DBW:s botaniska trädgård.
+- [Boulognerskogen (Gävle)](https://stadsvandring.io/p/gavle-boulognerskogen): Gävles folkkära strövpark mellan Gavleån och Gamla kyrkogården, där idrott, musik och kaféliv satt sin prägel sedan 1800-talet.
+- [Tyska torget (Norrköping)](https://stadsvandring.io/p/norrkoping-tyska-torget): Hertig Johans torg från 1600-talet som blev Norrköpings politiska och ekonomiska hjärta, omgivet av stadens viktigaste byggnader.
+- [Visby hamn (Visby)](https://stadsvandring.io/p/visby-visby-hamn): Stadens livsnerv mot havet – från medeltida handelshamn vid Almedalen till dagens färjehamn.
+- [Sankta Karins kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankta-karins-kyrkoruin): Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.
+- [Sankt Nicolai kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankt-nicolai-kyrkoruin): Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.
+- [Medeltidens Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-medeltidens-norrkoping): Av medeltidsstaden syns nästan ingenting ovan jord – men kyrkor, borg, rådhus och kvarnar går att spåra för den som vet var man ska leta.
+- [Helige Andes kyrkoruin (Visby)](https://stadsvandring.io/p/visby-helige-andes-kyrkoruin): Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.
+- [Industrilandskapet i Norrköping (Norrköping)](https://stadsvandring.io/p/norrkoping-industrilandskapet-i-norrkoping): Ett tätt kvarter av gamla fabriksbyggnader längs Motala ström, ett av Europas bäst bevarade minnesmärken över textilindustrins storhetstid.
+- [Jungfrutornet (Visby)](https://stadsvandring.io/p/visby-jungfrutornet): Torn i ringmuren förknippat med sägnen om jungfrun som förrådde Visby till Valdemar Atterdag och murades in levande.
+- [Hotell Alderholmen (Gävle)](https://stadsvandring.io/p/gavle-hotell-alderholmen): Åtta moderna rum i ett gammalt hamnmagasin vid Gavleån.
+- [Donners plats (Visby)](https://stadsvandring.io/p/visby-donners-plats): Torgplats nära hamnen uppkallad efter den inflytelserika köpmannasläkten Donner.
+- [Stadsträdgården (Gävle)](https://stadsvandring.io/p/gavle-stadstradgarden): Gävles äldsta anlagda park, format från 1840-talet med slingrande gångar, öppna ängar och de pittoreska Prostholmarna.
+- [Torpön naturreservat (Boxholm)](https://stadsvandring.io/p/boxholm-torpon-naturreservat): Öar och stränder i Sommen med fågelliv, restaurerad kolmila och kolarkoja som påminner om traktens forna kolningsarbete.
+- [Gästrikeleden (Gävle)](https://stadsvandring.io/p/gavle-gastrikeleden): En lång led med lägerplatser och vidsträckta utsiktsvyer.
+- [Kruttornet (Visby)](https://stadsvandring.io/p/visby-kruttornet): Ringmurens äldsta torn, byggt ca 1160 som fristående kastal vid hamnen – Nordens äldsta bevarade profanbyggnad.
+- [Gamla apoteket (Visby)](https://stadsvandring.io/p/visby-gamla-apoteket): Ett av Visbys mest påkostade medeltida stenhus, en gång stadens apotek.
+- [CentralTeatern, Folkets Hus (Gävle)](https://stadsvandring.io/p/gavle-centralteatern-folkets-hus): Ett centralt kulturhus i Gävle med anor i arbetarrörelsen, där teater, opera, film och fest samsats under samma tak.
+- [Stortorget (Gävle)](https://stadsvandring.io/p/gavle-stortorget): Gävles centrala torg, känt som platsen för den berömda Gävlebocken.
+- [Göransson Arena (Gävle)](https://stadsvandring.io/p/gavle-goransson-arena): En av landets största inomhusarenor, mitt i ett av Sveriges mest anrika idrottsområden.
+- [Strömvallen (Gävle)](https://stadsvandring.io/p/gavle-stromvallen): Gävles klassiska idrottsarena från 1923, ritad i 1920-talsklassicism och en gång löparlegenden Gunder Häggs hemmaplan.
+- [Sandviks Kvarn (Borgholm)](https://stadsvandring.io/p/borgholm-sandviks-kvarn): En av världens största väderkvarnar, en åtta våningar hög holländare som flyttades till Sandvik och återuppfördes på en grund av öländsk ka…
+- [Storstrand, Piteå (Piteå)](https://stadsvandring.io/p/pitea-storstrand-pitea): En stilla plats vid Piteälven några kilometer från centrum, utgångspunkt för vandring och friluftsliv längs älv och kust.
+- [Naturum Getterön (Varberg)](https://stadsvandring.io/p/varberg-naturum-getteron): Besökscentrum och porten till Hallands naturreservat, beläget vid ett av Nordeuropas bästa fågelområden.
+- [Falkenbergs rådhus (Falkenberg)](https://stadsvandring.io/p/falkenberg-falkenbergs-radhus): Stadens rådhus från 1826 vid Rådhustorget, som rymt skola, fängelse, brandredskap och tingssal.
+- [Törngrens krukmakeri (Falkenberg)](https://stadsvandring.io/p/falkenberg-torngrens-krukmakeri): Sveriges äldsta krukmakeri, grundat 1789 och drivet av samma familj i sju generationer.
+- [Påskbergsskogen, Varberg (Varberg)](https://stadsvandring.io/p/varberg-paskbergsskogen-varberg): Planterad rekreationsskog i sydöstra Varberg, anlagd på 1870-talet på en tidigare ljunghed.
+- [Arvidsvik, Koön (Marstrand)](https://stadsvandring.io/p/marstrand-arvidsvik-koon): Badvik på Koön mitt emot Marstrandsön, en av platserna där Marstrands badortsliv en gång tog sin början.
+- [Båtellet, Marstrand (Marstrand)](https://stadsvandring.io/p/marstrand-batellet-marstrand): Marstrands gamla varmbadhus från 1858, den äldsta bevarade byggnaden från badortsepoken.
+- [Stadsberget, Piteå (Piteå)](https://stadsvandring.io/p/pitea-stadsberget-pitea): Ett uppmärksammat parkeringshus i trä från 2015 som blivit stadens mötesplats och utsiktspunkt med vy över Piteå och skärgården.
+- [Marstrands hamn (Marstrand)](https://stadsvandring.io/p/marstrand-marstrands-hamn): Djup och skyddad naturhamn som präglat Marstrand sedan medeltiden, idag en av Sveriges mest stämningsfulla gästhamnar och seglingens centru…
+- [Wämöparken (Karlskrona)](https://stadsvandring.io/p/karlskrona-wamoparken): Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade gamla blekingegårdar.
+- [Övraby kyrkoruin, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-ovraby-kyrkoruin-halmstad): Ruinerna efter kyrkan i det medeltida Övraby, platsen för det allra äldsta Halmstad innan staden flyttades på 1300-talet.
+- [Hållö kapell (Smögen)](https://stadsvandring.io/p/smogen-hallo-kapell): Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet.
+- [Långe Erik (Borgholm)](https://stadsvandring.io/p/borgholm-lange-erik): Ölands norra fyr från 1845, en 32 meter hög byggnadsminnesmärkt fyr på en liten ö vid öns nordspets.
+- [Neptuni åkrar (Borgholm)](https://stadsvandring.io/p/borgholm-neptuni-akrar): Ett vidsträckt klapperstensfält norr om Byxelkrok som lyser blått av blåeld om sommaren, med vikingatida gravar och utsikt mot Blå Jungfrun.
+- [Badplats - Långö (Karlskrona)](https://stadsvandring.io/p/karlskrona-badplats-lango): En populär badplats med två vikar, gräsytor och volleybollplan.
+- [Gamla rådhuset, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-gamla-radhuset-vastervik): Ståtligt rådhus från 1790-talet som fortfarande sätter sin prägel på Stora torget.
+- [Böle, Piteå kommun (Piteå)](https://stadsvandring.io/p/pitea-bole-pitea-kommun): En urgammal by vid Piteälven i Infjärdsbygden, med spår av människor sedan bronsåldern och en knutpunkt för väg och järnväg.
+- [Societetshuset Marstrand (Marstrand)](https://stadsvandring.io/p/marstrand-societetshuset-marstrand): Praktfullt societetshus i nyrenässans av trä från 1886, en symbol för Marstrands glansdagar som mondän badort.
+- [Pitholmen (Piteå)](https://stadsvandring.io/p/pitea-pitholmen): En ö i Piteå skärgård strax utanför centrum, en gång den givna vägen in till staden via det smala sundet.
+- [Vinbergs kyrka (Falkenberg)](https://stadsvandring.io/p/falkenberg-vinbergs-kyrka): Nygotisk granitkyrka från 1899 vid en gammal sockenby där författaren Olof von Dalin föddes.
+- [Björkholmen, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-bjorkholmen-karlskrona): Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans spillvirke.
+- [Hovenäset (Smögen)](https://stadsvandring.io/p/smogen-hovenaset): Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet.
+- [Paradisparken, Marstrand (Marstrand)](https://stadsvandring.io/p/marstrand-paradisparken-marstrand): Romantisk park framför Grand Hotel med gamla träd och musikpaviljong, anlagd på mark som en gång var öppen exercisplats.
+- [Tylösand, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-tylosand-halmstad): Halmstads berömda sandstrand och badort, som gick från svårtillgänglig kust för fiskare och smugglare till internationell semesterort.
+- [Stortorget, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-stortorget-karlskrona): Ett av norra Europas största torg, hjärtat i den planerade örlogsstaden, inramat av kyrkor och offentliga byggnader.
+- [Pite Havsbad (Piteå)](https://stadsvandring.io/p/pitea-pite-havsbad): Norrbottens egen riviera vid Piteälvens utlopp, med en kilometerlång sandstrand och en av Sveriges största camping- och konferensanläggning…
+- [Tullbron (Falkenberg)](https://stadsvandring.io/p/falkenberg-tullbron): Stenvalvsbro i fem bågar över Ätran, byggd på 1750-talet och fortfarande i daglig trafik.
+- [Gravarne (Smögen)](https://stadsvandring.io/p/smogen-gravarne): Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske och stenexport.
+- [Sankt Nikolai kyrka, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-sankt-nikolai-kyrka-halmstad): Stadens medeltida kyrka, uppkallad efter sjöfararnas skyddshelgon, och den enda bevarade byggnaden från Halmstads medeltid.
+- [Subbe fyr (Varberg)](https://stadsvandring.io/p/varberg-subbe-fyr): Liten infartsfyr på udden Subbe norr om Apelviken med fin utsikt över Kattegatt.
+- [Västerviks Museum (Västervik)](https://stadsvandring.io/p/vastervik-vasterviks-museum): Stadens kulturhistoriska museum på Kulbacken, med tonvikt på marinhistoria och fynd från regalskeppet Mars.
+- [Marstrands kyrka (Marstrand)](https://stadsvandring.io/p/marstrand-marstrands-kyrka): Medeltida kyrka från sent 1200-tal, ursprungligen knuten till ett franciskanerkonvent och helgad åt jungfru Maria.
+- [Tjuvahålan, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-tjuvahalan-halmstad): Dold havsvik och liten sandstrand vid Tylösand som en gång var landstigningsplats för smugglare och sjörövare.
+- [Sollidens slott (Borgholm)](https://stadsvandring.io/p/borgholm-sollidens-slott): Kungafamiljens sommarresidens på Öland, en italienskinspirerad villa från 1906 omgiven av berömda trädgårdar.
+- [Bastion Aurora, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-bastion-aurora-karlskrona): Bevarad barockbastion från tidigt 1700-tal, en av få förverkligade delar av stadens planerade befästningsring.
+- [Fredrikskyrkan, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-fredrikskyrkan-karlskrona): Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.
+- [Varbergs kallbadhus (Varberg)](https://stadsvandring.io/p/varberg-varbergs-kallbadhus): Karakteristiskt badhus i orientaliserande träarkitektur med lökkupoler, en av Varbergs mest älskade symboler.
+- [Kleven, Smögen (Smögen)](https://stadsvandring.io/p/smogen-kleven-smogen): Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid det gamla sundet.
+- [Kungsholms fort (Karlskrona)](https://stadsvandring.io/p/karlskrona-kungsholms-fort): Sjöfästning vid inloppet till Karlskrona, i militärt bruk i över 300 år och alltjämt vaktande örlogsstaden.
+- [Stumholmen, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-stumholmen-karlskrona): Tidigare stängd militärö, idag en grön stadsdel med marinmuseum, badplats och välbevarad flottbebyggelse.
+- [Halmstads rådhus (Halmstad)](https://stadsvandring.io/p/halmstad-halmstads-radhus): Stadens rådhus från 1938 vid Stora torg, smyckat invändigt av Halmstadgruppen och kopierat ända bort till Norwich i England.
+- [Hallands kulturhistoriska museum (Varberg)](https://stadsvandring.io/p/varberg-hallands-kulturhistoriska-museum): Länets kulturhistoriska museum i Varbergs fästning, grundat 1916 och hem för Bockstensmannen.
+- [Borgholms slottsruin (Borgholm)](https://stadsvandring.io/p/borgholm-borgholms-slottsruin): Nordens kanske mäktigaste slottsruin reser sig på en klinta ovanför Borgholm och bär spår av åtta sekel av makt, krig och förfall.
+- [Doktorspromenaden (Falkenberg)](https://stadsvandring.io/p/falkenberg-doktorspromenaden): Cirka två kilometer lång strandstig längs Ätrans södra strand, anlagd 1862 av en egensinnig stadsläkare.
+- [Pater Noster, Hamneskär (Marstrand)](https://stadsvandring.io/p/marstrand-pater-noster-hamneskar): Resligt järntorn från 1868 på den karga klippön Hamneskär, byggt för att varna sjöfarare för de fruktade Pater Nosterskären.
+- [Skrea strand (Falkenberg)](https://stadsvandring.io/p/falkenberg-skrea-strand): Falkenbergs långa sandstrand med badhytter och brygga, som blev semesterort i samband med järnvägens ankomst.
+- [Båtsmansstugorna, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-batsmansstugorna-vastervik): En rad små röda 1700-talsstugor byggda åt båtsmännen i Tjusts båtsmanskompani.
+- [Smögens kyrka (Smögen)](https://stadsvandring.io/p/smogen-smogens-kyrka): Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt för havsklimatets slitage.
+- [Morups Tånge fyr (Falkenberg)](https://stadsvandring.io/p/falkenberg-morups-tange-fyr): Drygt 27 meter hög fyr från 1843 vid kusten söder om Glommen, omgiven av naturreservat.
+- [Varberg (Varberg)](https://stadsvandring.io/p/varberg-varberg): Varberg är en kurortstad på den halländska kusten som lockar med en alldeles särskild stämning – här finns plats för både stora upplevelser…
+- [Hertingforsen (Falkenberg)](https://stadsvandring.io/p/falkenberg-hertingforsen): Forssträcka i Ätran vid Herting där ett gammalt kraftverk rivits för att ge fri vandringsväg åt laxen.
+- [Sankta Gertruds kyrka, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-sankta-gertruds-kyrka-vastervik): Stadens medeltida kyrka, byggd på 1450-talet, som efter ett halvsekel som magasin återinvigdes 1933.
+- [Brunnsparken, Varberg (Varberg)](https://stadsvandring.io/p/varberg-brunnsparken-varberg): Grön park vid kyrkan med ursprung i Varbergs tidiga brunns- och kurorthistoria.
+- [Koön, Marstrand (Marstrand)](https://stadsvandring.io/p/marstrand-koon-marstrand): Grannön till Marstrandsön, dit fastlandets väg når och varifrån den lilla färjan tar besökaren över sundet.
+- [Stafsinge kyrka (Falkenberg)](https://stadsvandring.io/p/falkenberg-stafsinge-kyrka): Nyklassicistisk kyrka från 1865 i en bygd som var ett viktigt maktcentrum redan under medeltiden.
+- [Väjern (Smögen)](https://stadsvandring.io/p/smogen-vajern): Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark koppling till sillfisket.
+- [Rådhustorget, Piteå (Piteå)](https://stadsvandring.io/p/pitea-radhustorget-pitea): Ett av Sveriges enda bevarade torg från 1600-talet, format efter stadsplanen från 1667 och idag av riksintresse för kulturmiljövården.
+- [Apelviken, Varberg (Varberg)](https://stadsvandring.io/p/varberg-apelviken-varberg): Långgrund vik söder om Varbergs centrum, känd som en av Nordens mest populära surfplatser.
+- [Sankt Petri kyrka, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-sankt-petri-kyrka-vastervik): Nygotisk tegelkyrka från början av 1900-talet, mäktigt placerad på terrasser ovanför staden.
+- [Karlskrona rådhus (Karlskrona)](https://stadsvandring.io/p/karlskrona-karlskrona-radhus): Nyklassicistisk byggnad som ramar in Stortorget, idag säte för Blekinge tingsrätt.
+- [Spötorget, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-spotorget-vastervik): Centralt torg med rötter i stadens bryggeri- och handelshistoria, idag en mötesplats mitt i Västervik.
+- [Böda sand (Borgholm)](https://stadsvandring.io/p/borgholm-boda-sand): Ölands längsta sandstrand på öns nordöstra kust, omgiven av flygsandsdyner och uråldrig sandtallskog.
+- [Sandön, Smögen (Smögen)](https://stadsvandring.io/p/smogen-sandon-smogen): Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära isslipade hällar.
+- [Smögens lotsutkik (Smögen)](https://stadsvandring.io/p/smogen-smogens-lotsutkik): Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över hamninlopp och hav.
+- [Repslagarbanan, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-repslagarbanan-karlskrona): Sveriges längsta träbyggnad på örlogsvarvet, 300 meter lång, där flottans rep och tågvirke en gång slogs.
+- [Hållö fyr (Smögen)](https://stadsvandring.io/p/smogen-hallo-fyr): Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen.
+- [Öjeby kyrkstad (Piteå)](https://stadsvandring.io/p/pitea-ojeby-kyrkstad): En av landets största kyrkstäder med levande kyrkstugetradition, vars rötter går tillbaka till den medeltida marknadsplats som lade grunden…
+- [Societetsparken, Varberg (Varberg)](https://stadsvandring.io/p/varberg-societetsparken-varberg): Lummig kurortspark från sent 1800-tal med skuggande träd och slingrande gångar nära havet.
+- [Picassoparken, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-picassoparken-halmstad): Park vid Nissan med Pablo Picassos femton meter höga betongskulptur Kvinnohuvud, ett av få Picassoverk i offentlig miljö i Sverige.
+- [Horns kustväg (Borgholm)](https://stadsvandring.io/p/borgholm-horns-kustvag): En av Ölands vackraste vägsträckor genom naturreservatet Horns kungsgård, med klippkust, Hornsjön och rikt fågelliv.
+- [Strandverket, Marstrand (Marstrand)](https://stadsvandring.io/p/marstrand-strandverket-marstrand): Tidigare försvarsanläggning från 1850-talet vid södra hamninloppet, idag en konsthall för samtidskonst.
+- [Varbergs fästning (Varberg)](https://stadsvandring.io/p/varberg-varbergs-fastning): Mäktig befästning på berget Vardberget som gett både staden och fästningen dess namn, med rötter i slutet av 1200-talet.
+- [Trefaldighetskyrkan, Karlskrona (Karlskrona)](https://stadsvandring.io/p/karlskrona-trefaldighetskyrkan-karlskrona): Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.
+- [Sotekanalen (Smögen)](https://stadsvandring.io/p/smogen-sotekanalen): Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invigd 1935.
+- [Byrums raukar (Borgholm)](https://stadsvandring.io/p/borgholm-byrums-raukar): Ett av Ölands mest fotograferade naturminnen, ett hundratal kalkstenspelare formade av havet längs nordvästkusten.
+- [Gamla stan, Falkenberg (Falkenberg)](https://stadsvandring.io/p/falkenberg-gamla-stan-falkenberg): Falkenbergs äldsta stadsdel med kullerstensgränder, trähus och tolv kulturhistoriska skyltar att följa.
+- [Knisa mosse (Borgholm)](https://stadsvandring.io/p/borgholm-knisa-mosse): En av få odikade våtmarker på Öland och öns första fågelskyddsområde, med fågeltorn och en vandringsled runt myren.
+- [Sankt Laurentii kyrka (Falkenberg)](https://stadsvandring.io/p/falkenberg-sankt-laurentii-kyrka): Falkenbergs äldsta byggnad, en medeltidskyrka från omkring år 1300, uppkallad efter den romerske diakonen Laurentius.
+- [Prins Bertils stig, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-prins-bertils-stig-halmstad): Arton kilometer lång kustnära vandringsled från Halmstads slott via Tylösand till Möllegård, uppkallad efter prins Bertil.
+- [Societetshuset, Varberg (Varberg)](https://stadsvandring.io/p/varberg-societetshuset-varberg): Praktfullt societetshus från 1886 i orientaliserande träarkitektur, ett av västkustens bäst bevarade.
+- [Stegeholms slottsruin (Västervik)](https://stadsvandring.io/p/vastervik-stegeholms-slottsruin): Medeltida borgruin på Slottsholmen som en gång vaktade infarten till Västervik och idag är festivalscen mitt i staden.
+- [Smögenbryggan (Smögen)](https://stadsvandring.io/p/smogen-smogenbryggan): Den långa träbryggan längs den gamla fiskehamnens norra sida, sommartid en av Bohusläns mest besökta sevärdheter.
+- [Amiralitetskyrkan Ulrica Pia (Karlskrona)](https://stadsvandring.io/p/karlskrona-amiralitetskyrkan-ulrica-pia): En mäktig träkyrka i Karlskrona, invigd 1685 för amiralitetsförsamlingen.
+- [Borgholms kyrka (Borgholm)](https://stadsvandring.io/p/borgholm-borgholms-kyrka): Stadens kyrka i natursten från 1879, byggd i en egen medeltidsinspirerad stil med torn placerat mitt på byggnaden.
+- [Rian designmuseum (Falkenberg)](https://stadsvandring.io/p/falkenberg-rian-designmuseum): Falkenbergs designmuseum, inrymt i en spannmålsria från 1865 nedströms Tullbron.
+- [Träslövsläge (Varberg)](https://stadsvandring.io/p/varberg-traslovslage): Anrikt fiskeläge söder om Varberg, först omnämnt på 1500-talet och i dag sammanvuxet med staden.
+- [Halmstads slott (Halmstad)](https://stadsvandring.io/p/halmstad-halmstads-slott): Renässansslott vid Nissans strand som restes åt den danske kungen Kristian IV under tidigt 1600-tal, när Halland ännu var danskt.
+- [Köpings kyrka (Borgholm)](https://stadsvandring.io/p/borgholm-kopings-kyrka): En medeltida kyrka i Köpingsvik på platsen för Ölands gamla handelscentrum, med rötter i 1100-talet och tidiga kristna gravmonument.
+- [Hammarsbadet, Gamleby (Västervik)](https://stadsvandring.io/p/vastervik-hammarsbadet-gamleby): Välutrustad bad- och campingplats vid Gamlebyviken i Västerviks kommun.
+- [Visans hus, Västervik (Västervik)](https://stadsvandring.io/p/vastervik-visans-hus-vastervik): Plats knuten till Visfestivalens arv och Västerviks roll som vissångens stad sedan 1966.
+- [Varbergs kyrka (Varberg)](https://stadsvandring.io/p/varberg-varbergs-kyrka): Stadens största och äldsta kyrka, uppförd i gustaviansk stil 1769–1772 efter en förödande stadsbrand.
+- [Trollskogen (Borgholm)](https://stadsvandring.io/p/borgholm-trollskogen): Ett naturreservat på Ölands nordöstra udde med knotiga, vindpinade tallar, gamla ekar och ett fartygsvrak vid stranden.
+- [Norre Port, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-norre-port-halmstad): Sveriges äldsta bevarade stadsport, färdig 1601, och den enda kvarvarande av Halmstads fyra ursprungliga portar.
+- [Hallandsgården, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-hallandsgarden-halmstad): Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild från Skansen.
+- [Bohus-Malmön (Smögen)](https://stadsvandring.io/p/smogen-bohus-malmon): Granitö i Sotenäs där Sveriges första granitstenbrott startade 1842 och formade hela samhället.
+- [Piteå stadskyrka (Piteå)](https://stadsvandring.io/p/pitea-pitea-stadskyrka): Den enda byggnaden som finns kvar från den nya stadens äldsta tid, räddad undan branden 1721 tack vare sitt läge på fastlandet.
+- [Hasselö, Tjusts skärgård (Västervik)](https://stadsvandring.io/p/vastervik-hasselo-tjusts-skargard): Anrik skärgårdsö i Tjusts skärgård med gammalt fiskeläge och levande sommarliv, en av Västerviks mest kända öar.
+- [Furunäset, Piteå (Piteå)](https://stadsvandring.io/p/pitea-furunaset-pitea): Övre Norrlands stora hospital från 1893, ritat av Axel Kumlien, idag hotell och konferens men präglat av en tung mentalvårdshistoria.
+- [Kungshamn (Smögen)](https://stadsvandring.io/p/smogen-kungshamn): Sotenäs kommuns centralort, vuxen ur de gamla fiskelägena Gravarne, Bäckevik och Fisketången och känd för sin fiskindustri.
+- [Norre Katts park, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-norre-katts-park-halmstad): Halmstads gröna pärla vid Nissan, anlagd på gamla befästningsmarker och nöjesplats för stadsborna i snart 200 år.
+- [Drottningskärs kastell (Karlskrona)](https://stadsvandring.io/p/karlskrona-drottningskars-kastell): Välbevarad kastellfästning vid Aspö, räknad som ett av den svenska fortifikationskonstens främsta verk.
+- [Getteröns naturreservat (Varberg)](https://stadsvandring.io/p/varberg-getterons-naturreservat): Ett av norra Europas främsta fågelområden alldeles utanför Varbergs centrum, skyddat som Natura 2000.
+- [Bohus fästning (Marstrand)](https://stadsvandring.io/p/marstrand-bohus-fastning): Medeltida gränsfästning från 1308 på en klippa i Nordre älv vid Kungälv, som gett namn åt landskapet Bohuslän och aldrig erövrats i strid.
+- [Marstrandsön (Marstrand)](https://stadsvandring.io/p/marstrand-marstrandson): Den historiska huvudön med drygt tusenårig historia, från norsk sillstad och frihamn till mondän badort.
+- [Norrfjärdens kyrka (Piteå)](https://stadsvandring.io/p/pitea-norrfjardens-kyrka): Församlingskyrkan i Norrfjärden, vars första träkyrka av stadionarkitekten Torben Grut brann efter ett blixtnedslag och ersattes 1967.
+- [Rosenbom (Karlskrona)](https://stadsvandring.io/p/karlskrona-rosenbom): En fattigbössa formad som en båtsman, utanför Amiralitetskyrkan.
+- [Mjellby konstmuseum, Halmstad (Halmstad)](https://stadsvandring.io/p/halmstad-mjellby-konstmuseum-halmstad): Halmstadgruppens museum strax utanför staden, Nordens museum för surrealism, med rötter i en privat konstgård från 1980.
+- [Halltorps hage (Borgholm)](https://stadsvandring.io/p/borgholm-halltorps-hage): En av Nordeuropas mest värdefulla lövskogar med jätteekar, söder om Borgholm, hem för några av Sveriges största skalbaggar.
+- [Carlstens fästning (Marstrand)](https://stadsvandring.io/p/marstrand-carlstens-fastning): Mäktig stenfästning som kröner Marstrandsöns högsta klippa, byggd för att försvara Bohuslän efter att landskapet blivit svenskt 1658.
+- [Boxholms station (Boxholm)](https://stadsvandring.io/p/boxholm-station): Startpunkten för den moderna orten — här flyttade tyngdpunkten bort från det gamla brukstorget.
+- [Förstaden – Storgatan & Nygatan (Boxholm)](https://stadsvandring.io/p/boxholm-forstaden-storgatan): Det fria samhällets kvarter som utmanade brukets monopol — med "Fahlénakröken" och jugendvillor.
+- [Folkets hus (Minerva) (Boxholm)](https://stadsvandring.io/p/boxholm-folkets-hus): Folkrörelsernas trotsiga samlingslokal — med en monumental väggmålning av Vera Bugatti (2024).
+- [Bredgårdsbron (Boxholm)](https://stadsvandring.io/p/boxholm-bredgardsbron): Stenvalvsbron över Svartån från 1789 — vid den gamla mejeri- och bryggerimiljön.
+- [Arbetarkasernerna & Vattentornet (Boxholm)](https://stadsvandring.io/p/boxholm-arbetarkaserner): De hårda levnadsvillkoren bakom järnet — trångbodda kaserner, slaggstenstorn och varmbadhus.
+- [Lönnabanan – Sveriges första elbana (Boxholm)](https://stadsvandring.io/p/boxholm-lonnabanan): Här rullade Sveriges allra första elektrifierade järnväg 1890 — och banade väg för hela landets eltåg.
+- [Karlsberg (Disponentbostaden) (Boxholm)](https://stadsvandring.io/p/boxholm-karlsberg): Disponentbostaden med den ståtliga allén som rakt vittnade om brukspatronernas makt.
+- [Liljeholmens säteri (Boxholm)](https://stadsvandring.io/p/boxholm-liljeholmens-sateri): Statligt byggnadsminne vid Sommens strand, med sällsynt välbevarade barockmålningar.
+- [Sara Netz – kvinnan i skogen (Boxholm)](https://stadsvandring.io/p/boxholm-sara-netz): Det gripande ödet om soldatdottern som levde som eremit i Boxholmsskogen, helt utanför samhällets skyddsnät.
+- [Silverhättan (Visby)](https://stadsvandring.io/p/visby-silverhattan): Ringmurens yngsta torn, uppfört under Tyska ordens tid kring sekelskiftet 1400.
+- [Sankt Olofs kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankt-olofs-kyrkoruin): Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.
+- [Slaget vid Visby 1361 (Visby)](https://stadsvandring.io/p/visby-slaget-vid-visby-1361): Det blodiga slaget då Valdemar Atterdags här slog Gotlands bönder utanför muren – ca 1800 stupade.
+- [Korsbetningen och massgravarna (Visby)](https://stadsvandring.io/p/visby-korsbetningen-massgravar): Slagfältet utanför Söderport där massgravarna från 1361 grävdes ut och chockade hela forskarvärlden.
+- [Valdemar Atterdag (Visby)](https://stadsvandring.io/p/visby-valdemar-atterdag): Dansk kung som erövrade Gotland och brandskattade Visby 1361 – en av stadens mest ödesdigra gestalter.
+- [Legenden om Unghanses dotter (Visby)](https://stadsvandring.io/p/visby-unghanses-dotter-legenden): Gotländsk folksägen om jungfrun som förrådde Visby av kärlek och murades in levande i ringmuren.
+- [Världsarvet Hansestaden Visby (Visby)](https://stadsvandring.io/p/visby-hansestaden-varldsarv): Visby innerstad togs upp på Unescos världsarvslista 1995 som ett enastående exempel på en muromgärdad hansestad.
+- [Rosornas och ruinernas stad (Visby)](https://stadsvandring.io/p/visby-rosornas-och-ruinernas-stad): Visbys älskade epitet, som fångar mötet mellan medeltida kyrkoruiner och den frodiga blomsterstaden.
+- [Visby under hansatiden (Visby)](https://stadsvandring.io/p/visby-hansatiden): Under medeltiden var Visby ett av Östersjöns rikaste handelsnav och ett centrum i Hansan.
+- [Spillingsskatten (Visby)](https://stadsvandring.io/p/visby-spillingsskatten): Världens största vikingatida silverskatt, funnen på Gotland och utställd på Gotlands museum.
+- [Strandgatan och de medeltida packhusen (Visby)](https://stadsvandring.io/p/visby-strandgatan-packhusen): Hansatidens viktigaste handelsgata, kantad av höga medeltida packhus och köpmansgårdar.
+- [Medeltidsveckan (Visby)](https://stadsvandring.io/p/visby-medeltidsveckan): Visbys stora årliga medeltidsfestival som fyller den gamla staden med riddare, marknad och historia.
+- [Christopher Polhem (Visby)](https://stadsvandring.io/p/visby-christopher-polhem): Sveriges store uppfinnare och 'mekanikens fader', född på Gotland, hyllad med en byst vid Drotten.
+- [Pehr Arvid Säve (Visby)](https://stadsvandring.io/p/visby-pehr-arvid-save): Gotländsk lärare, folkminnessamlare och Gotlands museums grundare och förste intendent.
+- [Bengt Thordeman (Visby)](https://stadsvandring.io/p/visby-bengt-thordeman): Arkeologen som ledde de epokgörande utgrävningarna av massgravarna vid Korsbetningen.
+- [Sankt Görans kyrkoruin (Visby)](https://stadsvandring.io/p/visby-sankt-gorans-kyrkoruin): Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.
+- [Solberga klosterruin (Visby)](https://stadsvandring.io/p/visby-solberga-klosterruin): Cisterciensnunnornas kloster utanför Söderport – det var på dess mark slaget 1361 stod.
 
 ## Index
 - [Om & vanliga frågor](https://stadsvandring.io/om): Vad Stadsvandring.io är, vilka orter som täcks och svar på vanliga frågor.
 - [Alla platser](https://stadsvandring.io/platser): Komplett lista över sevärdheter och platser.
-- [English overview](https://stadsvandring.io/en): English-language overview of all 162 places and the walking tours.
+- [English overview](https://stadsvandring.io/en): English-language overview of all 362 places and the walking tours.
 - [Sitemap](https://stadsvandring.io/sitemap.xml)

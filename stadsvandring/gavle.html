@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Gävle — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Gävle till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar PDF-gu…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/gavle">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Gävle — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Gävle till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar PDF-gu…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/gavle">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Gävle — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Gävle till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar PDF-gu…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"gavle","sourceSlug":"stadsvandring/gavle","centroid":{"lat":60.646136214285704,"lng":17.071861785714283},"stops":[{"name":"Högbo Brukshotell & Spa","lat":60.672569,"lng":16.813331},{"name":"Gamla kyrkogården","lat":60.674681,"lng":17.119328},{"name":"Hotell Boulogne","lat":60.674337,"lng":17.133647}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Gävle","description":"Upptäck Gävle till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/gavle","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Högbo Brukshotell & Spa","description":"Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken.","url":"https://stadsvandring.io/p/gavle-hogbo-brukshotell-spa","geo":{"@type":"GeoCoordinates","latitude":60.672569,"longitude":16.813331}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Gamla kyrkogården","description":"En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar bland gravkor och kapell i skiftande stilar.","url":"https://stadsvandring.io/p/gavle-gamla-kyrkogarden","geo":{"@type":"GeoCoordinates","latitude":60.674681,"longitude":17.119328}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Hotell Boulogne","description":"Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen.","url":"https://stadsvandring.io/p/gavle-hotell-boulogne","geo":{"@type":"GeoCoordinates","latitude":60.674337,"longitude":17.133647}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Hedenstugan Bed & Breakfast Hotell","description":"Ett charmigt lanthotell med bastu, badtunna och lokal mat.","url":"https://stadsvandring.io/p/gavle-hedenstugan-bed-breakfast-hotell","geo":{"@type":"GeoCoordinates","latitude":60.940273,"longitude":17.04812}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Färnebofjärdens Nationalpark","description":"En artrik nationalpark där norrländsk barrskog möter sydliga lövskogar.","url":"https://stadsvandring.io/p/gavle-farnebofjardens-nationalpark","geo":{"@type":"GeoCoordinates","latitude":60.286972,"longitude":16.882002}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Strömdalens värdshus","description":"En försvunnen nöjesplats vid Gavleån där värdshus, folkpark och arbetarrörelsens talare avlöste varandra under sjuttio år.","url":"https://stadsvandring.io/p/gavle-stromdalens-vardshus","geo":{"@type":"GeoCoordinates","latitude":60.673746,"longitude":17.126849}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Boulognerskogen","description":"Gävles folkkära strövpark mellan Gavleån och Gamla kyrkogården, där idrott, musik och kaféliv satt sin prägel sedan 1800-talet.","url":"https://stadsvandring.io/p/gavle-boulognerskogen","geo":{"@type":"GeoCoordinates","latitude":60.672903,"longitude":17.120076}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Hotell Alderholmen","description":"Åtta moderna rum i ett gammalt hamnmagasin vid Gavleån.","url":"https://stadsvandring.io/p/gavle-hotell-alderholmen","geo":{"@type":"GeoCoordinates","latitude":60.676335,"longitude":17.155254}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Stadsträdgården","description":"Gävles äldsta anlagda park, format från 1840-talet med slingrande gångar, öppna ängar och de pittoreska Prostholmarna.","url":"https://stadsvandring.io/p/gavle-stadstradgarden","geo":{"@type":"GeoCoordinates","latitude":60.673922,"longitude":17.123981}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Gästrikeleden","description":"En lång led med lägerplatser och vidsträckta utsiktsvyer.","url":"https://stadsvandring.io/p/gavle-gastrikeleden","geo":{"@type":"GeoCoordinates","latitude":60.473206,"longitude":17.291012}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"CentralTeatern, Folkets Hus","description":"Ett centralt kulturhus i Gävle med anor i arbetarrörelsen, där teater, opera, film och fest samsats under samma tak.","url":"https://stadsvandring.io/p/gavle-centralteatern-folkets-hus","geo":{"@type":"GeoCoordinates","latitude":60.672484,"longitude":17.151703}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Stortorget","description":"Gävles centrala torg, känt som platsen för den berömda Gävlebocken.","url":"https://stadsvandring.io/p/gavle-stortorget","geo":{"@type":"GeoCoordinates","latitude":60.674595,"longitude":17.141916}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Göransson Arena","description":"En av landets största inomhusarenor, mitt i ett av Sveriges mest anrika idrottsområden.","url":"https://stadsvandring.io/p/gavle-goransson-arena","geo":{"@type":"GeoCoordinates","latitude":60.607504,"longitude":16.770399}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Strömvallen","description":"Gävles klassiska idrottsarena från 1923, ritad i 1920-talsklassicism och en gång löparlegenden Gunder Häggs hemmaplan.","url":"https://stadsvandring.io/p/gavle-stromvallen","geo":{"@type":"GeoCoordinates","latitude":60.67238,"longitude":17.128447}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Gävle gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 14 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Gävle?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 14 sevärdheter i Gävle — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Högbo Brukshotell & Spa?","acceptedAnswer":{"@type":"Answer","text":"Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken."}},{"@type":"Question","name":"Vad är Gamla kyrkogården?","acceptedAnswer":{"@type":"Answer","text":"En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar bland gravkor och kapell i skiftande stilar."}},{"@type":"Question","name":"Vad är Hotell Boulogne?","acceptedAnswer":{"@type":"Answer","text":"Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen."}},{"@type":"Question","name":"Vad är Hedenstugan Bed & Breakfast Hotell?","acceptedAnswer":{"@type":"Answer","text":"Ett charmigt lanthotell med bastu, badtunna och lokal mat."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Gävle","item":"https://stadsvandring.io/stadsvandring/gavle"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Gävle</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Gävle</span><span class="badge">14 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Gävle — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Gävle till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Gävle"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/gavle-hogbo-brukshotell-spa"><b>1. Högbo Brukshotell &amp; Spa</b><span>Sevärdhet · Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken.</span></a>
+<a class="tile" href="/p/gavle-gamla-kyrkogarden"><b>2. Gamla kyrkogården</b><span>Sevärdhet · En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar b…</span></a>
+<a class="tile" href="/p/gavle-hotell-boulogne"><b>3. Hotell Boulogne</b><span>Sevärdhet · Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen.</span></a>
+</div>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 14 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/gavle/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/gavle/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Gävle gratis?</summary><p>Ja. Karta, alla 14 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Gävle?</summary><p>Vandringen samlar 14 sevärdheter i Gävle — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Högbo Brukshotell &amp; Spa?</summary><p>Ett bruks- och spahotell mellan skog, sjö och åkermark norr om Sandviken.</p></details>
+<details class="faq"><summary>Vad är Gamla kyrkogården?</summary><p>En stilla begravningsplats från 1808 där Gävles inflytelserika familjer vilar bland gravkor och kapell i skiftande stilar.</p></details>
+<details class="faq"><summary>Vad är Hotell Boulogne?</summary><p>Ett charmigt och prisvärt hotell vid Gavleån och Boulognerskogen.</p></details>
+<details class="faq"><summary>Vad är Hedenstugan Bed &amp; Breakfast Hotell?</summary><p>Ett charmigt lanthotell med bastu, badtunna och lokal mat.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

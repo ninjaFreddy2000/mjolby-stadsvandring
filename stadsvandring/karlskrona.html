@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Karlskrona — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Karlskrona till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/karlskrona">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Karlskrona — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Karlskrona till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/karlskrona">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Karlskrona — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Karlskrona till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 14 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"karlskrona","sourceSlug":"stadsvandring/karlskrona","centroid":{"lat":56.15499435714286,"lng":15.587511142857144},"stops":[{"name":"Wämöparken","lat":56.181971,"lng":15.614127},{"name":"Badplats - Långö","lat":56.182002,"lng":15.583077},{"name":"Björkholmen, Karlskrona","lat":56.161991,"lng":15.572501}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Karlskrona","description":"Upptäck Karlskrona till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/karlskrona","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Wämöparken","description":"Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade gamla blekingegårdar.","url":"https://stadsvandring.io/p/karlskrona-wamoparken","geo":{"@type":"GeoCoordinates","latitude":56.181971,"longitude":15.614127}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Badplats - Långö","description":"En populär badplats med två vikar, gräsytor och volleybollplan.","url":"https://stadsvandring.io/p/karlskrona-badplats-lango","geo":{"@type":"GeoCoordinates","latitude":56.182002,"longitude":15.583077}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Björkholmen, Karlskrona","description":"Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans spillvirke.","url":"https://stadsvandring.io/p/karlskrona-bjorkholmen-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.161991,"longitude":15.572501}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Stortorget, Karlskrona","description":"Ett av norra Europas största torg, hjärtat i den planerade örlogsstaden, inramat av kyrkor och offentliga byggnader.","url":"https://stadsvandring.io/p/karlskrona-stortorget-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.161128,"longitude":15.586607}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Bastion Aurora, Karlskrona","description":"Bevarad barockbastion från tidigt 1700-tal, en av få förverkligade delar av stadens planerade befästningsring.","url":"https://stadsvandring.io/p/karlskrona-bastion-aurora-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.157411,"longitude":15.593377}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Fredrikskyrkan, Karlskrona","description":"Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.","url":"https://stadsvandring.io/p/karlskrona-fredrikskyrkan-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.161123,"longitude":15.588153}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Kungsholms fort","description":"Sjöfästning vid inloppet till Karlskrona, i militärt bruk i över 300 år och alltjämt vaktande örlogsstaden.","url":"https://stadsvandring.io/p/karlskrona-kungsholms-fort","geo":{"@type":"GeoCoordinates","latitude":56.106959,"longitude":15.587848}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Stumholmen, Karlskrona","description":"Tidigare stängd militärö, idag en grön stadsdel med marinmuseum, badplats och välbevarad flottbebyggelse.","url":"https://stadsvandring.io/p/karlskrona-stumholmen-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.159921,"longitude":15.597688}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Karlskrona rådhus","description":"Nyklassicistisk byggnad som ramar in Stortorget, idag säte för Blekinge tingsrätt.","url":"https://stadsvandring.io/p/karlskrona-karlskrona-radhus","geo":{"@type":"GeoCoordinates","latitude":56.161242,"longitude":15.584782}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Repslagarbanan, Karlskrona","description":"Sveriges längsta träbyggnad på örlogsvarvet, 300 meter lång, där flottans rep och tågvirke en gång slogs.","url":"https://stadsvandring.io/p/karlskrona-repslagarbanan-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.15146,"longitude":15.584776}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Trefaldighetskyrkan, Karlskrona","description":"Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.","url":"https://stadsvandring.io/p/karlskrona-trefaldighetskyrkan-karlskrona","geo":{"@type":"GeoCoordinates","latitude":56.160587,"longitude":15.58598}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Amiralitetskyrkan Ulrica Pia","description":"En mäktig träkyrka i Karlskrona, invigd 1685 för amiralitetsförsamlingen.","url":"https://stadsvandring.io/p/karlskrona-amiralitetskyrkan-ulrica-pia","geo":{"@type":"GeoCoordinates","latitude":56.156796,"longitude":15.590977}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Drottningskärs kastell","description":"Välbevarad kastellfästning vid Aspö, räknad som ett av den svenska fortifikationskonstens främsta verk.","url":"https://stadsvandring.io/p/karlskrona-drottningskars-kastell","geo":{"@type":"GeoCoordinates","latitude":56.110309,"longitude":15.564352}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Rosenbom","description":"En fattigbössa formad som en båtsman, utanför Amiralitetskyrkan.","url":"https://stadsvandring.io/p/karlskrona-rosenbom","geo":{"@type":"GeoCoordinates","latitude":56.157021,"longitude":15.590911}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Karlskrona gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 14 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Karlskrona?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 14 sevärdheter i Karlskrona — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Wämöparken?","acceptedAnswer":{"@type":"Answer","text":"Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade gamla blekingegårdar."}},{"@type":"Question","name":"Vad är Badplats - Långö?","acceptedAnswer":{"@type":"Answer","text":"En populär badplats med två vikar, gräsytor och volleybollplan."}},{"@type":"Question","name":"Vad är Björkholmen, Karlskrona?","acceptedAnswer":{"@type":"Answer","text":"Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans spillvirke."}},{"@type":"Question","name":"Vad är Stortorget, Karlskrona?","acceptedAnswer":{"@type":"Answer","text":"Ett av norra Europas största torg, hjärtat i den planerade örlogsstaden, inramat av kyrkor och offentliga byggnader."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Karlskrona","item":"https://stadsvandring.io/stadsvandring/karlskrona"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Karlskrona</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Karlskrona</span><span class="badge">14 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Karlskrona — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Karlskrona till fots: 14 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Karlskrona"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/karlskrona-wamoparken"><b>1. Wämöparken</b><span>Naturreservat · Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade…</span></a>
+<a class="tile" href="/p/karlskrona-badplats-lango"><b>2. Badplats - Långö</b><span>Sevärdhet · En populär badplats med två vikar, gräsytor och volleybollplan.</span></a>
+<a class="tile" href="/p/karlskrona-bjorkholmen-karlskrona"><b>3. Björkholmen, Karlskrona</b><span>Sevärdhet · Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans…</span></a>
+</div>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 14 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/karlskrona/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/karlskrona/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Karlskrona gratis?</summary><p>Ja. Karta, alla 14 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Karlskrona?</summary><p>Vandringen samlar 14 sevärdheter i Karlskrona — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Wämöparken?</summary><p>Folkkär kultur- och naturpark på Vämö med friluftsmuseum, djurpark och flyttade gamla blekingegårdar.</p></details>
+<details class="faq"><summary>Vad är Badplats - Långö?</summary><p>En populär badplats med två vikar, gräsytor och volleybollplan.</p></details>
+<details class="faq"><summary>Vad är Björkholmen, Karlskrona?</summary><p>Stadens äldsta stadsdel med små trästugor som varvsarbetarna byggde av flottans spillvirke.</p></details>
+<details class="faq"><summary>Vad är Stortorget, Karlskrona?</summary><p>Ett av norra Europas största torg, hjärtat i den planerade örlogsstaden, inramat av kyrkor och offentliga byggnader.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

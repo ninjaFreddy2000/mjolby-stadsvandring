@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Quiz: Hur väl känner du Smögen? | Stadsvandring.io</title>
+<meta name="description" content="Tror du att du kan din ort? Testa 8 frågor om Smögen — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsba…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/smogen/quiz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Quiz: Hur väl känner du Smögen? | Stadsvandring.io">
+<meta property="og:description" content="Tror du att du kan din ort? Testa 8 frågor om Smögen — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsba…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/smogen/quiz">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz: Hur väl känner du Smögen? | Stadsvandring.io">
+<meta name="twitter:description" content="Tror du att du kan din ort? Testa 8 frågor om Smögen — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsba…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+.quiz .qq{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:0 0 14px}
+.quiz legend{font-weight:600;padding:0 4px}
+.quiz label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:9px;cursor:pointer;border:1px solid transparent}
+.quiz label:hover{background:#faf6ec}
+.quiz.graded label{cursor:default}
+.quiz .opt-correct{background:#e7f6ec;border-color:#1a7f37}
+.quiz .opt-wrong{background:#fdeceb;border-color:#b3261e}
+.quiz-result{font-size:20px;font-weight:700;color:var(--accent);margin:8px 0}
+.quiz .cta{border:0;cursor:pointer}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.sharetext{background:#faf6ec;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-style:italic}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+.src{font-size:13px;color:var(--muted)}.src a{color:var(--muted)}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Quiz","name":"Quiz: Hur väl känner du Smögen?","about":{"@type":"Place","name":"Smögen"},"educationalLevel":"beginner","url":"https://stadsvandring.io/stadsvandring/smogen/quiz","hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Hållö kapell?","acceptedAnswer":{"@type":"Answer","text":"Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet."},"suggestedAnswer":[{"@type":"Answer","text":"Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet."},{"@type":"Answer","text":"Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…"},{"@type":"Answer","text":"Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Hovenäset?","acceptedAnswer":{"@type":"Answer","text":"Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet."},"suggestedAnswer":[{"@type":"Answer","text":"Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…"},{"@type":"Answer","text":"Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…"},{"@type":"Answer","text":"Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Gravarne?","acceptedAnswer":{"@type":"Answer","text":"Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…"},"suggestedAnswer":[{"@type":"Answer","text":"Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…"},{"@type":"Answer","text":"Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…"},{"@type":"Answer","text":"Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Kleven, Smögen?","acceptedAnswer":{"@type":"Answer","text":"Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…"},"suggestedAnswer":[{"@type":"Answer","text":"Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…"},{"@type":"Answer","text":"Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…"},{"@type":"Answer","text":"Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Smögens kyrka?","acceptedAnswer":{"@type":"Answer","text":"Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…"},"suggestedAnswer":[{"@type":"Answer","text":"Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…"},{"@type":"Answer","text":"Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…"},{"@type":"Answer","text":"Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Väjern?","acceptedAnswer":{"@type":"Answer","text":"Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…"},"suggestedAnswer":[{"@type":"Answer","text":"Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…"},{"@type":"Answer","text":"Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…"},{"@type":"Answer","text":"Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen."}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Sandön, Smögen?","acceptedAnswer":{"@type":"Answer","text":"Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…"},"suggestedAnswer":[{"@type":"Answer","text":"Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…"},{"@type":"Answer","text":"Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen."},{"@type":"Answer","text":"Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invi…"}]},{"@type":"Question","eduQuestionType":"Multiple choice","name":"Vad är Smögens lotsutkik?","acceptedAnswer":{"@type":"Answer","text":"Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…"},"suggestedAnswer":[{"@type":"Answer","text":"Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen."},{"@type":"Answer","text":"Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invi…"},{"@type":"Answer","text":"Den långa träbryggan längs den gamla fiskehamnens norra sida, sommartid en av Bohusläns m…"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Hållö kapell?","acceptedAnswer":{"@type":"Answer","text":"Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet."}},{"@type":"Question","name":"Vad är Hovenäset?","acceptedAnswer":{"@type":"Answer","text":"Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet."}},{"@type":"Question","name":"Vad är Gravarne?","acceptedAnswer":{"@type":"Answer","text":"Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske och stenexport."}},{"@type":"Question","name":"Vad är Kleven, Smögen?","acceptedAnswer":{"@type":"Answer","text":"Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid det gamla sundet."}},{"@type":"Question","name":"Vad är Smögens kyrka?","acceptedAnswer":{"@type":"Answer","text":"Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt för havsklimatets slitage."}},{"@type":"Question","name":"Vad är Väjern?","acceptedAnswer":{"@type":"Answer","text":"Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark koppling till sillfisket."}},{"@type":"Question","name":"Vad är Sandön, Smögen?","acceptedAnswer":{"@type":"Answer","text":"Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära isslipade hällar."}},{"@type":"Question","name":"Vad är Smögens lotsutkik?","acceptedAnswer":{"@type":"Answer","text":"Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över hamninlopp och hav."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Smögen","item":"https://stadsvandring.io/stadsvandring/smogen"},{"@type":"ListItem","position":3,"name":"Quiz om Smögen","item":"https://stadsvandring.io/stadsvandring/smogen/quiz"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="quiz">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/smogen">Stadsvandring i Smögen</a> › Quiz</nav>
+<div class="badges no-print"><span class="badge">🧠 Quiz</span><span class="badge">📍 Smögen</span><span class="badge">8 frågor</span></div>
+<h1>Quiz: Hur väl känner du Smögen?</h1>
+<p class="lead">Tror du att du kan din ort? Testa 8 frågor om Smögen — platserna, historien och berättelserna. Gratis att spela; ange e-post för att låsa upp ditt delningsbara resultat.</p>
+
+<form id="lm-quiz" class="quiz">
+<fieldset class="qq" data-q data-correct="0">
+<legend>1. Vad är Hållö kapell?</legend>
+<label><input type="radio" name="q0" value="0"> <span>Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet.</span></label>
+<label><input type="radio" name="q0" value="1"> <span>Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet.</span></label>
+<label><input type="radio" name="q0" value="2"> <span>Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…</span></label>
+<label><input type="radio" name="q0" value="3"> <span>Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>2. Vad är Hovenäset?</legend>
+<label><input type="radio" name="q1" value="0"> <span>Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…</span></label>
+<label><input type="radio" name="q1" value="1"> <span>Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet.</span></label>
+<label><input type="radio" name="q1" value="2"> <span>Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…</span></label>
+<label><input type="radio" name="q1" value="3"> <span>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>3. Vad är Gravarne?</legend>
+<label><input type="radio" name="q2" value="0"> <span>Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…</span></label>
+<label><input type="radio" name="q2" value="1"> <span>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…</span></label>
+<label><input type="radio" name="q2" value="2"> <span>Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske oc…</span></label>
+<label><input type="radio" name="q2" value="3"> <span>Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>4. Vad är Kleven, Smögen?</legend>
+<label><input type="radio" name="q3" value="0"> <span>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…</span></label>
+<label><input type="radio" name="q3" value="1"> <span>Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…</span></label>
+<label><input type="radio" name="q3" value="2"> <span>Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…</span></label>
+<label><input type="radio" name="q3" value="3"> <span>Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid d…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="0">
+<legend>5. Vad är Smögens kyrka?</legend>
+<label><input type="radio" name="q4" value="0"> <span>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt fö…</span></label>
+<label><input type="radio" name="q4" value="1"> <span>Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…</span></label>
+<label><input type="radio" name="q4" value="2"> <span>Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…</span></label>
+<label><input type="radio" name="q4" value="3"> <span>Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="1">
+<legend>6. Vad är Väjern?</legend>
+<label><input type="radio" name="q5" value="0"> <span>Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…</span></label>
+<label><input type="radio" name="q5" value="1"> <span>Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark kopplin…</span></label>
+<label><input type="radio" name="q5" value="2"> <span>Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…</span></label>
+<label><input type="radio" name="q5" value="3"> <span>Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen.</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="2">
+<legend>7. Vad är Sandön, Smögen?</legend>
+<label><input type="radio" name="q6" value="0"> <span>Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…</span></label>
+<label><input type="radio" name="q6" value="1"> <span>Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen.</span></label>
+<label><input type="radio" name="q6" value="2"> <span>Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära is…</span></label>
+<label><input type="radio" name="q6" value="3"> <span>Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invi…</span></label>
+</fieldset>
+<fieldset class="qq" data-q data-correct="3">
+<legend>8. Vad är Smögens lotsutkik?</legend>
+<label><input type="radio" name="q7" value="0"> <span>Bohusläns äldsta bevarade fyrtorn, tänt första gången 1842 på ön Hållö utanför Smögen.</span></label>
+<label><input type="radio" name="q7" value="1"> <span>Drygt 4,8 kilometer lång grävd och sprängd kanal mellan Kungshamn och Hunnebostrand, invi…</span></label>
+<label><input type="radio" name="q7" value="2"> <span>Den långa träbryggan längs den gamla fiskehamnens norra sida, sommartid en av Bohusläns m…</span></label>
+<label><input type="radio" name="q7" value="3"> <span>Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över ham…</span></label>
+</fieldset>
+<p><button type="button" id="lm-quiz-grade" class="cta">Rätta quizet →</button></p>
+<p id="lm-quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></p>
+</form>
+
+<section class="gate card" id="lm-quiz-gate" hidden>
+  <h2>Lås upp och dela ditt resultat</h2>
+  <p>Ange din e-post så får du ett delningsbart resultat — och nästa orts quiz när det släpps.</p>
+  <form id="lm-quiz-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler quiz och stadsvandringar (valfritt)</label>
+    <button type="submit" class="cta">Visa mitt resultat →</button>
+    <p id="lm-quiz-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-quiz-share" hidden>
+    <p id="lm-quiz-sharetext" class="sharetext"></p>
+    <button type="button" id="lm-quiz-copy" class="cta ghost">📋 Kopiera resultatet</button>
+  </div>
+</section>
+
+<h2 class="city-h">Facit &amp; källor</h2>
+<p class="muted">Rätt svar på alla frågor — öppna när du spelat klart.</p>
+<details class="faq"><summary>Vad är Hållö kapell?</summary><p>Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet. <span class="src">Källa: <a href="https://hallokapell.com/hallo/" rel="nofollow noopener" target="_blank">hallokapell.com</a></span></p></details>
+<details class="faq"><summary>Vad är Hovenäset?</summary><p>Gammalt fiske- och skutsamhälle i Sotenäs vars namn går tillbaka till 1300-talet. <span class="src">Källa: <a href="https://www.vastsverige.com/sotenas/artiklar/hovenaset/" rel="nofollow noopener" target="_blank">vastsverige.com</a></span></p></details>
+<details class="faq"><summary>Vad är Gravarne?</summary><p>Det ursprungliga fiskeläget som 1963 bytte namn till Kungshamn, med rötter i sillfiske och stenexport. <span class="src">Källa: <a href="http://faktoider.blogspot.com/2015/06/gravarne.html" rel="nofollow noopener" target="_blank">faktoider.blogspot.com</a></span></p></details>
+<details class="faq"><summary>Vad är Kleven, Smögen?</summary><p>Den äldsta delen av Smögens fiskeläge med trånga gränder och tätt packad bebyggelse vid det gamla sundet. <span class="src">Källa: <a href="https://www.sotenas.se/download/18.3c95fd2518359764beb530ae/1664796007543/Program%20f%C3%B6r%20gamla%20delen%20av%20Sm%C3%B6gen.pdf" rel="nofollow noopener" target="_blank">sotenas.se</a></span></p></details>
+<details class="faq"><summary>Vad är Smögens kyrka?</summary><p>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt för havsklimatets slitage. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Sm%C3%B6gens_kyrka" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+<details class="faq"><summary>Vad är Väjern?</summary><p>Litet fiskeläge strax norr om Kungshamn med bosättning sedan 1600-talet och stark koppling till sillfisket. <span class="src">Källa: <a href="https://www.vastsverige.com/sotenas/artiklar/vajern/" rel="nofollow noopener" target="_blank">vastsverige.com</a></span></p></details>
+<details class="faq"><summary>Vad är Sandön, Smögen?</summary><p>Bågformad ö och naturreservat invid Smögen med sandstrand, badklippor och spektakulära isslipade hällar. <span class="src">Källa: <a href="https://www.lansstyrelsen.se/vastra-gotaland/besoksmal/naturreservat/sandon.html" rel="nofollow noopener" target="_blank">lansstyrelsen.se</a></span></p></details>
+<details class="faq"><summary>Vad är Smögens lotsutkik?</summary><p>Gammal lotsutkik högt på berget, byggnadsminne sedan 1997, med vidsträckt utsikt över hamninlopp och hav. <span class="src">Källa: <a href="https://sv.wikipedia.org/wiki/Sm%C3%B6gens_lotsutkik" rel="nofollow noopener" target="_blank">sv.wikipedia.org</a></span></p></details>
+
+<p class="no-print" style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/smogen/fakta">Faktabanken om Smögen</a> <a class="cta ghost" href="/stadsvandring/smogen">Stadsvandringen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

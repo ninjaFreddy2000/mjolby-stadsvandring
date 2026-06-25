@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Visby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.6475" lon="18.3033"><name>Sankt Görans kyrkoruin</name><desc>Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.</desc></wpt>
+  <wpt lat="57.644119" lon="18.298061"><name>Sankt Nicolai kyrkoruin</name><desc>Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.</desc></wpt>
+  <wpt lat="57.643056" lon="18.298333"><name>Helige Andes kyrkoruin</name><desc>Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.</desc></wpt>
+  <wpt lat="57.643056" lon="18.296111"><name>Sankt Clemens kyrkoruin</name><desc>En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.</desc></wpt>
+  <wpt lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name><desc>Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.</desc></wpt>
+  <wpt lat="57.641758" lon="18.2952"><name>Drottens kyrkoruin</name><desc>Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.</desc></wpt>
+  <wpt lat="57.641386" lon="18.295033"><name>Sankt Lars kyrkoruin</name><desc>Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.</desc></wpt>
+  <wpt lat="57.6409" lon="18.2949"><name>Sankt Hans och Sankt Pers kyrkoruiner</name><desc>Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.</desc></wpt>
+  <wpt lat="57.640278" lon="18.295556"><name>Sankta Karins kyrkoruin</name><desc>Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.</desc></wpt>
+  <wpt lat="57.641667" lon="18.2975"><name>Sankta Maria domkyrka</name><desc>Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.</desc></wpt>
+  <wpt lat="57.63334" lon="18.29859"><name>Solberga klosterruin</name><desc>Cisterciensnunnornas kloster utanför Söderport – det var på dess mark slaget 1361 stod.</desc></wpt>
+  <rte><name>Kyrkostigen i Visby</name>
+    <rtept lat="57.6475" lon="18.3033"><name>Sankt Görans kyrkoruin</name></rtept>
+    <rtept lat="57.644119" lon="18.298061"><name>Sankt Nicolai kyrkoruin</name></rtept>
+    <rtept lat="57.643056" lon="18.298333"><name>Helige Andes kyrkoruin</name></rtept>
+    <rtept lat="57.643056" lon="18.296111"><name>Sankt Clemens kyrkoruin</name></rtept>
+    <rtept lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name></rtept>
+    <rtept lat="57.641758" lon="18.2952"><name>Drottens kyrkoruin</name></rtept>
+    <rtept lat="57.641386" lon="18.295033"><name>Sankt Lars kyrkoruin</name></rtept>
+    <rtept lat="57.6409" lon="18.2949"><name>Sankt Hans och Sankt Pers kyrkoruiner</name></rtept>
+    <rtept lat="57.640278" lon="18.295556"><name>Sankta Karins kyrkoruin</name></rtept>
+    <rtept lat="57.641667" lon="18.2975"><name>Sankta Maria domkyrka</name></rtept>
+    <rtept lat="57.63334" lon="18.29859"><name>Solberga klosterruin</name></rtept>
+  </rte>
+</gpx>
