@@ -251,6 +251,23 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .hero-ph{position:absolute;inset:0;overflow:hidden}
 .hero-ph .ph-emoji{position:absolute;left:12px;bottom:12px;width:46px;height:46px;border-radius:var(--r-md);
   background:rgba(255,253,247,.92);display:grid;place-items:center;font-size:26px;box-shadow:var(--shadow-sm);z-index:2}
+/* Nu/Förr — historiska arkivbilder */
+.nowthen{position:absolute;top:10px;left:10px;z-index:4;display:flex;gap:2px;
+  background:rgba(20,16,12,.5);border-radius:var(--r-pill);padding:3px;backdrop-filter:blur(5px)}
+.nowthen__btn{border:0;background:transparent;color:#fff;font-family:var(--font-body);font-size:12px;font-weight:700;
+  padding:5px 12px;border-radius:var(--r-pill);cursor:pointer;opacity:.72;line-height:1.1}
+.nowthen__btn.on{background:#fff;color:var(--ink);opacity:1}
+.hero-then{position:absolute;inset:0;z-index:2;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hero-then::-webkit-scrollbar{display:none}
+.hero-then .then-fig{position:relative;flex:0 0 100%;height:100%;margin:0;scroll-snap-align:center}
+.hero-then .then-fig img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-then figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 9px;
+  font-family:var(--font-body);font-size:11.5px;line-height:1.35;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.hero-then figcaption b{font-weight:800}
+.then-credit{display:block;opacity:.82;font-size:9.5px;margin-top:2px}
+.hero-then[hidden]{display:none}
 
 .sheet-pad{padding:18px 20px calc(env(safe-area-inset-bottom) + 26px)}
 .type-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:var(--r-pill);color:#fff;margin-bottom:11px;font-family:var(--font-body)}

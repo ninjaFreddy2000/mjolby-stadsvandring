@@ -113,6 +113,25 @@ export const EXTRA_IMAGES = {
   'boxholm-stralsnas-jarnvagsstation': { url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Str%C3%A5lsn%C3%A4s_j%C3%A4rnv%C3%A4gsstation_01.jpg/1280px-Str%C3%A5lsn%C3%A4s_j%C3%A4rnv%C3%A4gsstation_01.jpg', attribution:'Foto: Leharu, CC BY-SA 4.0, Wikimedia Commons', focal:'center center' },
 };
 
+/* Historiska bilder ("Förr") per plats. Visas via Nu/Förr-växlaren i appen.
+   Endast public domain / fria arkivbilder här (kräver ingen licensavgift).
+   Varje post: { url, year, caption, credit, focal? }. Flera bilder = galleri. */
+export const HISTORIC_IMAGES = {
+  'mjolby-station': [
+    { url:'https://upload.wikimedia.org/wikipedia/commons/9/9c/Mj%C3%B6lby_station_1900.jpg',
+      year:'ca 1900', caption:'Stationen kort efter att stambanan nått kvarnbyn.',
+      credit:'Foto: Dagmar Eriksén / Västergötlands museum (public domain)' },
+  ],
+  'mjolby-orten': [
+    { url:'https://upload.wikimedia.org/wikipedia/commons/8/89/Mj%C3%B6lby%2C_%C3%96sterg%C3%B6tland%2C_Sweden_%286308551423%29.jpg',
+      year:'1947', caption:'Vy över Mjölby.', credit:'Riksantikvarieämbetet' },
+    { url:'https://upload.wikimedia.org/wikipedia/commons/f/f9/Mj%C3%B6lby_-_KMB_-_16001000239776.jpg',
+      year:'1947', caption:'Gatumiljö i Mjölby.', credit:'Foto: Fredrik Bruno / Riksantikvarieämbetet (public domain)' },
+    { url:'https://upload.wikimedia.org/wikipedia/commons/7/78/Mj%C3%B6lby_-_KMB_-_16001000239778.jpg',
+      year:'1947', caption:'Mjölby.', credit:'Foto: Fredrik Bruno / Riksantikvarieämbetet (public domain)' },
+  ],
+};
+
 export const STORIES = {
   'mjolby-orten':
     'Välkommen till Mjölby — en stad som bokstavligen är byggd på malet mjöl. Lyssna efter Svartåns brus, för det var forsarna här som drog hit de första kvarnarna redan på 1100-talet, långt innan någon drömde om järnväg eller stadsrättigheter.\n\nI själva namnet bor historien: Mölloby, byn vid kvarnen. När du går genom centrum trampar du i spåren av mjölnare, bönder och resenärer på väg mot Småland — och du står på den nordligaste plats dit Dackefejdens upprorsmän nådde på 1540-talet. Stadsrättigheterna kom så sent som 1920, men byn har då redan levt i åtta sekel.',

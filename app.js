@@ -1,6 +1,6 @@
 // Mjölby Stadsvandring — PWA prototype
 // Data: mjolby_kunskapsdatabas.json (knowledge base)
-import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES } from './content.js';
+import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES, HISTORIC_IMAGES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
@@ -781,12 +781,30 @@ function openSheet(id){
 
   const focal = imgFocal(e);
   const heroPh = `<div class="hero-ph">${townScene()}<span class="ph-emoji">${icon}</span></div>`;
-  const hero = img
+  // "Förr" — historiska arkivbilder (kan vara flera). Ger en Nu/Förr-växlare på hero.
+  const histo = (HISTORIC_IMAGES[id] || []).filter(h => h && h.url);
+  const hasHist = histo.length > 0;
+  const thenLabel = lang==='en' ? 'Then' : 'Förr';
+  const nowLabel = lang==='en' ? 'Now' : 'Nu';
+  const thenGallery = hasHist ? `<div class="hero-then" data-hero-then hidden>
+        ${histo.map(h=>`<figure class="then-fig">
+          <img src="${h.url}" alt="${(h.caption||e.name)} — ${thenLabel}" loading="lazy" referrerpolicy="no-referrer"
+               ${h.focal?`style="object-position:${h.focal}"`:''} onerror="this.closest('.then-fig').remove()">
+          <figcaption>${h.year?`<b>${h.year}</b>`:''}${h.caption?` ${h.caption}`:''}${h.credit?`<span class="then-credit">📷 ${h.credit}</span>`:''}</figcaption>
+        </figure>`).join('')}
+      </div>` : '';
+  const nowThenToggle = hasHist ? `<div class="nowthen" role="group" aria-label="${lang==='en'?'Now or then':'Nu eller förr'}">
+        <button type="button" class="nowthen__btn on" data-mode="now">${nowLabel}</button>
+        <button type="button" class="nowthen__btn" data-mode="then">📷 ${thenLabel}</button>
+      </div>` : '';
+  const hero = (img || hasHist)
     ? `<div class="hero">
          ${heroPh}
-         <img src="${img}" alt="${e.name}" loading="eager" referrerpolicy="no-referrer"
-              ${focal?`style="object-position:${focal}"`:''} onerror="var c=this.nextElementSibling;if(c&&c.classList&&c.classList.contains('credit'))c.remove();this.remove()">
-         ${credit?`<span class="credit">📷 ${credit}</span>`:''}
+         ${img?`<img class="hero-now" data-hero-now src="${img}" alt="${e.name}" loading="eager" referrerpolicy="no-referrer"
+              ${focal?`style="object-position:${focal}"`:''} onerror="var c=this.parentElement.querySelector('[data-now-credit]');if(c)c.remove();this.remove()">`:''}
+         ${thenGallery}
+         ${credit?`<span class="credit" data-now-credit>📷 ${credit}</span>`:''}
+         ${nowThenToggle}
        </div>`
     : `<div class="hero">${heroPh}</div>`;
 
@@ -832,6 +850,21 @@ function openSheet(id){
   if (pc) pc.onclick = ()=> startPhoto(pc.dataset.photo);
   const psh = $('#sheet-inner [data-share]');
   if (psh) psh.onclick = ()=> sharePhoto(psh.dataset.share);
+  // Nu/Förr-växlare: byt mellan nutida foto och historiska arkivbilder.
+  const nt = $('#sheet-inner .nowthen');
+  if (nt){
+    const nowImg    = $('#sheet-inner [data-hero-now]');
+    const thenEl    = $('#sheet-inner [data-hero-then]');
+    const nowCredit = $('#sheet-inner [data-now-credit]');
+    nt.querySelectorAll('[data-mode]').forEach(b=> b.onclick = ()=>{
+      const then = b.dataset.mode === 'then';
+      nt.querySelectorAll('[data-mode]').forEach(x=> x.classList.toggle('on', x===b));
+      if (thenEl)    thenEl.hidden = !then;
+      if (nowImg)    nowImg.style.visibility = then ? 'hidden' : '';
+      if (nowCredit) nowCredit.style.display = then ? 'none' : '';
+      track('hero_mode', { id, mode: then ? 'then' : 'now' });
+    });
+  }
   if (tipsActive()) {
     wireStopBlock($('#sheet-inner'), id);
   } else {
