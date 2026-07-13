@@ -233,7 +233,10 @@ export function requireAccess(city, cityName) {
 export function mountBillingProfile(el, opts = {}) {
   const wrap = document.createElement('div');
   wrap.className = 'billing-profile';
-  el.appendChild(wrap);
+  // Placera "Din tillgång"-kortet direkt under auth-kontokortet om det finns,
+  // annars sist i profilen.
+  const anchor = el.querySelector('.auth-profile');
+  if (anchor) anchor.after(wrap); else el.appendChild(wrap);
 
   function render() {
     if (!isConfigured() || !getUser()) { wrap.innerHTML = ''; return; }

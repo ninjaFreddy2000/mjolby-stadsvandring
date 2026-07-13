@@ -21,6 +21,8 @@ const L = {
     h_activity: '📊 Aktivitet', a_note: 'Anonym förstaparts-data — inga cookies, ingen PII.',
     a_opens: 'App-öppningar', a_tours: 'Turstarter', a_checkins: 'Incheckningar',
     a_topPlaces: 'Mest öppnade platser', a_byCity: 'Per stad', a_none: 'Ingen data än.',
+    h_customers: '💳 Kunder', c_note: 'Betalande konton — nivå och e-post. Övrig data är anonym.',
+    c_total: 'Kunder totalt', c_stadsjakt: 'Stadsjakten', c_stad: 'Enstaka städer', c_none: 'Inga kunder än.',
     h_tips: '💬 Förslag-loopen', t_pending: 'Väntar', t_needs: 'Komplettering', t_pub: 'Publicerade', t_rej: 'Avslagna',
     t_open: 'Öppna förslag att hantera', t_none: 'Inga öppna förslag — allt är hanterat. 🎉',
     t_pubBtn: '⚡ Publicera', t_rejBtn: '⛔ Avslå', t_infoBtn: '📝 Be om mer info',
@@ -38,6 +40,8 @@ const L = {
     h_activity: '📊 Activity', a_note: 'Anonymous first-party data — no cookies, no PII.',
     a_opens: 'App opens', a_tours: 'Tour starts', a_checkins: 'Check-ins',
     a_topPlaces: 'Most opened places', a_byCity: 'By city', a_none: 'No data yet.',
+    h_customers: '💳 Customers', c_note: 'Paying accounts — level and email. Everything else is anonymous.',
+    c_total: 'Total customers', c_stadsjakt: 'Stadsjakten', c_stad: 'Single towns', c_none: 'No customers yet.',
     h_tips: '💬 Suggestion loop', t_pending: 'Pending', t_needs: 'Needs info', t_pub: 'Published', t_rej: 'Rejected',
     t_open: 'Open suggestions to handle', t_none: 'No open suggestions — all handled. 🎉',
     t_pubBtn: '⚡ Publish', t_rejBtn: '⛔ Reject', t_infoBtn: '📝 Request more info',
@@ -88,6 +92,15 @@ export async function openAdminDashboard() {
       supa.from('tips').select('*')
         .eq('city', APP_CITY).order('created_at', { ascending: false }).limit(500),
     ]);
+    // Kunder (via admin-RPC:er). Feltoleranta: om billing-migrationen ännu inte
+    // är deployad returnerar RPC:erna fel → vi visar bara sektionen tom, dashboarden
+    // kraschar inte.
+    const [custRes, custCntRes] = await Promise.all([
+      supa.rpc('admin_customers').then(r => r, () => ({ data: null })),
+      supa.rpc('admin_customer_count').then(r => r, () => ({ data: null })),
+    ]);
+    const customers = (custRes && custRes.data) || [];
+    const custCount = (custCntRes && custCntRes.data && custCntRes.data[0]) || { stadsjakt: 0, stad: 0, total: 0 };
     if (pRes.error || tRes.error) {
       card.innerHTML = `<button class="fb-x" id="adm-x">&times;</button><h3>🛡️ ${tx('title')}</h3>
         <p class="auth-fine err">${esc((pRes.error || tRes.error).message)}</p>`;
@@ -176,6 +189,18 @@ export async function openAdminDashboard() {
       <ul class="admin-list">${liNum(topPlaces, ([id, c]) => `<li><span>${esc(nameOf(id))}</span><b>${c}</b></li>`)}</ul>
       <h5 class="adm-h5">${tx('a_byCity')}</h5>
       <ul class="admin-list">${liNum(byCity, ([c, v]) => `<li><span>${esc(c)}</span><b>${v}</b></li>`)}</ul>
+
+      <h4 class="cb-h">${tx('h_customers')}</h4>
+      <p class="fb-sub">${tx('c_note')}</p>
+      <div class="adm-pills">
+        <span class="adm-pill ok">${custCount.total || 0} ${tx('c_total')}</span>
+        <span class="adm-pill">🗝️ ${custCount.stadsjakt || 0} ${tx('c_stadsjakt')}</span>
+        <span class="adm-pill">🎫 ${custCount.stad || 0} ${tx('c_stad')}</span>
+      </div>
+      <ul class="admin-list">${customers.length ? customers.map(c => {
+        const lvl = c.level === 'stadsjakt' ? '🗝️ Stadsjakten' : `🎫 ${c.cities || 1} ${en() ? 'town(s)' : 'stad'}`;
+        return `<li><span>${esc(c.email)}</span><b>${lvl}</b></li>`;
+      }).join('') : `<li class="ch-empty">${tx('c_none')}</li>`}</ul>
 
       <h4 class="cb-h">${tx('h_install')}</h4>
       <button class="fb-cta" id="adm-install">${tx('install_open')}</button>

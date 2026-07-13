@@ -5,6 +5,7 @@ import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
 import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
+import { initBilling, requireAccess, handleCheckoutReturn, mountBillingProfile } from './billing.js';
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 
 // ── Förstaparts-analytics (integritetsvänligt: ingen cookie/PII, bara anonyma
@@ -653,6 +654,9 @@ function openTourPanel(key){
   $('#tour-quiz-btn').onclick = ()=> startQuiz(key);
   $('#tour-start-label').textContent = t('start_walk');
   $('#tour-start').onclick = ()=>{
+    // Paywall: den guidade vandringen kräver tillgång (Stadsjakten eller köpt stad).
+    // Med BILLING_ENABLED av släpper requireAccess igenom allt (ingen regression).
+    if (!requireAccess(citySlug(activeCity), activeCity)) { track('paywall_shown', { tour: key, city: citySlug(activeCity) }); return; }
     activeTour = key;                 // säkerställ att turen är aktiv
     track('tour_start', { tour: key });
     closePanel('#tour-panel');        // ta mig till vandringen (kartan med leden)
@@ -1840,6 +1844,7 @@ function renderProfil(){
   if (on){
     mountTipsProfile($('#screen'), { onChange: renderProfil });
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
+    mountBillingProfile($('#screen'), { onChange: renderProfil }); // "Din tillgång" direkt under kontokortet
   }
 }
 
@@ -2059,7 +2064,7 @@ function setupAuthTips(){
     },
   };
   initAdmin(c);
-  initAuth(c).then(()=> initTips(c));
+  initAuth(c).then(()=> { initTips(c); initBilling(c).then(()=> handleCheckoutReturn()); });
 }
 
 init();
