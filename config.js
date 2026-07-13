@@ -23,6 +23,23 @@ export const SHARE_URL = 'https://stadsvandring.io/karta';
 
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+// ── Betalning (Stripe via Supabase Edge Functions) ───────────────────────────
+// Edge functions bor på samma Supabase-host (/functions/v1/...), redan tillåtet
+// av CSP:ns connect-src https://*.supabase.co. Ingen Stripe.js i sidan — vi
+// redirectar till Stripes hostade checkout, så CSP kan hålla script-src 'self'.
+export const FUNCTIONS_BASE = SUPABASE_URL ? SUPABASE_URL.replace(/\/$/, '') + '/functions/v1' : '';
+
+// Priser (visning). Faktiskt belopp sätts i Stripe (lookup keys stadsjakt_monthly
+// / stadsvandring_city). Håll i synk med Stripe-priserna.
+export const PRICES = {
+  city:      { amount: 19, currency: 'kr', period: null,    label_sv: '19 kr',        label_en: '19 kr' },
+  stadsjakt: { amount: 49, currency: 'kr', period: 'mnd',   label_sv: '49 kr/mån',    label_en: '49 kr/mo' },
+};
+
+// Slås på när Stripe-produkterna är skapade och edge-functions deployade.
+// Tills dess visar appen "kommer snart" istället för en trasig köp-knapp.
+export const BILLING_ENABLED = (() => { try { return localStorage.getItem('cfg_billing') === '1'; } catch (e) { return false; } })();
+
 let _clientPromise = null;
 // Använder @supabase/supabase-js som är vendor:ad lokalt (vendor/supabase.js, UMD →
 // window.supabase) — ingen tredjeparts-CDN i runtime, så CSP:n kan hålla script-src 'self'
