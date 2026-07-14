@@ -1,0 +1,5 @@
+# Håll backup-/arbetsfiler borta från produktion (exponerades tidigare publikt).
+*.bak
+data.json.pre-slott
+.orter-raw.json
+.DS_Store
