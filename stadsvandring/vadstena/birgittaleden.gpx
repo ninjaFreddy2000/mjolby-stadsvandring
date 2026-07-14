@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Heliga Birgittas Vadstena – klosterstaden vid Vättern</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.44590" lon="14.88150"><name>Vadstena hamn</name><desc>Vätterhamnen där medeltidens pilgrimer kom in sjövägen mot klosterstaden.</desc></wpt>
+  <wpt lat="58.44597222" lon="14.88361111"><name>Vadstena slott</name><desc>Gustav Vasas renässansborg vid sjön – uppförd på 1500-talet som försvar och skattkammare.</desc></wpt>
+  <wpt lat="58.44720" lon="14.88760"><name>Vadstena rådhus</name><desc>Sveriges äldsta bevarade rådhus vid det medeltida Rådhustorget.</desc></wpt>
+  <wpt lat="58.44895556" lon="14.89275"><name>S:t Pers kyrka (Rödtornet)</name><desc>Rödtornet är allt som återstår av den medeltida stadskyrkan – idag klosterkyrkans klocktorn.</desc></wpt>
+  <wpt lat="58.45010" lon="14.89090"><name>Heliga Birgitta</name><desc>Sveriges skyddshelgon vars vision skapade klosterstaden; hennes reliker vilar i klosterkyrkan.</desc></wpt>
+  <wpt lat="58.450777777778" lon="14.891527777778"><name>Vadstena klosterkyrka (Blåkyrkan)</name><desc>Birgittinordens moderkyrka, invigd 1430, med Heliga Birgittas relikskrin.</desc></wpt>
+  <wpt lat="58.451292" lon="14.891045"><name>Sancta Birgitta Klostermuseum (Bjälboättens palats)</name><desc>Nordens bäst bevarade högmedeltida palats – klosterstadens ursprung.</desc></wpt>
+  <wpt lat="58.45040" lon="14.89210"><name>Sankta Birgittas kloster – Pax Mariae</name><desc>Det levande birgittinklostret, återupprättat på 1900-talet.</desc></wpt>
+  <wpt lat="58.45120" lon="14.89250"><name>Vadstena klosterträdgård (Örtagården)</name><desc>Klosterträdgård brukad sedan medeltiden, anlagd efter Birgittas plan.</desc></wpt>
+  <wpt lat="58.45162" lon="14.89442"><name>Mårten Skinnares hus &amp; Hospitalsmuseet</name><desc>Sveriges bäst bevarade medeltida bostadshus – klosterstadens hospital.</desc></wpt>
+  <rte><name>Heliga Birgittas Vadstena</name>
+    <rtept lat="58.44590" lon="14.88150"><name>Vadstena hamn</name></rtept>
+    <rtept lat="58.44597222" lon="14.88361111"><name>Vadstena slott</name></rtept>
+    <rtept lat="58.44720" lon="14.88760"><name>Vadstena rådhus</name></rtept>
+    <rtept lat="58.44895556" lon="14.89275"><name>S:t Pers kyrka (Rödtornet)</name></rtept>
+    <rtept lat="58.45010" lon="14.89090"><name>Heliga Birgitta</name></rtept>
+    <rtept lat="58.450777777778" lon="14.891527777778"><name>Vadstena klosterkyrka (Blåkyrkan)</name></rtept>
+    <rtept lat="58.451292" lon="14.891045"><name>Sancta Birgitta Klostermuseum (Bjälboättens palats)</name></rtept>
+    <rtept lat="58.45040" lon="14.89210"><name>Sankta Birgittas kloster – Pax Mariae</name></rtept>
+    <rtept lat="58.45120" lon="14.89250"><name>Vadstena klosterträdgård (Örtagården)</name></rtept>
+    <rtept lat="58.45162" lon="14.89442"><name>Mårten Skinnares hus &amp; Hospitalsmuseet</name></rtept>
+  </rte>
+</gpx>

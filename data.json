@@ -45,7 +45,7 @@
    "https://www.visitmjolby.se",
    "https://slekt.se/mjolby (Per Anderssons Mjölbyhistoria)"
   ],
-  "updated": "2026-06-25",
+  "updated": "2026-07-14",
   "sources_visby_arkiv": [
    "https://www.raa.se/om-riksantikvarieambetet/fragor-och-svar/visby-ringmur/",
    "https://www.raa.se/app/uploads/2017/08/FoU-rapport-Visby-Ringmur-2013-140630.pdf",
@@ -83869,10 +83869,14 @@
     "lat": 58.44895556,
     "lng": 14.89275
    },
-   "summary": "kyrkobyggnad i Vadstena kommun",
-   "description": "Sankt Pers kyrka i Vadstena, Östergötland, var en stadskyrka helgad åt Sankt Per och byggdes på 1400-talet. Idag återstår enbart klocktornet, kallat Rödtornet. Tornet är ursprungligen byggt i sengotisk tegelgotik, därav de blinderade trappgavlarna etc. Ljudgluggarna och fönstren är dock ombyggda i nyklassicistisk stil.",
+   "summary": "Rödtornet – enda kvarvarande delen av den medeltida stadskyrkan S:t Per, klosterkyrkans klocktorn.",
+   "description": "Mitt i staden reser sig Rödtornet – den enda kvarvarande delen av S:t Pers kyrka, en gång en av Vadstenas medeltida stadskyrkor. Den nuvarande kyrkan uppfördes 1460 sedan en äldre kyrka förstörts i en stadsbrand 1423. Det var en ståtlig, omkring 42 meter lång treskeppig tegelkyrka i baltisk gotik, med blinderade trappgavlar. Folket kallade den Rödkyrkan, till skillnad från klosterkyrkans Blåkyrkan, och därav kommer tornets namn. Under 1800-talet drabbades kyrkan av svåra sättningar i koret och revs 1829–1831. Tornet fick dock stå kvar av en praktisk anledning: klosterkyrkan, som då blev stadens huvudkyrka, saknade eget klocktorn. Ännu idag hänger stadens kyrkklockor i Rödtornet och ringer för klosterkyrkans räkning. Efter rivningen byggdes en skola på kyrkans plats och tornet inlemmades i den. Numera nyttjas Rödtornet bland annat av en sång- och pianoakademi. Det röda teglet, synligt över hustaken, är ett av de tydligaste spåren av det medeltida Vadstena med sina många kyrkor.",
    "key_facts": [
-    "Källa: Wikidata/Wikipedia"
+    "Rödtornet är allt som återstår av den medeltida stadskyrkan S:t Per",
+    "Kyrkan uppfördes 1460 efter en stadsbrand 1423; ca 42 m lång treskeppig tegelkyrka",
+    "Kallades Rödkyrkan (mot klosterkyrkans Blåkyrkan) – därav tornets namn",
+    "Kyrkan revs 1829–1831, men tornet sparades som klocktorn åt klosterkyrkan",
+    "Stadens kyrkklockor hänger fortfarande i Rödtornet"
    ],
    "images": [
     {
@@ -83888,10 +83892,11 @@
     }
    ],
    "sources": [
-    "https://www.wikidata.org/wiki/Q10659427",
-    "https://sv.wikipedia.org/wiki/S:t_Pers_kyrka,_Vadstena"
+    "https://sv.wikipedia.org/wiki/S:t_Pers_kyrka,_Vadstena",
+    "https://www.vadstena.se/kultur-fritid/kulturhistoriska-byggnader-i-vadstena/rodtornet/"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "era": "1400-tal"
   },
   {
    "id": "wd-vadstena-stra-kyrka-q10682130",
@@ -84051,17 +84056,35 @@
     "lat": 58.451292,
     "lng": 14.891045
    },
-   "summary": "museem med utställning av saker relaterade till klostret S: ta Birgittas kloster Pax Mariae",
-   "description": "museem med utställning av saker relaterade till klostret S: ta Birgittas kloster Pax Mariae",
+   "summary": "Nordens bäst bevarade högmedeltida palats – Bjälboättens palats – idag klostermuseum.",
+   "description": "Museibyggnaden är i själva verket ett av Nordens bäst bevarade högmedeltida palats. Bjälboättens palats började uppföras vid mitten av 1200-talet av Birger Jarl och hans son kung Valdemar, som ett av de första tegelbyggda husen i landet. Palatset hade för sin tid oerhörda lyxdetaljer: glasfönster, gallerier och ett hypokaustsystem som ledde varmluft under golven. Fram till 1346 var huset kungligt residens. Då skänkte Magnus Eriksson och drottning Blanka gården till Heliga Birgittas planerade kloster, och palatset blev en del av Vadstena kloster. Efter reformationen tjänade det bland annat som härbärge för hemvändande soldater och som del av hospitalet. På 1950-talet var en genomgripande ombyggnad nära, men arkeologiska undersökningar visade att stomme och interiör var medeltida, och huset räddades. Sedan 2003 inrymmer palatset Sancta Birgitta Klostermuseum, som berättar om Birgitta, klostret och den medeltida staden. Museet drivs sedan 2022 av Östergötlands museum. Att kliva in är att stiga rakt in i det maktcentrum där hela klosterstadens historia tog sin början.",
    "key_facts": [
-    "Källa: Wikidata/Wikipedia"
+    "Byggt vid mitten av 1200-talet av Birger Jarl och kung Valdemar – ett av landets första tegelpalats",
+    "Hade glasfönster och ett hypokaustsystem för varmluft under golven",
+    "Kungligt residens till 1346, då det skänktes till Birgittas kloster",
+    "Räddades på 1950-talet sedan arkeologin visat att medeltidsstommen var intakt",
+    "Sancta Birgitta Klostermuseum sedan 2003; drivs sedan 2022 av Östergötlands museum"
    ],
-   "images": [],
-   "image_source_pages": [],
+   "images": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Bj%C3%A4lbo%C3%A4ttens_palats%2C_Vadstena%2C_juni_2005.jpg",
+     "source": "Wikimedia Commons",
+     "attribution": "Se Wikimedia Commons"
+    }
+   ],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Vadstena_kungsg%C3%A5rd",
+     "source": "Wikipedia"
+    }
+   ],
    "sources": [
-    "https://www.wikidata.org/wiki/Q61718757"
+    "https://sv.wikipedia.org/wiki/Vadstena_kungsg%C3%A5rd",
+    "https://klostermuseum.se/om-museet/vaar-historia/",
+    "https://www.sfv.se/sevart/fornminnen-ny-sasong/sasong-2-oestergotland/birger-jarls-palats"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "era": "1200-tal"
   },
   {
    "id": "wd-vadstena-ljusets-kapell-q106417683",
@@ -92864,6 +92887,216 @@
     "https://sv.wikipedia.org/wiki/Gravkapellet,_Askersund"
    ],
    "city": "Askersund"
+  },
+  {
+   "id": "vadstena-hamn",
+   "name": "Vadstena hamn",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.4459,
+    "lng": 14.8815
+   },
+   "era": "Medeltid–1800-tal",
+   "summary": "Vätterhamnen där medeltidens pilgrimer kom in sjövägen mot klosterstaden.",
+   "description": "Här, vid Vätterns strand, började många pilgrimers sista etapp mot Heliga Birgittas grav. Under medeltiden var sjövägen över Vättern en av de säkraste och snabbaste vägarna till Vadstena, och resenärer från både Småland och Västergötland lät sig ros eller seglas in mot klosterstaden. Den öppna vattenspegeln gav de anländande en första anblick av klosterkyrkans grå murar och slottets torn. Hamnen fick sin nuvarande form långt senare. På 1840- och 1850-talen byggdes slottets gamla vallgrav om till hamnbassäng och två pirarmar sträcktes ut i sjön. Byggnadssten togs delvis från slottets rivna befästningsverk, som då inte längre behövdes. När Göta kanal öppnats på 1830-talet kunde Vadstena ta emot gods från både Göteborg och Stockholm, och hamnen blev en livlig omlastningsplats för stångjärn, spannmål och passagerare. Idag är hamnen en småbåts- och gästhamn där seglare lägger till om sommaren, och en liten vit ledfyr vakar fortfarande över inloppet. Står man vid piren och blickar ut över Vättern är det lätt att föreställa sig de medeltida pilgrimsbåtarna som en gång styrde mot samma strand.",
+   "key_facts": [
+    "Sjövägen över Vättern var en av medeltidens viktigaste pilgrimsvägar till Vadstena",
+    "Slottets vallgrav byggdes om till hamn ca 1848–1853, med sten från de rivna befästningarna",
+    "Göta kanal (1830-talet) gjorde hamnen till omlastningsplats för gods från Göteborg och Stockholm",
+    "Idag gäst- och småbåtshamn med en liten ledfyr vid inloppet"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://info.vadstena.se/kreativ_historia/omradet-vadstena-hamn-forandras/",
+     "source": "Vadstena kommun"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Vadstena",
+    "https://info.vadstena.se/kreativ_historia/omradet-vadstena-hamn-forandras/",
+    "https://www.gotakanal.se/en/along-the-canal/vadstena"
+   ],
+   "city": "Vadstena"
+  },
+  {
+   "id": "vadstena-radhus",
+   "name": "Vadstena rådhus",
+   "category": "byggnad",
+   "coordinates": {
+    "lat": 58.4472,
+    "lng": 14.8876
+   },
+   "era": "1400-tal",
+   "summary": "Sveriges äldsta bevarade rådhus vid stadens medeltida torg, Rådhustorget.",
+   "description": "Vid Rådhustorget, stadens medeltida hjärta, reser sig Sveriges äldsta bevarade rådhus. Vadstena fick stadsprivilegier år 1400, och redan 1411 nämns ett rådhus på platsen. Den byggnad som står kvar idag har sina äldsta delar från 1460 – en salsbyggnad i två våningar med tjocka gråstensmurar, ursprungligen krönt av trappstegsgavlar och torvtak. I början av 1500-talet tillkom tornet, som rymde stadens varningsklocka. I tornets bottenvåning fanns en tunnvälvd arrest där den som brutit mot stadens ordning kunde spärras in. Efter kontinentalt mönster användes övervåningens stora sal som rådssal för borgmästare och råd, medan bottenvåningen hyrdes ut till handel och utskänkning. Utanför porten bredde Rådhustorget ut sig – stadens enda torg under medeltiden och en av landets bäst bevarade medeltida torgbildningar, där klostret ägde marknadsbodar och veckans handel pågick. Rådhuset tjänade staden ända in på 1900-talet och renoverades 1915 och 1958, då det fick sitt koppartak. Byggnaden är idag skyddad som byggnadsminne och inrymmer en restaurang i de gamla valven. Få platser i Sverige låter en så påtagligt kliva rakt in i medeltidens stadsliv.",
+   "key_facts": [
+    "Vadstena fick stadsprivilegier 1400; ett rådhus nämns första gången 1411",
+    "Äldsta delarna uppförda 1460; tornet med varningsklocka och arrest tillkom tidigt 1500-tal",
+    "Räknas som det medeltida Sveriges äldsta bevarade rådhus",
+    "Rådhustorget var stadens enda torg under medeltiden – en av landets bäst bevarade medeltida torgbildningar",
+    "Byggnadsminne; inrymmer idag en restaurang"
+   ],
+   "images": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/R%C3%A5dhuset_i_Vadstena%2C_juni_2005.jpg",
+     "source": "Wikimedia Commons",
+     "attribution": "Se Wikimedia Commons"
+    }
+   ],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Vadstena_r%C3%A5dhus",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Vadstena_r%C3%A5dhus",
+    "https://www.vadstena.se/kultur-fritid/kulturhistoriska-byggnader-i-vadstena/radhuset/",
+    "https://www.wikidata.org/wiki/Q11899993"
+   ],
+   "city": "Vadstena"
+  },
+  {
+   "id": "vadstena-marten-skinnares-hus",
+   "name": "Mårten Skinnares hus & Hospitalsmuseet",
+   "category": "museum",
+   "coordinates": {
+    "lat": 58.45162,
+    "lng": 14.89442
+   },
+   "era": "1500–1700-tal",
+   "summary": "Sveriges bäst bevarade medeltida bostadshus – klosterstadens hospital för sjuka och pilgrimer.",
+   "description": "Nere vid klosterstranden står Sveriges bäst bevarade medeltida bostadshus. År 1519 skänkte Vadstena kloster tre tomter till den rike köpmannen Mårten Nilsson, kallad Skinnare efter sin handel med skinn och pälsverk. Här lät han under 1520-talet uppföra ett stenhus i tre våningar som skulle tjäna som hospital – en vårdinrättning för fattiga, sjuka och pilgrimer som sökt sig till helgonstaden. Anläggningen växte till ett av Sveriges största och viktigaste hospital. Huset användes i vårdens tjänst ända in på 1930-talet, i stort sett omoderniserat, vilket gör att medeltidens rum finns kvar. Ett välkänt kännetecken är den utskjutande avträdeskuren på övervåningen – ibland kallad en av Sveriges mest fotograferade toaletter. Intill huset ligger Stora dårhuset, uppfört 1756–57 efter ritningar av arkitekten Carl Johan Cronstedt. Det räknas som det första hus i Sverige som byggdes uteslutande för mentalt sjuka, med tre celler på var sida om en mittkorridor på varje våning. 1770 restes en mur kring en rastgård där patienterna fick vistas i friska luften. Sedan 1977 rymmer byggnaden Hospitalsmuseet, som berättar om psykiatrins långa och ofta mörka historia i Vadstena. Husen förvaltas idag av Statens fastighetsverk.",
+   "key_facts": [
+    "1519 skänkte klostret tre tomter till köpmannen Mårten Skinnare för att bygga ett hospital; stenhuset restes på 1520-talet",
+    "Räknas som Sveriges bäst bevarade medeltida bostadshus",
+    "Vårdinrättning för fattiga, sjuka och pilgrimer – i bruk in på 1930-talet",
+    "Stora dårhuset (1756–57, arkitekt C. J. Cronstedt) var det första svenska huset byggt enbart för mentalt sjuka",
+    "Hospitalsmuseet sedan 1977; byggnaderna förvaltas av Statens fastighetsverk"
+   ],
+   "images": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Martenskinnareshusfransoder.jpg",
+     "source": "Wikimedia Commons",
+     "attribution": "Se Wikimedia Commons"
+    }
+   ],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/M%C3%A5rten_Skinnares_hus",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/M%C3%A5rten_Skinnares_hus",
+    "https://sv.wikipedia.org/wiki/Vadstena_hospital",
+    "https://www.sfv.se/vara-fastigheter/sverige/oestergotlands-lan/marten-skinnares-hus-och-hospitalsmuseet",
+    "https://www.vadstena.se/kultur-fritid/kulturhistoriska-byggnader-i-vadstena/hospitalmuseet-stora-darhuset/"
+   ],
+   "city": "Vadstena"
+  },
+  {
+   "id": "vadstena-klostertradgard-ortagarden",
+   "name": "Vadstena klosterträdgård (Örtagården)",
+   "category": "sevardhet",
+   "coordinates": {
+    "lat": 58.4512,
+    "lng": 14.8925
+   },
+   "era": "Medeltid",
+   "summary": "En klosterträdgård som brukats nästan oavbrutet sedan medeltiden, anlagd efter Birgittas plan.",
+   "description": "I klosterområdet, mellan tegelmurar och Vätterns vatten, ligger en av Sveriges mest sällsynta trädgårdar – en klosterträdgård som brukats i stort sett oavbrutet sedan medeltiden. Redan Heliga Birgitta gav i sin klosterplan anvisningar om trädgårdens tre delar: en fruktträdgård, en örtagård för läke- och kryddväxter och en gräsgård. Enligt traditionen sändes 1369 Johan Päterson, Birgittas väpnare i Rom, för att anlägga trädgården, och därmed räknas han ibland som Sveriges förste kände trädgårdsmästare. Systrarna och bröderna odlade läkeväxter mot alla slags krämpor, medan gräsgården liknade en blomstrande äng. Där växte rosor och vita liljor – symboler för Jungfru Marias renhet. Efter reformationen och klostrets stängning levde trädgårdsbruket kvar; hertiginnan Katarina lät sköta trädgårdarna in på 1600-talet. Idag vårdas örtagården av föreningen Örtagårdens vänner tillsammans med Statens fastighetsverk, som förvaltar marken. En vandring genom de doftande kvarteren är en påminnelse om att klostret inte bara var en plats för bön, utan också för läkekonst, mat och skönhet.",
+   "key_facts": [
+    "En av få klosterträdgårdar i Sverige som brukats nästan oavbrutet sedan medeltiden",
+    "Följer Birgittas klosterplan: fruktträdgård, örtagård och gräsgård",
+    "Enligt traditionen anlagd från 1369 av Johan Päterson, ofta kallad Sveriges förste kände trädgårdsmästare",
+    "Rosor och vita liljor odlades som symboler för Jungfru Marias renhet",
+    "Vårdas idag av Örtagårdens vänner och Statens fastighetsverk"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://www.sfv.se/vara-fastigheter/sverige/oestergotlands-lan/vadstena-klostertradgard",
+     "source": "Statens fastighetsverk"
+    }
+   ],
+   "sources": [
+    "https://www.sfv.se/vara-fastigheter/sverige/oestergotlands-lan/vadstena-klostertradgard",
+    "https://klostermuseum.se/historia/",
+    "https://info.vadstena.se/kreativ_historia/odling-da-och-nu/"
+   ],
+   "city": "Vadstena"
+  },
+  {
+   "id": "vadstena-sankta-birgittas-kloster-pax-mariae",
+   "name": "Sankta Birgittas kloster – Pax Mariae",
+   "category": "byggnad",
+   "coordinates": {
+    "lat": 58.4504,
+    "lng": 14.8921
+   },
+   "era": "1900-tal",
+   "summary": "Det levande birgittinklostret som återupprättades på 1900-talet, bara steg från Birgittas grav.",
+   "description": "Att Vadstena än idag är en levande klosterstad beror på att birgittinorden återvände. Efter att den siste nunnan tvingats lämna klostret 1595 låg orden nere i Sverige i över tre sekler. Men 1935 slog sig birgittinsystrar åter ner i Vadstena och drev till en början ett gäst- och vilohem. Ett regelrätt kloster återupprättades 1963, då gemenskapen knöts som dotterkloster till Maria Refugie i Uden i Nederländerna – en obruten gren av den medeltida orden. Fyra nunnor kom därifrån för att bygga upp det nya. De nuvarande klosterbyggnaderna uppfördes 1972–73 efter ritningar av arkitekten Karl-Göran Eklund, och klosterkyrkan invigdes den 23 juli 1973, på 600-årsdagen av Birgittas död – i klostertraditionen hennes himmelska födelsedag. Kommuniteten fick namnet Pax Mariae, Marias frid, och blev självständigt priorat 1988 och abbedi 1991. Systrarna lever till största delen i klausur men driver ett gästhem för den som söker stillhet, och klosterkyrkan står öppen för besökare. Här sluts cirkeln kring Birgitta: samma regel som hon skrev på 1300-talet följs fortfarande, bara några hundra meter från den kyrka där hennes reliker vilar.",
+   "key_facts": [
+    "Birgittinsystrar återvände till Vadstena 1935; regelrätt kloster återupprättat 1963",
+    "Knöts som dotterkloster till Maria Refugie i Uden, Nederländerna",
+    "Nuvarande byggnader uppförda 1972–73 (arkitekt Karl-Göran Eklund)",
+    "Klosterkyrkan invigd 23 juli 1973, på 600-årsdagen av Birgittas död",
+    "Självständigt priorat 1988 och abbedi 1991 under namnet Pax Mariae – fortfarande verksamt"
+   ],
+   "images": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Bj%C3%A4lbo%C3%A4ttens_palats%2C_Vadstena%2C_juni_2005.jpg",
+     "source": "Wikimedia Commons",
+     "attribution": "Se Wikimedia Commons"
+    }
+   ],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Sankta_Birgittas_kloster",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Sankta_Birgittas_kloster",
+    "https://birgittaskloster.se/",
+    "https://klostermuseum.se/birgittasystrarna/"
+   ],
+   "city": "Vadstena"
+  },
+  {
+   "id": "vadstena-heliga-birgitta",
+   "name": "Heliga Birgitta",
+   "category": "person",
+   "coordinates": {
+    "lat": 58.4501,
+    "lng": 14.8909
+   },
+   "era": "1303–1373",
+   "summary": "Sveriges skyddshelgon och klosterstadens grundtanke – hennes vision skapade Vadstena kloster.",
+   "description": "Ingen har format Vadstena så djupt som Birgitta Birgersdotter. Född omkring 1303 i en mäktig uppländsk frälsesläkt gifte hon sig ung med lagmannen Ulf Gudmarsson och fick åtta barn. Tidigt fick hon de syner och uppenbarelser som skulle prägla hela hennes liv och som hon lät skriva ner – texter som gjorde henne till en av medeltidens mest lästa författare. Efter Ulfs död trädde Birgitta fram som en orädd röst i tidens andliga och politiska strider. Grunden till hennes kloster lades redan 1346, då kung Magnus Eriksson och drottning Blanka i sitt testamente skänkte kungsgården i Vadstena – det gamla Bjälboättens palats – för ändamålet. Där ville Birgitta grunda en ny orden, Den helige Frälsarens orden, med både nunnor och munkar under gemensam ledning. År 1349 reste Birgitta till Rom och återvände aldrig till Sverige. Hon dog i den heliga staden den 23 juli 1373, och hennes reliker fördes hem till Vadstena. År 1391 helgonförklarades hon. Idag vördas hon som Sveriges skyddshelgon och utsågs 1999 till ett av Europas skyddshelgon. Klosterkyrkan där hennes ben vilar är målet för pilgrimer från hela världen – och den röda tråd som binder samman denna vandring.",
+   "key_facts": [
+    "Född ca 1303, gift med lagmannen Ulf Gudmarsson; mor till bl.a. Katarina av Vadstena",
+    "Hennes uppenbarelser gjorde henne till en av medeltidens mest lästa författare",
+    "1346 skänkte Magnus Eriksson och drottning Blanka kungsgården (Bjälboättens palats) till hennes kloster",
+    "Grundade Den helige Frälsarens orden (birgittinorden), ett dubbelkloster för nunnor och munkar",
+    "Död i Rom 23 juli 1373, helgonförklarad 1391; Sveriges skyddshelgon och ett av Europas skyddshelgon (1999)"
+   ],
+   "images": [],
+   "image_source_pages": [
+    {
+     "url": "https://sv.wikipedia.org/wiki/Heliga_Birgitta",
+     "source": "Wikipedia"
+    }
+   ],
+   "sources": [
+    "https://sv.wikipedia.org/wiki/Heliga_Birgitta",
+    "https://sv.wikipedia.org/wiki/Vadstena_kloster",
+    "https://klostermuseum.se/historia/"
+   ],
+   "city": "Vadstena"
   }
  ]
 }
