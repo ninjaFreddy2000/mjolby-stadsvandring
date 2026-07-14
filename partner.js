@@ -3,6 +3,10 @@
 // Fredrik godkänner sedan i admin (admin_approve_partner). CSP script-src 'self'.
 import { getSupabase, isConfigured } from './config.js';
 
+// Stripe Payment Link för partner-promo (299 kr/år). Fristående kassasida — ingen
+// in-app-entitlement (partner-promo kräver ingen inloggning). Uppdateras här om länken byts.
+const STRIPE_PARTNER_URL = 'https://buy.stripe.com/dRmcN47603tUdaO8KD08g02';
+
 // Tier-knapparna (Kommun/Hembygd/Företag) förväljer typ i formuläret och rullar dit.
 // CSP är script-src 'self' → ingen inline-JS; vi kopplar allt här.
 const TYPE_LABELS = {
@@ -64,6 +68,29 @@ if (form) {
     }
 
     form.reset();
-    msg('Tack! Vi har fått er ansökan och hör av oss inom kort. 💛', true);
+    if (ptype === 'foretag') {
+      msg('Tack! Sista steget: betala 299 kr/år så gör vi er till ett stopp på kartan. 💛', true);
+      showPartnerPay();
+    } else {
+      msg('Tack! Vi har fått er ansökan och hör av oss inom kort. 💛', true);
+    }
   });
+
+  // Visa/skapa "Betala 299 kr/år"-knappen efter meddelandet (företag som ansökt via formuläret).
+  function showPartnerPay() {
+    let a = document.getElementById('partner-pay');
+    if (!a) {
+      a = document.createElement('a');
+      a.id = 'partner-pay';
+      a.className = 'btn btn--primary btn--lg';
+      a.href = STRIPE_PARTNER_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = '💳 Betala 299 kr/år';
+      a.style.cssText = 'margin-top:10px;text-align:center';
+      const m = document.getElementById('partner-msg');
+      if (m && m.parentNode) m.parentNode.insertBefore(a, m.nextSibling);
+    }
+    a.hidden = false;
+  }
 }
