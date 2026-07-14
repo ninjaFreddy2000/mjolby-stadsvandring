@@ -64,11 +64,17 @@ Detta lägger till `entitlements`, `city_purchases`, `stripe_customers`, `events
 supabase secrets set STRIPE_SECRET_KEY=sk_test_DIN_NYCKEL
 supabase secrets set SITE_URL=https://stadsvandring.io
 
-# Deploya de tre funktionerna (webhook utan JWT-verifiering)
+# Deploya funktionerna (webhook utan JWT-verifiering)
 supabase functions deploy create-checkout
 supabase functions deploy customer-portal
 supabase functions deploy stripe-webhook --no-verify-jwt
+
+# (Valfritt, för partner-AI:) polering av partnermaterial med Claude
+supabase secrets set ANTHROPIC_API_KEY=sk-ant-DIN_NYCKEL
+supabase functions deploy enhance-content
 ```
+
+> **Partner-AI (valfritt):** `enhance-content` låter dig polera en partners text med Claude i admin-vyn ("✨ Polera med AI"). Kräver `ANTHROPIC_API_KEY` (från console.anthropic.com). Modellen är `claude-opus-4-8`; sätt secret `ENHANCE_MODEL=claude-haiku-4-5` om du vill ha lägre kostnad. Betalningen fungerar utan den här funktionen.
 
 > `SUPABASE_URL`, `SUPABASE_ANON_KEY` och `SUPABASE_SERVICE_ROLE_KEY` injiceras automatiskt av Supabase — dem behöver du **inte** sätta.
 
@@ -119,4 +125,5 @@ where id = (select id from auth.users where email = 'fredrik.lundberg@grantigo.c
 - **Egen inloggning.** Det här är ett eget Supabase-projekt med egna konton — krockar inte med Spökkartan eller Cellary (de har sina egna).
 - **Anonym data.** All mätning är utan cookies och utan PII. Bara admin ser aggregaten.
 - **Gaten är en konverterings-gate, inte kopieringsskydd.** Innehållet är delvis publikt (SEO-sidorna) — värdet ligger i den guidade appupplevelsen. Samma filosofi som den befintliga leads-gaten.
-- **Partner (hembygdsgård) & kommun:** grunden finns (`profiles.is_partner` / `partner_org`, samt `leads`). Partner-portalen och kommun-kontaktflödet byggs i nästa iteration.
+- **Partner (hembygdsgård/företag):** klart. `/partners` har ett ansökningsformulär → `partner_applications`. I admin ser du ansökningar och godkänner (blir `is_partner`). Partnerns material går genom samma förslags-kö; knappen "✨ Polera med AI" skriver om texten i appens ton (du granskar och publicerar själv — ingen auto-publish). Kräver `enhance-content` + `ANTHROPIC_API_KEY` (se steg 5).
+- **Kommun:** klart sedan tidigare — `/for-kommuner` har ett kontaktformulär som skapar en lead; de hör av sig till dig.

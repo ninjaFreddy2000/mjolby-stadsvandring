@@ -2,7 +2,7 @@
 // Isolerad modul (samma mönster som tips.js/challenges.js). All känslig läsning
 // skyddas av RLS i Supabase (profiles/tips/events syns bara för is_admin());
 // den här filen är bara UI + anrop. Installationsguiden är öppen för alla.
-import { getSupabase, isConfigured, APP_CITY } from './config.js';
+import { getSupabase, isConfigured, APP_CITY, FUNCTIONS_BASE } from './config.js';
 import { isAdmin, getUser } from './auth.js';
 
 let ctx = null, supa = null;
@@ -23,6 +23,9 @@ const L = {
     a_topPlaces: 'Mest öppnade platser', a_byCity: 'Per stad', a_none: 'Ingen data än.',
     h_customers: '💳 Kunder', c_note: 'Betalande konton — nivå och e-post. Övrig data är anonym.',
     c_total: 'Kunder totalt', c_stadsjakt: 'Stadsjakten', c_stad: 'Enstaka städer', c_none: 'Inga kunder än.',
+    h_partner: '🤝 Partner-ansökningar', p_pending: 'väntar', p_none: 'Inga ansökningar än.',
+    p_approve: '✅ Godkänn', p_reject: '⛔ Avslå', p_orgPrompt: 'Företagsnamn (partner_org):',
+    t_aiBtn: '✨ Polera med AI', t_aiWorking: 'AI polerar…', t_aiDone: 'AI-polerat — granska och publicera.',
     h_tips: '💬 Förslag-loopen', t_pending: 'Väntar', t_needs: 'Komplettering', t_pub: 'Publicerade', t_rej: 'Avslagna',
     t_open: 'Öppna förslag att hantera', t_none: 'Inga öppna förslag — allt är hanterat. 🎉',
     t_pubBtn: '⚡ Publicera', t_rejBtn: '⛔ Avslå', t_infoBtn: '📝 Be om mer info',
@@ -42,6 +45,9 @@ const L = {
     a_topPlaces: 'Most opened places', a_byCity: 'By city', a_none: 'No data yet.',
     h_customers: '💳 Customers', c_note: 'Paying accounts — level and email. Everything else is anonymous.',
     c_total: 'Total customers', c_stadsjakt: 'Stadsjakten', c_stad: 'Single towns', c_none: 'No customers yet.',
+    h_partner: '🤝 Partner applications', p_pending: 'pending', p_none: 'No applications yet.',
+    p_approve: '✅ Approve', p_reject: '⛔ Reject', p_orgPrompt: 'Organisation name (partner_org):',
+    t_aiBtn: '✨ Polish with AI', t_aiWorking: 'AI polishing…', t_aiDone: 'AI-polished — review and publish.',
     h_tips: '💬 Suggestion loop', t_pending: 'Pending', t_needs: 'Needs info', t_pub: 'Published', t_rej: 'Rejected',
     t_open: 'Open suggestions to handle', t_none: 'No open suggestions — all handled. 🎉',
     t_pubBtn: '⚡ Publish', t_rejBtn: '⛔ Reject', t_infoBtn: '📝 Request more info',
@@ -85,7 +91,7 @@ export async function openAdminDashboard() {
     const now = Date.now();
     // Parallella läsningar (alla admin-skyddade via RLS).
     const [pRes, eRes, tRes] = await Promise.all([
-      supa.from('profiles').select('id,display_name,tier,is_admin,reputation,published_count,created_at').limit(2000),
+      supa.from('profiles').select('id,display_name,tier,is_admin,is_partner,partner_org,reputation,published_count,created_at').limit(2000),
       supa.from('events').select('name,city,session,props,ts').order('ts', { ascending: false }).limit(5000),
       // select('*') so the dashboard survives whether or not the place-contributions
       // migration (which adds info_request/consent) has been deployed yet.
@@ -95,12 +101,14 @@ export async function openAdminDashboard() {
     // Kunder (via admin-RPC:er). Feltoleranta: om billing-migrationen ännu inte
     // är deployad returnerar RPC:erna fel → vi visar bara sektionen tom, dashboarden
     // kraschar inte.
-    const [custRes, custCntRes] = await Promise.all([
+    const [custRes, custCntRes, partAppRes] = await Promise.all([
       supa.rpc('admin_customers').then(r => r, () => ({ data: null })),
       supa.rpc('admin_customer_count').then(r => r, () => ({ data: null })),
+      supa.rpc('admin_partner_applications').then(r => r, () => ({ data: null })),
     ]);
     const customers = (custRes && custRes.data) || [];
     const custCount = (custCntRes && custCntRes.data && custCntRes.data[0]) || { stadsjakt: 0, stad: 0, total: 0 };
+    const partnerApps = (partAppRes && partAppRes.data) || [];
     if (pRes.error || tRes.error) {
       card.innerHTML = `<button class="fb-x" id="adm-x">&times;</button><h3>🛡️ ${tx('title')}</h3>
         <p class="auth-fine err">${esc((pRes.error || tRes.error).message)}</p>`;
@@ -110,6 +118,8 @@ export async function openAdminDashboard() {
 
     // Användare
     const nameById = {}; profiles.forEach(p => nameById[p.id] = p.display_name || (en() ? 'Contributor' : 'Tipsare'));
+    // Vilka tips kommer från en partner? (styr AI-poleringsknappen)
+    const partnerById = {}; profiles.forEach(p => { if (p.is_partner) partnerById[p.id] = p.partner_org || (p.display_name || 'Partner'); });
     const newUsers = profiles.filter(p => p.created_at && (now - new Date(p.created_at).getTime()) < WEEK).length;
     const byTier = ['tipsare', 'granskare', 'ortskannare'].map(tr => [tr, profiles.filter(p => p.tier === tr && !p.is_admin).length]);
     const admins = profiles.filter(p => p.is_admin).length;
@@ -152,14 +162,16 @@ export async function openAdminDashboard() {
         ${open.length ? open.map(tp => {
           const where = tp.kind === 'place' ? '📍' : '✎';
           const needs = tp.status === 'needs_info';
+          const partnerOrg = partnerById[tp.author_id];   // sanning ⇒ tipset kommer från en partner
           return `<div class="adm-tip" data-row="${tp.id}">
             <div class="adm-tip-main">
               <b>${where} ${esc(tp.title)}</b>
-              <small>${tx('t_by')} ${esc(nameById[tp.author_id] || '—')}${needs ? ` · ⏳ ${tx('t_waiting')}` : ''}</small>
+              <small>${tx('t_by')} ${esc(nameById[tp.author_id] || '—')}${partnerOrg ? ` · 🤝 ${esc(partnerOrg)}` : ''}${needs ? ` · ⏳ ${tx('t_waiting')}` : ''}</small>
               ${tp.body ? `<p>${esc(tp.body)}</p>` : ''}
               ${needs && tp.info_request ? `<p class="adm-inforeq">📝 ${esc(tp.info_request)}</p>` : ''}
             </div>
             <div class="adm-tip-actions">
+              ${partnerOrg ? `<button class="rev-admin" data-ai="${tp.id}">${tx('t_aiBtn')}</button>` : ''}
               <button class="rev-admin" data-pub="${tp.id}">${tx('t_pubBtn')}</button>
               <button class="rev-admin" data-info="${tp.id}">${tx('t_infoBtn')}</button>
               <button class="rev-admin danger" data-rej="${tp.id}">${tx('t_rejBtn')}</button>
@@ -202,6 +214,24 @@ export async function openAdminDashboard() {
         return `<li><span>${esc(c.email)}</span><b>${lvl}</b></li>`;
       }).join('') : `<li class="ch-empty">${tx('c_none')}</li>`}</ul>
 
+      <h4 class="cb-h">${tx('h_partner')}</h4>
+      <div class="adm-tips" id="adm-partner">
+        ${partnerApps.filter(a => a.status === 'pending').length
+          ? partnerApps.filter(a => a.status === 'pending').map(a => `<div class="adm-tip" data-app="${a.id}">
+              <div class="adm-tip-main">
+                <b>🏛️ ${esc(a.org_name)}</b>
+                <small>${esc(a.email)}${a.city ? ` · ${esc(a.city)}` : ''}${a.contact_name ? ` · ${esc(a.contact_name)}` : ''}</small>
+                ${a.about ? `<p>${esc(a.about)}</p>` : ''}
+                ${a.building_story ? `<p class="adm-inforeq">🏠 ${esc(a.building_story)}</p>` : ''}
+              </div>
+              <div class="adm-tip-actions">
+                <button class="rev-admin" data-appok="${a.id}" data-org="${esc(a.org_name)}">${tx('p_approve')}</button>
+                <button class="rev-admin danger" data-apprej="${a.id}">${tx('p_reject')}</button>
+              </div>
+            </div>`).join('')
+          : `<div class="screen-empty">${tx('p_none')}</div>`}
+      </div>
+
       <h4 class="cb-h">${tx('h_install')}</h4>
       <button class="fb-cta" id="adm-install">${tx('install_open')}</button>
 
@@ -213,6 +243,49 @@ export async function openAdminDashboard() {
     card.querySelectorAll('[data-pub]').forEach(b => b.onclick = () => decide(b.dataset.pub, 'published'));
     card.querySelectorAll('[data-rej]').forEach(b => b.onclick = () => decide(b.dataset.rej, 'rejected'));
     card.querySelectorAll('[data-info]').forEach(b => b.onclick = () => requestInfo(b.dataset.info));
+    card.querySelectorAll('[data-ai]').forEach(b => b.onclick = () => enhanceTip(b.dataset.ai, tips));
+    card.querySelectorAll('[data-appok]').forEach(b => b.onclick = () => approvePartner(b.dataset.appok, b.dataset.org));
+    card.querySelectorAll('[data-apprej]').forEach(b => b.onclick = () => rejectPartner(b.dataset.apprej));
+  }
+
+  // ── Partner: godkänn/avslå ansökan ─────────────────────────────────────────
+  async function approvePartner(id, org) {
+    const name = window.prompt(tx('p_orgPrompt'), org || '');
+    if (name == null) return;
+    const { error } = await supa.rpc('admin_approve_partner', { p_app_id: id, p_org: name.trim() || null });
+    if (error) { ctx.toast(error.message); return; }
+    ctx.toast(tx('done')); load();
+  }
+  async function rejectPartner(id) {
+    const { error } = await supa.rpc('admin_reject_partner', { p_app_id: id });
+    if (error) { ctx.toast(error.message); return; }
+    ctx.toast(tx('done')); load();
+  }
+
+  // ── Partner: polera ett tips med AI (Claude via edge function) ─────────────
+  // Fredrik behåller kontrollen: den polerade texten sparas på tipset (fortsatt
+  // pending) och listan laddas om — han granskar och klickar sedan Publicera.
+  async function enhanceTip(tipId, tips) {
+    const tp = (tips || []).find(t => t.id === tipId);
+    if (!tp) return;
+    ctx.toast(tx('t_aiWorking'));
+    try {
+      const { data } = await supa.auth.getSession();
+      const token = data && data.session ? data.session.access_token : null;
+      if (!token) { ctx.toast(en() ? 'Sign in' : 'Logga in'); return; }
+      const res = await fetch(`${FUNCTIONS_BASE}/enhance-content`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ title: tp.title, body: tp.body, city: tp.city, kind: tp.kind }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) { ctx.toast(out.error || (en() ? 'AI failed' : 'AI misslyckades')); return; }
+      const { error } = await supa.rpc('admin_update_tip_content', {
+        p_tip_id: tipId, p_title: out.title || tp.title, p_body: out.body || tp.body,
+      });
+      if (error) { ctx.toast(error.message); return; }
+      ctx.toast(tx('t_aiDone')); load();
+    } catch (e) { ctx.toast(String(e.message || e)); }
   }
 
   async function decide(id, status) {
