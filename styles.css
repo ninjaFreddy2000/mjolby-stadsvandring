@@ -181,6 +181,25 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   border:3px solid var(--card);box-shadow:0 6px 12px rgba(60,40,20,.4);display:grid;place-items:center;
 }
 .pin span{transform:rotate(-45deg);font-size:15px;line-height:1}
+/* Spökplats-nål (Spökkartan-korsmarknadsföring) — lila, tydligt skild från appens stopp */
+.pin--ghost{background:linear-gradient(160deg,#6f5aa8,#4a3b73);border-color:#efeaff;
+  box-shadow:0 6px 14px rgba(40,25,70,.45)}
+.pin--ghost span{filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}
+.ghost-btn.on{background:#efeaff!important;box-shadow:0 0 0 2px #6f5aa8 inset}
+/* Ghost-sheet hero */
+.hero.hero--ghost{background:radial-gradient(120% 100% at 50% 0%,#5b4b8a 0%,#3a2f5c 60%,#241d3d 100%)}
+.ghost-hero{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.ghost-hero::before,.ghost-hero::after{content:"";position:absolute;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}
+.ghost-hero::before{width:220px;height:220px;top:-60px;left:-40px}
+.ghost-hero::after{width:180px;height:180px;bottom:-70px;right:-30px}
+.ghost-hero__emoji{font-size:88px;line-height:1;filter:drop-shadow(0 8px 18px rgba(0,0,0,.5));
+  animation:ghostFloat 4s ease-in-out infinite}
+@keyframes ghostFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.ghost-hero__emoji{animation:none}}
+.ghost-cta{background:linear-gradient(135deg,#6f5aa8,#4a3b73)!important;color:#fff!important;
+  text-decoration:none;display:block;text-align:center}
+.ghost-cta:hover{filter:brightness(1.06)}
 /* Kart-kluster-bubbla (matchar appens palett) */
 .mc-wrap{background:none!important;border:none!important}
 .mc-bubble{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
@@ -209,6 +228,32 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   font-weight:700;font-size:13.5px;border-radius:var(--r-pill);padding:9px 16px;cursor:pointer}
 .install-banner .ib-x{flex:none;border:none;background:none;color:var(--ink-3);font-size:20px;cursor:pointer;padding:0 2px;line-height:1}
 @media(min-width:1000px){ .install-banner{bottom:24px} }
+
+/* Spökkartan-promo-banner (korsmarknadsföring). Mörk, atmosfärisk — sticker ut
+   mot appens ljusa palett men känns påkostad, inte som en billig annons. */
+.spok-banner{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(70px + env(safe-area-inset-bottom,0px));z-index:1150;
+  display:flex;align-items:center;gap:12px;width:min(460px,94vw);
+  background:linear-gradient(135deg,#3a2f5c 0%,#251d40 100%);
+  border:1px solid rgba(180,160,230,.35);border-radius:var(--r-lg);padding:12px 14px;
+  box-shadow:0 16px 40px -12px rgba(20,12,40,.7);color:#f3efff;
+  animation:spokIn .4s cubic-bezier(.2,.8,.2,1)}
+.spok-banner[hidden]{display:none}
+@keyframes spokIn{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(prefers-reduced-motion:reduce){.spok-banner{animation:none}}
+.spok-banner__ghost{font-size:30px;flex:none;line-height:1;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.5));animation:ghostFloat 4s ease-in-out infinite}
+.spok-banner__text{flex:1;min-width:0}
+.spok-banner__text b{display:block;font-family:var(--font-display);font-size:14.5px;color:#fff;line-height:1.25}
+.spok-banner__text small{display:block;font-size:12.5px;color:#cfc6ee;line-height:1.4;margin-top:2px}
+.spok-banner__cta{flex:none;border:none;background:linear-gradient(135deg,#8a72d6,#6f5aa8);color:#fff;
+  font-family:var(--font-display);font-weight:700;font-size:13.5px;border-radius:var(--r-pill);
+  padding:9px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.spok-banner__cta:hover{filter:brightness(1.08)}
+.spok-banner__x{flex:none;border:none;background:none;color:#b8ade0;font-size:20px;cursor:pointer;padding:0 2px;line-height:1}
+.spok-banner__x:hover{color:#fff}
+@media(min-width:1000px){ .spok-banner{bottom:24px;left:auto;right:24px;transform:none}
+  @keyframes spokIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}} }
 
 /* Utmärkelser / badges */
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-bottom:6px}

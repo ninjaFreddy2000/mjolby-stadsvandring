@@ -41,6 +41,7 @@ function setupErrorMonitoring(){
 import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
          openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 import { initAdmin, openAdminDashboard, openInstallGuide, adminAvailable } from './admin.js';
+import { GHOSTS, SPOKKARTAN_URL } from './ghosts.js';
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
 const t = k => (STRINGS[lang] && STRINGS[lang][k]) || STRINGS.sv[k] || k;
@@ -56,7 +57,7 @@ const leadOf = e => (lang === 'en' && SUMMARY_EN[e.id]) || e.summary || '';
 // filtreras bort som valbara. Sätt till true för att återaktivera fler städer.
 const SHOW_SOON_CITIES = true;   // STAGING (gren orter-ostergotland): Östergötland-orterna synliga för granskning. Sätt false för Mjölby-only-demo.
 const MJOLBY_ONLY = !SHOW_SOON_CITIES;
-const MIN_CITY_STOPS = 9;        // en ort visas i stadsväljaren först när den har minst 9 stopp att besöka
+const MIN_CITY_STOPS = 1;        // visa ALLA städer som har minst ett stopp i den övergripande vyn (tidigare 9 → tunna orter göms; nu alla med)
 let activeCity = MJOLBY_ONLY ? 'Mjölby' : (localStorage.getItem('sv_city') || 'Mjölby');
 const citySlug = s => String(s||'').toLowerCase()
   .replace(/[åä]/g,'a').replace(/ö/g,'o').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
@@ -165,6 +166,9 @@ const QUIZZES = {
 /* ---------- State ---------- */
 let DATA = [], ENTRIES = [], markersById = {};
 let map, markerLayer, plainLayer, routeLayer, meMarker;
+let ghostLayer = null;   // spökplatser (Spökkartan-korsmarknadsföring) — eget lager, stad-oberoende
+const GHOSTS_KEY = 'sv_ghosts_on';
+let ghostsOn = (localStorage.getItem(GHOSTS_KEY) ?? '1') === '1';   // default på
 // Generisk centrumslinga: id-lista (redan promenadordnad) per stad. Fylls i init().
 let CENTRAL_BY_CITY = {};
 const CURATED_TOUR_CITIES = new Set(['Mjölby']);   // har egna kurerade turer → ingen generisk
@@ -359,6 +363,7 @@ async function init() {
   setupChallenges();
   setupAuthTips();
   setupInstallPrompt();
+  setupSpokBanner();
   setupConnectivity();
 
   if ('serviceWorker' in navigator) {
@@ -403,6 +408,10 @@ function buildMap() {
   map.addLayer(markerLayer); plainLayer.addTo(map);
   routeLayer = L.layerGroup().addTo(map);
 
+  // Spökplatser: eget lager över hela Sverige (oberoende av vald stad). Byggs en
+  // gång och ligger kvar — renderMarkers() rör det inte. Toggle via egen knapp.
+  buildGhostLayer();
+
   const Loc = L.Control.extend({
     options:{ position:'topleft' },
     onAdd(){
@@ -429,6 +438,22 @@ function buildMap() {
   });
   map.addControl(new Auto());
 
+  const Ghost = L.Control.extend({
+    options:{ position:'topleft' },
+    onAdd(){
+      const b = L.DomUtil.create('a','leaflet-bar leaflet-control ghost-btn');
+      b.href='#'; b.title = lang==='en' ? 'Haunted places' : 'Spökplatser'; b.innerHTML='👻';
+      b.setAttribute('role','button');
+      b.setAttribute('aria-label', lang==='en' ? 'Toggle haunted places' : 'Visa/dölj spökplatser');
+      b.setAttribute('aria-pressed', String(ghostsOn));
+      b.style.cssText='width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;background:#fff';
+      b.classList.toggle('on', ghostsOn);
+      L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); toggleGhosts(b); });
+      return b;
+    }
+  });
+  map.addControl(new Ghost());
+
   // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig.
   // Vid första laddningen körs renderMarkers/fitView innan layouten är klar (#map
   // har 0 höjd), så fitBounds hamnar i världsvy. Mät om storleken OCH passa in på
@@ -438,6 +463,61 @@ function buildMap() {
   setTimeout(settleMap, 200);
   setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 600);
   window.addEventListener('resize', ()=> { try{ map.invalidateSize(); }catch(e){} });
+}
+
+/* ---------- Spökplatser (Spökkartan-korsmarknadsföring) ---------- */
+function ghostIcon(){
+  return L.divIcon({
+    className:'',
+    html:`<div class="pin pin--ghost"><span>👻</span></div>`,
+    iconSize:[30,30], iconAnchor:[15,30], popupAnchor:[0,-28],
+  });
+}
+function buildGhostLayer(){
+  if (!map) return;
+  ghostLayer = L.layerGroup();
+  GHOSTS.forEach(g=>{
+    L.marker([g.lat, g.lng], { icon: ghostIcon(), keyboard:false, riseOnHover:true, zIndexOffset:-200 })
+      .on('click', ()=> openGhostSheet(g))
+      .addTo(ghostLayer);
+  });
+  if (ghostsOn) ghostLayer.addTo(map);
+}
+function toggleGhosts(btn){
+  ghostsOn = !ghostsOn;
+  try { localStorage.setItem(GHOSTS_KEY, ghostsOn ? '1' : '0'); } catch(_){}
+  if (ghostLayer){ if (ghostsOn) ghostLayer.addTo(map); else map.removeLayer(ghostLayer); }
+  if (btn){ btn.classList.toggle('on', ghostsOn); btn.setAttribute('aria-pressed', String(ghostsOn)); }
+  toast(ghostsOn ? (lang==='en'?'👻 Haunted places shown':'👻 Spökplatser visas')
+                 : (lang==='en'?'Haunted places hidden':'Spökplatser dolda'));
+  track('ghosts_toggle', { on: ghostsOn });
+}
+function openGhostSheet(g){
+  track('ghost_open', { name: g.name });
+  currentSheetId = null;             // ghost-teaser är inget riktigt stopp
+  const en = lang==='en';
+  const title = en ? 'A haunted place' : 'Det spökar här';
+  const body  = en
+    ? `<b>${g.name}</b>${g.region?` · ${g.region}`:''} is said to be haunted. This is a taste — the real ghost stories live on <b>Spökkartan</b>, our sister map of haunted places all over Sweden.`
+    : `<b>${g.name}</b>${g.region?` · ${g.region}`:''} är enligt sägnen en plats där det spökar. Det här är bara en försmak — de riktiga spökhistorierna finns på <b>Spökkartan</b>, vår systerkarta över hemsökta platser i hela Sverige.`;
+  const cta = en ? 'Explore on Spökkartan' : 'Läs mer på Spökkartan';
+  $('#sheet-inner').innerHTML = `
+    <div class="hero hero--ghost"><div class="ghost-hero"><span class="ghost-hero__emoji">👻</span></div></div>
+    <div class="sheet-pad">
+      <span class="type-tag" style="background:#5b4b8a">👻 ${en?'Haunted':'Spökplats'}</span>
+      <span class="city-tag">📍 ${g.region||'Sverige'}</span>
+      <h2>${g.name}</h2>
+      <p class="lead">${title}</p>
+      <div class="story"><p>${body}</p></div>
+      <a class="checkin ghost-cta" href="${SPOKKARTAN_URL}" target="_blank" rel="noopener"
+         onclick="try{}catch(_){}">🔮 ${cta}</a>
+      <p class="srcs"><a href="${SPOKKARTAN_URL}" target="_blank" rel="noopener">spokkartan.se</a></p>
+    </div>`;
+  const sb = $('#save-btn'); if (sb){ sb.classList.remove('on'); sb.style.display='none'; }
+  closeOverlays('#sheet');
+  $('#sheet').setAttribute('aria-hidden','false');
+  focusInto('#sheet');
+  if (map) map.panTo([g.lat, g.lng], { animate:true });
 }
 
 function pinIcon(entry, visited){
@@ -849,7 +929,7 @@ function openSheet(id){
   const spk = $('#speak-btn');
   if (spk) spk.onclick = ()=> speaking ? stopSpeaking() : speak(narrationText(e));
   const sb = $('#save-btn');
-  if (sb){ const on=saved().has(id); sb.classList.toggle('on',on); sb.setAttribute('aria-label', on?t('saved'):t('save')); sb.onclick=()=> toggleSave(id); }
+  if (sb){ sb.style.display=''; const on=saved().has(id); sb.classList.toggle('on',on); sb.setAttribute('aria-label', on?t('saved'):t('save')); sb.onclick=()=> toggleSave(id); }
   const pc = $('#sheet-inner [data-photo]');
   if (pc) pc.onclick = ()=> startPhoto(pc.dataset.photo);
   const psh = $('#sheet-inner [data-share]');
@@ -1415,6 +1495,7 @@ function switchTab(id){
     else if (id==='profile') renderProfil();
     $('#screen').scrollTop=0;
   }
+  updateSpokBanner();   // Spökkartan-bannern visas bara i hemvyn
 }
 function renderLeder(){
   const st=stamps();
@@ -1536,6 +1617,7 @@ function openLanding(){
   $('#land-locate').onclick=locateMe;
   renderLandingList('');
   $('#landing').setAttribute('aria-hidden','false');
+  if (typeof updateSpokBanner==='function') updateSpokBanner();
 }
 function chooseCity(name){
   setActiveCity(name);                 // byter + centrerar (no-op om samma stad)
@@ -2002,6 +2084,33 @@ function setupInstallPrompt(){
   };
   $('#ib-x').onclick = ()=>{ banner.hidden = true; try { localStorage.setItem(PWA_DISMISS_KEY,'1'); } catch(_){} };
   window.addEventListener('appinstalled', ()=>{ banner.hidden = true; });
+}
+
+/* ---------- Spökkartan-promo-banner (korsmarknadsföring) ---------- */
+const SPOK_BANNER_KEY = 'sv_spok_banner_dismissed';
+let spokBannerReady = false;
+function setupSpokBanner(){
+  const b = $('#spok-banner');
+  if (!b) return;
+  const en = lang==='en';
+  $('#spok-banner-title').textContent = en ? 'Fond of a good ghost story?' : 'Tycker du även om en bra spökhistoria?';
+  $('#spok-banner-sub').textContent   = en ? 'Spökkartan maps haunted places all over Sweden.'
+                                           : 'På Spökkartan hittar du hemsökta platser i hela Sverige.';
+  $('#spok-banner-cta').textContent   = en ? 'Explore' : 'Utforska';
+  $('#spok-banner-cta').onclick = ()=> track('spok_banner_click', {});
+  $('#spok-banner-x').onclick = ()=>{ b.hidden = true; try { localStorage.setItem(SPOK_BANNER_KEY,'1'); } catch(_){} };
+  // Diskret intro: dyk upp först efter en liten stund, i hemvyn.
+  setTimeout(()=>{ spokBannerReady = true; updateSpokBanner(); }, 3500);
+}
+function updateSpokBanner(){
+  const b = $('#spok-banner');
+  if (!b) return;
+  let dismissed = false;
+  try { dismissed = localStorage.getItem(SPOK_BANNER_KEY)==='1'; } catch(_){}
+  const installShown = $('#install-banner') && $('#install-banner').hidden === false;
+  const landingOpen = $('#landing') && $('#landing').getAttribute('aria-hidden')==='false';
+  const show = spokBannerReady && !dismissed && activeTab==='home' && !installShown && !landingOpen;
+  b.hidden = !show;
 }
 
 function wireUi(){
