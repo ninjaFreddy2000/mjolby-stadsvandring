@@ -40,6 +40,19 @@ export const PRICES = {
 // Tills dess visar appen "kommer snart" istället för en trasig köp-knapp.
 export const BILLING_ENABLED = (() => { try { return localStorage.getItem('cfg_billing') === '1'; } catch (e) { return false; } })();
 
+// ── Lätt paywall via Stripe Payment Links (utan edge-function-backend) ────────
+// Gate:ar de guidade vandringarna. Köp-knappen skickar till en hostad Stripe-
+// länk (riktig betalning → intäkt). Upplåsningen är MJUK: sker via localStorage
+// när användaren kommer tillbaka via länkens success-URL (?unlocked=1), med en
+// "har du redan betalat?"-fallback. Konverterings-gate, inte kopieringsskydd.
+// När den riktiga Checkout-backenden (create-checkout + webhook + entitlements)
+// är deployad: sätt PAYWALL_LINKS=false, så tar BILLING_ENABLED-flödet över.
+export const PAYWALL_LINKS = true;
+export const PAYMENT_LINKS = {
+  stadsjakt: 'https://buy.stripe.com/9B628q3TOe8yeeS3qj08g00',  // Stadsjakten (alla städer)
+  city:      'https://buy.stripe.com/4gM3cu61W1lM0o23qj08g01',  // Stadsvandring (en stad)
+};
+
 let _clientPromise = null;
 // Använder @supabase/supabase-js som är vendor:ad lokalt (vendor/supabase.js, UMD →
 // window.supabase) — ingen tredjeparts-CDN i runtime, så CSP:n kan hålla script-src 'self'

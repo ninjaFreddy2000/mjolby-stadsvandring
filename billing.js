@@ -8,8 +8,13 @@
 //     • En stad (engångsköp 19 kr) → låser upp den staden för alltid
 //
 // Gaten är en KONVERTERINGS-mekanism, inte DRM — samma filosofi som leads-gaten.
-import { getSupabase, isConfigured, FUNCTIONS_BASE, PRICES, BILLING_ENABLED } from './config.js';
+import { getSupabase, isConfigured, FUNCTIONS_BASE, PRICES, BILLING_ENABLED, PAYWALL_LINKS, PAYMENT_LINKS } from './config.js';
 import { requireAuth, getUser, onAuthChange } from './auth.js';
+
+// ── Lätt paywall (Payment Links): mjuk upplåsning i localStorage ─────────────
+const SOFT_KEY = 'sv_access';
+function softUnlocked() { try { return localStorage.getItem(SOFT_KEY) === '1'; } catch (e) { return false; } }
+function grantSoftAccess() { try { localStorage.setItem(SOFT_KEY, '1'); } catch (e) {} state.stadsjakt = true; state.ready = true; emit(); }
 
 let ctx = null;
 let supa = null;
@@ -31,6 +36,7 @@ export function billingReady() { return state.ready; }
 
 // Kärnfrågan appen ställer: får den här användaren gå den här stadens vandring?
 export function hasAccess(city) {
+  if (PAYWALL_LINKS) return softUnlocked();    // lätt paywall: mjuk upplåsning (localStorage)
   if (!BILLING_ENABLED) return true;          // paywall av tills Stripe är live
   if (state.stadsjakt) return true;
   return state.cities.has(String(city || '').toLowerCase());
@@ -38,6 +44,7 @@ export function hasAccess(city) {
 
 export async function initBilling(context) {
   ctx = context;
+  if (PAYWALL_LINKS) { state.stadsjakt = softUnlocked(); state.ready = true; emit(); return; }
   if (!isConfigured()) { state.ready = true; emit(); return; }
   supa = await getSupabase();
   await refreshEntitlements();
@@ -98,6 +105,15 @@ export async function startCheckout(plan, city) {
   }
 }
 
+// Lätt paywall: skicka till en Stripe Payment Link (samma flik → success-URL kan
+// ta tillbaka till appen med ?unlocked=1 och låsa upp automatiskt).
+function openPaymentLink(plan) {
+  const url = PAYMENT_LINKS[plan] || PAYMENT_LINKS.stadsjakt;
+  if (!url) return;
+  toast(en() ? 'Opening secure payment…' : 'Öppnar säker betalning…');
+  location.assign(url);
+}
+
 // Öppnar Stripes kundportal (säg upp / ändra / kvitton).
 export async function openPortal() {
   toast(en() ? 'Opening your subscription…' : 'Öppnar ditt abonnemang…');
@@ -114,6 +130,15 @@ export async function openPortal() {
 // sekund, så vi läser om tillgången några gånger och städar URL:en.
 export async function handleCheckoutReturn() {
   const p = new URLSearchParams(location.search);
+  // Lätt paywall: retur från Stripe Payment Link (success-URL = …/karta?unlocked=1).
+  if (PAYWALL_LINKS && p.get('unlocked')) {
+    grantSoftAccess();
+    p.delete('unlocked');
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    toast(en() ? '🎉 Unlocked — enjoy the walks!' : '🎉 Upplåst — ha så kul på vandringarna!');
+    return;
+  }
   const status = p.get('checkout');
   if (!status) return;
   const clean = () => { p.delete('checkout'); p.delete('plan'); p.delete('city');
@@ -186,7 +211,7 @@ export function openPaywall(city, cityName) {
   const priceSub = en() ? PRICES.stadsjakt.label_en : PRICES.stadsjakt.label_sv;
   const name = cityName || (city ? city[0].toUpperCase() + city.slice(1) : (en() ? 'this town' : 'staden'));
 
-  const soon = !BILLING_ENABLED;
+  const soon = !BILLING_ENABLED && !PAYWALL_LINKS;   // lätt paywall → knapparna aktiva
   card.innerHTML = `
     <button class="pw-x" id="pw-x" aria-label="${en() ? 'Close' : 'Stäng'}">&times;</button>
     <h3>🚶 ${en() ? 'Unlock the guided walk' : 'Lås upp den guidade vandringen'}</h3>
@@ -212,11 +237,26 @@ export function openPaywall(city, cityName) {
       <button class="cta" id="pw-city" style="background:transparent;color:var(--accent,#0A2A6B);border:1.5px solid var(--accent,#0A2A6B)" ${soon || !city ? 'disabled' : ''}>${soon ? (en() ? 'Coming soon' : 'Kommer snart') : CTA_LABEL('city')}</button>
     </div>
 
-    <p class="pw-fine">${en() ? 'Secure payment via Stripe · ' : 'Säker betalning via Stripe · '}<a href="/integritet">${en() ? 'Privacy' : 'Integritet'}</a></p>`;
+    <p class="pw-fine">${en() ? 'Secure payment via Stripe · ' : 'Säker betalning via Stripe · '}<a href="/integritet">${en() ? 'Privacy' : 'Integritet'}</a></p>
+    ${PAYWALL_LINKS ? `<p class="pw-fine"><a href="#" id="pw-paid">${en() ? 'Already paid? Unlock here' : 'Har du redan betalat? Lås upp här'}</a></p>` : ''}`;
 
   card.querySelector('#pw-x').onclick = () => o.setAttribute('aria-hidden', 'true');
-  const sub = card.querySelector('#pw-sub'); if (sub && !soon) sub.onclick = () => startCheckout('stadsjakt');
-  const cty = card.querySelector('#pw-city'); if (cty && !soon && city) cty.onclick = () => startCheckout('city', city);
+  const sub = card.querySelector('#pw-sub');
+  const cty = card.querySelector('#pw-city');
+  if (PAYWALL_LINKS) {
+    if (sub) sub.onclick = () => openPaymentLink('stadsjakt');
+    if (cty && city) cty.onclick = () => openPaymentLink('city');
+  } else {
+    if (sub && !soon) sub.onclick = () => startCheckout('stadsjakt');
+    if (cty && !soon && city) cty.onclick = () => startCheckout('city', city);
+  }
+  const paid = card.querySelector('#pw-paid');
+  if (paid) paid.onclick = (e) => {
+    e.preventDefault();
+    grantSoftAccess();
+    o.setAttribute('aria-hidden', 'true');
+    toast(en() ? '🎉 Unlocked — enjoy the walks!' : '🎉 Upplåst — ha så kul på vandringarna!');
+  };
   o.setAttribute('aria-hidden', 'false');
 }
 
@@ -238,7 +278,24 @@ export function mountBillingProfile(el, opts = {}) {
   const anchor = el.querySelector('.auth-profile');
   if (anchor) anchor.after(wrap); else el.appendChild(wrap);
 
+  function renderLinks() {
+    const unlocked = softUnlocked();
+    wrap.innerHTML = `
+      <div class="acc-sub-card">
+        <div class="acc-sub-head">
+          <b>${en() ? 'Your access' : 'Din tillgång'}</b>
+          <span class="tier-badge">${unlocked ? '🗝️ ' + (en() ? 'Unlocked' : 'Upplåst') : (en() ? 'Free' : 'Gratis')}</span>
+        </div>
+        ${unlocked
+          ? `<p class="fb-sub" style="margin:.4em 0 0">${en() ? 'All guided walks unlocked. Thank you for your support!' : 'Alla guidade vandringar upplåsta. Tack för ditt stöd! 💛'}</p>`
+          : `<div class="acc-actions" style="margin-top:10px"><button class="cta" id="bp-buy">🗝️ ${en() ? 'Get Stadsjakten — ' : 'Skaffa Stadsjakten — '}${en() ? PRICES.stadsjakt.label_en : PRICES.stadsjakt.label_sv}</button></div>`}
+        <p class="fb-sub" style="margin:.7em 0 0;font-size:.8rem"><a href="/integritet" style="color:inherit">${en() ? 'Privacy policy' : 'Integritetspolicy'}</a></p>
+      </div>`;
+    const buy = wrap.querySelector('#bp-buy'); if (buy) buy.onclick = () => openPaymentLink('stadsjakt');
+  }
+
   function render() {
+    if (PAYWALL_LINKS) { renderLinks(); return; }
     if (!isConfigured() || !getUser()) { wrap.innerHTML = ''; return; }
     const cities = unlockedCities();
     let levelHtml;
