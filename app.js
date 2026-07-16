@@ -869,6 +869,8 @@ function openSheet(id){
   currentSheetId = id;
   sheetReturnTour = activeTour;           // kom vi från en tur? (för "tillbaka till turen")
   track('stop_open', { id });
+  spokOnPlaceOpen();                      // engagemang → ev. nudga Spökkartan-bannern
+
   const ty = TYPES[typeOf(e)];
   const st = stamps();
   const visited = st.has(id);
@@ -2104,8 +2106,22 @@ function setupInstallPrompt(){
 }
 
 /* ---------- Spökkartan-promo-banner (korsmarknadsföring) ---------- */
-const SPOK_BANNER_KEY = 'sv_spok_banner_dismissed';
+// Diskret ÅTERKOMMANDE nudge — dyker upp i hemvyn lite då och då vid naturliga
+// stunder (efter lite utforskande / när man öppnat ett par platser), inte som en
+// engångsruta. Ingen permanent bortstängning: stänger man snoozas den några dygn,
+// klickar man vidare snoozas den längre. Som mest en gång per session.
+const SPOK_SNOOZE_KEY     = 'sv_spok_banner_snooze';    // ms-timestamp: dold tills dess
+const SPOK_SNOOZE_DISMISS = 4  * 24 * 3600 * 1000;      // stäng (×) → 4 dygns paus
+const SPOK_SNOOZE_CLICK   = 30 * 24 * 3600 * 1000;      // klick vidare → 30 dygn
+const SPOK_INTRO_MS       = 25000;                      // fallback: dyk upp efter en stund i hemvyn
+const SPOK_OPENS_TRIGGER  = 2;                          // eller så fort man öppnat så här många platser
 let spokBannerReady = false;
+let spokShownThisSession = false;
+let spokPlaceOpens = 0;
+function spokSnoozed(){
+  try { return Date.now() < (+localStorage.getItem(SPOK_SNOOZE_KEY) || 0); } catch(_){ return false; }
+}
+function snoozeSpok(ms){ try { localStorage.setItem(SPOK_SNOOZE_KEY, String(Date.now() + ms)); } catch(_){} }
 function setupSpokBanner(){
   const b = $('#spok-banner');
   if (!b) return;
@@ -2114,20 +2130,29 @@ function setupSpokBanner(){
   $('#spok-banner-sub').textContent   = en ? 'Spökkartan maps haunted places all over Sweden.'
                                            : 'På Spökkartan hittar du hemsökta platser i hela Sverige.';
   $('#spok-banner-cta').textContent   = en ? 'Explore' : 'Utforska';
-  $('#spok-banner-cta').onclick = ()=> track('spok_banner_click', {});
-  $('#spok-banner-x').onclick = ()=>{ b.hidden = true; try { localStorage.setItem(SPOK_BANNER_KEY,'1'); } catch(_){} };
-  // Diskret intro: dyk upp först efter en liten stund, i hemvyn.
-  setTimeout(()=>{ spokBannerReady = true; updateSpokBanner(); }, 3500);
+  $('#spok-banner-cta').onclick = ()=>{ track('spok_banner_click', {}); snoozeSpok(SPOK_SNOOZE_CLICK); };
+  $('#spok-banner-x').onclick = ()=>{
+    b.hidden = true; spokShownThisSession = true; snoozeSpok(SPOK_SNOOZE_DISMISS);
+    track('spok_banner_dismiss', {});
+  };
+  // Fallback-intro: dyk upp efter en stund om användaren inte hunnit öppna platser.
+  setTimeout(nudgeSpokBanner, SPOK_INTRO_MS);
 }
+// Anropas vid en "bra stund" (t.ex. efter ett par öppnade platser) för att nudga.
+function nudgeSpokBanner(){ spokBannerReady = true; updateSpokBanner(); }
+// Räknar engagemang; efter några öppnade platser är det ett bra läge att tipsa.
+function spokOnPlaceOpen(){ if (++spokPlaceOpens === SPOK_OPENS_TRIGGER) nudgeSpokBanner(); }
 function updateSpokBanner(){
   const b = $('#spok-banner');
   if (!b) return;
-  let dismissed = false;
-  try { dismissed = localStorage.getItem(SPOK_BANNER_KEY)==='1'; } catch(_){}
   const installShown = $('#install-banner') && $('#install-banner').hidden === false;
-  const landingOpen = $('#landing') && $('#landing').getAttribute('aria-hidden')==='false';
-  const show = spokBannerReady && !dismissed && activeTab==='home' && !installShown && !landingOpen;
-  b.hidden = !show;
+  const landingOpen  = $('#landing') && $('#landing').getAttribute('aria-hidden')==='false';
+  const canShow = spokBannerReady && !spokSnoozed() && activeTab==='home' && !installShown && !landingOpen;
+  if (!canShow){ b.hidden = true; return; }
+  if (!b.hidden) return;                       // redan synlig — lämna orörd
+  if (spokShownThisSession) return;            // redan visad denna session → vänta till nästa
+  b.hidden = false;
+  spokShownThisSession = true;
 }
 
 function wireUi(){
