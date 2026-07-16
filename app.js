@@ -467,10 +467,12 @@ function buildMap() {
 
 /* ---------- Spökplatser (Spökkartan-korsmarknadsföring) ---------- */
 function ghostIcon(){
+  // Diskret svart prick — smälter in bland kartans platser istället för en stor
+  // emoji-nål. Skiljer sig ändå (mörk, ingen kategori-färg) och känns lugn.
   return L.divIcon({
     className:'',
-    html:`<div class="pin pin--ghost"><span>👻</span></div>`,
-    iconSize:[30,30], iconAnchor:[15,30], popupAnchor:[0,-28],
+    html:`<div class="ghost-dot" aria-hidden="true"></div>`,
+    iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-8],
   });
 }
 function buildGhostLayer(){
@@ -667,8 +669,23 @@ function fitView(){
   // då över — settleMap()/buildMap kör fitView igen så snart storleken är känd.
   const sz = (map.getSize && map.getSize()) || { x:0, y:0 };
   if (!sz.x || !sz.y) return;
-  const grp = L.featureGroup(ms);
-  map.fitBounds(grp.getBounds().pad(0.18), { maxZoom: activeTour==='central'?16:13 });
+  // Utan aktiv tur: rama in stadskärnan i stället för hela kommunen. Efter
+  // K-samsök-importen ligger många platser långt ut på landsbygden → hela stadens
+  // bounds zoomar ut allt till ETT jätte-kluster. Vi hittar ett robust centrum
+  // (median av nålarna, tål utliggare) och ramar in bara det som ligger inom
+  // CENTRAL_RADIUS_KM. De perifera platserna finns kvar på kartan (panorera/zooma
+  // ut) men startvyn blir kärnan där enskilda nålar syns. Beräknas direkt här så
+  // det funkar även för kurerade städer (Mjölby) som saknar CENTRAL_BY_CITY.
+  let fitMarkers = ms;
+  if (!activeTour && ms.length > 6){
+    const lls = ms.map(m => m.getLatLng());
+    const med = arr => { const s = [...arr].sort((a,b)=>a-b); return s[s.length>>1]; };
+    const c = { lat: med(lls.map(p=>p.lat)), lng: med(lls.map(p=>p.lng)) };
+    const near = ms.filter(m => { const p = m.getLatLng(); return distKm({ lat:p.lat, lng:p.lng }, c) <= CENTRAL_RADIUS_KM; });
+    if (near.length >= 3) fitMarkers = near;
+  }
+  const grp = L.featureGroup(fitMarkers);
+  map.fitBounds(grp.getBounds().pad(0.18), { maxZoom: activeTour==='central'?16:15 });
 }
 
 /* ---------- Tours UI ---------- */

@@ -181,10 +181,12 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   border:3px solid var(--card);box-shadow:0 6px 12px rgba(60,40,20,.4);display:grid;place-items:center;
 }
 .pin span{transform:rotate(-45deg);font-size:15px;line-height:1}
-/* Spökplats-nål (Spökkartan-korsmarknadsföring) — lila, tydligt skild från appens stopp */
-.pin--ghost{background:linear-gradient(160deg,#6f5aa8,#4a3b73);border-color:#efeaff;
-  box-shadow:0 6px 14px rgba(40,25,70,.45)}
-.pin--ghost span{filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}
+/* Spökplats-markör (Spökkartan-korsmarknadsföring) — diskret svart prick som
+   smälter in med kartan istället för en påträngande emoji-nål. */
+.ghost-dot{width:14px;height:14px;border-radius:50%;
+  background:#1c1a17;border:2px solid var(--card,#fff);
+  box-shadow:0 1px 3px rgba(0,0,0,.4);transition:transform .12s ease}
+.ghost-dot:hover{transform:scale(1.25)}
 .ghost-btn.on{background:#efeaff!important;box-shadow:0 0 0 2px #6f5aa8 inset}
 /* Ghost-sheet hero */
 .hero.hero--ghost{background:radial-gradient(120% 100% at 50% 0%,#5b4b8a 0%,#3a2f5c 60%,#241d3d 100%)}
