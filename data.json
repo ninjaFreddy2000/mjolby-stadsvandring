@@ -114,7 +114,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Svartån,_Östergötland"
    ],
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mjolby-kvarnby-svartan"
   },
   {
    "id": "mjolby-kyrka",
@@ -819,7 +820,8 @@
    "tour": {
     "in_medieval_ring": true
    },
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mantorp-bjalbo-ingrid-ylva"
   },
   {
    "id": "birger-jarl",
@@ -908,7 +910,8 @@
    "tour": {
     "in_medieval_ring": true
    },
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mjolby-hogby-kyrkogard-hogbystenen"
   },
   {
    "id": "skanninge-orten",
@@ -1009,7 +1012,8 @@
    "tour": {
     "in_medieval_ring": true
    },
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/skanninge-varfrukyrkan"
   },
   {
    "id": "sta-ingrids-kloster",
@@ -1047,7 +1051,8 @@
    "tour": {
     "in_medieval_ring": true
    },
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/skanninge-sta-ingrids-kloster"
   },
   {
    "id": "st-olofs-kloster-petrus-de-dacia",
@@ -1074,7 +1079,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Petrus_de_Dacia"
    ],
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/skanninge-st-olof-petrus-de-dacia"
   },
   {
    "id": "adolf-fredrik-lindblad",
@@ -1201,7 +1207,8 @@
    "tour": {
     "in_medieval_ring": true
    },
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vastraharg-svaneholm-garpe"
   },
   {
    "id": "ojebro-stenvalvsbro",
@@ -1224,7 +1231,8 @@
    "sources": [
     "https://tadigut.nu/att-gora-mjolby-kmn/"
    ],
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mjolby-ojebro-stenvalvsbro"
   },
   {
    "id": "branden-1771",
@@ -1654,7 +1662,8 @@
    ],
    "sources": [
     "https://www.visitmotala.se"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/svarta-och-vita-frun-pa-charlottenborgs-slott"
   },
   {
    "id": "motala-rundradiomuseum",
@@ -2573,7 +2582,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Sommen"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/boxholm-sommen-urkon"
   },
   {
    "id": "boxholm-kyrka",
@@ -2659,7 +2669,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Malexanders_kyrka"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/boxholm-malexanders-kyrka"
   },
   {
    "id": "boxholm-rinna-kyrka",
@@ -2685,7 +2696,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Rinna_kyrka"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/boxholm-rinna-kyrka"
   },
   {
    "id": "boxholm-oejaren",
@@ -2801,7 +2813,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/R%C3%B6kstenen",
     "https://www.wikidata.org/wiki/Q1392541"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-rokstenen"
   },
   {
    "id": "odeshog-alvastra",
@@ -2833,7 +2846,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Alvastra_kloster",
     "https://www.wikidata.org/wiki/Q582622"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-alvastra-klosterruin"
   },
   {
    "id": "odeshog-omberg",
@@ -2865,7 +2879,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Omberg",
     "https://www.wikidata.org/wiki/Q2030574"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-omberg-drottning-omma"
   },
   {
    "id": "odeshog-takern",
@@ -2924,7 +2939,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Heda_kyrka"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-heda-kyrka"
   },
   {
    "id": "odeshog-kyrka",
@@ -2976,7 +2992,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/H%C3%A4stholmen%2C_%C3%96desh%C3%B6gs_kommun"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-hastholmen-per-brahe"
   },
   {
    "id": "odeshog-vattern",
@@ -3003,7 +3020,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/V%C3%A4ttern"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-vattern-hanskratt"
   },
   {
    "id": "alingsas-orten",
@@ -3116,7 +3134,8 @@
    ],
    "sources": [
     "https://sv.wikipedia.org/wiki/Gr%C3%A4fsn%C3%A4s_slott"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/grafsnas-slottsruin-forbannelser-spoken-och-en-gomd-skatt"
   },
   {
    "id": "alingsas-anten-grafsnas",
@@ -3342,7 +3361,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Liseberg",
     "https://www.wikidata.org/wiki/Q660066"
-   ]
+   ],
+   "spokkartan_url": "https://spokkartan.se/sv/plats/spokhotellet-gasten-liseberg"
   },
   {
    "id": "goteborg-universeum",
@@ -5034,7 +5054,8 @@
     "https://www.krafttaget.com/"
    ],
    "city": "Boxholm",
-   "era": "Stenkyrka från 1100-talet"
+   "era": "Stenkyrka från 1100-talet",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/boxholm-ekeby-kyrka-igelbacken"
   },
   {
    "id": "norrkoping-hedvigs-kyrka",
@@ -6839,7 +6860,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Borgholms_slottsruin"
    ],
-   "city": "Borgholm"
+   "city": "Borgholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/borgholms-slott"
   },
   {
    "id": "falkenberg-doktorspromenaden",
@@ -7361,7 +7383,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Varbergs_f%C3%A4stning"
    ],
-   "city": "Varberg"
+   "city": "Varberg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/varbergs-fastning"
   },
   {
    "id": "karlskrona-trefaldighetskyrkan-karlskrona",
@@ -7739,7 +7762,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Norre_Port"
    ],
-   "city": "Halmstad"
+   "city": "Halmstad",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/norre-port"
   },
   {
    "id": "halmstad-hallandsgarden-halmstad",
@@ -7919,7 +7943,8 @@
    "sources": [
     "https://sv.wikipedia.org/wiki/Bohus_f%C3%A4stning"
    ],
-   "city": "Marstrand"
+   "city": "Marstrand",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/bohus-fastning"
   },
   {
    "id": "marstrand-marstrandson",
@@ -13836,7 +13861,8 @@
    "sources": [
     "https://beherethen.se"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/hippodromen-kalendegatan-malmo"
   },
   {
    "id": "bht-malmo-axel-paulus-1839-1913-ida-sjoberg-1857-1941-973",
@@ -25157,7 +25183,8 @@
    "sources": [
     "https://izi.travel/sv/4eb6-bicycle-audio-guide-malmo/en"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/slottsparken-malmo"
   },
   {
    "id": "izi-malmo-kungsparken",
@@ -25177,7 +25204,8 @@
    "sources": [
     "https://izi.travel/sv/4eb6-bicycle-audio-guide-malmo/en"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/kungsparken-malmo"
   },
   {
    "id": "izi-malmo-fiskehoddorna",
@@ -25717,7 +25745,8 @@
    "sources": [
     "https://izi.travel/sv/a4d8-urbirun-stockholm-highlights/en"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/kungliga-slottet-stockholm"
   },
   {
    "id": "izi-stockholm-riksdagshuset",
@@ -25737,7 +25766,8 @@
    "sources": [
     "https://izi.travel/sv/a4d8-urbirun-stockholm-highlights/en"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/helgeandshuset-stockholm"
   },
   {
    "id": "izi-stockholm-armemuseum",
@@ -26265,7 +26295,8 @@
     "https://www.wikidata.org/wiki/Q10686689",
     "https://sv.wikipedia.org/wiki/Sya_kyrka"
    ],
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mantorp-sya-kyrka"
   },
   {
    "id": "wd-mjolby-vastra-skrukeby-kyrka-q10718356",
@@ -28115,7 +28146,8 @@
     "https://www.wikidata.org/wiki/Q10681186",
     "https://sv.wikipedia.org/wiki/Stora_%C3%85by_kyrka"
    ],
-   "city": "Ödeshög"
+   "city": "Ödeshög",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/odeshog-stora-aby-kyrka"
   },
   {
    "id": "wd-odeshog-vastra-tollstads-kyrka-q10718376",
@@ -28663,7 +28695,8 @@
     "https://www.wikidata.org/wiki/Q5638502",
     "https://sv.wikipedia.org/wiki/Hagakyrkan,_G%C3%B6teborg"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/hagakyrkan-goteborg"
   },
   {
    "id": "wd-goteborg-lundby-gamla-kyrka-q6704116",
@@ -29591,7 +29624,8 @@
     "https://www.wikidata.org/wiki/Q10661517",
     "https://sv.wikipedia.org/wiki/Sankta_Birgittas_kapell,_G%C3%B6teborg"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/sankta-birgittas-kapell-goteborg"
   },
   {
    "id": "wd-goteborg-sjomanskyrkan-i-goteborg-q10669475",
@@ -40815,7 +40849,8 @@
     "https://www.wikidata.org/wiki/Q335491",
     "https://sv.wikipedia.org/wiki/Karlbergs_slott"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/karlbergs-slott"
   },
   {
    "id": "wd-stockholm-axel-oxenstiernas-palats-q403404",
@@ -40879,7 +40914,8 @@
     "https://www.wikidata.org/wiki/Q630822",
     "https://sv.wikipedia.org/wiki/Svindersvik"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/svindersvik"
   },
   {
    "id": "wd-stockholm-millesgarden-q667094",
@@ -41661,7 +41697,8 @@
     "https://www.wikidata.org/wiki/Q10681080",
     "https://sv.wikipedia.org/wiki/Stora_Nyckelviken"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/stora-nyckelviken"
   },
   {
    "id": "wd-stockholm-vastberga-gard-q10717845",
@@ -42065,7 +42102,8 @@
     "https://www.wikidata.org/wiki/Q63868952",
     "https://sv.wikipedia.org/wiki/Ryska_vallarna"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/ryska-vallarna"
   },
   {
    "id": "wd-stockholm-sticklinge-gard-q87745215",
@@ -42097,7 +42135,8 @@
     "https://www.wikidata.org/wiki/Q87745215",
     "https://sv.wikipedia.org/wiki/Sticklinge_g%C3%A5rd"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/sticklinge-gard"
   },
   {
    "id": "wd-stockholm-annelunds-gard-q94298937",
@@ -42129,7 +42168,8 @@
     "https://www.wikidata.org/wiki/Q94298937",
     "https://sv.wikipedia.org/wiki/Annelunds_g%C3%A5rd"
    ],
-   "city": "Stockholm"
+   "city": "Stockholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/annelunds-gard"
   },
   {
    "id": "wd-stockholm-prins-eugens-waldemarsudde-q537",
@@ -54115,7 +54155,8 @@
     "https://www.wikidata.org/wiki/Q10699221",
     "https://sv.wikipedia.org/wiki/Tofta_herrg%C3%A5rd"
    ],
-   "city": "Marstrand"
+   "city": "Marstrand",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/tofta-herrgard"
   },
   {
    "id": "wd-marstrand-backebadan-q16497787",
@@ -54247,7 +54288,8 @@
    "sources": [
     "https://www.wikidata.org/wiki/Q39660141"
    ],
-   "city": "Marstrand"
+   "city": "Marstrand",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/karlstens-fastning"
   },
   {
    "id": "wd-marstrand-skallen-q39661290",
@@ -54743,7 +54785,8 @@
     "https://www.wikidata.org/wiki/Q7845407",
     "https://sv.wikipedia.org/wiki/Tromt%C3%B6_herrg%C3%A5rd"
    ],
-   "city": "Karlskrona"
+   "city": "Karlskrona",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/tromto-herrgard"
   },
   {
    "id": "wd-karlskrona-aspo-kyrka-q10420459",
@@ -58061,7 +58104,8 @@
     "https://www.wikidata.org/wiki/Q4357541",
     "https://sv.wikipedia.org/wiki/Bj%C3%B6rnstorps_slott"
    ],
-   "city": "Dalby"
+   "city": "Dalby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/bjornstorps-slott"
   },
   {
    "id": "wd-dalby-bjallerups-kyrka-q10430455",
@@ -60771,7 +60815,8 @@
     "https://www.wikidata.org/wiki/Q1810918",
     "https://sv.wikipedia.org/wiki/Malm%C3%B6hus"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/malmohus-slott-malmo"
   },
   {
    "id": "wd-malmo-vastra-skravlinge-kyrka-q2262193",
@@ -62001,7 +62046,8 @@
     "https://www.wikidata.org/wiki/Q10511131",
     "https://sv.wikipedia.org/wiki/Gustav_Adolfs_torg,_Malm%C3%B6"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/gustav-adolfs-torg-malmo"
   },
   {
    "id": "wd-malmo-koggmuseet-q10546943",
@@ -62257,7 +62303,8 @@
     "https://www.wikidata.org/wiki/Q18334864",
     "https://sv.wikipedia.org/wiki/V%C3%A4rnhemstorget"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/varnhemstorget-malmo"
   },
   {
    "id": "wd-malmo-malmo-inre-fyr-q39867552",
@@ -63859,7 +63906,8 @@
     "https://www.wikidata.org/wiki/Q3431505",
     "https://sv.wikipedia.org/wiki/Skan%C3%B6rs_borg"
    ],
-   "city": "Skanör Falsterbo"
+   "city": "Skanör Falsterbo",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/skanors-borg"
   },
   {
    "id": "wd-skanor-falsterbo-falsterbo-fyr-q4992706",
@@ -64451,7 +64499,8 @@
     "https://www.wikidata.org/wiki/Q648226",
     "https://sv.wikipedia.org/wiki/Kalmar_slott"
    ],
-   "city": "Kalmar"
+   "city": "Kalmar",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/kalmar-slott"
   },
   {
    "id": "wd-kalmar-heliga-korsets-kyrka-q10520027",
@@ -66695,7 +66744,8 @@
     "https://www.wikidata.org/wiki/Q10704868",
     "https://sv.wikipedia.org/wiki/Trolleberg"
    ],
-   "city": "Lund"
+   "city": "Lund",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/trolleberg"
   },
   {
    "id": "wd-lund-uppakra-kyrka-q10710320",
@@ -68979,7 +69029,8 @@
     "https://www.wikidata.org/wiki/Q1475894",
     "https://sv.wikipedia.org/wiki/Uppsala_slott"
    ],
-   "city": "Uppsala"
+   "city": "Uppsala",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/spoken-skandaler-och-sturemord-darfor-ar-uppsala-slott-vart-ett-besok"
   },
   {
    "id": "wd-uppsala-geijersgarden-q3357825",
@@ -72461,7 +72512,8 @@
     "https://www.wikidata.org/wiki/Q2757682",
     "https://sv.wikipedia.org/wiki/%C3%96rebro_slott"
    ],
-   "city": "Örebro"
+   "city": "Örebro",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/orebro-slott"
   },
   {
    "id": "wd-orebro-adolfsbergs-kyrka-q10401442",
@@ -83147,7 +83199,8 @@
     "https://www.wikidata.org/wiki/Q10680332",
     "https://sv.wikipedia.org/wiki/Stj%C3%A4rnholm"
    ],
-   "city": "Nyköping"
+   "city": "Nyköping",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/stjarnholm"
   },
   {
    "id": "wd-nykoping-stjarnholms-kyrka-q10680333",
@@ -83673,7 +83726,8 @@
     "https://www.wikidata.org/wiki/Q1757808",
     "https://sv.wikipedia.org/wiki/Vadstena_slott"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-01-slott"
   },
   {
    "id": "wd-vadstena-vadstena-klosterkyrka-q4355128",
@@ -83705,7 +83759,8 @@
     "https://www.wikidata.org/wiki/Q4355128",
     "https://sv.wikipedia.org/wiki/Vadstena_klosterkyrka"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-03-klosterkyrkan"
   },
   {
    "id": "wd-vadstena-broby-q10435896",
@@ -84041,7 +84096,8 @@
    "sources": [
     "https://www.wikidata.org/wiki/Q40461336"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-07-hamnen"
   },
   {
    "id": "wd-vadstena-sancta-birgitta-klostermuseum-q61718757",
@@ -84261,7 +84317,8 @@
     "https://www.wikidata.org/wiki/Q5470394",
     "https://sv.wikipedia.org/wiki/Signhildsberg"
    ],
-   "city": "Sigtuna"
+   "city": "Sigtuna",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/signhildsberg"
   },
   {
    "id": "wd-sigtuna-erikssunds-sateri-q10487754",
@@ -86423,7 +86480,8 @@
     "https://www.wikidata.org/wiki/Q714783",
     "https://sv.wikipedia.org/wiki/Gripsholms_slott"
    ],
-   "city": "Mariefred"
+   "city": "Mariefred",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/gripsholms-slott"
   },
   {
    "id": "wd-mariefred-taxinge-nasby-slott-q1723008",
@@ -86455,7 +86513,8 @@
     "https://www.wikidata.org/wiki/Q1723008",
     "https://sv.wikipedia.org/wiki/Taxinge-N%C3%A4sby_slott"
    ],
-   "city": "Mariefred"
+   "city": "Mariefred",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/taxinge-nasby-slott"
   },
   {
    "id": "wd-mariefred-grafikens-hus-q10507839",
@@ -86635,7 +86694,8 @@
     "https://www.wikidata.org/wiki/Q6814180",
     "https://sv.wikipedia.org/wiki/Mems_slott"
    ],
-   "city": "Söderköping"
+   "city": "Söderköping",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mems-slott"
   },
   {
    "id": "wd-soderkoping-bolltorp-q10432615",
@@ -91453,7 +91513,8 @@
     "https://www.wikidata.org/wiki/Q10684637",
     "https://sv.wikipedia.org/wiki/Svedens_g%C3%A5rd"
    ],
-   "city": "Falun"
+   "city": "Falun",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/svedens-gard"
   },
   {
    "id": "wd-falun-thunstroms-kopmansgard-q10697369",
@@ -91575,7 +91636,8 @@
     "https://www.wikidata.org/wiki/Q897248",
     "https://sv.wikipedia.org/wiki/Brahehus"
    ],
-   "city": "Gränna"
+   "city": "Gränna",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/brahehus-ruinen-vid-vatterns-kant"
   },
   {
    "id": "wd-granna-granna-kyrka-q10509733",
@@ -91665,7 +91727,8 @@
     "https://www.wikidata.org/wiki/Q10727793",
     "https://sv.wikipedia.org/wiki/%C3%96stan%C3%A5_herrg%C3%A5rd"
    ],
-   "city": "Gränna"
+   "city": "Gränna",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/ostana-herrgard"
   },
   {
    "id": "wd-granna-granna-missionskyrka-q21487060",
@@ -107460,7 +107523,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/9342bc6e-d1c9-4415-84d9-f1bc64dad961"
    ],
-   "city": "Enköping"
+   "city": "Enköping",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-tillinge-socken-l1940-5752"
   },
   {
    "id": "ksamsok-boplats-enkoping-7aa629",
@@ -123603,7 +123667,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000697560"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/lansresidenset-goteborg"
   },
   {
    "id": "ksamsok-f-d-hovratten-goteborg-016257",
@@ -125578,7 +125643,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000229481"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/stora-teatern-goteborg"
   },
   {
    "id": "ksamsok-vasa-kyrka-goteborg-229592",
@@ -125828,7 +125894,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000231312"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/sahlgrenska-huset-goteborg"
   },
   {
    "id": "ksamsok-sjomannasallskapets-hus-emilie-landgrens-gava-goteborg-233359",
@@ -129291,7 +129358,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/efbc8e08-cb33-4afe-971b-60051e620464"
    ],
-   "city": "Göteborg"
+   "city": "Göteborg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-goteborg-socken-l2021-1747"
   },
   {
    "id": "ksamsok-bytomt-gardstomt-goteborg-149d3f",
@@ -133044,7 +133112,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/da9205d4-25e2-4a7e-8f22-2d74e07ed7e6"
    ],
-   "city": "Halmstad"
+   "city": "Halmstad",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-halmstad-socken-l1997-4029"
   },
   {
    "id": "ksamsok-stadsbefastning-halmstad-81198c",
@@ -137257,7 +137326,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/a9dc78d0-f7a1-4e96-bd5e-3c67b51960cb"
    ],
-   "city": "Hässleholm"
+   "city": "Hässleholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-hassleholm-socken-l1991-9737"
   },
   {
    "id": "ksamsok-bytomt-gardstomt-hassleholm-d91ff6",
@@ -139538,7 +139608,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/a70e2598-8f6e-4086-bfad-fec86a97df17"
    ],
-   "city": "Jönköping"
+   "city": "Jönköping",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-jonkoping-socken-l1973-2325"
   },
   {
    "id": "ksamsok-traindustri-jonkoping-0930ff",
@@ -142501,7 +142572,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/32ac75ad-998a-4f7e-b41d-d6acc834230e"
    ],
-   "city": "Kalmar"
+   "city": "Kalmar",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-kalmar-socken-l2020-1462"
   },
   {
    "id": "ksamsok-borg-kalmar-e2c7a9",
@@ -148668,7 +148740,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000357555"
    ],
-   "city": "Karlstad"
+   "city": "Karlstad",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/biskopsgarden"
   },
   {
    "id": "ksamsok-magasin-karlstad-675985",
@@ -151626,7 +151699,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/dc28091b-a4ec-4301-a36d-15944f86174f"
    ],
-   "city": "Kristianstad"
+   "city": "Kristianstad",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-kristianstad-socken-l1990-734"
   },
   {
    "id": "ksamsok-grav-uppgift-om-typ-saknas-kristianstad-0ebed3",
@@ -154433,7 +154507,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/c80d17c5-528f-4e9b-9449-bb874f426512"
    ],
-   "city": "Linköping"
+   "city": "Linköping",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-linkoping-socken-l2008-4862"
   },
   {
    "id": "ksamsok-kyrka-kapell-linkoping-d76f7e",
@@ -156737,7 +156812,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/67d9d20d-d211-4b26-af85-473aaaca6893"
    ],
-   "city": "Luleå"
+   "city": "Luleå",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-nederlulea-socken-l1992-4018"
   },
   {
    "id": "ksamsok-omrade-med-militara-anlaggningar-lulea-d444c4",
@@ -160665,7 +160741,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21000000995146"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/kockska-huset-vastergatan-malmo"
   },
   {
    "id": "ksamsok-bostadshus-med-butikslokaler-malmo-981180",
@@ -160910,7 +160987,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/142504f4-cf9b-439c-ac0c-79d76098a4a6"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-malmo-socken-l1988-4836"
   },
   {
    "id": "ksamsok-hard-malmo-1754d6",
@@ -161534,7 +161612,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/d1f2ba11-0d73-43b8-88be-6902909eab2b"
    ],
-   "city": "Malmö"
+   "city": "Malmö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-malmo-socken-l1988-5480"
   },
   {
    "id": "ksamsok-boplatsomrade-malmo-ca6df6",
@@ -168411,7 +168490,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/219edcde-7feb-48f6-9da7-c27b2b6fc981"
    ],
-   "city": "Mjölby"
+   "city": "Mjölby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/mjolby-kungshoga-gravfalt"
   },
   {
    "id": "ksamsok-stensattning-mjolby-8e050f",
@@ -169786,7 +169866,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/de6d1257-3476-4418-a064-6780d40c087f"
    ],
-   "city": "Motala"
+   "city": "Motala",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-motala-socken-l2011-1209"
   },
   {
    "id": "ksamsok-omrade-med-fossil-akermark-motala-a5a8ee",
@@ -211065,7 +211146,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000148208"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-04-svarta-nunnan"
   },
   {
    "id": "ksamsok-gamla-teatern-vadstena-146768",
@@ -211190,7 +211272,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000701615"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-06-marten-skinnare"
   },
   {
    "id": "ksamsok-udd-jonssons-hus-vadstena-146456",
@@ -211340,7 +211423,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000145192"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-05-stora-darhuset"
   },
   {
    "id": "ksamsok-uthus-vadstena-147455",
@@ -211565,7 +211649,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbr/html/21400000147450"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-02-radhustorget"
   },
   {
    "id": "ksamsok-tornhuset-vadstena-148210",
@@ -212633,7 +212718,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/cf70d933-1ceb-4d04-ab8e-922ef4dc812e"
    ],
-   "city": "Vadstena"
+   "city": "Vadstena",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/vadstena-spokvandring-09-galgbacken"
   },
   {
    "id": "ksamsok-boplats-vadstena-f2b1a9",
@@ -217236,7 +217322,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/3ebfe777-e7dd-4988-9eb1-61b71776ceaa"
    ],
-   "city": "Varberg"
+   "city": "Varberg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-varberg-socken-l2019-4370"
   },
   {
    "id": "ksamsok-stensattning-varberg-291b29",
@@ -217938,7 +218025,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/bbrb/html/21420000049329"
    ],
-   "city": "Vaxholm"
+   "city": "Vaxholm",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/rindo-redutt"
   },
   {
    "id": "ksamsok-livtorn-vaxholm-050839",
@@ -223383,7 +223471,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/ee123b23-3b1f-4485-9904-eafead23151e"
    ],
-   "city": "Visby"
+   "city": "Visby",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-visby-socken-l1976-6179"
   },
   {
    "id": "ksamsok-fyndplats-visby-5316c6",
@@ -229473,7 +229562,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/c6abf1dd-c981-4de9-852f-4f529c1f14da"
    ],
-   "city": "Västerås"
+   "city": "Västerås",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-vasteras-socken-l2002-168"
   },
   {
    "id": "ksamsok-vagmarke-vasteras-67e5a8",
@@ -231794,7 +231884,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/de612347-8e94-4250-b010-651ddadb41c8"
    ],
-   "city": "Växjö"
+   "city": "Växjö",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-vaxjo-socken-l1953-2688"
   },
   {
    "id": "ksamsok-stensattning-vaxjo-22e643",
@@ -237149,7 +237240,8 @@
    "sources": [
     "http://kulturarvsdata.se/raa/lamning/HTML/139ac52a-f457-47a1-9ff3-0bd1f3ef1481"
    ],
-   "city": "Åtvidaberg"
+   "city": "Åtvidaberg",
+   "spokkartan_url": "https://spokkartan.se/sv/plats/avrattningsplats-atvid-socken-l2009-3155"
   },
   {
    "id": "ksamsok-gruvhal-atvidaberg-3baaa7",
