@@ -1,5 +1,6 @@
 # Håll backup-/arbetsfiler borta från produktion (exponerades tidigare publikt).
-*.bak
+# OBS: '*.bak' matchar inte '.bak2'/'.bak3' — använd '*.bak*' så numrerade backuper också fångas.
+*.bak*
 data.json.pre-slott
 .orter-raw.json
 .DS_Store
