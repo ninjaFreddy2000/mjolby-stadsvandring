@@ -395,18 +395,13 @@ function buildMap() {
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
     maxZoom: 19, attribution: '&copy; OpenStreetMap, &copy; CARTO'
   }).addTo(map);
-  // Kluster-grupp för bläddra-läget (löser nål-klumpen); plain-lager för aktiv tur (alla stopp syns).
-  markerLayer = L.markerClusterGroup({
-    maxClusterRadius: 46, spiderfyOnMaxZoom: true, showCoverageOnHover: false,
-    spiderfyDistanceMultiplier: 1.5, removeOutsideVisibleBounds: false,
-    iconCreateFunction: c => L.divIcon({
-      html:`<div class="mc-bubble">${c.getChildCount()}</div>`, className:'mc-wrap',
-      iconSize:[40,40], iconAnchor:[20,20],
-    }),
-  });
+  // Bläddra-läget klustrar avståndsbaserat i renderView(); plain-lager för aktiv tur (alla stopp syns).
+  markerLayer = L.layerGroup();
   plainLayer = L.layerGroup();
   map.addLayer(markerLayer); plainLayer.addTo(map);
   routeLayer = L.layerGroup().addTo(map);
+  // Klustringen är beräknad i pixelrymd för aktuell zoom → rita om vid varje zoom/pan.
+  map.on('zoomend moveend', renderView);
 
   // Spökplatser: eget lager över hela Sverige (oberoende av vald stad). Byggs en
   // gång och ligger kvar — renderMarkers() rör det inte. Toggle via egen knapp.
@@ -523,11 +518,11 @@ function openGhostSheet(g){
 }
 
 function pinIcon(entry, visited){
-  const t = TYPES[typeOf(entry)];
+  // Ren punktnål — ingen ikon/emoji (matchar Spökkartans kartspråk).
   return L.divIcon({
     className:'',
-    html:`<div class="pin ${visited?'visited':''}" style="background:${t.color}"><span>${CATEGORY_ICON[entry.category]||'📍'}</span></div>`,
-    iconSize:[30,30], iconAnchor:[15,30], popupAnchor:[0,-28],
+    html:`<div class="pin ${visited?'visited':''}"></div>`,
+    iconSize:[20,20], iconAnchor:[10,10], popupAnchor:[0,-12],
   });
 }
 
@@ -538,21 +533,64 @@ function visibleEntries(){
 }
 
 function renderMarkers(){
+  renderView();
+  drawRoute();
+  updateNextStopBtn();
+  fitView();
+}
+
+// Avståndsbaserad klustring: projicera alla synliga platser till pixelkoordinater
+// för aktuell zoom och gruppera girigt — platser inom CLUSTER_RADIUS_PX blir en
+// bubbla. Klick på bubbla → zooma in 2 steg mot bubblans mittpunkt tills enskilda
+// nålar syns. Körs om på varje zoomend/moveend (kopplas i buildMap).
+const CLUSTER_RADIUS_PX = 60;
+function renderView(){
+  if (!map) return;
   markerLayer.clearLayers();
   plainLayer.clearLayers();
   markersById = {};
   const st = stamps();
-  // Under en aktiv tur: visa alla numrerade stopp individuellt (följ leden). Annars: klustra.
-  const target = activeTour ? plainLayer : markerLayer;
-  visibleEntries().forEach(e=>{
+  const list = visibleEntries();
+
+  const single = (e, target)=>{
     const m = L.marker([e.coordinates.lat, e.coordinates.lng], { icon: pinIcon(e, st.has(e.id)) })
       .on('click', ()=> openSheet(e.id));
     target.addLayer(m);
     markersById[e.id] = m;
+  };
+
+  // Under en aktiv tur: visa alla stopp individuellt (följ leden). Annars: klustra.
+  if (activeTour){ list.forEach(e=> single(e, plainLayer)); return; }
+
+  const zoom = map.getZoom();
+  const maxZoom = map.getMaxZoom();
+  // Vid max-zoom kan en bubbla inte delas mer — visa då alla nålar individuellt.
+  const R = zoom >= maxZoom ? 0 : CLUSTER_RADIUS_PX;
+  const clusters = [];
+  list.forEach(e=>{
+    const pt = map.project([e.coordinates.lat, e.coordinates.lng], zoom);
+    let c = clusters.find(c => Math.hypot(c.x - pt.x, c.y - pt.y) < R);
+    if (!c){ c = { x: pt.x, y: pt.y, items: [] }; clusters.push(c); }
+    c.items.push(e);
   });
-  drawRoute();
-  updateNextStopBtn();
-  fitView();
+  clusters.forEach(c=>{
+    if (c.items.length === 1){ single(c.items[0], markerLayer); return; }
+    const lat = c.items.reduce((s,p)=>s+p.coordinates.lat,0)/c.items.length;
+    const lng = c.items.reduce((s,p)=>s+p.coordinates.lng,0)/c.items.length;
+    const cities = new Set(c.items.map(p=>p.city));
+    const name = cities.size === 1 ? ([...cities][0]||'') : '';
+    const n = c.items.length;
+    const size = n >= 40 ? 60 : n >= 10 ? 48 : 38;
+    const m = L.marker([lat,lng], {
+      icon: L.divIcon({
+        className:'mc-wrap',
+        html:`<div class="mc-bubble" style="width:${size}px;height:${size}px">${n}</div>${name?`<div class="mc-city">${name}</div>`:''}`,
+        iconSize:[size,size], iconAnchor:[size/2,size/2],
+      }),
+      keyboard:false,
+    }).on('click', ()=> map.flyTo([lat,lng], Math.min(zoom+2, maxZoom)));
+    markerLayer.addLayer(m);
+  });
 }
 
 function orderedTourEntries(tourKey){
@@ -661,7 +699,9 @@ function navigateToNext(){
 }
 
 function fitView(){
-  const ms = Object.values(markersById);
+  // Obs: räkna på platserna (inte markörerna) — i bläddra-läget är de flesta
+  // platser dolda inne i klusterbubblor och saknar egen markör.
+  const ms = visibleEntries().map(e => L.marker([e.coordinates.lat, e.coordinates.lng]));
   if (!ms.length) return;
   try { map.invalidateSize(); } catch(e){}
   // Om kartramen ännu inte fått sina mått (0×0 vid första laddningen) skulle
@@ -937,6 +977,7 @@ function openSheet(id){
       ${e.address?`<p class="addr">📍 ${e.address}</p>`:''}
       ${hasCoords(e)?`<button class="addr-map" id="show-on-map">🗺️ ${lang==='en'?'Show on map':'Visa på kartan'}</button>`:''}
       ${srcs?`<p class="srcs">${srcs}</p>`:''}
+      ${e.spokkartan_url?`<p class="spok-link"><a href="${e.spokkartan_url}" target="_blank" rel="noopener">👻 ${lang==='en'?'Read this place’s ghost story on Spökkartan':'Läs platsens spökhistoria på Spökkartan'} →</a></p>`:''}
     </div>`;
 
   const btn = $('#checkin-btn');
