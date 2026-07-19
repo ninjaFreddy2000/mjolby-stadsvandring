@@ -2245,7 +2245,7 @@ function setupAuthTips(){
   const c = {
     get DATA(){ return DATA; }, get ENTRIES(){ return ENTRIES; },
     get map(){ return map; }, get lang(){ return lang; },
-    CAT_LABEL, t, toast, hasCoords,
+    CAT_LABEL, t, toast, hasCoords, track,
     openSheet, optimizeImage,
     markFocus, restoreFocus,
     // Rita om öppen stopp-vy/profil när färska community-tips laddats

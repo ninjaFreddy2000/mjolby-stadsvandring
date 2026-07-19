@@ -48,6 +48,13 @@ export const BILLING_ENABLED = (() => { try { return localStorage.getItem('cfg_b
 // När den riktiga Checkout-backenden (create-checkout + webhook + entitlements)
 // är deployad: sätt PAYWALL_LINKS=false, så tar BILLING_ENABLED-flödet över.
 export const PAYWALL_LINKS = true;
+
+// Friktionsfri gratis provperiod (reverse trial): ett tryck låser upp alla
+// guidade vandringar i TRIAL_DAYS dygn — inget konto, inget kort. Lagras i
+// localStorage (sv_trial_start), samma mjuka filosofi som sv_access. När
+// perioden gått ut återkommer paywallen med köpalternativen.
+export const TRIAL_DAYS = 7;
+
 export const PAYMENT_LINKS = {
   stadsjakt: 'https://buy.stripe.com/9B628q3TOe8yeeS3qj08g00',  // Stadsjakten (alla städer)
   city:      'https://buy.stripe.com/4gM3cu61W1lM0o23qj08g01',  // Stadsvandring (en stad)
