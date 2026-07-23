@@ -5,7 +5,8 @@
   <url><loc>https://stadsvandring.io/bidra</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://stadsvandring.io/partners</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://stadsvandring.io/orter</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stadsvandring.io/blogg</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/blogg</loc><lastmod>2026-07-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stadsvandring.io/blogg/skanninge-marken</loc><lastmod>2026-07-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://stadsvandring.io/images/skanninge-orten.jpg</image:loc><image:title>Skänninge Marken</image:title></image:image></url>
   <url><loc>https://stadsvandring.io/blogg/elva-orter-pa-kartan</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://stadsvandring.io/blogg/sa-gor-du-en-stadsvandring</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://stadsvandring.io/blogg/ostergotlands-ovantade-platser</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -377,6 +378,7 @@
   <url><loc>https://stadsvandring.io/tur/central</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://stadsvandring.io/tur/medeltidsringen</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://stadsvandring.io/stadsvandring/mjolby</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://stadsvandring.io/images/mjolby-orten.jpg</image:loc><image:title>Stadsvandring i Mjölby</image:title></image:image></url>
+  <url><loc>https://stadsvandring.io/stadsvandring/skanninge</loc><lastmod>2026-07-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://stadsvandring.io/images/skanninge-orten.jpg</image:loc><image:title>Stadsvandring i Skänninge</image:title></image:image></url>
   <url><loc>https://stadsvandring.io/stadsvandring/ydre</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://stadsvandring.io/images/og.jpg</image:loc><image:title>Stadsvandring i Ydre</image:title></image:image></url>
   <url><loc>https://stadsvandring.io/stadsvandring/motala</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://stadsvandring.io/images/og.jpg</image:loc><image:title>Stadsvandring i Motala</image:title></image:image></url>
   <url><loc>https://stadsvandring.io/stadsvandring/valdemarsvik</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><image:image><image:loc>https://stadsvandring.io/images/og.jpg</image:loc><image:title>Stadsvandring i Valdemarsvik</image:title></image:image></url>
