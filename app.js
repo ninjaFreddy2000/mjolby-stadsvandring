@@ -171,6 +171,7 @@ const GHOSTS_KEY = 'sv_ghosts_on';
 let ghostsOn = (localStorage.getItem(GHOSTS_KEY) ?? '1') === '1';   // default på
 // Generisk centrumslinga: id-lista (redan promenadordnad) per stad. Fylls i init().
 let CENTRAL_BY_CITY = {};
+let CITY_META = {};   // { stad: {lat,lng,count} } — centrumpunkt + antal stopp per stad (fylls i init)
 const CURATED_TOUR_CITIES = new Set(['Mjölby']);   // har egna kurerade turer → ingen generisk
 const CENTRAL_RADIUS_KM = 3, CENTRAL_MIN_STOPS = 4;
 function distKm(a, b){
@@ -206,8 +207,26 @@ function computeCentralTours(){
     }
   }
 }
+// Bygg CITY_META: centrumpunkt (ortens post om den finns, annars snitt av stoppen)
+// + antal stopp per stad. Används för att alltid visa prickar över de andra
+// städerna i stadsvandringen — inte bara den valda staden.
+function computeCityMeta(){
+  CITY_META = {};
+  const byCity = {};
+  ENTRIES.forEach(e => { const c = cityOf(e); (byCity[c] = byCity[c] || []).push(e); });
+  for (const [city, arr] of Object.entries(byCity)){
+    const ortE = arr.find(e => e.category === 'ort');
+    const lat = ortE ? ortE.coordinates.lat : arr.reduce((s,e)=>s+e.coordinates.lat,0)/arr.length;
+    const lng = ortE ? ortE.coordinates.lng : arr.reduce((s,e)=>s+e.coordinates.lng,0)/arr.length;
+    CITY_META[city] = { lat, lng, count: arr.length };
+  }
+}
 const activeTypes = new Set(Object.keys(TYPES));
 let activeTour = null; // null = all
+// Översiktsläge: kartan startar utzoomad så ALLA tillgängliga städer syns som
+// prickar direkt. Blir false när man väljer/zoomar in på en stad (setActiveCity).
+let cityOverview = true;
+let overviewApplied = false;   // true först när fitView faktiskt ramat in översikten en gång
 let questMode = false;  // progressiv upplåsning av stopp i en vandring
 let activeTab = 'home'; // bottenflik-meny
 let currentSheetId = null; // öppet stopp i detaljvyn (för omritning vid datauppdatering)
@@ -337,6 +356,7 @@ async function init() {
   DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
   ENTRIES = DATA.filter(hasCoords);
   computeCentralTours();   // generiska centrumslingor per ort (för icke-kurerade städer)
+  computeCityMeta();       // centrumpunkt + antal per stad (för prickar över andra städer)
 
   // Evenemang per ort (build-tids-hämtade från respektive Visit-sida). Stads-nycklat
   // objekt: { "Mjölby": {source,sourceUrl,fetched,events:[…]}, "Motala": {…}, … }.
@@ -546,6 +566,11 @@ function renderMarkers(){
 const CLUSTER_RADIUS_PX = 60;
 function renderView(){
   if (!map) return;
+  // Zoomar man in manuellt (förbi översiktens nivå) lämnar vi översiktsläget så
+  // vyn inte hoppar tillbaka till hela-Sverige vid nästa omritning (filter etc.).
+  // Gatas på overviewApplied: kartan skapas på zoom 12, så utan gaten skulle
+  // första renderView nollställa läget innan översikten ens hunnit ritas.
+  if (overviewApplied && cityOverview && map.getZoom() >= 11) cityOverview = false;
   markerLayer.clearLayers();
   plainLayer.clearLayers();
   markersById = {};
@@ -588,6 +613,65 @@ function renderView(){
         iconSize:[size,size], iconAnchor:[size/2,size/2],
       }),
       keyboard:false,
+    }).on('click', ()=> map.flyTo([lat,lng], Math.min(zoom+2, maxZoom)));
+    markerLayer.addLayer(m);
+  });
+
+  // Visa alltid de ANDRA städerna i vandringen som prickar — oavsett vald stad.
+  // Så man kan se var övriga stadsvandringar finns och hoppa dit.
+  renderOtherCities();
+}
+
+// Prickar för de övriga valbara städerna (ej den aktiva). En dämpad bubbla per
+// stad med namn + antal stopp; klick byter aktiv stad. Städer som ligger nära
+// varandra klustras vid utzoomad vy så de inte överlappar.
+function renderOtherCities(){
+  if (!map || MJOLBY_ONLY) return;
+  const active = activeCity;
+  const pts = citiesInData()
+    .map(c => c.name).filter(name => name !== active)
+    .map(name => { const m = CITY_META[name]; return m && { lat:m.lat, lng:m.lng, name, count:m.count }; })
+    .filter(Boolean);
+  if (!pts.length) return;
+
+  const zoom = map.getZoom();
+  const maxZoom = map.getMaxZoom();
+  const R = zoom >= maxZoom ? 0 : CLUSTER_RADIUS_PX;
+  const clusters = [];
+  pts.forEach(p=>{
+    const pt = map.project([p.lat, p.lng], zoom);
+    let c = clusters.find(c => Math.hypot(c.x - pt.x, c.y - pt.y) < R);
+    if (!c){ c = { x: pt.x, y: pt.y, items: [] }; clusters.push(c); }
+    c.items.push(p);
+  });
+
+  clusters.forEach(c=>{
+    if (c.items.length === 1){
+      const p = c.items[0];
+      const m = L.marker([p.lat, p.lng], {
+        icon: L.divIcon({
+          className:'mc-wrap',
+          html:`<div class="mc-bubble mc-other" style="width:34px;height:34px">${p.count}</div><div class="mc-city mc-city--other">${p.name}</div>`,
+          iconSize:[34,34], iconAnchor:[17,17],
+        }),
+        keyboard:false, zIndexOffset:-100,
+      }).on('click', ()=> setActiveCity(p.name));
+      markerLayer.addLayer(m);
+      return;
+    }
+    // Flera städer nära varandra → en bubbla; klick zoomar in mot dem.
+    const lat = c.items.reduce((s,p)=>s+p.lat,0)/c.items.length;
+    const lng = c.items.reduce((s,p)=>s+p.lng,0)/c.items.length;
+    const nTowns = c.items.length;
+    const size = nTowns >= 40 ? 60 : nTowns >= 10 ? 48 : 38;
+    const label = nTowns + ' ' + (lang==='en' ? 'towns' : 'orter');
+    const m = L.marker([lat,lng], {
+      icon: L.divIcon({
+        className:'mc-wrap',
+        html:`<div class="mc-bubble mc-other" style="width:${size}px;height:${size}px">${nTowns}</div><div class="mc-city mc-city--other">${label}</div>`,
+        iconSize:[size,size], iconAnchor:[size/2,size/2],
+      }),
+      keyboard:false, zIndexOffset:-100,
     }).on('click', ()=> map.flyTo([lat,lng], Math.min(zoom+2, maxZoom)));
     markerLayer.addLayer(m);
   });
@@ -699,16 +783,28 @@ function navigateToNext(){
 }
 
 function fitView(){
-  // Obs: räkna på platserna (inte markörerna) — i bläddra-läget är de flesta
-  // platser dolda inne i klusterbubblor och saknar egen markör.
-  const ms = visibleEntries().map(e => L.marker([e.coordinates.lat, e.coordinates.lng]));
-  if (!ms.length) return;
+  if (!map) return;
   try { map.invalidateSize(); } catch(e){}
   // Om kartramen ännu inte fått sina mått (0×0 vid första laddningen) skulle
   // fitBounds räkna fram världsvy OCH lämna ett felplacerat spök-kluster. Hoppa
   // då över — settleMap()/buildMap kör fitView igen så snart storleken är känd.
   const sz = (map.getSize && map.getSize()) || { x:0, y:0 };
   if (!sz.x || !sz.y) return;
+  // Översiktsläge: rama in ALLA tillgängliga städer så man alltid ser vilka som
+  // finns. Zooma/klicka in på en stad → cityOverview blir false och vi ramar in
+  // just den staden i stället.
+  if (cityOverview && !activeTour && !MJOLBY_ONLY){
+    const lls = citiesInData().map(c => CITY_META[c.name]).filter(Boolean).map(m => [m.lat, m.lng]);
+    if (lls.length > 1){
+      map.fitBounds(L.latLngBounds(lls).pad(0.12), { maxZoom: 10 });
+      overviewApplied = true;
+      return;
+    }
+  }
+  // Obs: räkna på platserna (inte markörerna) — i bläddra-läget är de flesta
+  // platser dolda inne i klusterbubblor och saknar egen markör.
+  const ms = visibleEntries().map(e => L.marker([e.coordinates.lat, e.coordinates.lng]));
+  if (!ms.length) return;
   // Utan aktiv tur: rama in stadskärnan i stället för hela kommunen. Efter
   // K-samsök-importen ligger många platser långt ut på landsbygden → hela stadens
   // bounds zoomar ut allt till ETT jätte-kluster. Vi hittar ett robust centrum
@@ -840,6 +936,7 @@ function setActiveCity(city){
   if (!city || city === activeCity) return;
   activeCity = city;
   localStorage.setItem('sv_city', city);
+  cityOverview = false;        // vald stad → zooma in på den (ut ur översiktsläget)
   activeTour = null;
   activeTypes.clear(); Object.keys(TYPES).forEach(k=>activeTypes.add(k));
   TELLER = tellerFor(city);

@@ -224,6 +224,13 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   font-family:var(--font-display);font-weight:700;font-size:11px;color:#3b2a70;
   background:rgba(255,255,255,.88);border-radius:8px;padding:1px 7px;
   box-shadow:0 1px 4px rgba(60,30,120,.25);pointer-events:none}
+/* Prickar för de ANDRA städerna i vandringen (ej vald stad) — dämpad ton så den
+   valda staden förblir tydligast. Alltid synliga: zooma ut för att se dem. */
+.mc-bubble.mc-other{
+  background:radial-gradient(circle at 30% 28%, #b8a6e6, #7c6bb0 75%);
+  box-shadow:0 4px 12px -4px rgba(91,33,182,.4);font-size:13px;opacity:.94}
+.mc-bubble.mc-other:hover{opacity:1}
+.mc-city--other{color:#5a4a86;font-size:10.5px;background:rgba(255,255,255,.82)}
 
 /* PWA-installprompt */
 /* Offline-indikator: diskret bjälke i toppen */
