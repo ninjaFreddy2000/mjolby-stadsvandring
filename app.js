@@ -174,6 +174,36 @@ let CENTRAL_BY_CITY = {};
 let CITY_META = {};   // { stad: {lat,lng,count} } — centrumpunkt + antal stopp per stad (fylls i init)
 const CURATED_TOUR_CITIES = new Set(['Mjölby']);   // har egna kurerade turer → ingen generisk
 const CENTRAL_RADIUS_KM = 3, CENTRAL_MIN_STOPS = 4;
+// Stadsvandringen = stadens HÖJDPUNKTER, inte hela platslistan. Målbild: 8–12 av
+// de mest intressanta centrala platserna, en slinga som går på ≤1h.
+const WALK_RADIUS_KM = 1.3;   // kompakt centrum → promenaden ryms på en dryg halvtimme
+const WALK_MIN = 8, WALK_MAX = 12;
+const WALK_MAX_M = 3500;      // rak-linje-summa för slingan (gatuföljande blir lite längre, ~≤1h)
+// Hur "intressant" en kategori är för en stadsvandring. Landmärken (slott, kyrka,
+// torg, torn, museum…) väger tungt; kommers och ren natur lågt. Innehållssignaler
+// (bild, lång text, årtal) höjer betyget så välkända, väldokumenterade platser vinner.
+const INTEREST_WEIGHT = {
+  slott:10, borgruin:10, klosterruin:10, kyrka:9, torg:9, torn:9, stadsport:9, fyr:9,
+  runsten:8, museum:8, museum_hembygd:7, bro:7, byggnad:7, sevardhet:6, konst_staty:6,
+  utsiktsplats:6, historia:6, handelse:6, person:5, station:5, fornminne:5, vattendrag:4,
+  naturreservat:3, vandringsled:3, badplats:2,
+  hotell:2, kafe_restaurang:2, handel:1, gardsbutik:1, industri_foretag:1, idrott:1,
+};
+function interestScore(e, centre){
+  let s = INTEREST_WEIGHT[e.category] ?? 4;
+  const descLen = (e.description || '').length;
+  if ((e.images || []).length) s += 2;
+  if (descLen > 400) s += 2; else if (descLen > 200) s += 1;
+  if (e.key_facts && (Array.isArray(e.key_facts) ? e.key_facts.length : Object.keys(e.key_facts).length)) s += 1;
+  if (e.era) s += 1;
+  s += Math.max(0, 1 - distKm(e.coordinates, centre) / WALK_RADIUS_KM) * 2;   // närmare centrum → lite högre
+  return s;
+}
+function routeLenM(order){
+  let m = 0;
+  for (let i = 1; i < order.length; i++) m += distKm(order[i-1].coordinates, order[i].coordinates) * 1000;
+  return m;
+}
 function distKm(a, b){
   if (!a || !b) return Infinity;
   const R = 6371, r = x => x*Math.PI/180;
@@ -199,12 +229,41 @@ function computeCentralTours(){
   for (const [city, arr] of Object.entries(byCity)){
     if (CURATED_TOUR_CITIES.has(city)) continue;
     const ortE = arr.find(e => e.category === 'ort');
+    // Centrum: ortens post om den finns, annars MEDIAN av platserna (tål utliggare
+    // — snitt drar centrumet snett när platser ligger utspridda på landsbygden).
+    const med = xs => { const s = xs.slice().sort((a,b)=>a-b); return s[s.length >> 1]; };
     const centre = ortE ? ortE.coordinates
-      : { lat: arr.reduce((s,e)=>s+e.coordinates.lat,0)/arr.length, lng: arr.reduce((s,e)=>s+e.coordinates.lng,0)/arr.length };
-    const central = arr.filter(e => distKm(e.coordinates, centre) <= CENTRAL_RADIUS_KM);
-    if (central.length >= CENTRAL_MIN_STOPS){
-      CENTRAL_BY_CITY[city] = nearestNeighborOrder(central, centre).map(e => e.id);
+      : { lat: med(arr.map(e=>e.coordinates.lat)), lng: med(arr.map(e=>e.coordinates.lng)) };
+    // Kandidater: centrala platser (ej ortmarkören). Glest centrum → vidga och ta
+    // de närmaste, så även små orter får ihop en vandring.
+    let cand = arr.filter(e => e.category !== 'ort' && distKm(e.coordinates, centre) <= WALK_RADIUS_KM);
+    if (cand.length < CENTRAL_MIN_STOPS){
+      cand = arr.filter(e => e.category !== 'ort')
+                .sort((a,b) => distKm(a.coordinates, centre) - distKm(b.coordinates, centre))
+                .slice(0, WALK_MAX * 2);
     }
+    if (cand.length < CENTRAL_MIN_STOPS) continue;
+    // Välj de MEST INTRESSANTA (max 12) med ett diversitetsstraff så vandringen
+    // blandar kategorier (kyrka/torg/museum/bro…) i stället för att stapla samma
+    // typ. Sedan: ordna som en promenadslinga och korta ner tills den ryms på ≤1h.
+    const picked = [], catCount = {};
+    while (picked.length < WALK_MAX && cand.length){
+      let bi = 0, bs = -Infinity;
+      cand.forEach((e,i) => {
+        const adj = interestScore(e, centre) - (catCount[e.category] || 0) * 1.5;
+        if (adj > bs){ bs = adj; bi = i; }
+      });
+      const e = cand.splice(bi, 1)[0];
+      picked.push(e); catCount[e.category] = (catCount[e.category] || 0) + 1;
+    }
+    let order = nearestNeighborOrder(picked, centre);
+    while (order.length > WALK_MIN && routeLenM(order) > WALK_MAX_M){
+      let fi = 0, fd = -1;
+      order.forEach((e,i) => { const d = distKm(e.coordinates, centre); if (d > fd){ fd = d; fi = i; } });
+      order.splice(fi, 1);
+      order = nearestNeighborOrder(order, centre);
+    }
+    CENTRAL_BY_CITY[city] = order.map(e => e.id);
   }
 }
 // Bygg CITY_META: centrumpunkt (ortens post om den finns, annars snitt av stoppen)
