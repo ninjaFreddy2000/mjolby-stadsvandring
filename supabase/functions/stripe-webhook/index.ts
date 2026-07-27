@@ -8,6 +8,7 @@
 //   customer.subscription.created|updated|deleted → Stadsjakten-prenumeration
 import Stripe from "https://esm.sh/stripe@17.7.0?target=deno";
 import { getStripe, getServiceClient } from "../_shared/stripe.ts";
+import { axiomLog } from "../_shared/axiom.ts";
 
 const WEBHOOK_SECRET = Deno.env.get("STRIPE_WEBHOOK_SECRET");
 
@@ -24,6 +25,8 @@ Deno.serve(async (req) => {
     );
   } catch (err) {
     console.error("signaturfel:", (err as Error).message);
+    // Larmvärt: en riktig kund kan ha betalat men webhooken avvisas.
+    await axiomLog({ level: "error", kind: "webhook_signature_fail", msg: (err as Error).message }, "stripe-webhook");
     return new Response("bad signature", { status: 400 });
   }
 
@@ -45,6 +48,11 @@ Deno.serve(async (req) => {
               currency: s.currency ?? "sek",
               stripe_session_id: s.id,
             }, { onConflict: "user_id,city", ignoreDuplicates: true });
+            await axiomLog({
+              kind: "purchase", type: "city", city,
+              amount: s.amount_total ?? null, currency: s.currency ?? "sek",
+              user_id: userId, session_id: s.id,
+            }, "stripe-webhook");
           }
         }
         break;
@@ -69,11 +77,18 @@ Deno.serve(async (req) => {
           stripe_subscription_id: sub.id,
           updated_at: new Date().toISOString(),
         }, { onConflict: "user_id" });
+        await axiomLog({
+          kind: "subscription", type: event.type,
+          status: event.type === "customer.subscription.deleted" ? "canceled" : sub.status,
+          plan: sub.metadata?.plan ?? "stadsjakt_monthly", user_id: userId,
+          subscription_id: sub.id,
+        }, "stripe-webhook");
         break;
       }
     }
   } catch (err) {
     console.error("webhook-hantering fel:", err);
+    await axiomLog({ level: "error", kind: "webhook_handler_error", event_type: event.type, msg: String(err) }, "stripe-webhook");
     return new Response("handler error", { status: 500 });
   }
 

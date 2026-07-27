@@ -7,6 +7,7 @@ import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChall
 import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
 import { initBilling, requireAccess, handleCheckoutReturn, mountBillingProfile } from './billing.js';
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
+import { axiomLog } from './axiom.js';
 
 // ── Förstaparts-analytics (integritetsvänligt: ingen cookie/PII, bara anonyma
 // händelser till egen Supabase; obegränsat på free-tiern). Fire-and-forget. ──
@@ -19,11 +20,14 @@ function sid(){
   return _sid;
 }
 async function track(name, props){
+  const city = (typeof activeCity!=='undefined'?activeCity:null);
+  // Axiom först — oberoende av Supabase-config, no-op tills token satts (axiom.js).
+  try { axiomLog({ kind:'event', name, city, path: location.pathname, session: sid(), ...(props||{}) }); } catch(_){}
   try {
     if (!isConfigured()) return;
     const supa = await getSupabase();
     if (!supa) return;
-    supa.from('events').insert({ name, path: location.pathname, city: (typeof activeCity!=='undefined'?activeCity:null), props: props||null, session: sid() }).then(()=>{}, ()=>{});
+    supa.from('events').insert({ name, path: location.pathname, city, props: props||null, session: sid() }).then(()=>{}, ()=>{});
   } catch(e){}
 }
 // Lättvikts-felövervakning: logga JS-fel/avvisade promises till samma events-tabell
@@ -528,6 +532,23 @@ function buildMap() {
   });
   map.addControl(new Ghost());
 
+  // "Nära mig": välj närmaste stad direkt från kartan → dess platser visas. Så man
+  // aldrig behöver gå in i stads-listan/söka för att komma igång.
+  const Near = L.Control.extend({
+    options:{ position:'topleft' },
+    onAdd(){
+      const b = L.DomUtil.create('a','leaflet-bar leaflet-control near-btn');
+      b.href='#'; b.title = lang==='en' ? 'Nearest town' : 'Närmaste stad';
+      b.innerHTML = `🧭<span class="near-lbl">${lang==='en' ? 'Near me' : 'Nära mig'}</span>`;
+      b.setAttribute('role','button');
+      b.setAttribute('aria-label', lang==='en' ? 'Select nearest town' : 'Välj närmaste stad');
+      b.style.cssText='height:34px;line-height:34px;padding:0 10px;text-align:center;font-size:15px;font-weight:700;background:#fff;white-space:nowrap;text-decoration:none;color:#3b2a70';
+      L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); selectNearestCity(b); });
+      return b;
+    }
+  });
+  map.addControl(new Near());
+
   // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig.
   // Vid första laddningen körs renderMarkers/fitView innan layouten är klar (#map
   // har 0 höjd), så fitBounds hamnar i världsvy. Mät om storleken OCH passa in på
@@ -714,7 +735,20 @@ function renderOtherCities(){
           iconSize:[34,34], iconAnchor:[17,17],
         }),
         keyboard:false, zIndexOffset:-100,
-      }).on('click', ()=> setActiveCity(p.name));
+      });
+      // Tryck på staden → liten popup med "Visa platser →" (tryck → välj → platser),
+      // så man kan välja stad direkt på kartan utan att gå in i stads-listan.
+      const placesTxt = p.count + ' ' + (lang==='en' ? 'places' : 'platser');
+      const btnTxt = lang==='en' ? 'Show places →' : 'Visa platser →';
+      m.bindPopup(
+        `<div class="city-pop"><b>${p.name}</b><small>${placesTxt}</small>` +
+        `<button type="button" class="city-pop-btn">${btnTxt}</button></div>`,
+        { className:'city-pop-wrap', closeButton:true, autoPan:true, minWidth:150 }
+      );
+      m.on('popupopen', ()=>{
+        const btn = document.querySelector('.leaflet-popup .city-pop-btn');
+        if (btn) L.DomEvent.on(btn, 'click', ()=>{ m.closePopup(); setActiveCity(p.name); });
+      });
       markerLayer.addLayer(m);
       return;
     }
@@ -1856,6 +1890,24 @@ function locateMe(){
     if(best) toast(`📍 ${t('land_geo_near')} ${best}`);
   }, ()=>{ btn.disabled=false; btn.innerHTML=orig; toast(t('land_geo_fail')); },
      {enableHighAccuracy:false,timeout:8000,maximumAge:600000});
+}
+// "Nära mig" från kartan: hitta närmaste valbara stad och visa dess platser direkt.
+function selectNearestCity(btnEl){
+  if (!navigator.geolocation){ toast(lang==='en'?'Location not supported':'Platstjänst stöds inte'); return; }
+  const orig = btnEl ? btnEl.innerHTML : '';
+  if (btnEl) btnEl.innerHTML = '⏳';
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const me = { lat:pos.coords.latitude, lng:pos.coords.longitude };
+    let best=null, bestD=Infinity;
+    citiesInData().forEach(c=>{ const cc=cityCentroid(c.name); const d=havKm(me,cc); if(d<bestD){ bestD=d; best=c.name; } });
+    if (btnEl) btnEl.innerHTML = orig;
+    if (!best) return;
+    cityOverview = false;
+    if (best === activeCity) renderMarkers(); else setActiveCity(best);
+    toast(`📍 ${lang==='en'?'Nearest town: ':'Närmaste stad: '}${best} · ${Math.round(bestD)} km`);
+    track('near_me_city', { city: best });
+  }, ()=>{ if (btnEl) btnEl.innerHTML = orig; toast(lang==='en'?'Could not get your location':'Kunde inte hämta din position'); },
+     { enableHighAccuracy:false, timeout:8000, maximumAge:600000 });
 }
 
 /* ---------- Tyck till (feedback) ---------- */

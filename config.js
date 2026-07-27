@@ -23,6 +23,17 @@ export const SHARE_URL = 'https://stadsvandring.io/karta';
 
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+// ── Axiom (observability / loggning) ─────────────────────────────────────────
+// Speglar anonyma händelser + JS-fel till Axiom (se axiom.js). TOMT = AV; ingen
+// loggning sker förrän en ingest-token är satt. Två sätt att aktivera:
+//   • Alla användare (produktion): ersätt '' nedan med din Axiom-token + dataset.
+//     En committad klient-token är PUBLIK men enbart SKRIV till ETT dataset —
+//     använd ett separat dataset (t.ex. 'stadsvandring') och rotera vid behov.
+//   • Bara denna enhet (test): sätt localStorage cfg_axiom_token / cfg_axiom_dataset.
+export const AXIOM_INGEST_URL = 'https://api.axiom.co';
+export const AXIOM_DATASET = _ov('cfg_axiom_dataset') || '';   // t.ex. 'stadsvandring'
+export const AXIOM_TOKEN   = _ov('cfg_axiom_token')   || '';   // Axiom API-token (ingest)
+
 // ── Betalning (Stripe via Supabase Edge Functions) ───────────────────────────
 // Edge functions bor på samma Supabase-host (/functions/v1/...), redan tillåtet
 // av CSP:ns connect-src https://*.supabase.co. Ingen Stripe.js i sidan — vi
