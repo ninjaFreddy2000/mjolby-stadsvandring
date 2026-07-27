@@ -1972,11 +1972,19 @@ function openFeedback(){
   $('#fb-send').onclick = ()=>{
     const msg = $('#fb-text').value.trim();
     if (!msg){ $('#fb-text').focus(); return; }
+    const email = $('#fb-email').value.trim();
     try {
       const all = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '[]');
-      all.push({ type, msg, email: $('#fb-email').value.trim(), lang });
+      all.push({ type, msg, email, lang });
       localStorage.setItem(FEEDBACK_KEY, JSON.stringify(all));
     } catch(e){}
+    // Skicka även till Supabase så det syns i admin-inkorgen (inte bara lokalt).
+    try {
+      if (isConfigured()) getSupabase().then(supa=>{ if (supa) supa.from('feedback').insert({
+        kind: type, message: msg, email: email || null, lang,
+        city: (typeof activeCity!=='undefined'?activeCity:null), session: sid(),
+      }).then(()=>{},()=>{}); });
+    } catch(_){}
     card.innerHTML = `<div class="fb-thanks">
       <div class="fb-thanks-emoji">💛</div>
       <p>${t('fb_thanks')}</p>

@@ -2,7 +2,7 @@
 // Isolerad modul (samma mönster som tips.js/challenges.js). All känslig läsning
 // skyddas av RLS i Supabase (profiles/tips/events syns bara för is_admin());
 // den här filen är bara UI + anrop. Installationsguiden är öppen för alla.
-import { getSupabase, isConfigured, APP_CITY, FUNCTIONS_BASE } from './config.js';
+import { getSupabase, isConfigured, APP_CITY, FUNCTIONS_BASE, SUPABASE_URL } from './config.js';
 import { isAdmin, getUser } from './auth.js';
 
 let ctx = null, supa = null;
@@ -31,6 +31,11 @@ const L = {
     t_pubBtn: '⚡ Publicera', t_rejBtn: '⛔ Avslå', t_infoBtn: '📝 Be om mer info',
     t_reason: 'Orsak (spam/abuse/duplicate/admin):', t_infoPrompt: 'Vad behöver kompletteras?',
     t_by: 'av', t_waiting: 'väntar på svar',
+    h_inbox: '📥 Inkorg — förfrågningar & meddelanden', in_new: 'nya',
+    h_feedback: '💬 Feedback & meddelanden', fb_none: 'Inga meddelanden än.',
+    fb_handle: '✓ Markera hanterad', fb_handled: 'hanterad',
+    h_leads: '📧 Leads (e-post)', l_none: 'Inga leads än.',
+    h_places: '📸 Platstips & bilder',
     h_install: '📲 Installera som app', install_open: 'Visa installationsguide',
     done: 'Klart', acted: 'Hanterat',
   },
@@ -53,6 +58,11 @@ const L = {
     t_pubBtn: '⚡ Publish', t_rejBtn: '⛔ Reject', t_infoBtn: '📝 Request more info',
     t_reason: 'Reason (spam/abuse/duplicate/admin):', t_infoPrompt: 'What needs completing?',
     t_by: 'by', t_waiting: 'awaiting reply',
+    h_inbox: '📥 Inbox — requests & messages', in_new: 'new',
+    h_feedback: '💬 Feedback & messages', fb_none: 'No messages yet.',
+    fb_handle: '✓ Mark handled', fb_handled: 'handled',
+    h_leads: '📧 Leads (email)', l_none: 'No leads yet.',
+    h_places: '📸 Place tips & photos',
     h_install: '📲 Install as an app', install_open: 'Show install guide',
     done: 'Done', acted: 'Handled',
   },
@@ -60,6 +70,10 @@ const L = {
 const tx = k => (L[en() ? 'en' : 'sv'][k] ?? k);
 
 const TIER_LABEL = { tipsare: '🌱 Tipsare', granskare: '🔎 Granskare', ortskannare: '🏅 Ortskännare' };
+const FB_ICON = { idea: '💡', bug: '🐞', love: '💛', message: '✉️' };
+// media_url är en storage-path (bucket 'tips', publik läsning) eller en extern URL.
+const mediaUrl = u => !u ? '' : (/^https?:\/\//.test(u) ? u : `${SUPABASE_URL}/storage/v1/object/public/tips/${u}`);
+const fmtDate = ts => { try { return new Date(ts).toLocaleDateString(); } catch (_) { return ''; } };
 
 export function initAdmin(context) { ctx = context; }
 async function ensureClient() { if (!supa && isConfigured()) supa = await getSupabase(); return supa; }
@@ -101,14 +115,18 @@ export async function openAdminDashboard() {
     // Kunder (via admin-RPC:er). Feltoleranta: om billing-migrationen ännu inte
     // är deployad returnerar RPC:erna fel → vi visar bara sektionen tom, dashboarden
     // kraschar inte.
-    const [custRes, custCntRes, partAppRes] = await Promise.all([
+    const [custRes, custCntRes, partAppRes, fbRes, leadRes] = await Promise.all([
       supa.rpc('admin_customers').then(r => r, () => ({ data: null })),
       supa.rpc('admin_customer_count').then(r => r, () => ({ data: null })),
       supa.rpc('admin_partner_applications').then(r => r, () => ({ data: null })),
+      supa.rpc('admin_feedback').then(r => r, () => ({ data: null })),
+      supa.rpc('admin_leads').then(r => r, () => ({ data: null })),
     ]);
     const customers = (custRes && custRes.data) || [];
     const custCount = (custCntRes && custCntRes.data && custCntRes.data[0]) || { stadsjakt: 0, stad: 0, total: 0 };
     const partnerApps = (partAppRes && partAppRes.data) || [];
+    const feedback = (fbRes && fbRes.data) || [];
+    const leads = (leadRes && leadRes.data) || [];
     if (pRes.error || tRes.error) {
       card.innerHTML = `<button class="fb-x" id="adm-x">&times;</button><h3>🛡️ ${tx('title')}</h3>
         <p class="auth-fine err">${esc((pRes.error || tRes.error).message)}</p>`;
@@ -151,7 +169,23 @@ export async function openAdminDashboard() {
         ${stat(sessions7, tx('k_sessions'))}
       </div>
 
-      <h4 class="cb-h">${tx('h_tips')}</h4>
+      <h4 class="cb-h">${tx('h_inbox')}</h4>
+      <h5 class="adm-h5">${tx('h_feedback')}${feedback.filter(f => !f.handled).length ? ` · <span class="adm-pill warn">${feedback.filter(f => !f.handled).length} ${tx('in_new')}</span>` : ''}</h5>
+      <div class="adm-tips" id="adm-feedback">
+        ${feedback.length ? feedback.map(f => `<div class="adm-tip${f.handled ? ' is-handled' : ''}" data-fb="${f.id}">
+          <div class="adm-tip-main">
+            <b>${FB_ICON[f.kind] || '✉️'} ${esc((f.message || '').slice(0, 400))}</b>
+            <small>${f.email ? `✉️ ${esc(f.email)} · ` : ''}${f.city ? `${esc(f.city)} · ` : ''}${fmtDate(f.created_at)}${f.handled ? ` · ✓ ${tx('fb_handled')}` : ''}</small>
+          </div>
+          ${f.handled ? '' : `<div class="adm-tip-actions"><button class="rev-admin" data-fbdone="${f.id}">${tx('fb_handle')}</button></div>`}
+        </div>`).join('') : `<div class="screen-empty">${tx('fb_none')}</div>`}
+      </div>
+      <h5 class="adm-h5">${tx('h_leads')}</h5>
+      <ul class="admin-list">
+        ${leads.length ? leads.map(l => `<li><span>✉️ ${esc(l.email)}</span><b>${esc(l.city_slug || l.source_slug || '—')} · ${fmtDate(l.created_at)}</b></li>`).join('') : `<li class="ch-empty">${tx('l_none')}</li>`}
+      </ul>
+
+      <h4 class="cb-h">${tx('h_places')}</h4>
       <div class="adm-pills">
         <span class="adm-pill warn">${byStatus('pending')} ${tx('t_pending')}</span>
         <span class="adm-pill warn">${byStatus('needs_info')} ${tx('t_needs')}</span>
@@ -168,6 +202,7 @@ export async function openAdminDashboard() {
               <b>${where} ${esc(tp.title)}</b>
               <small>${tx('t_by')} ${esc(nameById[tp.author_id] || '—')}${partnerOrg ? ` · 🤝 ${esc(partnerOrg)}` : ''}${needs ? ` · ⏳ ${tx('t_waiting')}` : ''}</small>
               ${tp.body ? `<p>${esc(tp.body)}</p>` : ''}
+              ${tp.media_url ? `<img class="adm-tip-img" src="${esc(mediaUrl(tp.media_url))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
               ${needs && tp.info_request ? `<p class="adm-inforeq">📝 ${esc(tp.info_request)}</p>` : ''}
             </div>
             <div class="adm-tip-actions">
@@ -246,6 +281,14 @@ export async function openAdminDashboard() {
     card.querySelectorAll('[data-ai]').forEach(b => b.onclick = () => enhanceTip(b.dataset.ai, tips));
     card.querySelectorAll('[data-appok]').forEach(b => b.onclick = () => approvePartner(b.dataset.appok, b.dataset.org));
     card.querySelectorAll('[data-apprej]').forEach(b => b.onclick = () => rejectPartner(b.dataset.apprej));
+    card.querySelectorAll('[data-fbdone]').forEach(b => b.onclick = () => markFeedback(b.dataset.fbdone));
+  }
+
+  // ── Feedback: markera som hanterad ─────────────────────────────────────────
+  async function markFeedback(id) {
+    const { error } = await supa.rpc('admin_set_feedback_handled', { p_id: id, p_handled: true });
+    if (error) { ctx.toast(error.message); return; }
+    ctx.toast('✓ ' + tx('done')); load();
   }
 
   // ── Partner: godkänn/avslå ansökan ─────────────────────────────────────────
