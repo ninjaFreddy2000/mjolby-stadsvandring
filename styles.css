@@ -231,6 +231,18 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   box-shadow:0 4px 12px -4px rgba(91,33,182,.4);font-size:13px;opacity:.94}
 .mc-bubble.mc-other:hover{opacity:1}
 .mc-city--other{color:#5a4a86;font-size:10.5px;background:rgba(255,255,255,.82)}
+/* "Nära mig"-kontrollen: etikett bredvid kompass-ikonen */
+.near-btn .near-lbl{margin-left:6px;font-family:var(--font-display,inherit)}
+/* Stads-popup på kartan: tryck stad → "Visa platser →" (välja stad direkt på kartan) */
+.city-pop-wrap .leaflet-popup-content-wrapper{border-radius:14px;box-shadow:0 8px 24px -6px rgba(60,30,120,.4)}
+.city-pop-wrap .leaflet-popup-content{margin:12px 14px}
+.city-pop{display:flex;flex-direction:column;gap:2px;min-width:130px}
+.city-pop b{font-family:var(--font-display,inherit);font-size:16px;color:#2a1e52}
+.city-pop small{color:#6a5f80;font-size:12px;margin-bottom:8px}
+.city-pop-btn{border:0;border-radius:10px;padding:9px 12px;cursor:pointer;
+  background:radial-gradient(circle at 30% 28%, #8b5cf6, #5b21b6 75%);color:#fff;
+  font-family:var(--font-display,inherit);font-weight:800;font-size:14px}
+.city-pop-btn:hover{filter:brightness(1.06)}
 
 /* PWA-installprompt */
 /* Offline-indikator: diskret bjälke i toppen */
@@ -992,12 +1004,17 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .landing-card{margin:auto;width:100%;max-width:480px;min-height:100%;
   display:flex;flex-direction:column;justify-content:flex-end;gap:14px;
   padding:max(28px,env(safe-area-inset-top)) 20px max(24px,env(safe-area-inset-bottom)) 20px}
+/* När sökfältet fokuseras (mobilens tangentbord öppnas) toppjusteras kortet så
+   sökruta + träfflista inte hamnar bakom tangentbordet. */
+.landing-card:focus-within{justify-content:flex-start}
+.landing-card:focus-within .land-hero{display:none}
+.landing-card:focus-within .land-list{max-height:44vh}
 .land-hero{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45);margin-bottom:2px}
 .land-brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:18px}
 .land-brand .mark{width:34px;height:34px;border-radius:10px;background:var(--honey);color:var(--ink);display:grid;place-items:center;flex:none}
 .land-hero h1{font-family:var(--font-display);font-size:30px;line-height:1.15;font-weight:700;margin:0 0 6px}
 .land-hero p{font-size:15px;opacity:.95;line-height:1.5}
-.land-search{position:relative}
+.land-search{position:relative;scroll-margin-top:14px}
 .land-search input{width:100%;border:none;border-radius:var(--r-pill);padding:15px 16px 15px 44px;font-size:16px;
   font-family:var(--font-body);background:var(--card);box-shadow:var(--shadow);color:var(--ink)}
 .land-search .land-mag{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.5;font-size:16px}

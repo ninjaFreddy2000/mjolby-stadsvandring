@@ -549,6 +549,25 @@ function buildMap() {
   });
   map.addControl(new Near());
 
+  // "Alla städer": tillbaka till översikten som visar SAMTLIGA tillgängliga städer
+  // — närsomhelst, oavsett om man valt/sökt en stad. Döljs i Mjölby-only-läget.
+  if (!MJOLBY_ONLY){
+    const AllCities = L.Control.extend({
+      options:{ position:'topleft' },
+      onAdd(){
+        const b = L.DomUtil.create('a','leaflet-bar leaflet-control allcities-btn');
+        b.href='#'; b.title = lang==='en' ? 'All towns' : 'Alla städer';
+        b.innerHTML = `🗺️<span class="near-lbl">${lang==='en' ? 'All towns' : 'Alla städer'}</span>`;
+        b.setAttribute('role','button');
+        b.setAttribute('aria-label', lang==='en' ? 'Show all towns' : 'Visa alla städer');
+        b.style.cssText='height:34px;line-height:34px;padding:0 10px;text-align:center;font-size:15px;font-weight:700;background:#fff;white-space:nowrap;text-decoration:none;color:#3b2a70';
+        L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); showAllCities(); });
+        return b;
+      }
+    });
+    map.addControl(new AllCities());
+  }
+
   // Kartan ligger i en storleksbegränsad ram → se till att Leaflet mäter om sig.
   // Vid första laddningen körs renderMarkers/fitView innan layouten är klar (#map
   // har 0 höjd), så fitBounds hamnar i världsvy. Mät om storleken OCH passa in på
@@ -1864,6 +1883,9 @@ function openLanding(){
     <button class="land-locate" id="land-locate">📍 ${t('land_locate')}</button>
     <div class="land-list" id="land-list"></div>`;
   const qi=$('#land-q'); qi.oninput=()=>renderLandingList(qi.value);
+  // Mobil: när tangentbordet öppnas, scrolla upp sökfältet så det (och listan)
+  // syns ovanför tangentbordet i stället för att gömmas bakom det.
+  qi.addEventListener('focus', ()=>{ setTimeout(()=>{ try{ qi.scrollIntoView({ block:'start', behavior:'smooth' }); }catch(_){} }, 300); });
   $('#land-locate').onclick=locateMe;
   renderLandingList('');
   $('#landing').setAttribute('aria-hidden','false');
@@ -1908,6 +1930,18 @@ function selectNearestCity(btnEl){
     track('near_me_city', { city: best });
   }, ()=>{ if (btnEl) btnEl.innerHTML = orig; toast(lang==='en'?'Could not get your location':'Kunde inte hämta din position'); },
      { enableHighAccuracy:false, timeout:8000, maximumAge:600000 });
+}
+
+// "Alla städer": återgå till översikten som ramar in SAMTLIGA tillgängliga städer,
+// oavsett vald stad. Lämnar ev. aktiv tur och zoomar ut till hela-Sverige-vyn.
+function showAllCities(){
+  if (MJOLBY_ONLY) return;
+  activeTour = null;
+  cityOverview = true;
+  overviewApplied = false;     // så gaten i renderView inte direkt nollställer läget
+  renderMarkers();             // ritar om + fitView ramar in alla städer (cityOverview)
+  toast(lang==='en' ? '🗺️ All towns' : '🗺️ Alla städer');
+  track('show_all_cities', {});
 }
 
 /* ---------- Tyck till (feedback) ---------- */

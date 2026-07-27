@@ -31,8 +31,11 @@ export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 //     använd ett separat dataset (t.ex. 'stadsvandring') och rotera vid behov.
 //   • Bara denna enhet (test): sätt localStorage cfg_axiom_token / cfg_axiom_dataset.
 export const AXIOM_INGEST_URL = 'https://api.axiom.co';
-export const AXIOM_DATASET = _ov('cfg_axiom_dataset') || '';   // t.ex. 'stadsvandring'
-export const AXIOM_TOKEN   = _ov('cfg_axiom_token')   || '';   // Axiom API-token (ingest)
+export const AXIOM_DATASET = _ov('cfg_axiom_dataset') || 'stadsvandring';   // datasetets namn i Axiom
+// ▼▼▼ KLISTRA IN DIN AXIOM INGEST-TOKEN HÄR (xaat-…) FÖR ATT SLÅ PÅ LOGGNING ▼▼▼
+// Tomt = av (inget skickas). Committad token är PUBLIK men bara SKRIV till ovan
+// dataset — använd ett separat dataset och rotera vid behov. Se docs/axiom-setup.md.
+export const AXIOM_TOKEN = _ov('cfg_axiom_token') || '';   // ← t.ex. 'xaat-xxxxxxxx-...'
 
 // ── Betalning (Stripe via Supabase Edge Functions) ───────────────────────────
 // Edge functions bor på samma Supabase-host (/functions/v1/...), redan tillåtet
