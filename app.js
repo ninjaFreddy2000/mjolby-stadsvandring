@@ -2,6 +2,7 @@
 // Data: mjolby_kunskapsdatabas.json (knowledge base)
 import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES, HISTORIC_IMAGES } from './content.js';
 import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
+import { cityBlurb } from './cityintros.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
 import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
 import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
@@ -193,16 +194,35 @@ const INTEREST_WEIGHT = {
   naturreservat:3, vandringsled:3, badplats:2,
   hotell:2, kafe_restaurang:2, handel:1, gardsbutik:1, industri_foretag:1, idrott:1,
 };
-function interestScore(e, centre){
+// Innehålls-/kategoripoäng utan läges-term — grunden för både vandringsurvalet
+// och Höjdpunkt/Bonus-nivån.
+function qualityScore(e){
   let s = INTEREST_WEIGHT[e.category] ?? 4;
   const descLen = (e.description || '').length;
   if ((e.images || []).length) s += 2;
   if (descLen > 400) s += 2; else if (descLen > 200) s += 1;
   if (e.key_facts && (Array.isArray(e.key_facts) ? e.key_facts.length : Object.keys(e.key_facts).length)) s += 1;
   if (e.era) s += 1;
-  s += Math.max(0, 1 - distKm(e.coordinates, centre) / WALK_RADIUS_KM) * 2;   // närmare centrum → lite högre
   return s;
 }
+function interestScore(e, centre){
+  return qualityScore(e) + Math.max(0, 1 - distKm(e.coordinates, centre) / WALK_RADIUS_KM) * 2;   // närmare centrum → lite högre
+}
+// ── Höjdpunkt vs Bonus ────────────────────────────────────────────────────
+// Klockrena stadsvandringsplatser (vandringsvärdig kategori + rikt innehåll)
+// märks som Höjdpunkt ⭐; platser med tunnare underlag blir Bonusplatser.
+// Stopp som ingår i stadens vandring räknas ALLTID som höjdpunkter — vandringen
+// följer per definition de mest intressanta platserna. Tröskeln ≥11 + minsta
+// textlängd ger ca 20 % höjdpunkter över hela datamängden.
+let WALK_IDS = new Set();   // alla stopp som ingår i någon stads vandring (fylls i init)
+function computeWalkIds(){
+  WALK_IDS = new Set();
+  Object.values(CENTRAL_BY_CITY).forEach(ids => ids.forEach(id => WALK_IDS.add(id)));
+  // Kurerade turer (Mjölby): Centrala vandringen + Medeltidsringen
+  DATA.forEach(e => { if (e.tour && (e.tour.in_central_walk || e.tour.in_medieval_ring)) WALK_IDS.add(e.id); });
+}
+const isTopPlace = e =>
+  WALK_IDS.has(e.id) || (qualityScore(e) >= 11 && (e.description || '').length >= 180);
 function routeLenM(order){
   let m = 0;
   for (let i = 1; i < order.length; i++) m += distKm(order[i-1].coordinates, order[i].coordinates) * 1000;
@@ -285,6 +305,7 @@ function computeCityMeta(){
   }
 }
 const activeTypes = new Set(Object.keys(TYPES));
+let topOnly = false;    // "⭐ Höjdpunkter"-filter: visa bara klockrena stadsvandringsplatser
 let activeTour = null; // null = all
 // Översiktsläge: kartan startar utzoomad så ALLA tillgängliga städer syns som
 // prickar direkt. Blir false när man väljer/zoomar in på en stad (setActiveCity).
@@ -418,8 +439,9 @@ async function init() {
   // Filtrera bort demo-/testdata ur hela appen (karta, städer, berättelser).
   DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
   ENTRIES = DATA.filter(hasCoords);
-  computeCentralTours();   // generiska centrumslingor per ort (för icke-kurerade städer)
+  computeCentralTours();   // generiska stadsvandringar per ort (för icke-kurerade städer)
   computeCityMeta();       // centrumpunkt + antal per stad (för prickar över andra städer)
+  computeWalkIds();        // vandringsstoppen → räknas som Höjdpunkter
 
   // Evenemang per ort (build-tids-hämtade från respektive Visit-sida). Stads-nycklat
   // objekt: { "Mjölby": {source,sourceUrl,fetched,events:[…]}, "Motala": {…}, … }.
@@ -638,15 +660,19 @@ function openGhostSheet(g){
 
 function pinIcon(entry, visited){
   // Ren punktnål — ingen ikon/emoji (matchar Spökkartans kartspråk).
+  // Bonusplatser (tunnare underlag) ritas mindre och dämpade så höjdpunkterna
+  // dominerar kartbilden.
+  const bonus = !isTopPlace(entry);
   return L.divIcon({
     className:'',
-    html:`<div class="pin ${visited?'visited':''}"></div>`,
+    html:`<div class="pin ${visited?'visited':''}${bonus?' pin--bonus':''}"></div>`,
     iconSize:[20,20], iconAnchor:[10,10], popupAnchor:[0,-12],
   });
 }
 
 function visibleEntries(){
   let list = ENTRIES.filter(e => inCity(e) && activeTypes.has(typeOf(e)));
+  if (topOnly) list = list.filter(isTopPlace);
   if (activeTour) list = list.filter(TOURS[activeTour].test);
   return list;
 }
@@ -982,9 +1008,11 @@ function openTourPanel(key){
     const badge = `<span class="stop-no" style="background:${ty.color}">${i+1}</span>`;
     if (locked){
       const clue = `${catLabel(e)||(lang==='en'?'A stop':'Ett stopp')}${e.era?` · ${e.era}`:''}`;
+      // Ledtråden viskas av STADENS berättare (Lasse enbart i Mjölby).
+      const whisper = TELLER ? TELLER.name : (lang==='en'?'Your guide':'Din guide');
       return `<li><div class="stop-row locked" aria-disabled="true">
         <span class="stop-thumb ph">🔒${badge}</span>
-        <span class="stop-meta"><b>???</b><small>Lasse viskar: ${clue}</small></span>
+        <span class="stop-meta"><b>???</b><small>${whisper} ${lang==='en'?'whispers':'viskar'}: ${clue}</small></span>
       </div></li>`;
     }
     return `<li><button class="stop-row ${current?'current':''}" data-id="${e.id}">
@@ -1014,11 +1042,19 @@ function openTourPanel(key){
 /* ---------- Filters ---------- */
 function buildFilters(){
   const wrap = $('#filters');
-  wrap.innerHTML = Object.entries(TYPES).map(([k,ty])=>
+  // Först: Höjdpunkter-filtret (klockrena platser vs bonus), sedan typ-filtren.
+  wrap.innerHTML = `<button class="fchip fchip--top" data-top="1" aria-pressed="${topOnly}">⭐ ${t('filter_top')}</button>`
+    + Object.entries(TYPES).map(([k,ty])=>
     `<button class="fchip" data-type="${k}" aria-pressed="true">
        <span class="dot" style="background:${ty.color}"></span>${t('type_'+k)}
      </button>`).join('');
-  wrap.querySelectorAll('.fchip').forEach(b=>{
+  const topBtn = wrap.querySelector('[data-top]');
+  topBtn.onclick = ()=>{
+    topOnly = !topOnly;
+    topBtn.setAttribute('aria-pressed', topOnly);
+    renderMarkers();
+  };
+  wrap.querySelectorAll('.fchip[data-type]').forEach(b=>{
     b.onclick = ()=>{
       const k = b.dataset.type;
       if (activeTypes.has(k)) activeTypes.delete(k); else activeTypes.add(k);
@@ -1165,6 +1201,7 @@ function openSheet(id){
     <div class="sheet-pad">
       ${sheetReturnTour?`<button class="sheet-back" id="sheet-back">← ${tourName(sheetReturnTour)}</button>`:''}
       <span class="type-tag" style="background:${ty.color}">${icon} ${typeLabel(e)}</span>
+      <span class="tier-tag ${isTopPlace(e)?'top':'bonus'}">${isTopPlace(e)?`⭐ ${t('tier_top')}`:t('tier_bonus')}</span>
       <span class="city-tag">📍 ${cityOf(e)}</span>
       <h2>${e.name}</h2>
       ${e.era?`<div class="era">${e.era}</div>`:''}
@@ -1543,13 +1580,16 @@ function renderStories(filter){
     if (!inCity(e)) return false;                 // bara den valda stadens berättelser
     if (!q) return true;
     return (e.name+' '+(e.summary||'')+' '+(CAT_LABEL[e.category]||'')).toLowerCase().includes(q);
-  });
+  })
+  // Höjdpunkterna först, bonusplatserna efter (stabil ordning inom varje grupp).
+  .sort((a,b)=> (isTopPlace(b)?1:0) - (isTopPlace(a)?1:0));
   const st = stamps();
   $('#stories-list').innerHTML = list.map(e=>{
     const onMap = hasCoords(e);
+    const tier = isTopPlace(e) ? '⭐ ' : '';
     return `<li><button class="stop-row" data-id="${e.id}">
       ${stopThumb(e)}
-      <span class="stop-meta"><b>${e.name}</b><small>${catLabel(e)}${onMap?'':' · '+t('only_story')}</small></span>
+      <span class="stop-meta"><b>${tier}${e.name}</b><small>${catLabel(e)}${isTopPlace(e)?'':' · '+t('tier_bonus')}${onMap?'':' · '+t('only_story')}</small></span>
       ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}
     </button></li>`;
   }).join('') || `<li class="stories-empty">${lang==='en'?'Nothing found.':'Inget hittades.'}</li>`;
@@ -1667,8 +1707,11 @@ function pickSvVoice(){
   if (!('speechSynthesis' in window)) return null;
   const vs = speechSynthesis.getVoices() || [];
   const sv = vs.filter(v=>/^sv/i.test(v.lang||''));
-  // Föredra en manlig röst (Skånska Lasse är en man) om enheten har någon; annars valfri svensk.
-  return sv.find(v=>/oskar|male|man\b|mikael|erik|gustav/i.test(v.name||'')) || sv[0] || null;
+  // Manlig röst föredras BARA när berättaren är Skånska Lasse (Mjölby) — övriga
+  // städer har neutral guide och tar enhetens förstahandsval.
+  if (TELLER && TELLER.id === 'skanska-lasse')
+    return sv.find(v=>/oskar|male|man\b|mikael|erik|gustav/i.test(v.name||'')) || sv[0] || null;
+  return sv[0] || null;
 }
 function narrationText(e){
   if (lang === 'en') return SUMMARY_EN[e.id] || e.summary || e.name;
@@ -1795,7 +1838,8 @@ function renderCities(){
   const have = citiesInData();                       // [{name,count}] — städer med riktiga stopp
   const haveNames = new Set(have.map(c=>c.name));
   const meta = {}; CITIES.forEach(c=> meta[c.name]={ blurb:c.blurb, seed:c.seed });
-  const blurbFor = n => (meta[n]&&meta[n].blurb) || (lang==='en'?`Walks and stories in ${n}.`:`Vandringar och berättelser i ${n}.`);
+  // Stadsspecifik blurb (cityintros.js) i första hand — sedan CITIES-listan, sist generisk.
+  const blurbFor = n => cityBlurb(n) || (meta[n]&&meta[n].blurb) || (lang==='en'?`Walks and stories in ${n}.`:`Vandringar och berättelser i ${n}.`);
   const seedFor  = (n,i) => (meta[n]&&typeof meta[n].seed==='number') ? meta[n].seed : (i%3);
 
   // Valbara städer (har stopp). Den aktiva markeras tydligt.
@@ -1855,7 +1899,7 @@ function renderLandingList(filter){
   if(landNear) list=[...list].sort((a,b)=>(b.name===landNear)-(a.name===landNear));
   const cards=list.map((c,i)=>{
     const m=metaOf(c.name), tn=tourCount(c.name), near=c.name===landNear;
-    const sub=(m&&m.blurb)||`${nStops(c.count)}`;
+    const sub=cityBlurb(c.name)||(m&&m.blurb)||`${nStops(c.count)}`;
     const badge=near ? `📍 ${t('land_geo_near').replace(':','').trim()}`
                      : `${nStops(c.count)}${tn?` · ${tn} ${t('city_leder')}`:''}`;
     return `<button class="land-city ${near?'near':''}" data-city="${c.name}">

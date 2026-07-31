@@ -16,6 +16,8 @@
 //    }
 // ─────────────────────────────────────────────────────────────────────────
 
+import { cityIntro } from './cityintros.js';
+
 export const ACTIVE_CITY = 'mjolby';
 
 export const STORYTELLERS = {
@@ -369,6 +371,8 @@ export const STORYTELLERS = {
 // ─────────────────────────────────────────────────────────────────────────
 export function defaultTeller(city) {
   const ort = city || 'staden';
+  // Stadsspecifik introduktion (cityintros.js) om den finns — annars generisk.
+  const intro = cityIntro(ort);
   return {
     cityId: null,
     city: ort,
@@ -392,6 +396,7 @@ export function defaultTeller(city) {
     },
     greeting:
       `Hej och välkommen till ${ort}!\n\n` +
+      (intro ? `${intro}\n\n` : '') +
       `Jag är din stadsguide här. Jag visar dig runt bland platser, byggnader ` +
       `och berättelser — i din egen takt, helt utan brådska.\n\n` +
       `Följ med, så upptäcker vi ${ort} en plats i taget.`,

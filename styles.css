@@ -167,6 +167,10 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .fchip .dot{width:11px;height:11px;border-radius:50%;flex:none}
 .fchip[aria-pressed="false"]{opacity:.4;filter:grayscale(.4)}
 .fchip:active{transform:scale(.96)}
+/* "⭐ Höjdpunkter"-filtret: av = neutral chip, på = guldmarkerad */
+.fchip--top{padding:7px 14px}
+.fchip--top[aria-pressed="false"]{opacity:.75;filter:none}
+.fchip--top[aria-pressed="true"]{background:var(--honey,#E2A21A);color:#fff;box-shadow:none}
 
 /* Karta */
 #map{flex:1;width:100%;z-index:1;background:var(--paper-2)}
@@ -183,6 +187,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   transition:transform .12s ease;
 }
 .pin:hover{transform:scale(1.2)}
+/* Bonusplats (tunnare underlag) — mindre, dämpad nål så höjdpunkterna dominerar */
+.pin--bonus{width:13px;height:13px;opacity:.55;border-width:1.5px;box-shadow:0 1px 3px rgba(60,30,120,.25)}
 /* Spökplats-markör (Spökkartan-korsmarknadsföring) — diskret svart prick som
    smälter in med kartan istället för en påträngande emoji-nål. */
 .ghost-dot{width:14px;height:14px;border-radius:50%;
@@ -900,6 +906,11 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .city-tag{display:inline-block;margin:0 0 0 6px;font-size:12.5px;font-weight:800;color:var(--primary);
   background:var(--card-2);border:1px solid var(--line);padding:3px 10px;border-radius:var(--r-pill);
   font-family:var(--font-display);vertical-align:middle}
+/* Höjdpunkt/Bonus-nivå per plats (detaljvyn) */
+.tier-tag{display:inline-block;margin:0 0 0 6px;font-size:12px;font-weight:800;
+  padding:3px 10px;border-radius:var(--r-pill);font-family:var(--font-display);vertical-align:middle}
+.tier-tag.top{color:#7a5200;background:#fdf3dd;border:1px solid #ecd9ad}
+.tier-tag.bonus{color:var(--ink-2);background:var(--card-2);border:1px solid var(--line);opacity:.85}
 .city-card.selected{box-shadow:inset 0 0 0 2.5px var(--primary);background:var(--card-2)}
 .city-card.selected .city-badge.on{background:var(--primary);color:var(--on-primary)}
 
