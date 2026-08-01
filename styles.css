@@ -216,7 +216,12 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 .spok-link a:hover{text-decoration:underline}
 /* Kart-kluster-bubbla (lila gradient enligt promobilden). Tre storlekar sätts
    inline från renderView(): 38 px (<10), 48 px (10–39), 60 px (≥40). */
-.mc-wrap{background:none!important;border:none!important;position:relative}
+/* OBS: måste vara absolute — Leaflets .leaflet-marker-icon positionerar via
+   transform från lagrets origo. position:relative (samma specificitet, senare i
+   kaskaden) la markörerna i dokumentflödet → prickarna knuffades nedåt av
+   varandra och hamnade geografiskt fel. Absolute är ändå positioneringskontext
+   för .mc-city-etiketten. */
+.mc-wrap{background:none!important;border:none!important;position:absolute}
 .mc-bubble{border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 30% 28%, #8b5cf6, #5b21b6 75%);
   color:#fff;font-family:var(--font-display);font-weight:800;font-size:15px;
@@ -230,13 +235,14 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   font-family:var(--font-display);font-weight:700;font-size:11px;color:#3b2a70;
   background:rgba(255,255,255,.88);border-radius:8px;padding:1px 7px;
   box-shadow:0 1px 4px rgba(60,30,120,.25);pointer-events:none}
-/* Prickar för de ANDRA städerna i vandringen (ej vald stad) — dämpad ton så den
-   valda staden förblir tydligast. Alltid synliga: zooma ut för att se dem. */
-.mc-bubble.mc-other{
-  background:radial-gradient(circle at 30% 28%, #b8a6e6, #7c6bb0 75%);
-  box-shadow:0 4px 12px -4px rgba(91,33,182,.4);font-size:13px;opacity:.94}
-.mc-bubble.mc-other:hover{opacity:1}
-.mc-city--other{color:#5a4a86;font-size:10.5px;background:rgba(255,255,255,.82)}
+/* Blå prick för VARJE annan stad i stadsvandringen (ej vald stad). Slås aldrig
+   ihop till kluster — alla städer syns alltid var för sig. */
+.city-dot{width:16px;height:16px;border-radius:50%;cursor:pointer;
+  background:radial-gradient(circle at 30% 28%, #5C97C4, var(--lake) 75%);
+  border:2.5px solid #fff;box-shadow:0 2px 8px -1px rgba(62,120,168,.55);
+  transition:transform .12s ease}
+.city-dot:hover{transform:scale(1.25)}
+.mc-city--dot{color:#2c5a80;font-size:10.5px;background:rgba(255,255,255,.85)}
 /* "Nära mig"-kontrollen: etikett bredvid kompass-ikonen */
 .near-btn .near-lbl{margin-left:6px;font-family:var(--font-display,inherit)}
 /* Stads-popup på kartan: tryck stad → "Visa platser →" (välja stad direkt på kartan) */

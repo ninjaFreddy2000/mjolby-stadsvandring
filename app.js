@@ -747,9 +747,9 @@ function renderView(){
   renderOtherCities();
 }
 
-// Prickar för de övriga valbara städerna (ej den aktiva). En dämpad bubbla per
-// stad med namn + antal stopp; klick byter aktiv stad. Städer som ligger nära
-// varandra klustras vid utzoomad vy så de inte överlappar.
+// Blå prickar för de övriga valbara städerna (ej den aktiva). VARJE stad får sin
+// egen prick med namn — de slås aldrig ihop till kluster, så man alltid ser
+// exakt vilka städer som finns i stadsvandringen. Klick → popup → byt stad.
 function renderOtherCities(){
   if (!map || MJOLBY_ONLY) return;
   const active = activeCity;
@@ -759,58 +759,28 @@ function renderOtherCities(){
     .filter(Boolean);
   if (!pts.length) return;
 
-  const zoom = map.getZoom();
-  const maxZoom = map.getMaxZoom();
-  const R = zoom >= maxZoom ? 0 : CLUSTER_RADIUS_PX;
-  const clusters = [];
   pts.forEach(p=>{
-    const pt = map.project([p.lat, p.lng], zoom);
-    let c = clusters.find(c => Math.hypot(c.x - pt.x, c.y - pt.y) < R);
-    if (!c){ c = { x: pt.x, y: pt.y, items: [] }; clusters.push(c); }
-    c.items.push(p);
-  });
-
-  clusters.forEach(c=>{
-    if (c.items.length === 1){
-      const p = c.items[0];
-      const m = L.marker([p.lat, p.lng], {
-        icon: L.divIcon({
-          className:'mc-wrap',
-          html:`<div class="mc-bubble mc-other" style="width:34px;height:34px">${p.count}</div><div class="mc-city mc-city--other">${p.name}</div>`,
-          iconSize:[34,34], iconAnchor:[17,17],
-        }),
-        keyboard:false, zIndexOffset:-100,
-      });
-      // Tryck på staden → liten popup med "Visa platser →" (tryck → välj → platser),
-      // så man kan välja stad direkt på kartan utan att gå in i stads-listan.
-      const placesTxt = p.count + ' ' + (lang==='en' ? 'places' : 'platser');
-      const btnTxt = lang==='en' ? 'Show places →' : 'Visa platser →';
-      m.bindPopup(
-        `<div class="city-pop"><b>${p.name}</b><small>${placesTxt}</small>` +
-        `<button type="button" class="city-pop-btn">${btnTxt}</button></div>`,
-        { className:'city-pop-wrap', closeButton:true, autoPan:true, minWidth:150 }
-      );
-      m.on('popupopen', ()=>{
-        const btn = document.querySelector('.leaflet-popup .city-pop-btn');
-        if (btn) L.DomEvent.on(btn, 'click', ()=>{ m.closePopup(); setActiveCity(p.name); });
-      });
-      markerLayer.addLayer(m);
-      return;
-    }
-    // Flera städer nära varandra → en bubbla; klick zoomar in mot dem.
-    const lat = c.items.reduce((s,p)=>s+p.lat,0)/c.items.length;
-    const lng = c.items.reduce((s,p)=>s+p.lng,0)/c.items.length;
-    const nTowns = c.items.length;
-    const size = nTowns >= 40 ? 60 : nTowns >= 10 ? 48 : 38;
-    const label = nTowns + ' ' + (lang==='en' ? 'towns' : 'orter');
-    const m = L.marker([lat,lng], {
+    const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({
         className:'mc-wrap',
-        html:`<div class="mc-bubble mc-other" style="width:${size}px;height:${size}px">${nTowns}</div><div class="mc-city mc-city--other">${label}</div>`,
-        iconSize:[size,size], iconAnchor:[size/2,size/2],
+        html:`<div class="city-dot"></div><div class="mc-city mc-city--dot">${p.name}</div>`,
+        iconSize:[16,16], iconAnchor:[8,8],
       }),
       keyboard:false, zIndexOffset:-100,
-    }).on('click', ()=> map.flyTo([lat,lng], Math.min(zoom+2, maxZoom)));
+    });
+    // Tryck på staden → liten popup med "Visa platser →" (tryck → välj → platser),
+    // så man kan välja stad direkt på kartan utan att gå in i stads-listan.
+    const placesTxt = p.count + ' ' + (lang==='en' ? 'places' : 'platser');
+    const btnTxt = lang==='en' ? 'Show places →' : 'Visa platser →';
+    m.bindPopup(
+      `<div class="city-pop"><b>${p.name}</b><small>${placesTxt}</small>` +
+      `<button type="button" class="city-pop-btn">${btnTxt}</button></div>`,
+      { className:'city-pop-wrap', closeButton:true, autoPan:true, minWidth:150 }
+    );
+    m.on('popupopen', ()=>{
+      const btn = document.querySelector('.leaflet-popup .city-pop-btn');
+      if (btn) L.DomEvent.on(btn, 'click', ()=>{ m.closePopup(); setActiveCity(p.name); });
+    });
     markerLayer.addLayer(m);
   });
 }
