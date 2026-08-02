@@ -21,8 +21,10 @@ function grantSoftAccess() { try { localStorage.setItem(SOFT_KEY, '1'); } catch 
 // skiftlägesokänslig och NFC-normaliserad (ÅÄÖ). Värdet är kodens namn — sparas
 // för att kunna se vilken kod som användes. Fungerar även som delningslänk:
 // stadsvandring.io/karta?kod=<koden>
+// OBS: värdet (spårningsnamnet) syns i källkoden — döp det ALDRIG efter själva
+// koden, då avslöjar namnet vad man ska skriva.
 const PROMO_HASHES = {
-  '9bce66df2a151f4aa0f9f1e8e399bf609e04a2a484a3619a5ceeaf22154d433f': 'fredrikarbast',
+  '9bce66df2a151f4aa0f9f1e8e399bf609e04a2a484a3619a5ceeaf22154d433f': 'grundarkod-1',
 };
 async function codeHash(code) {
   const norm = String(code).trim().toLowerCase().normalize('NFC');
