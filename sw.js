@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v77';
+const CACHE = 'mjolby-stadsvandring-v78';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").

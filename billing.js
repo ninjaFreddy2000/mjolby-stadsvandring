@@ -16,6 +16,29 @@ const SOFT_KEY = 'sv_access';
 function softUnlocked() { try { return localStorage.getItem(SOFT_KEY) === '1'; } catch (e) { return false; } }
 function grantSoftAccess() { try { localStorage.setItem(SOFT_KEY, '1'); } catch (e) {} state.stadsjakt = true; state.ready = true; emit(); }
 
+// ── Presentkoder: lås upp ALLT med en kod ────────────────────────────────────
+// Koderna lagras som SHA-256-hashar (inte klartext i källkoden). Jämförelsen är
+// skiftlägesokänslig och NFC-normaliserad (ÅÄÖ). Värdet är kodens namn — sparas
+// för att kunna se vilken kod som användes. Fungerar även som delningslänk:
+// stadsvandring.io/karta?kod=<koden>
+const PROMO_HASHES = {
+  '9bce66df2a151f4aa0f9f1e8e399bf609e04a2a484a3619a5ceeaf22154d433f': 'fredrikarbast',
+};
+async function codeHash(code) {
+  const norm = String(code).trim().toLowerCase().normalize('NFC');
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(norm));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+export async function redeemCode(code) {
+  if (!code || !String(code).trim()) return false;
+  let name = null;
+  try { name = PROMO_HASHES[await codeHash(code)] || null; } catch (e) { return false; }
+  if (!name) return false;
+  try { localStorage.setItem('sv_access_code', name); } catch (e) {}
+  grantSoftAccess();
+  return true;
+}
+
 let ctx = null;
 let supa = null;
 const state = { stadsjakt: false, cities: new Set(), ready: false };
@@ -130,6 +153,16 @@ export async function openPortal() {
 // sekund, så vi läser om tillgången några gånger och städar URL:en.
 export async function handleCheckoutReturn() {
   const p = new URLSearchParams(location.search);
+  // Presentkod via delningslänk: …/karta?kod=<koden> låser upp direkt.
+  const kod = p.get('kod') || p.get('code');
+  if (kod) {
+    const ok = await redeemCode(kod);
+    p.delete('kod'); p.delete('code');
+    const qs0 = p.toString();
+    history.replaceState(null, '', location.pathname + (qs0 ? '?' + qs0 : '') + location.hash);
+    if (ok) { toast(en() ? '🎁 Code accepted — everything unlocked!' : '🎁 Koden gäller — allt upplåst!'); return; }
+    toast(en() ? 'The code was not recognized.' : 'Koden känns inte igen.');
+  }
   // Lätt paywall: retur från Stripe Payment Link (success-URL = …/karta?unlocked=1).
   if (PAYWALL_LINKS && p.get('unlocked')) {
     grantSoftAccess();
@@ -183,7 +216,11 @@ function injectStyles() {
   #paywall .pw-tag{display:inline-block;background:var(--accent,#0A2A6B);color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:middle}
   #paywall .cta{width:100%}
   #paywall .pw-fine{text-align:center;color:var(--muted,#5a6680);font-size:.8rem;margin:.6em 0 0}
-  #paywall .pw-fine a{color:inherit}`;
+  #paywall .pw-fine a{color:inherit}
+  #paywall .pw-code{display:flex;gap:8px;margin:.7em 0 0}
+  #paywall .pw-code[hidden]{display:none}
+  #paywall .pw-code input{flex:1;min-width:0;border:1.5px solid var(--line,#e6dcc6);border-radius:12px;padding:10px 12px;font-size:.95rem;background:var(--card,#fff);color:inherit}
+  #paywall .pw-code button{border:0;border-radius:12px;padding:10px 16px;font-weight:700;background:var(--accent,#0A2A6B);color:#fff;cursor:pointer;white-space:nowrap}`;
   const el = document.createElement('style'); el.textContent = css; document.head.appendChild(el);
 }
 
@@ -238,7 +275,11 @@ export function openPaywall(city, cityName) {
     </div>
 
     <p class="pw-fine">${en() ? 'Secure payment via Stripe · ' : 'Säker betalning via Stripe · '}<a href="/integritet">${en() ? 'Privacy' : 'Integritet'}</a></p>
-    ${PAYWALL_LINKS ? `<p class="pw-fine"><a href="#" id="pw-paid">${en() ? 'Already paid? Unlock here' : 'Har du redan betalat? Lås upp här'}</a></p>` : ''}`;
+    ${PAYWALL_LINKS ? `<p class="pw-fine"><a href="#" id="pw-paid">${en() ? 'Already paid? Unlock here' : 'Har du redan betalat? Lås upp här'}</a> · <a href="#" id="pw-code-link">🎁 ${en() ? 'Have a code?' : 'Har du en kod?'}</a></p>
+    <div class="pw-code" id="pw-code" hidden>
+      <input id="pw-code-input" type="text" autocomplete="off" autocapitalize="off" placeholder="${en() ? 'Enter your code' : 'Skriv din kod'}" aria-label="${en() ? 'Gift code' : 'Presentkod'}">
+      <button id="pw-code-go">${en() ? 'Unlock' : 'Lås upp'}</button>
+    </div>` : ''}`;
 
   card.querySelector('#pw-x').onclick = () => o.setAttribute('aria-hidden', 'true');
   const sub = card.querySelector('#pw-sub');
@@ -257,6 +298,31 @@ export function openPaywall(city, cityName) {
     o.setAttribute('aria-hidden', 'true');
     toast(en() ? '🎉 Unlocked — enjoy the walks!' : '🎉 Upplåst — ha så kul på vandringarna!');
   };
+  // Presentkod: visa fältet vid klick, lös in vid knapptryck/Enter.
+  const codeLink = card.querySelector('#pw-code-link');
+  if (codeLink) codeLink.onclick = (e) => {
+    e.preventDefault();
+    const box = card.querySelector('#pw-code');
+    box.hidden = !box.hidden;
+    if (!box.hidden) card.querySelector('#pw-code-input').focus();
+  };
+  const codeGo = card.querySelector('#pw-code-go');
+  if (codeGo) {
+    const tryCode = async () => {
+      const input = card.querySelector('#pw-code-input');
+      const ok = await redeemCode(input.value);
+      if (ok) {
+        o.setAttribute('aria-hidden', 'true');
+        toast(en() ? '🎁 Code accepted — everything unlocked!' : '🎁 Koden gäller — allt upplåst!');
+      } else {
+        input.setCustomValidity('');
+        input.style.borderColor = '#b3423a';
+        toast(en() ? 'The code was not recognized.' : 'Koden känns inte igen.');
+      }
+    };
+    codeGo.onclick = tryCode;
+    card.querySelector('#pw-code-input').addEventListener('keydown', e => { if (e.key === 'Enter') tryCode(); });
+  }
   o.setAttribute('aria-hidden', 'false');
 }
 
