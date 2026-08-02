@@ -307,6 +307,9 @@ function computeCityMeta(){
 const activeTypes = new Set(Object.keys(TYPES));
 let topOnly = false;    // "⭐ Höjdpunkter"-filter: visa bara klockrena stadsvandringsplatser
 let activeTour = null; // null = all
+// Utforska-vyn kan visas som karta ELLER lista (samma filter gäller båda).
+let exploreView = localStorage.getItem('sv_view') === 'list' ? 'list' : 'map';
+let listQuery = '';     // sökfältet i listvyn (nollställs vid stadsbyte)
 // Översiktsläge: kartan startar utzoomad så ALLA tillgängliga städer syns som
 // prickar direkt. Blir false när man väljer/zoomar in på en stad (setActiveCity).
 let cityOverview = true;
@@ -456,6 +459,7 @@ async function init() {
   buildFilters();
   renderMarkers();
   wireUi();
+  setExploreView(exploreView, true);   // återställ senast valda vy (karta/lista)
   buildTabbar();
   // PWA-genvägar / djuplänk: ?tab=routes|cities|saved|profile öppnar direkt rätt flik.
   try {
@@ -682,6 +686,7 @@ function renderMarkers(){
   drawRoute();
   updateNextStopBtn();
   fitView();
+  if (exploreView === 'list') renderPlaceList();   // filter/tur/stad ändrad → spegla i listvyn
 }
 
 // Avståndsbaserad klustring: projicera alla synliga platser till pixelkoordinater
@@ -849,7 +854,7 @@ let navLayer = null;
 function routeDistance(latlngs){ let d=0; for (let i=1;i<latlngs.length;i++) d+=map.distance(latlngs[i-1],latlngs[i]); return d; }
 function updateNextStopBtn(){
   const b=$('#next-stop-btn'); if (!b) return;
-  b.hidden = !activeTour;
+  b.hidden = !activeTour || exploreView === 'list';   // navigering hör till kartvyn
   if (!activeTour && navLayer) navLayer.clearLayers();
   const lbl=$('#next-stop-label'); if (lbl) lbl.textContent=t('nav_next');
 }
@@ -1059,6 +1064,8 @@ function setActiveCity(city){
   activeTypes.clear(); Object.keys(TYPES).forEach(k=>activeTypes.add(k));
   TELLER = tellerFor(city);
   autoTriggered.clear();
+  listQuery = '';                                     // ny stad → nollställ listsökningen
+  const plq = $('#pl-q'); if (plq) plq.value = '';
   updateCityHeader();
   buildTours();
   buildFilters();
@@ -1568,6 +1575,90 @@ function renderStories(filter){
   });
 }
 function openStories(){ renderStories($('#stories-q').value); openPanel('#stories-panel'); }
+
+/* ---------- Utforska: Karta ⇄ Lista ---------- */
+// Samma filter (typ-chips, ⭐ Höjdpunkter, vald vandring) styr BÅDA vyerna, så
+// det aldrig blir olika resultat beroende på vy. Listan visar höjdpunkterna
+// först som rika kort (mest kända överst), bonusplatserna som kompakta rader.
+function setExploreView(v, first){
+  exploreView = v === 'list' ? 'list' : 'map';
+  localStorage.setItem('sv_view', exploreView);
+  const mapEl = $('#map'), listEl = $('#place-list');
+  if (mapEl) mapEl.style.display = exploreView === 'map' ? '' : 'none';
+  if (listEl) listEl.hidden = exploreView !== 'list';
+  updateViewToggle();
+  updateNextStopBtn();
+  if (exploreView === 'list') renderPlaceList();
+  else if (!first) setTimeout(()=>{ try{ map.invalidateSize(); fitView(); }catch(e){} }, 60);
+  if (!first) track('view_toggle', { view: exploreView });
+}
+function updateViewToggle(){
+  const b = $('#view-toggle'); if (!b) return;
+  b.innerHTML = exploreView === 'map' ? `📋 ${t('view_list')}` : `🗺️ ${t('view_map')}`;
+}
+// Basen för listvyn: stadens platser genom samma filter som kartan + fritextsök.
+// (DATA, inte ENTRIES — platser utan koordinater hör också hemma i listan.)
+function placeListEntries(){
+  let list = DATA.filter(e => inCity(e) && activeTypes.has(typeOf(e)));
+  if (topOnly) list = list.filter(isTopPlace);
+  if (activeTour) list = list.filter(TOURS[activeTour].test);
+  const q = listQuery.toLowerCase().trim();
+  if (q) list = list.filter(e => (e.name+' '+(e.summary||'')+' '+(catLabel(e)||'')).toLowerCase().includes(q));
+  return list;
+}
+// Sökfält + räknare byggs EN gång (annars tappar inputen fokus vid varje tangent);
+// själva listinnehållet ritas om separat i renderPlaceListBody().
+function ensurePlaceListHead(){
+  const wrap = $('#place-list'); if (!wrap || wrap.querySelector('.pl-head')) return;
+  wrap.innerHTML = `
+    <div class="pl-head">
+      <div class="pl-search"><span class="pl-mag" aria-hidden="true">🔍</span>
+        <input id="pl-q" type="search" inputmode="search" autocomplete="off" placeholder="${t('list_search')}" aria-label="${t('list_search')}"></div>
+      <p class="pl-count" id="pl-count"></p>
+    </div>
+    <div id="pl-body"></div>`;
+  const qi = wrap.querySelector('#pl-q');
+  qi.oninput = ()=>{ listQuery = qi.value; renderPlaceListBody(); };
+}
+function renderPlaceList(){ ensurePlaceListHead(); renderPlaceListBody(); }
+function renderPlaceListBody(){
+  const body = $('#pl-body'); if (!body) return;
+  const st = stamps();
+  const list = placeListEntries();
+  const tops = list.filter(isTopPlace).sort((a,b)=> qualityScore(b) - qualityScore(a));
+  const rest = list.filter(e => !isTopPlace(e)).sort((a,b)=> qualityScore(b) - qualityScore(a));
+  const cnt = $('#pl-count');
+  if (cnt) cnt.textContent = `${list.length} ${t('stops')} · ${activeCity}`;
+
+  // Höjdpunkter: rika kort — bild, namn, kategori/era och en kort ingress.
+  const card = e => {
+    const img = imgUrl(e), icon = iconOf(e), lead = leadOf(e);
+    const thumb = img
+      ? `<span class="pl-thumb"><img src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer"
+           onerror="this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')"></span>`
+      : `<span class="pl-thumb ph">${icon}</span>`;
+    return `<li><button class="pl-card" data-id="${e.id}">
+      ${thumb}
+      <span class="pl-body">
+        <b>${e.name}${st.has(e.id)?' <span class="pl-tick" aria-label="besökt">✓</span>':''}</b>
+        <small>${catLabel(e)}${e.era?` · ${e.era}`:''}</small>
+        ${lead?`<p>${lead}</p>`:''}
+      </span>
+    </button></li>`;
+  };
+  // Bonusplatser: kompakta rader (samma mönster som berättelselistan).
+  const row = e => `<li><button class="stop-row" data-id="${e.id}">
+      ${stopThumb(e)}
+      <span class="stop-meta"><b>${e.name}</b><small>${catLabel(e)}${e.era?` · ${e.era}`:''}</small></span>
+      ${st.has(e.id)?'<span class="tick" aria-label="besökt">✓</span>':''}
+    </button></li>`;
+
+  body.innerHTML =
+    (tops.length ? `<h3 class="pl-h">⭐ ${t('list_top')} <small>${tops.length}</small></h3><ul class="pl-cards">${tops.map(card).join('')}</ul>` : '') +
+    (rest.length ? `<h3 class="pl-h">${t('list_more')} <small>${rest.length}</small></h3><ul class="pl-rows">${rest.map(row).join('')}</ul>` : '') +
+    (!list.length ? `<div class="screen-empty">🔍<br>${lang==='en'?'Nothing matches your search or filters.':'Inget matchar din sökning eller dina filter.'}</div>` : '');
+  body.querySelectorAll('[data-id]').forEach(r=> r.onclick = ()=> openSheet(r.dataset.id));
+}
 
 /* ---------- i18n: statiska strängar ---------- */
 function applyI18n(){
@@ -2469,6 +2560,7 @@ function wireUi(){
     b.onclick = ()=>{ const nl=b.dataset.lang; if (nl===lang) return; lang=nl; localStorage.setItem('mjolby_lang', lang); location.reload(); };
   });
   $('#next-stop-btn').onclick = navigateToNext;
+  $('#view-toggle').onclick = ()=> setExploreView(exploreView === 'map' ? 'list' : 'map');
   $('#stories-btn').onclick = openStories;
   $('#stories-close').onclick = ()=> closePanel('#stories-panel');
   $('#stories-q').oninput = e=> renderStories(e.target.value);
