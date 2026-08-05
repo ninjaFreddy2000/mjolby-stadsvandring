@@ -235,14 +235,22 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
   font-family:var(--font-display);font-weight:700;font-size:11px;color:#3b2a70;
   background:rgba(255,255,255,.88);border-radius:8px;padding:1px 7px;
   box-shadow:0 1px 4px rgba(60,30,120,.25);pointer-events:none}
-/* Blå prick för VARJE annan stad i stadsvandringen (ej vald stad). Slås aldrig
-   ihop till kluster — alla städer syns alltid var för sig. */
-.city-dot{width:16px;height:16px;border-radius:50%;cursor:pointer;
-  background:radial-gradient(circle at 30% 28%, #5C97C4, var(--lake) 75%);
-  border:2.5px solid #fff;box-shadow:0 2px 8px -1px rgba(62,120,168,.55);
+/* Stads-nål (teardrop) för VARJE stad i stadsvandringen — läses tydligt som "en
+   plats/stad", till skillnad från de runda stopp-prickarna. Inga namn på kartan;
+   slås aldrig ihop till kluster så alla städer syns var för sig. Den vita mitt-
+   punkten ger platskänsla. */
+.city-pin{width:22px;height:22px;cursor:pointer;position:relative;
+  border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+  background:radial-gradient(circle at 68% 32%, #6fb0dd, var(--lake) 72%);
+  border:2.5px solid #fff;box-shadow:0 4px 9px -2px rgba(20,60,100,.55);
   transition:transform .12s ease}
-.city-dot:hover{transform:scale(1.25)}
-.mc-city--dot{color:#2c5a80;font-size:10.5px;background:rgba(255,255,255,.85)}
+.city-pin::after{content:"";position:absolute;top:50%;left:50%;width:7px;height:7px;
+  border-radius:50%;background:rgba(255,255,255,.92);transform:translate(-50%,-50%)}
+.city-pin:hover{transform:rotate(-45deg) scale(1.16)}
+/* Aktiv stad (den man är i) — subtilt markerad: varmare ton + mjuk glöd. */
+.city-pin--active{width:24px;height:24px;
+  background:radial-gradient(circle at 68% 32%, #f3c877, var(--honey) 72%);
+  box-shadow:0 4px 9px -2px rgba(120,80,10,.5), 0 0 0 6px rgba(224,163,49,.22)}
 /* "Nära mig"-kontrollen: etikett bredvid kompass-ikonen */
 .near-btn .near-lbl{margin-left:6px;font-family:var(--font-display,inherit)}
 /* Stads-popup på kartan: tryck stad → "Visa platser →" (välja stad direkt på kartan) */

@@ -717,6 +717,16 @@ function renderView(){
   // Under en aktiv tur: visa alla stopp individuellt (följ leden). Annars: klustra.
   if (activeTour){ list.forEach(e=> single(e, plainLayer)); return; }
 
+  // Översiktsläge (utzoomat): ren stadsöversikt — varje stad = en tydlig stads-nål
+  // (inga namn, inga stopp-kluster). Den aktiva staden markeras subtilt så man ser
+  // vilken man är i.
+  if (cityOverview && !MJOLBY_ONLY){
+    const cm = CITY_META[activeCity];
+    if (cm) markerLayer.addLayer(activeCityPin(activeCity, cm.lat, cm.lng));
+    renderOtherCities();
+    return;
+  }
+
   const zoom = map.getZoom();
   const maxZoom = map.getMaxZoom();
   // Vid max-zoom kan en bubbla inte delas mer — visa då alla nålar individuellt.
@@ -732,14 +742,12 @@ function renderView(){
     if (c.items.length === 1){ single(c.items[0], markerLayer); return; }
     const lat = c.items.reduce((s,p)=>s+p.coordinates.lat,0)/c.items.length;
     const lng = c.items.reduce((s,p)=>s+p.coordinates.lng,0)/c.items.length;
-    const cities = new Set(c.items.map(p=>p.city));
-    const name = cities.size === 1 ? ([...cities][0]||'') : '';
     const n = c.items.length;
     const size = n >= 40 ? 60 : n >= 10 ? 48 : 38;
     const m = L.marker([lat,lng], {
       icon: L.divIcon({
         className:'mc-wrap',
-        html:`<div class="mc-bubble" style="width:${size}px;height:${size}px">${n}</div>${name?`<div class="mc-city">${name}</div>`:''}`,
+        html:`<div class="mc-bubble" style="width:${size}px;height:${size}px">${n}</div>`,
         iconSize:[size,size], iconAnchor:[size/2,size/2],
       }),
       keyboard:false,
@@ -752,9 +760,22 @@ function renderView(){
   renderOtherCities();
 }
 
-// Blå prickar för de övriga valbara städerna (ej den aktiva). VARJE stad får sin
-// egen prick med namn — de slås aldrig ihop till kluster, så man alltid ser
-// exakt vilka städer som finns i stadsvandringen. Klick → popup → byt stad.
+// Subtil stads-nål för den AKTIVA staden (den man är i) i översikten. Klick →
+// zooma in i staden och visa dess platser.
+function activeCityPin(name, lat, lng){
+  return L.marker([lat, lng], {
+    icon: L.divIcon({
+      className:'mc-wrap',
+      html:`<div class="city-pin city-pin--active"></div>`,
+      iconSize:[26,32], iconAnchor:[13,30],
+    }),
+    keyboard:false, zIndexOffset:400, title:name,
+  }).on('click', ()=>{ cityOverview = false; map.flyTo([lat, lng], 13, { animate:true }); });
+}
+
+// Stads-nålar för de övriga valbara städerna (ej den aktiva). VARJE stad får sin
+// egen nål — de slås aldrig ihop till kluster, så man alltid ser exakt vilka
+// städer som finns i stadsvandringen. Inga namn på kartan. Klick → popup → byt stad.
 function renderOtherCities(){
   if (!map || MJOLBY_ONLY) return;
   const active = activeCity;
@@ -768,8 +789,8 @@ function renderOtherCities(){
     const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({
         className:'mc-wrap',
-        html:`<div class="city-dot"></div><div class="mc-city mc-city--dot">${p.name}</div>`,
-        iconSize:[16,16], iconAnchor:[8,8],
+        html:`<div class="city-pin"></div>`,
+        iconSize:[24,30], iconAnchor:[12,28],
       }),
       keyboard:false, zIndexOffset:-100,
     });
