@@ -6,3 +6,7 @@ node_modules/
 
 # arbetsfil – scraper-export, committas ej
 .orter-raw.json
+
+# Lokala backupkopior av data.json
+data.json.bak*
+data.json.pre-*
