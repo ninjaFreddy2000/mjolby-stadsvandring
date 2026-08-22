@@ -438,10 +438,11 @@ const enBody = `
   <span class="badge">📍 ${esc(CITIES.join(', '))}</span>
   <span class="badge">${entries.length} places</span>
 </div>
-<h1>Self-guided city walks in Mjölby, Sweden</h1>
-<p class="lead">Stadsvandring.io is a free web app (PWA) for self-guided walking tours in ${esc(CITIES.join(', '))} and the surrounding Östergötland countryside. Explore ${entries.length} sights, buildings, people and historic events one place at a time — with an interactive map, walking routes, collectible stamps and quizzes.</p>
+<h1>Discover Sweden's cities — a map built by the people who live here</h1>
+<p class="lead">Stadsvandring.io is a free web app (PWA) where residents build the map of their own town. Explore ${entries.length} sights, buildings, people and historic events across ${esc(CITIES.join(', '))} — and add the ones you are missing. Every contribution is reviewed by other people in the same town before it goes live.</p>
 <div class="card">
   <p>No installation needed: Stadsvandring.io runs straight in your browser on phone and desktop, and you can switch between <strong>English and Swedish</strong> at any time inside the app. Below is an English overview of every place. The full place articles are written in Swedish — open the app and tap the flag to read them in English.</p>
+  <p>You can also join in: add a place, upload a photo or a story, comment on somewhere you know, and build your own route — a walk or a run past the places you like — then share it with a friend. It is free, and there is nothing to buy.</p>
   <p style="margin:14px 0 0"><a class="cta" href="/karta">Open the map &amp; app</a> <a class="cta ghost" href="/platser">All places (Swedish)</a></p>
 </div>
 <h2 class="city-h">Walking tours</h2>
@@ -474,8 +475,8 @@ const enLd = {
 const enFooter = `  <p><strong>${esc(BRAND)}</strong> — self-guided walking tours in ${esc(CITIES.join(', '))}, Sweden. Discover sights, history and stories one place at a time.</p>
   <p><a href="/karta">Open the map &amp; app</a> · <a href="/">Svenska</a></p>`;
 writeFileSync(join(ROOT, 'en.html'), page({
-  title: `Mjölby walking tours — self-guided city walks in Sweden | ${BRAND}`,
-  description: trunc(`Free self-guided walking tours in ${CITIES.join(', ')}, Sweden. ${entries.length} sights, buildings and historic places with a map, routes, stamps and quizzes. In English and Swedish.`, 158),
+  title: `Discover Sweden's cities — a map built by locals | ${BRAND}`,
+  description: trunc(`A free map of ${CITIES.length} Swedish towns, built by the people who live there. ${entries.length} sights and historic places — add your own, make a route, walk it. English and Swedish.`, 158),
   canonical: `${BASE}/en`,
   lang: 'en', alts: enAlts, footerHtml: enFooter,
   head: jsonld(enLd),
