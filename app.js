@@ -53,6 +53,7 @@ function setupErrorMonitoring(){
 }
 import { initTips, refreshCity as refreshTips, isActive as tipsActive, mountTipsProfile,
          openTipForm, openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
+import { initComments, commentBlockHtml, wireCommentBlock, clearCommentCache } from './comments.js';
 import { initInstall, openInstallGuide } from './install.js';
 // admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
 // när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
@@ -1175,6 +1176,7 @@ function setActiveCity(city){
   updateCityHeader();
   return loadCity(city).then(()=>{
     refreshTips();             // tipsen tillhör staden — hämta om för den nya
+    clearCommentCache();       // kommentarer är stadsskopade (city + stop_ref)
     buildTours();
     buildFilters();
     setupTeller(false);        // byt berättare utan att tvinga upp introt
@@ -1300,6 +1302,7 @@ function openSheet(id){
       ${facts?`<ul class="facts">${facts}</ul>`:''}
       ${timelineHtml(id, e)}
       ${tipsActive() ? stopBlockHtml(id) : ''}
+      ${commentBlockHtml(id)}
       ${hasCoords(e)
         ? `<button class="checkin ${visited?'done':''}" id="checkin-btn">
              ${visited?t('checkin_done'):t('checkin')}
@@ -1343,6 +1346,7 @@ function openSheet(id){
   }
   if (tipsActive()) {
     wireStopBlock($('#sheet-inner'), id);
+    wireCommentBlock($('#sheet-inner'), id);   // hämtar platsens kommentarer
   } else {
   }
 
@@ -2627,7 +2631,7 @@ function setupAuthTips(){
       if (activeTab==='profile') renderProfil();
     },
   };
-  _adminCtx = c; initInstall(c);
+  _adminCtx = c; initInstall(c); initComments(c);
   initAuth(c).then(()=> initTips(c));
 }
 

@@ -5,6 +5,16 @@
 export const STRINGS = {
   sv: {
     tagline: 'Upptäck Sveriges städer',
+    // ── Kommentarer (comments.js) ──────────────────────────────────────────
+    cmt_section: 'Kommentarer', cmt_loading: 'Hämtar kommentarer…',
+    cmt_empty: 'Ingen har sagt något om den här platsen än. Bli först.',
+    cmt_write: 'Skriv en kommentar', cmt_placeholder: 'Vad vet du om den här platsen? Ett minne, ett tips, en fråga…',
+    cmt_addphoto: 'Lägg till bild', cmt_send: 'Skicka', cmt_sending: 'Skickar…',
+    cmt_posted: 'Tack — din kommentar syns nu!', cmt_need_text: 'Skriv något först.',
+    cmt_delete: 'Ta bort', cmt_delete_confirm: 'Ta bort din kommentar?', cmt_deleted: 'Kommentaren är borttagen.',
+    cmt_report: 'Rapportera', cmt_reported: 'Tack — vi tittar på den.',
+    cmt_rate: 'Du har kommenterat mycket idag. Ta en paus och kom tillbaka imorgon.',
+    cmt_cooldown: 'Nya konton kan kommentera efter ett dygn — det håller skräpet borta.',
     brand_sub: 'Upptäck Sveriges städer',
     act_stories: 'Berättelser', act_stories_full: 'Personer & berättelser',
     stories_sub: 'Alla platser, personer och händelser — även de som inte har en egen nål på kartan.',
@@ -171,6 +181,16 @@ export const STRINGS = {
   },
   en: {
     tagline: "Discover Sweden's cities",
+    // ── Comments (comments.js) ─────────────────────────────────────────────
+    cmt_section: 'Comments', cmt_loading: 'Loading comments…',
+    cmt_empty: 'Nobody has said anything about this place yet. Be first.',
+    cmt_write: 'Write a comment', cmt_placeholder: 'What do you know about this place? A memory, a tip, a question…',
+    cmt_addphoto: 'Add a photo', cmt_send: 'Post', cmt_sending: 'Posting…',
+    cmt_posted: 'Thanks — your comment is live!', cmt_need_text: 'Write something first.',
+    cmt_delete: 'Delete', cmt_delete_confirm: 'Delete your comment?', cmt_deleted: 'Comment deleted.',
+    cmt_report: 'Report', cmt_reported: 'Thanks — we will take a look.',
+    cmt_rate: 'You have commented a lot today. Take a break and come back tomorrow.',
+    cmt_cooldown: 'New accounts can comment after 24 hours — it keeps the spam out.',
     brand_sub: "Discover Sweden's cities",
     act_stories: 'Stories', act_stories_full: 'People & stories',
     stories_sub: 'Every place, person and event — including the ones without a pin on the map.',

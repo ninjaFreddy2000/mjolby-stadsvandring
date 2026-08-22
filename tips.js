@@ -91,7 +91,9 @@ function dataUrlToBlob(dataUrl) {
   for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
   return new Blob([arr], { type: mime });
 }
-async function uploadPhoto(fullDataUrl) {
+// Exporterad: kommentarer (comments.js) laddar upp till samma 'tips'-bucket och
+// ska inte ha en egen kopia av samma tio rader.
+export async function uploadPhoto(fullDataUrl) {
   const u = getUser(); if (!u) return null;
   const blob = dataUrlToBlob(fullDataUrl);
   const path = `${u.id}/${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}.jpg`;
