@@ -39,7 +39,29 @@ lång app.js; det är den skulden som betalas av parallellt med ombyggnaden.
 | ✅ | **Vendor ur kritiska vägen.** `karta.html` laddade leaflet + supabase-js (199 kB) + qrcode (14 kB) med `<script defer>`. Bara leaflet behövs för kartan; de andra hämtas nu på begäran, och auth/tips startar på `requestIdleCallback`. `commit eb1dc86` |
 | ⏸ | **CSS-uppdelning — mätt och avfärdad.** `styles.css` är 19 kB gzip, `webbsida.css` 9 kB. Att dela i kritiskt skal + lazy hade gett kanske 10 kB mot risk för FOUC. Inte värt det. |
 | ✅ | **Typsnitten självhostade** i stället. Google Fonts var en render-blockerande extern rundtur — dyrare än hela styles.css — och gjorde appen fontlös offline eftersom gstatic låg utanför service workerns cache. CSP:n har nu inga Google-domäner kvar. `commit 2b921da` |
-| ⬜ | **Mät.** Lighthouse/CWV före och efter, så påståendena är belagda. |
+| ✅ | **Mätt.** Se tabellen nedan. |
+
+### Vad snabbhetsarbetet faktiskt gav
+
+Mätt som **överförd vikt (gzip)** för en kall sidladdning av `/karta`, Mjölby.
+Samma fil-uppsättning i båda kolumnerna, med skillnaden att det som i dag laddas
+lat räknas separat.
+
+| | Före | Nu |
+|---|---:|---:|
+| Kritiska vägen | **2 481 kB** | **397 kB** |
+| Inkl. supabase-js (laddas på idle) | – | 447 kB |
+| Externa värdar under laddning | Google Fonts × 2 | inga |
+| Nålnoder i DOM (Göteborg, zoom 15) | 444 | 140 |
+
+Den stora posten är `data.json`: 1 909 kB gzip som hämtades vid varje start, mot
+48 kB för stadsindexet plus Mjölbys chunk. Resten kommer från betalningskoden,
+lat laddning av admin/utmaningar, vendor-biblioteken ur kritiska vägen och
+headerbilden (245 → 88 kB).
+
+**Förbehåll:** detta är överförd vikt, mätt lokalt. Det är inte Core Web Vitals
+från riktiga enheter — den siffran går inte att få härifrån, och bör mätas i
+fält efter deploy.
 | ⏸ | **Dela upp `app.js`** (2 600 rader). Medvetet uppskjuten: stor omflyttning med liten mätbar vinst nu när den tunga koden ändå laddas lat. Görs hellre stegvis medan fas 3–4 lägger till kod, än som en storstädning med regressionsrisk. |
 
 ## Fas 3 — Community-kärnan
