@@ -1,7 +1,7 @@
 // ── tips.js — community-tips: lämna in, granska (peer review), admin ────────
 // Isolerad modul (samma mönster som challenges.js). All säkerhet ligger i RLS +
 // SECURITY DEFINER-funktioner i Supabase; den här filen är bara UI + anrop.
-import { getSupabase, isConfigured, APP_CITY } from './config.js';
+import { getSupabase, isConfigured } from './config.js';
 import { getState, getProfile, getUser, isAdmin, canReview, requireAuth,
          tierLabel, onAuthChange } from './auth.js';
 
@@ -11,6 +11,11 @@ const publishedByStop = new Map();   // stop_ref -> [tip]
 const authorsById = new Map();       // id -> { display_name, tier }
 let loaded = false;
 
+// Vilken stads tips vi arbetar med. Följer appens aktiva stad — tidigare låstes
+// allt till den globala stadskonstanten ('mjolby'), så community-delen var i
+// praktiken död i de andra 71 städerna: inga tips syntes, och det man skrev in
+// bokfördes på Mjölby oavsett var man stod.
+const city = () => (ctx && ctx.citySlug) || 'mjolby';
 const t = k => (ctx && ctx.t ? ctx.t(k) : k);
 const en = () => ctx && ctx.lang === 'en';
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, m =>
@@ -35,7 +40,7 @@ export async function refreshCity() {
     const { data: tips } = await supa
       .from('tips')
       .select('id, kind, stop_ref, title, body, media_url, lat, lng, author_id, created_at')
-      .eq('city', APP_CITY).eq('status', 'published')
+      .eq('city', city()).eq('status', 'published')
       .order('created_at', { ascending: false });
     publishedByStop.clear();
     (tips || []).forEach(tp => {
@@ -307,7 +312,7 @@ export async function openTipForm(opts = {}) {
         if (error) throw error;
       } else {
         const { error } = await supa.from('tips').insert({
-          kind, city: APP_CITY,
+          kind, city: city(),
           stop_ref: kind === 'place' ? null : stopId,
           title, body: fullBody, media_url,
           lat: coords ? coords.lat : null, lng: coords ? coords.lng : null,
@@ -359,7 +364,7 @@ export async function openReviewQueue() {
       <h3>${t('review')}</h3><p class="fb-sub">${t('review_loading')}</p>`;
     card.querySelector('#r-x').onclick = close;
     const { data: tips, error } = await supa.from('tips').select('*')
-      .eq('city', APP_CITY).eq('status', 'pending').neq('author_id', me.id)
+      .eq('city', city()).eq('status', 'pending').neq('author_id', me.id)
       .order('created_at', { ascending: true });
     if (error) { render([], error.message); return; }
     const ids = (tips || []).map(tp => tp.id);

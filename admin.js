@@ -2,7 +2,7 @@
 // Isolerad modul (samma mönster som tips.js/challenges.js). All känslig läsning
 // skyddas av RLS i Supabase (profiles/tips/events syns bara för is_admin());
 // den här filen är bara UI + anrop. Installationsguiden är öppen för alla.
-import { getSupabase, isConfigured, APP_CITY, FUNCTIONS_BASE, SUPABASE_URL } from './config.js';
+import { getSupabase, isConfigured, FUNCTIONS_BASE, SUPABASE_URL } from './config.js';
 import { isAdmin, getUser } from './auth.js';
 import { openInstallGuide } from './install.js';
 
@@ -107,7 +107,7 @@ export async function openAdminDashboard() {
       // select('*') so the dashboard survives whether or not the place-contributions
       // migration (which adds info_request/consent) has been deployed yet.
       supa.from('tips').select('*')
-        .eq('city', APP_CITY).order('created_at', { ascending: false }).limit(500),
+        .order('created_at', { ascending: false }).limit(500),   // alla städer — moderering är rikstäckande
     ]);
     // Admin-RPC:er. Feltoleranta: om en migration ännu inte är deployad returnerar
     // RPC:n fel → sektionen visas tom, dashboarden kraschar inte.

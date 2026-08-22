@@ -15,8 +15,10 @@ const _ov = (k) => { try { return localStorage.getItem(k) || ''; } catch (e) { r
 export const SUPABASE_URL = _ov('cfg_supabase_url') || 'https://phkrlofngyobgupaepej.supabase.co';
 export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable_YrrflIKTGbNQSofhlf3aZA_qONa6Xdc'; // publik (publishable) nyckel — säker att committa; säkerheten ligger i RLS
 
-// Vilken stad denna installation gäller (matchar data.json-id:n och tips.city).
-export const APP_CITY = 'mjolby';
+// Startstad vid allra första besöket, innan användaren valt. Detta är INTE
+// längre "appens stad": community-tips och granskning följer den stad man är i
+// (app.js skickar in citySlug), så alla 72 städer har ett eget flöde.
+export const DEFAULT_CITY = 'mjolby';
 
 // Publik dela-URL (återanvänds av profil/dela). Appen bor på /karta; webbplatsen på roten.
 export const SHARE_URL = 'https://stadsvandring.io/karta';

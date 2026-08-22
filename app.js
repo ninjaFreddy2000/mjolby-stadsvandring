@@ -51,8 +51,8 @@ function setupErrorMonitoring(){
   window.addEventListener('error', e=>{ if (e && e.message) logErr(e.message, { src:(e.filename||'').split('/').pop(), line:e.lineno }); });
   window.addEventListener('unhandledrejection', e=>{ const r=e&&e.reason; logErr(r&&r.message?r.message:String(r), { type:'promise' }); });
 }
-import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
-         openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
+import { initTips, refreshCity as refreshTips, isActive as tipsActive, mountTipsProfile,
+         openTipForm, openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 import { initInstall, openInstallGuide } from './install.js';
 // admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
 // när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
@@ -1174,6 +1174,7 @@ function setActiveCity(city){
   const plq = $('#pl-q'); if (plq) plq.value = '';
   updateCityHeader();
   return loadCity(city).then(()=>{
+    refreshTips();             // tipsen tillhör staden — hämta om för den nya
     buildTours();
     buildFilters();
     setupTeller(false);        // byt berättare utan att tvinga upp introt
@@ -2723,6 +2724,8 @@ function setupAuthTips(){
   const c = {
     get DATA(){ return DATA; }, get ENTRIES(){ return ENTRIES; },
     get map(){ return map; }, get lang(){ return lang; },
+    get citySlug(){ return citySlug(activeCity); },   // community-flödet följer vald stad
+    get cityName(){ return activeCity; },
     CAT_LABEL, t, toast, hasCoords,
     openSheet, optimizeImage,
     markFocus, restoreFocus,
