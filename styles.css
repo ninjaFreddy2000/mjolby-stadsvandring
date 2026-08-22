@@ -830,6 +830,18 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .rb-time{flex:none;font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--ink-2)}
 .cb-hint{font-size:12px;color:var(--ink-3);line-height:1.45;margin:-4px 0 10px}
 
+/* ── Ditt avtryck (impact.js) ───────────────────────────────────────────────
+   Samma statistikrutor som besöksstatistiken, så bidragen väger visuellt lika
+   tungt som stämplarna — det är hela poängen med att visa dem. */
+.impact{margin-top:4px}
+.impact-stat{margin-bottom:8px}
+.impact-pending{font-size:13px;color:#8a5a00;background:var(--honey-soft);border:1px solid #EAD7A6;
+  border-radius:var(--r-md);padding:8px 11px;margin-bottom:8px}
+.impact-tier{font-size:13px;color:var(--ink-3);margin-bottom:4px}
+.impact-empty{background:var(--forest-soft);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
+.impact-empty p{font-size:14px;line-height:1.55;color:var(--ink-2);margin-bottom:12px}
+
+
 
 
 

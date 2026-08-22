@@ -55,6 +55,7 @@ import { initTips, refreshCity as refreshTips, isActive as tipsActive, mountTips
          openTipForm, openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 import { initComments, commentBlockHtml, wireCommentBlock, clearCommentCache } from './comments.js';
 import { initRoutes, mountRoutes, openRoute, routeInUrl } from './routes.js';
+import { initImpact, mountImpact } from './impact.js';
 import { initInstall, openInstallGuide } from './install.js';
 // admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
 // när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
@@ -2426,7 +2427,9 @@ function renderProfil(){
   const profScreen = $('#screen');
   challengesMod().then(m => { if ($('#screen') === profScreen && activeTab === 'profile') m.mountChallengeProfile(profScreen); });
   if (on){
-    // Bidragen bor på egen flik nu; profilen behåller kontokortet.
+    // Vad man BIDRAGIT med, inte bara vad man besökt. Ligger före kontokortet i
+    // DOM:en men hamnar under det, eftersom mountAuthProfile prepend:ar.
+    mountImpact($('#screen'), { onContribute: () => switchTab('contribute') });
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
   }
 }
@@ -2710,7 +2713,7 @@ function setupAuthTips(){
       if (activeTab==='profile') renderProfil();
     },
   };
-  _adminCtx = c; initInstall(c); initComments(c); initRoutes(c);
+  _adminCtx = c; initInstall(c); initComments(c); initRoutes(c); initImpact(c);
   initAuth(c).then(()=> initTips(c));
 }
 

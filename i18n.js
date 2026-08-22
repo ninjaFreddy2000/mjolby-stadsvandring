@@ -47,6 +47,13 @@ export const STRINGS = {
     lang_btn: 'EN',
     tab_home: 'Utforska', tab_routes: 'Leder', tab_saved: 'Sparade', tab_profile: 'Profil',
     tab_contribute: 'Bidra', screen_contribute: 'Bidra till kartan',
+    // ── Ditt avtryck (impact.js) ───────────────────────────────────────────
+    impact_title: 'Ditt avtryck', impact_loading: 'Räknar…',
+    impact_published: 'publicerade tips', impact_comments: 'kommentarer',
+    impact_routes: 'rutter', impact_reviews: 'granskningar',
+    impact_pending: 'väntar på granskning', impact_level: 'Din nivå',
+    impact_none: 'Du har inte bidragit än. En bild eller några rader om en plats du känner till räcker — resten sköter staden.',
+    impact_start: 'Gör ditt första bidrag',
     // ── Egna rutter (routes.js) ────────────────────────────────────────────
     route_mode_walk: 'Promenad', route_mode_run: 'Löprunda', route_mode_bike: 'Cykel',
     route_loading: 'Hämtar rutter…', route_yours: 'Dina rutter', route_create: 'Skapa en rutt',
@@ -257,6 +264,13 @@ export const STRINGS = {
     lang_btn: 'SV',
     tab_home: 'Explore', tab_routes: 'Trails', tab_saved: 'Saved', tab_profile: 'Profile',
     tab_contribute: 'Contribute', screen_contribute: 'Contribute to the map',
+    // ── Your impact (impact.js) ────────────────────────────────────────────
+    impact_title: 'Your impact', impact_loading: 'Counting…',
+    impact_published: 'published tips', impact_comments: 'comments',
+    impact_routes: 'routes', impact_reviews: 'reviews',
+    impact_pending: 'waiting for review', impact_level: 'Your level',
+    impact_none: 'You have not contributed yet. A photo or a few lines about a place you know is enough — the town takes it from there.',
+    impact_start: 'Make your first contribution',
     // ── Own routes (routes.js) ─────────────────────────────────────────────
     route_mode_walk: 'Walk', route_mode_run: 'Run', route_mode_bike: 'Bike',
     route_loading: 'Loading routes…', route_yours: 'Your routes', route_create: 'Create a route',
