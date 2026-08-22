@@ -50,18 +50,22 @@ bidragsflöde (foto + text) som bara sparas i `localStorage`.
 0. ✅ **Community-flödet följer staden.** Tipsen var låsta till `APP_CITY='mjolby'`
    — i övriga 71 städer hämtades inga tips, granskningskön var tom och inskick
    bokfördes på Mjölby. Nu följer allt den aktiva staden. `commit a089244`
-1. **Ett bidragsflöde, inte två.** Slå ihop det lokala `contribs`-flödet med
-   Supabase-tipsen. Foto + text på vilken plats som helst, från kartan, i två
-   tryck. Utan konto: sparas lokalt och laddas upp vid inloggning.
-2. **Kommentarer per plats.** Ny tabell `place_comments` (text + valfri bild),
-   synliga direkt i platsens detaljvy. Rapportering + moderering.
-3. **Verifiering som eget flöde.** Granskningskön får en egen ingång i menyn,
-   inte en knapp i profilen. "Godkänn / behöver mer info / avslå", tydlig
-   tröskel för publicering, och synligt vem som verifierat.
-4. **Lägg till en helt ny plats** — inte bara bidra till en befintlig. Kartnål
-   sätts genom att peka på kartan.
-5. **Profilen blir en bidragsprofil**: mina bidrag, mina bilder, min nivå,
+1. ✅ **Ett bidragsflöde, inte två.** Det lokala `contribs`-flödet var död kod i
+   produktion — och visade en låtsas-granskningskö för utloggade. Borttaget,
+   117 rader. Riktiga bidrag går genom `tips.js`. `commit 977b0d1`
+2. ✅ **Kommentarer per plats.** `place_comments` + `comment_flags`, publiceras
+   direkt och modereras i efterhand (till skillnad från tips, som peer-review:as
+   före publicering). Testsvit med 9 kontroller hittade två riktiga buggar.
+   `commit d189383`, `86a7e2e`
+3. ✅ **Verifiering som eget flöde.** Ny **Bidra**-flik: lägg till en plats, bidra
+   med bild och text, granska andras. Utloggade ser vad de får göra innan
+   inloggningsväggen. `commit ede76cd`
+4. ✅ **Lägg till en helt ny plats** — fanns redan i `tips.js` (kind `place` med
+   kartväljare), men var osynlig. Nu förstahandsvalet på Bidra-fliken.
+5. ⬜ **Profilen blir en bidragsprofil**: mina bidrag, mina bilder, min nivå,
    vad jag verifierat åt andra.
+6. ⬜ **Migrationen är inte körd i prod** — Fredriks beslut. Tills dess döljer
+   appen kommentarssektionen automatiskt.
 
 ## Fas 4 — Egna rutter
 
