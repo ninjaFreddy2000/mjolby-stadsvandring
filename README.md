@@ -51,6 +51,17 @@ och `images/w1200/header.webp` (CSS-bakgrunden). Kräver `brew install webp`.
 Appen faller tillbaka på originalet om en variant saknas, så steget är valfritt
 men sparar ungefär 20× på en listvy.
 
+## Typsnitt
+Fredoka och Mulish är **självhostade** i `vendor/fonts/` (OFL-licensade). Hämta om
+dem bara om vikterna ska ändras:
+```bash
+node scripts/build-fonts.mjs
+```
+Sidorna länkade tidigare till fonts.googleapis.com med en render-blockerande
+`<link>` — en extra DNS + TLS + hämtning före first paint, plus en rundtur till
+gstatic för filerna. Och eftersom gstatic ligger utanför service workerns cache
+var appen **fontlös offline**. Nu ligger inga Google-domäner kvar i CSP:n.
+
 ## Lägg till en ny stad / berättare
 Lägg en post i `STORYTELLERS` i `storytellers.js` och peka ut den med `ACTIVE_CITY`.
 Endast `name` + `greeting` krävs; `fallbacks` ger repliker även utan handskriven text.
