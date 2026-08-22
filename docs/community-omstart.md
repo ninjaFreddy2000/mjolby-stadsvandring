@@ -121,41 +121,36 @@ rutter går att upptäcka och inte bara tas emot.
 | ✅ | Webbsidans engelska hub (`en.html`) omskriven — i källan och på plats, utan att regenerera. |
 | ⚠️ | **De genererade sidorna är INTE omkörda.** Se nedan — det är ett beslut, inte en detalj. |
 
-### ⚠️ Att ta ställning till: SEO-ytan har vuxit ur sig själv
+### SEO-ytan — avgjort och genomfört
 
-`node scripts/build-seo.mjs` kördes för att uppdatera copyn — och visade sig
-generera **9 774 platssidor** där repot har **362**. Plus leadmagnet-sidor för
-72 orter och en sitemap på 10 131 URL:er (1,8 MB mot dagens 96 kB). Jag backade
-ut allt genererat och committade bara källändringen; att 27-faldiga den
-indexerbara ytan är Fredriks beslut, inte en bieffekt av en textändring.
+Generatorn hade inte körts sedan `data.json` var mycket mindre: 362 sidor för
+9 774 platser. Fredrik valde "det som är bäst för användarna och för att bli
+hittad" (`commit 725c5f5`).
 
-Underlaget, mätt på `data.json` (9 774 poster):
+**Tröskel: 600 tecken egen prosa** (summary + description + snabbfakta) → 2 321
+platssidor. Mätt på *unikt* innehåll, inte på renderad sida — första försöket
+räknade även bidra-rutan och rubrikerna, som är identiska överallt, och gav
+4 036 sidor på delad standardtext.
 
-| Textmängd (summary + description) | Antal |
-|---|---|
-| 0–150 tecken | 1 239 |
-| 150–400 | 5 491 |
-| 400–800 | 2 292 |
-| 800+ | 752 |
+**Ingen befintlig sida togs bort.** De 362 grandfathras även under tröskeln;
+att avindexera något som rankar är sämre än att avstå från att lägga till.
 
-Bara 1 718 poster har en bild. Alla har källa.
+**De 7 453 övriga listas på sin ortssida** med namn och sammanfattning,
+grupperade per kategori. Konsoliderat i stället för utspätt. Platser utan egen
+sida öppnas i kartan via `?plats=<id>`.
 
-Risken är tunt innehåll: 6 730 av sidorna skulle ha under 400 tecken brödtext.
-Google hanterar den sortens massgenererade ytor hårt, och det kan dra ned även
-de sidor som faktiskt är bra. Tre vägar:
+Tröskeln ändras på ett ställe: `MIN_UNIQUE_CHARS` i `scripts/build-seo.mjs`.
+Nästa körning lyfter automatiskt in platser som passerat gränsen sedan sist —
+det är så communityns bidrag växer SEO-ytan.
 
-1. **Publicera allt** — maximal täckning, störst risk för tunn-innehålls-straff.
-2. **Tröskel** — generera bara sidor med t.ex. ≥400 tecken (3 044 sidor). De
-   tunna posterna finns kvar i appen och på ortssidorna, men får ingen egen
-   indexerbar sida förrän någon bidragit till dem.
-3. **Låt stå** — behåll de 362 och väx organiskt i takt med att communityn
-   fyller på. Passar community-tanken bäst men lämnar trafik på bordet.
+| Tröskel | Sidor totalt |
+|---|---:|
+| 600 (valt) | 2 321 |
+| 800 | ~1 200 |
+| 1 000 | ~800 |
 
-Alternativ 2 rimmar bäst med omstarten: en tunn plats blir en *inbjudan att
-bidra* i appen, och förtjänar en egen sida först när den har innehåll. Men det
-är ett beslut som rör intäkt och synlighet — fråga innan något körs.
-
----
+**Att komma ihåg vid nästa körning:** `/p/` måste vara i sitt committade skick
+innan generatorn körs, annars grandfathras föregående körnings resultat.
 
 ## Ordning och varför
 
