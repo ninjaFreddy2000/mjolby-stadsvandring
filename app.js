@@ -14,7 +14,7 @@ function challengesMod(){
   }
   return _chPromise;
 }
-import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
+import { initAuth, mountAuthProfile, shareApp, isAdmin, isLoggedIn } from './auth.js';
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 import { axiomLog } from './axiom.js';
 
@@ -504,7 +504,7 @@ async function init() {
   // PWA-genvägar / djuplänk: ?tab=routes|cities|saved|profile öppnar direkt rätt flik.
   try {
     const wantTab = new URLSearchParams(location.search).get('tab');
-    if (wantTab && ['cities','routes','saved','profile','home'].includes(wantTab) && wantTab!=='home') switchTab(wantTab);
+    if (wantTab && ['cities','routes','saved','contribute','profile','home'].includes(wantTab) && wantTab!=='home') switchTab(wantTab);
   } catch(_){}
   applyI18n();
   updateStampBadge();
@@ -1924,6 +1924,8 @@ const TABS = [
   ['home',    'tab_home',    'M4 11l8-7 8 7M6 10v9h12v-9'],
   ['routes',  'tab_routes',  'M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2Zm0 0v14m6-12v14'],
   ['saved',   'tab_saved',   'M7 4h10v16l-5-3.5L7 20V4Z'],
+  // Bidra är appens själva poäng nu — den får inte ligga begravd i profilen.
+  ['contribute','tab_contribute','M12 5v14M5 12h14'],
   ['profile', 'tab_profile', 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 21c0-3.3 3.1-6 7-6s7 2.7 7 6'],
 ];
 // Fler städer (Mjölby aktiv; övriga på väg). Skalbart: lägg till en post per stad.
@@ -1979,6 +1981,7 @@ function switchTab(id){
     if (id==='cities') renderCities();
     else if (id==='routes') renderLeder();
     else if (id==='saved') renderSaved();
+    else if (id==='contribute') renderContribute();
     else if (id==='profile') renderProfil();
     $('#screen').scrollTop=0;
   }
@@ -2306,6 +2309,35 @@ function checkNewBadges(){
   }
 }
 
+// Bidra-vyn: samla allt som gör appen till folkets egen — lägg till en plats,
+// lämna ett tips, granska andras. Låg tidigare som en sektion längst ned i
+// profilen, dit ingen scrollade.
+function renderContribute(){
+  const on = tipsActive();
+  $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_contribute')}</h2><p>${t('contribute_lead')} · ${activeCity}</p></div>`;
+  if (!on){
+    $('#screen').insertAdjacentHTML('beforeend', `<div class="screen-empty">🌱<br>${t('auth_soon')}</div>`);
+    return;
+  }
+  if (!isLoggedIn()){
+    // Utan konto går det inte att bidra — men visa VAD man får göra, inte bara
+    // en inloggningsvägg.
+    $('#screen').insertAdjacentHTML('beforeend', `
+      <div class="contrib-why">
+        <div class="cw-row"><span>📍</span><div><b>${t('cw_place')}</b><small>${t('cw_place_d')}</small></div></div>
+        <div class="cw-row"><span>📷</span><div><b>${t('cw_tip')}</b><small>${t('cw_tip_d')}</small></div></div>
+        <div class="cw-row"><span>🔎</span><div><b>${t('cw_review')}</b><small>${t('cw_review_d')}</small></div></div>
+      </div>`);
+    // mountAuthProfile prepend:ar i sin container — ge den en egen så kortet
+    // hamnar under rubriken i stället för överst på skärmen.
+    const slot = document.createElement('div');
+    $('#screen').appendChild(slot);
+    mountAuthProfile(slot, { onChange: renderContribute });
+    return;
+  }
+  mountTipsProfile($('#screen'), { onChange: renderContribute });
+}
+
 function renderProfil(){
   const on = tipsActive();
   const set=stamps(), sv=saved();
@@ -2357,7 +2389,7 @@ function renderProfil(){
   const profScreen = $('#screen');
   challengesMod().then(m => { if ($('#screen') === profScreen && activeTab === 'profile') m.mountChallengeProfile(profScreen); });
   if (on){
-    mountTipsProfile($('#screen'), { onChange: renderProfil });
+    // Bidragen bor på egen flik nu; profilen behåller kontokortet.
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
   }
 }
