@@ -168,7 +168,7 @@ const QUIZZES = {
 };
 
 /* ---------- State ---------- */
-let DATA = [], ENTRIES = [], markersById = {};
+let DATA = [], ENTRIES = [];
 let map, markerLayer, plainLayer, routeLayer, meMarker;
 let ghostLayer = null;   // spökplatser (Spökkartan-korsmarknadsföring) — eget lager, stad-oberoende
 const GHOSTS_KEY = 'sv_ghosts_on';
@@ -694,11 +694,48 @@ function renderMarkers(){
   if (exploreView === 'list') renderPlaceList();   // filter/tur/stad ändrad → spegla i listvyn
 }
 
-// Avståndsbaserad klustring: projicera alla synliga platser till pixelkoordinater
-// för aktuell zoom och gruppera girigt — platser inom CLUSTER_RADIUS_PX blir en
-// bubbla. Klick på bubbla → zooma in 2 steg mot bubblans mittpunkt tills enskilda
-// nålar syns. Körs om på varje zoomend/moveend (kopplas i buildMap).
+// Avståndsbaserad klustring: projicera alla platser i staden till pixelkoordinater
+// för aktuell zoom och gruppera — platser inom CLUSTER_RADIUS_PX blir en bubbla.
+// Klick på bubbla → zooma in 2 steg mot bubblans mittpunkt tills enskilda nålar
+// syns. Körs om på varje zoomend/moveend (kopplas i buildMap).
+//
+// KLUSTRAS över hela staden (så en bubblas siffra inte ändras när man panorerar)
+// men RITAS bara inom vyn + marginal. Mätt i Göteborg zoom 15: 444 nålnoder i
+// DOM:en varav 56 syntes — resten byggdes om vid varje panorering i onödan.
 const CLUSTER_RADIUS_PX = 60;
+const VIEW_PAD = 0.35;          // extra vy-marginal så nålar finns på plats vid pan
+
+// Girig klustring i pixelrymd, hinkad i ett rutnät med cellstorlek = radien.
+// Tidigare linjärsöktes hela klusterlistan per plats (O(n·k) — 609 platser mot
+// ~190 bubblor ≈ 115 000 avståndstest vid varje omritning); nu räcker 3×3 celler.
+function clusterByPixel(list, zoom, radius){
+  const out = [];
+  if (radius <= 0) return list.map(e => ({ items: [e] }));
+  const grid = new Map();
+  for (const e of list){
+    const pt = map.project([e.coordinates.lat, e.coordinates.lng], zoom);
+    const cx = Math.floor(pt.x / radius), cy = Math.floor(pt.y / radius);
+    let hit = null;
+    for (let dx = -1; dx <= 1 && !hit; dx++){
+      for (let dy = -1; dy <= 1 && !hit; dy++){
+        const bucket = grid.get((cx + dx) + ',' + (cy + dy));
+        if (!bucket) continue;
+        for (const c of bucket){
+          if (Math.hypot(c.x - pt.x, c.y - pt.y) < radius){ hit = c; break; }
+        }
+      }
+    }
+    if (!hit){
+      hit = { x: pt.x, y: pt.y, items: [] };
+      const key = cx + ',' + cy;
+      const bucket = grid.get(key);
+      if (bucket) bucket.push(hit); else grid.set(key, [hit]);
+      out.push(hit);
+    }
+    hit.items.push(e);
+  }
+  return out;
+}
 function renderView(){
   if (!map) return;
   // Zoomar man in manuellt (förbi översiktens nivå) lämnar vi översiktsläget så
@@ -708,7 +745,6 @@ function renderView(){
   if (overviewApplied && cityOverview && map.getZoom() >= 11) cityOverview = false;
   markerLayer.clearLayers();
   plainLayer.clearLayers();
-  markersById = {};
   const st = stamps();
   const list = visibleEntries();
 
@@ -716,7 +752,6 @@ function renderView(){
     const m = L.marker([e.coordinates.lat, e.coordinates.lng], { icon: pinIcon(e, st.has(e.id)) })
       .on('click', ()=> openSheet(e.id));
     target.addLayer(m);
-    markersById[e.id] = m;
   };
 
   // Under en aktiv tur: visa alla stopp individuellt (följ leden). Annars: klustra.
@@ -736,17 +771,19 @@ function renderView(){
   const maxZoom = map.getMaxZoom();
   // Vid max-zoom kan en bubbla inte delas mer — visa då alla nålar individuellt.
   const R = zoom >= maxZoom ? 0 : CLUSTER_RADIUS_PX;
-  const clusters = [];
-  list.forEach(e=>{
-    const pt = map.project([e.coordinates.lat, e.coordinates.lng], zoom);
-    let c = clusters.find(c => Math.hypot(c.x - pt.x, c.y - pt.y) < R);
-    if (!c){ c = { x: pt.x, y: pt.y, items: [] }; clusters.push(c); }
-    c.items.push(e);
-  });
+  const clusters = clusterByPixel(list, zoom, R);
+  // Rita bara det som syns (plus marginal). Klustringen ovan gick över hela staden,
+  // så en bubblas siffra står still när man panorerar.
+  const view = map.getBounds().pad(VIEW_PAD);
   clusters.forEach(c=>{
-    if (c.items.length === 1){ single(c.items[0], markerLayer); return; }
+    if (c.items.length === 1){
+      const e = c.items[0];
+      if (view.contains([e.coordinates.lat, e.coordinates.lng])) single(e, markerLayer);
+      return;
+    }
     const lat = c.items.reduce((s,p)=>s+p.coordinates.lat,0)/c.items.length;
     const lng = c.items.reduce((s,p)=>s+p.coordinates.lng,0)/c.items.length;
+    if (!view.contains([lat, lng])) return;
     const n = c.items.length;
     const size = n >= 40 ? 60 : n >= 10 ? 48 : 38;
     const m = L.marker([lat,lng], {
@@ -790,7 +827,10 @@ function renderOtherCities(){
     .filter(Boolean);
   if (!pts.length) return;
 
-  pts.forEach(p=>{
+  // Bara de städer som är i vyn (plus marginal). Zoomad in i en stad låg annars
+  // 71 nålar för andra städer kvar i DOM:en, alla utanför skärmen.
+  const view = map.getBounds().pad(VIEW_PAD);
+  pts.filter(p => view.contains([p.lat, p.lng])).forEach(p=>{
     const m = L.marker([p.lat, p.lng], {
       icon: L.divIcon({
         className:'mc-wrap',
@@ -1077,9 +1117,12 @@ function citiesInData(){
   else arr = arr.filter(c=> c.name === 'Mjölby' || c.count >= MIN_CITY_STOPS);
   return arr;
 }
-async function setActiveCity(city){
-  if (!city || city === activeCity) return;
-  await loadCity(city);        // hämta stadens platser innan vyerna ritas om
+// Byter aktiv stad. Tillståndet byts DIREKT (synkront) så anropare som gör något
+// omedelbart efteråt ser rätt stad; bara hämtningen av stadens platser och den
+// efterföljande omritningen är asynkron. Returnerar ett löfte som är klart när
+// kartan är omritad.
+function setActiveCity(city){
+  if (!city || city === activeCity) return Promise.resolve();
   activeCity = city;
   localStorage.setItem('sv_city', city);
   cityOverview = false;        // vald stad → zooma in på den (ut ur översiktsläget)
@@ -1090,12 +1133,14 @@ async function setActiveCity(city){
   listQuery = '';                                     // ny stad → nollställ listsökningen
   const plq = $('#pl-q'); if (plq) plq.value = '';
   updateCityHeader();
-  buildTours();
-  buildFilters();
-  setupTeller(false);          // byt berättare utan att tvinga upp introt
-  renderMarkers();             // fitView centrerar om kartan till stadens stopp
-  toast((lang==='en'?'Now exploring ':'Nu utforskar du ') + city + ' 🗺️');
-  track('city_change', { city });
+  return loadCity(city).then(()=>{
+    buildTours();
+    buildFilters();
+    setupTeller(false);        // byt berättare utan att tvinga upp introt
+    renderMarkers();           // fitView centrerar om kartan till stadens stopp
+    toast((lang==='en'?'Now exploring ':'Nu utforskar du ') + city + ' 🗺️');
+    track('city_change', { city });
+  });
 }
 
 /* ---------- Notis + tidslinje (per plats) ---------- */
@@ -2021,12 +2066,15 @@ function openLanding(){
   if (typeof updateSpokBanner==='function') updateSpokBanner();
 }
 function chooseCity(name){
-  setActiveCity(name);                 // byter + centrerar (no-op om samma stad)
-  try{ renderMarkers(); }catch(e){}    // säkerställ centrering även om samma stad
+  // Stäng landningsvyn först — stadens platser kan behöva hämtas, och man ska
+  // inte stirra på listan medan det sker.
   localStorage.setItem(LANDING_KEY,'1');
   landNear=null;
   $('#landing').setAttribute('aria-hidden','true');
   switchTab('home');
+  // Byter + centrerar. Är det samma stad är setActiveCity en no-op → renderMarkers
+  // säkerställer centreringen ändå.
+  setActiveCity(name).then(()=>{ try{ renderMarkers(); }catch(e){} });
 }
 function locateMe(){
   const btn=$('#land-locate'); if(!btn) return;
