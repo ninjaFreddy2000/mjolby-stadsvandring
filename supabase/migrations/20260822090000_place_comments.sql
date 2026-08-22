@@ -25,7 +25,8 @@ create table public.place_comments (
   body       text not null,
   media_url  text,                                       -- storage-sökväg i 'tips'-bucketen
   hidden     boolean not null default false,             -- dold av moderering/rapporter
-  hidden_reason public.flag_reason,
+  hidden_reason public.flag_reason,                      -- varför communityn dolde den
+  hidden_by_admin boolean not null default false,        -- moderatorbeslut: överlever rapport-sync
   flag_count integer not null default 0,                 -- cachat antal olösta rapporter
   edited     boolean not null default false,
   created_at timestamptz not null default now(),
@@ -61,6 +62,7 @@ begin
   new.city          := lower(new.city);
   new.hidden        := false;
   new.hidden_reason := null;
+  new.hidden_by_admin := false;
   new.flag_count    := 0;
   new.edited        := false;
   new.created_at    := now();
@@ -84,10 +86,19 @@ create trigger trg_comment_guard
 
 -- ── Update-vakt: en författare får ändra sin egen TEXT, inget annat ──────────
 -- Utan den här kunde en redigering smyga in hidden=false efter moderering, eller
--- flytta kommentaren till en annan plats.
+-- flytta kommentaren till en annan plats. En admin som döljer sätter både
+-- hidden och hidden_by_admin, så rapport-synken inte lyfter beslutet igen.
 create or replace function public.guard_comment_update()
 returns trigger language plpgsql security definer set search_path = '' as $$
 begin
+  -- Systemets egen skrivning (rapport-synken). Samma mönster som
+  -- app.reputation_write i community_tips: en transaktions-lokal GUC som BARA
+  -- SECURITY DEFINER-funktioner sätter. Utan den här undantagsvägen skrev
+  -- vakten tillbaka gamla flag_count/hidden och auto-döljningen blev tyst
+  -- verkningslös — precis den bugg som fångades i testsviten.
+  if current_setting('app.comment_moderation', true) = 'on' then
+    return new;
+  end if;
   if public.is_admin() then
     new.updated_at := now();
     return new;
@@ -96,9 +107,10 @@ begin
   new.author_id     := old.author_id;
   new.city          := old.city;
   new.stop_ref      := old.stop_ref;
-  new.hidden        := old.hidden;
-  new.hidden_reason := old.hidden_reason;
-  new.flag_count    := old.flag_count;
+  new.hidden          := old.hidden;
+  new.hidden_reason   := old.hidden_reason;
+  new.hidden_by_admin := old.hidden_by_admin;
+  new.flag_count      := old.flag_count;
   new.created_at    := old.created_at;
   new.edited        := (new.body is distinct from old.body) or old.edited;
   new.updated_at    := now();
@@ -116,19 +128,18 @@ returns trigger language plpgsql security definer set search_path = '' as $$
 declare v_id uuid; v_open int; v_reason public.flag_reason;
 begin
   v_id := coalesce(new.comment_id, old.comment_id);
+  perform set_config('app.comment_moderation', 'on', true);   -- transaktions-lokal
 
   select count(*), mode() within group (order by reason)
     into v_open, v_reason
     from public.comment_flags where comment_id = v_id and resolved = false;
 
+  -- En moderators döljning står kvar även om rapporterna avfärdas. Communityns
+  -- egen döljning lyfts däremot så fort tröskeln inte längre är nådd.
   update public.place_comments c
      set flag_count    = v_open,
-         hidden        = (v_open >= public.cfg_comment_hide_flags()) or (c.hidden and c.hidden_reason = 'admin'),
-         hidden_reason = case
-                           when c.hidden and c.hidden_reason = 'admin' then 'admin'::public.flag_reason
-                           when v_open >= public.cfg_comment_hide_flags() then v_reason
-                           else null
-                         end,
+         hidden        = c.hidden_by_admin or (v_open >= public.cfg_comment_hide_flags()),
+         hidden_reason = case when v_open >= public.cfg_comment_hide_flags() then v_reason else null end,
          updated_at    = now()
    where c.id = v_id;
   return null;
@@ -147,6 +158,16 @@ create or replace view public.public_authors as
   where exists (select 1 from public.tips t where t.author_id = p.id and t.status = 'published')
      or exists (select 1 from public.place_comments c where c.author_id = p.id and c.hidden = false);
 grant select on public.public_authors to anon, authenticated;
+
+-- ── Tabellrättigheter ────────────────────────────────────────────────────────
+-- RLS avgör VILKA RADER man ser, men PostgREST behöver också vanliga
+-- tabellrättigheter för att komma in över huvud taget. Sätts explicit här i
+-- stället för att förlita sig på default privileges — en ny tabell i en senare
+-- migration ärver inte nödvändigtvis dem, och felet syns först som
+-- "permission denied" i klienten.
+grant select                         on public.place_comments to anon, authenticated;
+grant insert, update, delete         on public.place_comments to authenticated;
+grant select, insert, update         on public.comment_flags  to authenticated;
 
 -- ── RLS ──────────────────────────────────────────────────────────────────────
 alter table public.place_comments enable row level security;
