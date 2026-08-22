@@ -267,10 +267,22 @@ const uniqueChars = (e) => {
   return `${e.summary || ''} ${e.description || ''} ${kf}`.replace(/\s+/g, ' ').trim().length;
 };
 
-// Fylls i platsslingan; ortssidorna använder den för att veta vad som ska länka
-// till en egen sida och vad som ska länka in i kartan.
-const hasOwnPage = new Set();
-let skippedThin = 0;
+// Avgörs i FÖRVÄG, inte under slingan. Annars vet en plats som behandlas tidigt
+// inte om en senare granne får en egen sida, och "närliggande platser" länkar
+// till sidor som aldrig skrivs — 105 döda länkar upptäckta precis före deploy.
+const hasOwnPage = new Set(
+  entries
+    .filter(e => uniqueChars(e) >= MIN_UNIQUE_CHARS || alreadyPublished.has(slug(e.id || e.name)))
+    .map(e => e.id || e.name)
+);
+const skippedThin = entries.length - hasOwnPage.size;
+
+// Vart en plats länkar: egen sida om den har en, annars rakt in i kartan på
+// just den platsen. Ingen plats blir en död länk.
+const placeHref = (e) => hasOwnPage.has(e.id || e.name)
+  ? `/p/${slug(e.id || e.name)}`
+  : `/karta?plats=${encodeURIComponent(e.id || '')}`;
+
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
@@ -326,7 +338,7 @@ for (const e of entries) {
   const facts = (e.key_facts || []).map(f => `<li>${esc(f)}</li>`).join('');
   const nearby = nearestFor(e);
   const nearbyHtml = nearby.length ? `<div class="card"><h2>Närliggande platser</h2><div class="grid two">${
-    nearby.map(o => `<a class="tile" href="/p/${slug(o.id || o.name)}"><b>${esc(o.name)}</b><span>${esc(CAT_LABEL[o.category] || o.category || '')}${o.city && o.city !== e.city ? ' · ' + esc(o.city) : ''}</span></a>`).join('')
+    nearby.map(o => `<a class="tile" href="${attr(placeHref(o))}"><b>${esc(o.name)}</b><span>${esc(CAT_LABEL[o.category] || o.category || '')}${o.city && o.city !== e.city ? ' · ' + esc(o.city) : ''}</span></a>`).join('')
   }</div></div>` : '';
   const sourcesHtml = (e.sources || []).filter(u => /^https?:\/\//.test(u))
     .map(u => `<li><a href="${attr(u)}" rel="nofollow noopener" target="_blank">${esc(u.replace(/^https?:\/\//, '').replace(/\/$/, ''))}</a></li>`).join('');
@@ -367,20 +379,13 @@ for (const e of entries) {
     head: jsonld(ld) + '\n' + jsonld(crumbs),
     body,
   });
-  // Tröskeln: nog med eget innehåll, eller redan publicerad sedan tidigare.
-  if (uniqueChars(e) < MIN_UNIQUE_CHARS && !alreadyPublished.has(s)) { skippedThin++; continue; }
+  // Tröskeln avgjordes i förväg (hasOwnPage).
+  if (!hasOwnPage.has(e.id || e.name)) continue;
 
   writeFileSync(join(placeDir, `${s}.html`), html);
-  hasOwnPage.add(e.id || e.name);
   urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly', image: photoUrl, imageTitle: e.name });
   pageCount++;
 }
-
-// Vart en plats länkar: egen sida om den har en, annars rakt in i kartan på
-// just den platsen. Ingen plats blir en död länk.
-const placeHref = (e) => hasOwnPage.has(e.id || e.name)
-  ? `/p/${slug(e.id || e.name)}`
-  : `/karta?plats=${encodeURIComponent(e.id || '')}`;
 
 // ── platsindex (/platser) ────────────────────────────────────────────────────
 const byCity = {};
@@ -584,7 +589,7 @@ for (const t of TOURS) {
       { '@type': 'ListItem', position: 3, name: t.name, item: canonical },
     ],
   };
-  const stopsHtml = t.stops.map((e, i) => `<a class="tile" href="/p/${slug(e.id || e.name)}"><b>${i + 1}. ${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.summary ? ' · ' + esc(trunc(e.summary, 70)) : ''}</span></a>`).join('\n');
+  const stopsHtml = t.stops.map((e, i) => `<a class="tile" href="${attr(placeHref(e))}"><b>${i + 1}. ${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.summary ? ' · ' + esc(trunc(e.summary, 70)) : ''}</span></a>`).join('\n');
   const body = `
 <nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Vandringsturer</a> › ${esc(t.name)}</nav>
 <div class="badges"><span class="badge">🚶 Vandringstur</span><span class="badge">📍 ${esc(t.area)}</span><span class="badge">${t.stops.length} stopp</span></div>
@@ -720,7 +725,7 @@ ${arr.map(e => `<li><a href="${attr(placeHref(e))}"><b>${esc(e.name)}</b></a>${
   // ── teaser-body ──
   const stopCard = (s, i) => {
     const im = imgFor(s);
-    return `<a class="tile" href="/p/${slug(s.id || s.name)}">` +
+    return `<a class="tile" href="${attr(placeHref(s))}">` +
       (im ? `<img src="${attr(imgSrc(im.url))}" referrerpolicy="no-referrer" alt="${attr(s.name)}" loading="lazy" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px">` : '') +
       `<b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
   };
@@ -1290,8 +1295,8 @@ for (const city of CITIES) {
       stops: themeStops.map(s => ({ name: s.name, lat: s.coordinates.lat, lng: s.coordinates.lng })) };
     const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
 
-    const card = (s, i) => `<a class="tile" href="/p/${slug(s.id || s.name)}"><b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
-    const fullList = themeStops.map((s, i) => `<li><a href="/p/${slug(s.id || s.name)}"><b>${i + 1}. ${esc(s.name)}</b></a>${s.summary ? ' — ' + esc(trunc(s.summary, 120)) : ''}</li>`).join('\n');
+    const card = (s, i) => `<a class="tile" href="${attr(placeHref(s))}"><b>${i + 1}. ${esc(s.name)}</b><span>${esc(CAT_LABEL[s.category] || s.category || '')}${s.summary ? ' · ' + esc(trunc(s.summary, 80)) : ''}</span></a>`;
+    const fullList = themeStops.map((s, i) => `<li><a href="${attr(placeHref(s))}"><b>${i + 1}. ${esc(s.name)}</b></a>${s.summary ? ' — ' + esc(trunc(s.summary, 120)) : ''}</li>`).join('\n');
 
     const body = `
 <nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/${citySlug}">Stadsvandring i ${esc(city)}</a> › ${esc(def.slug)}</nav>
