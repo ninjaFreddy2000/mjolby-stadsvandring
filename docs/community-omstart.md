@@ -13,8 +13,8 @@ lång app.js; det är den skulden som betalas av parallellt med ombyggnaden.
 
 - **Namnet behålls** — `stadsvandring.io` är domänen, appnamnet och SEO-kapitalet
   (364 statiska platssidor + sitemap rankar på det). Det som byts är
-  *positioneringen*: från "guidade stadsvandringar" till **"Folkets egen
-  stadsvandring"**. Säg till om du vill byta namn på riktigt, det ändrar fas 5.
+  *positioneringen*. **Taglinen är "Upptäck Sveriges städer"** (Fredriks beslut
+  2026-08-22) — den sitter i appheadern, på webbsidan och i OG-taggarna.
 - **Partner-/sponsorspåret rörs inte.** `partners.html` (299 kr/år) är B2B mot
   näringsidkare, inte betalning för användaren. "Betalning ska tas bort" tolkar
   jag som konsument-paywallen. Säg till om även partnerspåret ska bort.
@@ -31,16 +31,13 @@ lång app.js; det är den skulden som betalas av parallellt med ombyggnaden.
 
 ## Fas 2 — Snabbhet resten av vägen
 
-1. **Kartnålar i skala.** Göteborg har 609 stopp; alla ritas som egna
-   DOM-markörer. Klustring (leaflet.markercluster) + rita bara det som syns.
-2. **Dela upp `app.js`** (2 600 rader, en fil) i moduler med tydliga gränser:
-   karta, platser/detaljvy, community, rutter, UI-skal. Idag importerar allt
-   allt, och en ändring i en vy tvingar om-parse av hela filen.
-3. **CSS.** `styles.css` 84 kB + `webbsida.css` 42 kB, båda blockerande. Dela i
-   ett litet kritiskt skal + resten lazy.
-4. **Bilder.** Hero- och listbilder utan storleksattribut → layoutskutt.
-   Moderna format, rätt dimensioner, `loading="lazy"` överallt.
-5. **Mät.** Lighthouse/CWV före och efter, så påståendena är belagda.
+| | |
+|---|---|
+| ✅ | **Kartnålar i skala.** Mätt i Göteborg zoom 15: 444 nålnoder i DOM:en, 56 synliga. Klustrar nu över hela staden (stabila siffror) men ritar bara inom vyn + 35 %, och klustringen hinkas i rutnät i stället för linjärsökning. → 140 noder. `commit 7cadf76` |
+| ✅ | **Bilder.** 6,9 MB råa JPEG:er på ~1100 px användes både som 88 px-miniatyr och hero. WebP i w320/w800/w1200 via `scripts/build-images.mjs`; Mjölby kyrka 410 kB → 18 kB som miniatyr. `commit b41ea80` |
+| ⬜ | **Dela upp `app.js`** (2 600 rader, en fil) i moduler med tydliga gränser: karta, platser/detaljvy, community, rutter, UI-skal. `admin.js` (24 kB) och `challenges.js` (39 kB) laddas i dag för alla trots att de behövs av få — dynamisk import. |
+| ⬜ | **CSS.** `styles.css` 84 kB + `webbsida.css` 42 kB, båda blockerande. Dela i ett litet kritiskt skal + resten lazy. |
+| ⬜ | **Mät.** Lighthouse/CWV före och efter, så påståendena är belagda. |
 
 ## Fas 3 — Community-kärnan
 
@@ -77,8 +74,11 @@ för arrangör" till **"min rutt"** för vem som helst.
 
 ## Fas 5 — Rebrand
 
-1. `index.html`, `karta.html`, `om.html`, `manifest.webmanifest`, OG-taggar,
-   `llms.txt` — från "guidade stadsvandringar" till folkets egen.
+Taglinen är redan bytt till **"Upptäck Sveriges städer"** i appheadern,
+`index.html`, `karta.html` och manifestet (`commit 7c4a2a2`). Kvar:
+
+1. `om.html`, `llms.txt`, `platser.html`, `orter.html` och de statiska
+   platssidorna — copy som fortfarande säljer den kurerade guideappen.
 2. `i18n.js` — svensk och engelsk copy för de nya flödena.
 3. Startsidan säljer **deltagandet**: senaste bidragen, platser som behöver
    bilder, rutter folk skapat den här veckan.
