@@ -21,7 +21,24 @@ Mjölby, Skänninge och Bjälbo — karta, berättelser, stämplar och quiz, med
 python3 -m http.server 8123
 # öppna http://localhost:8123
 ```
-Ren statisk app — ingen byggprocess. Ikoner genereras med `node make-icons.mjs`.
+Ren statisk app — ingen byggprocess i webbläsaren. Ikoner genereras med
+`node make-icons.mjs`.
+
+## Data
+`data.json` är **källan** (9 774 platser i 72 städer) och läses aldrig av appen.
+Kör build-steget när den ändrats:
+```bash
+node scripts/build-data.mjs
+```
+Det skriver:
+- `data/cities.json` (~40 kB) — en rad per stad: centrumpunkt, antal stopp, vilka
+  leder som finns och den förberäknade centrumslingan. Detta är allt appen behöver
+  för kartöversikt, stadsväljare och ledräkning.
+- `data/city/<slug>.json` — den stadens platser. Hämtas när staden väljs.
+- `data/place-city.json` — id → stad, hämtas bara när en sparad plats ligger i en
+  stad som inte är laddad.
+
+Startladdningen gick därmed från 1,9 MB till ~48 kB (gzip).
 
 ## Lägg till en ny stad / berättare
 Lägg en post i `STORYTELLERS` i `storytellers.js` och peka ut den med `ACTIVE_CITY`.

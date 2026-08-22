@@ -244,65 +244,73 @@ function nearestNeighborOrder(items, start){
   }
   return out;
 }
-// Bygg CENTRAL_BY_CITY: per stad (ej kurerad) de centrala stoppen, promenadordnade.
-function computeCentralTours(){
-  CENTRAL_BY_CITY = {};
-  const byCity = {};
-  ENTRIES.forEach(e => { const c = cityOf(e); (byCity[c] = byCity[c] || []).push(e); });
-  for (const [city, arr] of Object.entries(byCity)){
-    if (CURATED_TOUR_CITIES.has(city)) continue;
-    const ortE = arr.find(e => e.category === 'ort');
-    // Centrum: ortens post om den finns, annars MEDIAN av platserna (tål utliggare
-    // — snitt drar centrumet snett när platser ligger utspridda på landsbygden).
-    const med = xs => { const s = xs.slice().sort((a,b)=>a-b); return s[s.length >> 1]; };
-    const centre = ortE ? ortE.coordinates
-      : { lat: med(arr.map(e=>e.coordinates.lat)), lng: med(arr.map(e=>e.coordinates.lng)) };
-    // Kandidater: centrala platser (ej ortmarkören). Glest centrum → vidga och ta
-    // de närmaste, så även små orter får ihop en vandring.
-    let cand = arr.filter(e => e.category !== 'ort' && distKm(e.coordinates, centre) <= WALK_RADIUS_KM);
-    if (cand.length < CENTRAL_MIN_STOPS){
-      cand = arr.filter(e => e.category !== 'ort')
-                .sort((a,b) => distKm(a.coordinates, centre) - distKm(b.coordinates, centre))
-                .slice(0, WALK_MAX * 2);
-    }
-    if (cand.length < CENTRAL_MIN_STOPS) continue;
-    // Välj de MEST INTRESSANTA (max 12) med ett diversitetsstraff så vandringen
-    // blandar kategorier (kyrka/torg/museum/bro…) i stället för att stapla samma
-    // typ. Sedan: ordna som en promenadslinga och korta ner tills den ryms på ≤1h.
-    const picked = [], catCount = {};
-    while (picked.length < WALK_MAX && cand.length){
-      let bi = 0, bs = -Infinity;
-      cand.forEach((e,i) => {
-        const adj = interestScore(e, centre) - (catCount[e.category] || 0) * 1.5;
-        if (adj > bs){ bs = adj; bi = i; }
-      });
-      const e = cand.splice(bi, 1)[0];
-      picked.push(e); catCount[e.category] = (catCount[e.category] || 0) + 1;
-    }
-    let order = nearestNeighborOrder(picked, centre);
-    while (order.length > WALK_MIN && routeLenM(order) > WALK_MAX_M){
-      let fi = 0, fd = -1;
-      order.forEach((e,i) => { const d = distKm(e.coordinates, centre); if (d > fd){ fd = d; fi = i; } });
-      order.splice(fi, 1);
-      order = nearestNeighborOrder(order, centre);
-    }
-    CENTRAL_BY_CITY[city] = order.map(e => e.id);
+// ── Datalager: litet stadsindex + en chunk per stad ──────────────────────────
+// Tidigare hämtades hela data.json (9,6 MB, 9 775 platser i 72 städer) vid varje
+// start — för att visa EN stad. Nu laddas data/cities.json (~40 kB) plus den
+// aktiva stadens chunk; andra städer hämtas först när man byter till dem.
+// Den centrala vandringen per stad räknas inte längre fram i klienten utan
+// kommer förberäknad ur indexet (scripts/build-data.mjs).
+let CITY_INDEX = [];                 // [{name,slug,lat,lng,count,total,curated,central}]
+const CITY_BY_NAME = new Map();
+const CITY_LOADED = new Map();       // stad → entries[] (chunkcache)
+const CITY_INFLIGHT = new Map();     // stad → Promise (avdubblar parallella hämtningar)
+let PLACE_CITY = null;               // id → stadsindex; hämtas BARA vid behov (sparade platser)
+
+function applyCityIndex(idx){
+  CITY_INDEX = idx.cities || [];
+  CITY_BY_NAME.clear(); CITY_META = {}; CENTRAL_BY_CITY = {};
+  for (const c of CITY_INDEX){
+    CITY_BY_NAME.set(c.name, c);
+    CITY_META[c.name] = { lat: c.lat, lng: c.lng, count: c.count };
+    if (c.central && c.central.length) CENTRAL_BY_CITY[c.name] = c.central;
   }
 }
-// Bygg CITY_META: centrumpunkt (ortens post om den finns, annars snitt av stoppen)
-// + antal stopp per stad. Används för att alltid visa prickar över de andra
-// städerna i stadsvandringen — inte bara den valda staden.
-function computeCityMeta(){
-  CITY_META = {};
-  const byCity = {};
-  ENTRIES.forEach(e => { const c = cityOf(e); (byCity[c] = byCity[c] || []).push(e); });
-  for (const [city, arr] of Object.entries(byCity)){
-    const ortE = arr.find(e => e.category === 'ort');
-    const lat = ortE ? ortE.coordinates.lat : arr.reduce((s,e)=>s+e.coordinates.lat,0)/arr.length;
-    const lng = ortE ? ortE.coordinates.lng : arr.reduce((s,e)=>s+e.coordinates.lng,0)/arr.length;
-    CITY_META[city] = { lat, lng, count: arr.length };
-  }
+
+// Antal leder i en stad — utan att stadens data behöver vara laddad.
+function tourCountFor(name){
+  const c = CITY_BY_NAME.get(name); if (!c) return 0;
+  let n = 0;
+  if (c.curated && c.curated.central) n++;
+  if (c.curated && c.curated.medieval) n++;
+  if (c.central && c.central.length) n++;
+  return n;
 }
+
+// Hämta en stads platser och foga in dem i DATA/ENTRIES. Idempotent.
+function loadCity(name){
+  if (CITY_LOADED.has(name)) return Promise.resolve(CITY_LOADED.get(name));
+  if (CITY_INFLIGHT.has(name)) return CITY_INFLIGHT.get(name);
+  const meta = CITY_BY_NAME.get(name);
+  if (!meta) return Promise.resolve([]);
+  const p = fetch(`data/city/${meta.slug}.json`)
+    .then(r => r.ok ? r.json() : Promise.reject(new Error(r.status)))
+    .then(chunk => {
+      const arr = (chunk.entries || []).filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
+      CITY_LOADED.set(name, arr);
+      DATA = DATA.concat(arr);
+      ENTRIES = ENTRIES.concat(arr.filter(hasCoords));
+      computeWalkIds();
+      return arr;
+    })
+    .catch(err => { console.error('Kunde inte ladda staden', name, err); CITY_LOADED.set(name, []); return []; })
+    .finally(() => CITY_INFLIGHT.delete(name));
+  CITY_INFLIGHT.set(name, p);
+  return p;
+}
+
+// Vilken stad hör ett plats-id till? Slår upp bland laddade städer först; först
+// om det misslyckas hämtas den (större) id→stad-tabellen — i praktiken bara när
+// användaren har sparade platser i en stad som inte är laddad.
+async function cityForId(id){
+  for (const [city, arr] of CITY_LOADED) if (arr.some(e => e.id === id)) return city;
+  if (!PLACE_CITY){
+    try { PLACE_CITY = await (await fetch('data/place-city.json')).json(); }
+    catch (e) { PLACE_CITY = {}; }
+  }
+  const ix = PLACE_CITY[id];
+  return (typeof ix === 'number' && CITY_INDEX[ix]) ? CITY_INDEX[ix].name : null;
+}
+
 const activeTypes = new Set(Object.keys(TYPES));
 let topOnly = false;    // "⭐ Höjdpunkter"-filter: visa bara klockrena stadsvandringsplatser
 let activeTour = null; // null = all
@@ -436,14 +444,12 @@ async function init() {
   setupErrorMonitoring();    // tidigt, så även tidiga fel fångas
   detectChallengeInUrl();   // fånga ev. #challenge=/#result= innan hashen rensas
 
-  const res = await fetch('data.json');
-  const json = await res.json();
-  // Filtrera bort demo-/testdata ur hela appen (karta, städer, berättelser).
-  DATA = json.entries.filter(e => !/^(demo|test)[-_]/i.test(e.id || ''));
-  ENTRIES = DATA.filter(hasCoords);
-  computeCentralTours();   // generiska stadsvandringar per ort (för icke-kurerade städer)
-  computeCityMeta();       // centrumpunkt + antal per stad (för prickar över andra städer)
-  computeWalkIds();        // vandringsstoppen → räknas som Höjdpunkter
+  // Stadsindexet är litet (~40 kB) och räcker för karta-översikt, stadsväljare och
+  // ledräkning. Bara den aktiva stadens platser hämtas — resten vid stadsbyte.
+  applyCityIndex(await (await fetch('data/cities.json')).json());
+  if (!CITY_BY_NAME.has(activeCity)) activeCity = CITY_BY_NAME.has('Mjölby') ? 'Mjölby' : (CITY_INDEX[0] && CITY_INDEX[0].name) || 'Mjölby';
+  TELLER = tellerFor(activeCity);
+  await loadCity(activeCity);   // fyller DATA/ENTRIES + kör computeWalkIds()
 
   // Evenemang per ort (build-tids-hämtade från respektive Visit-sida). Stads-nycklat
   // objekt: { "Mjölby": {source,sourceUrl,fetched,events:[…]}, "Motala": {…}, … }.
@@ -1062,18 +1068,18 @@ function updateCityHeader(){
   if (el) el.textContent = (lang==='en' ? 'City walks in ' : 'Stadsvandringar i ') + activeCity;
 }
 function citiesInData(){
-  // Städer som faktiskt har stopp, med antal — i datans ordning (Mjölby först)
-  const seen = new Map();
-  DATA.forEach(e=>{ const c = cityOf(e); seen.set(c, (seen.get(c)||0) + (hasCoords(e)?1:0)); });
-  let arr = [...seen.entries()].map(([name,count])=>({ name, count }));
+  // Städer som faktiskt har stopp, med antal — ur stadsindexet, så listan är
+  // komplett utan att någon stads platser behöver vara laddade.
+  let arr = CITY_INDEX.map(c=>({ name: c.name, count: c.count }));
   if (MJOLBY_ONLY) arr = arr.filter(c=> c.name === 'Mjölby');   // temporär Mjölby-only-demo
   // En ort blir valbar först när den har minst MIN_CITY_STOPS stopp att besöka
   // (Mjölby alltid med). Tunna seed-orter göms tills de byggts ut.
   else arr = arr.filter(c=> c.name === 'Mjölby' || c.count >= MIN_CITY_STOPS);
   return arr;
 }
-function setActiveCity(city){
+async function setActiveCity(city){
   if (!city || city === activeCity) return;
+  await loadCity(city);        // hämta stadens platser innan vyerna ritas om
   activeCity = city;
   localStorage.setItem('sv_city', city);
   cityOverview = false;        // vald stad → zooma in på den (ut ur översiktsläget)
@@ -1280,9 +1286,12 @@ function updateStampBadge(){
 
 function openProgress(){
   const set = stamps();
-  const total = ENTRIES.length;
-  const pct = total ? Math.round(set.size/total*100) : 0;
-  const grid = ENTRIES.map(e=>{
+  // Stämpelrutnätet visar den AKTIVA staden. (Tidigare ritades en ruta per plats
+  // i hela datamängden — 9 775 noder i DOM:en, och procenten blev meningslös.)
+  const cityEntries = ENTRIES.filter(inCity);
+  const total = cityEntries.length;
+  const pct = total ? Math.round(cityEntries.filter(e=>set.has(e.id)).length/total*100) : 0;
+  const grid = cityEntries.map(e=>{
     const on = set.has(e.id);
     return `<div class="stamp ${on?'on':''}" title="${e.name}">${on?(CATEGORY_ICON[e.category]||'🏅'):'·'}</div>`;
   }).join('');
@@ -1923,7 +1932,7 @@ function renderCities(){
   // Valbara städer (har stopp). Den aktiva markeras tydligt.
   const activeCards = have.map((c,i)=>{
     const sel = c.name===activeCity;
-    const tours = Object.values(TOURS).filter(tr=>DATA.filter(tr.test).some(e=>cityOf(e)===c.name)).length;
+    const tours = tourCountFor(c.name);
     const sub = `${nStops(c.count)}${tours?` · ${tours} ${t('city_leder')}`:''}`;
     return `<button class="led-card city-card ${sel?'selected':''}" data-pick="${c.name}" aria-pressed="${sel}">
       <span class="led-thumb">${routeThumb(seedFor(c.name,i))}</span>
@@ -1963,16 +1972,14 @@ function havKm(a,b){
   return 2*R*Math.asin(Math.sqrt(s));
 }
 function cityCentroid(name){
-  const p=ENTRIES.filter(e=>cityOf(e)===name && e.coordinates);
-  if(!p.length) return null;
-  return { lat:p.reduce((s,e)=>s+e.coordinates.lat,0)/p.length,
-           lng:p.reduce((s,e)=>s+e.coordinates.lng,0)/p.length };
+  const c = CITY_BY_NAME.get(name);
+  return c ? { lat: c.lat, lng: c.lng } : null;
 }
 function renderLandingList(filter){
   const q=(filter||'').toLowerCase().trim();
   const have=citiesInData();
   const metaOf=n=>CITIES.find(c=>c.name===n);
-  const tourCount=n=>Object.values(TOURS).filter(tr=>DATA.filter(tr.test).some(e=>cityOf(e)===n)).length;
+  const tourCount=n=>tourCountFor(n);
   let list=have.filter(c=>!q || c.name.toLowerCase().includes(q));
   if(landNear) list=[...list].sort((a,b)=>(b.name===landNear)-(a.name===landNear));
   const cards=list.map((c,i)=>{
@@ -2249,8 +2256,14 @@ function openReview(){
   setTimeout(()=>{ const x=$('#review-x'); if(x) x.focus(); }, 30);
 }
 
-function renderSaved(){
+async function renderSaved(){
   const sv=saved(), st=stamps();
+  // Sparade platser kan ligga i städer som inte är laddade — hämta dem först.
+  const missing = [...sv].filter(id => !DATA.some(e => e.id === id));
+  if (missing.length){
+    const cities = new Set((await Promise.all(missing.map(cityForId))).filter(Boolean));
+    await Promise.all([...cities].map(loadCity));
+  }
   const list = DATA.filter(e=> sv.has(e.id));
   const rows = list.map(e=>`<li><button class="stop-row" data-id="${e.id}">${stopThumb(e)}
       <span class="stop-meta"><b>${e.name}</b><small>📍 ${cityOf(e)} · ${catLabel(e)}</small></span>

@@ -4,3 +4,8 @@
 data.json.pre-slott
 .orter-raw.json
 .DS_Store
+
+# Källdatan. Appen läser data/cities.json + data/city/*.json (byggs av
+# scripts/build-data.mjs). data.json är 9,6 MB och behöver inte ligga i prod.
+data.json
+data.json.merged
