@@ -37,7 +37,8 @@ lång app.js; det är den skulden som betalas av parallellt med ombyggnaden.
 | ✅ | **Bilder.** 6,9 MB råa JPEG:er på ~1100 px användes både som 88 px-miniatyr och hero. WebP i w320/w800/w1200 via `scripts/build-images.mjs`; Mjölby kyrka 410 kB → 18 kB som miniatyr. `commit b41ea80` |
 | ✅ | **Lat laddning av tung kod.** `admin.js` (24 kB) och `challenges.js` (39 kB) laddades av alla men behövs av få — nu dynamisk import. Installationsguiden bröts ut till `install.js` eftersom den är öppen för alla. `commit 7ec875e` |
 | ✅ | **Vendor ur kritiska vägen.** `karta.html` laddade leaflet + supabase-js (199 kB) + qrcode (14 kB) med `<script defer>`. Bara leaflet behövs för kartan; de andra hämtas nu på begäran, och auth/tips startar på `requestIdleCallback`. `commit eb1dc86` |
-| ⬜ | **CSS.** `styles.css` 84 kB + `webbsida.css` 42 kB, båda blockerande. Dela i ett litet kritiskt skal + resten lazy. |
+| ⏸ | **CSS-uppdelning — mätt och avfärdad.** `styles.css` är 19 kB gzip, `webbsida.css` 9 kB. Att dela i kritiskt skal + lazy hade gett kanske 10 kB mot risk för FOUC. Inte värt det. |
+| ✅ | **Typsnitten självhostade** i stället. Google Fonts var en render-blockerande extern rundtur — dyrare än hela styles.css — och gjorde appen fontlös offline eftersom gstatic låg utanför service workerns cache. CSP:n har nu inga Google-domäner kvar. `commit 2b921da` |
 | ⬜ | **Mät.** Lighthouse/CWV före och efter, så påståendena är belagda. |
 | ⏸ | **Dela upp `app.js`** (2 600 rader). Medvetet uppskjuten: stor omflyttning med liten mätbar vinst nu när den tunga koden ändå laddas lat. Görs hellre stegvis medan fas 3–4 lägger till kod, än som en storstädning med regressionsrisk. |
 
@@ -62,8 +63,9 @@ bidragsflöde (foto + text) som bara sparas i `localStorage`.
    inloggningsväggen. `commit ede76cd`
 4. ✅ **Lägg till en helt ny plats** — fanns redan i `tips.js` (kind `place` med
    kartväljare), men var osynlig. Nu förstahandsvalet på Bidra-fliken.
-5. ⬜ **Profilen blir en bidragsprofil**: mina bidrag, mina bilder, min nivå,
-   vad jag verifierat åt andra.
+5. ✅ **Profilen blir en bidragsprofil.** "Ditt avtryck" direkt under kontokortet:
+   publicerade tips, kommentarer, rutter, granskningar, nivå och poäng.
+   `commit 101fb56`
 6. ⬜ **Migrationen är inte körd i prod** — Fredriks beslut. Tills dess döljer
    appen kommentarssektionen automatiskt.
 
@@ -94,7 +96,7 @@ rutter går att upptäcka och inte bara tas emot.
 | ✅ | **Tagline** "Upptäck Sveriges städer" i appheadern, `index.html`, `karta.html` och manifestet. `commit 7c4a2a2` |
 | ✅ | **Startsidan säljer deltagandet.** Hero omskriven, ny sektion "Kartan fylls av folk som du" (lägg till → andra granskar → den blir stadens), "Turer"-fliken blev "Rutter". `commit 523c970` |
 | ✅ | **`build-seo.mjs`**: bidra-ruta på varje platssida, om-sidan och FAQ:n omskrivna + tre nya frågor (kostar det något, hur lägger jag till en plats, kan jag skapa en egen rutt). |
-| ⬜ | `i18n.js` — engelsk copy för de nya flödena finns, men webbsidans engelska hub (`en.html`) är inte omskriven. |
+| ⬜ | Webbsidans engelska hub (`en.html`) är inte omskriven. Appens engelska copy finns för alla nya flöden. |
 | ⚠️ | **De genererade sidorna är INTE omkörda.** Se nedan — det är ett beslut, inte en detalj. |
 
 ### ⚠️ Att ta ställning till: SEO-ytan har vuxit ur sig själv
