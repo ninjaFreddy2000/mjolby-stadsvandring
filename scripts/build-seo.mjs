@@ -192,6 +192,8 @@ ul.facts li{margin:6px 0}
 .sources li{margin:6px 0;word-break:break-word}
 .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
 .cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
 footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .grid{display:grid;gap:12px}
 @media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
@@ -303,6 +305,12 @@ for (const e of entries) {
     <a class="cta" href="/karta">Visa på kartan</a>
     <a class="cta ghost" href="/platser">Alla platser i ${esc(e.city || SITE_NAME)}</a>
   </p>
+  <div class="card contribute">
+    <h2>Vet du mer om ${esc(e.name)}?</h2>
+    <p>Den här sidan är skriven av oss som bor här. Har du ett foto, ett minne eller en rättelse
+    — lägg till den. Andra i staden granskar bidraget, och sedan står det här för alla som kommer efter.</p>
+    <p><a class="cta" href="/karta?tab=contribute">Bidra med bild eller text</a></p>
+  </div>
   ${nearbyHtml}
   ${sourcesHtml ? `<div class="card"><h2>Källor</h2><ul class="sources">${sourcesHtml}</ul></div>` : ''}
 </article>`;
@@ -352,7 +360,7 @@ const indexLd = {
 };
 writeFileSync(join(ROOT, 'platser.html'), page({
   title: `Alla platser i ${CITIES.join(', ')} | ${BRAND} Stadsvandring`,
-  description: trunc(`Utforska ${entries.length} sevärdheter, byggnader och historiska platser i ${CITIES.join(', ')}. Guidade stadsvandringar med karta, berättelser och quiz.`, 158),
+  description: trunc(`Utforska ${entries.length} sevärdheter, byggnader och historiska platser i ${CITIES.join(', ')} — på en karta som invånarna bygger själva. Gratis.`, 158),
   canonical: `${BASE}/platser`,
   head: jsonld(indexLd),
   body: indexBody,
@@ -362,10 +370,13 @@ writeFileSync(join(ROOT, 'platser.html'), page({
 const byId = (id) => entries.find(e => (e.id || '') === id);
 const mjo = byId('mjolby-orten'), ska = byId('skanninge-mote-1248');
 const faqs = [
-  { q: 'Vad är Stadsvandring.io?', a: `Stadsvandring.io är en gratis webbapp (PWA) för guidade stadsvandringar i ${CITIES[0]} med omnejd. Du utforskar sevärdheter, byggnader, historia och berättelser via en interaktiv karta, samlar digitala stämplar när du besöker platser och testar dina kunskaper med quiz.` },
+  { q: 'Vad är Stadsvandring.io?', a: `Stadsvandring.io är en gratis webbapp (PWA) där invånarna själva bygger kartan över sin stad. Du utforskar sevärdheter, byggnader, historia och berättelser via en interaktiv karta — och lägger till platser, bilder och texter som andra i staden granskar och godkänner.` },
   { q: 'Vilka orter kan jag utforska?', a: `Du kan vandra i ${CITIES.join(', ')} samt kringliggande platser i Östergötland. Totalt finns ${entries.length} kartlagda sevärdheter, byggnader, personer och historiska händelser.` },
   { q: 'Behöver jag installera en app?', a: 'Nej. Stadsvandring.io körs direkt i webbläsaren på mobil och dator. Du kan också installera den som app via "Lägg till på hemskärmen" (PWA) för snabb åtkomst och offline-stöd.' },
-  { q: 'Vad kan jag göra i appen?', a: 'Du kan följa tematiska vandringsturer steg för steg, utforska platser på en karta, läsa om historia och personer, samla stämplar vid besök och testa dina kunskaper i quiz.' },
+  { q: 'Vad kan jag göra i appen?', a: 'Du kan utforska platser på en karta, följa färdiga leder steg för steg, samla stämplar vid besök och testa dig i quiz. Du kan också bidra själv: lägga till en plats, ladda upp bilder och berättelser, kommentera platser, och granska det andra skickar in.' },
+  { q: 'Kostar det något?', a: 'Nej. Stadsvandring.io är gratis att använda, och allt innehåll är öppet. Det finns ingenting att köpa i appen.' },
+  { q: 'Hur lägger jag till en plats?', a: 'Öppna appen, gå till fliken Bidra och välj "Lägg till plats". Du pekar ut platsen på kartan, skriver några rader och kan lägga till en bild. Bidraget granskas av andra användare innan det publiceras — och när du själv bidragit får du hjälpa till att granska andras.' },
+  { q: 'Kan jag skapa en egen rutt?', a: 'Ja. Under Leder kan du sätta ihop en egen runda — välj platserna, dra dem i den ordning du vill gå, och välj om det är en promenad, löprunda eller cykeltur. Sedan delar du länken med en kompis, och kan sätta en tid: "vi går den här på lördag klockan tio".' },
   { q: 'Finns Stadsvandring.io på engelska?', a: 'Ja. Du kan när som helst växla mellan svenska och engelska direkt i appen.' },
   mjo ? { q: 'Vad är Mjölby känt för?', a: mjo.summary + (mjo.era ? ` (${mjo.era}.)` : '') } : null,
   ska ? { q: 'Vad var Skänninge möte?', a: ska.summary } : null,
@@ -381,16 +392,17 @@ const faqLd = {
 const omBody = `
 <nav class="crumbs"><a href="/">Hem</a> › Om</nav>
 <h1>Om Stadsvandring.io</h1>
-<p class="lead">Stadsvandring.io är en gratis webbapp för guidade stadsvandringar i ${esc(CITIES.join(', '))}. Upptäck ${entries.length} sevärdheter, byggnader, personer och historiska händelser — en plats i taget, med karta, berättelser, stämplar och quiz.</p>
+<p class="lead">Stadsvandring.io är en gratis karta över Sveriges städer som invånarna bygger själva. Upptäck ${entries.length} sevärdheter, byggnader, personer och historiska händelser — och lägg till dem du saknar.</p>
 <div class="card">
-  <p>Stadsvandring.io gör lokalhistorien levande och promenadvänlig. Varje plats har en kort sammanfattning, en fördjupande beskrivning, snabbfakta och källor — så att både besökare, skolklasser och nyfikna invånare kan lära känna sin stad på djupet. Innehållet bygger på källor som Wikipedia, ${esc(CITIES[0].toLowerCase())}.se och lokalhistoriskt material.</p>
+  <p>Stadsvandring.io gör lokalhistorien levande och promenadvänlig. Varje plats har en kort sammanfattning, en fördjupande beskrivning, snabbfakta och källor — så att både besökare, skolklasser och nyfikna invånare kan lära känna sin stad på djupet. Grunden bygger på källor som Wikipedia, ${esc(CITIES[0].toLowerCase())}.se och lokalhistoriskt material.</p>
+  <p>Men ingen redaktion kan känna varje kvarter i landet. Därför fylls kartan på av dem som bor där: du lägger till platsen, andra i staden granskar den, och när den godkänts blir den en del av staden för alla som kommer efter. Samma sak med bilder, kommentarer och egna rutter.</p>
 </div>
 <h2 class="city-h">Vanliga frågor</h2>
 ${faqs.map(f => `<div class="card"><h2>${esc(f.q)}</h2><p>${esc(f.a)}</p></div>`).join('\n')}
 <p style="margin-top:24px"><a class="cta" href="/karta">Öppna kartan &amp; appen</a> <a class="cta ghost" href="/platser">Alla platser</a></p>`;
 writeFileSync(join(ROOT, 'om.html'), page({
-  title: `Om Stadsvandring.io – Guidade stadsvandringar i ${CITIES[0]} | Vanliga frågor`,
-  description: trunc(`Vad är Stadsvandring.io? En gratis webbapp för guidade stadsvandringar i ${CITIES.join(', ')} med karta, berättelser, stämplar och quiz. Svar på vanliga frågor.`, 158),
+  title: `Om Stadsvandring.io – Upptäck Sveriges städer | Vanliga frågor`,
+  description: trunc(`Vad är Stadsvandring.io? En gratis karta över Sveriges städer som invånarna bygger själva — lägg till platser, bilder och egna rutter. Svar på vanliga frågor.`, 158),
   canonical: `${BASE}/om`,
   head: jsonld(faqLd),
   body: omBody,

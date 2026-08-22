@@ -72,9 +72,9 @@
 
     <div class="hero__inner">
       <div class="hero__copy">
-        <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Just lanserad · gratis · ingen nedladdning</span>
+        <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Gratis · byggd av oss som bor här · ingen nedladdning</span>
         <h1 id="hero-rubrik">Upptäck Sveriges städer — <span class="accent">en berättelse i taget.</span></h1>
-        <p class="hero__sub">Vi har precis lanserat Stadsvandring.io. Strosa runt bland sevärdheter, byggnader och historier på en levande karta. Lyssna på din lokala berättare, samla stämplar längs vägen och testa dig själv med quiz.</p>
+        <p class="hero__sub">En levande karta över sevärdheter, byggnader och historier i 72 svenska städer — och den fylls av oss som bor här. Lägg till platser du tycker borde finnas med, sätt ihop en egen runda och gå den med en kompis.</p>
         <div class="hero__actions">
           <a class="btn btn--primary btn--lg" href="/karta">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5-2V4l5 2 6-2 5 2v14l-5-2-6 2z"/><path d="M9 6v14M15 4v14"/></svg>
@@ -156,14 +156,43 @@
         <span class="eyebrow">Varför vi finns</span>
         <h2 id="vision-rubrik">Vi vill få ut folk i sina egna städer — till fots.</h2>
         <p>Vi tror att varje gata, kvarn och torg bär på en berättelse. Lokalhistoria blir levande när den är promenadvänlig, gratis och rolig — när den möter dig precis där den faktiskt hände.</p>
-        <p>Vi bygger ett verktyg enkelt nog att alla kan bidra, och skalbart nog att rymma både en stor stad och en liten by.</p>
+        <p>Ingen redaktion kan känna varje kvarter i landet. Därför är kartan folkets: du lägger till platsen, någon annan granskar den, och den blir en del av staden för alla som kommer efter.</p>
         <div class="value-row">
           <div class="value-card"><div class="value-card__big" style="color:#5E8C53;">Nära</div><div class="value-card__sub">din egen hembygd</div></div>
           <div class="value-card"><div class="value-card__big" style="color:#AC3F22;">Gratis</div><div class="value-card__sub">att utforska</div></div>
-          <div class="value-card"><div class="value-card__big" style="color:#3E78A8;">För alla</div><div class="value-card__sub">ingen app att ladda ner</div></div>
+          <div class="value-card"><div class="value-card__big" style="color:#3E78A8;">Av alla</div><div class="value-card__sub">vem som helst kan bidra</div></div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ============ FOLKETS KARTA — bidragsloopen ============ -->
+  <section class="section--sand legend folket" aria-labelledby="folket-rubrik">
+    <div class="legend__head">
+      <span class="eyebrow" style="display:block;text-align:center">Så växer kartan</span>
+      <h2 id="folket-rubrik">Kartan fylls av folk som du</h2>
+      <p class="legend__lead">Ingen sitter och skriver in Sveriges alla gathörn. Det gör vi tillsammans — och vi granskar varandra så att det som står där stämmer.</p>
+    </div>
+    <div class="legend__grid">
+      <div class="legend-card">
+        <span class="folket-no" aria-hidden="true">1</span>
+        <div class="legend-card__name">Du lägger till platsen</div>
+        <p class="legend-card__desc">En bild, några rader om varför den är värd ett stopp, och en nål på kartan. Tar en minut i mobilen — mitt framför huset.</p>
+      </div>
+      <div class="legend-card">
+        <span class="folket-no" aria-hidden="true">2</span>
+        <div class="legend-card__name">Andra granskar den</div>
+        <p class="legend-card__desc">Bidraget går till dem som redan bidragit själva. Räcker antalet godkännanden publiceras den — annars får du veta vad som behöver kompletteras.</p>
+      </div>
+      <div class="legend-card">
+        <span class="folket-no" aria-hidden="true">3</span>
+        <div class="legend-card__name">Den blir stadens</div>
+        <p class="legend-card__desc">Nu finns platsen för alla som kommer efter. Folk kan kommentera den, lägga till sina egna bilder och ta med den i sin runda.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:34px">
+      <a class="btn btn--primary btn--md" href="/karta?tab=contribute">Lägg till din första plats</a>
+    </p>
   </section>
 
   <!-- ============ HEMBYGD / BEVARA ============ -->
@@ -209,7 +238,7 @@
         <button class="tab" id="tab-karta" role="tab" data-accent="sjo" aria-selected="true" aria-controls="panel-karta">Karta</button>
         <button class="tab" id="tab-berattare" role="tab" data-accent="terra" aria-selected="false" aria-controls="panel-berattare" tabindex="-1">Berättare</button>
         <button class="tab" id="tab-stamplar" role="tab" data-accent="honung" aria-selected="false" aria-controls="panel-stamplar" tabindex="-1">Stämplar &amp; quiz</button>
-        <button class="tab" id="tab-turer" role="tab" data-accent="skog" aria-selected="false" aria-controls="panel-turer" tabindex="-1">Turer</button>
+        <button class="tab" id="tab-turer" role="tab" data-accent="skog" aria-selected="false" aria-controls="panel-turer" tabindex="-1">Rutter</button>
       </div>
     </div>
     <div class="feature__body">
@@ -248,14 +277,14 @@
           </ul>
         </div>
         <div class="tabpanel" id="panel-turer" role="tabpanel" data-accent="skog" aria-labelledby="tab-turer" tabindex="0" hidden>
-          <span class="feat-tag feat-tag--skog">Tematiska vandringar</span>
-          <h3>Färdiga turer, steg för steg</h3>
-          <p>Följ tematiska vandringar som leder dig längs gatorna — från stopp till stopp, i din egen takt.</p>
+          <span class="feat-tag feat-tag--skog">Färdiga leder &amp; egna rutter</span>
+          <h3>Gå en färdig led — eller gör din egen</h3>
+          <p>Följ en tematisk vandring steg för steg, eller sätt ihop din egen runda förbi platserna du gillar och skicka den till en kompis.</p>
           <ul class="feat-points">
-            <li>Tematiska rutter genom staden</li>
-            <li>Tydlig väg mellan varje stopp</li>
-            <li>Funkar offline när du väl laddat den</li>
-            <li>Börja och pausa när det passar dig</li>
+            <li>Välj stopp, dra dem i ordning, se sträcka och tid</li>
+            <li>Promenad, löprunda eller cykel — tempot räknas om</li>
+            <li>Dela länken: ”vi går den här på lördag kl 10”</li>
+            <li>Se vilka som gått den, och på vilken tid</li>
           </ul>
         </div>
       </div>
@@ -361,7 +390,7 @@
       <div class="path-card path-card--sjo">
         <div class="path-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFDF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>Invånare &amp; nyfikna</h3>
-        <p>Utforska din stad, samla stämplar och föreslå platser du tycker borde finnas med.</p>
+        <p>Utforska din stad, lägg upp bilder och berättelser, kommentera platser — och granska det andra skickar in.</p>
         <a class="path-card__link" href="/karta">Öppna kartan →</a>
       </div>
       <div class="path-card path-card--skog">

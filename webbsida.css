@@ -597,6 +597,13 @@ section { position: relative; }
   box-shadow: 0 14px 34px rgba(47,42,32,.07);
 }
 .legend-card__pin { width: 46px; height: 46px; position: relative; margin-bottom: 16px; }
+/* Numrerat steg i "Kartan fylls av folk som du" — samma kort som legend-korten,
+   men med en siffra i stället för en kartnål. */
+.folket-no {
+  width: 40px; height: 40px; display: grid; place-items: center; margin-bottom: 16px;
+  border-radius: 100px; background: var(--skog); color: #FFFDF7;
+  font-family: var(--head); font-weight: 700; font-size: 19px;
+}
 .legend-card__name { font-family: var(--head); font-weight: 600; font-size: 20px; margin-bottom: 6px; }
 .legend-card__desc { font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
 
