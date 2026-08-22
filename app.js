@@ -4,7 +4,16 @@ import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES, HISTORIC_IMAGES } from './co
 import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
 import { cityBlurb } from './cityintros.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
-import { initChallenges, detectChallengeInUrl, mountChallengeProfile, mountChallengeCTA } from './challenges.js';
+// challenges.js (39 kB) laddas inte i förväg. Stadsutmaningen syns först på
+// Leder- och Profil-fliken, så den vanliga sessionen "öppna kartan och titta"
+// betalar inte för den. Laddas direkt bara om man kommer in via en delad länk.
+let _chCtx = null, _chPromise = null;
+function challengesMod(){
+  if (!_chPromise){
+    _chPromise = import('./challenges.js').then(m => { m.initChallenges(_chCtx); return m; });
+  }
+  return _chPromise;
+}
 import { initAuth, mountAuthProfile, shareApp, isAdmin } from './auth.js';
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 import { axiomLog } from './axiom.js';
@@ -44,7 +53,16 @@ function setupErrorMonitoring(){
 }
 import { initTips, isActive as tipsActive, mountTipsProfile, openTipForm,
          openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
-import { initAdmin, openAdminDashboard, openInstallGuide, adminAvailable } from './admin.js';
+import { initInstall, openInstallGuide } from './install.js';
+// admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
+// när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
+const adminAvailable = () => isConfigured() && isAdmin();
+let _adminCtx = null;
+async function openAdminDashboard(){
+  const mod = await import('./admin.js');
+  mod.initAdmin(_adminCtx);
+  return mod.openAdminDashboard();
+}
 import { GHOSTS, SPOKKARTAN_URL } from './ghosts.js';
 
 let lang = localStorage.getItem('mjolby_lang') || 'sv';
@@ -454,7 +472,11 @@ function stopThumb(e, badge){
 /* ---------- Init ---------- */
 async function init() {
   setupErrorMonitoring();    // tidigt, så även tidiga fel fångas
-  detectChallengeInUrl();   // fånga ev. #challenge=/#result= innan hashen rensas
+  // Kom man in via en delad utmanings-/resultatlänk måste modulen laddas direkt —
+  // den läser hashen och rensar den. Annars väntar den till Leder eller Profil.
+  if (/[#&](challenge|result)=/.test(location.hash || '')){
+    challengesMod().then(m => m.detectChallengeInUrl());
+  }
 
   // Stadsindexet är litet (~40 kB) och räcker för karta-översikt, stadsväljare och
   // ledräkning. Bara den aktiva stadens platser hämtas — resten vid stadsbyte.
@@ -1971,7 +1993,10 @@ function renderLeder(){
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')} · ${activeCity}</p></div>`
     + (cards || `<div class="screen-empty">🚶<br>${(lang==='en'?'No guided routes in ':'Inga färdiga leder i ')+activeCity+(lang==='en'?' yet — explore freely on the map!':' än — utforska fritt på kartan!')}</div>`);
   $('#screen').querySelectorAll('.led-card').forEach(c=> c.onclick=()=> startLed(c.dataset.led));
-  mountChallengeCTA($('#screen'));   // upptäckbar ingång till Stadsutmaningen
+  // Upptäckbar ingång till Stadsutmaningen. Laddas asynkront — fäst på det
+  // #screen som gällde när vyn ritades, så en snabb flikväxling inte hamnar fel.
+  const screenEl = $('#screen');
+  challengesMod().then(m => { if ($('#screen') === screenEl && activeTab === 'routes') m.mountChallengeCTA(screenEl); });
 }
 function startLed(key){
   activeTour=key;
@@ -2429,7 +2454,8 @@ function renderProfil(){
   $('#fb-prof').onclick = openFeedback;
   const ib=$('#install-prof'); if (ib) ib.onclick = openInstallGuide;
   const ab=$('#admin-prof'); if (ab) ab.onclick = openAdminDashboard;
-  mountChallengeProfile($('#screen'));
+  const profScreen = $('#screen');
+  challengesMod().then(m => { if ($('#screen') === profScreen && activeTab === 'profile') m.mountChallengeProfile(profScreen); });
   if (on){
     mountTipsProfile($('#screen'), { onChange: renderProfil });
     mountAuthProfile($('#screen'), { onChange: renderProfil });   // prepend → kontokort överst
@@ -2677,14 +2703,15 @@ function wireUi(){
 
 /* ---------- Stadsutmaning (challenges.js) ---------- */
 function setupChallenges(){
-  initChallenges({
+  // Kontexten byggs direkt men modulen laddas först när den behövs (challengesMod).
+  _chCtx = {
     get DATA(){ return DATA; }, get ENTRIES(){ return ENTRIES; },
     get map(){ return map; }, get lang(){ return lang; },
     hasCoords, stopThumb, CAT_LABEL, AUTO_RADIUS,
     openPanel, closePanel, focusInto, restoreFocus, toast,
     locate, fileToThumb, t,
     onPosition: cb => posSubscribers.push(cb),
-  });
+  };
 }
 
 /* ---------- Konton + community-tips (auth.js + tips.js) ---------- */
@@ -2702,7 +2729,7 @@ function setupAuthTips(){
       if (activeTab==='profile') renderProfil();
     },
   };
-  initAdmin(c);
+  _adminCtx = c; initInstall(c);
   initAuth(c).then(()=> initTips(c));
 }
 
