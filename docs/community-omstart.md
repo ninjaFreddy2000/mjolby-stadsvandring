@@ -118,7 +118,7 @@ rutter går att upptäcka och inte bara tas emot.
 | ✅ | **Tagline** "Upptäck Sveriges städer" i appheadern, `index.html`, `karta.html` och manifestet. `commit 7c4a2a2` |
 | ✅ | **Startsidan säljer deltagandet.** Hero omskriven, ny sektion "Kartan fylls av folk som du" (lägg till → andra granskar → den blir stadens), "Turer"-fliken blev "Rutter". `commit 523c970` |
 | ✅ | **`build-seo.mjs`**: bidra-ruta på varje platssida, om-sidan och FAQ:n omskrivna + tre nya frågor (kostar det något, hur lägger jag till en plats, kan jag skapa en egen rutt). |
-| ⬜ | Webbsidans engelska hub (`en.html`) är inte omskriven. Appens engelska copy finns för alla nya flöden. |
+| ✅ | Webbsidans engelska hub (`en.html`) omskriven — i källan och på plats, utan att regenerera. |
 | ⚠️ | **De genererade sidorna är INTE omkörda.** Se nedan — det är ett beslut, inte en detalj. |
 
 ### ⚠️ Att ta ställning till: SEO-ytan har vuxit ur sig själv
