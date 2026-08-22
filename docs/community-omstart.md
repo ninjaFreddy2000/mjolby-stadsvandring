@@ -35,9 +35,11 @@ lång app.js; det är den skulden som betalas av parallellt med ombyggnaden.
 |---|---|
 | ✅ | **Kartnålar i skala.** Mätt i Göteborg zoom 15: 444 nålnoder i DOM:en, 56 synliga. Klustrar nu över hela staden (stabila siffror) men ritar bara inom vyn + 35 %, och klustringen hinkas i rutnät i stället för linjärsökning. → 140 noder. `commit 7cadf76` |
 | ✅ | **Bilder.** 6,9 MB råa JPEG:er på ~1100 px användes både som 88 px-miniatyr och hero. WebP i w320/w800/w1200 via `scripts/build-images.mjs`; Mjölby kyrka 410 kB → 18 kB som miniatyr. `commit b41ea80` |
-| ⬜ | **Dela upp `app.js`** (2 600 rader, en fil) i moduler med tydliga gränser: karta, platser/detaljvy, community, rutter, UI-skal. `admin.js` (24 kB) och `challenges.js` (39 kB) laddas i dag för alla trots att de behövs av få — dynamisk import. |
+| ✅ | **Lat laddning av tung kod.** `admin.js` (24 kB) och `challenges.js` (39 kB) laddades av alla men behövs av få — nu dynamisk import. Installationsguiden bröts ut till `install.js` eftersom den är öppen för alla. `commit 7ec875e` |
+| ✅ | **Vendor ur kritiska vägen.** `karta.html` laddade leaflet + supabase-js (199 kB) + qrcode (14 kB) med `<script defer>`. Bara leaflet behövs för kartan; de andra hämtas nu på begäran, och auth/tips startar på `requestIdleCallback`. `commit eb1dc86` |
 | ⬜ | **CSS.** `styles.css` 84 kB + `webbsida.css` 42 kB, båda blockerande. Dela i ett litet kritiskt skal + resten lazy. |
 | ⬜ | **Mät.** Lighthouse/CWV före och efter, så påståendena är belagda. |
+| ⏸ | **Dela upp `app.js`** (2 600 rader). Medvetet uppskjuten: stor omflyttning med liten mätbar vinst nu när den tunga koden ändå laddas lat. Görs hellre stegvis medan fas 3–4 lägger till kod, än som en storstädning med regressionsrisk. |
 
 ## Fas 3 — Community-kärnan
 
@@ -45,6 +47,9 @@ Mycket finns redan men ligger undanstoppat: `tips.js` har både inskick och
 träffsäkerhetsviktad peer-review mot Supabase, och `app.js` har ett lokalt
 bidragsflöde (foto + text) som bara sparas i `localStorage`.
 
+0. ✅ **Community-flödet följer staden.** Tipsen var låsta till `APP_CITY='mjolby'`
+   — i övriga 71 städer hämtades inga tips, granskningskön var tom och inskick
+   bokfördes på Mjölby. Nu följer allt den aktiva staden. `commit a089244`
 1. **Ett bidragsflöde, inte två.** Slå ihop det lokala `contribs`-flödet med
    Supabase-tipsen. Foto + text på vilken plats som helst, från kartan, i två
    tryck. Utan konto: sparas lokalt och laddas upp vid inloggning.
