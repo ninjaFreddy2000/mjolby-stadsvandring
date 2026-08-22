@@ -2,7 +2,7 @@
   "id": "/karta",
   "name": "Stadsvandring.io",
   "short_name": "Stadsvandring.io",
-  "description": "Upptäck Mjölby, Skänninge och Bjälbo — en plats i taget. Karta, vandringar, stämplar och quiz.",
+  "description": "Upptäck Sveriges städer — en plats i taget. Karta, vandringar, stämplar och quiz.",
   "start_url": "/karta",
   "scope": "/karta",
   "display": "standalone",

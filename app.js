@@ -1021,7 +1021,7 @@ function buildTours(){
   const cityCount = ENTRIES.filter(inCity).length;
   // Bara turer som har stopp i den valda staden
   const cityTours = Object.entries(TOURS).filter(([k,tr])=> DATA.filter(tr.test).some(inCity));
-  const chips = [['all', t('tours_all'), nStops(cityCount)]]
+  const chips = [['all', `${t('tours_all')} · ${activeCity}`, nStops(cityCount)]]
     .concat(cityTours.map(([k,tr])=>[k, tourName(k), nStops(DATA.filter(tr.test).filter(inCity).length)]));
   wrap.innerHTML = chips.map(([k,name,sub])=>
     `<button class="tour-chip ${k==='all'?'active':''}" data-tour="${k}">${name}<small>${sub}</small></button>`
@@ -1116,8 +1116,10 @@ function buildFilters(){
 
 /* ---------- Stad: byt aktiv stad ---------- */
 function updateCityHeader(){
+  // Headern bär varumärkeslöftet, inte den aktiva staden — vilken stad man är i
+  // syns på "Alla platser"-chippet, i Leder-vyn och i berättaren.
   const el = $('#brand-sub');
-  if (el) el.textContent = (lang==='en' ? 'City walks in ' : 'Stadsvandringar i ') + activeCity;
+  if (el) el.textContent = t('tagline');
 }
 function citiesInData(){
   // Städer som faktiskt har stopp, med antal — ur stadsindexet, så listan är

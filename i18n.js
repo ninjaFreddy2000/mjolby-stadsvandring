@@ -4,7 +4,8 @@
 
 export const STRINGS = {
   sv: {
-    brand_sub: 'Stadsvandringar i Mjölby',
+    tagline: 'Upptäck Sveriges städer',
+    brand_sub: 'Upptäck Sveriges städer',
     act_stories: 'Berättelser', act_stories_full: 'Personer & berättelser',
     stories_sub: 'Alla platser, personer och händelser — även de som inte har en egen nål på kartan.',
     stories_search: 'Sök…',
@@ -169,7 +170,8 @@ export const STRINGS = {
     ch_bad_link: 'Tävlingslänken verkar trasig.',
   },
   en: {
-    brand_sub: 'City walks in Mjölby',
+    tagline: "Discover Sweden's cities",
+    brand_sub: "Discover Sweden's cities",
     act_stories: 'Stories', act_stories_full: 'People & stories',
     stories_sub: 'Every place, person and event — including the ones without a pin on the map.',
     stories_search: 'Search…',
