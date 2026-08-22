@@ -353,6 +353,13 @@ const chosenImg = e => {
   return (own && _loadableImg(own.url)) ? own : null;
 };
 const imgUrl = e => { const i = chosenImg(e); return i ? i.url : null; };
+// Självhostade foton finns i webbstorlekar (scripts/build-images.mjs): w320 för
+// listminiatyrer, w800 för hero. Originalen är ~1100 px och 300–500 kB — en
+// listvy med 20 platser drog flera MB. Externa URL:er lämnas orörda.
+const sizedImg = (url, dir) =>
+  (url && /^images\/[^/]+\.(jpe?g|png)$/i.test(url))
+    ? url.replace(/^images\//, `images/${dir}/`).replace(/\.(jpe?g|png)$/i, '.webp')
+    : url;
 const imgCredit = e => { const i = chosenImg(e); return i ? (i.attribution || null) : null; };
 const imgFocal = e => { const i = chosenImg(e); return i ? (i.focal || null) : null; };
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
@@ -433,10 +440,15 @@ const tourName = key => t('tour_' + key + '_name');
 const tourSub = key => t('tour_' + key + '_sub');
 function stopThumb(e, badge){
   const img = imgUrl(e), icon = iconOf(e);
-  return img
-    ? `<span class="stop-thumb"><img src="${img}" alt="" loading="lazy" referrerpolicy="no-referrer"
-         onerror="this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')">${badge||''}</span>`
-    : `<span class="stop-thumb ph">${icon}${badge||''}</span>`;
+  if (!img) return `<span class="stop-thumb ph">${icon}${badge||''}</span>`;
+  const small = sizedImg(img, 'w320');
+  // Saknas webbstorleken (t.ex. innan build-images körts) → prova originalet en
+  // gång, annars faller vi tillbaka på kategoriikonen.
+  const onerr = small === img
+    ? `this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')`
+    : `if(this.dataset.full){this.remove();this.parentElement.classList.add('ph');this.parentElement.insertAdjacentText('afterbegin','${icon}')}else{this.dataset.full=1;this.src='${img}'}`;
+  return `<span class="stop-thumb"><img src="${small}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+         onerror="${onerr}">${badge||''}</span>`;
 }
 
 /* ---------- Init ---------- */
@@ -1233,8 +1245,8 @@ function openSheet(id){
   const hero = (img || hasHist)
     ? `<div class="hero">
          ${heroPh}
-         ${img?`<img class="hero-now" data-hero-now src="${img}" alt="${e.name}" loading="eager" referrerpolicy="no-referrer"
-              ${focal?`style="object-position:${focal}"`:''} onerror="var c=this.parentElement.querySelector('[data-now-credit]');if(c)c.remove();this.remove()">`:''}
+         ${img?`<img class="hero-now" data-hero-now src="${sizedImg(img,'w800')}" alt="${e.name}" loading="eager" decoding="async" referrerpolicy="no-referrer"
+              ${focal?`style="object-position:${focal}"`:''} onerror="if(!this.dataset.full&&'${sizedImg(img,'w800')}'!=='${img}'){this.dataset.full=1;this.src='${img}';return}var c=this.parentElement.querySelector('[data-now-credit]');if(c)c.remove();this.remove()">`:''}
          ${thenGallery}
          ${credit?`<span class="credit" data-now-credit>📷 ${credit}</span>`:''}
          ${nowThenToggle}

@@ -91,7 +91,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--disp-weight);letter-s
 }
 .header-hero::before{   /* headerbilden */
   content:"";position:absolute;inset:0;
+  /* WebP-varianten är 88 kB mot JPEG:ens 245 kB (scripts/build-images.mjs).
+     Första raden är fallback för webbläsare utan image-set. */
   background:url('images/header.jpg') center 34% / cover no-repeat;
+  background-image:image-set(url('images/w1200/header.webp') type('image/webp'),
+                             url('images/header.jpg') type('image/jpeg'));
 }
 .header-hero::after{    /* mjuk gradient: lätt scrim upptill + tonar ner i pergament + ljusglow bak varumärket */
   content:"";position:absolute;inset:0;
@@ -1078,6 +1082,9 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .landing{position:fixed;inset:0;z-index:2000;display:none;padding:0;overflow-y:auto;
   background:var(--paper);
   background-image:linear-gradient(180deg,rgba(10,42,107,.32),rgba(10,42,107,.62)),url('images/header.jpg');
+  background-image:linear-gradient(180deg,rgba(10,42,107,.32),rgba(10,42,107,.62)),
+                   image-set(url('images/w1200/header.webp') type('image/webp'),
+                             url('images/header.jpg') type('image/jpeg'));
   background-size:cover;background-position:center top}
 .landing[aria-hidden="false"]{display:flex}
 .landing-card{margin:auto;width:100%;max-width:480px;min-height:100%;

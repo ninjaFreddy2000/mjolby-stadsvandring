@@ -40,6 +40,17 @@ Det skriver:
 
 Startladdningen gick därmed från 1,9 MB till ~48 kB (gzip).
 
+## Bilder
+`images/*.jpg` är originalen (~1100 px, 300–500 kB styck). Appen visar
+webbstorlekar som byggs med:
+```bash
+node scripts/build-images.mjs
+```
+Det skriver `images/w320/` (listminiatyrer), `images/w800/` (hero i detaljvyn)
+och `images/w1200/header.webp` (CSS-bakgrunden). Kräver `brew install webp`.
+Appen faller tillbaka på originalet om en variant saknas, så steget är valfritt
+men sparar ungefär 20× på en listvy.
+
 ## Lägg till en ny stad / berättare
 Lägg en post i `STORYTELLERS` i `storytellers.js` och peka ut den med `ACTIVE_CITY`.
 Endast `name` + `greeting` krävs; `fallbacks` ger repliker även utan handskriven text.
