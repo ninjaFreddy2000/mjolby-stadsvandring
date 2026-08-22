@@ -789,6 +789,48 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .cw-row b{display:block;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:2px}
 .cw-row small{font-size:12.5px;line-height:1.45;color:var(--ink-3)}
 
+/* ── Egna rutter (routes.js) ────────────────────────────────────────────────
+   Ruttkorten återanvänder .led-card från de kurerade lederna — en rutt någon
+   gjort ska kännas likvärdig med en färdig led, inte som en andra klassens
+   variant. Skillnaden är färdsätts-ikonen i stället för miniatyrbilden. */
+.routes-section{margin-top:20px}
+.route-new{margin-bottom:12px}
+.route-card{align-items:center}
+.route-mode{flex:none;width:56px;height:56px;display:grid;place-items:center;font-size:26px;
+  background:var(--forest-soft);border-radius:var(--r-md);border:1px solid var(--line)}
+.route-stats{display:flex;gap:14px;margin:6px 0 4px;font-size:13px;color:var(--ink-3)}
+.route-stoplist{list-style:none;margin:0 0 10px;padding:0;counter-reset:rs}
+.route-stoplist li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.route-stoplist li:last-child{border-bottom:none}
+.rs-no{flex:none;width:24px;height:24px;display:grid;place-items:center;border-radius:100px;
+  background:var(--primary);color:#fff;font-size:12px;font-weight:700}
+.rs-name{flex:1;min-width:0;font-size:14px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rs-acts{flex:none;display:flex;gap:4px}
+.rs-btn{width:30px;height:30px;border:1px solid var(--line);background:var(--card-2);border-radius:var(--r-sm);
+  font-size:14px;color:var(--ink-2);cursor:pointer;line-height:1}
+.rs-btn:disabled{opacity:.35;cursor:default}
+.rs-x{color:#a33}
+.rs-add{flex:none;font-size:20px;color:var(--forest);font-weight:700;padding:0 6px}
+.route-hero{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.route-hero-mode{flex:none;width:52px;height:52px;display:grid;place-items:center;font-size:26px;
+  background:var(--forest-soft);border-radius:var(--r-md);border:1px solid var(--line)}
+.route-hero b{display:block;font-family:var(--font-display);font-size:15px;color:var(--ink)}
+.route-hero small{font-size:12.5px;color:var(--ink-3)}
+.route-intro{font-size:14px;line-height:1.55;color:var(--ink-2);margin-bottom:10px}
+.route-when{background:var(--honey-soft);border:1px solid #EAD7A6;border-radius:var(--r-md);
+  padding:10px 12px;font-size:13.5px;color:#7a5a10;margin-bottom:12px}
+.route-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.route-actions .fb-cta{flex:1;min-width:130px;margin:0}
+.route-delete{margin-top:10px;color:#a33}
+.route-board{list-style:none;margin:0;padding:0}
+.route-board li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.route-board li:last-child{border-bottom:none}
+.rb-pos{flex:none;width:24px;text-align:center;font-weight:700;color:var(--ink-3);font-size:13px}
+.rb-name{flex:1;min-width:0;font-size:14px;color:var(--ink)}
+.rb-time{flex:none;font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--ink-2)}
+.cb-hint{font-size:12px;color:var(--ink-3);line-height:1.45;margin:-4px 0 10px}
+
+
 
 
 /* Bidragsgivar-badge */

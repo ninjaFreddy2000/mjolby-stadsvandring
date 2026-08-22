@@ -10,3 +10,4 @@ node_modules/
 # Lokala backupkopior av data.json
 data.json.bak*
 data.json.pre-*
+supabase/.temp/

@@ -54,6 +54,7 @@ function setupErrorMonitoring(){
 import { initTips, refreshCity as refreshTips, isActive as tipsActive, mountTipsProfile,
          openTipForm, openReviewQueue, stopBlockHtml, wireStopBlock } from './tips.js';
 import { initComments, commentBlockHtml, wireCommentBlock, clearCommentCache } from './comments.js';
+import { initRoutes, mountRoutes, openRoute, routeInUrl } from './routes.js';
 import { initInstall, openInstallGuide } from './install.js';
 // admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
 // när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
@@ -140,7 +141,15 @@ const TOURS = {
     generic: true,
     test: e => { const ids = CENTRAL_BY_CITY[cityOf(e)]; return !!ids && ids.indexOf(e.id) >= 0; },
   },
+  // En användarskapad rutt (routes.js) körs som en vanlig tur, så kartan,
+  // den gatuföljande ledlinjen och "till nästa plats" fungerar likadant.
+  // Stoppen kommer ur USER_ROUTE, som sätts av startUserRoute().
+  userroute: {
+    user: true,
+    test: e => !!USER_ROUTE && USER_ROUTE.stops.indexOf(e.id) >= 0,
+  },
 };
+let USER_ROUTE = null;   // { id, title, intro, mode, stops:[id] }
 
 /* ---------- Demo sponsor offers (prototype illustration) ---------- */
 const DEMO_OFFERS = {
@@ -455,8 +464,8 @@ function routeThumb(seed=0){
 }
 
 const typeLabel = e => t('type_' + typeOf(e));
-const tourName = key => t('tour_' + key + '_name');
-const tourSub = key => t('tour_' + key + '_sub');
+const tourName = key => (key === 'userroute' && USER_ROUTE) ? USER_ROUTE.title : t('tour_' + key + '_name');
+const tourSub  = key => (key === 'userroute' && USER_ROUTE) ? (USER_ROUTE.intro || '') : t('tour_' + key + '_sub');
 function stopThumb(e, badge){
   const img = imgUrl(e), icon = iconOf(e);
   if (!img) return `<span class="stop-thumb ph">${icon}${badge||''}</span>`;
@@ -531,7 +540,11 @@ async function init() {
   }
 
   // Landningssida vid första besöket: välj/sök stad innan appen visas.
-  if (!localStorage.getItem(LANDING_KEY)) openLanding();
+  // Delad ruttlänk (?rutt=<id>) öppnar rutten direkt — före landningsvyn, så den
+  // som klickat på en kompis länk inte först tvingas välja stad.
+  const sharedRoute = routeInUrl();
+  if (sharedRoute) { localStorage.setItem(LANDING_KEY,'1'); openRoute(sharedRoute); }
+  else if (!localStorage.getItem(LANDING_KEY)) openLanding();
 
   track('app_open', { lang });
 }
@@ -897,6 +910,11 @@ function renderOtherCities(){
 
 function orderedTourEntries(tourKey){
   const t = TOURS[tourKey];
+  // Användarrutt: ordningen är den som ruttmakaren valde, inte någon sortering.
+  if (t.user){
+    if (!USER_ROUTE) return [];
+    return USER_ROUTE.stops.map(id => DATA.find(e => e.id === id)).filter(Boolean);
+  }
   // Generisk centrumslinga: använd den förberäknade, redan ordnade id-listan för
   // den AKTIVA staden (annars skulle DATA.filter(test) blanda flera städer).
   if (t.generic){
@@ -1047,7 +1065,9 @@ function buildTours(){
   const wrap = $('#tours');
   const cityCount = ENTRIES.filter(inCity).length;
   // Bara turer som har stopp i den valda staden
-  const cityTours = Object.entries(TOURS).filter(([k,tr])=> DATA.filter(tr.test).some(inCity));
+  const cityTours = Object.entries(TOURS)
+    .filter(([k,tr])=> k !== 'userroute' || activeTour === 'userroute')   // rutten visas bara medan man går den
+    .filter(([k,tr])=> DATA.filter(tr.test).some(inCity));
   const chips = [['all', `${t('tours_all')} · ${activeCity}`, nStops(cityCount)]]
     .concat(cityTours.map(([k,tr])=>[k, tourName(k), nStops(DATA.filter(tr.test).filter(inCity).length)]));
   wrap.innerHTML = chips.map(([k,name,sub])=>
@@ -1990,7 +2010,8 @@ function switchTab(id){
 function renderLeder(){
   const st=stamps();
   // Bara leder som har stopp i den valda staden
-  const keys = Object.keys(TOURS).filter(key=> DATA.filter(TOURS[key].test).some(inCity));
+  const keys = Object.keys(TOURS).filter(key=> key !== 'userroute')
+    .filter(key=> DATA.filter(TOURS[key].test).some(inCity));
   const cards = keys.map((key,i)=>{
     const list=orderedTourEntries(key).filter(inCity);
     const done=list.filter(e=>st.has(e.id)).length;
@@ -2003,11 +2024,27 @@ function renderLeder(){
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_routes')}</h2><p>${t('routes_sub')} · ${activeCity}</p></div>`
     + (cards || `<div class="screen-empty">🚶<br>${(lang==='en'?'No guided routes in ':'Inga färdiga leder i ')+activeCity+(lang==='en'?' yet — explore freely on the map!':' än — utforska fritt på kartan!')}</div>`);
   $('#screen').querySelectorAll('.led-card').forEach(c=> c.onclick=()=> startLed(c.dataset.led));
+  // Egna och andras rutter — under de kurerade lederna.
+  mountRoutes($('#screen'));
   // Upptäckbar ingång till Stadsutmaningen. Laddas asynkront — fäst på det
   // #screen som gällde när vyn ritades, så en snabb flikväxling inte hamnar fel.
   const screenEl = $('#screen');
   challengesMod().then(m => { if ($('#screen') === screenEl && activeTab === 'routes') m.mountChallengeCTA(screenEl); });
 }
+// Kör en användarskapad rutt (routes.js) som en tur: sätt USER_ROUTE, byt till
+// kartan och rita den gatuföljande leden. Samma väg som de kurerade lederna, så
+// "till nästa plats", incheckningar och quest-läge fungerar oförändrat.
+function startUserRoute(route){
+  USER_ROUTE = { id: route.id, title: route.title, intro: route.intro || '', mode: route.mode, stops: route.stops };
+  activeTour = 'userroute';
+  switchTab('home');
+  buildTours();
+  renderMarkers();
+  navigateToNext();
+  toast((lang==='en' ? 'Route started: ' : 'Rutten är igång: ') + route.title);
+  track('route_start', { id: route.id, mode: route.mode });
+}
+
 function startLed(key){
   activeTour=key;
   $('#tours').querySelectorAll('.tour-chip').forEach(x=>x.classList.toggle('active', x.dataset.tour===key));
@@ -2603,6 +2640,8 @@ function updateSpokBanner(){
 function wireUi(){
   $('#sheet-close').onclick = ()=>{ stopSpeaking(); $('#sheet').setAttribute('aria-hidden','true'); };
   $('#tour-close').onclick = ()=> closePanel('#tour-panel');
+  const rbC=$('#rb-close'); if (rbC) rbC.onclick = ()=> closePanel('#route-builder');
+  const rvC=$('#rv-close'); if (rvC) rvC.onclick = ()=> closePanel('#route-view');
   $('#progress-close').onclick = ()=> closePanel('#progress-panel');
   $('#progress-btn').onclick = ()=> switchTab('profile');
   $('#lang-switch')?.querySelectorAll('.flag-btn').forEach(b=>{
@@ -2653,6 +2692,14 @@ function setupAuthTips(){
     get map(){ return map; }, get lang(){ return lang; },
     get citySlug(){ return citySlug(activeCity); },   // community-flödet följer vald stad
     get cityName(){ return activeCity; },
+    openPanel, closePanel, startUserRoute,
+    // En delad rutt kan ligga i en annan stad än den man tittar på.
+    ensureCity: async (slug) => {
+      const c = CITY_INDEX.find(x => x.slug === slug);
+      if (!c) return;
+      if (c.name !== activeCity) await setActiveCity(c.name); else await loadCity(c.name);
+    },
+    onRoutesChanged(){ if (activeTab === 'routes') renderLeder(); },
     CAT_LABEL, t, toast, hasCoords,
     openSheet, optimizeImage,
     markFocus, restoreFocus,
@@ -2663,7 +2710,7 @@ function setupAuthTips(){
       if (activeTab==='profile') renderProfil();
     },
   };
-  _adminCtx = c; initInstall(c); initComments(c);
+  _adminCtx = c; initInstall(c); initComments(c); initRoutes(c);
   initAuth(c).then(()=> initTips(c));
 }
 
