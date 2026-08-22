@@ -412,7 +412,26 @@ function generate(){
   showGenerated(challenge);
 }
 
-function showGenerated(challenge){
+// qrcode-biblioteket (14 kB, UMD → window.StrosaQR) behövs bara här, när en
+// utmaning delas. Låg tidigare som <script defer> i karta.html och laddades av
+// varje besökare. Injiceras en gång, på begäran.
+let _qrPromise = null;
+function ensureQR(){
+  if (window.StrosaQR) return Promise.resolve(window.StrosaQR);
+  if (!_qrPromise){
+    _qrPromise = new Promise(resolve => {
+      const el = document.createElement('script');
+      el.src = 'vendor/qrcode.js'; el.async = true;
+      el.onload = () => resolve(window.StrosaQR || null);
+      el.onerror = () => { _qrPromise = null; resolve(null); };
+      document.head.appendChild(el);
+    });
+  }
+  return _qrPromise;
+}
+
+async function showGenerated(challenge){
+  await ensureQR();
   const link = baseUrl() + '#challenge=' + enc(challenge);
   const size = link.length;
   // Storleksvarning för QR
@@ -421,7 +440,7 @@ function showGenerated(challenge){
   else if (size > 1200){ meter = 'warn'; meterTxt = t('ch_qr_warn'); }
 
   let qrSvg = '';
-  try { qrSvg = (self.StrosaQR || window.StrosaQR).svg(link, { scale:5, ecc:'M', dark:'#2F2A20', light:'#FFFDF7' }); }
+  try { qrSvg = window.StrosaQR.svg(link, { scale:5, ecc:'M', dark:'#2F2A20', light:'#FFFDF7' }); }
   catch(e){ qrSvg = `<p class="ch-empty">${t('ch_qr_fail')}</p>`; }
 
   $('#cb-title').textContent = challenge.title;

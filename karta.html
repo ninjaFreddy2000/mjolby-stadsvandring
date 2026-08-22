@@ -263,9 +263,10 @@
   <!-- defer: laddas parallellt under HTML-parse, exekveras i dokumentordning före app.js-modulen
        (som också är deferred) → L/QR finns när app.js kör, men app-start fördröjs ej. -->
   <script src="vendor/leaflet/leaflet.js" defer></script>
-  <script src="vendor/qrcode.js" defer></script>
-  <!-- supabase-js vendor:ad lokalt (UMD → window.supabase). Inga tredjeparts-CDN i runtime. -->
-  <script src="vendor/supabase.js" defer></script>
+  <!-- supabase-js (199 kB) och qrcode (14 kB) laddas INTE här. Biblioteken är
+       vendor:ade lokalt men hämtas på begäran: supabase av config.js vid första
+       inloggning/community-anrop, qrcode av challenges.js när en utmaning delas.
+       Inga tredjeparts-CDN i runtime — CSP:n håller script-src 'self'. -->
   <script src="app.js" type="module"></script>
 </body>
 </html>

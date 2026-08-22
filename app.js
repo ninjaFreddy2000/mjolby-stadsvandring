@@ -509,7 +509,11 @@ async function init() {
   updateStampBadge();
   setupTeller();
   setupChallenges();
-  setupAuthTips();
+  // Konton + community-tips drar in supabase-biblioteket (199 kB). Inget av det
+  // behövs för att kartan ska bli användbar, så det får vänta tills webbläsaren
+  // är ledig — annars konkurrerar hämtningen med kartrutor och nålar.
+  const idle = window.requestIdleCallback || (fn => setTimeout(fn, 800));
+  idle(() => setupAuthTips(), { timeout: 3000 });
   setupInstallPrompt();
   setupSpokBanner();
   setupConnectivity();

@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v84';
+const CACHE = 'mjolby-stadsvandring-v85';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -16,7 +16,9 @@ const SHELL = [
   './events.json', './config.js', './auth.js', './tips.js', './ghosts.js', './axiom.js', './install.js',
   // challenges.js och admin.js laddas dynamiskt först när de behövs — de ligger
   // därför inte i shell-cachen utan hamnar i den när de faktiskt hämtas.
-  './vendor/qrcode.js', './vendor/supabase.js', './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css',
+  // vendor/supabase.js (199 kB) och vendor/qrcode.js hämtas på begäran och
+  // ligger därför inte i shell-cachen.
+  './vendor/leaflet/leaflet.js', './vendor/leaflet/leaflet.css',
   './vendor/leaflet/images/marker-icon.png', './vendor/leaflet/images/marker-icon-2x.png',
   './vendor/leaflet/images/marker-shadow.png', './vendor/leaflet/images/layers.png', './vendor/leaflet/images/layers-2x.png',
   './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './images/w320/skanska-lasse.webp', './images/w1200/header.webp',

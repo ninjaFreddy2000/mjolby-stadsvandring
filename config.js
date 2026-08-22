@@ -41,28 +41,52 @@ export const AXIOM_DATASET = _ov('cfg_axiom_dataset') || 'stadsvandring';   // d
 // dataset — använd ett separat dataset och rotera vid behov. Se docs/axiom-setup.md.
 export const AXIOM_TOKEN = _ov('cfg_axiom_token') || '';   // ← t.ex. 'xaat-xxxxxxxx-...'
 
-let _clientPromise = null;
-// Använder @supabase/supabase-js som är vendor:ad lokalt (vendor/supabase.js, UMD →
-// window.supabase) — ingen tredjeparts-CDN i runtime, så CSP:n kan hålla script-src 'self'
-// och inloggning fungerar även om esm.sh/CDN ligger nere. Returnerar en singleton-klient,
-// eller null om projektet inte är konfigurerat (eller biblioteket inte laddats).
+let _clientPromise = null, _libPromise = null;
+
+// Laddar vendor/supabase.js (UMD → window.supabase) på begäran. Biblioteket är
+// 199 kB — den enskilt största posten i appen — och behövs bara för inloggning
+// och community-innehåll. Tidigare låg det som <script defer> i karta.html och
+// laddades av varje besökare innan kartan var klar. Vendor:at lokalt, så CSP:n
+// kan hålla script-src 'self' och inloggning fungerar även om ett CDN är nere.
+function loadSupabaseLib() {
+  if (typeof window === 'undefined') return Promise.resolve(null);
+  if (window.supabase && typeof window.supabase.createClient === 'function') {
+    return Promise.resolve(window.supabase);
+  }
+  if (!_libPromise) {
+    _libPromise = new Promise((resolve) => {
+      const el = document.createElement('script');
+      el.src = 'vendor/supabase.js';
+      el.async = true;
+      el.onload = () => resolve(window.supabase || null);
+      el.onerror = () => { _libPromise = null; resolve(null); };   // låt nästa anrop försöka igen
+      document.head.appendChild(el);
+    });
+  }
+  return _libPromise;
+}
+
+// Returnerar en singleton-klient, eller null om projektet inte är konfigurerat
+// (eller biblioteket inte gick att ladda).
 export function getSupabase() {
   if (!isConfigured()) return Promise.resolve(null);
   if (!_clientPromise) {
-    const lib = (typeof window !== 'undefined') ? window.supabase : null;
-    if (!lib || typeof lib.createClient !== 'function') {
-      console.error('Supabase-biblioteket (vendor/supabase.js) laddades inte.');
-      return Promise.resolve(null);   // försök igen vid nästa anrop
-    }
-    try {
-      const client = lib.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
-      });
-      _clientPromise = Promise.resolve(client);
-    } catch (err) {
-      console.error('Kunde inte skapa Supabase-klient:', err);
-      return Promise.resolve(null);
-    }
+    _clientPromise = loadSupabaseLib().then((lib) => {
+      if (!lib || typeof lib.createClient !== 'function') {
+        console.error('Supabase-biblioteket (vendor/supabase.js) kunde inte laddas.');
+        _clientPromise = null;          // försök igen vid nästa anrop
+        return null;
+      }
+      try {
+        return lib.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+          auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
+        });
+      } catch (err) {
+        console.error('Kunde inte skapa Supabase-klient:', err);
+        _clientPromise = null;
+        return null;
+      }
+    });
   }
   return _clientPromise;
 }
