@@ -21,8 +21,6 @@ const L = {
     h_activity: '📊 Aktivitet', a_note: 'Anonym förstaparts-data — inga cookies, ingen PII.',
     a_opens: 'App-öppningar', a_tours: 'Turstarter', a_checkins: 'Incheckningar',
     a_topPlaces: 'Mest öppnade platser', a_byCity: 'Per stad', a_none: 'Ingen data än.',
-    h_customers: '💳 Kunder', c_note: 'Betalande konton — nivå och e-post. Övrig data är anonym.',
-    c_total: 'Kunder totalt', c_stadsjakt: 'Stadsjakten', c_stad: 'Enstaka städer', c_none: 'Inga kunder än.',
     h_partner: '🤝 Partner-ansökningar', p_pending: 'väntar', p_none: 'Inga ansökningar än.',
     p_approve: '✅ Godkänn', p_reject: '⛔ Avslå', p_orgPrompt: 'Företagsnamn (partner_org):',
     t_aiBtn: '✨ Polera med AI', t_aiWorking: 'AI polerar…', t_aiDone: 'AI-polerat — granska och publicera.',
@@ -48,8 +46,6 @@ const L = {
     h_activity: '📊 Activity', a_note: 'Anonymous first-party data — no cookies, no PII.',
     a_opens: 'App opens', a_tours: 'Tour starts', a_checkins: 'Check-ins',
     a_topPlaces: 'Most opened places', a_byCity: 'By city', a_none: 'No data yet.',
-    h_customers: '💳 Customers', c_note: 'Paying accounts — level and email. Everything else is anonymous.',
-    c_total: 'Total customers', c_stadsjakt: 'Stadsjakten', c_stad: 'Single towns', c_none: 'No customers yet.',
     h_partner: '🤝 Partner applications', p_pending: 'pending', p_none: 'No applications yet.',
     p_approve: '✅ Approve', p_reject: '⛔ Reject', p_orgPrompt: 'Organisation name (partner_org):',
     t_aiBtn: '✨ Polish with AI', t_aiWorking: 'AI polishing…', t_aiDone: 'AI-polished — review and publish.',
@@ -112,18 +108,13 @@ export async function openAdminDashboard() {
       supa.from('tips').select('*')
         .eq('city', APP_CITY).order('created_at', { ascending: false }).limit(500),
     ]);
-    // Kunder (via admin-RPC:er). Feltoleranta: om billing-migrationen ännu inte
-    // är deployad returnerar RPC:erna fel → vi visar bara sektionen tom, dashboarden
-    // kraschar inte.
-    const [custRes, custCntRes, partAppRes, fbRes, leadRes] = await Promise.all([
-      supa.rpc('admin_customers').then(r => r, () => ({ data: null })),
-      supa.rpc('admin_customer_count').then(r => r, () => ({ data: null })),
+    // Admin-RPC:er. Feltoleranta: om en migration ännu inte är deployad returnerar
+    // RPC:n fel → sektionen visas tom, dashboarden kraschar inte.
+    const [partAppRes, fbRes, leadRes] = await Promise.all([
       supa.rpc('admin_partner_applications').then(r => r, () => ({ data: null })),
       supa.rpc('admin_feedback').then(r => r, () => ({ data: null })),
       supa.rpc('admin_leads').then(r => r, () => ({ data: null })),
     ]);
-    const customers = (custRes && custRes.data) || [];
-    const custCount = (custCntRes && custCntRes.data && custCntRes.data[0]) || { stadsjakt: 0, stad: 0, total: 0 };
     const partnerApps = (partAppRes && partAppRes.data) || [];
     const feedback = (fbRes && fbRes.data) || [];
     const leads = (leadRes && leadRes.data) || [];
@@ -236,18 +227,6 @@ export async function openAdminDashboard() {
       <ul class="admin-list">${liNum(topPlaces, ([id, c]) => `<li><span>${esc(nameOf(id))}</span><b>${c}</b></li>`)}</ul>
       <h5 class="adm-h5">${tx('a_byCity')}</h5>
       <ul class="admin-list">${liNum(byCity, ([c, v]) => `<li><span>${esc(c)}</span><b>${v}</b></li>`)}</ul>
-
-      <h4 class="cb-h">${tx('h_customers')}</h4>
-      <p class="fb-sub">${tx('c_note')}</p>
-      <div class="adm-pills">
-        <span class="adm-pill ok">${custCount.total || 0} ${tx('c_total')}</span>
-        <span class="adm-pill">🗝️ ${custCount.stadsjakt || 0} ${tx('c_stadsjakt')}</span>
-        <span class="adm-pill">🎫 ${custCount.stad || 0} ${tx('c_stad')}</span>
-      </div>
-      <ul class="admin-list">${customers.length ? customers.map(c => {
-        const lvl = c.level === 'stadsjakt' ? '🗝️ Stadsjakten' : `🎫 ${c.cities || 1} ${en() ? 'town(s)' : 'stad'}`;
-        return `<li><span>${esc(c.email)}</span><b>${lvl}</b></li>`;
-      }).join('') : `<li class="ch-empty">${tx('c_none')}</li>`}</ul>
 
       <h4 class="cb-h">${tx('h_partner')}</h4>
       <div class="adm-tips" id="adm-partner">

@@ -23,6 +23,10 @@ export const SHARE_URL = 'https://stadsvandring.io/karta';
 
 export const isConfigured = () => !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+// Bas-URL för Supabase Edge Functions (t.ex. enhance-content). Ligger på samma
+// Supabase-host (/functions/v1/…) och är redan tillåten av CSP:ns connect-src.
+export const FUNCTIONS_BASE = SUPABASE_URL ? SUPABASE_URL.replace(/\/$/, '') + '/functions/v1' : '';
+
 // ── Axiom (observability / loggning) ─────────────────────────────────────────
 // Speglar anonyma händelser + JS-fel till Axiom (se axiom.js). TOMT = AV; ingen
 // loggning sker förrän en ingest-token är satt. Två sätt att aktivera:
@@ -36,36 +40,6 @@ export const AXIOM_DATASET = _ov('cfg_axiom_dataset') || 'stadsvandring';   // d
 // Tomt = av (inget skickas). Committad token är PUBLIK men bara SKRIV till ovan
 // dataset — använd ett separat dataset och rotera vid behov. Se docs/axiom-setup.md.
 export const AXIOM_TOKEN = _ov('cfg_axiom_token') || '';   // ← t.ex. 'xaat-xxxxxxxx-...'
-
-// ── Betalning (Stripe via Supabase Edge Functions) ───────────────────────────
-// Edge functions bor på samma Supabase-host (/functions/v1/...), redan tillåtet
-// av CSP:ns connect-src https://*.supabase.co. Ingen Stripe.js i sidan — vi
-// redirectar till Stripes hostade checkout, så CSP kan hålla script-src 'self'.
-export const FUNCTIONS_BASE = SUPABASE_URL ? SUPABASE_URL.replace(/\/$/, '') + '/functions/v1' : '';
-
-// Priser (visning). Faktiskt belopp sätts i Stripe (lookup keys stadsjakt_monthly
-// / stadsvandring_city). Håll i synk med Stripe-priserna.
-export const PRICES = {
-  city:      { amount: 19, currency: 'kr', period: null,    label_sv: '19 kr',        label_en: '19 kr' },
-  stadsjakt: { amount: 49, currency: 'kr', period: 'mnd',   label_sv: '49 kr/mån',    label_en: '49 kr/mo' },
-};
-
-// Slås på när Stripe-produkterna är skapade och edge-functions deployade.
-// Tills dess visar appen "kommer snart" istället för en trasig köp-knapp.
-export const BILLING_ENABLED = (() => { try { return localStorage.getItem('cfg_billing') === '1'; } catch (e) { return false; } })();
-
-// ── Lätt paywall via Stripe Payment Links (utan edge-function-backend) ────────
-// Gate:ar de guidade vandringarna. Köp-knappen skickar till en hostad Stripe-
-// länk (riktig betalning → intäkt). Upplåsningen är MJUK: sker via localStorage
-// när användaren kommer tillbaka via länkens success-URL (?unlocked=1), med en
-// "har du redan betalat?"-fallback. Konverterings-gate, inte kopieringsskydd.
-// När den riktiga Checkout-backenden (create-checkout + webhook + entitlements)
-// är deployad: sätt PAYWALL_LINKS=false, så tar BILLING_ENABLED-flödet över.
-export const PAYWALL_LINKS = true;
-export const PAYMENT_LINKS = {
-  stadsjakt: 'https://buy.stripe.com/9B628q3TOe8yeeS3qj08g00',  // Stadsjakten (alla städer)
-  city:      'https://buy.stripe.com/4gM3cu61W1lM0o23qj08g01',  // Stadsvandring (en stad)
-};
 
 let _clientPromise = null;
 // Använder @supabase/supabase-js som är vendor:ad lokalt (vendor/supabase.js, UMD →
