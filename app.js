@@ -1299,7 +1299,7 @@ function openSheet(id){
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
       ${timelineHtml(id, e)}
-      ${tipsActive() ? stopBlockHtml(id) : contribBlock(id)}
+      ${tipsActive() ? stopBlockHtml(id) : ''}
       ${hasCoords(e)
         ? `<button class="checkin ${visited?'done':''}" id="checkin-btn">
              ${visited?t('checkin_done'):t('checkin')}
@@ -1344,8 +1344,6 @@ function openSheet(id){
   if (tipsActive()) {
     wireStopBlock($('#sheet-inner'), id);
   } else {
-    const ca = $('#sheet-inner [data-contrib]');
-    if (ca) ca.onclick = ()=> openContribute(ca.dataset.contrib);
   }
 
   // En vy åt gången: stäng alla andra fönster innan stoppet visas (sömlöst, inga staplade fönster)
@@ -2214,19 +2212,12 @@ function openFeedback(){
   };
 }
 
-/* ---------- Bidrag (användarinnehåll: foto + text) ---------- */
-const CONTRIB_KEY = 'mjolby_contribs_v1';
-const escapeHtml = s => String(s==null?'':s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-function contribs(){ try { return JSON.parse(localStorage.getItem(CONTRIB_KEY) || '[]'); } catch(e){ return []; } }
-function saveContribs(a){ try { localStorage.setItem(CONTRIB_KEY, JSON.stringify(a)); } catch(e){ toast(lang==='en'?'Storage is full':'Minnet är fullt'); } }
-function addContrib(o){
-  const a = contribs();
-  a.push({ id:'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6), status:'pending', mine:true, ...o });
-  saveContribs(a);
-}
-function contribsForStop(id){ return contribs().filter(c=> c.stopId===id); }
-function myContribs(){ return contribs().filter(c=> c.mine); }
-function setContribStatus(cid, status){ const a=contribs(); const c=a.find(x=>x.id===cid); if(c){ c.status=status; saveContribs(a); } }
+/* ---------- Bildoptimering för inskickade foton ---------- */
+// Det lokala bidrags- och granskningsflödet (localStorage) är borttaget. Det var
+// en demo från innan backenden fanns, och nåddes bara när Supabase saknade
+// konfiguration — men då lovade det något det inte kunde hålla: "bidrag" och
+// "granskning" som aldrig lämnade webbläsaren. Riktiga bidrag och peer review
+// ligger i tips.js mot Supabase.
 
 // Optimerar och "förskönar" en bild i webbläsaren: nedskalning + lätt förbättring
 // (kontrast/mättnad/ljus) + JPEG-komprimering mot en storleksgräns → snyggare,
@@ -2256,96 +2247,6 @@ function optimizeImage(file, cb){
   };
   img.onerror = ()=>{ URL.revokeObjectURL(url); toast(lang==='en'?'Could not read the image':'Kunde inte läsa bilden'); };
   img.src = url;
-}
-
-// Sektion i detaljvyn: publicerade bidrag (+ egna väntande) och en Bidra-knapp
-function contribBlock(id){
-  const visible = contribsForStop(id).filter(c=> c.status==='approved' || (c.mine && c.status==='pending'));
-  const items = visible.map(c=>{
-    const pend = c.status==='pending';
-    const meta = [escapeHtml(c.credit), escapeHtml(c.year)].filter(Boolean).join(' · ');
-    return `<div class="contrib-item${pend?' pending':''}">
-      ${c.thumb?`<img class="contrib-img" src="${c.thumb}" alt="" loading="lazy">`:''}
-      <div class="contrib-body">
-        ${c.text?`<p>${escapeHtml(c.text)}</p>`:''}
-        <small>${meta}${pend?`${meta?' · ':''}<em>${t('contrib_pending')}</em>`:''}</small>
-      </div></div>`;
-  }).join('');
-  return `<div class="contrib-section">
-    ${visible.length?`<div class="contrib-h">🧺 ${t('contrib_section')}</div>${items}`:''}
-    <button class="contrib-add" data-contrib="${id}">➕ ${t('contribute')}</button>
-  </div>`;
-}
-
-function openContribute(stopId){
-  const e = DATA.find(x=>x.id===stopId); if (!e) return;
-  const card = $('#contrib-card');
-  let pending = null;
-  const fileInput = document.createElement('input');
-  fileInput.type='file'; fileInput.accept='image/*';
-  card.innerHTML = `
-    <button class="fb-x" id="contrib-x" aria-label="Stäng">&times;</button>
-    <h3>${t('contribute_to')} ${escapeHtml(e.name)}</h3>
-    <p class="fb-sub">${t('contrib_sub')}</p>
-    <div class="contrib-photo-area" id="contrib-photo-area"></div>
-    <button class="fb-cta" id="contrib-photo-btn" type="button">${t('contrib_addphoto')}</button>
-    <textarea class="fb-text" id="contrib-text" rows="4" placeholder="${t('contrib_text_ph')}" aria-label="${t('contrib_text_ph')}"></textarea>
-    <input class="fb-email" id="contrib-year" placeholder="${t('contrib_year')}" aria-label="${t('contrib_year')}">
-    <input class="fb-email" id="contrib-credit" placeholder="${t('contrib_credit')}" aria-label="${t('contrib_credit')}">
-    <button class="cta" id="contrib-send" style="margin:4px 0 0">${t('contrib_send')}</button>`;
-  $('#contribute').setAttribute('aria-hidden','false');
-  lastFocus = document.activeElement;
-  setTimeout(()=>{ const x=$('#contrib-x'); if(x) x.focus(); }, 30);
-  const close = ()=>{ $('#contribute').setAttribute('aria-hidden','true'); restoreFocus(); };
-  $('#contrib-x').onclick = close;
-  $('#contrib-photo-btn').onclick = ()=> fileInput.click();
-  fileInput.onchange = ()=>{
-    const f = fileInput.files && fileInput.files[0]; if(!f) return;
-    $('#contrib-photo-area').innerHTML = `<div class="contrib-optimizing">${t('optimizing')}</div>`;
-    optimizeImage(f, opt=>{
-      pending = opt;
-      $('#contrib-photo-area').innerHTML = `<div class="contrib-preview"><img src="${opt.thumb}" alt=""><span class="contrib-kb">~${opt.kb} kB</span></div>`;
-      $('#contrib-photo-btn').textContent = t('contrib_changephoto');
-    });
-  };
-  $('#contrib-send').onclick = ()=>{
-    const text = $('#contrib-text').value.trim();
-    if (!text && !pending){ toast(t('contrib_need')); return; }
-    addContrib({ stopId, text, photo: pending?pending.full:null, thumb: pending?pending.thumb:null,
-      year: $('#contrib-year').value.trim(), credit: $('#contrib-credit').value.trim(), lang });
-    card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">💛</div><p>${t('contrib_thanks')}</p>
-      <button class="cta" id="contrib-done">${lang==='en'?'Close':'Stäng'}</button></div>`;
-    $('#contrib-done').onclick = ()=>{ close(); if ($('#sheet').getAttribute('aria-hidden')==='false') openSheet(stopId); };
-  };
-}
-
-// Granska-demo (riktiga roller/godkännande bor i cell-backenden, Spår B)
-function openReview(){
-  const card = $('#review-card');
-  const render = ()=>{
-    const pending = contribs().filter(c=> c.status==='pending');
-    const items = pending.map(c=>{
-      const e = DATA.find(x=>x.id===c.stopId);
-      const meta = [escapeHtml(c.credit), escapeHtml(c.year)].filter(Boolean).join(' · ');
-      return `<div class="review-item">
-        ${c.thumb?`<img class="contrib-img" src="${c.thumb}" alt="">`:''}
-        <div class="contrib-body"><b>${e?escapeHtml(e.name):''}</b>${c.text?`<p>${escapeHtml(c.text)}</p>`:''}<small>${meta}</small></div>
-        <div class="review-actions">
-          <button class="rev-ok" data-ok="${c.id}">${t('approve')}</button>
-          <button class="rev-no" data-no="${c.id}">${t('reject')}</button>
-        </div></div>`;
-    }).join('');
-    card.innerHTML = `<button class="fb-x" id="review-x" aria-label="Stäng">&times;</button>
-      <h3>${t('review')}</h3><p class="fb-sub">${t('review_sub')}</p>
-      ${items || `<div class="screen-empty">${t('review_empty')}</div>`}`;
-    $('#review-x').onclick = ()=>{ $('#review').setAttribute('aria-hidden','true'); restoreFocus(); };
-    card.querySelectorAll('[data-ok]').forEach(b=> b.onclick=()=>{ setContribStatus(b.dataset.ok,'approved'); toast('✓ '+t('approve')); render(); });
-    card.querySelectorAll('[data-no]').forEach(b=> b.onclick=()=>{ setContribStatus(b.dataset.no,'rejected'); render(); });
-  };
-  $('#review').setAttribute('aria-hidden','false');
-  lastFocus = document.activeElement;
-  render();
-  setTimeout(()=>{ const x=$('#review-x'); if(x) x.focus(); }, 30);
 }
 
 async function renderSaved(){
@@ -2403,7 +2304,7 @@ function checkNewBadges(){
 
 function renderProfil(){
   const on = tipsActive();
-  const set=stamps(), sv=saved(), mine=myContribs();
+  const set=stamps(), sv=saved();
   // Statistiken gäller den valda staden
   const cityEnt = ENTRIES.filter(inCity);
   const total = cityEnt.length;
@@ -2416,15 +2317,7 @@ function renderProfil(){
       <span class="ach-ic">${b.icon}</span><b>${badgeName(b)}</b>
       <small>${b.earned ? '✓' : `${Math.min(b.cur,b.target)}/${b.target}`}</small>
     </div>`).join('');
-  // Den lokala "bidragsgivare"-demobrickan visas bara i offline-läget (utan backend);
-  // med riktiga konton ersätts den av kontokortet + nivå-systemet.
-  const badge = (!on && mine.length) ? `<div class="contributor-badge">
-      <span class="cb-medal">🎖️</span>
-      <div><b>${t('contributor_badge')}</b><small>${t('contributor_sub')}</small>
-        <span class="cb-count">${mine.length} ${t('my_contribs')}</span></div>
-    </div>` : '';
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_profile')}</h2><p>📍 ${activeCity}</p></div>
-    ${badge}
     <div class="prog-stat">
       <div class="prog-box"><b>${visitedHere}</b><small>${t('prof_visited')}</small></div>
       <div class="prog-box"><b>${pct}%</b><small>${t('prog_city')}</small></div>
@@ -2435,7 +2328,6 @@ function renderProfil(){
     <div class="ach-grid">${achGrid}</div>
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
-    ${on ? '' : `<button class="fb-cta" id="to-review" style="margin-top:18px">🧐 ${t('review')}</button>`}
     <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>
     <button class="fb-cta" id="install-prof">📲 ${t('install_app')}</button>
     ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">🛡️ ${t('admin_dashboard')}</button>` : ''}
@@ -2453,7 +2345,6 @@ function renderProfil(){
       <span class="hp-cross__ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 40 40" fill="none"><path d="M8 32V20a12 12 0 0 1 24 0v12c0 2.2-2.4 1.7-3.7.4-1.3 1.4-2.7 1.4-4 0-1.3 1.4-2.7 1.4-4 0-1.3 1.4-2.7 1.4-4 .1C12.3 33.7 8 34.2 8 32Z" fill="#fff"/><circle cx="15.5" cy="19" r="2" fill="#3b2f6e"/><circle cx="24.5" cy="19" r="2" fill="#3b2f6e"/></svg></span>
       <span class="hp-cross__txt"><b>${lang==='en'?'Want a scarier walk?':'Vill du ha en läskigare vandring?'}</b><small>${lang==='en'?'Ghost walks from Hauntedplaces →':'Spökvandringar från Hauntedplaces →'}</small></span>
     </a>`;
-  const tr=$('#to-review'); if (tr) tr.onclick = openReview;
   const pc=$('#prof-cities'); if (pc) pc.onclick = ()=> switchTab('cities');
   $('#screen').querySelectorAll('[data-soc]').forEach(b=> b.onclick=()=> toast(lang==='en'?'Coming soon on social media! 🌱':'Snart på sociala medier! 🌱'));
   $('#fb-prof').onclick = openFeedback;
