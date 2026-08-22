@@ -69,17 +69,23 @@ bidragsflöde (foto + text) som bara sparas i `localStorage`.
 
 ## Fas 4 — Egna rutter
 
-`challenges.js` (830 rader) har redan halva bygget: plocka stopp, generera en
-delbar länk + QR, spela, topplista. Den ska generaliseras från "stadsutmaning
-för arrangör" till **"min rutt"** för vem som helst.
+Byggdes som en **egen modul** (`routes.js`) i stället för att generalisera
+`challenges.js`. Den senare är ett arrangörsverktyg — poäng, uppgiftstyper,
+organisationsnamn — och att skala bort allt det hade lämnat mer kvar än det
+tagit bort. Rutterna ligger dessutom i databasen, inte i länken, så andras
+rutter går att upptäcka och inte bara tas emot.
 
-1. **`routes`-tabell i Supabase**: namn, stad, stopp i ordning, typ
-   (promenad / löprunda / cykel), publik eller privat, skapare.
-2. **Ruttbyggare**: välj stopp på kartan eller ur listan, dra för att ordna om,
-   se längd och tid. Löprunda = samma sak med annan tempoprofil.
-3. **Dela och utmana**: länk + QR, "vi går den här på lördag kl 10",
-   utmaningsläge med tid/poäng, resultat för alla som gått den.
-4. **Upptäck rutter**: andras publika rutter i staden, sorterat på populärast.
+1. ✅ **`routes` + `route_walks`** — namn, stad, stopp i ordning, färdsätt,
+   publik/privat, valfri starttid. `walk_count` räknar distinkta vandrare.
+   `commit fdf5746`
+2. ✅ **Ruttbyggare** med sökbar stopplista, omordning och löpande sträck- och
+   tidsuppskattning per färdsätt.
+3. ✅ **Dela och utmana** — delningslänk `?rutt=<id>` som öppnas utan konto,
+   starttiden följer med i texten, "Jag gick den" med valfri tid och topplista.
+4. ✅ **Upptäck rutter** — andras publika rutter i staden, under de kurerade
+   lederna på Leder-fliken.
+5. ⬜ Ruttbygge direkt från kartan (peka ut stoppen) i stället för via sökfältet.
+6. ⬜ QR-kod för en rutt (koden finns redan i `vendor/qrcode.js`).
 
 ## Fas 5 — Rebrand
 
