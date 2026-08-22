@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Luleå</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="65.671806" lon="21.931"><name>Sjukhuskyrkan, Sunderbyn</name><desc>kyrkolokal i Sunderby sjukhus</desc></wpt>
+  <wpt lat="65.6475" lon="21.99755556"><name>Stadsökyrkan</name><desc>kyrka i Luleå kommun, Sverige</desc></wpt>
+  <wpt lat="65.6457" lon="22.0282"><name>Nederluleå kyrka</name><desc>kyrkobyggnad i Gammelstads kyrkstad</desc></wpt>
+  <wpt lat="65.642067368313" lon="22.03760938341"><name>Petrikapellet</name><desc>gravkapell i Luleå kommun, Sverige</desc></wpt>
+  <wpt lat="65.643944" lon="22.040778"><name>Stillhetens kapell</name><desc>kapell i Gammelstaden</desc></wpt>
+  <wpt lat="65.61933333" lon="22.14919444"><name>Porsökyrkan</name><desc>kyrkobyggnad i Luleå kommun</desc></wpt>
+  <wpt lat="65.60390833" lon="22.11856667"><name>Mjölkuddskyrkan</name><desc>kyrkobyggnad i Luleå kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Luleå</name>
+    <rtept lat="65.671806" lon="21.931"><name>Sjukhuskyrkan, Sunderbyn</name></rtept>
+    <rtept lat="65.6475" lon="21.99755556"><name>Stadsökyrkan</name></rtept>
+    <rtept lat="65.6457" lon="22.0282"><name>Nederluleå kyrka</name></rtept>
+    <rtept lat="65.642067368313" lon="22.03760938341"><name>Petrikapellet</name></rtept>
+    <rtept lat="65.643944" lon="22.040778"><name>Stillhetens kapell</name></rtept>
+    <rtept lat="65.61933333" lon="22.14919444"><name>Porsökyrkan</name></rtept>
+    <rtept lat="65.60390833" lon="22.11856667"><name>Mjölkuddskyrkan</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Vaxholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.42875" lon="18.33405556"><name>Resarö kapell</name><desc>kyrkobyggnad i Vaxholms kommun</desc></wpt>
+  <wpt lat="59.406723" lon="18.332521"><name>Vaxholms gravkapell</name><desc>kapell i Vaxholms kommun</desc></wpt>
+  <wpt lat="59.4034" lon="18.34745"><name>Vaxholms kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Vaxholm, Sverige</desc></wpt>
+  <wpt lat="59.40527778" lon="18.35361111"><name>Kronuddens batteri</name><desc>militär installation i Vaxholms kommun</desc></wpt>
+  <wpt lat="59.40322935037845" lon="18.35922793066248"><name>Vaxholms kastell, Fästning/skans</name><desc>Vaxholms kastell, vars försvarshistoria börjar med en skans 1549–58 och som fick sitt nuvarande namn 1920.</desc></wpt>
+  <wpt lat="59.40611111" lon="18.36361111"><name>12:e batteriet på Rindö</name><desc>historiskt försvarsverk uppfördes för att komplettera Rindö redutt.</desc></wpt>
+  <wpt lat="59.40604479996348" lon="18.36718717377282"><name>Fästning/skans</name><desc>Ett befästningsverk från 1858–64 som ingick i försvaret av Vaxholmssunden.</desc></wpt>
+  <wpt lat="59.40979995571305" lon="18.366244922161375"><name>Fästning/skans</name><desc>En skans av jordvallar och terrasser på en holme vid Vaxholm, med en möjlig kanonställning.</desc></wpt>
+  <wpt lat="59.39916667" lon="18.39583333"><name>11:e batteriet, Rindö</name><desc>två bunkrar murade i gråsten</desc></wpt>
+  <wpt lat="59.39972222" lon="18.42583333"><name>Byviksfortet</name><desc>militär installation i Vaxholms kommun</desc></wpt>
+  <wpt lat="59.39777778" lon="18.32138889"><name>Pålsundsbatteriet</name><desc>militär installation i Vaxholms kommun</desc></wpt>
+  <wpt lat="59.35270833" lon="18.27793056"><name>Kummelnäs kapell</name><desc>kyrkobyggnad i Nacka kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Vaxholm</name>
+    <rtept lat="59.42875" lon="18.33405556"><name>Resarö kapell</name></rtept>
+    <rtept lat="59.406723" lon="18.332521"><name>Vaxholms gravkapell</name></rtept>
+    <rtept lat="59.4034" lon="18.34745"><name>Vaxholms kyrka</name></rtept>
+    <rtept lat="59.40527778" lon="18.35361111"><name>Kronuddens batteri</name></rtept>
+    <rtept lat="59.40322935037845" lon="18.35922793066248"><name>Vaxholms kastell, Fästning/skans</name></rtept>
+    <rtept lat="59.40611111" lon="18.36361111"><name>12:e batteriet på Rindö</name></rtept>
+    <rtept lat="59.40604479996348" lon="18.36718717377282"><name>Fästning/skans</name></rtept>
+    <rtept lat="59.40979995571305" lon="18.366244922161375"><name>Fästning/skans</name></rtept>
+    <rtept lat="59.39916667" lon="18.39583333"><name>11:e batteriet, Rindö</name></rtept>
+    <rtept lat="59.39972222" lon="18.42583333"><name>Byviksfortet</name></rtept>
+    <rtept lat="59.39777778" lon="18.32138889"><name>Pålsundsbatteriet</name></rtept>
+    <rtept lat="59.35270833" lon="18.27793056"><name>Kummelnäs kapell</name></rtept>
+  </rte>
+</gpx>

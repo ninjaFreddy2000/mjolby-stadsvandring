@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Falkenberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.90754419222939" lon="12.50489302343682"><name>Minnesmärke</name><desc>Ödekyrkogård och kyrkogrund efter Ny-Falkenbergs medeltida kyrka.</desc></wpt>
+  <wpt lat="56.90239605677462" lon="12.511405157606037"><name>Minnesmärke</name><desc>En minnessten i en brunnsanläggning hedrar G.A. Ehrengranat som anlade vägen 1861.</desc></wpt>
+  <wpt lat="56.90094979116727" lon="12.507374347492236"><name>Minnesmärke</name><desc>En sten hyllar Daniel Lundberg som 1880 planterade sandhed till skog.</desc></wpt>
+  <wpt lat="56.90303883399229" lon="12.495364489084588"><name>Minnesmärke</name><desc>Minnesmärken kring sägnen om Falkenbergshus och slottsherren Eskil Krak.</desc></wpt>
+  <wpt lat="56.90430758797249" lon="12.49168724432927"><name>Minnesmärke</name><desc>En metallplatta minner om att Lions Club skänkte grundplåten till stadens klockspel 1979.</desc></wpt>
+  <wpt lat="56.898973" lon="12.494723"><name>Rian designmuseum</name><desc>Falkenbergs designmuseum, inrymt i en spannmålsria från 1865 nedströms Tullbron.</desc></wpt>
+  <wpt lat="56.89050103600034" lon="12.493181138786403"><name>Minnesmärke</name><desc>En sten rest 1966 hedrar lärare och elever som band flygsanden genom plantering.</desc></wpt>
+  <rte><name>Konstrundan i Falkenberg</name>
+    <rtept lat="56.90754419222939" lon="12.50489302343682"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.90239605677462" lon="12.511405157606037"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.90094979116727" lon="12.507374347492236"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.90303883399229" lon="12.495364489084588"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.90430758797249" lon="12.49168724432927"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.898973" lon="12.494723"><name>Rian designmuseum</name></rtept>
+    <rtept lat="56.89050103600034" lon="12.493181138786403"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

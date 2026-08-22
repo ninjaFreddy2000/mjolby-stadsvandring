@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Luleå</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="65.63889620726118" lon="22.038386064845728"><name>Minnesmärke</name><desc>Ett minnesmärke vars uppgifter ännu inte har granskats.</desc></wpt>
+  <wpt lat="65.62092458463883" lon="22.065439415059387"><name>Minnesmärke</name><desc>En minnessten över Norrbottens fältjägarkår och regemente.</desc></wpt>
+  <wpt lat="65.61433333" lon="22.10094444"><name>The Opposite Sphere</name><desc>skulptur i Luleå</desc></wpt>
+  <rte><name>Konstrundan i Luleå</name>
+    <rtept lat="65.63889620726118" lon="22.038386064845728"><name>Minnesmärke</name></rtept>
+    <rtept lat="65.62092458463883" lon="22.065439415059387"><name>Minnesmärke</name></rtept>
+    <rtept lat="65.61433333" lon="22.10094444"><name>The Opposite Sphere</name></rtept>
+  </rte>
+</gpx>

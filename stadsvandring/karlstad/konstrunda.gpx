@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Karlstad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.40621" lon="13.58089"><name>Nobody puts Baby in a corner</name><desc>konstverk av Moa och Mikaela Krestesen</desc></wpt>
+  <wpt lat="59.401805555556" lon="13.605891666667"><name>Frödingstenen i Alster</name><desc>sten</desc></wpt>
+  <wpt lat="59.38295740435213" lon="13.527950042346706"><name>Minnesmärke</name><desc>En minnessten med kanonkula till minne av lantvärnsmän som avled 1808.</desc></wpt>
+  <wpt lat="59.38450609779794" lon="13.513090146332326"><name>Minnesmärke</name><desc>En 190 meter lång stenvalvsbro med minnesstenar från 1797.</desc></wpt>
+  <wpt lat="59.38103465628605" lon="13.511499693299896"><name>Minnesmärke</name><desc>Minnesmärke i Karlstad över Gustav Adolf Andersson, grundare av Karlstads Mekaniska Werkstad.</desc></wpt>
+  <wpt lat="59.38118054342963" lon="13.506526533518967"><name>Minnesmärke</name><desc>Minnesstenar över biskop Eklund och andra vid domkyrkan.</desc></wpt>
+  <wpt lat="59.38083333" lon="13.5025"><name>Fredsmonumentet i Karlstad</name><desc>skulptur på Stora torget i Karlstad av Ivar Johnsson</desc></wpt>
+  <wpt lat="59.380784426900824" lon="13.502399720898106"><name>Minnesmärke</name><desc>Fredsmonument i Karlstad rest till minne av den svensk-norska unionsupplösningen.</desc></wpt>
+  <wpt lat="59.38111111" lon="13.50183333"><name>Ferlin steppar</name><desc>Ferlin steppar är en skulptur i cortenstål vid Stora torget i Karlstad skapad av Thomas Qvarsebo.</desc></wpt>
+  <wpt lat="59.380277777778" lon="13.501944444444"><name>Gustaf Fröding</name><desc>staty av Herman Reijers</desc></wpt>
+  <wpt lat="59.37941372841453" lon="13.503822023865776"><name>Minnesmärke</name><desc>En minnestavla som vid besiktningen tillfälligt var nedtagen.</desc></wpt>
+  <wpt lat="59.38083333" lon="13.49916667"><name>Hertig Karl (staty)</name><desc>Hertig Karl är en staty i centrala Karlstad föreställande Karl IX.</desc></wpt>
+  <wpt lat="59.38138889" lon="13.49833333"><name>Vindarnas boning</name><desc>Vindarnas boning (finska: Tuulenpesä) är en fontänskulptur av den finländske konstnären Aimo Tukiainen som invigdes den 16 juni 1967 i Karlstad.</desc></wpt>
+  <wpt lat="59.38160052474366" lon="13.497768195158063"><name>Minnesmärke</name><desc>En bronsskulptur på marmorsockel till minne av finsk nybyggaranda.</desc></wpt>
+  <wpt lat="59.38472222" lon="13.49952778"><name>Och solen har sin gång</name><desc>en skulptur i granit av Leo Pettersson</desc></wpt>
+  <wpt lat="59.369722222222" lon="13.486388888889"><name>Under solen (skulptur)</name><desc>bronsskulptur av Klara Kristalova</desc></wpt>
+  <rte><name>Konstrundan i Karlstad</name>
+    <rtept lat="59.40621" lon="13.58089"><name>Nobody puts Baby in a corner</name></rtept>
+    <rtept lat="59.401805555556" lon="13.605891666667"><name>Frödingstenen i Alster</name></rtept>
+    <rtept lat="59.38295740435213" lon="13.527950042346706"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38450609779794" lon="13.513090146332326"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38103465628605" lon="13.511499693299896"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38118054342963" lon="13.506526533518967"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38083333" lon="13.5025"><name>Fredsmonumentet i Karlstad</name></rtept>
+    <rtept lat="59.380784426900824" lon="13.502399720898106"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38111111" lon="13.50183333"><name>Ferlin steppar</name></rtept>
+    <rtept lat="59.380277777778" lon="13.501944444444"><name>Gustaf Fröding</name></rtept>
+    <rtept lat="59.37941372841453" lon="13.503822023865776"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38083333" lon="13.49916667"><name>Hertig Karl (staty)</name></rtept>
+    <rtept lat="59.38138889" lon="13.49833333"><name>Vindarnas boning</name></rtept>
+    <rtept lat="59.38160052474366" lon="13.497768195158063"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38472222" lon="13.49952778"><name>Och solen har sin gång</name></rtept>
+    <rtept lat="59.369722222222" lon="13.486388888889"><name>Under solen (skulptur)</name></rtept>
+  </rte>
+</gpx>

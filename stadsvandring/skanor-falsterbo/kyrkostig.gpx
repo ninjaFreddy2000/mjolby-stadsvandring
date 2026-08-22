@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Skanör Falsterbo</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.41972222" lon="12.84972222"><name>Skanörs kyrka</name><desc>kyrkobyggnad i Vellinge kommun</desc></wpt>
+  <wpt lat="55.38973" lon="12.83826"><name>Falsterbo kyrka</name><desc>kyrkobyggnad i Vellinge kommun</desc></wpt>
+  <wpt lat="55.387276" lon="12.824041"><name>Danska kyrkan</name><desc>kyrka/kapell i Skåne (Falsterbo 6:1)</desc></wpt>
+  <rte><name>Kyrkostigen i Skanör Falsterbo</name>
+    <rtept lat="55.41972222" lon="12.84972222"><name>Skanörs kyrka</name></rtept>
+    <rtept lat="55.38973" lon="12.83826"><name>Falsterbo kyrka</name></rtept>
+    <rtept lat="55.387276" lon="12.824041"><name>Danska kyrkan</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Helsingborg — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Helsingborg till fots: 162 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 162 stopp och nedladdningsba…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/helsingborg">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Helsingborg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Helsingborg till fots: 162 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 162 stopp och nedladdningsba…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/helsingborg">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Helsingborg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Helsingborg till fots: 162 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 162 stopp och nedladdningsba…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"helsingborg","sourceSlug":"stadsvandring/helsingborg","centroid":{"lat":56.0804746789703,"lng":12.659190040479038},"stops":[{"name":"Hotell Schweitz och nuvarande Saga-biografen","lat":56.201287776458194,"lng":12.551474325449087},{"name":"Nya och gamla rådhuset","lat":56.045841023344195,"lng":12.6929116335034},{"name":"Utsikt från Parapeten","lat":56.042605586310295,"lng":12.685863272072995}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Helsingborg","description":"Upptäck Helsingborg till fots: 162 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/helsingborg","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Hotell Schweitz och nuvarande Saga-biografen","description":"Många tror att Schweitz är felstavat, men hotellet var döpt efter en person och inte landet så allt är i sin ordning.","geo":{"@type":"GeoCoordinates","latitude":56.201287776458194,"longitude":12.551474325449087}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Nya och gamla rådhuset","description":"Den lägre byggnaden var Helsingborgs rådhus på 1800talet.","geo":{"@type":"GeoCoordinates","latitude":56.045841023344195,"longitude":12.6929116335034}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Utsikt från Parapeten","description":"Färglagd vy över Helsingborg.","geo":{"@type":"GeoCoordinates","latitude":56.042605586310295,"longitude":12.685863272072995}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Storgatan med kanal, tidigt 1900-tal.","description":"Längs Storgatan växte vid sekelskiftet en lummig all som gästgivare Schweitz beskostat.","geo":{"@type":"GeoCoordinates","latitude":56.19954084863947,"longitude":12.5562295606612}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Storgatan med nuvarande cykelaffär, tidigt 1900-tal","description":"Cykelaffären i korsningen Storgatan/Långarödsvägen har varit butikslokal i drygt 150 år.","geo":{"@type":"GeoCoordinates","latitude":56.19956798511609,"longitude":12.55670220917635}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Bröderna Karlssons hörna tidigt 1900-tal, Storgatan/Allégatan","description":"Längs Storgatan låg tidigare kvarteret Trevnaden med en ståtlig affärsbyggnad på hörnet mot Gruvtorget där bröderna Karlsson drev järn- och speceriaffär kring…","geo":{"@type":"GeoCoordinates","latitude":56.19961134700723,"longitude":12.57531763636223}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Gruvtorget tidigt 1900-tal, till vänster Prins Carlsgatan","description":"Till vänster ser man Prins Carlsgatan.","geo":{"@type":"GeoCoordinates","latitude":56.19960878679471,"longitude":12.57586964641706}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Nedre Nytorgsgatan","description":"Kolorerat foto av hus på Nytorgsgatan.","geo":{"@type":"GeoCoordinates","latitude":56.03895396946452,"longitude":12.704777932136642}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Ånglok & staty","description":"Här stod Stenbocksstatyn mellan 1901 och 1959.","geo":{"@type":"GeoCoordinates","latitude":56.04635942788868,"longitude":12.692289521388037}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Torghandel","description":"På lördagar hölls torghandel runt Gruvtorget.","geo":{"@type":"GeoCoordinates","latitude":56.19905707607772,"longitude":12.57487780949686}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Storgatan ca 1910 med nuvarande Kakboden och dåvarande kanalen.","description":"Ett parti av Storgatan, eller Rydsvägen som den hette omkring 1910 då kortet togs.","geo":{"@type":"GeoCoordinates","latitude":56.20026904564767,"longitude":12.5702204877103}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Sundsttorget med Stattena-huset.","description":"Helt ensamt på Sundstorget stod Stattena-huset.","geo":{"@type":"GeoCoordinates","latitude":56.20105860895264,"longitude":12.55006972782462}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Nuvarande Bokhandeln, i bakgrunden syns Hultabo och skorstenarna på Höganäsbolaget.","description":"Till höger i bild syns Axel Olssons hus (nuvarande bokhandeln).","geo":{"@type":"GeoCoordinates","latitude":56.2003776857649,"longitude":12.553530127398401}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Tivolihuset och gruvkanalen","description":"Tivolihuset byggdes av Höganäsbolaget vid förra sekelskiftet för att arbetarna skulle få en samlingslokal att träffas och roa sig i.","geo":{"@type":"GeoCoordinates","latitude":56.20037376350511,"longitude":12.56838477323012}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Bussen till Helsingborg","description":"Bussen till Helsingborg gick länge längs Strandvägen via byarna längs kusten.","geo":{"@type":"GeoCoordinates","latitude":56.20105187529978,"longitude":12.55069681531918}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Specialkaffet","description":"Härmed får jag för den ärade allmänheten tillkännagifva att jag i morgon öppnar Kaffe-, Socker- och Th handel i N:o 27 Kullagatan .","geo":{"@type":"GeoCoordinates","latitude":56.048487209774045,"longitude":12.690573217365214}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Storgatan brukskyrkan","description":"Storgatan upp mot Gruvtorget.","geo":{"@type":"GeoCoordinates","latitude":56.19981685112684,"longitude":12.57233912294275}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Södergatan 22","description":"Första oktober varje år var förr den stora flyttdagen om hyresavtalet upphört.","geo":{"@type":"GeoCoordinates","latitude":56.0415681,"longitude":12.701270499999964}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Stadsbuss utanför Rådhuset","description":"Stadsbuss med gengasaggregat utanför Rådhuset.","geo":{"@type":"GeoCoordinates","latitude":56.04600208267426,"longitude":12.69205993002004}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Gamla Järnvägen 2","description":"Järnvägen över gamla Furutorpsgatan mot stationen.","geo":{"@type":"GeoCoordinates","latitude":56.036588,"longitude":12.701456}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Gengasdriven Taxi","description":"Taxichafför Bror Jönsson men sin gengasdrivna taxi av märket Plymouth i september 1940 utanför Telegrafverket vid Prästgatan/Karlsgatan.","geo":{"@type":"GeoCoordinates","latitude":56.04430456100461,"longitude":12.697247078538908}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Gamla järnvägen","description":"Järnvägen över gamla Gasverksgatan mot stationen.","geo":{"@type":"GeoCoordinates","latitude":56.040732,"longitude":12.698515}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Sundstorget","description":"Från vänster Hotell Schweitz, Appelsgrenska huset med Caf Patrik och Stattena huset.","geo":{"@type":"GeoCoordinates","latitude":56.2015736370295,"longitude":12.55094913356476}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Brödleverans","description":"Gasverksgatan i början av 40-talet.","geo":{"@type":"GeoCoordinates","latitude":56.040957,"longitude":12.703292}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Splitterskydd","description":"Hörnet Södra Storgatan/Lilla Bergaliden våren 1941.","geo":{"@type":"GeoCoordinates","latitude":56.04442012236866,"longitude":12.700086224536896}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Helsingborg gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 162 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Helsingborg?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 162 sevärdheter i Helsingborg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Hotell Schweitz och nuvarande Saga-biografen?","acceptedAnswer":{"@type":"Answer","text":"Många tror att Schweitz är felstavat, men hotellet var döpt efter en person och inte landet så allt är i sin ordning."}},{"@type":"Question","name":"Vad är Nya och gamla rådhuset?","acceptedAnswer":{"@type":"Answer","text":"Den lägre byggnaden var Helsingborgs rådhus på 1800talet."}},{"@type":"Question","name":"Vad är Utsikt från Parapeten?","acceptedAnswer":{"@type":"Answer","text":"Färglagd vy över Helsingborg."}},{"@type":"Question","name":"Vad är Storgatan med kanal, tidigt 1900-tal.?","acceptedAnswer":{"@type":"Answer","text":"Längs Storgatan växte vid sekelskiftet en lummig all som gästgivare Schweitz beskostat."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Helsingborg","item":"https://stadsvandring.io/stadsvandring/helsingborg"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Helsingborg</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Helsingborg</span><span class="badge">162 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Helsingborg — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Helsingborg till fots: 162 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Helsingborg"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-helsingborg-hotell-schweitz-och-nuvarande-saga-biografen-205"><b>1. Hotell Schweitz och nuvarande Saga-biografen</b><span>Hotell · Många tror att Schweitz är felstavat, men hotellet var döpt efter en person och…</span></a>
+<a class="tile" href="/p/bht-helsingborg-nya-och-gamla-radhuset-38"><b>2. Nya och gamla rådhuset</b><span>Byggnad · Den lägre byggnaden var Helsingborgs rådhus på 1800talet.</span></a>
+<a class="tile" href="/p/bht-helsingborg-utsikt-fran-parapeten-39"><b>3. Utsikt från Parapeten</b><span>Sevärdhet · Färglagd vy över Helsingborg.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Helsingborg · 162</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Helsingborg. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Sevärdhet · 43</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-utsikt-fran-parapeten-39"><b>Utsikt från Parapeten</b></a> — Färglagd vy över Helsingborg. <span class="era">1897</span></li>
+<li><a href="/karta?plats=bht-helsingborg-storgatan-med-kanal-tidigt-1900-tal-221"><b>Storgatan med kanal, tidigt 1900-tal.</b></a> — Längs Storgatan växte vid sekelskiftet en lummig all som gästgivare Schweitz beskostat. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-helsingborg-storgatan-med-nuvarande-cykelaffar-tidigt-1900-tal-612"><b>Storgatan med nuvarande cykelaffär, tidigt 1900-tal</b></a> — Cykelaffären i korsningen Storgatan/Långarödsvägen har varit butikslokal i drygt 150 år. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-helsingborg-broderna-karlssons-horna-tidigt-1900-tal-storgatan-allegatan-9"><b>Bröderna Karlssons hörna tidigt 1900-tal, Storgatan/Allégatan</b></a> — Längs Storgatan låg tidigare kvarteret Trevnaden med en ståtlig affärsbyggnad på hörnet mot Gruvtorget där bröderna Karlsson drev järn- och… <span class="era">1905</span></li>
+<li><a href="/karta?plats=bht-helsingborg-nedre-nytorgsgatan-41"><b>Nedre Nytorgsgatan</b></a> — Kolorerat foto av hus på Nytorgsgatan. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-torghandel-194"><b>Torghandel</b></a> — På lördagar hölls torghandel runt Gruvtorget. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-storgatan-ca-1910-med-nuvarande-kakboden-och-davarande-kanalen-606"><b>Storgatan ca 1910 med nuvarande Kakboden och dåvarande kanalen.</b></a> — Ett parti av Storgatan, eller Rydsvägen som den hette omkring 1910 då kortet togs. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-nuvarande-bokhandeln-i-bakgrunden-syns-hultabo-och-skorstenarna-pa-hoganasbolage-662"><b>Nuvarande Bokhandeln, i bakgrunden syns Hultabo och skorstenarna på Höganäsbolaget.</b></a> — Till höger i bild syns Axel Olssons hus (nuvarande bokhandeln). <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-bussen-till-helsingborg-212"><b>Bussen till Helsingborg</b></a> — Bussen till Helsingborg gick länge längs Strandvägen via byarna längs kusten. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-helsingborg-specialkaffet-63"><b>Specialkaffet</b></a> — Härmed får jag för den ärade allmänheten tillkännagifva att jag i morgon öppnar Kaffe-, Socker- och Th handel i N:o 27 Kullagatan . <span class="era">1930</span></li>
+<li><a href="/karta?plats=bht-helsingborg-storgatan-brukskyrkan-269"><b>Storgatan brukskyrkan</b></a> — Storgatan upp mot Gruvtorget. <span class="era">1930</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sodergatan-22-32"><b>Södergatan 22</b></a> — Första oktober varje år var förr den stora flyttdagen om hyresavtalet upphört. <span class="era">1939</span></li>
+<li><a href="/karta?plats=bht-helsingborg-gengasdriven-taxi-28"><b>Gengasdriven Taxi</b></a> — Taxichafför Bror Jönsson men sin gengasdrivna taxi av märket Plymouth i september 1940 utanför Telegrafverket vid Prästgatan/Karlsgatan. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-helsingborg-brodleverans-13"><b>Brödleverans</b></a> — Gasverksgatan i början av 40-talet. <span class="era">1941</span></li>
+<li><a href="/karta?plats=bht-helsingborg-splitterskydd-46"><b>Splitterskydd</b></a> — Hörnet Södra Storgatan/Lilla Bergaliden våren 1941. <span class="era">1941</span></li>
+<li><a href="/p/bht-helsingborg-simhallsbadet-47"><b>Simhallsbadet</b></a> — Simhallsbadet på Södergatan stod klart i april 1941. <span class="era">1941</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sparvagn-pa-drottninggatan-11"><b>Spårvagn på Drottninggatan</b></a> — Spårvagnar samsas med häst och vagn på Drottninggatan våren 1945, några månader innan andra världskrigets slut. <span class="era">1945</span></li>
+<li><a href="/karta?plats=bht-helsingborg-danska-brigaden-17"><b>Danska brigaden</b></a> — Den i Sverige utbildade Danska Brigaden skeppades 5/5 1945 från Helsingborg till Helsingör dagen efter de tyska truppernas kapitulation i D… <span class="era">1945</span></li>
+<li><a href="/p/bht-helsingborg-i-vantan-pa-lagerfangar-och-flyktingar-33"><b>I väntan på lägerfångar och flyktingar</b></a> — Många flyktingar från Tyskland och Europa ankommer till Helsingborg under andra världskriget. <span class="era">1945</span></li>
+<li><a href="/karta?plats=bht-helsingborg-m-s-karskar-40"><b>M/S Karskär</b></a> — M/S Karskärs ankomst 5/7 1945 med före detta interner och krigsfångar från Tyskland. <span class="era">1945</span></li>
+<li><a href="/karta?plats=bht-helsingborg-reparation-av-sodergatan-15"><b>Reparation av Södergatan</b></a> — Södergatan sommaren 1948. <span class="era">1948</span></li>
+<li><a href="/karta?plats=bht-helsingborg-skottning-av-hamnen-1949-16"><b>Skottning av hamnen 1949</b></a> — Vintern 1949. Snö tippas i hamnen. <span class="era">1949</span></li>
+<li><a href="/karta?plats=bht-helsingborg-piprokande-skolungdomar-29"><b>Piprökande skolungdomar</b></a> — Piprökande skolungdomar i Rosenträdgården vid Gossläroverket 1954. <span class="era">1954</span></li>
+<li><a href="/karta?plats=bht-helsingborg-lekplatsen-35"><b>Lekplatsen</b></a> — Ny lekplats invigs 1954 i Stadsparken. <span class="era">1954</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sportfiskare-1954-36"><b>Sportfiskare 1954</b></a> — Hamnpiren i maj 1954. <span class="era">1954</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sparvagnshallplatsen-1"><b>Spårvagnshållplatsen</b></a> — Drottninggatans spårvagnshållplats en vinterkväll. <span class="era">1955</span></li>
+<li><a href="/p/bht-helsingborg-h55-paviljongerna-10"><b>H55-paviljongerna</b></a> — H55, eller Hälsingborgsutställningen 1955, var en internationell utställning för arkitektur, bostad, formgivning och konstindustrins produk… <span class="era">1955</span></li>
+<li><a href="/karta?plats=bht-helsingborg-kvinna-h55-utstallningen-30"><b>Kvinna, H55-utställningen</b></a> — Kvinna beundrar fontänerna under H55-utställningen <span class="era">1955</span></li>
+<li><a href="/karta?plats=bht-helsingborg-ko-for-socker-19"><b>Kö för socker</b></a> — Lägre sockerpriser i Helsingör lockade svenska kunder att köa till DSB-färjorna 1956. <span class="era">1956</span></li>
+<li><a href="/karta?plats=bht-helsingborg-furutorpsparkens-plaskdamm-20"><b>Furutorpsparkens plaskdamm</b></a> — Furutorpsparkens plaskdamm 1956. <span class="era">1956</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sodergatan-furutorpsgatan-64"><b>Södergatan-Furutorpsgatan</b></a> — Hörnet&amp;Södergatan-Furutorpsgatan 12e september 1956 <span class="era">1956</span></li>
+<li><a href="/karta?plats=bht-helsingborg-kaffegoken-byggs-21"><b>Kaffegöken byggs</b></a> — Kaffegöken vid S:t Jörgens plats byggs 1959-1960. <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-helsingborg-kopmansgatan-fran-soder-111"><b>Köpmansgatan från söder</b></a> — Till höger ser vi Bergenheims Radio &amp; TV affär och till vänster Caltex <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-helsingborg-kopmansgatan-osterut-613"><b>Köpmansgatan österut.</b></a> — Till vänster syns nuvarande hotellet. <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sodergatan-1960-22"><b>Södergatan 1960</b></a> — Södergatan december 1960. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-helsingborg-hoganas-glasmasteri-599"><b>Höganäs glasmästeri</b></a> — Höganäs Glasmästeri och Maxims korvbar. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sparvagnens-sista-fard-23"><b>Spårvagnens sista färd</b></a> — 2 september 1967 rullade den sista spårvagnen i Helsingborg, flaggprydd dagen till ära. <span class="era">1967</span></li>
+<li><a href="/karta?plats=bht-helsingborg-stalfarfar-pa-cykel-665"><b>Stålfarfar på cykel</b></a> — Gustaf Håkansson blev rikskänd som stålfarfar 1951 när han vann Sverigeloppet, ett cykellopp från Haparanda till Ystad. <span class="era">1967</span></li>
+<li><a href="/karta?plats=bht-helsingborg-olkaos-pa-storgatan-617"><b>Ölkaos på Storgatan</b></a> — ölkaos i rondellen. <span class="era">1970</span></li>
+<li><a href="/karta?plats=bht-helsingborg-vietnamdemonstration-2"><b>Vietnamdemonstration</b></a> — Vietnamdemonstration 1972 på Gustav Adolfs Torg. <span class="era">1972</span></li>
+<li><a href="/karta?plats=bht-helsingborg-1-a-maj-demonstration-24"><b>1:a maj-demonstration</b></a> — 1:a majdemonstration 1972. <span class="era">1972</span></li>
+<li><a href="/p/bht-helsingborg-kungavagnen-27"><b>Kungavagnen</b></a> — Kungavagnen, som byggdes 1931 åt Gustav V, användes flitigt och renoverades 1952 åt Gustaf VI Adolf som använde den för sina resor till Sof… <span class="era">1973</span></li>
+<li><a href="/karta?plats=bht-helsingborg-elecro-cool-gang-37"><b>Elecro Cool Gang</b></a> — 1984: Två medlemmar av dansgruppen Electro Cool Gang med bergsprängare, tidstypiska frisyrer och kläder går upp för Terasstrapporna. <span class="era">1984</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 40</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fyndplats-helsingborg-feed5c"><b>Fyndplats</b></a> — En fyndplats för ett retuscherat avslag nära en stenåldersboplats.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-b11f56"><b>Boplats</b></a> — En stenåldersboplats med flintredskap och avfall.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-38fae2"><b>Boplats</b></a> — En utgrävd boplats där grop, härd och stolphål framkommit.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-helsingborg-a64a4d"><b>Fossil åker</b></a> — Ett röjningsröseområde med minst tio rösen.</li>
+<li><a href="/p/ksamsok-hog-helsingborg-20f56b"><b>Hög</b></a> — Platsen för borttagna högar, undersökta 1908 av Oscar Almgren.</li>
+<li><a href="/p/ksamsok-hog-helsingborg-b56d70"><b>Hög</b></a> — Platsen för en rikt utrustad, sedan länge undersökt gravhög.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-helsingborg-6d0ee2"><b>Bytomt/gårdstomt</b></a> — En gårdstomt vars gräns rekonstruerats efter en karta från 1742.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-helsingborg-6fd865"><b>Hällristning</b></a> — En hällyta med tolv inslipade sliprännor.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-ff02a8"><b>Boplats</b></a> — En stenåldersboplats med flintredskap och avslag.</li>
+<li><a href="/p/ksamsok-boplats-helsingborg-a8e07b"><b>Boplats</b></a> — En stenåldersboplats med rikligt med flintredskap och stenverktyg.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-bc1eef"><b>Hög</b></a> — En gravhög där lerkrukor med brända ben ska ha hittats omkring 1850.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-helsingborg-6ea411"><b>Fyndplats</b></a> — En fyndplats med lösfynd av flinta och sten från stenåldern.</li>
+<li><a href="/p/ksamsok-hog-helsingborg-78f49f"><b>Hög</b></a> — Platsen för en borttagen bronsåldershög med bronsvapen och gravurna.</li>
+<li><a href="/p/ksamsok-hog-helsingborg-1b2aba"><b>Hög</b></a> — Resterna av en bronsåldershög som undersökts flera gånger.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-827b73"><b>Hög</b></a> — Platsen för en hög som ska ha tagits bort på 1840-talet.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-helsingborg-bf2fc1"><b>Fartygs-/båtlämning</b></a> — Uppgift om en jakt som förliste 1912.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-cf786c"><b>Boplats</b></a> — Två boplatser från sten- och bronsålder i en sluttning mot ett vattendrag.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-75f3f2"><b>Boplats</b></a> — En stenåldersboplats i en sluttning ner mot en sänka.</li>
+<li><a href="/p/ksamsok-boplats-helsingborg-2d9dd1"><b>Boplats</b></a> — En stenåldersboplats som förundersökts 1993.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-helsingborg-dd8d67"><b>Gränsmärke</b></a> — Ett gränsmärke i granit för Luggude vägdistrikt.</li>
+<li><a href="/p/ksamsok-boplats-helsingborg-7aa0b7"><b>Boplats</b></a> — En stenåldersboplats med härdar och rikligt med flintredskap.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-5562bb"><b>Hög</b></a> — Platsen för en borttagen hög och en stenåldersboplats.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-097af2"><b>Boplats</b></a> — En stenåldersboplats med sparsamt med flintfynd.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-50a8a2"><b>Hög</b></a> — Resterna av en gravhög med gravurnor från yngre bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-cc3c03"><b>Boplats</b></a> — En möjlig stenåldersboplats på ett flackt krön.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-27f650"><b>Hög</b></a> — Platsen för en hög, känd som Tittehögen på en karta från 1829.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-1d6a49"><b>Boplats</b></a> — Uppgift om en stenåldersboplats som inte har återfunnits.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-aa015d"><b>Hög</b></a> — Platsen för Svinstenshögen, en borttagen gravhög med kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-847579"><b>Hög</b></a> — Platsen för en borttagen gravhög med kantkedja nära Sofiero.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-28f4f9"><b>Hög</b></a> — En stenåldersboplats och resterna av en hög med militärbunker.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-819ba0"><b>Hög</b></a> — En flatmarksgrav från yngre bronsålder, funnen vid planteringsarbete 1905.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-helsingborg-9ad73a"><b>Fornlämningsliknande lämning</b></a> — Två högliknande lämningar av osäker karaktär.</li>
+<li><a href="/karta?plats=ksamsok-hard-helsingborg-cc393e"><b>Härd</b></a> — En rund kokgrop med kol och skärvsten som grävdes ut vid en utredning 2016.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-helsingborg-4e5b54"><b>Fyndplats</b></a> — Här hittades stenåldersredskap som yxor och borr nedanför Landborgens brant.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-168ec9"><b>Boplats</b></a> — En stenåldersboplats vid Sofiero, känd sedan planteringsfynd 1865.</li>
+<li><a href="/karta?plats=ksamsok-hard-helsingborg-b7a02e"><b>Härd</b></a> — En stensatt härd som kom fram vid en förundersökning 2006.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-helsingborg-b7efda"><b>Fartygs-/båtlämning</b></a> — Ett gammalt segelfartyg som fyllts med sten och sänkts som pir.</li>
+<li><a href="/karta?plats=ksamsok-boplats-helsingborg-cbf902"><b>Boplats</b></a> — En stenåldersboplats norr om parken, idag dold under villabebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-helsingborg-7375ea"><b>Övrigt</b></a> — En dansbana från festivalen H55 tappades 1955 och ligger kvar på botten utanför Laröd.</li>
+<li><a href="/karta?plats=ksamsok-hog-helsingborg-c86eb0"><b>Hög</b></a> — En bronsåldershög vid Helsingborg, undersökt 1905 och sedan borttagen.</li>
+</ul>
+<h3 class="city-h3">Torn · 19</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-helsingborg-helsingborgs-fyr-och-lotshus-q10520541"><b>Helsingborgs fyr och lotshus</b></a> — fyr och lotshus i Helsingborgs hamn</li>
+<li><a href="/p/wd-helsingborg-kronborg-fyr-q20042645"><b>Kronborg fyr</b></a> — fyr i ett av tornen på Kronborg slott</li>
+<li><a href="/karta?plats=wd-helsingborg-vikens-fyr-q42325447"><b>Vikens fyr</b></a> — en fyr i Höganäs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-kristinelund-norra-nedre-q42326965"><b>Kristinelund Norra nedre</b></a> — en ensfyr i Höganäs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-kristinelund-norra-ovre-q42327010"><b>Kristinelund Norra övre</b></a> — en ensfyr i Höganäs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-kristinelund-sodra-nedre-q42327157"><b>Kristinelund Södra nedre</b></a> — en ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-kristinelund-sodra-ovre-q42327216"><b>Kristinelund Södra övre</b></a> — en ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-domstens-fyr-q42327275"><b>Domstens fyr</b></a> — en fyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-sofiero-nedre-q42327438"><b>Sofiero nedre</b></a> — en ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-sofiero-ovre-q42327474"><b>Sofiero övre</b></a> — en ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-palsjo-nedre-q42327752"><b>Pålsjö nedre</b></a> — en f.d. ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-palsjo-ovre-q42327787"><b>Pålsjö övre</b></a> — en f.d. ensfyr Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-norra-hamnen-q42327897"><b>Norra hamnen</b></a> — en fyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-vastra-nedre-q42327932"><b>Helsingborg Västra nedre</b></a> — en ensfyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-vastra-ovre-q42328683"><b>Helsingborg Västra övre</b></a> — en ensfyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-nr-2-q110281998"><b>Helsingborg Nr 2</b></a> — en fyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-nr-1-q110281997"><b>Helsingborg Nr 1</b></a> — en fyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-nr-3-q110282000"><b>Helsingborg Nr 3</b></a> — en fyr Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborg-nr-4-q110282001"><b>Helsingborg Nr 4</b></a> — en fyr Helsingborg</li>
+</ul>
+<h3 class="city-h3">Kyrka · 14</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-helsingborg-sankta-maria-kyrka-q2222024"><b>Sankta Maria kyrka</b></a> — kyrkobyggnad i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-sankt-mari-kyrka-q4994164"><b>Sankt Mariæ kyrka</b></a> — Sankt Mariæ kyrka</li>
+<li><a href="/karta?plats=wd-helsingborg-allerums-kyrka-q10405600"><b>Allerums kyrka</b></a> — kyrka i Sverige</li>
+<li><a href="/karta?plats=wd-helsingborg-bjorkakyrkan-q10430525"><b>Björkakyrkan</b></a> — kyrkobyggnad i Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-den-gode-herdens-kyrka-q10468659"><b>Den gode herdens kyrka</b></a> — kyrkobyggnad i Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-sankt-olofs-kyrka-q10661444"><b>Sankt Olofs kyrka</b></a> — kyrkobyggnad i Helsingborg</li>
+<li><a href="/p/wd-helsingborg-sankt-vincent-kyrka-q10661502"><b>Sankt Vincent kyrka</b></a> — Sankt Vincent kirke är en katolsk kyrka i Helsingör i Danmark.</li>
+<li><a href="/karta?plats=wd-helsingborg-slottshagskyrkan-q10671635"><b>Slottshagskyrkan</b></a> — frikyrkobyggnad i Helsingborg</li>
+<li><a href="/p/wd-helsingborg-sankt-andreas-kyrka-q18332425"><b>Sankt Andreas kyrka</b></a> — kyrkobyggnad i Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-sankta-anna-kyrka-q18332455"><b>Sankta Anna kyrka</b></a> — kyrkobyggnad i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-st-clemens-kyrka-q29467544"><b>St Clemens kyrka</b></a> — kyrka/kapell i Skåne (Helsingborg 11:1)</li>
+<li><a href="/karta?plats=wd-helsingborg-helleb-k-kyrka-q34054472"><b>Hellebæk kyrka</b></a> — Hellebæk kyrka</li>
+<li><a href="/karta?plats=wd-helsingborg-rosengardskyrkan-q61311982"><b>Rosengårdskyrkan</b></a> — frikyrkobyggnad i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-palsjo-kapell-q115912877"><b>Pålsjö kapell</b></a> — Pålsjö kapell</li>
+</ul>
+<h3 class="city-h3">Torg · 12</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-gruvtorget-tidigt-1900-tal-till-vanster-prins-carlsgatan-660"><b>Gruvtorget tidigt 1900-tal, till vänster Prins Carlsgatan</b></a> — Till vänster ser man Prins Carlsgatan. <span class="era">1905</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sundsttorget-med-stattena-huset-661"><b>Sundsttorget med Stattena-huset.</b></a> — Helt ensamt på Sundstorget stod Stattena-huset. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-sundstorget-578"><b>Sundstorget</b></a> — Från vänster Hotell Schweitz, Appelsgrenska huset med Caf Patrik och Stattena huset. <span class="era">1940</span></li>
+<li><a href="/karta?plats=wd-helsingborg-konsul-perssons-plats-q10547749"><b>Konsul Perssons plats</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-master-palms-plats-q10593267"><b>Mäster Palms plats</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-tycho-braheplatsen-q32951386"><b>Tycho Braheplatsen</b></a> — Tycho Braheplatsen</li>
+<li><a href="/karta?plats=wd-helsingborg-billeplatsen-q10429623"><b>Billeplatsen</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-henry-dunkers-plats-q10522084"><b>Henry Dunkers plats</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-konsul-olssons-plats-q10547746"><b>Konsul Olssons plats</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-kungstorget-q10550368"><b>Kungstorget</b></a> — torg i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-sankt-jorgens-plats-q10661383"><b>Sankt Jörgens plats</b></a> — plats i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-angfarjeparken-q112589464"><b>Ångfärjeparken</b></a> — torg i Helsingborg</li>
+</ul>
+<h3 class="city-h3">Byggnad · 9</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-nya-och-gamla-radhuset-38"><b>Nya och gamla rådhuset</b></a> — Den lägre byggnaden var Helsingborgs rådhus på 1800talet. <span class="era">1897</span></li>
+<li><a href="/karta?plats=bht-helsingborg-tivolihuset-och-gruvkanalen-666"><b>Tivolihuset och gruvkanalen</b></a> — Tivolihuset byggdes av Höganäsbolaget vid förra sekelskiftet för att arbetarna skulle få en samlingslokal att träffas och roa sig i. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-stadsbuss-utanfor-radhuset-42"><b>Stadsbuss utanför Rådhuset</b></a> — Stadsbuss med gengasaggregat utanför Rådhuset. <span class="era">1939</span></li>
+<li><a href="/karta?plats=bht-helsingborg-tidningsatervinning-pa-biografen-scala-6"><b>Tidningsåtervinning på Biografen Scala</b></a> — Biografen Scala, Karl Krooksgatan 14/2 1948. <span class="era">1948</span></li>
+<li><a href="/karta?plats=bht-helsingborg-radhuset-1952-och-72-25"><b>Rådhuset 1952 och 72</b></a> — Stämningsbilder vid Rådhuset 1952 och 1972. <span class="era">1952</span></li>
+<li><a href="/karta?plats=bht-helsingborg-biograf-saga-12"><b>Biograf Saga</b></a> — Sagabiografen på Drottninggatan 78, 1956. <span class="era">1956</span></li>
+<li><a href="/karta?plats=bht-helsingborg-odeonbiografen-656"><b>Odeonbiografen</b></a> — Odeon-biografen på Bagerigatan 6, som under många år drevs av Ture Holm, köptes 1968 av staden för rivning. <span class="era">1968</span></li>
+<li><a href="/karta?plats=wd-helsingborg-helleb-kgard-q12316090"><b>Hellebækgård</b></a> — Hellebækgård</li>
+<li><a href="/p/wd-helsingborg-christinelund-q18287508"><b>Christinelund</b></a> — Christinelund, är en herrgård i Allerums socken i Helsingborgs kommun öster om Domsten.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 7</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-anglok-staty-43"><b>Ånglok &amp; staty</b></a> — Här stod Stenbocksstatyn mellan 1901 och 1959. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-helsingborg-statyn-flyttas-18"><b>Statyn flyttas</b></a> — Stenbocken stod mitt i gatan och flyttades våren 1959 20 m västerut till sin nuvarande plats. <span class="era">1959</span></li>
+<li><a href="/karta?plats=wd-helsingborg-danserindebr-nden-q15645084"><b>Danserindebrønden</b></a> — Danserindebrønden</li>
+<li><a href="/karta?plats=wd-helsingborg-han-q16573957"><b>Han</b></a> — Han</li>
+<li><a href="/karta?plats=wd-helsingborg-magnus-stenbocks-staty-q105071137"><b>Magnus Stenbocks staty</b></a> — staty i Helsingborg</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-helsingborg-c33f90"><b>Minnesmärke</b></a> — Två minnesstenar med anknytning till Sofieros anläggande 1865.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-helsingborg-608546"><b>Minnesmärke</b></a> — En minnessten över Dag Hammarskjöld.</li>
+</ul>
+<h3 class="city-h3">museum · 7</h3>
+<ul class="place-list">
+<li><a href="/p/wd-helsingborg-karnan-q1779457"><b>Kärnan</b></a> — torn i Helsingborg, Sverige</li>
+<li><a href="/p/wd-helsingborg-teknik-pa-farfars-tid-q7695458"><b>Teknik på farfars tid</b></a> — Teknik på farfars tid var ett privatägt museum med inriktning på tekniska prylar från tidigt 1900-tal beläget i stadsdelen Berga i Helsingb…</li>
+<li><a href="/p/wd-helsingborg-fredriksdal-museer-och-tradgardar-q10498762"><b>Fredriksdal museer och trädgårdar</b></a> — friluftsmuseum och botanisk trädgård i Helsingborg</li>
+<li><a href="/p/wd-helsingborg-kulturmagasinet-q10550005"><b>Kulturmagasinet</b></a> — museiinstitution i Helsingborg</li>
+<li><a href="/karta?plats=wd-helsingborg-kulturhavn-kronborg-q14341049"><b>Kulturhavn Kronborg</b></a> — Kulturhavn Kronborg</li>
+<li><a href="/karta?plats=wd-helsingborg-helsingborgs-museer-q50132851"><b>Helsingborgs museer</b></a> — samlingsnamn för Helsingborgs stads museiverksamhet</li>
+<li><a href="/karta?plats=wd-helsingborg-helsing-r-v-rftsmuseum-q106991201"><b>Helsingør Værftsmuseum</b></a> — danskt arbetslivsmuseum</li>
+</ul>
+<h3 class="city-h3">Slott · 5</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-helsingborg-kronborg-q189358"><b>Kronborg</b></a> — dansk slott beläget vid Helsingör</li>
+<li><a href="/karta?plats=wd-helsingborg-marienlyst-slot-q359027"><b>Marienlyst Slot</b></a> — slott i Helsingör</li>
+<li><a href="/karta?plats=wd-helsingborg-palsjo-slott-q495392"><b>Pålsjö slott</b></a> — Pålsjö slott är ett slott beläget vid Pålsjö skog i Helsingborgs socken i Helsingborgs kommun.</li>
+<li><a href="/p/wd-helsingborg-sofiero-q891918"><b>Sofiero</b></a> — ett slott i Helsingborgs kommun</li>
+<li><a href="/karta?plats=wd-helsingborg-kulla-gunnarstorps-slott-q4348273"><b>Kulla Gunnarstorps slott</b></a> — slott i Skåne, Sverige</li>
+</ul>
+<h3 class="city-h3">Station · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-gamla-jarnvagen-2-26"><b>Gamla Järnvägen 2</b></a> — Järnvägen över gamla Furutorpsgatan mot stationen. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-helsingborg-gamla-jarnvagen-34"><b>Gamla järnvägen</b></a> — Järnvägen över gamla Gasverksgatan mot stationen. <span class="era">1940</span></li>
+</ul>
+<h3 class="city-h3">Naturreservat · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-helsingborg-kongens-have-q12322605"><b>Kongens Have</b></a> — Kongens Have</li>
+<li><a href="/p/wd-helsingborg-dockanparken-q125505817"><b>Dockanparken</b></a> — park i Helsingborgs varvs gamla torrdocka</li>
+</ul>
+<h3 class="city-h3">Hotell · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-helsingborg-hotell-schweitz-och-nuvarande-saga-biografen-205"><b>Hotell Schweitz och nuvarande Saga-biografen</b></a> — Många tror att Schweitz är felstavat, men hotellet var döpt efter en person och inte landet så allt är i sin ordning. <span class="era">1883</span></li>
+</ul>
+<h3 class="city-h3">Bro · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-helsingborg-kvickbron-q112714869"><b>Kvickbron</b></a> — bro i Helsingborg</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 162 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/helsingborg/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/helsingborg/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Helsingborg gratis?</summary><p>Ja. Karta, alla 162 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Helsingborg?</summary><p>Vandringen samlar 162 sevärdheter i Helsingborg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Hotell Schweitz och nuvarande Saga-biografen?</summary><p>Många tror att Schweitz är felstavat, men hotellet var döpt efter en person och inte landet så allt är i sin ordning.</p></details>
+<details class="faq"><summary>Vad är Nya och gamla rådhuset?</summary><p>Den lägre byggnaden var Helsingborgs rådhus på 1800talet.</p></details>
+<details class="faq"><summary>Vad är Utsikt från Parapeten?</summary><p>Färglagd vy över Helsingborg.</p></details>
+<details class="faq"><summary>Vad är Storgatan med kanal, tidigt 1900-tal.?</summary><p>Längs Storgatan växte vid sekelskiftet en lummig all som gästgivare Schweitz beskostat.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

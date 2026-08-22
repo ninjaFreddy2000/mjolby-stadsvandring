@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Kristianstad — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Kristianstad till fots: 100 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 100 stopp och nedladdningsb…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/kristianstad">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Kristianstad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Kristianstad till fots: 100 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 100 stopp och nedladdningsb…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/kristianstad">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Kristianstad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Kristianstad till fots: 100 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 100 stopp och nedladdningsb…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"kristianstad","sourceSlug":"stadsvandring/kristianstad","centroid":{"lat":56.03228513961776,"lng":14.15013696971247},"stops":[{"name":"Skottenborg","lat":56.02540160780498,"lng":14.15662845528748},{"name":"Kanalgatan","lat":56.03212313378584,"lng":14.15889605719356},{"name":"Östra Boulevarden / från Nya Boulevarden","lat":56.03171574863905,"lng":14.157192135491456}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Kristianstad","description":"Upptäck Kristianstad till fots: 100 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/kristianstad","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Skottenborg","description":"Skottenborg omtalats ofta som Kristianstads äldsta hus.","url":"https://stadsvandring.io/p/bht-kristianstad-skottenborg-1133","geo":{"@type":"GeoCoordinates","latitude":56.02540160780498,"longitude":14.15662845528748}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Kanalgatan","description":"Här ses ett fotografi på Tekniska skolan sammanfogat med en skiss ur PL Håkanssons hand föreställande Konserthuset och ett flerbostadshus i kvarteret Uttern.","url":"https://stadsvandring.io/p/bht-kristianstad-kanalgatan-262","geo":{"@type":"GeoCoordinates","latitude":56.03212313378584,"longitude":14.15889605719356}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Östra Boulevarden / från Nya Boulevarden","description":"Husraden på denna bild är förändrad i mångt och mycket men Möllers hörna närmast i bild är en byggnad som fortfarande pryder sin plats sedan det uppfördes 1886.","geo":{"@type":"GeoCoordinates","latitude":56.03171574863905,"longitude":14.157192135491456}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Stora Torg / Mot Norr","description":"Kristianstads historia är intimt förknippad med militären då den byggdes som en befäst stad 1614 som ett skydd mot svenskarna.","url":"https://stadsvandring.io/p/bht-kristianstad-stora-torg-mot-norr-447","geo":{"@type":"GeoCoordinates","latitude":56.031420437784256,"longitude":14.15487236928261}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Heliga Trefaldighets Kyrka","description":"Bild 1: Upphovsman var danske kung Christian IV, som i sin nya stad önskade en magnifik katedral.","url":"https://stadsvandring.io/p/bht-kristianstad-heliga-trefaldighets-kyrka-178","geo":{"@type":"GeoCoordinates","latitude":56.0312200255284,"longitude":14.152606842449597}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Lastageplatsen / Västra Ågatan","description":"Bron över kanalen vid Lastageplatsen.","geo":{"@type":"GeoCoordinates","latitude":56.0228113126804,"longitude":14.156784177016455}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Nya Boulevarden / Västra Boulevarden","description":"Bilden i förgrunden är Wendels bryggeri och i huset med de många skorstenarna fanns även en cykelaffär.","url":"https://stadsvandring.io/p/bht-kristianstad-nya-boulevarden-vastra-boulevarden-419","geo":{"@type":"GeoCoordinates","latitude":56.0307332485049,"longitude":14.153029042062188}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Västra Storgatan / Hesslegatan","description":"Fastigheten var bebyggd med en handelsgård redan på 1760-talet och 1830 fanns här en tenngjutare Gustav Adolph Bergman med bostadshus och tenngjutarverkstad.","url":"https://stadsvandring.io/p/bht-kristianstad-vastra-storgatan-hesslegatan-426","geo":{"@type":"GeoCoordinates","latitude":56.03045623883258,"longitude":14.15508372801663}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Västra Storgatan / Revolutionshuset","description":"På den här tomten har gatuhuset och gårdsbebyggelsen uppförts under olika år och med skriftande byggtekniker, mestadels i tegel men även i korsvirke.","url":"https://stadsvandring.io/p/bht-kristianstad-vastra-storgatan-revolutionshuset-443","geo":{"@type":"GeoCoordinates","latitude":56.033497209048406,"longitude":14.152294507283747}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Fiskarebacken","description":"Bild 1: Sparbankshuset med det imponerande tornet uppfördes efter det vinnande förslaget i en arkitekttävling 1898 ritat av O.","url":"https://stadsvandring.io/p/bht-kristianstad-fiskarebacken-332","geo":{"@type":"GeoCoordinates","latitude":56.03014520049221,"longitude":14.15175064842316}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Lastageplatsen","description":"Det som fångar ögat i denna bild är det bastanta borgliknande tornet.","url":"https://stadsvandring.io/p/bht-kristianstad-lastageplatsen-190","geo":{"@type":"GeoCoordinates","latitude":56.02393918450849,"longitude":14.15448512740585}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Västra Storgtan / Tivoligatan","description":"Affärsgatan Västra Storgatan är både lång och har en lång historia som handelsstråk.","geo":{"@type":"GeoCoordinates","latitude":56.02843822616921,"longitude":14.156883130161413}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Västra Storgatan / Helgegatan","description":"Denna imponerande kvarnbyggnad brann ned till grunden en tidig morgon 1968 och katastrofen var förödande.","url":"https://stadsvandring.io/p/bht-kristianstad-vastra-storgatan-helgegatan-336","geo":{"@type":"GeoCoordinates","latitude":56.02494172272762,"longitude":14.160104665687395}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Döbelnsgatan","description":"Bild 1: I dessa kvarter härjade en förödande stadsbrand 1847.","url":"https://stadsvandring.io/p/bht-kristianstad-dobelnsgatan-272","geo":{"@type":"GeoCoordinates","latitude":56.02886078764892,"longitude":14.15566642545584}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Östra Boulevarden / Tivoligatan","description":"Kristianstadsarkitekten Algot Johansson ritade hörntomten i kvarteret Länkakulan som fick detta utseende 1902-1903.","geo":{"@type":"GeoCoordinates","latitude":56.029177433544824,"longitude":14.159190623131712}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Östra Boulevarden / Cardellsgatan","description":"Kvarteret Jepp Buck blev kraftigt förändrat under 1960-70 talen med större byggnader som ersatte de litet mindre flerbostadshusen på östra Boulevarden.","geo":{"@type":"GeoCoordinates","latitude":56.03001170188867,"longitude":14.158456809761443}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Lilla Torg Norra sidan","description":"De två byggnaderna vänster i bild finns fortfarande kvar om än i förändrat skick.","geo":{"@type":"GeoCoordinates","latitude":56.02935811832532,"longitude":14.157310112213088}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Järnvägsstationen","description":"Bild 1: Efter stadsarkitekt PL Håkanssons tillbyggnad 1917-18 blev stationsbyggnaden nästan dubbelt så stor.","geo":{"@type":"GeoCoordinates","latitude":56.03218479914135,"longitude":14.152041228110471}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Stora Torg / Östra sidan","description":"Idag är dessa byggnader konsthall respektive restaurang och pub, men de uppfördes som post-och bankhus mellan åren 1917-18 och ritades av stockholmsarkitekten…","url":"https://stadsvandring.io/p/bht-kristianstad-stora-torg-ostra-sidan-353","geo":{"@type":"GeoCoordinates","latitude":56.03145627551892,"longitude":14.154260536418839}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Östra Boulevarden / Brunnsgatan","description":"Oftast vill man fotografera något vackert, något känt eller något annat märkvärdigt.","url":"https://stadsvandring.io/p/bht-kristianstad-ostra-boulevarden-brunnsgatan-430","geo":{"@type":"GeoCoordinates","latitude":56.03306296118649,"longitude":14.156014257619738}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Kvarnen","description":"Bild 1: Mårten Pehrsons valsqvarn etablerar sig i området redan 1881 med en ångdriven kvarn.","url":"https://stadsvandring.io/p/bht-kristianstad-kvarnen-418","geo":{"@type":"GeoCoordinates","latitude":56.03045626128839,"longitude":14.1518508087408}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Vattentornet / Teatergatan","description":"Att gatan heter Teatergatan har sin förklaring i Kristianstads första teater låg här.","geo":{"@type":"GeoCoordinates","latitude":56.03284621039571,"longitude":14.152160884255105}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Västra Storgatan / Norrut","description":"Huset med de långa balkongerna står Otto Ohlsson som arkitekt för.","geo":{"@type":"GeoCoordinates","latitude":56.031688423796396,"longitude":14.153931745526886}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Saluhallen / Söder","description":"Domustorget, Kreaturstorget eller Hästtorget är några av de namn som funnits på denna plats.","url":"https://stadsvandring.io/p/bht-kristianstad-saluhallen-soder-344","geo":{"@type":"GeoCoordinates","latitude":56.03045183734245,"longitude":14.160457135398413}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Nya Boulevarden / Västra Storgatan","description":"Hörnhuset mellan Västra Storgatan och Nya boulevarden byggdes omkring 1845 och försågs 1881 med en inbyggd balkong vilket bör vara den enda i sitt slag i Krist…","url":"https://stadsvandring.io/p/bht-kristianstad-nya-boulevarden-vastra-storgatan-435","geo":{"@type":"GeoCoordinates","latitude":56.0311791048362,"longitude":14.154738490695156}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Kristianstad gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 100 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Kristianstad?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 100 sevärdheter i Kristianstad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Skottenborg?","acceptedAnswer":{"@type":"Answer","text":"Skottenborg omtalats ofta som Kristianstads äldsta hus."}},{"@type":"Question","name":"Vad är Kanalgatan?","acceptedAnswer":{"@type":"Answer","text":"Här ses ett fotografi på Tekniska skolan sammanfogat med en skiss ur PL Håkanssons hand föreställande Konserthuset och ett flerbostadshus i kvarteret Uttern."}},{"@type":"Question","name":"Vad är Östra Boulevarden / från Nya Boulevarden?","acceptedAnswer":{"@type":"Answer","text":"Husraden på denna bild är förändrad i mångt och mycket men Möllers hörna närmast i bild är en byggnad som fortfarande pryder sin plats sedan det uppfördes 1886."}},{"@type":"Question","name":"Vad är Stora Torg / Mot Norr?","acceptedAnswer":{"@type":"Answer","text":"Kristianstads historia är intimt förknippad med militären då den byggdes som en befäst stad 1614 som ett skydd mot svenskarna."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Kristianstad","item":"https://stadsvandring.io/stadsvandring/kristianstad"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Kristianstad</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Kristianstad</span><span class="badge">100 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Kristianstad — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Kristianstad till fots: 100 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Kristianstad"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-kristianstad-skottenborg-1133"><b>1. Skottenborg</b><span>Sevärdhet · Skottenborg omtalats ofta som Kristianstads äldsta hus.</span></a>
+<a class="tile" href="/p/bht-kristianstad-kanalgatan-262"><b>2. Kanalgatan</b><span>Sevärdhet · Här ses ett fotografi på Tekniska skolan sammanfogat med en skiss ur PL Håkanss…</span></a>
+<a class="tile" href="/p/bht-kristianstad-ostra-boulevarden-fran-nya-boulevarden-444"><b>3. Östra Boulevarden / från Nya Boulevarden</b><span>Sevärdhet · Husraden på denna bild är förändrad i mångt och mycket men Möllers hörna närmas…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Kristianstad · 100</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Kristianstad. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Sevärdhet · 23</h3>
+<ul class="place-list">
+<li><a href="/p/bht-kristianstad-skottenborg-1133"><b>Skottenborg</b></a> — Skottenborg omtalats ofta som Kristianstads äldsta hus. <span class="era">1645</span></li>
+<li><a href="/p/bht-kristianstad-kanalgatan-262"><b>Kanalgatan</b></a> — Här ses ett fotografi på Tekniska skolan sammanfogat med en skiss ur PL Håkanssons hand föreställande Konserthuset och ett flerbostadshus i… <span class="era">1850</span></li>
+<li><a href="/karta?plats=bht-kristianstad-ostra-boulevarden-fran-nya-boulevarden-444"><b>Östra Boulevarden / från Nya Boulevarden</b></a> — Husraden på denna bild är förändrad i mångt och mycket men Möllers hörna närmast i bild är en byggnad som fortfarande pryder sin plats seda… <span class="era">1870</span></li>
+<li><a href="/karta?plats=bht-kristianstad-lastageplatsen-vastra-agatan-433"><b>Lastageplatsen / Västra Ågatan</b></a> — Bron över kanalen vid Lastageplatsen. <span class="era">1890</span></li>
+<li><a href="/p/bht-kristianstad-nya-boulevarden-vastra-boulevarden-419"><b>Nya Boulevarden / Västra Boulevarden</b></a> — Bilden i förgrunden är Wendels bryggeri och i huset med de många skorstenarna fanns även en cykelaffär. <span class="era">1896</span></li>
+<li><a href="/p/bht-kristianstad-vastra-storgatan-hesslegatan-426"><b>Västra Storgatan / Hesslegatan</b></a> — Fastigheten var bebyggd med en handelsgård redan på 1760-talet och 1830 fanns här en tenngjutare Gustav Adolph Bergman med bostadshus och t… <span class="era">1899</span></li>
+<li><a href="/p/bht-kristianstad-fiskarebacken-332"><b>Fiskarebacken</b></a> — Bild 1: Sparbankshuset med det imponerande tornet uppfördes efter det vinnande förslaget i en arkitekttävling 1898 ritat av O. <span class="era">1902</span></li>
+<li><a href="/p/bht-kristianstad-lastageplatsen-190"><b>Lastageplatsen</b></a> — Det som fångar ögat i denna bild är det bastanta borgliknande tornet. <span class="era">1903</span></li>
+<li><a href="/karta?plats=bht-kristianstad-vastra-storgtan-tivoligatan-442"><b>Västra Storgtan / Tivoligatan</b></a> — Affärsgatan Västra Storgatan är både lång och har en lång historia som handelsstråk. <span class="era">1905</span></li>
+<li><a href="/p/bht-kristianstad-vastra-storgatan-helgegatan-336"><b>Västra Storgatan / Helgegatan</b></a> — Denna imponerande kvarnbyggnad brann ned till grunden en tidig morgon 1968 och katastrofen var förödande. <span class="era">1909</span></li>
+<li><a href="/p/bht-kristianstad-dobelnsgatan-272"><b>Döbelnsgatan</b></a> — Bild 1: I dessa kvarter härjade en förödande stadsbrand 1847. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-kristianstad-ostra-boulevarden-tivoligatan-427"><b>Östra Boulevarden / Tivoligatan</b></a> — Kristianstadsarkitekten Algot Johansson ritade hörntomten i kvarteret Länkakulan som fick detta utseende 1902-1903. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-kristianstad-ostra-boulevarden-cardellsgatan-429"><b>Östra Boulevarden / Cardellsgatan</b></a> — Kvarteret Jepp Buck blev kraftigt förändrat under 1960-70 talen med större byggnader som ersatte de litet mindre flerbostadshusen på östra… <span class="era">1910</span></li>
+<li><a href="/p/bht-kristianstad-ostra-boulevarden-brunnsgatan-430"><b>Östra Boulevarden / Brunnsgatan</b></a> — Oftast vill man fotografera något vackert, något känt eller något annat märkvärdigt. <span class="era">1936</span></li>
+<li><a href="/p/bht-kristianstad-kvarnen-418"><b>Kvarnen</b></a> — Bild 1: Mårten Pehrsons valsqvarn etablerar sig i området redan 1881 med en ångdriven kvarn. <span class="era">1938</span></li>
+<li><a href="/karta?plats=bht-kristianstad-vastra-storgatan-norrut-425"><b>Västra Storgatan / Norrut</b></a> — Huset med de långa balkongerna står Otto Ohlsson som arkitekt för. <span class="era">1939</span></li>
+<li><a href="/p/bht-kristianstad-saluhallen-soder-344"><b>Saluhallen / Söder</b></a> — Domustorget, Kreaturstorget eller Hästtorget är några av de namn som funnits på denna plats. <span class="era">1940</span></li>
+<li><a href="/p/bht-kristianstad-nya-boulevarden-vastra-storgatan-435"><b>Nya Boulevarden / Västra Storgatan</b></a> — Hörnhuset mellan Västra Storgatan och Nya boulevarden byggdes omkring 1845 och försågs 1881 med en inbyggd balkong vilket bör vara den enda… <span class="era">1940</span></li>
+<li><a href="/p/bht-kristianstad-finlands-bryggeri-417"><b>Finlands Bryggeri</b></a> — Bild 1: Här ses en del av det stora ångbryggeriet Finland som startade i kvarteret 1839. <span class="era">1953</span></li>
+<li><a href="/p/bht-kristianstad-cardellsgatan-416"><b>Cardellsgatan</b></a> — Bild 1: Byggnaden med porten som ses i förgrunden är grosshandlare Mårten Pehrsons bostadshus som stod färdigt 1886 och ritades av arkitekt… <span class="era">1954</span></li>
+<li><a href="/p/bht-kristianstad-sodra-kasern-191"><b>Södra Kasern</b></a> — På detta fotografi kan man endast ana det gamla kasernområdet Södra Kasern som var hemvist för Wendes regemente. <span class="era">1961</span></li>
+<li><a href="/karta?plats=izi-kristianstad-tivoliparken"><b>Tivoliparken</b></a> — Stopp på ljudturen «Architektura dawna i współczesna Skandynawii» i Kristianstad.</li>
+<li><a href="/karta?plats=wd-kristianstad-farlov-6-1-q29472612"><b>Färlöv 6:1</b></a> — minnesmärke i Skåne</li>
+</ul>
+<h3 class="city-h3">Byggnad · 21</h3>
+<ul class="place-list">
+<li><a href="/p/bht-kristianstad-vastra-storgatan-revolutionshuset-443"><b>Västra Storgatan / Revolutionshuset</b></a> — På den här tomten har gatuhuset och gårdsbebyggelsen uppförts under olika år och med skriftande byggtekniker, mestadels i tegel men även i… <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-kristianstad-vattentornet-teatergatan-423"><b>Vattentornet / Teatergatan</b></a> — Att gatan heter Teatergatan har sin förklaring i Kristianstads första teater låg här. <span class="era">1939</span></li>
+<li><a href="/karta?plats=bht-kristianstad-ostra-boulevarden-osterbergska-garden-431"><b>Östra Boulevarden / Österbergska gården</b></a> — Detta hus, som från början var en hel gård, är ett av Kristianstads tidigaste byggnadsminne. <span class="era">1941</span></li>
+<li><a href="/p/bht-kristianstad-garvaregarden-175"><b>Garvaregården</b></a> — Bild 1: 1963-64 genomgick &quot;Garvaregården&quot; en omfattande renovering och ombyggnad till nuvarande utseende. <span class="era">1964</span></li>
+<li><a href="/karta?plats=ksamsok-tyghuset-kristianstad-049283"><b>TYGHUSET</b></a> — Tyghuset i Kristianstad, uppfört 1616–17 som stall för Christian IV. <span class="era">1616–1617</span></li>
+<li><a href="/p/ksamsok-stora-kronohuset-kristianstad-049282"><b>STORA KRONOHUSET</b></a> — Stora Kronohuset i Kristianstad från 1841, kanslihus och hovrätt. <span class="era">1841–1841</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-sodra-kasern-kristianstad-991700"><b>GAMLA SÖDRA KASERN</b></a> — Gamla Södra kasern i Kristianstad från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-nya-sodra-kasern-kristianstad-991704"><b>NYA SÖDRA KASERN</b></a> — Nya Södra kasern i Kristianstad från 1890-talet. <span class="era">1890–1899</span></li>
+<li><a href="/karta?plats=ksamsok-residens-kristianstad-357333"><b>RESIDENS</b></a> — Länsresidenset i Kristianstad, uppfört 1860–61. <span class="era">1860–1861</span></li>
+<li><a href="/p/ksamsok-kristianstads-tingsratt-kristianstad-696785"><b>KRISTIANSTADS TINGSRÄTT</b></a> — Kristianstads tingshus från 1952 i rött tegel. <span class="era">1952–1952</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-kristianstad-975000"><b>BOSTADSHUS</b></a> — Putsat bostadshus i Kristianstad från tidigt 1800-tal. <span class="era">1800–1829</span></li>
+<li><a href="/karta?plats=ksamsok-kasern-kristianstad-974940"><b>KASERN</b></a> — Kasern i Kristianstad byggd på 1760-talet. <span class="era">1760–1769</span></li>
+<li><a href="/karta?plats=ksamsok-vaktbyggnad-kristianstad-974942"><b>VAKTBYGGNAD</b></a> — Vaktbyggnaden Fyrkappan i Kristianstad från 1799–1801. <span class="era">1799–1801</span></li>
+<li><a href="/karta?plats=ksamsok-lokstationen-kristianstad-975440"><b>Lokstationen</b></a> — Lokstationen i Kristianstad från 1910-talet. <span class="era">1913–1916</span></li>
+<li><a href="/p/ksamsok-posthuset-kristianstad-kristianstad-975580"><b>POSTHUSET KRISTIANSTAD</b></a> — Posthuset i Kristianstad från 1916–1917, ritat av Erik Lallerstedt. <span class="era">1916–1917</span></li>
+<li><a href="/p/ksamsok-gamla-riksbankshuset-kristianstad-kristianstad-975582"><b>GAMLA RIKSBANKSHUSET, KRISTIANSTAD</b></a> — Gamla Riksbankshuset i Kristianstad från 1916–1917, ritat av Erik Lallerstedt. <span class="era">1916–1917</span></li>
+<li><a href="/karta?plats=ksamsok-blomska-forradet-kristianstad-991702"><b>BLOMSKA FÖRRÅDET</b></a> — Blomska förrådet i Kristianstad från 1800-talet. <span class="era">1835–1865</span></li>
+<li><a href="/karta?plats=ksamsok-sjukstuga-kristianstad-991706"><b>SJUKSTUGA</b></a> — Sjukstuga i Kristianstad från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-ridhus-kristianstad-991708"><b>RIDHUS</b></a> — Ridhus i Kristianstad från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-museibyggnad-kristianstad-975060"><b>MUSEIBYGGNAD</b></a> — Museibyggnaden Fornstugan i Kristianstad, invigd 1886. <span class="era">1886–1886</span></li>
+<li><a href="/karta?plats=ksamsok-kristianstad-station-kristianstad-975443"><b>Kristianstad station</b></a> — Kristianstad station, uppförd 1865. <span class="era">1865–1865</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 16</h3>
+<ul class="place-list">
+<li><a href="/p/bht-kristianstad-heliga-trefaldighets-kyrka-178"><b>Heliga Trefaldighets Kyrka</b></a> — Bild 1: Upphovsman var danske kung Christian IV, som i sin nya stad önskade en magnifik katedral. <span class="era">1880</span></li>
+<li><a href="/karta?plats=wd-kristianstad-nosaby-kyrka-q3358333"><b>Nosaby kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-farlovs-kyrka-q10500872"><b>Färlövs kyrka</b></a> — 1180-tals kyrka i Lunds stift</li>
+<li><a href="/karta?plats=wd-kristianstad-gustav-adolfs-kyrka-q10511122"><b>Gustav Adolfs kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Viby, Sverige</li>
+<li><a href="/karta?plats=wd-kristianstad-norra-asums-kyrka-q10602671"><b>Norra Åsums kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-nasby-kyrka-q10605311"><b>Näsby kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-skepparslovs-kyrka-q10670032"><b>Skepparslövs kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-araslovs-kyrka-q16497026"><b>Araslövs kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-vilans-kyrka-q18334655"><b>Vilans kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-va-kyrka-q18334810"><b>Vä kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-osterangs-kyrka-q18450975"><b>Österängs kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-nosaby-31-1-q29473034"><b>Nosaby 31:1</b></a> — kyrka/kapell i Skåne</li>
+<li><a href="/karta?plats=wd-kristianstad-helgeandshuset-q29473303"><b>Helgeandshuset</b></a> — kyrka/kapell i Skåne (Vä 18:1)</li>
+<li><a href="/karta?plats=wd-kristianstad-rabelovs-kyrka-q105002238"><b>Råbelövs kyrka</b></a> — kyrkobyggnad i Kristianstads kommun</li>
+<li><a href="/karta?plats=wd-kristianstad-himmelska-gladjens-kapell-q124423044"><b>Himmelska glädjens kapell</b></a> — kapell i Kristianstad</li>
+<li><a href="/p/ksamsok-heliga-korsets-kapell-kristianstad-052171"><b>Heliga korsets kapell</b></a> — Heliga korsets kapell i Kristianstad från 1942, ritat av Herbert Kockum. <span class="era">1942–1942</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-d89ff8"><b>Minnesmärke</b></a> — Minnessten i Kristianstad över Herluf Trolle, född på Lillö 1516.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-472e86"><b>Minnesmärke</b></a> — Minnessten i Kristianstad över fallna vid Norra Skånska infanteriregementet 1939–1945.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-0bdcb0"><b>Minnesmärke</b></a> — Minnessten i Kristianstad över stenhuggaren Rasmus Clausen.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-69311a"><b>Minnesmärke</b></a> — Minnessten i Kristianstad över Sveriges första Folkets Hus.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-243f6d"><b>Minnesmärke</b></a> — Minnessten i Kristianstad över Tivolis grundare J.H. Romann.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-451485"><b>Minnesmärke</b></a> — Minnesskylt i Kristianstad över Sveriges äldsta filmatelje i Cosmorama.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-757690"><b>Minnesmärke</b></a> — En minnessten i röd granit över infanteriregementet som flyttade till Kristianstad 1923.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-f24f0e"><b>Minnesmärke</b></a> — En minnessten över August Palms första socialistiska tal i Kristianstad 1883.</li>
+<li><a href="/p/ksamsok-minnesmarke-kristianstad-382bab"><b>Minnesmärke</b></a> — Norreport från 1750-talet med en minnesplatta över Adolf Fredriks befästningsarbeten.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-0c8b50"><b>Minnesmärke</b></a> — En minnesplatta på husväggen över C. J. F. Ljunggren, född här 1858.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kristianstad-f23b08"><b>Minnesmärke</b></a> — En minnessten över överste Axel Ankarcrona, som vårdade Tivoliparken.</li>
+</ul>
+<h3 class="city-h3">fornminne · 9</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-boplatsomrade-kristianstad-a94118"><b>Boplatsområde</b></a> — Undersökt boplats i Kristianstad med ett dike möjligen från dansk-svenska strider.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-kristianstad-0a221e"><b>Stenkammargrav</b></a> — Nedmonterad hällkista i Kristianstad, ursprungligen från Österslövs socken.</li>
+<li><a href="/p/ksamsok-stadslager-kristianstad-6fdc9d"><b>Stadslager</b></a> — Stadslager efter det tidigmoderna Kristianstad, grundat 1614.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-kristianstad-86174f"><b>Avrättningsplats</b></a> — Forna avrättningsplatsen i Kristianstad, belagd på en karta från 1837.</li>
+<li><a href="/karta?plats=ksamsok-grav-uppgift-om-typ-saknas-kristianstad-0ebed3"><b>Grav - uppgift om typ saknas</b></a> — Undersökt och borttagen grav i Kristianstad.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-kristianstad-899def"><b>Bytomt/gårdstomt</b></a> — Näsbys gamla bytomt, känd sedan 1310 och i dag bebyggd med villor.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-kristianstad-0168b3"><b>Bytomt/gårdstomt</b></a> — Härlövs gamla bytomt, med kulturlager ända från vikingatid.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-kristianstad-cf4631"><b>Bytomt/gårdstomt</b></a> — Rester av en gammal huvudgård söder om Härlöv, undersökt 1999.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-kristianstad-3362a9"><b>Grav övrig</b></a> — En medeltida skelettgrav, undersökt och borttagen 1995.</li>
+</ul>
+<h3 class="city-h3">Torg · 8</h3>
+<ul class="place-list">
+<li><a href="/p/bht-kristianstad-stora-torg-mot-norr-447"><b>Stora Torg / Mot Norr</b></a> — Kristianstads historia är intimt förknippad med militären då den byggdes som en befäst stad 1614 som ett skydd mot svenskarna. <span class="era">1875</span></li>
+<li><a href="/karta?plats=bht-kristianstad-lilla-torg-norra-sidan-499"><b>Lilla Torg Norra sidan</b></a> — De två byggnaderna vänster i bild finns fortfarande kvar om än i förändrat skick. <span class="era">1920</span></li>
+<li><a href="/p/bht-kristianstad-stora-torg-ostra-sidan-353"><b>Stora Torg / Östra sidan</b></a> — Idag är dessa byggnader konsthall respektive restaurang och pub, men de uppfördes som post-och bankhus mellan åren 1917-18 och ritades av s… <span class="era">1935</span></li>
+<li><a href="/p/bht-kristianstad-stora-torg-sodra-sidan-351"><b>Stora Torg / Södra sidan</b></a> — Frimurarhuset täcker ett helt kvarter och ligger med sin stiliga huvudfasad mot Stora Torg. <span class="era">1949</span></li>
+<li><a href="/karta?plats=bht-kristianstad-lilla-torg-ostra-sidan-281"><b>Lilla Torg Östra sidan</b></a> — Det nya kontors- och affärshuset kom att kallas Framtidens hus efter försäkringsbolaget Framtidens Livförsäkringsaktiebolag som lät uppföra… <span class="era">1950</span></li>
+<li><a href="/karta?plats=bht-kristianstad-lilla-torg-sodra-sidan-434"><b>Lilla Torg Södra sidan</b></a> — än idag kallas den här hörnbyggnaden Littorins hörna av många kristianstadsbor. <span class="era">1970</span></li>
+<li><a href="/p/bht-kristianstad-stora-torg-vastra-sidan-421"><b>Stora Torg / Västra sidan</b></a> — Byggnaden med de två tornen och en staty av Kung Christian IV längst upp i nischen på gavelfronten är stadens Rådhus, det andra i ordningen. <span class="era">1997</span></li>
+<li><a href="/karta?plats=izi-kristianstad-lilla-torg"><b>Lilla Torg</b></a> — Stopp på ljudturen «Architektura dawna i współczesna Skandynawii» i Kristianstad.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 5</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kristianstad-utanverken-n-vallgraven-q29472784"><b>Utanverken, N Vallgraven</b></a> — stadsbefästning i Skåne (Kristianstad 110:1)</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-kristianstad-b7c88a"><b>Fästning/skans</b></a> — Undersökt och borttaget försvarsverk i Kristianstad.</li>
+<li><a href="/karta?plats=ksamsok-skans-fastning-skans-kristianstad-835bee"><b>Skans, Fästning/skans</b></a> — En V-formad skans utanför Kristianstad, känd från en karta 1837.</li>
+<li><a href="/p/ksamsok-lillo-borg-kristianstad-54e6f3"><b>Lillö, Borg</b></a> — Lillö borg, en medeltida slottsruin ödelagd under kriget 1658–59.</li>
+<li><a href="/p/ksamsok-stadsbefastning-kristianstad-490a7f"><b>Stadsbefästning</b></a> — Rester av Kristianstads befästningar från 1600- och 1700-talet.</li>
+</ul>
+<h3 class="city-h3">Slott · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-kristianstad-lillo-borgruin-q3431535"><b>Lillö borgruin</b></a> — borg i Skåne (Kristianstad 215:1)</li>
+<li><a href="/karta?plats=wd-kristianstad-harlovs-borg-q29472798"><b>Härlövs borg</b></a> — borg i Skåne (Kristianstad 217:1)</li>
+<li><a href="/karta?plats=ksamsok-lillohus-slottsruin-kristianstad-052053"><b>Lillöhus slottsruin</b></a> — Lillöhus slottsruin i Kristianstad.</li>
+</ul>
+<h3 class="city-h3">Station · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-kristianstad-jarnvagsstationen-432"><b>Järnvägsstationen</b></a> — Bild 1: Efter stadsarkitekt PL Håkanssons tillbyggnad 1917-18 blev stationsbyggnaden nästan dubbelt så stor. <span class="era">1930</span></li>
+<li><a href="/p/bht-kristianstad-brandstationen-331"><b>Brandstationen</b></a> — Bild 1: Stadens första brandstation med slangtorn och spruthus. <span class="era">1979</span></li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-kristianstad-vattentornet-211"><b>Vattentornet</b></a> — Det sfäriska vattentornet från 1965 ritades av Kjessler &amp; Mannerstråle AB och förebild var det kända vattentornet Svampen i örebro. <span class="era">1970</span></li>
+<li><a href="/karta?plats=ksamsok-vattentorn-kristianstad-512640"><b>Vattentorn</b></a> — Vattentorn i Kristianstad uppfört 1913–1916. <span class="era">1913–1916</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 100 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/kristianstad/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/kristianstad/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Kristianstad gratis?</summary><p>Ja. Karta, alla 100 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Kristianstad?</summary><p>Vandringen samlar 100 sevärdheter i Kristianstad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Skottenborg?</summary><p>Skottenborg omtalats ofta som Kristianstads äldsta hus.</p></details>
+<details class="faq"><summary>Vad är Kanalgatan?</summary><p>Här ses ett fotografi på Tekniska skolan sammanfogat med en skiss ur PL Håkanssons hand föreställande Konserthuset och ett flerbostadshus i kvarteret Uttern.</p></details>
+<details class="faq"><summary>Vad är Östra Boulevarden / från Nya Boulevarden?</summary><p>Husraden på denna bild är förändrad i mångt och mycket men Möllers hörna närmast i bild är en byggnad som fortfarande pryder sin plats sedan det uppfördes 1886.</p></details>
+<details class="faq"><summary>Vad är Stora Torg / Mot Norr?</summary><p>Kristianstads historia är intimt förknippad med militären då den byggdes som en befäst stad 1614 som ett skydd mot svenskarna.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

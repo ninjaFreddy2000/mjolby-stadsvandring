@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Strängnäs</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.38358123060662" lon="17.007843873786264"><name>Minnesmärke</name><desc>En minnestavla vid platsen där en sprängbomb slog ned under ett flyganfall 1944.</desc></wpt>
+  <wpt lat="59.37776157382955" lon="16.988501520826826"><name>Minnesmärke</name><desc>S:t Eskils källa och en minnessten rest av frimurare 1925.</desc></wpt>
+  <wpt lat="59.36942744049088" lon="17.029083833532358"><name>Minnesmärke</name><desc>En minnessten i rödaktig granit rest till minne av Magnus Lund 1902.</desc></wpt>
+  <rte><name>Konstrundan i Strängnäs</name>
+    <rtept lat="59.38358123060662" lon="17.007843873786264"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.37776157382955" lon="16.988501520826826"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.36942744049088" lon="17.029083833532358"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

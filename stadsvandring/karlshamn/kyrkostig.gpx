@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Karlshamn</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.20633333" lon="14.94745833"><name>Hällaryds kyrka</name><desc>kyrkobyggnad i Karlshamns kommun</desc></wpt>
+  <wpt lat="56.17138889" lon="14.86211111"><name>Carl Gustafs kyrka</name><desc>kyrkobyggnad i Karlshamns kommun</desc></wpt>
+  <wpt lat="56.16036111" lon="14.86611111"><name>Kastellkyrkan</name><desc>kyrkobyggnad i Karlshamns kommun</desc></wpt>
+  <wpt lat="56.1600562365872" lon="14.865608605095987"><name>Kastellet, Fästning/skans</name><desc>Kastellets ringmur, en fästning som tillskrivs Erik Dahlberg.</desc></wpt>
+  <wpt lat="56.15251053418863" lon="14.862290007837009"><name>Fästning/skans</name><desc>Resterna av en övertorvad, kallmurad skans.</desc></wpt>
+  <wpt lat="56.20570278" lon="14.83326944"><name>Asarums kyrka</name><desc>kyrkobyggnad i Karlshamns kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Karlshamn</name>
+    <rtept lat="56.20633333" lon="14.94745833"><name>Hällaryds kyrka</name></rtept>
+    <rtept lat="56.17138889" lon="14.86211111"><name>Carl Gustafs kyrka</name></rtept>
+    <rtept lat="56.16036111" lon="14.86611111"><name>Kastellkyrkan</name></rtept>
+    <rtept lat="56.1600562365872" lon="14.865608605095987"><name>Kastellet, Fästning/skans</name></rtept>
+    <rtept lat="56.15251053418863" lon="14.862290007837009"><name>Fästning/skans</name></rtept>
+    <rtept lat="56.20570278" lon="14.83326944"><name>Asarums kyrka</name></rtept>
+  </rte>
+</gpx>

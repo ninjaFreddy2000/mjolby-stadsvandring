@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Uppsala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.87859865497788" lon="17.683148575950312"><name>Minnesmärke</name><desc>En minnessten över en väg som byggdes om som nödhjälpsarbete 1921–1922.</desc></wpt>
+  <wpt lat="59.86548333" lon="17.66888333"><name>Flora</name><desc>en bronsskulptur av Axel Wallenberg</desc></wpt>
+  <wpt lat="59.85833333" lon="17.64527778"><name>Näckens polska</name><desc>skulptur</desc></wpt>
+  <wpt lat="59.858388623709516" lon="17.639514865194315"><name>Minnesmärke</name><desc>En minnessten över Carl Wilhelm Scheele, som här upptäckte syret.</desc></wpt>
+  <wpt lat="59.85703402642698" lon="17.632237121129524"><name>Minnesmärke</name><desc>En obelisk rest 1832 till minne av Gustav II Adolf.</desc></wpt>
+  <wpt lat="59.85562706413888" lon="17.632951214112083"><name>Minnesmärke</name><desc>En bronsstaty över skalden Gunnar Wennerberg.</desc></wpt>
+  <wpt lat="59.86191840083934" lon="17.63319870261466"><name>Minnesmärke</name><desc>En bronsstaty av Carl von Linné utförd av Carl Eldh 1930.</desc></wpt>
+  <rte><name>Konstrundan i Uppsala</name>
+    <rtept lat="59.87859865497788" lon="17.683148575950312"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.86548333" lon="17.66888333"><name>Flora</name></rtept>
+    <rtept lat="59.85833333" lon="17.64527778"><name>Näckens polska</name></rtept>
+    <rtept lat="59.858388623709516" lon="17.639514865194315"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.85703402642698" lon="17.632237121129524"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.85562706413888" lon="17.632951214112083"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.86191840083934" lon="17.63319870261466"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

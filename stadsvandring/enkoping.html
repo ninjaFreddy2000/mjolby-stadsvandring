@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Enköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Enköping till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/enkoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Enköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Enköping till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/enkoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Enköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Enköping till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"enkoping","sourceSlug":"stadsvandring/enkoping","centroid":{"lat":59.635208886337,"lng":17.07211669855547},"stops":[{"name":"Enakyrkan","lat":59.63655,"lng":17.07483333},{"name":"Enköpings franciskankonvent","lat":59.63212778,"lng":17.07454167},{"name":"Försvarets historiska telesamlingar","lat":59.64595,"lng":17.1136}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Enköping","description":"Upptäck Enköping till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/enkoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Enakyrkan","description":"frikyrka i Enköping","geo":{"@type":"GeoCoordinates","latitude":59.63655,"longitude":17.07483333}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Enköpings franciskankonvent","description":"Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättades på 1200-talet.","geo":{"@type":"GeoCoordinates","latitude":59.63212778,"longitude":17.07454167}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Försvarets historiska telesamlingar","description":"försvarshistoriska museum i Enköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.64595,"longitude":17.1136}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Sankt Lars kyrka","description":"kyrkobyggnad i Enköpings kommun","geo":{"@type":"GeoCoordinates","latitude":59.644222222222,"longitude":17.054583333333}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Svinnegarns kyrka","description":"kyrkobyggnad i Enköpings kommun","url":"https://stadsvandring.io/p/wd-enkoping-svinnegarns-kyrka-q10686337","geo":{"@type":"GeoCoordinates","latitude":59.588083333333,"longitude":17.00125}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Tillinge kyrka","description":"kyrkobyggnad i Enköpings kommun","geo":{"@type":"GeoCoordinates","latitude":59.63338333,"longitude":16.98914722}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Vårfrukyrkan","description":"kyrkan är belägen på Kyrkåsen i Enköping","geo":{"@type":"GeoCoordinates","latitude":59.63869167,"longitude":17.08263056}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Västerledskyrkan","description":"kyrka i Enköping","geo":{"@type":"GeoCoordinates","latitude":59.64386111,"longitude":17.06538889}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sankt Adai ﻿syrisk-ortodoxa kyrka","description":"Sankt Adai syrisk-ortodoxa kyrka är en kyrka i centrala Enköping.","geo":{"@type":"GeoCoordinates","latitude":59.639634,"longitude":17.1021616}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"S.Ilians kyrka","description":"kyrka/kapell i Uppland (Enköping 5:1)","geo":{"@type":"GeoCoordinates","latitude":59.638493,"longitude":17.08006}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Marieborg","description":"borg i Uppland (Svinnegarn 54:1)","geo":{"@type":"GeoCoordinates","latitude":59.601284,"longitude":17.060986}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Paddeborg","description":"borg i Uppland (Vårfrukyrka 562:1)","geo":{"@type":"GeoCoordinates","latitude":59.636354,"longitude":17.035147}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Haga fyr","description":"en fyr i Mälaren i Enköpings kommun","geo":{"@type":"GeoCoordinates","latitude":59.597694444444,"longitude":17.058166666667}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Afzelii plan","description":"park i Enköping","geo":{"@type":"GeoCoordinates","latitude":59.637527777778,"longitude":17.080055555556}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Enköpings museum","description":"lokalhistoriskt museum i Enköping","geo":{"@type":"GeoCoordinates","latitude":59.63628,"longitude":17.07947}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Skolparken","description":"Enköping","geo":{"@type":"GeoCoordinates","latitude":59.63962,"longitude":17.08197}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"S:t Olofs kapell","description":"Enköping","geo":{"@type":"GeoCoordinates","latitude":59.6426171,"longitude":17.0720786917}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Drömparken","description":"En park anlagd 1996 på gammal järnvägsmark mellan Enköpingsån och stadskärnan.","url":"https://stadsvandring.io/p/ksamsok-dromparken-enkoping-052207","geo":{"@type":"GeoCoordinates","latitude":59.63453811797596,"longitude":17.07216095009871}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"ENKÖPINGS TINGSRÄTT","description":"Enköpings tingsrätt, en tingsbyggnad från 1980-81 präglad av tidens arkitektur.","url":"https://stadsvandring.io/p/ksamsok-enkopings-tingsratt-enkoping-720287","geo":{"@type":"GeoCoordinates","latitude":59.63692514347921,"longitude":17.082935340172213}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"ENKÖPINGS GAMLA TINGSHUS","description":"Enköpings gamla tingshus från 1895 i nyromansk stil med röda tegelfasader.","url":"https://stadsvandring.io/p/ksamsok-enkopings-gamla-tingshus-enkoping-720284","geo":{"@type":"GeoCoordinates","latitude":59.63791120470324,"longitude":17.08032544717389}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"En malsten av granit som förts hit från ett torp under Nynäs.","geo":{"@type":"GeoCoordinates","latitude":59.617411236229664,"longitude":17.078378478538845}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Kloster","description":"En klosterruin med grundmurar av gråsten och tegel samt en bevarad klostergård.","geo":{"@type":"GeoCoordinates","latitude":59.63212654969775,"longitude":17.07453572736547}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Övrigt","description":"Platsen för en försvunnen källa och den så kallade Salpetertomten.","geo":{"@type":"GeoCoordinates","latitude":59.632337306119545,"longitude":17.075178870161245}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Depåfynd","description":"Ett depåfynd med mynt från 1000-talet, ett sigill, en kedja och en dolk.","geo":{"@type":"GeoCoordinates","latitude":59.63212371652107,"longitude":17.07447977499345}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"Fyndplats för medeltida kulturlager och lösfynd i kvarteret Borgmästaren.","geo":{"@type":"GeoCoordinates","latitude":59.63598487242935,"longitude":17.07826032402858}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Enköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 87 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Enköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 87 sevärdheter i Enköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Enakyrkan?","acceptedAnswer":{"@type":"Answer","text":"frikyrka i Enköping"}},{"@type":"Question","name":"Vad är Enköpings franciskankonvent?","acceptedAnswer":{"@type":"Answer","text":"Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättades på 1200-talet."}},{"@type":"Question","name":"Vad är Försvarets historiska telesamlingar?","acceptedAnswer":{"@type":"Answer","text":"försvarshistoriska museum i Enköping, Sverige"}},{"@type":"Question","name":"Vad är Sankt Lars kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Enköpings kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Enköping","item":"https://stadsvandring.io/stadsvandring/enkoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Enköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Enköping</span><span class="badge">87 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Enköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Enköping till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Enköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-enkoping-enakyrkan-q10483552"><b>1. Enakyrkan</b><span>Kyrka · frikyrka i Enköping</span></a>
+<a class="tile" href="/p/wd-enkoping-enkopings-franciskankonvent-q10484299"><b>2. Enköpings franciskankonvent</b><span>Klosterruin · Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättade…</span></a>
+<a class="tile" href="/p/wd-enkoping-forsvarets-historiska-telesamlingar-q10501538"><b>3. Försvarets historiska telesamlingar</b><span>museum · försvarshistoriska museum i Enköping, Sverige</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Enköping · 87</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Enköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 58</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-d8b2f9"><b>Fyndplats</b></a> — En malsten av granit som förts hit från ett torp under Nynäs.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-enkoping-f1f1d0"><b>Övrigt</b></a> — Platsen för en försvunnen källa och den så kallade Salpetertomten.</li>
+<li><a href="/karta?plats=ksamsok-depafynd-enkoping-fa971e"><b>Depåfynd</b></a> — Ett depåfynd med mynt från 1000-talet, ett sigill, en kedja och en dolk.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-7a4d95"><b>Fyndplats</b></a> — Fyndplats för medeltida kulturlager och lösfynd i kvarteret Borgmästaren.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-enkoping-4b713a"><b>Husgrund, historisk tid</b></a> — Lämningar efter fyra hamnmagasin och en försvunnen tullport vid ån.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-enkoping-1d7b22"><b>Skärvstenshög</b></a> — Resterna av en skärvstenshög som delvis tagits bort.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-enkoping-a48b82"><b>Plats med tradition</b></a> — En äng känd för stora pepparrotsodlingar under 1800-talet.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-enkoping-525c1d"><b>Hällristning</b></a> — Platsen för ett försvunnet älvkvarnsblock med en tradition om en gumma och prästen.</li>
+<li><a href="/p/ksamsok-husgrund-historisk-tid-enkoping-4a5ca5"><b>Husgrund, historisk tid</b></a> — Platsen för en källa med brunnshus samt en försvunnen krog och tullport.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-enkoping-d81161"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Platsen för en försvunnen källa och stadstullporten mot Litslena.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-enkoping-ac2041"><b>Övrigt</b></a> — En uppmålad runsten samt platsen för en försvunnen kyrka och tullport.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-8b274b"><b>Fyndplats</b></a> — Fyndplats för mynt och andra föremål vid restaureringen av Vårfrukyrkan 1974.</li>
+<li><a href="/p/ksamsok-fyndplats-enkoping-479791"><b>Fyndplats</b></a> — Fyndplats för en klinkbyggd båt som hittades vid dikesgrävning 1933.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-enkoping-c8be1d"><b>Boplatsområde</b></a> — Ett boplatsområde med härdar och stenpackning som undersöktes 2005.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-enkoping-ebe080"><b>Stensättning</b></a> — Två runda stensättningar, varav den ena osäker.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-enkoping-c39b96"><b>Skärvstenshög</b></a> — En oregelbunden skärvstenshög med skärvsten och askgrå jord.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-enkoping-6ae62b"><b>Begravningsplats</b></a> — En kolerakyrkogård från koleraepidemierna på 1830-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-af3218"><b>Fyndplats</b></a> — Fyndplats för en klinkbyggd båt och ett skelett som hittades 1960.</li>
+<li><a href="/karta?plats=ksamsok-gamla-nynas-bytomt-gardstomt-enkoping-1acc45"><b>Gamla Nynäs, Bytomt/gårdstomt</b></a> — Gårdstomten Gamla Nynäs med belägg ända från 1435.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-enkoping-7c2aca"><b>Ristning, medeltid/historisk tid</b></a> — En grundlämning med kallmurad vägg och ett block med sentida ristning.</li>
+<li><a href="/karta?plats=ksamsok-samlingsplats-enkoping-18e415"><b>Samlingsplats</b></a> — Stadens torg med spår av gamla marknader och en försvunnen rådstuga.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-enkoping-bf4392"><b>Brott/täkt</b></a> — En flack hög samt spår av grustäkt och ett försvunnet åskrön.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-29f17a"><b>Fyndplats</b></a> — En äng känd för stora pepparrotsodlingar och fyndet av en stenyxa.</li>
+<li><a href="/karta?plats=ksamsok-boplats-enkoping-433215"><b>Boplats</b></a> — En boplats som undersöktes och togs bort vid en utredning 2004.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-enkoping-cab65f"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En smal grotta med sex meters synlig längd.</li>
+<li><a href="/p/ksamsok-labyrint-enkoping-5d7544"><b>Labyrint</b></a> — Platsen för en försvunnen labyrint intill den medeltida Vårfrukyrkan.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-633217"><b>Fyndplats</b></a> — Fyndplats för stenåldersföremål från Enögla, nu i museisamlingar.</li>
+<li><a href="/p/ksamsok-stadslager-enkoping-24dab6"><b>Stadslager</b></a> — Medeltida kulturlager under Enköpings stad, dokumenterade i flera undersökningar.</li>
+<li><a href="/karta?plats=ksamsok-svarvartorpet-lagenhetsbebyggelse-enkoping-f5bd6b"><b>Svarvartorpet, Lägenhetsbebyggelse</b></a> — Bebyggelselämningar efter Svarvartorpet med hus- och källargrunder.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-enkoping-d9acc9"><b>Plats med tradition</b></a> — En träbyggnad där läkaren Ernst Westerlund verkade 1867-1924.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-enkoping-83f0a9"><b>Lägenhetsbebyggelse</b></a> — Lämningar efter en backstuga med två husgrunder.</li>
+<li><a href="/karta?plats=ksamsok-hog-enkoping-d02a86"><b>Hög</b></a> — En numera borttagen hög som möjligen var en skärvstenshög.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-enkoping-53131b"><b>Husgrund, historisk tid</b></a> — Platsen för en försvunnen källa, numera bebyggd.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-enkoping-036296"><b>Plats med tradition</b></a> — En stadsdel som bär ett namn med tradition.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-enkoping-464d71"><b>Plats med tradition</b></a> — En flack hög samt platsen för ett försvunnet åskrön där majbrasor eldats.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-enkoping-73fd89"><b>Övrigt</b></a> — En osäker boplats med spridd skärvsten där en begravningsplats planeras.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-enkoping-b3bf73"><b>Husgrund, historisk tid</b></a> — Platsen för en försvunnen källa och stadstullporten mot Litslena.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-enkoping-dad961"><b>Avrättningsplats</b></a> — En avrättningsplats vars läge framgår av en storskifteskarta från 1773.</li>
+<li><a href="/karta?plats=ksamsok-boplats-enkoping-7aa629"><b>Boplats</b></a> — Ett boplatsområde med indikationer av bränd lera, kol och skärvig sten.</li>
+<li><a href="/karta?plats=ksamsok-grav-uppgift-om-typ-saknas-enkoping-deb416"><b>Grav - uppgift om typ saknas</b></a> — Kulturlager och lösfynd från medeltiden vid kvarteret Borgmästaren.</li>
+<li><a href="/karta?plats=ksamsok-boplats-enkoping-16bce3"><b>Boplats</b></a> — Boplatsspår och äldre uppgifter om ättehögar samt lösfynd av flinta och brons.</li>
+<li><a href="/karta?plats=ksamsok-boplats-enkoping-ce5c03"><b>Boplats</b></a> — En boplats med ett tjugotal anläggningar som undersökts och tagits bort.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-enkoping-336d25"><b>Fornlämningsliknande lämning</b></a> — En förhöjning med kol- och sotbemängt lager vars tolkning är oklar.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-enkoping-e80ae5"><b>Fyndplats</b></a> — Fyndplats för gravfynd med urnskärvor, ben och kol vid järnvägen.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-enkoping-30475b"><b>Flatmarksgrav</b></a> — En järnåldersgrav och ett bronsspänne vittnar om tidig begravning på Enköpingsåsen.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-enkoping-78e794"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Salpetertomten minner om salpetersjudning på 1500- och 1600-talet, senare tegelslagning.</li>
+<li><a href="/p/ksamsok-fyndsamling-enkoping-6256c4"><b>Fyndsamling</b></a> — Ett stadsmuseum i gamla bibliotekets källare med tusentals fynd, från flintspetsar till en stockbåt.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-enkoping-aed1e9"><b>Övrigt</b></a> — En restaurerad runsten, funnen i en brotrumma vid vägbreddningen 1964.</li>
+<li><a href="/karta?plats=ksamsok-hog-enkoping-0d0acb"><b>Hög</b></a> — En gammal gravhög nära ett försvunnet åskrön där majbrasorna en gång brann.</li>
+<li><a href="/karta?plats=ksamsok-munksundskallan-kalla-med-tradition-enkoping-181c61"><b>Munksundskällan, Källa med tradition</b></a> — En källa med åttkantigt brunnshus, dit klostrets Pater Noster-brunn flyttades 1847.</li>
+<li><a href="/karta?plats=ksamsok-boplats-enkoping-2057e1"><b>Boplats</b></a> — Spridd skärvsten längs bergskanten antyder en möjlig, men osäker, forntida boplats.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-enkoping-40106d"><b>Plats med tradition</b></a> — En välvd källare där klostrets munkar sägs ha förvarat sitt vin.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-enkoping-2b6755"><b>Vägmärke</b></a> — En gammal milstolpe med järnplatta som visade vägfarande avståndet en halv mil.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-enkoping-a2259c"><b>Fornlämningsliknande lämning</b></a> — Resterna av en skärvstenshög med skörbränd sten, spår efter forntida eld.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-enkoping-3e494a"><b>Hägnad</b></a> — En gammal stensträng som kan höra samman med en gränsdragning, med järnfynd intill.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-enkoping-bfcae4"><b>Tegelindustri</b></a> — Ett försvunnet tegelbruk och kvarvarande rödmålade järnvägsbostäder.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-enkoping-ba802a"><b>Gravfält</b></a> — Ett gravfält där utgrävning funnit brandgrav, gravpackningar och spår av forntida boende.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-enkoping-6bb215"><b>Hällristning</b></a> — Ett block med två inslipade älvkvarnar, forntida skålgropsristningar.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-enakyrkan-q10483552"><b>Enakyrkan</b></a> — frikyrka i Enköping</li>
+<li><a href="/karta?plats=wd-enkoping-sankt-lars-kyrka-q10661392"><b>Sankt Lars kyrka</b></a> — kyrkobyggnad i Enköpings kommun</li>
+<li><a href="/p/wd-enkoping-svinnegarns-kyrka-q10686337"><b>Svinnegarns kyrka</b></a> — kyrkobyggnad i Enköpings kommun</li>
+<li><a href="/karta?plats=wd-enkoping-tillinge-kyrka-q10698049"><b>Tillinge kyrka</b></a> — kyrkobyggnad i Enköpings kommun</li>
+<li><a href="/karta?plats=wd-enkoping-varfrukyrkan-q10718865"><b>Vårfrukyrkan</b></a> — kyrkan är belägen på Kyrkåsen i Enköping</li>
+<li><a href="/karta?plats=wd-enkoping-vasterledskyrkan-q23646409"><b>Västerledskyrkan</b></a> — kyrka i Enköping</li>
+<li><a href="/karta?plats=wd-enkoping-sankt-adai-syrisk-ortodoxa-kyrka-q26256796"><b>Sankt Adai ﻿syrisk-ortodoxa kyrka</b></a> — Sankt Adai syrisk-ortodoxa kyrka är en kyrka i centrala Enköping.</li>
+<li><a href="/karta?plats=wd-enkoping-s-ilians-kyrka-q29879829"><b>S.Ilians kyrka</b></a> — kyrka/kapell i Uppland (Enköping 5:1)</li>
+<li><a href="/karta?plats=wd-enkoping-s-t-olofs-kapell-q123465382"><b>S:t Olofs kapell</b></a> — Enköping</li>
+<li><a href="/p/ksamsok-kyrka-kapell-enkoping-12b1f8"><b>Kyrka/kapell</b></a> — Vårfrukyrkan från 1125 med en försvunnen labyrint på kyrkogården.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-enkoping-f2a572"><b>Kyrka/kapell</b></a> — En uppmålad runsten rest efter Igul samt platsen för S:t Olofs kyrka.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 3</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-dromparken-enkoping-052207"><b>Drömparken</b></a> — En park anlagd 1996 på gammal järnvägsmark mellan Enköpingsån och stadskärnan. <span class="era">1996–1996</span></li>
+<li><a href="/p/ksamsok-enkopings-tingsratt-enkoping-720287"><b>ENKÖPINGS TINGSRÄTT</b></a> — Enköpings tingsrätt, en tingsbyggnad från 1980-81 präglad av tidens arkitektur. <span class="era">1980–1981</span></li>
+<li><a href="/p/ksamsok-enkopings-gamla-tingshus-enkoping-720284"><b>ENKÖPINGS GAMLA TINGSHUS</b></a> — Enköpings gamla tingshus från 1895 i nyromansk stil med röda tegelfasader. <span class="era">1895–1895</span></li>
+</ul>
+<h3 class="city-h3">Klosterruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-enkopings-franciskankonvent-q10484299"><b>Enköpings franciskankonvent</b></a> — Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättades på 1200-talet.</li>
+<li><a href="/karta?plats=ksamsok-kloster-enkoping-13dd06"><b>Kloster</b></a> — En klosterruin med grundmurar av gråsten och tegel samt en bevarad klostergård.</li>
+</ul>
+<h3 class="city-h3">museum · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-forsvarets-historiska-telesamlingar-q10501538"><b>Försvarets historiska telesamlingar</b></a> — försvarshistoriska museum i Enköping, Sverige</li>
+<li><a href="/karta?plats=wd-enkoping-enkopings-museum-q84424451"><b>Enköpings museum</b></a> — lokalhistoriskt museum i Enköping</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-marieborg-q29906276"><b>Marieborg</b></a> — borg i Uppland (Svinnegarn 54:1)</li>
+<li><a href="/karta?plats=wd-enkoping-paddeborg-q29921280"><b>Paddeborg</b></a> — borg i Uppland (Vårfrukyrka 562:1)</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-afzelii-plan-q77271154"><b>Afzelii plan</b></a> — park i Enköping</li>
+<li><a href="/karta?plats=wd-enkoping-skolparken-q105959137"><b>Skolparken</b></a> — Enköping</li>
+</ul>
+<h3 class="city-h3">Runsten · 2</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-runristning-enkoping-305819"><b>Runristning</b></a> — Ruinen efter S:t Ilians kyrka med tillhörande runsten U758.</li>
+<li><a href="/karta?plats=ksamsok-runristning-enkoping-5d9c86"><b>Runristning</b></a> — En runsten som återfanns i en gammal brotrumma vid en vägbreddning 1964.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-enkoping-08c20a"><b>Minnesmärke</b></a> — En minnessten över ärkebiskop Lars II, rest 1965.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-enkoping-e430bf"><b>Minnesmärke</b></a> — En byst rest till minne av läkaren Ernst Westerlund.</li>
+</ul>
+<h3 class="city-h3">Torn · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-enkoping-haga-fyr-q41077040"><b>Haga fyr</b></a> — en fyr i Mälaren i Enköpings kommun</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-borg-enkoping-43e181"><b>Borg</b></a> — Lämningar efter en borg intill åfåran, med spridda tegel- och slaggfynd.</li>
+</ul>
+<h3 class="city-h3">Bro · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-bro-enkoping-67f862"><b>Bro</b></a> — Ett pumphus från 1900, en valvbro och resterna av gamla Munkbron samlas på denna plats.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 87 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/enkoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/enkoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Enköping gratis?</summary><p>Ja. Karta, alla 87 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Enköping?</summary><p>Vandringen samlar 87 sevärdheter i Enköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Enakyrkan?</summary><p>frikyrka i Enköping</p></details>
+<details class="faq"><summary>Vad är Enköpings franciskankonvent?</summary><p>Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättades på 1200-talet.</p></details>
+<details class="faq"><summary>Vad är Försvarets historiska telesamlingar?</summary><p>försvarshistoriska museum i Enköping, Sverige</p></details>
+<details class="faq"><summary>Vad är Sankt Lars kyrka?</summary><p>kyrkobyggnad i Enköpings kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

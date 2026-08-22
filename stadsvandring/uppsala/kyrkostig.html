@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Uppsala — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv. 23 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/uppsala/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Uppsala — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv. 23 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/uppsala/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Uppsala — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv. 23 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"uppsala","theme":"kyrkostig","sourceSlug":"stadsvandring/uppsala/kyrkostig","centroid":{"lat":59.867659998066046,"lng":17.650785737444174},"stops":[{"name":"Lyckebokyrkan","lat":59.953888888889,"lng":17.694861111111},{"name":"Gamla Uppsala kyrka","lat":59.8995,"lng":17.6318},{"name":"Tunabergskyrkan","lat":59.87805556,"lng":17.61972222},{"name":"Lötenkyrkan","lat":59.87833333,"lng":17.64666667},{"name":"Korskyrkan","lat":59.86895556,"lng":17.64356389},{"name":"Sankt Pers kyrka","lat":59.86769444,"lng":17.649875},{"name":"Almtunakyrkan","lat":59.86045,"lng":17.65650833},{"name":"Samariterhemmets kyrka","lat":59.855472222222,"lng":17.649138888889},{"name":"Baptistkyrkan","lat":59.857475,"lng":17.64370556},{"name":"Sankt Lars kyrka","lat":59.85638889,"lng":17.63888889},{"name":"Uppsala hospitalskyrka","lat":59.857149319964,"lng":17.637940432327},{"name":"Gravkapell","lat":59.855475,"lng":17.638843},{"name":"Helga Trefaldighets kyrka","lat":59.85688889,"lng":17.63260833},{"name":"Uppsala Domkyrka","lat":59.8581519,"lng":17.6336322},{"name":"Uppsala Franciskankonvent","lat":59.859625,"lng":17.63638889},{"name":"Pingstkyrkan, Uppsala","lat":59.85990556,"lng":17.63871667},{"name":"Missionskyrkan","lat":59.86168333,"lng":17.63628333},{"name":"Mikaelskyrkan","lat":59.86456667,"lng":17.63452222},{"name":"Vindhemskyrkan S:ta Birgitta","lat":59.86274722,"lng":17.61925556},{"name":"Salabackekyrkan","lat":59.86886111,"lng":17.66818056},{"name":"Årstakyrkan","lat":59.86597222,"lng":17.68572222},{"name":"Vaksala kyrka","lat":59.8759954,"lng":17.6863591},{"name":"Danmarks kyrka","lat":59.832944444444,"lng":17.744888888889}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Uppsala","description":"Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Lyckebokyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-lyckebokyrkan-q10571212"},{"@type":"HowToStep","position":2,"name":"Gamla Uppsala kyrka","text":"kyrkobyggnad i Uppsala kommun, Sverige","url":"https://stadsvandring.io/p/wd-uppsala-gamla-uppsala-kyrka-q8342836"},{"@type":"HowToStep","position":3,"name":"Tunabergskyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-tunabergskyrkan-q10706292"},{"@type":"HowToStep","position":4,"name":"Lötenkyrkan","text":"kyrkobyggnad i Svenska kyrkan-Evangeliska fosterlandsstiftelsen i Uppsala, Sweden","url":"https://stadsvandring.io/p/wd-uppsala-lotenkyrkan-q6711363"},{"@type":"HowToStep","position":5,"name":"Korskyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-korskyrkan-q10548218"},{"@type":"HowToStep","position":6,"name":"Sankt Pers kyrka","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-sankt-pers-kyrka-q10661467"},{"@type":"HowToStep","position":7,"name":"Almtunakyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-almtunakyrkan-q16157533"},{"@type":"HowToStep","position":8,"name":"Samariterhemmets kyrka","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-samariterhemmets-kyrka-q10660845"},{"@type":"HowToStep","position":9,"name":"Baptistkyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-baptistkyrkan-q10426217"},{"@type":"HowToStep","position":10,"name":"Sankt Lars kyrka","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-sankt-lars-kyrka-q10661398"},{"@type":"HowToStep","position":11,"name":"Uppsala hospitalskyrka","text":"kyrka i Uppsala","url":"https://stadsvandring.io/p/wd-uppsala-uppsala-hospitalskyrka-q126921828"},{"@type":"HowToStep","position":12,"name":"Gravkapell","text":"kapell i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-gravkapell-q130478055"},{"@type":"HowToStep","position":13,"name":"Helga Trefaldighets kyrka","text":"kyrkobyggnad i Uppsala","url":"https://stadsvandring.io/p/wd-uppsala-helga-trefaldighets-kyrka-q10519482"},{"@type":"HowToStep","position":14,"name":"Uppsala Domkyrka","text":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","url":"https://stadsvandring.io/p/izi-uppsala-uppsala-domkyrka"},{"@type":"HowToStep","position":15,"name":"Uppsala Franciskankonvent","text":"Uppsala franciskankonvent var ett konvent tillhörigt Franciskanorden i Uppsala.","url":"https://stadsvandring.io/p/wd-uppsala-uppsala-franciskankonvent-q18334437"},{"@type":"HowToStep","position":16,"name":"Pingstkyrkan, Uppsala","text":"kyrkobyggnad i Uppsala, Sverige","url":"https://stadsvandring.io/p/wd-uppsala-pingstkyrkan-uppsala-q10631915"},{"@type":"HowToStep","position":17,"name":"Missionskyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-missionskyrkan-q10586370"},{"@type":"HowToStep","position":18,"name":"Mikaelskyrkan","text":"kyrkobyggnad i Uppsala","url":"https://stadsvandring.io/p/wd-uppsala-mikaelskyrkan-q10585165"},{"@type":"HowToStep","position":19,"name":"Vindhemskyrkan S:ta Birgitta","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-vindhemskyrkan-s-ta-birgitta-q10715707"},{"@type":"HowToStep","position":20,"name":"Salabackekyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-salabackekyrkan-q7403362"},{"@type":"HowToStep","position":21,"name":"Årstakyrkan","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-arstakyrkan-q28035290"},{"@type":"HowToStep","position":22,"name":"Vaksala kyrka","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-vaksala-kyrka-q10712061"},{"@type":"HowToStep","position":23,"name":"Danmarks kyrka","text":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-danmarks-kyrka-q5219988"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Uppsala","description":"Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/uppsala/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":23,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Lyckebokyrkan","url":"https://stadsvandring.io/p/wd-uppsala-lyckebokyrkan-q10571212"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Gamla Uppsala kyrka","url":"https://stadsvandring.io/p/wd-uppsala-gamla-uppsala-kyrka-q8342836"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Tunabergskyrkan","url":"https://stadsvandring.io/p/wd-uppsala-tunabergskyrkan-q10706292"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Lötenkyrkan","url":"https://stadsvandring.io/p/wd-uppsala-lotenkyrkan-q6711363"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Korskyrkan","url":"https://stadsvandring.io/p/wd-uppsala-korskyrkan-q10548218"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Sankt Pers kyrka","url":"https://stadsvandring.io/p/wd-uppsala-sankt-pers-kyrka-q10661467"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Almtunakyrkan","url":"https://stadsvandring.io/p/wd-uppsala-almtunakyrkan-q16157533"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Samariterhemmets kyrka","url":"https://stadsvandring.io/p/wd-uppsala-samariterhemmets-kyrka-q10660845"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Baptistkyrkan","url":"https://stadsvandring.io/p/wd-uppsala-baptistkyrkan-q10426217"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Sankt Lars kyrka","url":"https://stadsvandring.io/p/wd-uppsala-sankt-lars-kyrka-q10661398"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Uppsala hospitalskyrka","url":"https://stadsvandring.io/p/wd-uppsala-uppsala-hospitalskyrka-q126921828"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Gravkapell","url":"https://stadsvandring.io/p/wd-uppsala-gravkapell-q130478055"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Helga Trefaldighets kyrka","url":"https://stadsvandring.io/p/wd-uppsala-helga-trefaldighets-kyrka-q10519482"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Uppsala Domkyrka","url":"https://stadsvandring.io/p/izi-uppsala-uppsala-domkyrka"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Uppsala Franciskankonvent","url":"https://stadsvandring.io/p/wd-uppsala-uppsala-franciskankonvent-q18334437"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan, Uppsala","url":"https://stadsvandring.io/p/wd-uppsala-pingstkyrkan-uppsala-q10631915"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Missionskyrkan","url":"https://stadsvandring.io/p/wd-uppsala-missionskyrkan-q10586370"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Mikaelskyrkan","url":"https://stadsvandring.io/p/wd-uppsala-mikaelskyrkan-q10585165"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Vindhemskyrkan S:ta Birgitta","url":"https://stadsvandring.io/p/wd-uppsala-vindhemskyrkan-s-ta-birgitta-q10715707"}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Salabackekyrkan","url":"https://stadsvandring.io/p/wd-uppsala-salabackekyrkan-q7403362"}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Årstakyrkan","url":"https://stadsvandring.io/p/wd-uppsala-arstakyrkan-q28035290"}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Vaksala kyrka","url":"https://stadsvandring.io/p/wd-uppsala-vaksala-kyrka-q10712061"}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Danmarks kyrka","url":"https://stadsvandring.io/p/wd-uppsala-danmarks-kyrka-q5219988"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Uppsala","item":"https://stadsvandring.io/stadsvandring/uppsala"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Uppsala","item":"https://stadsvandring.io/stadsvandring/uppsala/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/uppsala">Stadsvandring i Uppsala</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Uppsala</span><span class="badge">23 stopp</span></div>
+<h1>Kyrkostigen i Uppsala</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Uppsala — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Uppsala"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-uppsala-lyckebokyrkan-q10571212"><b>1. Lyckebokyrkan</b><span>Kyrka · kyrkobyggnad i Uppsala kommun</span></a>
+<a class="tile" href="/p/wd-uppsala-gamla-uppsala-kyrka-q8342836"><b>2. Gamla Uppsala kyrka</b><span>Kyrka · kyrkobyggnad i Uppsala kommun, Sverige</span></a>
+<a class="tile" href="/p/wd-uppsala-tunabergskyrkan-q10706292"><b>3. Tunabergskyrkan</b><span>Kyrka · kyrkobyggnad i Uppsala kommun</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 23 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/uppsala/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-uppsala-lyckebokyrkan-q10571212"><b>1. Lyckebokyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-gamla-uppsala-kyrka-q8342836"><b>2. Gamla Uppsala kyrka</b></a> — kyrkobyggnad i Uppsala kommun, Sverige</li>
+<li><a href="/p/wd-uppsala-tunabergskyrkan-q10706292"><b>3. Tunabergskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-lotenkyrkan-q6711363"><b>4. Lötenkyrkan</b></a> — kyrkobyggnad i Svenska kyrkan-Evangeliska fosterlandsstiftelsen i Uppsala, Sweden</li>
+<li><a href="/p/wd-uppsala-korskyrkan-q10548218"><b>5. Korskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-sankt-pers-kyrka-q10661467"><b>6. Sankt Pers kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-almtunakyrkan-q16157533"><b>7. Almtunakyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-samariterhemmets-kyrka-q10660845"><b>8. Samariterhemmets kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-baptistkyrkan-q10426217"><b>9. Baptistkyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-sankt-lars-kyrka-q10661398"><b>10. Sankt Lars kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-uppsala-hospitalskyrka-q126921828"><b>11. Uppsala hospitalskyrka</b></a> — kyrka i Uppsala</li>
+<li><a href="/p/wd-uppsala-gravkapell-q130478055"><b>12. Gravkapell</b></a> — kapell i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-helga-trefaldighets-kyrka-q10519482"><b>13. Helga Trefaldighets kyrka</b></a> — kyrkobyggnad i Uppsala</li>
+<li><a href="/p/izi-uppsala-uppsala-domkyrka"><b>14. Uppsala Domkyrka</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/p/wd-uppsala-uppsala-franciskankonvent-q18334437"><b>15. Uppsala Franciskankonvent</b></a> — Uppsala franciskankonvent var ett konvent tillhörigt Franciskanorden i Uppsala.</li>
+<li><a href="/p/wd-uppsala-pingstkyrkan-uppsala-q10631915"><b>16. Pingstkyrkan, Uppsala</b></a> — kyrkobyggnad i Uppsala, Sverige</li>
+<li><a href="/p/wd-uppsala-missionskyrkan-q10586370"><b>17. Missionskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-mikaelskyrkan-q10585165"><b>18. Mikaelskyrkan</b></a> — kyrkobyggnad i Uppsala</li>
+<li><a href="/p/wd-uppsala-vindhemskyrkan-s-ta-birgitta-q10715707"><b>19. Vindhemskyrkan S:ta Birgitta</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-salabackekyrkan-q7403362"><b>20. Salabackekyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-arstakyrkan-q28035290"><b>21. Årstakyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-vaksala-kyrka-q10712061"><b>22. Vaksala kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-danmarks-kyrka-q5219988"><b>23. Danmarks kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/uppsala">Stadsvandringen i Uppsala</a> <a class="cta ghost" href="/stadsvandring/uppsala/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

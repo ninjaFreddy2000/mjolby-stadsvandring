@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Uppsala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.869311" lon="17.623476"><name>Fyrisvallsbron</name><desc>Fyrisvallsbron är en bro över Fyrisån i Uppsala längs Gamla Uppsalagatan som förbinder Svartbäcken med Luthagen.</desc></wpt>
+  <wpt lat="59.8639" lon="17.6305666667"><name>Eddaspången</name><desc>Eddaspången är en gång- och cykelbro i Uppsala över Fyrisån mellan Fyrisgatan och Svartbäcksgatan, i Odensgatans förlängning.</desc></wpt>
+  <wpt lat="59.86194444" lon="17.63138889"><name>Haglunds bro</name><desc>bro i Uppsala</desc></wpt>
+  <wpt lat="59.86083333" lon="17.63222222"><name>Jernbron</name><desc>bro i Uppsala</desc></wpt>
+  <wpt lat="59.85881082487165" lon="17.63470420697484"><name>Bro</name><desc>En stenvalvsbro från 1759 med inhuggen årtalstavla.</desc></wpt>
+  <wpt lat="59.85861111" lon="17.63611111"><name>Dombron</name><desc>bro i Uppsala, Sverige</desc></wpt>
+  <wpt lat="59.85788345" lon="17.63744354"><name>Nybron, Uppsala</name><desc>bro över Fyrisån i Uppsala</desc></wpt>
+  <wpt lat="59.85790493142859" lon="17.63749012303976"><name>Bro</name><desc>En valvbro av huggen granit från 1899 med balustradräcke och gjutjärnslyktor.</desc></wpt>
+  <wpt lat="59.855" lon="17.641667"><name>Islandsbron</name><desc>bro i Uppsala</desc></wpt>
+  <wpt lat="59.85161" lon="17.64558"><name>Hamnspången</name><desc>Hamnspången är en gång- och cykelbro i centrala Uppsala.</desc></wpt>
+  <wpt lat="59.846111111111" lon="17.650833333333"><name>Tullgarnsbron</name><desc>bro över Fyrisån i Uppsala</desc></wpt>
+  <rte><name>Industrihistoria i Uppsala</name>
+    <rtept lat="59.869311" lon="17.623476"><name>Fyrisvallsbron</name></rtept>
+    <rtept lat="59.8639" lon="17.6305666667"><name>Eddaspången</name></rtept>
+    <rtept lat="59.86194444" lon="17.63138889"><name>Haglunds bro</name></rtept>
+    <rtept lat="59.86083333" lon="17.63222222"><name>Jernbron</name></rtept>
+    <rtept lat="59.85881082487165" lon="17.63470420697484"><name>Bro</name></rtept>
+    <rtept lat="59.85861111" lon="17.63611111"><name>Dombron</name></rtept>
+    <rtept lat="59.85788345" lon="17.63744354"><name>Nybron, Uppsala</name></rtept>
+    <rtept lat="59.85790493142859" lon="17.63749012303976"><name>Bro</name></rtept>
+    <rtept lat="59.855" lon="17.641667"><name>Islandsbron</name></rtept>
+    <rtept lat="59.85161" lon="17.64558"><name>Hamnspången</name></rtept>
+    <rtept lat="59.846111111111" lon="17.650833333333"><name>Tullgarnsbron</name></rtept>
+  </rte>
+</gpx>

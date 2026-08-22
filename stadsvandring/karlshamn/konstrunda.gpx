@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Karlshamn</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.17587000446284" lon="14.861378337369464"><name>Minnesmärke</name><desc>Inhuggna initialer och järnringar på en berghäll.</desc></wpt>
+  <wpt lat="56.164661111111" lon="14.869430555556"><name>Utvandrarmonumentet</name><desc>skulptur i Karlshamn, Sverige</desc></wpt>
+  <wpt lat="56.163242807805084" lon="14.8717923080874"><name>Minnesmärke</name><desc>En minnessten med en fosterländsk dikt om hembygden kring Mörrumsån och Asarum.</desc></wpt>
+  <rte><name>Konstrundan i Karlshamn</name>
+    <rtept lat="56.17587000446284" lon="14.861378337369464"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.164661111111" lon="14.869430555556"><name>Utvandrarmonumentet</name></rtept>
+    <rtept lat="56.163242807805084" lon="14.8717923080874"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

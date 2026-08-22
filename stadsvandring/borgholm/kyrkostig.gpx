@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Kyrkostigen i Borgholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.06722222" lon="16.93111111"><name>Persnäs kyrka</name><desc>kyrkobyggnad i Borgholms kommun</desc></wpt>
+  <wpt lat="56.878071" lon="16.718705"><name>Köpings kyrka</name><desc>En medeltida kyrka i Köpingsvik på platsen för Ölands gamla handelscentrum, med rötter i 1100-talet och tidiga kristna gravmonument.</desc></wpt>
   <wpt lat="56.88023" lon="16.656239"><name>Borgholms kyrka</name><desc>Stadens kyrka i natursten från 1879, byggd i en egen medeltidsinspirerad stil med torn placerat mitt på byggnaden.</desc></wpt>
   <wpt lat="56.870718" lon="16.644676"><name>Borgholms slottsruin</name><desc>Nordens kanske mäktigaste slottsruin reser sig på en klinta ovanför Borgholm och bär spår av åtta sekel av makt, krig och förfall.</desc></wpt>
-  <wpt lat="56.878071" lon="16.718705"><name>Köpings kyrka</name><desc>En medeltida kyrka i Köpingsvik på platsen för Ölands gamla handelscentrum, med rötter i 1100-talet och tidiga kristna gravmonument.</desc></wpt>
   <rte><name>Kyrkostigen i Borgholm</name>
+    <rtept lat="57.06722222" lon="16.93111111"><name>Persnäs kyrka</name></rtept>
+    <rtept lat="56.878071" lon="16.718705"><name>Köpings kyrka</name></rtept>
     <rtept lat="56.88023" lon="16.656239"><name>Borgholms kyrka</name></rtept>
     <rtept lat="56.870718" lon="16.644676"><name>Borgholms slottsruin</name></rtept>
-    <rtept lat="56.878071" lon="16.718705"><name>Köpings kyrka</name></rtept>
   </rte>
 </gpx>

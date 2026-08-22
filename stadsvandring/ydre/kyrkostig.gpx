@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Ydre</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.88498" lon="15.35044"><name>Norra Vi kyrka</name><desc>Den första kristna kyrkan i vibyn var troligen ett oansenligt gårdskapell i trä uppfört någon gång under 1100- eller 1200-talet.</desc></wpt>
+  <wpt lat="57.86291111" lon="15.24622778"><name>Sunds kyrka</name><desc>kyrkobyggnad i Ydre kommun</desc></wpt>
+  <wpt lat="57.826" lon="15.274333333333"><name>Österbymo missionskyrka</name><desc>kyrka i Österbymo</desc></wpt>
+  <rte><name>Kyrkostigen i Ydre</name>
+    <rtept lat="57.88498" lon="15.35044"><name>Norra Vi kyrka</name></rtept>
+    <rtept lat="57.86291111" lon="15.24622778"><name>Sunds kyrka</name></rtept>
+    <rtept lat="57.826" lon="15.274333333333"><name>Österbymo missionskyrka</name></rtept>
+  </rte>
+</gpx>

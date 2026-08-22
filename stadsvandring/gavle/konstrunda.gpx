@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Gävle</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="60.67622793347769" lon="17.12120190684052"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle med knapphändigt underlag.</desc></wpt>
+  <wpt lat="60.67228936767272" lon="17.128013249605058"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle.</desc></wpt>
+  <wpt lat="60.67416270232919" lon="17.131333465551847"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle.</desc></wpt>
+  <wpt lat="60.673564" lon="17.132843"><name>Musicerande änglar</name><desc>skulptur i Gävle, Sverige</desc></wpt>
+  <wpt lat="60.672057047269895" lon="17.133497655624492"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle med knapphändigt underlag.</desc></wpt>
+  <wpt lat="60.673111111111" lon="17.136"><name>Gustav Vasa staty, Kvarnparken Gävle</name><desc>staty som fanns i Kvarnparken i Gävle av Ida Matton</desc></wpt>
+  <wpt lat="60.67323289813937" lon="17.13608116006603"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle.</desc></wpt>
+  <wpt lat="60.674690534092" lon="17.144544586152"><name>Gudinna vid hyperboreiskt hav</name><desc>skulptur i småländsk granit av Eric Grate</desc></wpt>
+  <wpt lat="60.67580418176126" lon="17.14365359291062"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle upptaget i fornregistret.</desc></wpt>
+  <wpt lat="60.6729" lon="17.1462"><name>Three Piece Reclining Figure: Draped</name><desc>Three Piece Reclining Figure: Draped</desc></wpt>
+  <wpt lat="60.673972222222" lon="17.149777777778"><name>Lokes straff</name><desc>staty av Ida Matton, bronskopia vid Länsmuseet Gävleborg.</desc></wpt>
+  <wpt lat="60.67408387438059" lon="17.150245297702504"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle med knapphändigt underlag.</desc></wpt>
+  <wpt lat="60.67001327863006" lon="17.14835144564416"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle.</desc></wpt>
+  <wpt lat="60.66988175241171" lon="17.142293137817315"><name>Minnesmärke</name><desc>Ett registrerat minnesmärke i Gävle.</desc></wpt>
+  <wpt lat="60.66966000955149" lon="17.117340913673583"><name>Minnesmärke</name><desc>Ett minnesmärke registrerat i Gävle.</desc></wpt>
+  <wpt lat="60.669639007179505" lon="17.113772029228112"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle med knapphändigt underlag.</desc></wpt>
+  <wpt lat="60.67463205354838" lon="17.110201628317995"><name>Minnesmärke</name><desc>Ett minnesmärke i Gävle upptaget i registret.</desc></wpt>
+  <rte><name>Konstrundan i Gävle</name>
+    <rtept lat="60.67622793347769" lon="17.12120190684052"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.67228936767272" lon="17.128013249605058"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.67416270232919" lon="17.131333465551847"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.673564" lon="17.132843"><name>Musicerande änglar</name></rtept>
+    <rtept lat="60.672057047269895" lon="17.133497655624492"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.673111111111" lon="17.136"><name>Gustav Vasa staty, Kvarnparken Gävle</name></rtept>
+    <rtept lat="60.67323289813937" lon="17.13608116006603"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.674690534092" lon="17.144544586152"><name>Gudinna vid hyperboreiskt hav</name></rtept>
+    <rtept lat="60.67580418176126" lon="17.14365359291062"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.6729" lon="17.1462"><name>Three Piece Reclining Figure: Draped</name></rtept>
+    <rtept lat="60.673972222222" lon="17.149777777778"><name>Lokes straff</name></rtept>
+    <rtept lat="60.67408387438059" lon="17.150245297702504"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.67001327863006" lon="17.14835144564416"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.66988175241171" lon="17.142293137817315"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.66966000955149" lon="17.117340913673583"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.669639007179505" lon="17.113772029228112"><name>Minnesmärke</name></rtept>
+    <rtept lat="60.67463205354838" lon="17.110201628317995"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Vellinge</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.425166666667" lon="12.967861111111"><name>Stora Hammars kyrka</name><desc>kyrkobyggnad i Vellinge kommun</desc></wpt>
+  <wpt lat="55.419752920234615" lon="12.951735837893516"><name>Stenbocks skansar, Fästning/skans</name><desc>Resterna av en skans vid Vellinge från Karl XII:s tid, ursprungligen försedd med fyra bastioner.</desc></wpt>
+  <wpt lat="55.41661596289503" lon="12.948244680219767"><name>Fästning/skans</name><desc>Rester av en jordvallsskans som möter den gamla banvallen.</desc></wpt>
+  <wpt lat="55.42333333" lon="12.99"><name>Stora Hammars gamla kyrka</name><desc>kyrkobyggnad i Vellinge kommun</desc></wpt>
+  <wpt lat="55.42472222" lon="13.02"><name>Rängs kyrka</name><desc>kyrkobyggnad i Vellinge kommun</desc></wpt>
+  <wpt lat="55.404424" lon="12.986138"><name>Räng 5:1</name><desc>kyrka/kapell i Skåne</desc></wpt>
+  <wpt lat="55.404364015222804" lon="12.986060217538194"><name>Kyrka/kapell</name><desc>Grundrester efter Kämpinge kyrka, som lades ned som församlingskyrka 1632.</desc></wpt>
+  <rte><name>Kyrkostigen i Vellinge</name>
+    <rtept lat="55.425166666667" lon="12.967861111111"><name>Stora Hammars kyrka</name></rtept>
+    <rtept lat="55.419752920234615" lon="12.951735837893516"><name>Stenbocks skansar, Fästning/skans</name></rtept>
+    <rtept lat="55.41661596289503" lon="12.948244680219767"><name>Fästning/skans</name></rtept>
+    <rtept lat="55.42333333" lon="12.99"><name>Stora Hammars gamla kyrka</name></rtept>
+    <rtept lat="55.42472222" lon="13.02"><name>Rängs kyrka</name></rtept>
+    <rtept lat="55.404424" lon="12.986138"><name>Räng 5:1</name></rtept>
+    <rtept lat="55.404364015222804" lon="12.986060217538194"><name>Kyrka/kapell</name></rtept>
+  </rte>
+</gpx>

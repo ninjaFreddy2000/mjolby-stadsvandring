@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Örebro — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Örebro till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF-g…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/orebro">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Örebro — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Örebro till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF-g…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/orebro">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Örebro — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Örebro till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 87 stopp och nedladdningsbar PDF-g…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"orebro","sourceSlug":"stadsvandring/orebro","centroid":{"lat":59.27320747404508,"lng":15.2111411310773},"stops":[{"name":"Örebro slott","lat":59.273888888889,"lng":15.215277777778},{"name":"Adolfsbergs kyrka","lat":59.23970556,"lng":15.16604722},{"name":"Almby kyrka","lat":59.25747222,"lng":15.24469444}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Örebro","description":"Upptäck Örebro till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/orebro","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Örebro slott","description":"slott i Svartån mitt i Örebro","url":"https://stadsvandring.io/p/wd-orebro-orebro-slott-q2757682","geo":{"@type":"GeoCoordinates","latitude":59.273888888889,"longitude":15.215277777778}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Adolfsbergs kyrka","description":"kyrkobyggnad i Örebro kommun","geo":{"@type":"GeoCoordinates","latitude":59.23970556,"longitude":15.16604722}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Almby kyrka","description":"kyrkobyggnad i närheten av Tybble centrum i Örebro","geo":{"@type":"GeoCoordinates","latitude":59.25747222,"longitude":15.24469444}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Betelkyrkan","description":"kyrka för Örebro första baptistförsamling som bildades 1854","geo":{"@type":"GeoCoordinates","latitude":59.26975,"longitude":15.21192}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Brickebergskyrkan","description":"kyrkobyggnad i Örebro kommun","geo":{"@type":"GeoCoordinates","latitude":59.2526,"longitude":15.24178333}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Brunnsparken","description":"folkpark i Örebro","geo":{"@type":"GeoCoordinates","latitude":59.24527778,"longitude":15.16916667}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Ekers kyrka","description":"kyrkobyggnad i Örebro kommun","geo":{"@type":"GeoCoordinates","latitude":59.31794167,"longitude":15.139825}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Femton meter historia","description":"historisk tidslinje i brons","url":"https://stadsvandring.io/p/wd-orebro-femton-meter-historia-q10494623","geo":{"@type":"GeoCoordinates","latitude":59.27483333,"longitude":15.21438889}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Hagabron, Örebro","description":"Hagabron i Örebro leder över Svartån.","geo":{"@type":"GeoCoordinates","latitude":59.27175,"longitude":15.20183}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Hamnplan","description":"plats i Örebro","geo":{"@type":"GeoCoordinates","latitude":59.27244,"longitude":15.21963}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Harald Forss park","description":"Harald Forss park är ett mindre, halvmåneformat grönområde på Norr i Örebro.","geo":{"@type":"GeoCoordinates","latitude":59.28,"longitude":15.21861111}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Henry Allards park","description":"park i Örebro","url":"https://stadsvandring.io/p/wd-orebro-henry-allards-park-q10522079","geo":{"@type":"GeoCoordinates","latitude":59.275,"longitude":15.21527778}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Hovsta kyrka","description":"kyrkobyggnad i Örebro kommun","url":"https://stadsvandring.io/p/wd-orebro-hovsta-kyrka-q10526729","geo":{"@type":"GeoCoordinates","latitude":59.32137778,"longitude":15.22685}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Immanuelskyrkan","description":"kyrkobyggnad i Örebro","geo":{"@type":"GeoCoordinates","latitude":59.277245,"longitude":15.204901}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Järntorget","description":"plats i Örebro","geo":{"@type":"GeoCoordinates","latitude":59.27522222,"longitude":15.21361111}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Kanslibron","description":"bro i Örebro","url":"https://stadsvandring.io/p/wd-orebro-kanslibron-q10543353","geo":{"@type":"GeoCoordinates","latitude":59.27425,"longitude":15.21658333}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Karlslunds herrgård","description":"arbetslivsmuseum i Örebro kommun","geo":{"@type":"GeoCoordinates","latitude":59.269166666667,"longitude":15.148888888889}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Källtorps herrgård","description":"Källtorp är en herrgård belägen invid Svartån i västra delen av Örebro kommun i Gräve socken.","url":"https://stadsvandring.io/p/wd-orebro-kalltorps-herrgard-q10551679","geo":{"@type":"GeoCoordinates","latitude":59.2638,"longitude":15.0927}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Längbro kyrka","description":"kyrkobyggnad i Svenska kyrkan i Örebro, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.278694444444,"longitude":15.151388888889}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Längbrotorg","description":"plats i Örebro","url":"https://stadsvandring.io/p/wd-orebro-langbrotorg-q10571850","geo":{"@type":"GeoCoordinates","latitude":59.28234722,"longitude":15.22502222}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Myrö","description":"Myrö (hette under medeltiden Myra) är en herrgård i Rinkaby socken i Örebro kommun, Närke.","url":"https://stadsvandring.io/p/wd-orebro-myro-q10592650","geo":{"@type":"GeoCoordinates","latitude":59.3006,"longitude":15.2967}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Näbbtorget","description":"plats i Örebro","url":"https://stadsvandring.io/p/wd-orebro-nabbtorget-q10605024","geo":{"@type":"GeoCoordinates","latitude":59.26908333,"longitude":15.20908333}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Olaus Petri kyrka","description":"kyrkobyggnad i Svenska kyrkan i Örebro, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.28025,"longitude":15.21925}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Olof Palmes torg","description":"plats i Örebro","url":"https://stadsvandring.io/p/wd-orebro-olof-palmes-torg-q10609266","geo":{"@type":"GeoCoordinates","latitude":59.26841667,"longitude":15.20861111}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Oskarsparken","description":"Oskarsparken är en park på Öster i Örebro.","geo":{"@type":"GeoCoordinates","latitude":59.27027778,"longitude":15.22027778}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Örebro gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 87 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Örebro?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 87 sevärdheter i Örebro — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Örebro slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Svartån mitt i Örebro"}},{"@type":"Question","name":"Vad är Adolfsbergs kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Örebro kommun"}},{"@type":"Question","name":"Vad är Almby kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i närheten av Tybble centrum i Örebro"}},{"@type":"Question","name":"Vad är Betelkyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrka för Örebro första baptistförsamling som bildades 1854"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Örebro","item":"https://stadsvandring.io/stadsvandring/orebro"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Örebro</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Örebro</span><span class="badge">87 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Örebro — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Örebro till fots: 87 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Örebro"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-orebro-orebro-slott-q2757682"><b>1. Örebro slott</b><span>Slott · slott i Svartån mitt i Örebro</span></a>
+<a class="tile" href="/p/wd-orebro-adolfsbergs-kyrka-q10401442"><b>2. Adolfsbergs kyrka</b><span>Kyrka · kyrkobyggnad i Örebro kommun</span></a>
+<a class="tile" href="/p/wd-orebro-almby-kyrka-q10406534"><b>3. Almby kyrka</b><span>Kyrka · kyrkobyggnad i närheten av Tybble centrum i Örebro</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Örebro · 87</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Örebro. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Bro · 18</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-hagabron-orebro-q10515895"><b>Hagabron, Örebro</b></a> — Hagabron i Örebro leder över Svartån.</li>
+<li><a href="/p/wd-orebro-kanslibron-q10543353"><b>Kanslibron</b></a> — bro i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-storbron-orebro-q10681218"><b>Storbron, Örebro</b></a> — Storbron ligger i Örebros centrum, invid Örebro slott, just där den nord-sydgående grusåsen skär Svartån.</li>
+<li><a href="/karta?plats=wd-orebro-vasabron-q10713254"><b>Vasabron</b></a> — bro i Örebro</li>
+<li><a href="/p/ksamsok-orebro-tingsratt-orebro-696860"><b>ÖREBRO TINGSRÄTT</b></a> — Örebro tingsrätt, en central byggnadskropp med rötter i 1854. <span class="era">1854–1854</span></li>
+<li><a href="/p/ksamsok-orebro-stationshus-orebro-357563"><b>ÖREBRO STATIONSHUS</b></a> — Örebros stationshus från 1862, präglat av järnvägens utveckling. <span class="era">1862–1862</span></li>
+<li><a href="/p/ksamsok-fd-riksbankshuset-i-orebro-orebro-578770"><b>FD RIKSBANKSHUSET I ÖREBRO</b></a> — Före detta riksbankskontor i elegant nybarock, ritat av bankspecialisten Aron Johansson. <span class="era">1889–1889</span></li>
+<li><a href="/p/ksamsok-gamla-teatern-i-orebro-orebro-578627"><b>GAMLA TEATERN I ÖREBRO</b></a> — Örebros gamla teater från 1853, en gång landets näst största scen. <span class="era">1853–1853</span></li>
+<li><a href="/p/ksamsok-fd-post-och-telegrafhuset-i-orebro-televerkets-hus-orebro-578795"><b>FD POST- OCH TELEGRAFHUSET I ÖREBRO (TELEVERKETS HUS)</b></a> — Televerkets äldre huvudbyggnad, ett tegelklätt hus från 1913-1914 som även rymt Posten. <span class="era">1912–1914</span></li>
+<li><a href="/p/ksamsok-centralpalatset-i-orebro-orebro-578708"><b>CENTRALPALATSET I ÖREBRO</b></a> — Centralpalatset, en jugendbyggnad från 1911-1913 med tornhuv och urtavlor. <span class="era">1911–1913</span></li>
+<li><a href="/p/ksamsok-arbetshuset-i-orebro-orebro-578852"><b>ARBETSHUSET I ÖREBRO</b></a> — En 1740-talsbyggnad vid slottet som länge var arbets- och barnhem för fattiga barn. <span class="era">1740–1749</span></li>
+<li><a href="/karta?plats=ksamsok-kontorshuset-vid-orebro-central-orebro-050551"><b>Kontorshuset vid örebro central</b></a> — Kontorshuset vid Örebro central, uppfört 1862. <span class="era">1862–1862</span></li>
+<li><a href="/p/ksamsok-orebro-fd-radhus-orebro-696882"><b>ÖREBRO FD RÅDHUS</b></a> — Örebros gamla rådhus i nygotik, uppfört 1858-1863 för stadens förvaltning. <span class="era">1858–1863</span></li>
+<li><a href="/p/ksamsok-fd-varmbadhuset-i-orebro-orebro-645280"><b>FD VARMBADHUSET I ÖREBRO</b></a> — Örebros gamla simhall från 1928, vid invigningen Nordeuropas största. <span class="era">1928–1928</span></li>
+<li><a href="/p/ksamsok-fd-landshovdingestallet-i-orebro-orebro-578641"><b>FD LANDSHÖVDINGESTALLET I ÖREBRO</b></a> — Ett stall från 1768-1771 för landshövdingen, en av få bevarade 1700-talsstenbyggnader i staden. <span class="era">1768–1771</span></li>
+<li><a href="/karta?plats=ksamsok-bro-orebro-66d4d5"><b>Bro</b></a> — En valvbro av sten från 1788 i anslutning till slottet.</li>
+<li><a href="/karta?plats=ksamsok-bro-orebro-b51ee9"><b>Bro</b></a> — En stenvalvbro i tre spann från 1926, krönt av obeliskformade pelare.</li>
+<li><a href="/karta?plats=ksamsok-bro-orebro-6e8c0c"><b>Bro</b></a> — Kanslibron, en valvbro i sex spann av huggen sten med rötter på 1760-talet.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 15</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-karlslunds-herrgard-q10543905"><b>Karlslunds herrgård</b></a> — arbetslivsmuseum i Örebro kommun</li>
+<li><a href="/p/wd-orebro-kalltorps-herrgard-q10551679"><b>Källtorps herrgård</b></a> — Källtorp är en herrgård belägen invid Svartån i västra delen av Örebro kommun i Gräve socken.</li>
+<li><a href="/p/wd-orebro-myro-q10592650"><b>Myrö</b></a> — Myrö (hette under medeltiden Myra) är en herrgård i Rinkaby socken i Örebro kommun, Närke.</li>
+<li><a href="/p/wd-orebro-algskogen-q10725629"><b>Älgskogen</b></a> — Älgskogen är en herrgård som ligger i Örebro kommun.</li>
+<li><a href="/p/ksamsok-svampen-orebro-696874"><b>SVAMPEN</b></a> — Örebros vattentorn Svampen, en internationellt uppmärksammad symbol för staden. <span class="era">1954–1958</span></li>
+<li><a href="/p/ksamsok-fd-roda-kvarnbiografen-orebro-578717"><b>FD RÖDA KVARNBIOGRAFEN</b></a> — En bevarad biografbyggnad från 1917 med påkostad 1920-talsinteriör. <span class="era">1917–1917</span></li>
+<li><a href="/p/ksamsok-fd-stabsbyggnaden-orebro-578709"><b>FD STABSBYGGNADEN</b></a> — Före detta stabsbyggnad för Husarkåren, uppförd i renässansstil 1861-1862. <span class="era">1861–1862</span></li>
+<li><a href="/p/ksamsok-tingshuset-olaigatan-orebro-696883"><b>TINGSHUSET, OLAIGATAN</b></a> — Ett gulputsat tingshus vid Olaigatan, ursprungligen uppfört 1850 som Widestrandska gården. <span class="era">1850–1850</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-orebro-693800"><b>UTHUS</b></a> — Ett uthus i Örebro, uppfört 1861-1862. <span class="era">1861–1862</span></li>
+<li><a href="/p/ksamsok-nikolai-forsamlingshem-orebro-578783"><b>NIKOLAI FÖRSAMLINGSHEM</b></a> — En av Örebros äldsta byggnader, länge stadens skola invid Nikolaikyrkan. <span class="era">1500–1599</span></li>
+<li><a href="/p/ksamsok-f-d-ridhuset-orebro-044120"><b>F.d. Ridhuset</b></a> — Ett av de sista spåren efter Örebros husarer, i dag skolgymnastiksal. <span class="era">1861–1862</span></li>
+<li><a href="/karta?plats=ksamsok-maskinhuset-orebro-049284"><b>Maskinhuset</b></a> — Ett maskinhus i Örebro från 1850-talet. <span class="era">1850–1859</span></li>
+<li><a href="/karta?plats=ksamsok-adolf-kjellstroms-villa-orebro-672964"><b>ADOLF KJELLSTRÖMS VILLA</b></a> — En villa i engelsk nygotik, byggd av arkitekten Adolf Kjellström åt sig själv. <span class="era">1879–1879</span></li>
+<li><a href="/p/ksamsok-elgerigarden-orebro-049285"><b>Elgérigården</b></a> — En 1800-talsgård i Färgargränds fond som fick sitt nuvarande utseende 1851. <span class="era">1828–1844</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-orebro-578823"><b>FLYGELBYGGNAD</b></a> — En flygelbyggnad i Örebro, uppförd 1861-1862. <span class="era">1861–1862</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 14</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-adolfsbergs-kyrka-q10401442"><b>Adolfsbergs kyrka</b></a> — kyrkobyggnad i Örebro kommun</li>
+<li><a href="/karta?plats=wd-orebro-almby-kyrka-q10406534"><b>Almby kyrka</b></a> — kyrkobyggnad i närheten av Tybble centrum i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-betelkyrkan-q10428998"><b>Betelkyrkan</b></a> — kyrka för Örebro första baptistförsamling som bildades 1854</li>
+<li><a href="/karta?plats=wd-orebro-brickebergskyrkan-q10435538"><b>Brickebergskyrkan</b></a> — kyrkobyggnad i Örebro kommun</li>
+<li><a href="/karta?plats=wd-orebro-ekers-kyrka-q10480592"><b>Ekers kyrka</b></a> — kyrkobyggnad i Örebro kommun</li>
+<li><a href="/p/wd-orebro-hovsta-kyrka-q10526729"><b>Hovsta kyrka</b></a> — kyrkobyggnad i Örebro kommun</li>
+<li><a href="/karta?plats=wd-orebro-immanuelskyrkan-q10534727"><b>Immanuelskyrkan</b></a> — kyrkobyggnad i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-langbro-kyrka-q10571847"><b>Längbro kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</li>
+<li><a href="/karta?plats=wd-orebro-olaus-petri-kyrka-q10608173"><b>Olaus Petri kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</li>
+<li><a href="/karta?plats=wd-orebro-sankt-mikaels-kyrka-q10661421"><b>Sankt Mikaels kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</li>
+<li><a href="/p/wd-orebro-sankt-nikolai-kyrka-q10661436"><b>Sankt Nikolai kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</li>
+<li><a href="/karta?plats=ksamsok-trefaldighetskyrkan-orebro-604100"><b>trefaldighetskyrkan</b></a> — Trefaldighetskyrkan, en kyrka i Örebro från 1909. <span class="era">1909–1909</span></li>
+<li><a href="/karta?plats=ksamsok-kyrkogardskapell-orebro-017948"><b>KYRKOGÅRDSKAPELL</b></a> — Ett kyrkogårdskapell i Örebro från 1898. <span class="era">1898–1898</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-orebro-11cec3"><b>Kyrka/kapell</b></a> — Platsen för Längbro gamla kyrka, som brann ned i början av 1600-talet.</li>
+</ul>
+<h3 class="city-h3">fornminne · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-ovrigt-orebro-9867b4"><b>Övrigt</b></a> — Resterna av en sommarstugetomt med husgrund och en igenvuxen trädgård.</li>
+<li><a href="/karta?plats=ksamsok-hard-orebro-3e9416"><b>Härd</b></a> — En förhistorisk härd djupt under markytan, daterad till tiden kring 400 f.Kr.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-orebro-1aa7a1"><b>Ristning, medeltid/historisk tid</b></a> — En vapensköld och några initialer inristade i berghällar och block.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-orebro-bb8e67"><b>Plats med tradition</b></a> — En plats vid Skebäck som traditionen knyter till en vikingatida hamn.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-orebro-766a55"><b>Lägenhetsbebyggelse</b></a> — Lämningar efter ett torp med otydlig husgrund och en igenvuxen trädgård.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-orebro-f6537b"><b>Stadslager</b></a> — Örebros medeltida kulturlager, undersökt i flera centrala kvarter.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-orebro-eba40a"><b>Ristning, medeltid/historisk tid</b></a> — En sten inristad med årtalet 1864.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-orebro-7acea2"><b>Övrigt</b></a> — Resterna av en villatomt med husgrund, cementtrappa och trädgård.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-orebro-a6e4db"><b>Fyndplats</b></a> — Platsen för ett kopparmynt från 1671, hittat med metalldetektor.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-orebro-cce015"><b>Övrigt</b></a> — Ett område där provgrävningar 1974 inte gav några fynd.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-orebro-2571a4"><b>Fyndplats</b></a> — Platsen där krukskärvor och glas hittades vid en schaktkontroll.</li>
+</ul>
+<h3 class="city-h3">Torg · 9</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-hamnplan-q10516951"><b>Hamnplan</b></a> — plats i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-jarntorget-q10541852"><b>Järntorget</b></a> — plats i Örebro</li>
+<li><a href="/p/wd-orebro-langbrotorg-q10571850"><b>Längbrotorg</b></a> — plats i Örebro</li>
+<li><a href="/p/wd-orebro-nabbtorget-q10605024"><b>Näbbtorget</b></a> — plats i Örebro</li>
+<li><a href="/p/wd-orebro-olof-palmes-torg-q10609266"><b>Olof Palmes torg</b></a> — plats i Örebro</li>
+<li><a href="/p/wd-orebro-stortorget-q10681421"><b>Stortorget</b></a> — torg i Örebro, Närke</li>
+<li><a href="/p/wd-orebro-vasatorget-q10713302"><b>Vasatorget</b></a> — plats i Örebro</li>
+<li><a href="/p/wd-orebro-vaghustorget-q18334773"><b>Våghustorget</b></a> — torg i södra delen av Örebros centrum</li>
+<li><a href="/karta?plats=wd-orebro-oskarstorget-q122877982"><b>Oskarstorget</b></a> — Oskarstorget</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-brunnsparken-q10436460"><b>Brunnsparken</b></a> — folkpark i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-harald-forss-park-q10517968"><b>Harald Forss park</b></a> — Harald Forss park är ett mindre, halvmåneformat grönområde på Norr i Örebro.</li>
+<li><a href="/p/wd-orebro-henry-allards-park-q10522079"><b>Henry Allards park</b></a> — park i Örebro</li>
+<li><a href="/karta?plats=wd-orebro-oskarsparken-q10613027"><b>Oskarsparken</b></a> — Oskarsparken är en park på Öster i Örebro.</li>
+<li><a href="/p/wd-orebro-stadsparken-q10677209"><b>Stadsparken</b></a> — park i Örebro</li>
+<li><a href="/p/wd-orebro-sveaparken-q10684615"><b>Sveaparken</b></a> — Sveaparken är en park i centrala Örebro.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 5</h3>
+<ul class="place-list">
+<li><a href="/p/wd-orebro-femton-meter-historia-q10494623"><b>Femton meter historia</b></a> — historisk tidslinje i brons</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-orebro-16fcc1"><b>Minnesmärke</b></a> — En sandstensobelisk som minner om att parken anlades 1817.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-orebro-3ba744"><b>Minnesmärke</b></a> — En koppartavla som hedrar auditören Bäckströms donation till stadsparken.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-orebro-a64cb6"><b>Minnesmärke</b></a> — Ett fragment av en minnestavla från 1600-talet, inmurat i ett senare hus.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-orebro-9c4c3f"><b>Minnesmärke</b></a> — En granitobelisk rest 1834 till minne av reformatorerna Olaus och Laurentius Petri.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-orebro-orebro-slott-q2757682"><b>Örebro slott</b></a> — slott i Svartån mitt i Örebro</li>
+<li><a href="/karta?plats=ksamsok-mur-mot-slottsgatan-orebro-693802"><b>MUR MOT SLOTTSGATAN</b></a> — En mur mot Slottsgatan, del av slottsmiljön och uppförd 1861-1862. <span class="era">1861–1862</span></li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-osets-fyr-q40737988"><b>Osets fyr</b></a> — en fyr vid Svartåns utlopp i Hjälmaren</li>
+<li><a href="/karta?plats=wd-orebro-roda-tunnan-q40738259"><b>Röda Tunnan</b></a> — en fyr i Hjälmaren vid Örebro</li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-borgarhuset-i-wadkoping-cajsa-wargs-hus-orebro-578844"><b>BORGARHUSET I WADKÖPING (CAJSA WARGS HUS)</b></a> — Ett av Örebros äldsta trähus, förknippat med Cajsa Warg och nu i Wadköping. <span class="era">1670–1699</span></li>
+<li><a href="/karta?plats=ksamsok-borgen-rudbecksskolan-orebro-048461"><b>Borgen, Rudbecksskolan</b></a> — Borgen vid Rudbecksskolan i Örebro, uppförd 1901. <span class="era">1901–1901</span></li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-orebro-drottning-kristinas-sten-q29860650"><b>Drottning Kristinas sten</b></a> — minnesmärke i Närke (Mosjö 10:1)</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-orebro-lans-museum-orebro-616894"><b>ÖREBRO LÄNS MUSEUM</b></a> — Örebro läns museum, uppfört i etapper från 1950 efter Nils Teschs ritningar. <span class="era">1950–1950</span></li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-kloster-orebro-98b76c"><b>Kloster</b></a> — Platsen för ett medeltida kloster vars grundmurar påträffades 1847.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 87 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/orebro/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/orebro/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Örebro gratis?</summary><p>Ja. Karta, alla 87 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Örebro?</summary><p>Vandringen samlar 87 sevärdheter i Örebro — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Örebro slott?</summary><p>slott i Svartån mitt i Örebro</p></details>
+<details class="faq"><summary>Vad är Adolfsbergs kyrka?</summary><p>kyrkobyggnad i Örebro kommun</p></details>
+<details class="faq"><summary>Vad är Almby kyrka?</summary><p>kyrkobyggnad i närheten av Tybble centrum i Örebro</p></details>
+<details class="faq"><summary>Vad är Betelkyrkan?</summary><p>kyrka för Örebro första baptistförsamling som bildades 1854</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

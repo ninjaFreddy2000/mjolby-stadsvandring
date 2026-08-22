@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Marstrand</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.93506" lon="11.58673"><name>Rönnängs kyrka</name><desc>kyrkobyggnad i Tjörns kommun</desc></wpt>
+  <wpt lat="57.890205328428294" lon="11.599942922476707"><name>MARSTRANDS GRAVKAPELL</name><desc>Marstrands gravkapell från 1939, ritat av Axel Forssén.</desc></wpt>
+  <wpt lat="57.88777233854583" lon="11.583097102031898"><name>Frikyrka / bönehus /missionshus</name><desc>Ett missionshus i Marstrand uppfört 1904 av den lokala missionsföreningen.</desc></wpt>
+  <wpt lat="57.886309" lon="11.582844"><name>Marstrands kyrka</name><desc>Medeltida kyrka från sent 1200-tal, ursprungligen knuten till ett franciskanerkonvent och helgad åt jungfru Maria.</desc></wpt>
+  <wpt lat="57.885833333333" lon="11.582777777778"><name>Marstrands kloster</name><desc>tidigare fransciskanerkonvent i Bohuslän</desc></wpt>
+  <wpt lat="57.883165338636886" lon="11.582248319282538"><name>Gustavsborg, Fästning/skans</name><desc>Fästningen eller skansen Gustavsborg på Marstrand, utan närmare dokumentation.</desc></wpt>
+  <wpt lat="57.88900411789015" lon="11.581297417303684"><name>Norra Strandverket, Fästning/skans</name><desc>Norra Strandverket, en registrerad befästning i Marstrand med knapphändigt underlag.</desc></wpt>
+  <wpt lat="57.87547778" lon="11.72081389"><name>Lycke kyrka</name><desc>kyrkobyggnad i Kungälvs kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Marstrand</name>
+    <rtept lat="57.93506" lon="11.58673"><name>Rönnängs kyrka</name></rtept>
+    <rtept lat="57.890205328428294" lon="11.599942922476707"><name>MARSTRANDS GRAVKAPELL</name></rtept>
+    <rtept lat="57.88777233854583" lon="11.583097102031898"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="57.886309" lon="11.582844"><name>Marstrands kyrka</name></rtept>
+    <rtept lat="57.885833333333" lon="11.582777777778"><name>Marstrands kloster</name></rtept>
+    <rtept lat="57.883165338636886" lon="11.582248319282538"><name>Gustavsborg, Fästning/skans</name></rtept>
+    <rtept lat="57.88900411789015" lon="11.581297417303684"><name>Norra Strandverket, Fästning/skans</name></rtept>
+    <rtept lat="57.87547778" lon="11.72081389"><name>Lycke kyrka</name></rtept>
+  </rte>
+</gpx>

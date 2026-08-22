@@ -1,18 +1,334 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Konstrundan i Stockholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
-  <wpt lat="59.3286" lon="18.0781"><name>Nationalmuseum</name><desc>Sveriges främsta konstmuseum, vid vattnet mittemot slottet.</desc></wpt>
-  <wpt lat="59.3264" lon="18.0836"><name>Moderna Museet</name><desc>Världsklass i modern konst på den gröna ön Skeppsholmen.</desc></wpt>
+  <wpt lat="59.368805555556" lon="18.054444444444"><name>Jorden</name><desc>konstverk som är del av Sweden Solar System</desc></wpt>
+  <wpt lat="59.367638888889" lon="18.054472222222"><name>Vegamonumentet</name><desc>skulptur i Stockholm</desc></wpt>
+  <wpt lat="59.352883333333" lon="18.058411111111"><name>Venus</name><desc>konstverk som är del av Sweden Solar System</desc></wpt>
+  <wpt lat="59.350111111111" lon="18.067277777778"><name>Fåglarna</name><desc>en bronsskulptur av Ebba Ahlmark-Hughes</desc></wpt>
+  <wpt lat="59.349833333333" lon="18.06725"><name>Kvinna och barn</name><desc>en bronsskulptur av Lennart Källström</desc></wpt>
+  <wpt lat="59.34636111" lon="18.07291667"><name>Industrimonumentet</name><desc>fontän vid Kungliga Tekniska högskolan i Stockholm</desc></wpt>
+  <wpt lat="59.34153" lon="18.07114"><name>Staden</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.34041" lon="18.0727"><name>staty över Fredrika Bremer</name><desc>staty i Stockholm över Fredrika Bremer skapad 1927 av Sigrid Fridman</desc></wpt>
+  <wpt lat="59.34103" lon="18.07395"><name>Mimi</name><desc>skulptur i Stockholm</desc></wpt>
+  <wpt lat="59.34048" lon="18.07608"><name>Levande malm</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.34047" lon="18.07662"><name>Scatola</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.33967" lon="18.08061"><name>Man - häst - vagn</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.33922" lon="18.08276"><name>Kvinna med handspegel</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.338258333333" lon="18.087416666667"><name>Mötande havet</name><desc>skulptur i Stockholm</desc></wpt>
+  <wpt lat="59.33805556" lon="18.09027778"><name>Flygarmonumentet</name><desc>skulptur av Carl Milles från 1931 på Karlaplan i Stockholm</desc></wpt>
+  <wpt lat="59.33741" lon="18.09136"><name>En inre delning</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.33706" lon="18.09326"><name>Jeanette</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.33674" lon="18.09474"><name>Urna</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.3338808304265" lon="18.09121978906755"><name>Minnesmärke</name><desc>En granitsten som minner om grundläggningen av kavallerikasernen 1815.</desc></wpt>
+  <wpt lat="59.33155" lon="18.09765"><name>Den första segelbåten</name><desc>skulptur i Stockholm</desc></wpt>
+  <wpt lat="59.329388888889" lon="18.094527777778"><name>Karl X Gustavs ryttarstaty, Stockholm</name><desc>Ryttarstaty från 1917 framför Nordiska museet, Stockholm.</desc></wpt>
+  <wpt lat="59.32825" lon="18.095722222222"><name>Orfeus</name><desc>skulptur av Theodor Lundberg i Stockholm</desc></wpt>
+  <wpt lat="59.32777778" lon="18.09722222"><name>Karl XV:s staty</name><desc>staty på Kungliga Djurgården, Stockholm</desc></wpt>
+  <wpt lat="59.327583" lon="18.093944"><name>Estoniamonumentet</name><desc>minnesplats för offren i Estoniakatastrofen</desc></wpt>
+  <wpt lat="59.32766993362652" lon="18.093501621671894"><name>Minnesmärke</name><desc>Ett minnesmärke som saknar närmare beskrivning i registret.</desc></wpt>
   <wpt lat="59.3281" lon="18.0914"><name>Vasamuseet</name><desc>Det enda bevarade 1600-talsskeppet i världen — Sveriges mest besökta museum.</desc></wpt>
-  <wpt lat="59.325" lon="18.0964"><name>ABBA The Museum</name><desc>Interaktivt museum om världens mest kända popgrupp, på Djurgården.</desc></wpt>
-  <wpt lat="59.3178" lon="18.0847"><name>Fotografiska</name><desc>Internationellt fotomuseum i ett gammalt tullhus vid Stadsgårdskajen.</desc></wpt>
+  <wpt lat="59.329780555556" lon="18.0899"><name>Astrid Lindgren staty</name><desc>Astrid Lindgren staty</desc></wpt>
+  <wpt lat="59.33182" lon="18.0831"><name>Principio - Begynnelse</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.333166666667" lon="18.076388888889"><name>Margaretha Krooks staty</name><desc>staty vid Dramaten i Stckholm</desc></wpt>
+  <wpt lat="59.33194444" lon="18.07555556"><name>Till Raoul Wallenberg</name><desc>Till Raoul Wallenberg är ett minnesmärke på Raoul Wallenbergs torg i Stockholm, som gjorts av Kirsten Ortwed.</desc></wpt>
+  <wpt lat="59.332022" lon="18.075141"><name>Vägen</name><desc>förintelsemonument i stockholm</desc></wpt>
+  <wpt lat="59.33077778" lon="18.07172222"><name>Molins fontän</name><desc>fontän i Kungsträdgården, centrala Stockholm</desc></wpt>
+  <wpt lat="59.33138889" lon="18.07111111"><name>Karl XIII:s staty</name><desc>staty i Kungsträdgården i Stockholm</desc></wpt>
+  <wpt lat="59.33251667" lon="18.06992778"><name>Sverigeväggen</name><desc>väggrelief av Siri Derkert</desc></wpt>
+  <wpt lat="59.33083333" lon="18.06677778"><name>Gryning</name><desc>en skulptur i järn av Stefan Thorén</desc></wpt>
+  <wpt lat="59.32942778" lon="18.06880278"><name>Gustav II Adolfs staty, Stockholm</name><desc>Gustav II Adolfs staty i Stockholm</desc></wpt>
+  <wpt lat="59.32888889" lon="18.06888889"><name>Norrbrolejonen</name><desc>Norrbrolejonen är två lejonskulpturerna i brons intill Gustav Adolfs torg i Stockholm.</desc></wpt>
+  <wpt lat="59.32838333" lon="18.07079444"><name>Solsångaren</name><desc>skulptur på Helgeandsholmen i Stockholm</desc></wpt>
+  <wpt lat="59.330022222222" lon="18.072202777778"><name>Karl XII:s staty</name><desc>staty i Kungsträdgården på Norrmalm i Stockholm</desc></wpt>
+  <wpt lat="59.328861111111" lon="18.077194444444"><name>Yngling med sköldpadda</name><desc>Yngling med sköldpadda</desc></wpt>
+  <wpt lat="59.3286" lon="18.0781"><name>Nationalmuseum</name><desc>Sveriges främsta konstmuseum, vid vattnet mittemot slottet.</desc></wpt>
+  <wpt lat="59.327805555556" lon="18.077861111111"><name>Vingarna (skulptur)</name><desc>skulptur av Carl Milles</desc></wpt>
+  <wpt lat="59.32674722" lon="18.07497222"><name>Gustav III</name><desc>skulptur av Johan Tobias Sergel</desc></wpt>
+  <wpt lat="59.325166666667" lon="18.073833333333"><name>Sankt Göran och Draken</name><desc>staty i Stockholm</desc></wpt>
+  <wpt lat="59.325539122409864" lon="18.072194833132475"><name>Minnesmärke</name><desc>En minnesplatta vid Finska kyrkan över stupade i Finlands krig.</desc></wpt>
   <wpt lat="59.3252" lon="18.0708"><name>Nobel Prize Museum</name><desc>Museet om Nobelpriset och dess pristagare, mitt på Stortorget.</desc></wpt>
+  <wpt lat="59.326138888889" lon="18.070388888889"><name>Kristina Gyllenstierna (staty)</name><desc>skulptur av Kristina Gyllenstierna skapad av bildhuggaren Teodor Lundberg</desc></wpt>
+  <wpt lat="59.326519444444" lon="18.070033333333"><name>Vågen och stranden</name><desc>skulptur i Stockholm</desc></wpt>
+  <wpt lat="59.32603" lon="18.06808"><name>Morning</name><desc>Morning</desc></wpt>
+  <wpt lat="59.32590103" lon="18.06723404"><name>Statue of Lars Johan Hierta in Gamla stan</name><desc>Statue of Lars Johan Hierta in Gamla stan</desc></wpt>
+  <wpt lat="59.32571944" lon="18.06604444"><name>Gustav Vasa</name><desc>en skulptur av Pierre Hubert L&#39;Archevêque</desc></wpt>
+  <wpt lat="59.326194444444" lon="18.065305555556"><name>Axel Oxenstiernas staty</name><desc>staty som avbildar den svenske rikskanslern Axel Oxenstierna</desc></wpt>
+  <wpt lat="59.32510556" lon="18.06385278"><name>Birger jarl</name><desc>staty på Riddarholmen i Stockholm</desc></wpt>
+  <wpt lat="59.32455556" lon="18.06169444"><name>Solbåten</name><desc>en skulptur på Riddarholmen i Stockholm</desc></wpt>
+  <wpt lat="59.324765" lon="18.066952"><name>Riddarholmsbroarna</name><desc>Riddarholmsbroarna är en skulptur på en refug vid Munkbron 7 i Gamla stan, Stockholm.</desc></wpt>
+  <wpt lat="59.3255147433285" lon="18.06883512670449"><name>Minnesmärke</name><desc>En minnestavla över Erik Dahlbergh, uppsatt 1954 vid gränden där han föddes.</desc></wpt>
+  <wpt lat="59.323472222222" lon="18.070333333333"><name>Moder Svea (Rolf Adlersparre)</name><desc>Moder Svea (Rolf Adlersparre)</desc></wpt>
+  <wpt lat="59.322811" lon="18.070933"><name>Bågspännaren</name><desc>Bågspännaren är en skulptur av Christian Eriksson, som visar en man som spänner ett armborst.</desc></wpt>
+  <wpt lat="59.32283809698651" lon="18.073032881301625"><name>Minnesmärke</name><desc>Minnestavlan i Mårten Trotzigs gränd, rest 1945 av släkten Trotzig.</desc></wpt>
+  <wpt lat="59.32233333" lon="18.07530556"><name>Sjöguden</name><desc>skulptur av Carl Milles</desc></wpt>
+  <wpt lat="59.32405952660652" lon="18.075276204728194"><name>Minnesmärke</name><desc>En kulturhistoriskt märklig byggnad, ett fyravåningshus från 1630.</desc></wpt>
+  <wpt lat="59.324455555556" lon="18.083"><name>Kungliga Konsthögskolan Lejonet och svinet</name><desc>Kungliga Konsthögskolan Lejonet och svinet</desc></wpt>
+  <wpt lat="59.32454042916272" lon="18.084242004039634"><name>Minnesmärke</name><desc>En minnessten över den första kringseglingen av Asien med Vega.</desc></wpt>
+  <wpt lat="59.32533333" lon="18.08375"><name>De fyra elementen</name><desc>en rörlig skulpturgrupp av Alexander Calder</desc></wpt>
+  <wpt lat="59.32572" lon="18.08373"><name>Lenin Monument April 13th 1917</name><desc>Lenin Monument April 13th 1917</desc></wpt>
+  <wpt lat="59.326142527744" lon="18.083636832209"><name>Black Swedish Granite</name><desc>Black Swedish Granite</desc></wpt>
+  <wpt lat="59.3264" lon="18.0836"><name>Moderna Museet</name><desc>Världsklass i modern konst på den gröna ön Skeppsholmen.</desc></wpt>
+  <wpt lat="59.32612171293434" lon="18.08259618581262"><name>Minnesmärke</name><desc>En minnessten över Claes Wrangel, rest av Sveaorden.</desc></wpt>
+  <wpt lat="59.32592598321318" lon="18.086869317497392"><name>Minnesmärke</name><desc>Ett träkors som minner om en bortglömd kyrkogård från 1700-talet.</desc></wpt>
+  <wpt lat="59.32586111" lon="18.09616667"><name>Bågskytten</name><desc>skulptur av Carl Milles</desc></wpt>
+  <wpt lat="59.326083333333" lon="18.096861111111"><name>Fången viking</name><desc>skulptur av John Börjeson i Stockholm</desc></wpt>
+  <wpt lat="59.325" lon="18.0964"><name>ABBA The Museum</name><desc>Interaktivt museum om världens mest kända popgrupp, på Djurgården.</desc></wpt>
+  <wpt lat="59.3248" lon="18.0983"><name>Bellmanstatyn</name><desc>svensk skulptur skapad 1872 av Alfred Nyström</desc></wpt>
+  <wpt lat="59.32416667" lon="18.10138889"><name>Kalle och Emma</name><desc>Kalle och Emma är en skulptur av konstnären David Wretling som sedan 1985 står på Djurgårdsslätten vid Skansens huvudentré i Stockholm.</desc></wpt>
+  <wpt lat="59.32686" lon="18.10034"><name>Staty Carl Linneus Skansen</name><desc>staty på friluftsmuseet Skansen</desc></wpt>
+  <wpt lat="59.32924" lon="18.10208"><name>Jenny Lind-statyn</name><desc>staty av sångerskan Jenny Lind vid Djurgårdsbrunnsviken på Södra Djurgården i Stockholm</desc></wpt>
+  <wpt lat="59.32956" lon="18.10528"><name>Kvinnan i fredsarbetet</name><desc>skulpturer på Kärleksudden</desc></wpt>
+  <wpt lat="59.33177778" lon="18.10347222"><name>Den vilande Diana</name><desc>skulptur i Diplomatstaden, Stockholm</desc></wpt>
+  <wpt lat="59.33805556" lon="18.10416667"><name>Protest</name><desc>en skulptur på Ladugårdsgärdet i Stockholm</desc></wpt>
+  <wpt lat="59.34133333" lon="18.09808333"><name>Mås (skulptur)</name><desc>Mås är en skulptur i brons som står på en granitsockel vid Banérgatan på Gärdet i Stockholm, utanför Försvarets materielverk och Krigsarkivet.</desc></wpt>
+  <wpt lat="59.34073" lon="18.09276"><name>Husmorssemester</name><desc>skulptur på Gärdet, Stockholm</desc></wpt>
+  <wpt lat="59.339166666667" lon="18.072777777778"><name>Linnémonumentet</name><desc>statygrupp i Stockholms innerstad</desc></wpt>
+  <wpt lat="59.33885" lon="18.07095278"><name>Farfadern</name><desc>Farfadern (franska: L&#39;Aiëul) är en skulptur av en sittande äldre man med en pojke i knät, utförd i gips av Per Hasselberg 1885–86.</desc></wpt>
+  <wpt lat="59.33636111" lon="18.07241667"><name>Höken och duvan</name><desc>fontän vid Stureplan, Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.335944444444" lon="18.073055555556"><name>Carlssons lykta</name><desc>en konstnärligt utformad gatlykta på Stureplan i centrala Stockholm</desc></wpt>
+  <wpt lat="59.33488889" lon="18.07413889"><name>Eldhs fontän</name><desc>fontän i korsningen Grev Turegatan / Birger Jarlsgatan på Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.33444444" lon="18.06555556"><name>Non Serviam (skulptur)</name><desc>Non Serviam är en skulptur av Ernst Nordin uppförd på trottoaren vid Malmskillnadsgatan 25 i Stockholm 1980, namngiven efter den latinska frasen non serviam.</desc></wpt>
+  <wpt lat="59.33294444" lon="18.06472222"><name>Klara</name><desc>en skulptur av Lasse Andreasson vid Sergels torg i Stockholm</desc></wpt>
+  <wpt lat="59.332583333333" lon="18.065194444444"><name>Kristallvertikalaccent</name><desc>glasobelisk vid Sergels torg i Stockholm</desc></wpt>
+  <wpt lat="59.33402525623756" lon="18.061178589859725"><name>Minnesmärke</name><desc>En minnestavla över August Blanche, som avled på platsen 1868.</desc></wpt>
+  <wpt lat="59.335" lon="18.06222222"><name>Orfeusgruppen</name><desc>fontänskulptur av Carl Milles framför Konserthuset på Hötorget i Stockholm</desc></wpt>
+  <wpt lat="59.33611111" lon="18.05972222"><name>Triton på delfin</name><desc>en fontän i Centralbadsparken i centrala Stockholm</desc></wpt>
+  <wpt lat="59.335277777778" lon="18.054444444444"><name>Brantingmonumentet</name><desc>Brantingmonumentet är en skulptur på Norra Bantorget i Stockholm.</desc></wpt>
+  <wpt lat="59.338323099469" lon="18.055175036137"><name>Strindbergsmonumentet</name><desc>skulptur av Carl Eldh placerad i Tegnérlunden i Stockholm</desc></wpt>
+  <wpt lat="59.3425" lon="18.05444444"><name>Kentauren (skulptur)</name><desc>svensk skulptur i Observatoriekullen från 1939 av Sigrid Fridman</desc></wpt>
+  <wpt lat="59.343305555556" lon="18.053861111111"><name>Det droppande trädet</name><desc>en bronsskulptur av Sigrid Fridman</desc></wpt>
+  <wpt lat="59.34027778" lon="18.04611111"><name>Eastmanfontänen</name><desc>fontän vid Eastmaninstitutet i Vasastan, Stockholm</desc></wpt>
+  <wpt lat="59.3412" lon="18.0636"><name>staty Ellen Key</name><desc>av Sigrid Fridman i Ellen Keys park</desc></wpt>
+  <wpt lat="59.34109444" lon="18.06570833"><name>Fordon</name><desc>en skulptur på Eriksbergsplan, Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.34222222" lon="18.06444444"><name>Två myror</name><desc>skulpturgrupp i Stockholm av konstnären Torgny Larsson</desc></wpt>
+  <wpt lat="59.33027778" lon="18.0625"><name>Stockholms-Tidningens klocka</name><desc>Stockholms-Tidningens klocka är ett ur och en skulptur i hörnet av Vattugatan 12 och Klara södra kyrkogata på Norrmalm i Stockholm.</desc></wpt>
+  <wpt lat="59.328611" lon="18.060556"><name>Vem är Mr Walker?</name><desc>skulptur av Jan Håfström</desc></wpt>
+  <wpt lat="59.328611111111" lon="18.064444444444"><name>Lejonet och svinet</name><desc>Lejonet och svinet är två statyer i brons föreställande ett lejon och ett vildsvin efter antika förebilder, placerade i entréhallen i Konstakademiens hus och avgjutna vid Kungliga</desc></wpt>
+  <wpt lat="59.33027778" lon="18.05833333"><name>Centralstationens dricksvattenfontän</name><desc>dricksfontän i Centralhallen, Stockholms centralstation</desc></wpt>
+  <wpt lat="59.327055555556" lon="18.056194444444"><name>Lokes straff</name><desc>staty av Ida Matton i gården vid Stadshuset i Stockholm</desc></wpt>
+  <wpt lat="59.32714" lon="18.05331"><name>Ragnar Östberg</name><desc>skulptur i Stockholms kommun</desc></wpt>
+  <wpt lat="59.33050409143478" lon="18.045486670618594"><name>Minnesmärke</name><desc>Ett grönmålat ordenskors med text på båda sidor.</desc></wpt>
+  <wpt lat="59.33138889" lon="18.04361111"><name>Justitiabrunnen</name><desc>en fontän i Rådhusparken på Kungsholmen i Stockholm</desc></wpt>
+  <wpt lat="59.328055555556" lon="18.0425"><name>Vesslan</name><desc>en skulptur med två dricksfontäner på Kungsholmstorg, Kungsholmen, Stockholm</desc></wpt>
+  <wpt lat="59.32777778" lon="18.03083333"><name>Fabeldjur</name><desc>en skulptur på Kungsholmen i Stockholm</desc></wpt>
+  <wpt lat="59.325" lon="18.02277778"><name>Smalspårig växel</name><desc>skulptur på Smedsudden, Stockholms kommun</desc></wpt>
+  <wpt lat="59.32472222" lon="18.02194444"><name>Fiskfossil</name><desc>Fiskfossil är en skulptur på Smedsudden på Kungsholmen i Stockholm.</desc></wpt>
+  <wpt lat="59.3275" lon="18.01861111"><name>Mariebergsstenen (Kungsholmen)</name><desc>Mariebergsstenen är en skulptur och minnessten i Mariebergsparken på Kungsholmen i Stockholm.</desc></wpt>
+  <wpt lat="59.32805556" lon="18.01611111"><name>Friheten vår lösen</name><desc>Friheten vår lösen är en skulptur vid Rålambsvägen 17 på Kungsholmen i Stockholm.</desc></wpt>
+  <wpt lat="59.33111111" lon="18.02083333"><name>Färgtorn</name><desc>Färgtorn är en abstrakt skulptur på Kungsholmen (nära Lindhagensplan) i Stockholm.</desc></wpt>
+  <wpt lat="59.321629872794" lon="18.031212175758"><name>JAS-minnet</name><desc>minnesmärke på Långholmen i Stockholm</desc></wpt>
+  <wpt lat="59.315875" lon="18.03412222"><name>Avtryck</name><desc>skulptur på tunnelbaneplanet, station Hornstull i Stockholm</desc></wpt>
+  <wpt lat="59.30926389" lon="18.03091667"><name>Själsfränder</name><desc>offentlig skulptur av Kerstin Ahlgren</desc></wpt>
+  <wpt lat="59.31" lon="18.05638889"><name>Body &amp; soul</name><desc>skulptur från 2002 av Fredrik Wretman vid Södersjukhuset i Stockholm</desc></wpt>
+  <wpt lat="59.315833333333" lon="18.068611111111"><name>Efter festen</name><desc>skulptur av Bitte Jonason Åkerlund</desc></wpt>
+  <wpt lat="59.316666666667" lon="18.069166666667"><name>Byst över Carl von Friesen</name><desc>av John Börjeson, skolgården på Södra Latin på Södermalm i Stockholm</desc></wpt>
+  <wpt lat="59.31705" lon="18.07019167"><name>Torggumman</name><desc>skulptur av Lena Lervik</desc></wpt>
+  <wpt lat="59.31789167" lon="18.06980556"><name>Avselad kamp</name><desc>Avselad kamp är en skulptur som står på Repslagargatan på Södermalm i Stockholm.</desc></wpt>
+  <wpt lat="59.31817284302311" lon="18.068671253016575"><name>Minnesmärke</name><desc>En svårläst minnestavla över Oscar Montelius, uppsatt 1923.</desc></wpt>
+  <wpt lat="59.31871753585007" lon="18.071902624317012"><name>Minnesmärke</name><desc>Bellmanhuset, byggnadsminne där skalden bodde 1770–1774.</desc></wpt>
+  <wpt lat="59.31951141" lon="18.07164764"><name>Humor</name><desc>skulptur från 1967 av K. G. Bejermark</desc></wpt>
+  <wpt lat="59.31925" lon="18.06514444"><name>Dårarnas båt</name><desc>Dårarnas båt är en skulptur skapad av Sture Collin 1990.</desc></wpt>
+  <wpt lat="59.318638888889" lon="18.062611111111"><name>Emanuel Swedenborg</name><desc>byst på Mariatorget Stockholm</desc></wpt>
+  <wpt lat="59.318166666667" lon="18.062861111111"><name>Tors fiske</name><desc>fontän på Mariatorget, Södermalm, Stockholm</desc></wpt>
+  <wpt lat="59.320555555556" lon="18.061555555556"><name>Ivar Lo-Johansson, byst av Nils Möllerberg</name><desc>en byst i brons föreställande Ivar Lo-Johansson</desc></wpt>
+  <wpt lat="59.31783380369853" lon="18.08113861293896"><name>Minnesmärke</name><desc>En minnessten över svenskar som stupade i spanska inbördeskriget, krönt av en uppsträckt hand.</desc></wpt>
+  <wpt lat="59.317845" lon="18.0811679"><name>La Mano</name><desc>skulptur på Södermalm, Stockholm, skapad av Liss Eriksson 1977</desc></wpt>
+  <wpt lat="59.31805556" lon="18.08425"><name>Torso (skulptur)</name><desc>Torso är en skulptur av Dan Wolgers.</desc></wpt>
+  <wpt lat="59.3178" lon="18.0847"><name>Fotografiska</name><desc>Internationellt fotomuseum i ett gammalt tullhus vid Stadsgårdskajen.</desc></wpt>
+  <wpt lat="59.31738" lon="18.08669"><name>Anna Lindhagen skulptur</name><desc>skulptur på söder i Stockholm</desc></wpt>
+  <wpt lat="59.313" lon="18.08736111"><name>Undret</name><desc>skulptur i Vita bergsparken i Stockholm</desc></wpt>
+  <wpt lat="59.311861111111" lon="18.085277777778"><name>Elsa Borgs staty, Vitabergsparken</name><desc>staty i Stockholm</desc></wpt>
+  <wpt lat="59.31218056" lon="18.08360556"><name>Lek</name><desc>skulptur av Bror Hjorth</desc></wpt>
+  <wpt lat="59.311272222222" lon="18.081977777778"><name>Greta Garbo</name><desc>ett konstverk av Thomas Qvarsebo</desc></wpt>
+  <wpt lat="59.31130556" lon="18.07980556"><name>Vi ses vid målet</name><desc>skulptur på Södermalm i Stockholm</desc></wpt>
+  <wpt lat="59.31162222" lon="18.078225"><name>Jannica och dockvagnen</name><desc>skulptur av Gunnel Frieberg, 1986</desc></wpt>
+  <wpt lat="59.312008333333" lon="18.0751"><name>Stilleben</name><desc>konstverk av Eugen Krajcik</desc></wpt>
+  <wpt lat="59.30694444" lon="18.07305556"><name>BP-skylten</name><desc>reklamskylt på Ringvägen i Stockholm</desc></wpt>
+  <wpt lat="59.30972778" lon="18.08626389"><name>Sophie</name><desc>konstverk av Åsa Knoge-Hellström</desc></wpt>
+  <wpt lat="59.30780556" lon="18.09086111"><name>Vinterfågel</name><desc>Vinterfågel är en skulptur i brons av Göran Lange, uppsatt 1992 på Vintertullstorget på Södermalm i Stockholm.</desc></wpt>
+  <wpt lat="59.30305556" lon="18.09222222"><name>Mer än bara vänner?</name><desc>Mer än bara vänner?</desc></wpt>
+  <wpt lat="59.30333333" lon="18.10333333"><name>Fält</name><desc>ett vattenkonstverk i Hammarby sjöstad i södra Stockholm</desc></wpt>
+  <wpt lat="59.30689167" lon="18.10684167"><name>Instabil</name><desc>Instabil är ett offentligt konstverk i form av en mobil skapad av konstnären Lars Englund och placerad i Lugnet, Hammarby sjöstad i Stockholm.</desc></wpt>
+  <wpt lat="59.3196" lon="18.114"><name>Näckrosen</name><desc>en skulptur av en liggande kvinnofigur utförd av Per Hasselberg</desc></wpt>
+  <wpt lat="59.32413889" lon="18.11218889"><name>Bellmansbysten</name><desc>Bellmansbysten är en skulptur vid Bellmansro norr om Oakhill på Södra Djurgården i Stockholm föreställande Carl Michael Bellman.</desc></wpt>
+  <wpt lat="59.32929722" lon="18.11751944"><name>Rosendalsvasen</name><desc>monumentalverk i garbergsgramit</desc></wpt>
+  <wpt lat="59.33166667" lon="18.11583333"><name>Sjömannen</name><desc>skulptur i Östermalm, Stockholm</desc></wpt>
+  <wpt lat="59.322027777778" lon="18.133527777778"><name>frihetens port</name><desc>skulptur på Södra Djurgården</desc></wpt>
+  <wpt lat="59.318675" lon="18.159901"><name>Gud Fader på Himmelsbågen</name><desc>skulptur i Nacka strand</desc></wpt>
+  <wpt lat="59.34077" lon="18.166972"><name>Attachéväska R.W.</name><desc>konstverk av Ulla Kraitz</desc></wpt>
+  <wpt lat="59.3635" lon="18.11630556"><name>Flöjtspelande ängel</name><desc>staty av Carl Milles</desc></wpt>
+  <wpt lat="59.347975" lon="18.02929167"><name>Det entomologiska kvinnorovet</name><desc>Det entomologiska kvinnorovet är en skulptur av Eric Grate, som är uppställd utanför Karolinska Institutet i Solna.</desc></wpt>
+  <wpt lat="59.35694444" lon="18.02388889"><name>Genius</name><desc>en skulptur i brons av Carl Milles</desc></wpt>
+  <wpt lat="59.30555556" lon="17.99777778"><name>Fontändamm</name><desc>en fontän vid Manhemsgatan i Aspudden, södra Stockholm</desc></wpt>
+  <wpt lat="59.301222222222" lon="17.97025"><name>Funderande pojke</name><desc>skulptur av Bror Hjorth</desc></wpt>
+  <wpt lat="59.29333333" lon="17.97738889"><name>Efter badet</name><desc>Efter badet är en skulpturgrupp av Pye Engström i Västertorp i Stockholm.</desc></wpt>
+  <wpt lat="59.27555556" lon="18.09944444"><name>Dödsängeln</name><desc>skulptur av Carl Milles</desc></wpt>
+  <wpt lat="59.275805555556" lon="18.100805555556"><name>Uppståndelsemonumentet</name><desc>skulptur vid Skogskyrkogården i Stockholm</desc></wpt>
+  <wpt lat="59.320219444444" lon="17.664127777778"><name>Dianafontänen</name><desc>en fontän på Tändstickspalatsets innergård, centrala Stockholm</desc></wpt>
   <rte><name>Konstrundan i Stockholm</name>
-    <rtept lat="59.3286" lon="18.0781"><name>Nationalmuseum</name></rtept>
-    <rtept lat="59.3264" lon="18.0836"><name>Moderna Museet</name></rtept>
+    <rtept lat="59.368805555556" lon="18.054444444444"><name>Jorden</name></rtept>
+    <rtept lat="59.367638888889" lon="18.054472222222"><name>Vegamonumentet</name></rtept>
+    <rtept lat="59.352883333333" lon="18.058411111111"><name>Venus</name></rtept>
+    <rtept lat="59.350111111111" lon="18.067277777778"><name>Fåglarna</name></rtept>
+    <rtept lat="59.349833333333" lon="18.06725"><name>Kvinna och barn</name></rtept>
+    <rtept lat="59.34636111" lon="18.07291667"><name>Industrimonumentet</name></rtept>
+    <rtept lat="59.34153" lon="18.07114"><name>Staden</name></rtept>
+    <rtept lat="59.34041" lon="18.0727"><name>staty över Fredrika Bremer</name></rtept>
+    <rtept lat="59.34103" lon="18.07395"><name>Mimi</name></rtept>
+    <rtept lat="59.34048" lon="18.07608"><name>Levande malm</name></rtept>
+    <rtept lat="59.34047" lon="18.07662"><name>Scatola</name></rtept>
+    <rtept lat="59.33967" lon="18.08061"><name>Man - häst - vagn</name></rtept>
+    <rtept lat="59.33922" lon="18.08276"><name>Kvinna med handspegel</name></rtept>
+    <rtept lat="59.338258333333" lon="18.087416666667"><name>Mötande havet</name></rtept>
+    <rtept lat="59.33805556" lon="18.09027778"><name>Flygarmonumentet</name></rtept>
+    <rtept lat="59.33741" lon="18.09136"><name>En inre delning</name></rtept>
+    <rtept lat="59.33706" lon="18.09326"><name>Jeanette</name></rtept>
+    <rtept lat="59.33674" lon="18.09474"><name>Urna</name></rtept>
+    <rtept lat="59.3338808304265" lon="18.09121978906755"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.33155" lon="18.09765"><name>Den första segelbåten</name></rtept>
+    <rtept lat="59.329388888889" lon="18.094527777778"><name>Karl X Gustavs ryttarstaty, Stockholm</name></rtept>
+    <rtept lat="59.32825" lon="18.095722222222"><name>Orfeus</name></rtept>
+    <rtept lat="59.32777778" lon="18.09722222"><name>Karl XV:s staty</name></rtept>
+    <rtept lat="59.327583" lon="18.093944"><name>Estoniamonumentet</name></rtept>
+    <rtept lat="59.32766993362652" lon="18.093501621671894"><name>Minnesmärke</name></rtept>
     <rtept lat="59.3281" lon="18.0914"><name>Vasamuseet</name></rtept>
-    <rtept lat="59.325" lon="18.0964"><name>ABBA The Museum</name></rtept>
-    <rtept lat="59.3178" lon="18.0847"><name>Fotografiska</name></rtept>
+    <rtept lat="59.329780555556" lon="18.0899"><name>Astrid Lindgren staty</name></rtept>
+    <rtept lat="59.33182" lon="18.0831"><name>Principio - Begynnelse</name></rtept>
+    <rtept lat="59.333166666667" lon="18.076388888889"><name>Margaretha Krooks staty</name></rtept>
+    <rtept lat="59.33194444" lon="18.07555556"><name>Till Raoul Wallenberg</name></rtept>
+    <rtept lat="59.332022" lon="18.075141"><name>Vägen</name></rtept>
+    <rtept lat="59.33077778" lon="18.07172222"><name>Molins fontän</name></rtept>
+    <rtept lat="59.33138889" lon="18.07111111"><name>Karl XIII:s staty</name></rtept>
+    <rtept lat="59.33251667" lon="18.06992778"><name>Sverigeväggen</name></rtept>
+    <rtept lat="59.33083333" lon="18.06677778"><name>Gryning</name></rtept>
+    <rtept lat="59.32942778" lon="18.06880278"><name>Gustav II Adolfs staty, Stockholm</name></rtept>
+    <rtept lat="59.32888889" lon="18.06888889"><name>Norrbrolejonen</name></rtept>
+    <rtept lat="59.32838333" lon="18.07079444"><name>Solsångaren</name></rtept>
+    <rtept lat="59.330022222222" lon="18.072202777778"><name>Karl XII:s staty</name></rtept>
+    <rtept lat="59.328861111111" lon="18.077194444444"><name>Yngling med sköldpadda</name></rtept>
+    <rtept lat="59.3286" lon="18.0781"><name>Nationalmuseum</name></rtept>
+    <rtept lat="59.327805555556" lon="18.077861111111"><name>Vingarna (skulptur)</name></rtept>
+    <rtept lat="59.32674722" lon="18.07497222"><name>Gustav III</name></rtept>
+    <rtept lat="59.325166666667" lon="18.073833333333"><name>Sankt Göran och Draken</name></rtept>
+    <rtept lat="59.325539122409864" lon="18.072194833132475"><name>Minnesmärke</name></rtept>
     <rtept lat="59.3252" lon="18.0708"><name>Nobel Prize Museum</name></rtept>
+    <rtept lat="59.326138888889" lon="18.070388888889"><name>Kristina Gyllenstierna (staty)</name></rtept>
+    <rtept lat="59.326519444444" lon="18.070033333333"><name>Vågen och stranden</name></rtept>
+    <rtept lat="59.32603" lon="18.06808"><name>Morning</name></rtept>
+    <rtept lat="59.32590103" lon="18.06723404"><name>Statue of Lars Johan Hierta in Gamla stan</name></rtept>
+    <rtept lat="59.32571944" lon="18.06604444"><name>Gustav Vasa</name></rtept>
+    <rtept lat="59.326194444444" lon="18.065305555556"><name>Axel Oxenstiernas staty</name></rtept>
+    <rtept lat="59.32510556" lon="18.06385278"><name>Birger jarl</name></rtept>
+    <rtept lat="59.32455556" lon="18.06169444"><name>Solbåten</name></rtept>
+    <rtept lat="59.324765" lon="18.066952"><name>Riddarholmsbroarna</name></rtept>
+    <rtept lat="59.3255147433285" lon="18.06883512670449"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.323472222222" lon="18.070333333333"><name>Moder Svea (Rolf Adlersparre)</name></rtept>
+    <rtept lat="59.322811" lon="18.070933"><name>Bågspännaren</name></rtept>
+    <rtept lat="59.32283809698651" lon="18.073032881301625"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.32233333" lon="18.07530556"><name>Sjöguden</name></rtept>
+    <rtept lat="59.32405952660652" lon="18.075276204728194"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.324455555556" lon="18.083"><name>Kungliga Konsthögskolan Lejonet och svinet</name></rtept>
+    <rtept lat="59.32454042916272" lon="18.084242004039634"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.32533333" lon="18.08375"><name>De fyra elementen</name></rtept>
+    <rtept lat="59.32572" lon="18.08373"><name>Lenin Monument April 13th 1917</name></rtept>
+    <rtept lat="59.326142527744" lon="18.083636832209"><name>Black Swedish Granite</name></rtept>
+    <rtept lat="59.3264" lon="18.0836"><name>Moderna Museet</name></rtept>
+    <rtept lat="59.32612171293434" lon="18.08259618581262"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.32592598321318" lon="18.086869317497392"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.32586111" lon="18.09616667"><name>Bågskytten</name></rtept>
+    <rtept lat="59.326083333333" lon="18.096861111111"><name>Fången viking</name></rtept>
+    <rtept lat="59.325" lon="18.0964"><name>ABBA The Museum</name></rtept>
+    <rtept lat="59.3248" lon="18.0983"><name>Bellmanstatyn</name></rtept>
+    <rtept lat="59.32416667" lon="18.10138889"><name>Kalle och Emma</name></rtept>
+    <rtept lat="59.32686" lon="18.10034"><name>Staty Carl Linneus Skansen</name></rtept>
+    <rtept lat="59.32924" lon="18.10208"><name>Jenny Lind-statyn</name></rtept>
+    <rtept lat="59.32956" lon="18.10528"><name>Kvinnan i fredsarbetet</name></rtept>
+    <rtept lat="59.33177778" lon="18.10347222"><name>Den vilande Diana</name></rtept>
+    <rtept lat="59.33805556" lon="18.10416667"><name>Protest</name></rtept>
+    <rtept lat="59.34133333" lon="18.09808333"><name>Mås (skulptur)</name></rtept>
+    <rtept lat="59.34073" lon="18.09276"><name>Husmorssemester</name></rtept>
+    <rtept lat="59.339166666667" lon="18.072777777778"><name>Linnémonumentet</name></rtept>
+    <rtept lat="59.33885" lon="18.07095278"><name>Farfadern</name></rtept>
+    <rtept lat="59.33636111" lon="18.07241667"><name>Höken och duvan</name></rtept>
+    <rtept lat="59.335944444444" lon="18.073055555556"><name>Carlssons lykta</name></rtept>
+    <rtept lat="59.33488889" lon="18.07413889"><name>Eldhs fontän</name></rtept>
+    <rtept lat="59.33444444" lon="18.06555556"><name>Non Serviam (skulptur)</name></rtept>
+    <rtept lat="59.33294444" lon="18.06472222"><name>Klara</name></rtept>
+    <rtept lat="59.332583333333" lon="18.065194444444"><name>Kristallvertikalaccent</name></rtept>
+    <rtept lat="59.33402525623756" lon="18.061178589859725"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.335" lon="18.06222222"><name>Orfeusgruppen</name></rtept>
+    <rtept lat="59.33611111" lon="18.05972222"><name>Triton på delfin</name></rtept>
+    <rtept lat="59.335277777778" lon="18.054444444444"><name>Brantingmonumentet</name></rtept>
+    <rtept lat="59.338323099469" lon="18.055175036137"><name>Strindbergsmonumentet</name></rtept>
+    <rtept lat="59.3425" lon="18.05444444"><name>Kentauren (skulptur)</name></rtept>
+    <rtept lat="59.343305555556" lon="18.053861111111"><name>Det droppande trädet</name></rtept>
+    <rtept lat="59.34027778" lon="18.04611111"><name>Eastmanfontänen</name></rtept>
+    <rtept lat="59.3412" lon="18.0636"><name>staty Ellen Key</name></rtept>
+    <rtept lat="59.34109444" lon="18.06570833"><name>Fordon</name></rtept>
+    <rtept lat="59.34222222" lon="18.06444444"><name>Två myror</name></rtept>
+    <rtept lat="59.33027778" lon="18.0625"><name>Stockholms-Tidningens klocka</name></rtept>
+    <rtept lat="59.328611" lon="18.060556"><name>Vem är Mr Walker?</name></rtept>
+    <rtept lat="59.328611111111" lon="18.064444444444"><name>Lejonet och svinet</name></rtept>
+    <rtept lat="59.33027778" lon="18.05833333"><name>Centralstationens dricksvattenfontän</name></rtept>
+    <rtept lat="59.327055555556" lon="18.056194444444"><name>Lokes straff</name></rtept>
+    <rtept lat="59.32714" lon="18.05331"><name>Ragnar Östberg</name></rtept>
+    <rtept lat="59.33050409143478" lon="18.045486670618594"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.33138889" lon="18.04361111"><name>Justitiabrunnen</name></rtept>
+    <rtept lat="59.328055555556" lon="18.0425"><name>Vesslan</name></rtept>
+    <rtept lat="59.32777778" lon="18.03083333"><name>Fabeldjur</name></rtept>
+    <rtept lat="59.325" lon="18.02277778"><name>Smalspårig växel</name></rtept>
+    <rtept lat="59.32472222" lon="18.02194444"><name>Fiskfossil</name></rtept>
+    <rtept lat="59.3275" lon="18.01861111"><name>Mariebergsstenen (Kungsholmen)</name></rtept>
+    <rtept lat="59.32805556" lon="18.01611111"><name>Friheten vår lösen</name></rtept>
+    <rtept lat="59.33111111" lon="18.02083333"><name>Färgtorn</name></rtept>
+    <rtept lat="59.321629872794" lon="18.031212175758"><name>JAS-minnet</name></rtept>
+    <rtept lat="59.315875" lon="18.03412222"><name>Avtryck</name></rtept>
+    <rtept lat="59.30926389" lon="18.03091667"><name>Själsfränder</name></rtept>
+    <rtept lat="59.31" lon="18.05638889"><name>Body &amp; soul</name></rtept>
+    <rtept lat="59.315833333333" lon="18.068611111111"><name>Efter festen</name></rtept>
+    <rtept lat="59.316666666667" lon="18.069166666667"><name>Byst över Carl von Friesen</name></rtept>
+    <rtept lat="59.31705" lon="18.07019167"><name>Torggumman</name></rtept>
+    <rtept lat="59.31789167" lon="18.06980556"><name>Avselad kamp</name></rtept>
+    <rtept lat="59.31817284302311" lon="18.068671253016575"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.31871753585007" lon="18.071902624317012"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.31951141" lon="18.07164764"><name>Humor</name></rtept>
+    <rtept lat="59.31925" lon="18.06514444"><name>Dårarnas båt</name></rtept>
+    <rtept lat="59.318638888889" lon="18.062611111111"><name>Emanuel Swedenborg</name></rtept>
+    <rtept lat="59.318166666667" lon="18.062861111111"><name>Tors fiske</name></rtept>
+    <rtept lat="59.320555555556" lon="18.061555555556"><name>Ivar Lo-Johansson, byst av Nils Möllerberg</name></rtept>
+    <rtept lat="59.31783380369853" lon="18.08113861293896"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.317845" lon="18.0811679"><name>La Mano</name></rtept>
+    <rtept lat="59.31805556" lon="18.08425"><name>Torso (skulptur)</name></rtept>
+    <rtept lat="59.3178" lon="18.0847"><name>Fotografiska</name></rtept>
+    <rtept lat="59.31738" lon="18.08669"><name>Anna Lindhagen skulptur</name></rtept>
+    <rtept lat="59.313" lon="18.08736111"><name>Undret</name></rtept>
+    <rtept lat="59.311861111111" lon="18.085277777778"><name>Elsa Borgs staty, Vitabergsparken</name></rtept>
+    <rtept lat="59.31218056" lon="18.08360556"><name>Lek</name></rtept>
+    <rtept lat="59.311272222222" lon="18.081977777778"><name>Greta Garbo</name></rtept>
+    <rtept lat="59.31130556" lon="18.07980556"><name>Vi ses vid målet</name></rtept>
+    <rtept lat="59.31162222" lon="18.078225"><name>Jannica och dockvagnen</name></rtept>
+    <rtept lat="59.312008333333" lon="18.0751"><name>Stilleben</name></rtept>
+    <rtept lat="59.30694444" lon="18.07305556"><name>BP-skylten</name></rtept>
+    <rtept lat="59.30972778" lon="18.08626389"><name>Sophie</name></rtept>
+    <rtept lat="59.30780556" lon="18.09086111"><name>Vinterfågel</name></rtept>
+    <rtept lat="59.30305556" lon="18.09222222"><name>Mer än bara vänner?</name></rtept>
+    <rtept lat="59.30333333" lon="18.10333333"><name>Fält</name></rtept>
+    <rtept lat="59.30689167" lon="18.10684167"><name>Instabil</name></rtept>
+    <rtept lat="59.3196" lon="18.114"><name>Näckrosen</name></rtept>
+    <rtept lat="59.32413889" lon="18.11218889"><name>Bellmansbysten</name></rtept>
+    <rtept lat="59.32929722" lon="18.11751944"><name>Rosendalsvasen</name></rtept>
+    <rtept lat="59.33166667" lon="18.11583333"><name>Sjömannen</name></rtept>
+    <rtept lat="59.322027777778" lon="18.133527777778"><name>frihetens port</name></rtept>
+    <rtept lat="59.318675" lon="18.159901"><name>Gud Fader på Himmelsbågen</name></rtept>
+    <rtept lat="59.34077" lon="18.166972"><name>Attachéväska R.W.</name></rtept>
+    <rtept lat="59.3635" lon="18.11630556"><name>Flöjtspelande ängel</name></rtept>
+    <rtept lat="59.347975" lon="18.02929167"><name>Det entomologiska kvinnorovet</name></rtept>
+    <rtept lat="59.35694444" lon="18.02388889"><name>Genius</name></rtept>
+    <rtept lat="59.30555556" lon="17.99777778"><name>Fontändamm</name></rtept>
+    <rtept lat="59.301222222222" lon="17.97025"><name>Funderande pojke</name></rtept>
+    <rtept lat="59.29333333" lon="17.97738889"><name>Efter badet</name></rtept>
+    <rtept lat="59.27555556" lon="18.09944444"><name>Dödsängeln</name></rtept>
+    <rtept lat="59.275805555556" lon="18.100805555556"><name>Uppståndelsemonumentet</name></rtept>
+    <rtept lat="59.320219444444" lon="17.664127777778"><name>Dianafontänen</name></rtept>
   </rte>
 </gpx>

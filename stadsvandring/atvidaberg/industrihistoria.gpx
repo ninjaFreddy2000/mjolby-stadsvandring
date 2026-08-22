@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Åtvidaberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.20401309115771" lon="16.002288236826082"><name>Järnvägsbron</name><desc>Gångbron över järnvägen uppfördes i början av 1950-talet.</desc></wpt>
+  <wpt lat="58.2036474018016" lon="16.001391858902757"><name>Vy från bron</name><desc>Vy från den gamla järnvägsbron 1970</desc></wpt>
+  <wpt lat="58.19698380372798" lon="15.999280108795087"><name>Bro</name><desc>En stenbro med valv och räcken av skiffer.</desc></wpt>
+  <wpt lat="58.19348161958251" lon="15.994061246883279"><name>Bro</name><desc>En liten valvbro av sten.</desc></wpt>
+  <wpt lat="58.18494662616152" lon="16.000108459717485"><name>Bro</name><desc>En stenbro från 1916 med rallarinskrift.</desc></wpt>
+  <wpt lat="58.188983373687826" lon="16.02042011963558"><name>Bro</name><desc>En stenvalvsbro som inte längre är i trafik.</desc></wpt>
+  <wpt lat="58.19167963729483" lon="16.01873613612242"><name>Bro</name><desc>En stenvalvsbro som fortfarande är i trafik.</desc></wpt>
+  <rte><name>Industrihistoria i Åtvidaberg</name>
+    <rtept lat="58.20401309115771" lon="16.002288236826082"><name>Järnvägsbron</name></rtept>
+    <rtept lat="58.2036474018016" lon="16.001391858902757"><name>Vy från bron</name></rtept>
+    <rtept lat="58.19698380372798" lon="15.999280108795087"><name>Bro</name></rtept>
+    <rtept lat="58.19348161958251" lon="15.994061246883279"><name>Bro</name></rtept>
+    <rtept lat="58.18494662616152" lon="16.000108459717485"><name>Bro</name></rtept>
+    <rtept lat="58.188983373687826" lon="16.02042011963558"><name>Bro</name></rtept>
+    <rtept lat="58.19167963729483" lon="16.01873613612242"><name>Bro</name></rtept>
+  </rte>
+</gpx>

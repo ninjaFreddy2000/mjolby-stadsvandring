@@ -11,7 +11,7 @@
 // KÖR: node scripts/build-seo.mjs   (ingen build-kedja krävs; idempotent)
 // Skriver till repo-roten. Kör om varje gång data.json ändras.
 // ─────────────────────────────────────────────────────────────────────────
-import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { SUMMARY_EN } from '../i18n.js';
@@ -194,6 +194,13 @@ ul.facts li{margin:6px 0}
 .cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
 .contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
 .contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
 footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .grid{display:grid;gap:12px}
 @media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
@@ -224,9 +231,46 @@ ${footerHtml || `  <p><strong>${esc(BRAND)}</strong> — guidade stadsvandringar
 
 // ── per-plats-sidor ─────────────────────────────────────────────────────────
 let pageCount = 0;
+// ── Vilka platser förtjänar en egen indexerbar sida? ─────────────────────────
+// data.json rymmer 9 774 platser, men långt ifrån alla har nog med eget
+// innehåll för att bära en egen sida. Massgenererade tunna sidor straffar sig,
+// och straffet drabbar hela domänen — även de sidor som faktiskt är bra.
+//
+// Tröskeln mäts på UNIK PROSA — sammanfattning, beskrivning och snabbfakta.
+// Alltså inte på den renderade sidan: rubriker, källänkar, närliggande platser
+// och bidra-rutan är identiska överallt, och standardtext ska inte kunna lyfta
+// en tunn plats över gränsen. Det var precis så den första körningen gav
+// 4 036 sidor i stället för de ~2 300 som faktiskt bär eget innehåll.
+//
+// Platser under tröskeln försvinner inte — de listas i sin helhet på ortssidan
+// (/stadsvandring/<ort>) och är nåbara via /karta?plats=<id>. Det är samma
+// innehåll, men konsoliderat på en sida som blir starkare av det i stället för
+// utspätt över tusentals svaga.
+const MIN_UNIQUE_CHARS = 600;   // ≈100 ord egen text, utöver fakta och källor
+
+// En sida som redan ligger ute behåller sin URL även om den underskrider
+// tröskeln. Att avindexera något som redan rankar är sämre än att avstå från att
+// lägga till nytt — därför läses de befintliga slugarna av innan katalogen töms.
 const placeDir = join(ROOT, 'p');
+const alreadyPublished = new Set(
+  existsSync(placeDir)
+    ? readdirSync(placeDir).filter(f => f.endsWith('.html')).map(f => f.slice(0, -5))
+    : []
+);
 if (existsSync(placeDir)) rmSync(placeDir, { recursive: true, force: true });
 mkdirSync(placeDir, { recursive: true });
+
+// Unik prosa för en plats: det som skiljer den från alla andra.
+const uniqueChars = (e) => {
+  const kf = Array.isArray(e.key_facts) ? e.key_facts.join(' ')
+           : Object.values(e.key_facts || {}).join(' ');
+  return `${e.summary || ''} ${e.description || ''} ${kf}`.replace(/\s+/g, ' ').trim().length;
+};
+
+// Fylls i platsslingan; ortssidorna använder den för att veta vad som ska länka
+// till en egen sida och vad som ska länka in i kartan.
+const hasOwnPage = new Set();
+let skippedThin = 0;
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'weekly' },
@@ -323,10 +367,20 @@ for (const e of entries) {
     head: jsonld(ld) + '\n' + jsonld(crumbs),
     body,
   });
+  // Tröskeln: nog med eget innehåll, eller redan publicerad sedan tidigare.
+  if (uniqueChars(e) < MIN_UNIQUE_CHARS && !alreadyPublished.has(s)) { skippedThin++; continue; }
+
   writeFileSync(join(placeDir, `${s}.html`), html);
+  hasOwnPage.add(e.id || e.name);
   urls.push({ loc: canonical, priority: '0.7', changefreq: 'monthly', image: photoUrl, imageTitle: e.name });
   pageCount++;
 }
+
+// Vart en plats länkar: egen sida om den har en, annars rakt in i kartan på
+// just den platsen. Ingen plats blir en död länk.
+const placeHref = (e) => hasOwnPage.has(e.id || e.name)
+  ? `/p/${slug(e.id || e.name)}`
+  : `/karta?plats=${encodeURIComponent(e.id || '')}`;
 
 // ── platsindex (/platser) ────────────────────────────────────────────────────
 const byCity = {};
@@ -343,7 +397,7 @@ const indexBody = `
 ${Object.entries(byCity).map(([city, list]) => `
 <h2 class="city-h">${esc(city)} · ${list.length} platser</h2>
 <div class="grid two">
-${list.map(e => `<a class="tile" href="/p/${slug(e.id || e.name)}"><b>${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.era ? ' · ' + esc(e.era) : ''}</span></a>`).join('\n')}
+${list.map(e => `<a class="tile" href="${attr(placeHref(e))}"><b>${esc(e.name)}</b><span>${esc(CAT_LABEL[e.category] || e.category || '')}${e.era ? ' · ' + esc(e.era) : ''}</span></a>`).join('\n')}
 </div>`).join('\n')}
 <p style="margin-top:30px"><a class="cta" href="/karta">Öppna kartan &amp; appen</a></p>`;
 
@@ -352,8 +406,10 @@ const indexLd = {
   name: 'Alla platser – Stadsvandring', url: `${BASE}/platser`,
   about: CITIES.map(c => ({ '@type': 'City', name: c })),
   mainEntity: {
-    '@type': 'ItemList', numberOfItems: entries.length,
-    itemListElement: entries.map((e, i) => ({
+    // Bara platser med egen sida — strukturerad data ska inte peka på URL:er
+    // som inte finns.
+    '@type': 'ItemList', numberOfItems: pageCount,
+    itemListElement: entries.filter(e => hasOwnPage.has(e.id || e.name)).map((e, i) => ({
       '@type': 'ListItem', position: i + 1, name: e.name, url: `${BASE}/p/${slug(e.id || e.name)}`,
     })),
   },
@@ -599,17 +655,25 @@ for (const city of CITIES) {
   for (const s of stops.slice(0, 4)) if (s.summary) faqs.push({ q: `Vad är ${s.name}?`, a: s.summary });
 
   // ── JSON-LD ──
+  // Itinerariet beskriver en VANDRING, inte hela databasen. Göteborgs sida hade
+  // 609 stopp i schemat — 192 kB osynlig JSON, 63 % av sidans vikt, för något
+  // ingen läser och som Google inte visar i den storleken. Kapas till en rimlig
+  // vandring; hela listan finns ändå som läsbar text på sidan.
+  const TRIP_MAX = 25;
+  const tripStops = stops.slice(0, TRIP_MAX);
   const tripLd = {
     '@context': 'https://schema.org', '@type': 'TouristTrip',
     name: `Stadsvandring i ${city}`, description: ingress, url: canonical, touristType: 'Sightseeing',
     itinerary: {
-      '@type': 'ItemList', numberOfItems: stops.length,
-      itemListElement: stops.map((s, i) => ({
+      '@type': 'ItemList', numberOfItems: tripStops.length,
+      itemListElement: tripStops.map((s, i) => ({
         '@type': 'ListItem', position: i + 1,
         item: {
           '@type': 'TouristAttraction', name: s.name,
           ...(s.summary ? { description: trunc(s.summary, 160) } : {}),
-          url: `${BASE}/p/${slug(s.id || s.name)}`,
+          // Bara platser med egen sida får en url — strukturerad data ska inte
+          // peka på sidor som inte finns.
+          ...(hasOwnPage.has(s.id || s.name) ? { url: `${BASE}/p/${slug(s.id || s.name)}` } : {}),
           ...(s.coordinates?.lat ? { geo: { '@type': 'GeoCoordinates', latitude: s.coordinates.lat, longitude: s.coordinates.lng } } : {}),
         },
       })),
@@ -637,6 +701,22 @@ for (const city of CITIES) {
   };
   const dataBlock = `<script type="application/json" id="lm-data">${JSON.stringify(lmData).replace(/</g, '\\u003c')}</script>`;
 
+  // Hela ortens platser, grupperade per kategori. Det är den här listan som gör
+  // att en plats utan egen sida ändå är crawlbar och nåbar — innehållet
+  // konsolideras hit i stället för att spädas ut över tusentals tunna sidor.
+  const allPlacesHtml = (list) => {
+    const groups = {};
+    for (const e of list) (groups[CAT_LABEL[e.category] || e.category || 'Övrigt'] ||= []).push(e);
+    return Object.entries(groups)
+      .sort((a, b) => b[1].length - a[1].length)
+      .map(([label, arr]) => `<h3 class="city-h3">${esc(label)} · ${arr.length}</h3>
+<ul class="place-list">
+${arr.map(e => `<li><a href="${attr(placeHref(e))}"><b>${esc(e.name)}</b></a>${
+  e.summary ? ` — ${esc(trunc(e.summary, 140))}` : ''}${
+  e.era ? ` <span class="era">${esc(e.era)}</span>` : ''}</li>`).join('\n')}
+</ul>`).join('\n');
+  };
+
   // ── teaser-body ──
   const stopCard = (s, i) => {
     const im = imgFor(s);
@@ -656,6 +736,11 @@ for (const city of CITIES) {
 <div class="grid two">
 ${teaserStops.map(stopCard).join('\n')}
 </div>
+
+<h2 class="city-h">Alla platser i ${esc(city)} · ${stops.length}</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+${esc(city)}. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+${allPlacesHtml(stops)}
 
 <section class="gate card" id="lm-gate">
   <h2>Ladda ner hela vandringen gratis</h2>
@@ -1331,7 +1416,7 @@ ${entries.map(e => `- [${e.name}${e.city ? ' (' + e.city + ')' : ''}](${BASE}/p/
 `;
 writeFileSync(join(ROOT, 'llms.txt'), llms);
 
-console.log(`✓ ${pageCount} platssidor (/p/*.html)`);
+console.log(`✓ ${pageCount} platssidor (/p/*.html) — ${skippedThin} platser under tröskeln (${MIN_UNIQUE_CHARS} tecken egen text) listas i stället på sin ortssida`);
 console.log(`✓ platser.html`);
 console.log(`✓ en.html (engelsk hub, hreflang ↔ /)`);
 console.log(`✓ leadmagnet M1 (${lmCount} orter: teaser + gatad guide)`);

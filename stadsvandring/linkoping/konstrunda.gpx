@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Linköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.41433638038135" lon="15.621535003044086"><name>Minnesmärke</name><desc>En minnestavla över Elsa Brändström, Sibiriens ängel, som gick i skola i Linköping.</desc></wpt>
+  <wpt lat="58.410734" lon="15.621481"><name>Folkungabrunnen</name><desc>svensk skulptur</desc></wpt>
+  <wpt lat="58.4106068455657" lon="15.61834246906039"><name>Minnesmärke</name><desc>En minnestavla som erinrar om Linköpings gamla skola och gymnasium.</desc></wpt>
+  <wpt lat="58.405969941619595" lon="15.620213366031109"><name>Minnesmärke</name><desc>Ett stenmonument av granit med treenighetsmärke i brons och inskriften &quot;Fader vår gif oss bröd&quot;.</desc></wpt>
+  <wpt lat="58.4043567835255" lon="15.608370853456737"><name>Minnesmärke</name><desc>En minnessten över Östgöta trängkårs tid på platsen 1911–1927.</desc></wpt>
+  <wpt lat="58.398583928188714" lon="15.610899122961943"><name>Minnesmärke</name><desc>Minnessten från 1891 över östgötska soldater som stupade under krigstågen 1563–1815.</desc></wpt>
+  <wpt lat="58.39635505201018" lon="15.60949006957336"><name>Minnesmärke</name><desc>En minnessten över livgrenadjärer som omkom under beredskapstjänst 1939–1945.</desc></wpt>
+  <wpt lat="58.394756866575094" lon="15.60977417898706"><name>Minnesmärke</name><desc>En minnessten av granit med en uppmaning att vårda fält och skog.</desc></wpt>
+  <wpt lat="58.391563446736576" lon="15.586964499987248"><name>Minnesmärke</name><desc>Ett minnesmärke i Linköping som endast är knapphändigt dokumenterat.</desc></wpt>
+  <wpt lat="58.41308738813619" lon="15.609565144837845"><name>Minnesmärke</name><desc>En minnestavla över författaren Carl Anton Wetterbergh, känd som Onkel Adam.</desc></wpt>
+  <wpt lat="58.41419011451144" lon="15.63393191551542"><name>Minnesmärke</name><desc>En minnessten som hedrar slaget vid Stångebro 1598.</desc></wpt>
+  <wpt lat="58.391701567362496" lon="15.6383578649744"><name>Minnesmärke</name><desc>Bronsstatyn med moder Svea och lejonet restes 1928 och bär orden PÅ VAKT FÖR FOSTERLANDET.</desc></wpt>
+  <wpt lat="58.390770882092156" lon="15.641062529529657"><name>Minnesmärke</name><desc>En samling minnesstenar med en bronsstaty av Moder Svea och lejonet.</desc></wpt>
+  <rte><name>Konstrundan i Linköping</name>
+    <rtept lat="58.41433638038135" lon="15.621535003044086"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.410734" lon="15.621481"><name>Folkungabrunnen</name></rtept>
+    <rtept lat="58.4106068455657" lon="15.61834246906039"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.405969941619595" lon="15.620213366031109"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.4043567835255" lon="15.608370853456737"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.398583928188714" lon="15.610899122961943"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.39635505201018" lon="15.60949006957336"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.394756866575094" lon="15.60977417898706"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.391563446736576" lon="15.586964499987248"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.41308738813619" lon="15.609565144837845"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.41419011451144" lon="15.63393191551542"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.391701567362496" lon="15.6383578649744"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.390770882092156" lon="15.641062529529657"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Varberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.126459" lon="12.252526"><name>Naturum Getterön</name><desc>Besökscentrum och porten till Hallands naturreservat, beläget vid ett av Nordeuropas bästa fågelområden.</desc></wpt>
+  <wpt lat="57.10607849136184" lon="12.243475541371339"><name>Minnesmärke</name><desc>En minnessten rest på grundstenarna från Varbergs kyrka som brann 1666.</desc></wpt>
+  <wpt lat="57.105979" lon="12.23953"><name>Hallands kulturhistoriska museum</name><desc>Länets kulturhistoriska museum i Varbergs fästning, grundat 1916 och hem för Bockstensmannen.</desc></wpt>
+  <wpt lat="57.106639882390645" lon="12.239116992603279"><name>Minnesmärke</name><desc>Ett bronsminnesmärke från 1926 i Varberg, krönt av ett kors och prytt av tre runliknande tecken.</desc></wpt>
+  <wpt lat="57.102854708029106" lon="12.243800225990846"><name>Minnesmärke</name><desc>En minnessten över den danske fältherren Daniel Rantzau, stupad vid Varberg 1569.</desc></wpt>
+  <wpt lat="57.105075" lon="12.25078889"><name>Badande ungdom</name><desc>Badande ungdom är en bronsskulptur utförd av Bror Marklund i Varberg.</desc></wpt>
+  <wpt lat="57.1014948397634" lon="12.259096798068683"><name>Minnesmärke</name><desc>En liten minnessten fastgjuten i berghällen i Varberg, intill en uppställd järnkanon.</desc></wpt>
+  <rte><name>Konstrundan i Varberg</name>
+    <rtept lat="57.126459" lon="12.252526"><name>Naturum Getterön</name></rtept>
+    <rtept lat="57.10607849136184" lon="12.243475541371339"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.105979" lon="12.23953"><name>Hallands kulturhistoriska museum</name></rtept>
+    <rtept lat="57.106639882390645" lon="12.239116992603279"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.102854708029106" lon="12.243800225990846"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.105075" lon="12.25078889"><name>Badande ungdom</name></rtept>
+    <rtept lat="57.1014948397634" lon="12.259096798068683"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

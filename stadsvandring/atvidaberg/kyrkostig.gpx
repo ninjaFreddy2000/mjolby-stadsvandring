@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Åtvidaberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.202611111111" lon="15.999888888889"><name>Pingstkyrkan</name><desc>kyrka i Åtvidaberg</desc></wpt>
+  <wpt lat="58.201833333333" lon="15.994027777778"><name>Johanneskyrkan</name><desc>kyrka i Åtvidaberg</desc></wpt>
+  <wpt lat="58.19805556" lon="15.99583333"><name>Åtvids nya kyrka</name><desc>kyrkobyggnad i Åtvidabergs kommun</desc></wpt>
+  <wpt lat="58.19687222" lon="15.99583889"><name>Åtvids gamla kyrka</name><desc>kyrkobyggnad i Åtvidaberg i Linköpings stift</desc></wpt>
+  <wpt lat="58.191694444444" lon="16.016972222222"><name>Åtvids gravkapell</name><desc>gravkapell i Åtvidabergs kommun, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Åtvidaberg</name>
+    <rtept lat="58.202611111111" lon="15.999888888889"><name>Pingstkyrkan</name></rtept>
+    <rtept lat="58.201833333333" lon="15.994027777778"><name>Johanneskyrkan</name></rtept>
+    <rtept lat="58.19805556" lon="15.99583333"><name>Åtvids nya kyrka</name></rtept>
+    <rtept lat="58.19687222" lon="15.99583889"><name>Åtvids gamla kyrka</name></rtept>
+    <rtept lat="58.191694444444" lon="16.016972222222"><name>Åtvids gravkapell</name></rtept>
+  </rte>
+</gpx>

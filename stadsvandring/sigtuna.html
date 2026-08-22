@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Sigtuna — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Sigtuna till fots: 140 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 140 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/sigtuna">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Sigtuna — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Sigtuna till fots: 140 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 140 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/sigtuna">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Sigtuna — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Sigtuna till fots: 140 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 140 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"sigtuna","sourceSlug":"stadsvandring/sigtuna","centroid":{"lat":59.62190926808379,"lng":17.70839713515798},"stops":[{"name":"Venngarns slott","lat":59.64861111,"lng":17.71972222},{"name":"Steninge slott","lat":59.60208333,"lng":17.80444444},{"name":"Signhildsberg","lat":59.61666667,"lng":17.65}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Sigtuna","description":"Upptäck Sigtuna till fots: 140 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/sigtuna","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Venngarns slott","description":"slott i Sverige uppfört 1670","url":"https://stadsvandring.io/p/wd-sigtuna-venngarns-slott-q969362","geo":{"@type":"GeoCoordinates","latitude":59.64861111,"longitude":17.71972222}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Steninge slott","description":"slott vid Mälarens strand, i Sigtuna kommun, Sverige","url":"https://stadsvandring.io/p/wd-sigtuna-steninge-slott-q1597542","geo":{"@type":"GeoCoordinates","latitude":59.60208333,"longitude":17.80444444}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Signhildsberg","description":"Signhildsberg var före 1600-talet känt som Fornsigtuna.","url":"https://stadsvandring.io/p/wd-sigtuna-signhildsberg-q5470394","geo":{"@type":"GeoCoordinates","latitude":59.61666667,"longitude":17.65}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Erikssunds säteri","description":"Erikssund (tidigare Sundby eller Håtunabo) är en herrgård och tidigare säteri i Sankt Pers socken, Sigtuna kommun.","geo":{"@type":"GeoCoordinates","latitude":59.64388889,"longitude":17.61388889}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Haga kyrka","description":"kyrkobyggnad i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.67060278,"longitude":17.69875}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Håtuna kyrka","description":"kyrkobyggnad i Upplands-Bro kommun","geo":{"@type":"GeoCoordinates","latitude":59.623138888889,"longitude":17.609305555556}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Håtunaholms säteri","description":"herrgård vid Mälaren i Uppland, Sverige","url":"https://stadsvandring.io/p/wd-sigtuna-hatunaholms-sateri-q10532158","geo":{"@type":"GeoCoordinates","latitude":59.63555556,"longitude":17.62027778}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Mariakyrkan","description":"kyrkobyggnad i Svenska kyrkan i Sigtuna, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.6184,"longitude":17.7229}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sankt Olofs kyrkoruin","description":"kyrkobyggnad i Sigtuna kommun","url":"https://stadsvandring.io/p/wd-sigtuna-sankt-olofs-kyrkoruin-q10661450","geo":{"@type":"GeoCoordinates","latitude":59.6184,"longitude":17.7212}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Sigtuna museum","description":"Sigtuna museum, tidigare Sigtuna Fornhem, är ett kommunalt museum vid Lilla torg vid Stora gatan i Sigtuna.","geo":{"@type":"GeoCoordinates","latitude":59.61525278,"longitude":17.71908333}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Olov Hartmans studiokyrka","description":"kyrkobyggnad i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.619361111111,"longitude":17.722583333333}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Valsta kyrka","description":"kyrkobyggnad i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.616972222222,"longitude":17.829722222222}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Håbo-Tibble kyrka","description":"kyrkobyggnad som tillhör Bro församling i Uppsala stift","geo":{"@type":"GeoCoordinates","latitude":59.58853333,"longitude":17.66088889}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Sigtuna fyr","description":"en fyr i Mälaren i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.612944444444,"longitude":17.714194444444}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Flottvikens fyr","description":"en fyr i Mälaren i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.607222222222,"longitude":17.774638888889}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Kapell","description":"kapell i Sigtuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.615421,"longitude":17.710152}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"REKTORSBOSTAD","description":"En rektorsbostad i Sigtuna uppförd på 1920-talet.","geo":{"@type":"GeoCoordinates","latitude":59.61479790349249,"longitude":17.711445001560104}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"SKOLBYGGNAD","description":"En skolbyggnad i Sigtuna uppförd 1917.","geo":{"@type":"GeoCoordinates","latitude":59.615421033273456,"longitude":17.71015231155223}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"REFUGIUM","description":"En byggnad benämnd Refugium i Sigtuna, uppförd 1923.","geo":{"@type":"GeoCoordinates","latitude":59.61513407866128,"longitude":17.7089544385105}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"EKUMENISKA","description":"En byggnad benämnd Ekumeniska i Sigtuna, uppförd mellan 1929 och 1939.","geo":{"@type":"GeoCoordinates","latitude":59.61536188649536,"longitude":17.71182413493557}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"SIGTUNA RÅDHUS","description":"Sigtuna rådhus, ett litet timrat rådhus från 1744 med bevarad barockinredning och klocktorn.","url":"https://stadsvandring.io/p/ksamsok-sigtuna-radhus-sigtuna-693204","geo":{"@type":"GeoCoordinates","latitude":59.61697043025887,"longitude":17.721237175671185}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"BOSTADSHUS","description":"Ett bostadshus i Sigtuna från tiden 1770–1829.","geo":{"@type":"GeoCoordinates","latitude":59.63233151741919,"longitude":17.733856579658166}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Tilkyrkan","description":"Tilkyrkan i Sigtuna, uppförd 1979.","geo":{"@type":"GeoCoordinates","latitude":59.61936536115087,"longitude":17.72260381883167}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"BIBLIOTEK","description":"En biblioteksbyggnad i Sigtuna uppförd 1935.","geo":{"@type":"GeoCoordinates","latitude":59.615421033273456,"longitude":17.71015231155223}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Gravfält","description":"Gravfält med en hög och fyra runda stensättningar, delvis blandat med spår av tidig odling.","url":"https://stadsvandring.io/p/ksamsok-gravfalt-sigtuna-3c2e5b","geo":{"@type":"GeoCoordinates","latitude":59.63809007791619,"longitude":17.72460909829965}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Sigtuna gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 140 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Sigtuna?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 140 sevärdheter i Sigtuna — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Venngarns slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Sverige uppfört 1670"}},{"@type":"Question","name":"Vad är Steninge slott?","acceptedAnswer":{"@type":"Answer","text":"slott vid Mälarens strand, i Sigtuna kommun, Sverige"}},{"@type":"Question","name":"Vad är Signhildsberg?","acceptedAnswer":{"@type":"Answer","text":"Signhildsberg var före 1600-talet känt som Fornsigtuna."}},{"@type":"Question","name":"Vad är Erikssunds säteri?","acceptedAnswer":{"@type":"Answer","text":"Erikssund (tidigare Sundby eller Håtunabo) är en herrgård och tidigare säteri i Sankt Pers socken, Sigtuna kommun."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Sigtuna","item":"https://stadsvandring.io/stadsvandring/sigtuna"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Sigtuna</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Sigtuna</span><span class="badge">140 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Sigtuna — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Sigtuna till fots: 140 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Sigtuna"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-sigtuna-venngarns-slott-q969362"><b>1. Venngarns slott</b><span>Slott · slott i Sverige uppfört 1670</span></a>
+<a class="tile" href="/p/wd-sigtuna-steninge-slott-q1597542"><b>2. Steninge slott</b><span>Slott · slott vid Mälarens strand, i Sigtuna kommun, Sverige</span></a>
+<a class="tile" href="/p/wd-sigtuna-signhildsberg-q5470394"><b>3. Signhildsberg</b><span>Byggnad · Signhildsberg var före 1600-talet känt som Fornsigtuna.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Sigtuna · 140</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Sigtuna. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 101</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-gravfalt-sigtuna-3c2e5b"><b>Gravfält</b></a> — Gravfält med en hög och fyra runda stensättningar, delvis blandat med spår av tidig odling.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sigtuna-15fb31"><b>Övrigt</b></a> — En stensamling i en bergssluttning, möjligen en raserad mur.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-f3e144"><b>Stensättning</b></a> — En rund, skadad stensättning med kantkedja, vars status som fornlämning är osäker.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-sigtuna-3b3b1e"><b>Fornlämningsliknande bildning</b></a> — En oregelbunden stensättningsliknande bildning som troligen är en naturbildning.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-sigtuna-63f481"><b>Plats med tradition</b></a> — En udde med eget namn, jämte två poster som utgått eller överförts.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-f2cb83"><b>Gränsmärke</b></a> — En rest gränssten av röd kalksten från 1667 mellan Sigtuna och Vänge/Garn.</li>
+<li><a href="/p/ksamsok-rojningsrose-sigtuna-6244fe"><b>Röjningsröse</b></a> — Ett röjningsröse, undersökt och borttaget 2016, tidigare tolkat som en rund stensättning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-4f5479"><b>Husgrund, historisk tid</b></a> — En jordkällare, förmodligen inbyggd i ett äldre röse.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-sigtuna-90d8ea"><b>Hägnadssystem</b></a> — Två korta stenmurar som avgränsar en plan, möjligen terrasserad yta.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-3b9111"><b>Gränsmärke</b></a> — En välbevarad gränssten i röd kalksten från 1666 mellan Sigtuna och Wennegarn.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sigtuna-3902ba"><b>Fyndplats</b></a> — En sandstenshörnsten med murbruk som kan komma från Sankt Olofs kyrkoruin.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-aa24d8"><b>Husgrund, historisk tid</b></a> — Industrilämningar med två husgrunder och ett stentorn, troligen kopplade till ett tegelbruk.</li>
+<li><a href="/p/ksamsok-ovrigt-sigtuna-a4d8d9"><b>Övrigt</b></a> — Sankt Olofs kyrkoruin med inmurade runstensfragment, bland annat en sten rest efter Grimulv.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-sigtuna-e84f63"><b>Begravningsplats</b></a> — Fyndplats för fyra till fem skelett som grävdes fram 1977 vid en vattenledning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-d672f7"><b>Husgrund, historisk tid</b></a> — En husgrund med syllstenar, spisröse och tegel i fyllningen.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-sigtuna-b3c660"><b>Träindustri</b></a> — Ett borttaget glasbruk där glasskärvor och smält glas kommit fram vid husbyggen.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-4bc684"><b>Stensättning</b></a> — En rund stensättning med kantkedja som visats av den lokala orienteringsklubben.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-sigtuna-a18a90"><b>Gravfält</b></a> — Ett gravfält med ett sextontal stensättningar, både runda och kvadratiska.</li>
+<li><a href="/karta?plats=ksamsok-sorgen-lagenhetsbebyggelse-sigtuna-3b8209"><b>Sorgen, Lägenhetsbebyggelse</b></a> — En husgrund med tillhörande röjningsrösen i skogsmark ovanför gammal åkermark.</li>
+<li><a href="/p/ksamsok-fornlamningsliknande-lamning-sigtuna-46791b"><b>Fornlämningsliknande lämning</b></a> — Stensättningsliknande lämningar vid en badplats, sannolikt anlagda i modern tid.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-636d35"><b>Färdväg</b></a> — En övertorvad vägbank som kom fram vid en arkeologisk utredning.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-sigtuna-d96985"><b>Vägmärke</b></a> — En väghållningssten i gråsten som står i ett stenröse.</li>
+<li><a href="/p/ksamsok-hagnad-sigtuna-653333"><b>Hägnad</b></a> — Ett borttaget stensträngssystem som tolkats som en fornborg och delundersöktes 1925.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-sigtuna-578583"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse i Sigtuna med sparsamt underlag.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-33d0f7"><b>Fornlämningsliknande lämning</b></a> — En geofysisk observation från en sjöbotten, upptäckt med side scan sonar 2007.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-sigtuna-3f824c"><b>Lägenhetsbebyggelse</b></a> — En lägenhetsbebyggelse med fyra husgrunder där bland annat en tennkopp hittades.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-cc0b93"><b>Husgrund, historisk tid</b></a> — Husgrunder på en ö som enligt traditionen kan höra till ett gammalt värdshus.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-4f7c58"><b>Stensättning</b></a> — Två rektangulära stensättningar på en förhöjning, delvis skadade sedan lång tid.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-ccbd41"><b>Hägnad</b></a> — En stensträng som löper västerut från ett närliggande gravfält.</li>
+<li><a href="/karta?plats=ksamsok-hog-sigtuna-2dc5a2"><b>Hög</b></a> — Två höglika stenpartier vid Sigtunafjärden som troligen inte är fornlämningar.</li>
+<li><a href="/p/ksamsok-fyndsamling-sigtuna-1c6df3"><b>Fyndsamling</b></a> — Museisamlingen vid Sigtuna Fornhem med runstensfragment och ett rikt lösfyndsmaterial.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-sigtuna-12fcca"><b>Fartygs-/båtlämning</b></a> — En fartygslämning på sjöbotten, funnen med side scan sonar 2007.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-d64713"><b>Husgrund, historisk tid</b></a> — En registrerad husgrund från historisk tid med knapphändigt underlag.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-460722"><b>Gränsmärke</b></a> — En skadad gränssten från 1667 som motsvarar den bevarade stenen Sigtuna 50:1.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sigtuna-aa07a9"><b>Fyndplats</b></a> — Fyndplats för en tunnackig flintyxa som hittades vid ett radhusbygge 2014.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-sigtuna-4a04df"><b>Grav övrig</b></a> — En grav med skelett från minst två personer, daterad till vikingatid.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-c1cb34"><b>Hägnad</b></a> — En registrerad hägnadslämning i Sigtuna med sparsamt underlag.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-sigtuna-5acbf7"><b>Kvarn</b></a> — En stengrund efter en väderkvarn med en rak sida mot söder.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-384010"><b>Stensättning</b></a> — En rund stensättning med kantkedja och antydd mittgrop.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-46fcb8"><b>Färdväg</b></a> — En vägbank som utgör en del av den gamla landsvägen mellan Sigtuna och Uppsala.</li>
+<li><a href="/karta?plats=ksamsok-stenugn-sigtuna-b711ca"><b>Stenugn</b></a> — En fyrkantig stenugn byggd mot en lodrät berghäll med öppning mot väster.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-aaacc4"><b>Gränsmärke</b></a> — En gränssten från 1667 mellan Sigge Thuna och Wennegarn, rest i ett gränsröse.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-d95f0d"><b>Hägnad</b></a> — En upplagd stenmur försedd med säten och bord.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-sigtuna-d14eaf"><b>Gravfält</b></a> — Ett gravfält med ett tiotal runda stensättningar, svåravgränsat av en parkanläggning.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-d842a4"><b>Färdväg</b></a> — En vägbank med anslutande vägsträckningar och äldre stensträngar.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-sigtuna-2f3646"><b>Grav övrig</b></a> — Två skelettgravar från en tidig kristen gravgård, undersökta 1955.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-sigtuna-09e0ad"><b>Gravfält</b></a> — Resterna av ett gravfält med åtta stensättningar, delvis skadat av senare ingrepp.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sigtuna-1a677d"><b>Fyndplats</b></a> — Fyndplats för en trindyxa som markägaren hittade i en husgrund.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-sigtuna-d6c526"><b>Tegelindustri</b></a> — Ett borttaget tegelbruk utan synliga spår vid inventeringen 1979.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-404886"><b>Fornlämningsliknande lämning</b></a> — En oval förhöjning vid en sjö som troligen är en naturbildning.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-c8c2e6"><b>Hägnad</b></a> — En registrerad hägnadslämning i Sigtuna med sparsamt underlag.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sigtuna-47f1da"><b>Övrigt</b></a> — En gammal träbyggnad från 1744 och en närliggande fyndplats för ett runstensfragment.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-45c9cd"><b>Stensättning</b></a> — En rund stensättning från 800-talet, undersökt 1935 och funnen plundrad.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-sigtuna-02796d"><b>Hamnanläggning</b></a> — Ett färjläge med en tillhörande anläggning på uddspetsen.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-sigtuna-4ae120"><b>Lägenhetsbebyggelse</b></a> — En husgrund med spismurkulle som pekats ut av orienteringsklubbens ordförande.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-sigtuna-4a0729"><b>Stadslager</b></a> — Sigtunas medeltida stadslager som omfattar stadskärnans kvarter.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-1ea0cf"><b>Gränsmärke</b></a> — En gränssten från 1667 som spräckts men lagats, rest i ett välbevarat röse.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sigtuna-0a123a"><b>Övrigt</b></a> — Ett ovanligt ståtligt enträd med järnband, borttaget 1978.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-fb518f"><b>Färdväg</b></a> — En vägbank med anslutande vägsträckningar och äldre stensträngar.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-1ba407"><b>Gränsmärke</b></a> — Ett registrerat gränsmärke i Sigtuna med knapphändigt underlag.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-0ae397"><b>Fornlämningsliknande lämning</b></a> — En vallbildning som troligen består av odlingssten på en möjligen naturlig vall.</li>
+<li><a href="/karta?plats=ksamsok-trefaldighetskallan-naturforemal-bildning-med-bruk-tradition-eller-namn-sigtuna-33105c"><b>Trefaldighetskällan, Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En namngiven källa med stenlagd öppning strax nordväst om ett villaområde.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-728c8d"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-e99ea5"><b>Färdväg</b></a> — Resterna av en övertorvad vägbank, delvis dold av en yngre väg.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-dd7c16"><b>Gränsmärke</b></a> — Ett gränsröse med rest hjärtsten och en tillhörande visarsten.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-735095"><b>Fornlämningsliknande lämning</b></a> — Husgrunder på en ö som traditionen knyter till ett gammalt värdshus.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sigtuna-8c4e12"><b>Övrigt</b></a> — En registrerad lämning utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-ac9216"><b>Stensättning</b></a> — En möjlig rund stensättning med vid utsikt över Sigtunafjärden.</li>
+<li><a href="/karta?plats=ksamsok-rose-sigtuna-767999"><b>Röse</b></a> — Ett registrerat röse utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-7bec34"><b>Fornlämningsliknande lämning</b></a> — En välbevarad gränssten av röd kalksten från 1666.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-forhistorisk-medeltida-sigtuna-dc34d8"><b>Husgrund, förhistorisk/medeltida</b></a> — En förhistorisk eller medeltida husgrund utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-sigtuna-aab725"><b>Hamnanläggning</b></a> — Rester av en enkel brygga vid en liten vik.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-sigtuna-6ce0d3"><b>Lägenhetsbebyggelse</b></a> — En torplämning med husgrund och en tegelfylld brandmurskulle.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-sigtuna-e8b431"><b>Färdväg</b></a> — En hålväg känd endast genom kartmarkering och en utredning 2004.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sigtuna-ff5e60"><b>Fornlämningsliknande lämning</b></a> — En röseliknande stensamling som troligen är ett skolbarnsverk.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-sigtuna-21515c"><b>Fornlämningsliknande bildning</b></a> — En naturlig ändmoränrygg med spår av äldre täkt.</li>
+<li><a href="/p/ksamsok-hagnad-sigtuna-e16f11"><b>Hägnad</b></a> — Resterna av en bogårdsmur som möter en annan mur i vinkel.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-sigtuna-708e9f"><b>Röjningsröse</b></a> — Ett röjningsröse av stora stenar intill en röjd åkeryta.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-0eab9e"><b>Hägnad</b></a> — En delvis utrasad stenmur av okänd ålder.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-sigtuna-9daac0"><b>Stenkrets/stenrad</b></a> — En möjlig rektangulär stenkrets av fyra resta hällar.</li>
+<li><a href="/karta?plats=ksamsok-mariedal-lagenhetsbebyggelse-sigtuna-3b64ce"><b>Mariedal, Lägenhetsbebyggelse</b></a> — Torpet Mariedals lämningar med husgrund och jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-sigtuna-8aa9e3"><b>Fartygs-/båtlämning</b></a> — En fartygslämning påträffad med side scan-sonar 2007.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-sigtuna-9e1e4c"><b>Fornlämningsliknande bildning</b></a> — En stensättningsliknande bildning som visat sig vara naturlig.</li>
+<li><a href="/p/ksamsok-fornlamningsliknande-lamning-sigtuna-79fa77"><b>Fornlämningsliknande lämning</b></a> — Ett borttaget stensträngssystem som en gång tolkats som befästning.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sigtuna-9ea560"><b>Övrigt</b></a> — En fyndplats för mänskliga skelettrester och kistdelar.</li>
+<li><a href="/p/ksamsok-fossil-aker-sigtuna-717bef"><b>Fossil åker</b></a> — Fossil åkermark med odlingslager, röjningsrösen och åkerdiken.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-c4f9a9"><b>Gränsmärke</b></a> — Ett registrerat gränsmärke utan närmare beskrivning.</li>
+<li><a href="/p/ksamsok-ovrigt-sigtuna-a93347"><b>Övrigt</b></a> — Industrilämningar med husgrunder, ett stentorn och en trolig brännugn.</li>
+<li><a href="/karta?plats=ksamsok-glasindustri-sigtuna-9bc5dd"><b>Glasindustri</b></a> — Platsen för ett borttaget glasbruk och en såg.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-sigtuna-ef87c3"><b>Hägnad</b></a> — En registrerad hägnad utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sigtuna-542a0c"><b>Husgrund, historisk tid</b></a> — En husgrund med spismur av tegel, utpekad av en ortskännare.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-sigtuna-87287f"><b>Gränsmärke</b></a> — En välbevarad gränssten av röd kalksten från 1667.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-sigtuna-6ebdd8"><b>Fornlämningsliknande bildning</b></a> — En vallbildning känd endast genom muntlig uppgift.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-sigtuna-370d1b"><b>Lägenhetsbebyggelse</b></a> — Bebyggelselämningar med husgrunder, uthus och åkrar.</li>
+<li><a href="/p/ksamsok-stensattning-sigtuna-f315c4"><b>Stensättning</b></a> — En möjlig stensättning bland flera anläggningar vid en badplats.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-sigtuna-7310b4"><b>Stensättning</b></a> — En otydlig stensättning där järnnitar och brända ben hittats.</li>
+<li><a href="/karta?plats=ksamsok-kampastenen-naturforemal-bildning-med-bruk-tradition-eller-namn-sigtuna-b1e393"><b>Kämpastenen, Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Ett namngivet block knutet till sägnen om en gammal vattenspärr.</li>
+<li><a href="/p/ksamsok-ovrigt-sigtuna-965e7c"><b>Övrigt</b></a> — En föreslagen plats för Sigtunas medeltida hospital och kapell.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-sigtuna-ac71f0"><b>Grav övrig</b></a> — En gravgård där fyra tidiga vikingatida gravar undersökts.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sigtuna-07d663"><b>Fyndplats</b></a> — Fyndplats för två stenyxor funna vid schaktning 1939.</li>
+<li><a href="/p/ksamsok-ovrigt-sigtuna-a43786"><b>Övrigt</b></a> — St. Pers kyrkoruin, en av landets äldsta korskyrkor.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 16</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sigtuna-haga-kyrka-q10515880"><b>Haga kyrka</b></a> — kyrkobyggnad i Sigtuna kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-hatuna-kyrka-q10532155"><b>Håtuna kyrka</b></a> — kyrkobyggnad i Upplands-Bro kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-mariakyrkan-q10577238"><b>Mariakyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Sigtuna, Sverige</li>
+<li><a href="/p/wd-sigtuna-sankt-olofs-kyrkoruin-q10661450"><b>Sankt Olofs kyrkoruin</b></a> — kyrkobyggnad i Sigtuna kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-olov-hartmans-studiokyrka-q10697876"><b>Olov Hartmans studiokyrka</b></a> — kyrkobyggnad i Sigtuna kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-valsta-kyrka-q10712468"><b>Valsta kyrka</b></a> — kyrkobyggnad i Sigtuna kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-habo-tibble-kyrka-q18331090"><b>Håbo-Tibble kyrka</b></a> — kyrkobyggnad som tillhör Bro församling i Uppsala stift</li>
+<li><a href="/karta?plats=wd-sigtuna-kapell-q130478066"><b>Kapell</b></a> — kapell i Sigtuna kommun</li>
+<li><a href="/karta?plats=ksamsok-tilkyrkan-sigtuna-051281"><b>Tilkyrkan</b></a> — Tilkyrkan i Sigtuna, uppförd 1979. <span class="era">1979</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-49533c"><b>Kyrka/kapell</b></a> — Kyrklämningar i Fornhemmets trädgård i form av bearbetade stenar.</li>
+<li><a href="/p/ksamsok-sankt-pers-ruin-kyrka-kapell-sigtuna-d627c4"><b>Sankt Pers ruin, Kyrka/kapell</b></a> — Sankt Pers kyrkoruin med ett av landets äldsta kryssvalv, byggd på 1100-talet.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-487071"><b>Kyrka/kapell</b></a> — En plats som enligt en 1600-talskälla ska ha varit en kyrka.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-7dd686"><b>Kyrka/kapell</b></a> — Grundmurar som tolkats som Visby klosterkyrka, delundersökta 1973.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-a5d2b1"><b>Kyrka/kapell</b></a> — Den tänkta platsen för det försvunna St. Görans kapell.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-68f629"><b>Kyrka/kapell</b></a> — En kyrkoruin med bevarat torn och en närbelägen fyndplats för skelett.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sigtuna-79a22f"><b>Kyrka/kapell</b></a> — En kyrka med medeltida kyrktomt.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 10</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sigtuna-signhildsberg-q5470394"><b>Signhildsberg</b></a> — Signhildsberg var före 1600-talet känt som Fornsigtuna.</li>
+<li><a href="/karta?plats=wd-sigtuna-erikssunds-sateri-q10487754"><b>Erikssunds säteri</b></a> — Erikssund (tidigare Sundby eller Håtunabo) är en herrgård och tidigare säteri i Sankt Pers socken, Sigtuna kommun.</li>
+<li><a href="/p/wd-sigtuna-hatunaholms-sateri-q10532158"><b>Håtunaholms säteri</b></a> — herrgård vid Mälaren i Uppland, Sverige</li>
+<li><a href="/karta?plats=ksamsok-rektorsbostad-sigtuna-584588"><b>REKTORSBOSTAD</b></a> — En rektorsbostad i Sigtuna uppförd på 1920-talet. <span class="era">1920–1929</span></li>
+<li><a href="/karta?plats=ksamsok-skolbyggnad-sigtuna-692932"><b>SKOLBYGGNAD</b></a> — En skolbyggnad i Sigtuna uppförd 1917. <span class="era">1917–1917</span></li>
+<li><a href="/karta?plats=ksamsok-refugium-sigtuna-584234"><b>REFUGIUM</b></a> — En byggnad benämnd Refugium i Sigtuna, uppförd 1923. <span class="era">1923–1923</span></li>
+<li><a href="/karta?plats=ksamsok-ekumeniska-sigtuna-584293"><b>EKUMENISKA</b></a> — En byggnad benämnd Ekumeniska i Sigtuna, uppförd mellan 1929 och 1939. <span class="era">1929–1939</span></li>
+<li><a href="/p/ksamsok-sigtuna-radhus-sigtuna-693204"><b>SIGTUNA RÅDHUS</b></a> — Sigtuna rådhus, ett litet timrat rådhus från 1744 med bevarad barockinredning och klocktorn. <span class="era">1744–1744</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-sigtuna-355452"><b>BOSTADSHUS</b></a> — Ett bostadshus i Sigtuna från tiden 1770–1829. <span class="era">1770–1829</span></li>
+<li><a href="/karta?plats=ksamsok-bibliotek-sigtuna-692934"><b>BIBLIOTEK</b></a> — En biblioteksbyggnad i Sigtuna uppförd 1935. <span class="era">1935–1935</span></li>
+</ul>
+<h3 class="city-h3">Runsten · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-sigtuna-05a073"><b>Runristning</b></a> — En runristning i Sigtuna utan närmare beskrivning i underlaget.</li>
+<li><a href="/karta?plats=ksamsok-runristning-sigtuna-443977"><b>Runristning</b></a> — En runsten i gråsten som murats in i ett gravkapell.</li>
+<li><a href="/karta?plats=ksamsok-runristning-sigtuna-725869"><b>Runristning</b></a> — En pyramidformad runsten i gråsten med ristning endast på östsidan.</li>
+<li><a href="/karta?plats=ksamsok-runristning-sigtuna-82d265"><b>Runristning</b></a> — Sigtuna museers samling av runstensfragment och äldre fynd.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sigtuna-venngarns-slott-q969362"><b>Venngarns slott</b></a> — slott i Sverige uppfört 1670</li>
+<li><a href="/p/wd-sigtuna-steninge-slott-q1597542"><b>Steninge slott</b></a> — slott vid Mälarens strand, i Sigtuna kommun, Sverige</li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sigtuna-sigtuna-fyr-q41002823"><b>Sigtuna fyr</b></a> — en fyr i Mälaren i Sigtuna kommun</li>
+<li><a href="/karta?plats=wd-sigtuna-flottvikens-fyr-q44502496"><b>Flottvikens fyr</b></a> — en fyr i Mälaren i Sigtuna kommun</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-kloster-sigtuna-4c3d15"><b>Kloster</b></a> — En klosterlämning i Sigtuna utan närmare beskrivning i underlaget.</li>
+<li><a href="/karta?plats=ksamsok-kloster-sigtuna-225e95"><b>Kloster</b></a> — En registrerad klosterlämning i Sigtuna där uppgifterna är knapphändiga.</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sigtuna-sigtuna-museum-q10667705"><b>Sigtuna museum</b></a> — Sigtuna museum, tidigare Sigtuna Fornhem, är ett kommunalt museum vid Lilla torg vid Stora gatan i Sigtuna.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-sigtuna-17422e"><b>Minnesmärke</b></a> — En minnessten som markerar var Sankt Nikolai kyrka en gång stod.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fornborg-sigtuna-705348"><b>Fornborg</b></a> — En fornborg skyddad av branta stup och en stenvall.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 140 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/sigtuna/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/sigtuna/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Sigtuna gratis?</summary><p>Ja. Karta, alla 140 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Sigtuna?</summary><p>Vandringen samlar 140 sevärdheter i Sigtuna — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Venngarns slott?</summary><p>slott i Sverige uppfört 1670</p></details>
+<details class="faq"><summary>Vad är Steninge slott?</summary><p>slott vid Mälarens strand, i Sigtuna kommun, Sverige</p></details>
+<details class="faq"><summary>Vad är Signhildsberg?</summary><p>Signhildsberg var före 1600-talet känt som Fornsigtuna.</p></details>
+<details class="faq"><summary>Vad är Erikssunds säteri?</summary><p>Erikssund (tidigare Sundby eller Håtunabo) är en herrgård och tidigare säteri i Sankt Pers socken, Sigtuna kommun.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

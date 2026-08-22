@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Ronneby — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Ronneby till fots: 136 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 136 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/ronneby">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Ronneby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Ronneby till fots: 136 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 136 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/ronneby">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Ronneby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Ronneby till fots: 136 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 136 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"ronneby","sourceSlug":"stadsvandring/ronneby","centroid":{"lat":56.19096720309429,"lng":15.282622705912297},"stops":[{"name":"Heliga Kors kyrka","lat":56.21166667,"lng":15.27833333},{"name":"Ronneby brunn","lat":56.1975,"lng":15.2855},{"name":"Djupadals herrgård","lat":56.2325,"lng":15.274444444444}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Ronneby","description":"Upptäck Ronneby till fots: 136 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/ronneby","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Heliga Kors kyrka","description":"kyrkobyggnad i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.21166667,"longitude":15.27833333}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Ronneby brunn","description":"Ronneby brunn är en kurort och fritidsanläggning i Sverige, belägen i Ronneby i Blekinge.","geo":{"@type":"GeoCoordinates","latitude":56.1975,"longitude":15.2855}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Djupadals herrgård","description":"Djupadals herrgård är den största gården i Ronneby kommun och ligger mellan orterna Ronneby och Kallinge på den östra sidan av Ronnebyån.","geo":{"@type":"GeoCoordinates","latitude":56.2325,"longitude":15.274444444444}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Bredåkra kyrka","description":"kyrkobyggnad i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.25443056,"longitude":15.25144444}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Edestads kyrka","description":"kyrkobyggnad i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.21725278,"longitude":15.35948889}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Kallinge kyrka","description":"kyrkobyggnad i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.24263889,"longitude":15.29022222}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Ronneby torg","description":"torg","url":"https://stadsvandring.io/p/wd-ronneby-ronneby-torg-q10656787","geo":{"@type":"GeoCoordinates","latitude":56.21044,"longitude":15.27704}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Saxemara kyrka","description":"kyrkobyggnad i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.16755278,"longitude":15.23045278}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Blomsterflickan","description":"staty av Wilhelm Gieseke","geo":{"@type":"GeoCoordinates","latitude":56.21142,"longitude":15.27745}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Söderbro, Ronneby","description":"Söderbro är en betongbro över Ronnebyån i centrala Ronneby.","url":"https://stadsvandring.io/p/wd-ronneby-soderbro-ronneby-q26256906","geo":{"@type":"GeoCoordinates","latitude":56.209722222222,"longitude":15.275833333333}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Gamla järnvägsbron, Ronneby","description":"fackverksbro över Ronnebyån i Ronneby","url":"https://stadsvandring.io/p/wd-ronneby-gamla-jarnvagsbron-ronneby-q26256916","geo":{"@type":"GeoCoordinates","latitude":56.210555555556,"longitude":15.272777777778}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Västerbro, Ronneby","description":"Västerbro är en betongbro som spänner över Ronnebyån i centrala Ronneby och ligger idag i Strandgatans förlängning.","url":"https://stadsvandring.io/p/wd-ronneby-vasterbro-ronneby-q26256923","geo":{"@type":"GeoCoordinates","latitude":56.211111111111,"longitude":15.272777777778}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Schopfheimbron","description":"Schopfheimbron är en gångbro över Ronnebyån som förbinder Soft Center med Ronneby brunnspark söder om Ronnebys centrum.","geo":{"@type":"GeoCoordinates","latitude":56.198055555556,"longitude":15.287777777778}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Hagbards källare","description":"borg i Blekinge (Ronneby 67:1)","url":"https://stadsvandring.io/p/wd-ronneby-hagbards-kallare-q29239849","geo":{"@type":"GeoCoordinates","latitude":56.180164,"longitude":15.306534}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Möllebackstorget","description":"torg i Ronneby","geo":{"@type":"GeoCoordinates","latitude":56.212222,"longitude":15.277778}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Saxemara nedre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.152611111111,"longitude":15.235916666667}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Saxemara övre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.163222222222,"longitude":15.242277777778}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Svanvik nedre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.156277777778,"longitude":15.246361111111}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Svanvik övre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.160805555556,"longitude":15.250861111111}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Svanviksudde","description":"en fyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.155416666667,"longitude":15.244805555556}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Stekö","description":"en fyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.158694444444,"longitude":15.267833333333}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Aspan nedre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.157111111111,"longitude":15.307111111111}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Aspan övre","description":"en ensfyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.157416666667,"longitude":15.31775}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Sandvikens fyr","description":"en fyr i Ronneby kommun","geo":{"@type":"GeoCoordinates","latitude":56.173194444444,"longitude":15.307166666667}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Steglitz-Zehlendorfbron","description":"Steglitz-Zehlendorfbron är en gångbro över Ronnebyån som förbinder Ronneby brunn, Ronneby brunnspark med Soft Center och Blekinge Convention Center.","geo":{"@type":"GeoCoordinates","latitude":56.197,"longitude":15.2893}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Ronneby gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 136 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Ronneby?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 136 sevärdheter i Ronneby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Heliga Kors kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Ronneby kommun"}},{"@type":"Question","name":"Vad är Ronneby brunn?","acceptedAnswer":{"@type":"Answer","text":"Ronneby brunn är en kurort och fritidsanläggning i Sverige, belägen i Ronneby i Blekinge."}},{"@type":"Question","name":"Vad är Djupadals herrgård?","acceptedAnswer":{"@type":"Answer","text":"Djupadals herrgård är den största gården i Ronneby kommun och ligger mellan orterna Ronneby och Kallinge på den östra sidan av Ronnebyån."}},{"@type":"Question","name":"Vad är Bredåkra kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Ronneby kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Ronneby","item":"https://stadsvandring.io/stadsvandring/ronneby"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Ronneby</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Ronneby</span><span class="badge">136 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Ronneby — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Ronneby till fots: 136 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Ronneby"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-ronneby-heliga-kors-kyrka-q539165"><b>1. Heliga Kors kyrka</b><span>Kyrka · kyrkobyggnad i Ronneby kommun</span></a>
+<a class="tile" href="/p/wd-ronneby-ronneby-brunn-q2165962"><b>2. Ronneby brunn</b><span>Naturreservat · Ronneby brunn är en kurort och fritidsanläggning i Sverige, belägen i Ronneby i…</span></a>
+<a class="tile" href="/p/wd-ronneby-djupadals-herrgard-q5285394"><b>3. Djupadals herrgård</b><span>Byggnad · Djupadals herrgård är den största gården i Ronneby kommun och ligger mellan ort…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Ronneby · 136</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Ronneby. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 87</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-bbeec0"><b>Stensättning</b></a> — En stensättning i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-ronneby-98977d"><b>Husgrund, historisk tid</b></a> — En jordkällare med kallmurade stenväggar och ingång från sydväst.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-bb49f1"><b>Boplats</b></a> — En boplats i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-rose-ronneby-03fac6"><b>Röse</b></a> — Ett röse i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-aed23e"><b>Stensättning</b></a> — En stensättning i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-ronneby-76529d"><b>Fossil åker</b></a> — En fossil åker med ett tiotal övertorvade röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-ronneby-dd7eb4"><b>Område med fossil åkermark</b></a> — Ett område med fossil åkermark bestående av sex åkerytor och ett tjugotal röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-7288c8"><b>Stensättning</b></a> — Resterna av en övertorvad stensättning, delvis skadad av ett stenbrott.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-ronneby-94ffc7"><b>Område med fossil åkermark</b></a> — En fossil åker med tre övertorvade röjningsrösen, avgränsad av dike och blockmark.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-ronneby-0df202"><b>Hägnad</b></a> — En omkring 50 meter lång stenmur, ställvis breddad av sprängsten.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-ronneby-d52004"><b>Bytomt/gårdstomt</b></a> — Gårdstomten efter Fornanäs mensalhemman med fyra husgrunder.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-67c46e"><b>Stensättning</b></a> — En röseliknande, närmast rund stensättning med stenfyllning.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-f2700b"><b>Boplats</b></a> — En boplats i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-ronneby-481152"><b>Hägnad</b></a> — En 43 meter lång stenmur byggd av sten och markfasta block.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-7d250a"><b>Boplats</b></a> — En boplats i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-e40fd6"><b>Stensättning</b></a> — En stensättning i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-985678"><b>Stensättning</b></a> — En rund, övertorvad stensättning med enstaka stenar i ytan.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-ffd46b"><b>Boplats</b></a> — En boplats i Ronnebytrakten.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-ronneby-cea3d3"><b>Brunn/kallkälla</b></a> — En rund brunn av kvaderhuggen sten med vattennivån strax under markytan.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-05cab5"><b>Stensättning</b></a> — En rundad stensättning som undersöktes och togs bort 1996.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-ronneby-300757"><b>Husgrund, historisk tid</b></a> — Rester av en husgrund inramad av kallmurar och ett stort flyttblock.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-ronneby-be0085"><b>Brunn/kallkälla</b></a> — En stensatt brunn som delvis fyllts igen med sten.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-7142a8"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-03a459"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-543340"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-5e83d9"><b>Boplats</b></a> — En stenåldersboplats där mycket flinta hittats efter plöjning.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-ronneby-b75f78"><b>Lägenhetsbebyggelse</b></a> — En torplämning med tre husgrunder av kallmur.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-df087a"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-hog-ronneby-56acb3"><b>Hög</b></a> — En hög där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-ronneby-bebb0e"><b>Bytomt/gårdstomt</b></a> — En bytomt vars utsträckning bygger på en karta från 1833.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-ronneby-f3a2e4"><b>Grav markerad av sten/block</b></a> — En grav markerad av sten där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-vastra-kumlet-rose-ronneby-c9c09d"><b>Västra Kumlet, Röse</b></a> — Ett stort röse på en utsiktspunkt i Brunnsområdet.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-db692e"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-374aab"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-ronneby-247f9e"><b>Fartygs-/båtlämning</b></a> — Ett vrak efter en skuta som kallats Matilda eller Asta.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-b6fe44"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-93c5c8"><b>Stensättning</b></a> — En kvadratisk stensättning med bevarad kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-ronneby-b341d3"><b>Lägenhetsbebyggelse</b></a> — En husgrund av syllstenar intill en stenröjd yta.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-ronneby-f208da"><b>Begravningsplats</b></a> — Uppgift om en koleragravplats som täckts av schaktmassor.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-d55fec"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-2ec987"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-65f54a"><b>Stensättning</b></a> — En rund stensättning med övertorvad fyllning av sten.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-ronneby-3bc4bf"><b>Gränsmärke</b></a> — Ett gränsmärke i form av ett röse med en rest sten.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-ronneby-4a441e"><b>Fyndplats</b></a> — Fyndplats för ett kopparmynt från 1820-talet.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-2ed04d"><b>Boplats</b></a> — En boplats där en stor mängd flinta framkommit vid utredning 2006.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-ronneby-e30d07"><b>Flatmarksgrav</b></a> — Uppgift om två flatmarksgravar som hittats vid grustäkt.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-ronneby-022220"><b>Grav markerad av sten/block</b></a> — En grav markerad av sten där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-ronneby-233b51"><b>Övrigt</b></a> — En kantställd stenhäll, möjligen en gränsmarkering.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-86b499"><b>Stensättning</b></a> — En rund, låg stensättning på åtta meter i diameter.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-ronneby-aa6dbe"><b>Brunn/kallkälla</b></a> — En oval, kallmurad kallkälla.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-ronneby-dbb5f1"><b>Övrigt</b></a> — En övrig lämning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-d4f72f"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-1e68d1"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-4b42fa"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-27f2cd"><b>Stensättning</b></a> — Två stensättningar som undersöktes och togs bort 1968.</li>
+<li><a href="/karta?plats=ksamsok-gistgard-ronneby-a0046a"><b>Gistgård</b></a> — Markerad plats för en garnhage enligt en karta från 1833.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-b731e8"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-rose-ronneby-8aba3a"><b>Röse</b></a> — Ett röse där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-b9accd"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-ronneby-099137"><b>Brunn/kallkälla</b></a> — En stensatt brunn som delvis fyllts igen.</li>
+<li><a href="/karta?plats=ksamsok-rose-ronneby-84138b"><b>Röse</b></a> — Ett röse där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-ronneby-e7d02c"><b>Tegelindustri</b></a> — Lämningarna efter ett tegelbruk som ägdes 1792 av G. Wickenberg.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-ronneby-8c33dc"><b>Lägenhetsbebyggelse</b></a> — En torplämning med en husgrund och ett uthus.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-ronneby-8f82e1"><b>Gränsmärke</b></a> — Gränsmärket Davids rör, ett kallmurat röse med en rest sten.</li>
+<li><a href="/karta?plats=ksamsok-rose-ronneby-21acc8"><b>Röse</b></a> — Ett röse där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-ronneby-e1f6da"><b>Gravfält</b></a> — Ett gravfält med ett sextal resta stenar.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-fd0336"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-43282d"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-8baea7"><b>Stensättning</b></a> — En rund stensättning uppförd på en liten bergklack.</li>
+<li><a href="/karta?plats=ksamsok-ostra-kumlet-rose-ronneby-5125ee"><b>Östra Kumlet, Röse</b></a> — Ett stort röse på en utsiktspunkt i brunnsparken.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-ronneby-997929"><b>Område med fossil åkermark</b></a> — Ett stort område med trolig medeltida åkermark i nio tegar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-ronneby-12beac"><b>Fartygs-/båtlämning</b></a> — En fartygslämning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-e0efd7"><b>Boplats</b></a> — En registrerad boplats där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-ronneby-a98105"><b>Brott/täkt</b></a> — En lertäkt som försåg ett tegelbruk med råvara.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-e7724c"><b>Stensättning</b></a> — En stensättning där uppgifterna är osäkra.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-ronneby-931bda"><b>Husgrund, historisk tid</b></a> — En kallmurad husgrund ingrävd i en slänt.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-73f201"><b>Stensättning</b></a> — En rund stensättning med kantkedja, en av flera i området.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-ronneby-029fa6"><b>Bytomt/gårdstomt</b></a> — Gårdstomten för Bålebro kronohemman, belagd på en karta från 1688.</li>
+<li><a href="/karta?plats=ksamsok-rose-ronneby-c31049"><b>Röse</b></a> — Ett tolv meter brett röse med en grävd grop i mitten.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-ronneby-7349bd"><b>Grav markerad av sten/block</b></a> — En grav markerad av sten eller block utanför Ronneby.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-9b2b0c"><b>Boplats</b></a> — En forntida boplats registrerad i trakten av Ronneby.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-d90621"><b>Stensättning</b></a> — En rund, låg stensättning med övertorvad fyllning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-5c3044"><b>Stensättning</b></a> — En rund stensättning av stora stenar med enstaka block intill.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-ronneby-dde93f"><b>Grav markerad av sten/block</b></a> — En rest sten som körts sönder och tagits bort vid markarbeten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-ronneby-b171a8"><b>Stensättning</b></a> — En stensättning registrerad som fornminne vid Ronneby.</li>
+<li><a href="/karta?plats=ksamsok-boplats-ronneby-1da0a1"><b>Boplats</b></a> — En boplats noterad bland fornminnena kring Ronneby.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-ronneby-a83f31"><b>Grav markerad av sten/block</b></a> — En grav utmärkt av sten eller block i Ronnebytrakten.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 18</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-ronneby-djupadals-herrgard-q5285394"><b>Djupadals herrgård</b></a> — Djupadals herrgård är den största gården i Ronneby kommun och ligger mellan orterna Ronneby och Kallinge på den östra sidan av Ronnebyån.</li>
+<li><a href="/karta?plats=ksamsok-varmbadhus-ronneby-578358"><b>VARMBADHUS</b></a> — Ett varmbadhus i Ronneby från 1875. <span class="era">1875–1875</span></li>
+<li><a href="/karta?plats=ksamsok-paviljong-ronneby-676112"><b>PAVILJONG</b></a> — En paviljong i Ronneby uppförd 1896–1897. <span class="era">1896–1897</span></li>
+<li><a href="/karta?plats=ksamsok-kontorsbyggnad-ronneby-676109"><b>KONTORSBYGGNAD</b></a> — En kontorsbyggnad i Ronneby från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/karta?plats=ksamsok-villa-viola-ronneby-676107"><b>VILLA VIOLA</b></a> — Villa Viola i Ronneby, uppförd 1874. <span class="era">1874–1874</span></li>
+<li><a href="/karta?plats=ksamsok-villa-vera-ronneby-676105"><b>VILLA VERA</b></a> — Villa Vera i Ronneby, uppförd 1877. <span class="era">1877–1877</span></li>
+<li><a href="/karta?plats=ksamsok-villa-flora-ronneby-676106"><b>VILLA FLORA</b></a> — Villa Flora i Ronneby, uppförd 1874. <span class="era">1874–1874</span></li>
+<li><a href="/karta?plats=ksamsok-villa-emma-ronneby-585713"><b>VILLA EMMA</b></a> — Villa Emma i Ronneby, uppförd 1874. <span class="era">1874–1874</span></li>
+<li><a href="/karta?plats=ksamsok-gymnastikhus-ronneby-585710"><b>GYMNASTIKHUS</b></a> — Ett gymnastikhus i Ronneby från 1891. <span class="era">1891–1891</span></li>
+<li><a href="/karta?plats=ksamsok-sjukhusbyggnad-ronneby-578433"><b>SJUKHUSBYGGNAD</b></a> — En sjukhusbyggnad i Ronneby från 1889–1890. <span class="era">1889–1890</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-kallan-ronneby-688043"><b>GAMLA KÄLLAN</b></a> — Gamla Källan i Ronneby, uppförd 1846. <span class="era">1846–1846</span></li>
+<li><a href="/karta?plats=ksamsok-kallvattenkuren-ronneby-585711"><b>KALLVATTENKUREN</b></a> — Kallvattenkuren i Ronneby, uppförd 1903–1904. <span class="era">1903–1904</span></li>
+<li><a href="/karta?plats=ksamsok-kiosk-ronneby-676108"><b>KIOSK</b></a> — En kiosk i Ronneby från 1896–1897. <span class="era">1896–1897</span></li>
+<li><a href="/karta?plats=ksamsok-v-lindahls-sjukhus-ronneby-578480"><b>V LINDAHLS SJUKHUS</b></a> — V Lindahls sjukhus i Ronneby, uppfört 1905–1906. <span class="era">1905–1906</span></li>
+<li><a href="/karta?plats=ksamsok-direktorsvillan-ronneby-578436"><b>DIREKTÖRSVILLAN</b></a> — Direktörsvillan i Ronneby, uppförd 1884. <span class="era">1884–1884</span></li>
+<li><a href="/karta?plats=ksamsok-villa-vega-ronneby-578513"><b>VILLA VEGA</b></a> — Villa Vega i Ronneby, uppförd 1874. <span class="era">1874–1874</span></li>
+<li><a href="/karta?plats=ksamsok-italienska-villan-ronneby-585712"><b>ITALIENSKA VILLAN</b></a> — Italienska villan i Ronneby, uppförd 1882. <span class="era">1882–1882</span></li>
+<li><a href="/karta?plats=ksamsok-d-a-rydens-sjukhem-ronneby-578372"><b>D A RYDÉNS SJUKHEM</b></a> — D A Rydéns sjukhem i Ronneby, uppfört 1900–1901. <span class="era">1900–1901</span></li>
+</ul>
+<h3 class="city-h3">Torn · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-ronneby-saxemara-nedre-q39912073"><b>Saxemara nedre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-saxemara-ovre-q39912907"><b>Saxemara övre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-svanvik-nedre-q42886049"><b>Svanvik nedre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-svanvik-ovre-q42886621"><b>Svanvik övre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-svanviksudde-q42887336"><b>Svanviksudde</b></a> — en fyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-steko-q42887603"><b>Stekö</b></a> — en fyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-aspan-nedre-q42890241"><b>Aspan nedre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-aspan-ovre-q42890419"><b>Aspan övre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-sandvikens-fyr-q42901204"><b>Sandvikens fyr</b></a> — en fyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-ronneby-nedre-q110322918"><b>Ronneby nedre</b></a> — en ensfyr i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-ronneby-ovre-q110322919"><b>Ronneby övre</b></a> — en ensfyr i Ronneby kommun</li>
+</ul>
+<h3 class="city-h3">Kyrka · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-ronneby-heliga-kors-kyrka-q539165"><b>Heliga Kors kyrka</b></a> — kyrkobyggnad i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-bredakra-kyrka-q10435069"><b>Bredåkra kyrka</b></a> — kyrkobyggnad i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-edestads-kyrka-q10479893"><b>Edestads kyrka</b></a> — kyrkobyggnad i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-kallinge-kyrka-q10542775"><b>Kallinge kyrka</b></a> — kyrkobyggnad i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-saxemara-kyrka-q10662198"><b>Saxemara kyrka</b></a> — kyrkobyggnad i Ronneby kommun</li>
+<li><a href="/karta?plats=wd-ronneby-goholms-gravkapell-q76475988"><b>Göholms gravkapell</b></a> — gravkapell på Göholms gods</li>
+</ul>
+<h3 class="city-h3">Bro · 6</h3>
+<ul class="place-list">
+<li><a href="/p/wd-ronneby-soderbro-ronneby-q26256906"><b>Söderbro, Ronneby</b></a> — Söderbro är en betongbro över Ronnebyån i centrala Ronneby.</li>
+<li><a href="/p/wd-ronneby-gamla-jarnvagsbron-ronneby-q26256916"><b>Gamla järnvägsbron, Ronneby</b></a> — fackverksbro över Ronnebyån i Ronneby</li>
+<li><a href="/p/wd-ronneby-vasterbro-ronneby-q26256923"><b>Västerbro, Ronneby</b></a> — Västerbro är en betongbro som spänner över Ronnebyån i centrala Ronneby och ligger idag i Strandgatans förlängning.</li>
+<li><a href="/karta?plats=wd-ronneby-schopfheimbron-q26256927"><b>Schopfheimbron</b></a> — Schopfheimbron är en gångbro över Ronnebyån som förbinder Soft Center med Ronneby brunnspark söder om Ronnebys centrum.</li>
+<li><a href="/karta?plats=wd-ronneby-steglitz-zehlendorfbron-q49098919"><b>Steglitz-Zehlendorfbron</b></a> — Steglitz-Zehlendorfbron är en gångbro över Ronnebyån som förbinder Ronneby brunn, Ronneby brunnspark med Soft Center och Blekinge Conventio…</li>
+<li><a href="/p/wd-ronneby-stadshusbron-ronneby-q49099219"><b>Stadshusbron, Ronneby</b></a> — Stadshusbron är en bil- och gångbro över Ronnebyån som förbinder den centrala delen av staden på östra stranden med stadshuset på den västr…</li>
+</ul>
+<h3 class="city-h3">Torg · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-ronneby-ronneby-torg-q10656787"><b>Ronneby torg</b></a> — torg</li>
+<li><a href="/karta?plats=wd-ronneby-mollebackstorget-q31887716"><b>Möllebackstorget</b></a> — torg i Ronneby</li>
+<li><a href="/p/wd-ronneby-gamla-fisktorget-q73607140"><b>Gamla Fisktorget</b></a> — torg i Ronneby</li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-borg-ronneby-07eb53"><b>Borg</b></a> — Ruinen efter en kastal med rundat inre murverk.</li>
+<li><a href="/p/ksamsok-silverberget-fornborg-ronneby-f54197"><b>Silverberget, Fornborg</b></a> — En fornborg på en bergsplatå med naturliga stup och anlagda vallar.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-ronneby-ronneby-brunn-q2165962"><b>Ronneby brunn</b></a> — Ronneby brunn är en kurort och fritidsanläggning i Sverige, belägen i Ronneby i Blekinge.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-ronneby-blomsterflickan-q16503248"><b>Blomsterflickan</b></a> — staty av Wilhelm Gieseke</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-ronneby-hagbards-kallare-q29239849"><b>Hagbards källare</b></a> — borg i Blekinge (Ronneby 67:1)</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 136 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/ronneby/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/ronneby/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Ronneby gratis?</summary><p>Ja. Karta, alla 136 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Ronneby?</summary><p>Vandringen samlar 136 sevärdheter i Ronneby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Heliga Kors kyrka?</summary><p>kyrkobyggnad i Ronneby kommun</p></details>
+<details class="faq"><summary>Vad är Ronneby brunn?</summary><p>Ronneby brunn är en kurort och fritidsanläggning i Sverige, belägen i Ronneby i Blekinge.</p></details>
+<details class="faq"><summary>Vad är Djupadals herrgård?</summary><p>Djupadals herrgård är den största gården i Ronneby kommun och ligger mellan orterna Ronneby och Kallinge på den östra sidan av Ronnebyån.</p></details>
+<details class="faq"><summary>Vad är Bredåkra kyrka?</summary><p>kyrkobyggnad i Ronneby kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

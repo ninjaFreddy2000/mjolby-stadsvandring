@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Visby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.645821379947975" lon="18.298741352843376"><name>Minnesmärke</name><desc>En sliten minnessten från 1772 i Visby stadsmur.</desc></wpt>
+  <wpt lat="57.643400340636695" lon="18.29261973539319"><name>Minnesmärke</name><desc>En minnessten över D.B.W.:s trädgård, anlagd 1855.</desc></wpt>
+  <wpt lat="57.640305555556" lon="18.2925"><name>Ymnighetsgudinnan</name><desc>staty på Packhusplan i Visby</desc></wpt>
+  <wpt lat="57.639656" lon="18.292446"><name>Gotlands museum (Fornsalen)</name><desc>Gotlands stora kulturhistoriska museum med bildstenar och världens största vikingatida silverskatt.</desc></wpt>
+  <wpt lat="57.639944444444" lon="18.291333333333"><name>Utsträckta händer</name><desc>staty i Almedalen Visby</desc></wpt>
+  <wpt lat="57.638001992990645" lon="18.289221804263615"><name>Minnesmärke</name><desc>Ett medeltida stenkors i en nisch i Visby stadsmur.</desc></wpt>
+  <wpt lat="57.634805555556" lon="18.294833333333"><name>Knäcken</name><desc>staty</desc></wpt>
+  <wpt lat="57.63571395027272" lon="18.296594700952497"><name>Minnesmärke</name><desc>En minnessten i Visby över nödhjälpsarbete 1922–1923.</desc></wpt>
+  <wpt lat="57.63384303170163" lon="18.299274575564006"><name>Valdemarskorset, Minnesmärke</name><desc>Ett medeltida ringkors av kalksten med gotiska inskrifter.</desc></wpt>
+  <wpt lat="57.6336737892509" lon="18.299119290672184"><name>Minnesmärke</name><desc>Ruinen efter ett kloster med en markerad korskyrka och ett minneskors.</desc></wpt>
+  <wpt lat="57.638944444444" lon="18.3065"><name>Herde med hind</name><desc>staty av Alice Nordin</desc></wpt>
+  <wpt lat="57.64165360594228" lon="18.300658255248386"><name>Minnesmärke</name><desc>En minnestavla över Lars Reinhold Dalman, som hjälpte Gotland under svälten 1784.</desc></wpt>
+  <wpt lat="57.6412" lon="18.2968"><name>Kapitelhusgården</name><desc>Medeltida gårdsmiljö nära domkyrkan, idag ett levande museum med hantverk och medeltidsliv.</desc></wpt>
+  <wpt lat="57.61861111" lon="18.27444444"><name>Oscarsstenen</name><desc>minnessten söder om Visby</desc></wpt>
+  <rte><name>Konstrundan i Visby</name>
+    <rtept lat="57.645821379947975" lon="18.298741352843376"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.643400340636695" lon="18.29261973539319"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.640305555556" lon="18.2925"><name>Ymnighetsgudinnan</name></rtept>
+    <rtept lat="57.639656" lon="18.292446"><name>Gotlands museum (Fornsalen)</name></rtept>
+    <rtept lat="57.639944444444" lon="18.291333333333"><name>Utsträckta händer</name></rtept>
+    <rtept lat="57.638001992990645" lon="18.289221804263615"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.634805555556" lon="18.294833333333"><name>Knäcken</name></rtept>
+    <rtept lat="57.63571395027272" lon="18.296594700952497"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.63384303170163" lon="18.299274575564006"><name>Valdemarskorset, Minnesmärke</name></rtept>
+    <rtept lat="57.6336737892509" lon="18.299119290672184"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.638944444444" lon="18.3065"><name>Herde med hind</name></rtept>
+    <rtept lat="57.64165360594228" lon="18.300658255248386"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.6412" lon="18.2968"><name>Kapitelhusgården</name></rtept>
+    <rtept lat="57.61861111" lon="18.27444444"><name>Oscarsstenen</name></rtept>
+  </rte>
+</gpx>

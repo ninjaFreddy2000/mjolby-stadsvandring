@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Halmstad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.68414407396507" lon="12.836274330784132"><name>Minnesmärke</name><desc>En minnessten rest till Hallands flygflottiljs uppsättande.</desc></wpt>
+  <wpt lat="56.68100835334577" lon="12.848091360676984"><name>Minnesmärke</name><desc>En minnessten i form av ett stenbord med latinska inskrifter om lasarettets flytt.</desc></wpt>
+  <wpt lat="56.681972" lon="12.854878"><name>Hallandsgården, Halmstad</name><desc>Friluftsmuseum på Galgberget med byggnader från hela Halland, invigt 1925 efter förebild från Skansen.</desc></wpt>
+  <wpt lat="56.684063668198476" lon="12.85397635545866"><name>Minnesmärke</name><desc>En minnessten över jägmästaren som planterade skogen på Galgberget.</desc></wpt>
+  <wpt lat="56.683661290539185" lon="12.864110045438998"><name>Minnesmärke</name><desc>En minnessten över Sankt Jörgens medeltida hospital.</desc></wpt>
+  <wpt lat="56.67511111" lon="12.86063889"><name>0 + 0 = 8</name><desc>svensk skulptur av Fredrik Wretman</desc></wpt>
+  <wpt lat="56.673992" lon="12.857311"><name>Europa och Tjuren</name><desc>fontän i brons på Stora torg i Halmstad</desc></wpt>
+  <wpt lat="56.678971" lon="12.773929"><name>Mjellby konstmuseum, Halmstad</name><desc>Halmstadgruppens museum strax utanför staden, Nordens museum för surrealism, med rötter i en privat konstgård från 1980.</desc></wpt>
+  <rte><name>Konstrundan i Halmstad</name>
+    <rtept lat="56.68414407396507" lon="12.836274330784132"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.68100835334577" lon="12.848091360676984"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.681972" lon="12.854878"><name>Hallandsgården, Halmstad</name></rtept>
+    <rtept lat="56.684063668198476" lon="12.85397635545866"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.683661290539185" lon="12.864110045438998"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.67511111" lon="12.86063889"><name>0 + 0 = 8</name></rtept>
+    <rtept lat="56.673992" lon="12.857311"><name>Europa och Tjuren</name></rtept>
+    <rtept lat="56.678971" lon="12.773929"><name>Mjellby konstmuseum, Halmstad</name></rtept>
+  </rte>
+</gpx>

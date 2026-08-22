@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Linköping — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 27 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/linkoping/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Linköping — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 27 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/linkoping/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Linköping — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 27 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"linkoping","theme":"kyrkostig","sourceSlug":"stadsvandring/linkoping/kyrkostig","centroid":{"lat":58.40624781545306,"lng":15.615760258216843},"stops":[{"name":"Sankt Martins kyrka","lat":58.4697941,"lng":15.6403808},{"name":"Rystads kyrka","lat":58.45036111,"lng":15.71154444},{"name":"TANNEFORSKYRKAN","lat":58.407249120190265,"lng":15.64363390210631},{"name":"Tannefors kyrka","lat":58.40722222,"lng":15.64361111},{"name":"Linköpings missionskyrka","lat":58.408666666667,"lng":15.626194444444},{"name":"Sankt Lars kyrka","lat":58.41139167,"lng":15.62466111},{"name":"Kyrka/kapell","lat":58.41149497001949,"lng":15.625336841992482},{"name":"Saint Mary's Chapel (Linköping Cathedral)","lat":58.411389,"lng":15.618278},{"name":"DOMKYRKOSYSSLOMANSGÅRDEN","lat":58.41176693111465,"lng":15.617908725876106},{"name":"Linköpings domkyrka","lat":58.41124015017972,"lng":15.617445461676313},{"name":"Sankt Nikolai katolska kyrka","lat":58.41341667,"lng":15.61794444},{"name":"Kyrka/kapell","lat":58.408379824791,"lng":15.613659609726463},{"name":"Stolplyckans kyrka","lat":58.404176705771,"lng":15.613741554976},{"name":"Tomaskyrkan","lat":58.4025,"lng":15.61},{"name":"Uppståndelsens kapell","lat":58.4062578,"lng":15.6053224},{"name":"Ansgarskyrkan","lat":58.41416667,"lng":15.6},{"name":"Skäggetorps kyrka","lat":58.4251,"lng":15.5788},{"name":"Mikaelskyrkan","lat":58.40988889,"lng":15.56697222},{"name":"Lambohovskyrkan","lat":58.3875,"lng":15.56666667},{"name":"Slaka kyrka","lat":58.37125,"lng":15.556},{"name":"Ljusets kapell","lat":58.363922958499,"lng":15.567828011057},{"name":"Garnisonskyrkan","lat":58.39758333,"lng":15.61152778},{"name":"Berga kyrka","lat":58.39277778,"lng":15.63916667},{"name":"Sankta Maria i Johannelund","lat":58.39600278,"lng":15.66344167},{"name":"Sankt Hans kyrka","lat":58.38083333,"lng":15.67861111},{"name":"Vidingsjö kyrka","lat":58.37769167,"lng":15.64323889},{"name":"Kärna kyrka","lat":58.41666667,"lng":15.52361111}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Linköping","description":"Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Sankt Martins kyrka","text":"kyrka i Linköpigs kommun och stift","url":"https://stadsvandring.io/p/wd-linkoping-sankt-martins-kyrka-q110288810"},{"@type":"HowToStep","position":2,"name":"Rystads kyrka","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-rystads-kyrka-q10658349"},{"@type":"HowToStep","position":3,"name":"TANNEFORSKYRKAN","text":"Tanneforskyrkan från 1963–64 ritades av bröderna Kandell och ligger monumentalt på berget.","url":"https://stadsvandring.io/p/ksamsok-tanneforskyrkan-linkoping-102306"},{"@type":"HowToStep","position":4,"name":"Tannefors kyrka","text":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-tannefors-kyrka-q10690657"},{"@type":"HowToStep","position":5,"name":"Linköpings missionskyrka","text":"Equmeniakyrkan är en kyrkobyggnad i Linköping.","url":"https://stadsvandring.io/p/wd-linkoping-linkopings-missionskyrka-q134170566"},{"@type":"HowToStep","position":6,"name":"Sankt Lars kyrka","text":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-sankt-lars-kyrka-q10661395"},{"@type":"HowToStep","position":7,"name":"Kyrka/kapell","text":"Ett flertal runristade gravhällar av kalksten som bevaras under kyrkan.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-linkoping-d76f7e"},{"@type":"HowToStep","position":8,"name":"Saint Mary's Chapel (Linköping Cathedral)","text":"Saint Mary's Chapel (Linköping Cathedral)","url":"https://stadsvandring.io/p/wd-linkoping-saint-mary-s-chapel-linkoping-cathedral-q11735120"},{"@type":"HowToStep","position":9,"name":"DOMKYRKOSYSSLOMANSGÅRDEN","text":"Huvudbyggnaden restes 1813 och rymmer än idag flera bevarade inredningsdetaljer.","url":"https://stadsvandring.io/p/ksamsok-domkyrkosysslomansgarden-linkoping-092591"},{"@type":"HowToStep","position":10,"name":"Linköpings domkyrka","text":"Linköpings domkyrka, med grunder efter en föregångare från 1100-talet.","url":"https://stadsvandring.io/p/ksamsok-linkopings-domkyrka-linkoping-040458"},{"@type":"HowToStep","position":11,"name":"Sankt Nikolai katolska kyrka","text":"romersk-katolsk kyrkobyggnad i Linköping, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-sankt-nikolai-katolska-kyrka-q10661435"},{"@type":"HowToStep","position":12,"name":"Kyrka/kapell","text":"Platsen för det medeltida Sankt Örjans kapell, där skelett påträffats vid byggnadsarbeten.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-linkoping-e07f37"},{"@type":"HowToStep","position":13,"name":"Stolplyckans kyrka","text":"kyrka i Linköping","url":"https://stadsvandring.io/p/wd-linkoping-stolplyckans-kyrka-q133856086"},{"@type":"HowToStep","position":14,"name":"Tomaskyrkan","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-tomaskyrkan-q10699465"},{"@type":"HowToStep","position":15,"name":"Uppståndelsens kapell","text":"kapell i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-uppstandelsens-kapell-q26256741"},{"@type":"HowToStep","position":16,"name":"Ansgarskyrkan","text":"kyrkobyggnad i Svenska kyrkan i Linköping, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-ansgarskyrkan-q10412958"},{"@type":"HowToStep","position":17,"name":"Skäggetorps kyrka","text":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-skaggetorps-kyrka-q10670889"},{"@type":"HowToStep","position":18,"name":"Mikaelskyrkan","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-mikaelskyrkan-q10585164"},{"@type":"HowToStep","position":19,"name":"Lambohovskyrkan","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-lambohovskyrkan-q10553526"},{"@type":"HowToStep","position":20,"name":"Slaka kyrka","text":"kyrka i Linköpings stift","url":"https://stadsvandring.io/p/wd-linkoping-slaka-kyrka-q10671437"},{"@type":"HowToStep","position":21,"name":"Ljusets kapell","text":"kapell i vid Lilla aska griftegård","url":"https://stadsvandring.io/p/wd-linkoping-ljusets-kapell-q126599126"},{"@type":"HowToStep","position":22,"name":"Garnisonskyrkan","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-garnisonskyrkan-q10503146"},{"@type":"HowToStep","position":23,"name":"Berga kyrka","text":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-berga-kyrka-q10428342"},{"@type":"HowToStep","position":24,"name":"Sankta Maria i Johannelund","text":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-sankta-maria-i-johannelund-q10661532"},{"@type":"HowToStep","position":25,"name":"Sankt Hans kyrka","text":"kyrka i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-sankt-hans-kyrka-q10661358"},{"@type":"HowToStep","position":26,"name":"Vidingsjö kyrka","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-vidingsjo-kyrka-q10715124"},{"@type":"HowToStep","position":27,"name":"Kärna kyrka","text":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-karna-kyrka-q10551855"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Linköping","description":"Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/linkoping/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":27,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Sankt Martins kyrka","url":"https://stadsvandring.io/p/wd-linkoping-sankt-martins-kyrka-q110288810"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Rystads kyrka","url":"https://stadsvandring.io/p/wd-linkoping-rystads-kyrka-q10658349"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"TANNEFORSKYRKAN","url":"https://stadsvandring.io/p/ksamsok-tanneforskyrkan-linkoping-102306"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Tannefors kyrka","url":"https://stadsvandring.io/p/wd-linkoping-tannefors-kyrka-q10690657"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Linköpings missionskyrka","url":"https://stadsvandring.io/p/wd-linkoping-linkopings-missionskyrka-q134170566"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Sankt Lars kyrka","url":"https://stadsvandring.io/p/wd-linkoping-sankt-lars-kyrka-q10661395"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-linkoping-d76f7e"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Saint Mary's Chapel (Linköping Cathedral)","url":"https://stadsvandring.io/p/wd-linkoping-saint-mary-s-chapel-linkoping-cathedral-q11735120"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"DOMKYRKOSYSSLOMANSGÅRDEN","url":"https://stadsvandring.io/p/ksamsok-domkyrkosysslomansgarden-linkoping-092591"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Linköpings domkyrka","url":"https://stadsvandring.io/p/ksamsok-linkopings-domkyrka-linkoping-040458"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Sankt Nikolai katolska kyrka","url":"https://stadsvandring.io/p/wd-linkoping-sankt-nikolai-katolska-kyrka-q10661435"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-linkoping-e07f37"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Stolplyckans kyrka","url":"https://stadsvandring.io/p/wd-linkoping-stolplyckans-kyrka-q133856086"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Tomaskyrkan","url":"https://stadsvandring.io/p/wd-linkoping-tomaskyrkan-q10699465"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Uppståndelsens kapell","url":"https://stadsvandring.io/p/wd-linkoping-uppstandelsens-kapell-q26256741"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Ansgarskyrkan","url":"https://stadsvandring.io/p/wd-linkoping-ansgarskyrkan-q10412958"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Skäggetorps kyrka","url":"https://stadsvandring.io/p/wd-linkoping-skaggetorps-kyrka-q10670889"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Mikaelskyrkan","url":"https://stadsvandring.io/p/wd-linkoping-mikaelskyrkan-q10585164"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Lambohovskyrkan","url":"https://stadsvandring.io/p/wd-linkoping-lambohovskyrkan-q10553526"}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Slaka kyrka","url":"https://stadsvandring.io/p/wd-linkoping-slaka-kyrka-q10671437"}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Ljusets kapell","url":"https://stadsvandring.io/p/wd-linkoping-ljusets-kapell-q126599126"}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Garnisonskyrkan","url":"https://stadsvandring.io/p/wd-linkoping-garnisonskyrkan-q10503146"}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Berga kyrka","url":"https://stadsvandring.io/p/wd-linkoping-berga-kyrka-q10428342"}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Sankta Maria i Johannelund","url":"https://stadsvandring.io/p/wd-linkoping-sankta-maria-i-johannelund-q10661532"}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Sankt Hans kyrka","url":"https://stadsvandring.io/p/wd-linkoping-sankt-hans-kyrka-q10661358"}},{"@type":"ListItem","position":26,"item":{"@type":"TouristAttraction","name":"Vidingsjö kyrka","url":"https://stadsvandring.io/p/wd-linkoping-vidingsjo-kyrka-q10715124"}},{"@type":"ListItem","position":27,"item":{"@type":"TouristAttraction","name":"Kärna kyrka","url":"https://stadsvandring.io/p/wd-linkoping-karna-kyrka-q10551855"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Linköping","item":"https://stadsvandring.io/stadsvandring/linkoping"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Linköping","item":"https://stadsvandring.io/stadsvandring/linkoping/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/linkoping">Stadsvandring i Linköping</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Linköping</span><span class="badge">27 stopp</span></div>
+<h1>Kyrkostigen i Linköping</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Linköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Linköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-linkoping-sankt-martins-kyrka-q110288810"><b>1. Sankt Martins kyrka</b><span>Kyrka · kyrka i Linköpigs kommun och stift</span></a>
+<a class="tile" href="/p/wd-linkoping-rystads-kyrka-q10658349"><b>2. Rystads kyrka</b><span>Kyrka · kyrkobyggnad i Linköpings kommun</span></a>
+<a class="tile" href="/p/ksamsok-tanneforskyrkan-linkoping-102306"><b>3. TANNEFORSKYRKAN</b><span>Kyrka · Tanneforskyrkan från 1963–64 ritades av bröderna Kandell och ligger monumentalt…</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 27 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/linkoping/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-linkoping-sankt-martins-kyrka-q110288810"><b>1. Sankt Martins kyrka</b></a> — kyrka i Linköpigs kommun och stift</li>
+<li><a href="/p/wd-linkoping-rystads-kyrka-q10658349"><b>2. Rystads kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/ksamsok-tanneforskyrkan-linkoping-102306"><b>3. TANNEFORSKYRKAN</b></a> — Tanneforskyrkan från 1963–64 ritades av bröderna Kandell och ligger monumentalt på berget.</li>
+<li><a href="/p/wd-linkoping-tannefors-kyrka-q10690657"><b>4. Tannefors kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/p/wd-linkoping-linkopings-missionskyrka-q134170566"><b>5. Linköpings missionskyrka</b></a> — Equmeniakyrkan är en kyrkobyggnad i Linköping.</li>
+<li><a href="/p/wd-linkoping-sankt-lars-kyrka-q10661395"><b>6. Sankt Lars kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/p/ksamsok-kyrka-kapell-linkoping-d76f7e"><b>7. Kyrka/kapell</b></a> — Ett flertal runristade gravhällar av kalksten som bevaras under kyrkan.</li>
+<li><a href="/p/wd-linkoping-saint-mary-s-chapel-linkoping-cathedral-q11735120"><b>8. Saint Mary&#39;s Chapel (Linköping Cathedral)</b></a> — Saint Mary&#39;s Chapel (Linköping Cathedral)</li>
+<li><a href="/p/ksamsok-domkyrkosysslomansgarden-linkoping-092591"><b>9. DOMKYRKOSYSSLOMANSGÅRDEN</b></a> — Huvudbyggnaden restes 1813 och rymmer än idag flera bevarade inredningsdetaljer.</li>
+<li><a href="/p/ksamsok-linkopings-domkyrka-linkoping-040458"><b>10. Linköpings domkyrka</b></a> — Linköpings domkyrka, med grunder efter en föregångare från 1100-talet.</li>
+<li><a href="/p/wd-linkoping-sankt-nikolai-katolska-kyrka-q10661435"><b>11. Sankt Nikolai katolska kyrka</b></a> — romersk-katolsk kyrkobyggnad i Linköping, Sverige</li>
+<li><a href="/p/ksamsok-kyrka-kapell-linkoping-e07f37"><b>12. Kyrka/kapell</b></a> — Platsen för det medeltida Sankt Örjans kapell, där skelett påträffats vid byggnadsarbeten.</li>
+<li><a href="/p/wd-linkoping-stolplyckans-kyrka-q133856086"><b>13. Stolplyckans kyrka</b></a> — kyrka i Linköping</li>
+<li><a href="/p/wd-linkoping-tomaskyrkan-q10699465"><b>14. Tomaskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-uppstandelsens-kapell-q26256741"><b>15. Uppståndelsens kapell</b></a> — kapell i Linköpings kommun, Sverige</li>
+<li><a href="/p/wd-linkoping-ansgarskyrkan-q10412958"><b>16. Ansgarskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Linköping, Sverige</li>
+<li><a href="/p/wd-linkoping-skaggetorps-kyrka-q10670889"><b>17. Skäggetorps kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/p/wd-linkoping-mikaelskyrkan-q10585164"><b>18. Mikaelskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-lambohovskyrkan-q10553526"><b>19. Lambohovskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-slaka-kyrka-q10671437"><b>20. Slaka kyrka</b></a> — kyrka i Linköpings stift</li>
+<li><a href="/p/wd-linkoping-ljusets-kapell-q126599126"><b>21. Ljusets kapell</b></a> — kapell i vid Lilla aska griftegård</li>
+<li><a href="/p/wd-linkoping-garnisonskyrkan-q10503146"><b>22. Garnisonskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-berga-kyrka-q10428342"><b>23. Berga kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/p/wd-linkoping-sankta-maria-i-johannelund-q10661532"><b>24. Sankta Maria i Johannelund</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/p/wd-linkoping-sankt-hans-kyrka-q10661358"><b>25. Sankt Hans kyrka</b></a> — kyrka i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-vidingsjo-kyrka-q10715124"><b>26. Vidingsjö kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-karna-kyrka-q10551855"><b>27. Kärna kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/linkoping">Stadsvandringen i Linköping</a> <a class="cta ghost" href="/stadsvandring/linkoping/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

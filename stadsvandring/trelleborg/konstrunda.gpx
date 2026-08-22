@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Trelleborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.38254288844687" lon="13.156947342675181"><name>Minnesmärke</name><desc>En minnessten över krigsfångar som avled på hemväg genom Trelleborg 1915–1918.</desc></wpt>
+  <wpt lat="55.37866169793243" lon="13.155102186328818"><name>Minnesmärke</name><desc>En minnessten som berättar att en del av parken anlades 1926.</desc></wpt>
+  <wpt lat="55.376023960211924" lon="13.159034524912563"><name>Minnesmärke</name><desc>En minnessten som berättar att kung Oscar II planterade en ek i parken 1899.</desc></wpt>
+  <wpt lat="55.37416111" lon="13.15623056"><name>Böst</name><desc>fontän i Trelleborg, Sverige</desc></wpt>
+  <wpt lat="55.372944444444" lon="13.1555"><name>Gestalt i storm</name><desc>Gestalt i storm är en bronsskulptur av Bror Marklund, som han skapade mellan 1960 och 1964.</desc></wpt>
+  <wpt lat="55.37234478875162" lon="13.158120576646782"><name>Minnesmärke</name><desc>En marmorsten rest 1926 som det tyska folkets tack till svenskarna för medmänsklighet.</desc></wpt>
+  <wpt lat="55.36861111" lon="13.07722222"><name>Stavsten</name><desc>Stavsten är en plats i Maglarps socken, på Stavstensudde vid den skånska sydkusten cirka fem kilometer väster om centrala Trelleborg, öster om Kämpinge.</desc></wpt>
+  <rte><name>Konstrundan i Trelleborg</name>
+    <rtept lat="55.38254288844687" lon="13.156947342675181"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.37866169793243" lon="13.155102186328818"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.376023960211924" lon="13.159034524912563"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.37416111" lon="13.15623056"><name>Böst</name></rtept>
+    <rtept lat="55.372944444444" lon="13.1555"><name>Gestalt i storm</name></rtept>
+    <rtept lat="55.37234478875162" lon="13.158120576646782"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.36861111" lon="13.07722222"><name>Stavsten</name></rtept>
+  </rte>
+</gpx>

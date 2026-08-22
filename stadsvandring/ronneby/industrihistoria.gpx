@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Ronneby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.212222" lon="15.273056"><name>Stadshusbron, Ronneby</name><desc>Stadshusbron är en bil- och gångbro över Ronnebyån som förbinder den centrala delen av staden på östra stranden med stadshuset på den västra.</desc></wpt>
+  <wpt lat="56.211111111111" lon="15.272777777778"><name>Västerbro, Ronneby</name><desc>Västerbro är en betongbro som spänner över Ronnebyån i centrala Ronneby och ligger idag i Strandgatans förlängning.</desc></wpt>
+  <wpt lat="56.210555555556" lon="15.272777777778"><name>Gamla järnvägsbron, Ronneby</name><desc>fackverksbro över Ronnebyån i Ronneby</desc></wpt>
+  <wpt lat="56.209722222222" lon="15.275833333333"><name>Söderbro, Ronneby</name><desc>Söderbro är en betongbro över Ronnebyån i centrala Ronneby.</desc></wpt>
+  <wpt lat="56.198055555556" lon="15.287777777778"><name>Schopfheimbron</name><desc>Schopfheimbron är en gångbro över Ronnebyån som förbinder Soft Center med Ronneby brunnspark söder om Ronnebys centrum.</desc></wpt>
+  <wpt lat="56.197" lon="15.2893"><name>Steglitz-Zehlendorfbron</name><desc>Steglitz-Zehlendorfbron är en gångbro över Ronnebyån som förbinder Ronneby brunn, Ronneby brunnspark med Soft Center och Blekinge Convention Center.</desc></wpt>
+  <rte><name>Industrihistoria i Ronneby</name>
+    <rtept lat="56.212222" lon="15.273056"><name>Stadshusbron, Ronneby</name></rtept>
+    <rtept lat="56.211111111111" lon="15.272777777778"><name>Västerbro, Ronneby</name></rtept>
+    <rtept lat="56.210555555556" lon="15.272777777778"><name>Gamla järnvägsbron, Ronneby</name></rtept>
+    <rtept lat="56.209722222222" lon="15.275833333333"><name>Söderbro, Ronneby</name></rtept>
+    <rtept lat="56.198055555556" lon="15.287777777778"><name>Schopfheimbron</name></rtept>
+    <rtept lat="56.197" lon="15.2893"><name>Steglitz-Zehlendorfbron</name></rtept>
+  </rte>
+</gpx>

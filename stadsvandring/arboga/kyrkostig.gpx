@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Arboga</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.40426709529028" lon="15.89002413735203"><name>Kloster</name><desc>Platsen för ett medeltida spetälskehospital i Arboga, känt sedan 1345.</desc></wpt>
+  <wpt lat="59.39651389" lon="15.84493056"><name>Sankt Nicolai kyrka</name><desc>kyrkobyggnad i Arboga kommun</desc></wpt>
+  <wpt lat="59.39416667" lon="15.84166667"><name>Heliga Trefaldighets kyrka</name><desc>kyrkobyggnad i Arboga kommun</desc></wpt>
+  <wpt lat="59.38793" lon="15.841216"><name>Helge Svens kapell</name><desc>kyrka/kapell i Västmanland (Arboga stad 5:1)</desc></wpt>
+  <wpt lat="59.37925" lon="15.92283333"><name>Säterbo kyrka</name><desc>kyrkobyggnad i Arboga kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Arboga</name>
+    <rtept lat="59.40426709529028" lon="15.89002413735203"><name>Kloster</name></rtept>
+    <rtept lat="59.39651389" lon="15.84493056"><name>Sankt Nicolai kyrka</name></rtept>
+    <rtept lat="59.39416667" lon="15.84166667"><name>Heliga Trefaldighets kyrka</name></rtept>
+    <rtept lat="59.38793" lon="15.841216"><name>Helge Svens kapell</name></rtept>
+    <rtept lat="59.37925" lon="15.92283333"><name>Säterbo kyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Lidköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Lidköping till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/lidkoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Lidköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Lidköping till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/lidkoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Lidköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Lidköping till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"lidkoping","sourceSlug":"stadsvandring/lidkoping","centroid":{"lat":58.49862138340887,"lng":13.145286073429189},"stops":[{"name":"Råda kyrka","lat":58.49638889,"lng":13.09222222},{"name":"Gösslunda kyrka","lat":58.55082778,"lng":13.08276944},{"name":"Limtorget","lat":58.5029,"lng":13.16585}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Lidköping","description":"Upptäck Lidköping till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/lidkoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Råda kyrka","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.49638889,"longitude":13.09222222}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Gösslunda kyrka","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.55082778,"longitude":13.08276944}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Limtorget","description":"Limtorget är ett torg och ett område i Gamla staden i Lidköping, nära järnvägsstationen.","url":"https://stadsvandring.io/p/wd-lidkoping-limtorget-q10562389","geo":{"@type":"GeoCoordinates","latitude":58.5029,"longitude":13.16585}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"S:ta Maria kyrka","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.49353333,"longitude":13.1714}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Sankt Nicolai kyrka","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.50139444,"longitude":13.16038056}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Ågården","description":"herrgård i Lidköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-lidkoping-agarden-q10726234","geo":{"@type":"GeoCoordinates","latitude":58.4789,"longitude":13.1223}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Östby kyrkplats","description":"plats i Hovby socken i Västergötlandv","url":"https://stadsvandring.io/p/wd-lidkoping-ostby-kyrkplats-q10727804","geo":{"@type":"GeoCoordinates","latitude":58.47407,"longitude":13.13309}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Hovby kyrka","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.4514,"longitude":13.1233}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Lidköpings fyr","description":"en fyr i Vänern i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.51475,"longitude":13.170694444444}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Sigfridskyrkan","description":"kyrkobyggnad i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.50094,"longitude":13.13956}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Nya stadens torg","description":"torg i Lidköping","geo":{"@type":"GeoCoordinates","latitude":58.50374,"longitude":13.15746}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Heliga korsets gravkapell","description":"kapell i Lidköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.49248,"longitude":13.151378}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Kyrkans gård lockörn","description":"Kyrkans gård lockörn","geo":{"@type":"GeoCoordinates","latitude":58.525159,"longitude":13.127111}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Majåkers kyrka","description":"Majåkers kyrka","geo":{"@type":"GeoCoordinates","latitude":58.481928,"longitude":13.14175}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"GREVEHUSET (KÄLLARLÄNGAN)","description":"Grevehusets källarlänga från 1674, byggnadsminne vid Mellbygatan.","url":"https://stadsvandring.io/p/ksamsok-grevehuset-kallarlangan-lidkoping-693290","geo":{"@type":"GeoCoordinates","latitude":58.50328383106424,"longitude":13.156250867639475}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"NYA RÅDHUSET, LIDKÖPING","description":"Nya rådhuset i Lidköping, ett nyklassicistiskt timmerhus från 1850–1863.","url":"https://stadsvandring.io/p/ksamsok-nya-radhuset-lidkoping-lidkoping-697377","geo":{"@type":"GeoCoordinates","latitude":58.50255272863735,"longitude":13.160779045176326}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"LIDKÖPINGS TINGSRÄTT","description":"Lidköpings tingshus från 1902–1903, ritat av Lars Kellman.","url":"https://stadsvandring.io/p/ksamsok-lidkopings-tingsratt-lidkoping-697381","geo":{"@type":"GeoCoordinates","latitude":58.50131228140344,"longitude":13.153477001228659}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"NORRA KYRKOGÅRDENS KAPELL","description":"Norra kyrkogårdens kapell från 1861, uppfört efter en stadsbrand.","url":"https://stadsvandring.io/p/ksamsok-norra-kyrkogardens-kapell-lidkoping-549669","geo":{"@type":"GeoCoordinates","latitude":58.49808457033039,"longitude":13.158926680617894}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Bostadshus","description":"Ett bostadshus i Lidköping från 1873–1874.","geo":{"@type":"GeoCoordinates","latitude":58.503275055193626,"longitude":13.164758423610378}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"SVALGÅNGSLÄNGAN","description":"Svalgångslängan i Lidköping, uppförd 1785–1794.","geo":{"@type":"GeoCoordinates","latitude":58.502908192780744,"longitude":13.156602655112088}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Klockstapel","description":"Klockstapeln vid Majåkers kyrka, byggd 1983–1984.","geo":{"@type":"GeoCoordinates","latitude":58.48198765905335,"longitude":13.141385372626456}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Smedja","description":"En smedja i Lidköping från 1882.","geo":{"@type":"GeoCoordinates","latitude":58.50319809261648,"longitude":13.165056738573062}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Vedbod","description":"En vedbod i Lidköping från 1902.","geo":{"@type":"GeoCoordinates","latitude":58.50305833378982,"longitude":13.16477440442509}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"GAMLA RÅDHUSET","description":"Gamla rådhuset i Lidköping, ursprungligen de la Gardies jaktslott.","url":"https://stadsvandring.io/p/ksamsok-gamla-radhuset-lidkoping-580036","geo":{"@type":"GeoCoordinates","latitude":58.504017090493505,"longitude":13.157577216052864}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"ÖSTRA BOSTADSFLYGELN","description":"Östra bostadsflygeln i Lidköping från 1785–1794.","geo":{"@type":"GeoCoordinates","latitude":58.50317640618326,"longitude":13.156803665165294}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Lidköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 51 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Lidköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 51 sevärdheter i Lidköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Råda kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Lidköpings kommun"}},{"@type":"Question","name":"Vad är Gösslunda kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Lidköpings kommun"}},{"@type":"Question","name":"Vad är Limtorget?","acceptedAnswer":{"@type":"Answer","text":"Limtorget är ett torg och ett område i Gamla staden i Lidköping, nära järnvägsstationen."}},{"@type":"Question","name":"Vad är S:ta Maria kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Lidköpings kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Lidköping","item":"https://stadsvandring.io/stadsvandring/lidkoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Lidköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Lidköping</span><span class="badge">51 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Lidköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Lidköping till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Lidköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-lidkoping-rada-kyrka-q771691"><b>1. Råda kyrka</b><span>Kyrka · kyrkobyggnad i Lidköpings kommun</span></a>
+<a class="tile" href="/p/wd-lidkoping-gosslunda-kyrka-q10512697"><b>2. Gösslunda kyrka</b><span>Kyrka · kyrkobyggnad i Lidköpings kommun</span></a>
+<a class="tile" href="/p/wd-lidkoping-limtorget-q10562389"><b>3. Limtorget</b><span>Torg · Limtorget är ett torg och ett område i Gamla staden i Lidköping, nära järnvägss…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Lidköping · 51</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Lidköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 17</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stadslager-lidkoping-1479ce"><b>Stadslager</b></a> — Kulturlagret efter den nya stad de la Gardie lät anlägga.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-567d07"><b>Fyndplats</b></a> — En fyndplats i Lidköping med knapphändigt underlag.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-lidkoping-21af2d"><b>Fartygs-/båtlämning</b></a> — Ett kravellbyggt vrak från 1400-talet, kanske en järntransportör.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-9d63f7"><b>Fyndplats</b></a> — En slipad flintmejsel funnen vid bygget av Lidköpings lasarett.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-ad8863"><b>Fyndplats</b></a> — Stenåldersfynd från en boplats i Rådamosse vid Fredrikstorp.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-lidkoping-355818"><b>Fartygs-/båtlämning</b></a> — Ett ålderdomligt vrak där bland annat ett smycke bärgats.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lidkoping-55f4ab"><b>Övrigt</b></a> — Ett vattentorn i Lidköping med sparsamt underlag.</li>
+<li><a href="/p/ksamsok-fyndplats-lidkoping-a40edb"><b>Fyndplats</b></a> — Stenåldersboplatser vid ett sandtag, med fynd insamlade redan 1908.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-lidkoping-6cf374"><b>Vägmärke</b></a> — En milstolpe från 1707 med Karl XII:s namnchiffer, numera borttagen.</li>
+<li><a href="/karta?plats=ksamsok-boplats-lidkoping-057e9d"><b>Boplats</b></a> — En stenåldersboplats vid ett sandtag nära Lidköping.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-c347b5"><b>Fyndplats</b></a> — Fyndplats för en hornyxa av älghorn djupt nere i leran.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-e3905e"><b>Fyndplats</b></a> — En flintspjutspets funnen vid Råda mosse och inköpt 1928.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-lidkoping-27da64"><b>Husgrund, historisk tid</b></a> — Spår efter en sentida bebyggelseplats där en smed lär ha bott.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-lidkoping-2baa2f"><b>Flatmarksgrav</b></a> — Fyndplats för ett upprättstående skelett funnet vid kanalgrävning 1935.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-lidkoping-415fec"><b>Vägmärke</b></a> — En milstolpe från 1707 med Karls namnchiffer, senare flyttad.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-lidkoping-2c3b3f"><b>Fyndplats</b></a> — En sentida bebyggelseplats med slagg, där en smed lär ha bott.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-lidkoping-8834b3"><b>Hamnanläggning</b></a> — En omfattande kajanläggning med spår ända från tidig medeltid.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 12</h3>
+<ul class="place-list">
+<li><a href="/p/wd-lidkoping-agarden-q10726234"><b>Ågården</b></a> — herrgård i Lidköpings kommun, Sverige</li>
+<li><a href="/p/ksamsok-grevehuset-kallarlangan-lidkoping-693290"><b>GREVEHUSET (KÄLLARLÄNGAN)</b></a> — Grevehusets källarlänga från 1674, byggnadsminne vid Mellbygatan. <span class="era">1674–1674</span></li>
+<li><a href="/p/ksamsok-nya-radhuset-lidkoping-lidkoping-697377"><b>NYA RÅDHUSET, LIDKÖPING</b></a> — Nya rådhuset i Lidköping, ett nyklassicistiskt timmerhus från 1850–1863. <span class="era">1850–1863</span></li>
+<li><a href="/p/ksamsok-lidkopings-tingsratt-lidkoping-697381"><b>LIDKÖPINGS TINGSRÄTT</b></a> — Lidköpings tingshus från 1902–1903, ritat av Lars Kellman. <span class="era">1902–1903</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-lidkoping-052185"><b>Bostadshus</b></a> — Ett bostadshus i Lidköping från 1873–1874. <span class="era">1873–1874</span></li>
+<li><a href="/karta?plats=ksamsok-svalgangslangan-lidkoping-580053"><b>SVALGÅNGSLÄNGAN</b></a> — Svalgångslängan i Lidköping, uppförd 1785–1794. <span class="era">1785–1794</span></li>
+<li><a href="/karta?plats=ksamsok-smedja-lidkoping-052192"><b>Smedja</b></a> — En smedja i Lidköping från 1882. <span class="era">1882–1882</span></li>
+<li><a href="/karta?plats=ksamsok-vedbod-lidkoping-052189"><b>Vedbod</b></a> — En vedbod i Lidköping från 1902. <span class="era">1902–1902</span></li>
+<li><a href="/p/ksamsok-gamla-radhuset-lidkoping-580036"><b>GAMLA RÅDHUSET</b></a> — Gamla rådhuset i Lidköping, ursprungligen de la Gardies jaktslott. <span class="era">1672–1676</span></li>
+<li><a href="/karta?plats=ksamsok-ostra-bostadsflygeln-lidkoping-693294"><b>ÖSTRA BOSTADSFLYGELN</b></a> — Östra bostadsflygeln i Lidköping från 1785–1794. <span class="era">1785–1794</span></li>
+<li><a href="/karta?plats=ksamsok-schougska-garden-huvudbyggnaden-lidkoping-580883"><b>SCHOUGSKA GÅRDEN, HUVUDBYGGNADEN</b></a> — Huvudbyggnaden i Schougska gården, uppförd 1785–1794. <span class="era">1785–1794</span></li>
+<li><a href="/karta?plats=ksamsok-ostra-flygeln-langan-lidkoping-693291"><b>ÖSTRA FLYGELN (LÄNGAN)</b></a> — Östra flygeln längs Kylandersgatan, tillbyggd omkring 1860. <span class="era">1855–1864</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lidkoping-rada-kyrka-q771691"><b>Råda kyrka</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-gosslunda-kyrka-q10512697"><b>Gösslunda kyrka</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-s-ta-maria-kyrka-q10659444"><b>S:ta Maria kyrka</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-sankt-nicolai-kyrka-q10661427"><b>Sankt Nicolai kyrka</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-hovby-kyrka-q18290696"><b>Hovby kyrka</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-sigfridskyrkan-q60968774"><b>Sigfridskyrkan</b></a> — kyrkobyggnad i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-heliga-korsets-gravkapell-q130477742"><b>Heliga korsets gravkapell</b></a> — kapell i Lidköpings kommun</li>
+<li><a href="/karta?plats=wd-lidkoping-kyrkans-gard-lockorn-q130477755"><b>Kyrkans gård lockörn</b></a> — Kyrkans gård lockörn</li>
+<li><a href="/karta?plats=wd-lidkoping-majakers-kyrka-q130477760"><b>Majåkers kyrka</b></a> — Majåkers kyrka</li>
+<li><a href="/p/ksamsok-norra-kyrkogardens-kapell-lidkoping-549669"><b>NORRA KYRKOGÅRDENS KAPELL</b></a> — Norra kyrkogårdens kapell från 1861, uppfört efter en stadsbrand. <span class="era">1861–1861</span></li>
+<li><a href="/p/ksamsok-lidkopings-missionskyrka-lidkoping-697466"><b>LIDKÖPINGS MISSIONSKYRKA</b></a> — Lidköpings missionskyrka från 1979, byggd efter en lång planeringsprocess. <span class="era">1979–1979</span></li>
+</ul>
+<h3 class="city-h3">Torn · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lidkoping-lidkopings-fyr-q40674419"><b>Lidköpings fyr</b></a> — en fyr i Vänern i Lidköpings kommun</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-lidkoping-041606"><b>Klockstapel</b></a> — Klockstapeln vid Majåkers kyrka, byggd 1983–1984. <span class="era">1983–1984</span></li>
+<li><a href="/karta?plats=ksamsok-klockstapel-lidkoping-029395"><b>Klockstapel</b></a> — En klockstapel i Lidköping från 1991–1992. <span class="era">1991–1992</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-lidkoping-dcbce8"><b>Minnesmärke</b></a> — Ett monument över Magnus Gabriel de la Gardie med fontäner.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lidkoping-e1949d"><b>Minnesmärke</b></a> — Ett minnesmärke över Lidköpings första vattenledning från 1856.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lidkoping-420c47"><b>Minnesmärke</b></a> — Ett monument över Gunnar Wennerberg, rest på hans 100-årsdag.</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-lidkoping-limtorget-q10562389"><b>Limtorget</b></a> — Limtorget är ett torg och ett område i Gamla staden i Lidköping, nära järnvägsstationen.</li>
+<li><a href="/karta?plats=wd-lidkoping-nya-stadens-torg-q122889813"><b>Nya stadens torg</b></a> — torg i Lidköping</li>
+</ul>
+<h3 class="city-h3">Bro · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-bro-lidkoping-b0f50e"><b>Bro</b></a> — Resterna av en gammal bro daterad till 1100-talet.</li>
+<li><a href="/karta?plats=ksamsok-bro-lidkoping-ebcf67"><b>Bro</b></a> — En utrasad stenkista som en gång var brofundament.</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-lidkoping-ostby-kyrkplats-q10727804"><b>Östby kyrkplats</b></a> — plats i Hovby socken i Västergötlandv</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 51 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/lidkoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/lidkoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Lidköping gratis?</summary><p>Ja. Karta, alla 51 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Lidköping?</summary><p>Vandringen samlar 51 sevärdheter i Lidköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Råda kyrka?</summary><p>kyrkobyggnad i Lidköpings kommun</p></details>
+<details class="faq"><summary>Vad är Gösslunda kyrka?</summary><p>kyrkobyggnad i Lidköpings kommun</p></details>
+<details class="faq"><summary>Vad är Limtorget?</summary><p>Limtorget är ett torg och ett område i Gamla staden i Lidköping, nära järnvägsstationen.</p></details>
+<details class="faq"><summary>Vad är S:ta Maria kyrka?</summary><p>kyrkobyggnad i Lidköpings kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

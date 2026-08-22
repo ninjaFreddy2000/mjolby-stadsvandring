@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Uppsala — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Uppsala till fots: 234 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 234 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/uppsala">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Uppsala — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Uppsala till fots: 234 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 234 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/uppsala">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Uppsala — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Uppsala till fots: 234 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 234 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"uppsala","sourceSlug":"stadsvandring/uppsala","centroid":{"lat":59.86963500716044,"lng":17.655991937870407},"stops":[{"name":"Carolina Rediviva","lat":59.8550148,"lng":17.6311086},{"name":"Dekanhuset","lat":59.8574482,"lng":17.6326449},{"name":"Museum Gustavianum","lat":59.8579425,"lng":17.6317236}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Uppsala","description":"Upptäck Uppsala till fots: 234 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/uppsala","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Carolina Rediviva","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8550148,"longitude":17.6311086}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Dekanhuset","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8574482,"longitude":17.6326449}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Museum Gustavianum","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8579425,"longitude":17.6317236}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Uppsala Domkyrka","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8581519,"longitude":17.6336322}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Universitetshuset","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8575989,"longitude":17.6294625}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Linnéträdgården","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.862382,"longitude":17.6341591}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Västra Ågatan 24","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8555844,"longitude":17.6401013}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Regnellianum","description":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8554897,"longitude":17.637631}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Mellangården","description":"Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.949399,"longitude":18.1417724}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Västergården","description":"Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":60.0172432,"longitude":17.6418259}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Norrgården","description":"Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.9528937,"longitude":18.148089}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Södergården","description":"Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":60.0722548,"longitude":17.7436039}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Sandbol","description":"Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.9193498,"longitude":17.8895402}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Malma gård","description":"Stopp på ljudturen «Södra Norby - från bondkyrkoby till villastadsdel» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.8222368,"longitude":17.6345213}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Svamptorget","description":"Stopp på ljudturen «Södra Norby - från bondkyrkoby till villastadsdel» i Uppsala.","geo":{"@type":"GeoCoordinates","latitude":59.825707,"longitude":17.6187998}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Uppsala slott","description":"slott i Uppsala","url":"https://stadsvandring.io/p/wd-uppsala-uppsala-slott-q1475894","geo":{"@type":"GeoCoordinates","latitude":59.85359,"longitude":17.63543}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Geijersgården","description":"kulturbyggnad","geo":{"@type":"GeoCoordinates","latitude":59.85583333,"longitude":17.63083333}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Danmarks kyrka","description":"kyrkobyggnad i Uppsala kommun","url":"https://stadsvandring.io/p/wd-uppsala-danmarks-kyrka-q5219988","geo":{"@type":"GeoCoordinates","latitude":59.832944444444,"longitude":17.744888888889}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Lötenkyrkan","description":"kyrkobyggnad i Svenska kyrkan-Evangeliska fosterlandsstiftelsen i Uppsala, Sweden","url":"https://stadsvandring.io/p/wd-uppsala-lotenkyrkan-q6711363","geo":{"@type":"GeoCoordinates","latitude":59.87833333,"longitude":17.64666667}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Salabackekyrkan","description":"kyrkobyggnad i Uppsala kommun","geo":{"@type":"GeoCoordinates","latitude":59.86886111,"longitude":17.66818056}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Gamla Uppsala kyrka","description":"kyrkobyggnad i Uppsala kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.8995,"longitude":17.6318}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Baptistkyrkan","description":"kyrkobyggnad i Uppsala kommun","geo":{"@type":"GeoCoordinates","latitude":59.857475,"longitude":17.64370556}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Disagården","description":"friluftsmuseum i Gamla Uppsala utanför Uppsala","geo":{"@type":"GeoCoordinates","latitude":59.90083333,"longitude":17.62888889}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Dombron","description":"bro i Uppsala, Sverige","url":"https://stadsvandring.io/p/wd-uppsala-dombron-q10475773","geo":{"@type":"GeoCoordinates","latitude":59.85861111,"longitude":17.63611111}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Flora","description":"en bronsskulptur av Axel Wallenberg","geo":{"@type":"GeoCoordinates","latitude":59.86548333,"longitude":17.66888333}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Uppsala gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 234 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Uppsala?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 234 sevärdheter i Uppsala — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Carolina Rediviva?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala."}},{"@type":"Question","name":"Vad är Dekanhuset?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala."}},{"@type":"Question","name":"Vad är Museum Gustavianum?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala."}},{"@type":"Question","name":"Vad är Uppsala Domkyrka?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Uppsala","item":"https://stadsvandring.io/stadsvandring/uppsala"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Uppsala</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Uppsala</span><span class="badge">234 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Uppsala — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Uppsala till fots: 234 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Uppsala"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/izi-uppsala-carolina-rediviva"><b>1. Carolina Rediviva</b><span>Sevärdhet · Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</span></a>
+<a class="tile" href="/p/izi-uppsala-dekanhuset"><b>2. Dekanhuset</b><span>Byggnad · Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</span></a>
+<a class="tile" href="/p/izi-uppsala-museum-gustavianum"><b>3. Museum Gustavianum</b><span>museum · Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Uppsala · 234</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Uppsala. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 93</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-b7240a"><b>Gravfält</b></a> — Ett gravfält i Uppsala med en hög och nio runda stensättningar, kraftigt påverkat av tidens gång.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-uppsala-6ec1cd"><b>Bytomt/gårdstomt</b></a> — Här nordost om medeltidens Uppsala låg enligt äldre källor en by eller gård med namnet Thorsugle.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-uppsala-d6d52e"><b>Flatmarksgrav</b></a> — En helt undersökt flatmarksgrav i Uppsala med brända människoben daterade till 390–550 e.Kr.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-uppsala-e8847e"><b>Boplatslämning övrig</b></a> — En boplatslämning i ett Uppsalakvarter, med en nedgrävning daterad till äldre bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-93f408"><b>Boplats</b></a> — En boplats i Uppsala med stolphål efter ett möjligt hus och ett lieblad från folkvandringstid.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-uppsala-ca5994"><b>Fornlämningsliknande lämning</b></a> — Tre stensättningsliknande lämningar i Uppsala som troligen är naturbildningar eller spår av röjning.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-uppsala-bcf560"><b>Skärvstenshög</b></a> — Två skärvstenshögar i Uppsala med skörbränd sten, spår av förhistorisk matlagning.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-7443eb"><b>Boplats</b></a> — En delundersökt boplats i Uppsala med härdar daterade till bronsålder och romersk järnålder.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-uppsala-7d847e"><b>Gränsmärke</b></a> — Ett gjutjärnsmärke i Uppsala som markerade gränsen mellan Uppsala stad och Wattholma bruk.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-9ac928"><b>Stensättning</b></a> — Två övertorvade stensättningar i Uppsala, den ena högliknande med synlig kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-uppsala-d1e449"><b>Plats med tradition</b></a> — Enligt traditionen låg Uppsalas förhistoriska och medeltida marknadsplats vid dagens kvarter Kamphav.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-cf02e0"><b>Gravfält</b></a> — Ett gravfält i Uppsala med minst fem stensättningar och en rad ytliga stenar i mitten.</li>
+<li><a href="/p/ksamsok-gravfalt-uppsala-3d6118"><b>Gravfält</b></a> — Ett gravfält vid Gamla Uppsala med två högar och ett tiotal stensättningar, delvis skadat av täkt och bebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-cbb025"><b>Gravfält</b></a> — Ett delundersökt gravfält i Uppsala med ett tjugotal gravar, däribland stenkistgravar och flatmarksgravar.</li>
+<li><a href="/karta?plats=ksamsok-hog-uppsala-644dd3"><b>Hög</b></a> — Enligt gamla källor låg mellan domkyrkan och Helga Trefaldighet en bortschaktad kungshög, kallad Kung Ubbas hög.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-uppsala-3010ea"><b>Plats med tradition</b></a> — En plats i Uppsala som enligt traditionen kallats Galgbacken och tjänat som avrättningsplats.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-uppsala-7ddcb3"><b>Fyndplats</b></a> — En samling av fyra övertorvade skärvstensförekomster med enstaka stenblock och skörbränd sten.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-uppsala-f6aa41"><b>Skärvstenshög</b></a> — En undersökt och övertorvad skärvstenshög med talrika skärvstenar i ytan.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-uppsala-d340a9"><b>Bytomt/gårdstomt</b></a> — Rester av den övergivna bytomten Gränby med spår av bebyggelse från medeltiden.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-uppsala-c3e4a7"><b>Bytomt/gårdstomt</b></a> — Möjlig plats för byn Sätuna som avhystes redan på 1300-talet.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-uppsala-2f9610"><b>Övrigt</b></a> — En rad av sex runstenar i olika bergarter med ristningar och ett inristat kors.</li>
+<li><a href="/p/ksamsok-kalla-med-tradition-uppsala-c945ec"><b>Källa med tradition</b></a> — En källa knuten till sägnen om kung Erik och med ett pumphus av gjutjärn från 1852.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-uppsala-564602"><b>Vägmärke</b></a> — En bortflyttad milstolpe av gråsten med inskriften 1/4 mil.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-uppsala-f17de3"><b>Boplatsområde</b></a> — Ett litet boplatsområde med en härd och ett stolphål.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-uppsala-b4e360"><b>Färdväg</b></a> — Rester av en 1600-talsväg som övergavs efter drottning Kristinas påbud 1641.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-b6768d"><b>Boplats</b></a> — En registrerad boplats med knapphändiga uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-877268"><b>Stensättning</b></a> — En närmast rund stensättning med flack profil och blandad stenfyllning.</li>
+<li><a href="/karta?plats=ksamsok-hog-uppsala-a756ea"><b>Hög</b></a> — En rund gravhög med en rest sten i den centrala gropen.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-438c43"><b>Gravfält</b></a> — Ett undersökt gravfält med kopplingar till Gränby by, borttaget 1968.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-e6e9f6"><b>Boplats</b></a> — En boplats med spår av ett järnåldershus, delvis orört under marken.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-uppsala-1e3cb7"><b>Vägmärke</b></a> — En gjutjärnsmilstolpe från 1850 på ett lagat stenpostament.</li>
+<li><a href="/karta?plats=ksamsok-gravklot-uppsala-8b4f4c"><b>Gravklot</b></a> — Fyndplats för ett murat gravklot på den gamla klostertomten.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-uppsala-21fcd3"><b>Bytomt/gårdstomt</b></a> — En registrerad bytomt eller gårdstomt med knapphändiga uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-uppsala-25aad6"><b>Boplatsområde</b></a> — Ett boplatsområde med lämningar daterade till åren 0-800 e.Kr.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-uppsala-089fd3"><b>Gränsmärke</b></a> — Ett registrerat gränsmärke med knapphändiga uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-uppsala-73136e"><b>Fyndplats</b></a> — En registrerad fyndplats med knapphändiga uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-uppsala-9ca446"><b>Fornlämningsliknande lämning</b></a> — En rund stensättningsliknande lämning som bedömts vara en naturbildning.</li>
+<li><a href="/p/ksamsok-grav-och-boplatsomrade-uppsala-6a5713"><b>Grav- och boplatsområde</b></a> — Ett grav- och boplatsområde med gravar från vendeltid och en C14-daterad husgrund.</li>
+<li><a href="/karta?plats=ksamsok-hog-uppsala-fe52ab"><b>Hög</b></a> — Uppgift om en bortschaktad kungshög känd från skriftliga belägg kring år 1700.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-uppsala-310b6d"><b>Boplatslämning övrig</b></a> — En boplatslämning med grophärd C14-daterad till 1240-1390 e.Kr.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-uppsala-3c0823"><b>Stadslager</b></a> — Ett stadslager med medeltida och efterreformatoriska konstruktioner och kulturlager.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-uppsala-15dad9"><b>Röjningsröse</b></a> — Ett oregelbundet odlingsröse av större stenar.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-uppsala-5210f7"><b>Plats med tradition</b></a> — En traditionsplats som vissa forskare knutit till Ullåkers kult- och tingsplats.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-4f4796"><b>Boplats</b></a> — En boplats med kokgropar C14-daterad till bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-720c92"><b>Fornlämningsliknande bildning</b></a> — Ett tallbevuxet område med ojämn markyta och flera mindre stenblock.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-uppsala-53dbed"><b>Grav övrig</b></a> — Två gravar med brända ben, daterade till järnålder.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-uppsala-a337f7"><b>Fyndplats</b></a> — En rest sten och en fyndplats där en bronsarmring hittades 1946.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-uppsala-269dd9"><b>Hällristning</b></a> — En hällristning i block med två skålgropar.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-uppsala-fbe6dc"><b>Grav- och boplatsområde</b></a> — Ett stort grav- och boplatsområde med ett sjuttiotal fornlämningar, bland dem en treudd.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-2d6b7e"><b>Fornlämningsliknande bildning</b></a> — Kvarlämnade partier vid en grustäkt, bedömda som fornlämningsliknande.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-050c80"><b>Gravfält</b></a> — Ett gravfält med två högar och 23 runda stensättningar, delvis skadat.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-3f4412"><b>Stensättning</b></a> — En registrerad stensättning med knapphändiga uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-f699b5"><b>Boplats</b></a> — En boplats med kokgrop C14-daterad till bronsålder omkring 920-800 f.Kr.</li>
+<li><a href="/karta?plats=ksamsok-stenkistgrav-uppsala-2235a7"><b>Stenkistgrav</b></a> — En runsten omgiven av fyndplatser för träkistgravar från vikingatiden.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-70ecfe"><b>Stensättning</b></a> — En stensättning som undersökts och tagits bort.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-uppsala-63ffe2"><b>Hägnad</b></a> — En 70 meter lång stensträng anlagd på naturligt avsatt lera.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-uppsala-478e73"><b>Övrigt</b></a> — Platsen för S:t Pers kyrkoruin, undersökt och borttagen i mitten av 1960-talet.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-uppsala-54c1d0"><b>Grav markerad av sten/block</b></a> — En rest sten, undersökt och borttagen, med boplatslämningar intill.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-uppsala-41c139"><b>Boplatsområde</b></a> — Ett boplatsområde med en härd C14-daterad till bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-uppsala-609bcc"><b>Hägnadssystem</b></a> — Ett stensträngssystem av två sammanhängande stensträngar.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-2b73b2"><b>Gravfält</b></a> — Ett gravfält med ett åttatal stensättningar och spår av senare bebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-uppsala-7e28fd"><b>Hällristning</b></a> — Skålgropsförekomster som undersöktes och togs bort 1956.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-uppsala-a4acdc"><b>Fyndplats</b></a> — Ett runstensfragment funnet vid rivning nära Svartbäcksgatan 8.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-aa8aec"><b>Stensättning</b></a> — Ett osäkert gravfält med starkt skadade, möjliga stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-91b5ce"><b>Fornlämningsliknande bildning</b></a> — Ett område med fem stensättningsliknande naturbildningar.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-uppsala-54c166"><b>Boplatslämning övrig</b></a> — En kokgrop daterad till äldre bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-uppsala-84b78c"><b>Röjningsröse</b></a> — Ett delundersökt röjningsröse, tidigare tolkat som naturbildning.</li>
+<li><a href="/karta?plats=ksamsok-granby-gamla-tomt-bytomt-gardstomt-uppsala-5222d0"><b>Gränby gamla tomt, Bytomt/gårdstomt</b></a> — Den övergivna bytomten Gränby gamla tomt med medeltida bebyggelserester.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-uppsala-e79e3c"><b>Vägmärke</b></a> — En uppåt avsmalnande milstolpe av gråsten med inskriften 1/4.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-uppsala-2a9b80"><b>Fossil åker</b></a> — Fossil åkermark som numera är en gräsbevuxen skogsdunge.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-uppsala-3b16dd"><b>Grav övrig</b></a> — En inhägnad grav vid kyrkan med inmurade gravstenar och en inskrift från 1783.</li>
+<li><a href="/p/ksamsok-fornlamningsliknande-lamning-uppsala-18ae68"><b>Fornlämningsliknande lämning</b></a> — Platsen för den försvunna Kungshögen och den medeltida gården Thorsugle i centrala Uppsala.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-6f997e"><b>Fornlämningsliknande bildning</b></a> — Ett område med ett sjutal naturbildningar som liknar stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-uppsala-6606b8"><b>Husgrund, historisk tid</b></a> — Ett åttatal oregelbundna bildningar där en påminner starkt om en stensättning.</li>
+<li><a href="/karta?plats=ksamsok-hard-uppsala-035197"><b>Härd</b></a> — En rundad härd daterad till tiden kring Kristi födelse.</li>
+<li><a href="/karta?plats=ksamsok-hog-uppsala-f64f0b"><b>Hög</b></a> — En övertorvad hög intill husgrunden efter mannen som gav Amerikabacken dess namn.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-4a23b0"><b>Stensättning</b></a> — En rund, övertorvad stensättning vars västra kant odlats bort.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-uppsala-14fdcf"><b>Hällristning</b></a> — En hällristning i block med 136 skålgropar och en förbindande ränna.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-uppsala-f34ae2"><b>Fornlämningsliknande lämning</b></a> — En plats där inga fornlämningsliknande lämningar kunde återfinnas vid besiktning 1980.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-uppsala-689ad0"><b>Grav- och boplatsområde</b></a> — Ett grav- och boplatsområde undersökt 2008 med terrass, hög, stensättningar och boplatsspår.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-uppsala-af6123"><b>Gravfält</b></a> — Ett gravfält med åtta högar, varav fyra undersöktes 1913.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-uppsala-c07d50"><b>Stensättning</b></a> — Stensättningar och skålgropar som undersökts och tagits bort.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-forhistorisk-medeltida-uppsala-b53e77"><b>Husgrund, förhistorisk/medeltida</b></a> — En husgrund vars centrala stenpackning tolkats som rester av härd eller ugn.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-9f1f99"><b>Fornlämningsliknande bildning</b></a> — En högliknande naturbildning bevuxen med nyponbuskar.</li>
+<li><a href="/p/ksamsok-grav-och-boplatsomrade-uppsala-d1402c"><b>Grav- och boplatsområde</b></a> — Ett grav- och boplatsområde undersökt 2006 med skadade gravar och fynd av pärlor och båtnitar.</li>
+<li><a href="/karta?plats=ksamsok-terrassering-uppsala-2b17c8"><b>Terrassering</b></a> — Två parallella terrasser med skärvsten daterade till 1200-talet.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-uppsala-c8b044"><b>Grav- och boplatsområde</b></a> — Ett gravfält med skärvstenshögar bestående av ett tjugofemtal fornlämningar.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-uppsala-436b2c"><b>Övrigt</b></a> — En post som utgått på grund av dubbelregistrering.</li>
+<li><a href="/karta?plats=ksamsok-boplats-uppsala-57214b"><b>Boplats</b></a> — En boplats med härdar och stolphål daterad till tidig medeltid.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-uppsala-653b4c"><b>Grav markerad av sten/block</b></a> — En rest sten vid en brandgrav och fyndplatsen för en bronsarmring.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-uppsala-f5300e"><b>Fornlämningsliknande bildning</b></a> — En plats med tidigare fornlämningsliknande bildningar, numera en gräsmatta.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-uppsala-ad97cd"><b>Boplatsområde</b></a> — En bronsåldersboplats som framkom under senare stadslager i Uppsala.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-uppsala-dcb232"><b>Fossil åker</b></a> — Fossil åkermark med tre ryggade åkrar omgivna av dräneringsrännor.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 49</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-dekanhuset"><b>Dekanhuset</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-universitetshuset"><b>Universitetshuset</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-mellangarden"><b>Mellangården</b></a> — Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-vastergarden"><b>Västergården</b></a> — Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-norrgarden"><b>Norrgården</b></a> — Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-sodergarden"><b>Södergården</b></a> — Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-malma-gard"><b>Malma gård</b></a> — Stopp på ljudturen «Södra Norby - från bondkyrkoby till villastadsdel» i Uppsala.</li>
+<li><a href="/karta?plats=ksamsok-bostadshus-uppsala-050820"><b>Bostadshus</b></a> — Ett bostadshus i Uppsala från 1937, upptaget i Bebyggelseregistret. <span class="era">1937–1937</span></li>
+<li><a href="/p/ksamsok-uppsala-radhus-uppsala-720282"><b>UPPSALA RÅDHUS</b></a> — Uppsalas rådhus i nyrenässans, präglat av en ombyggnad i slutet av 1800-talet. <span class="era">1650–1700</span></li>
+<li><a href="/p/ksamsok-huvudbyggnaden-uppsala-585218"><b>HUVUDBYGGNADEN</b></a> — Det knuttimrade boningshuset från 1730-talet blev Erik Gustaf Geijers hem och rymmer i dag Dag Hammarskjöld-centret. <span class="era">1737–1737</span></li>
+<li><a href="/p/ksamsok-schefferska-huset-uppsala-043475"><b>SCHEFFERSKA HUSET</b></a> — Gårdshuset ritades på 1670-talet av Olof Rudbeck åt Johannes Schefferus och skänktes 1788 till Vetenskapssocieteten. <span class="era">1670–1679</span></li>
+<li><a href="/karta?plats=ksamsok-stall-uppsala-356385"><b>STALL</b></a> — Stallet från 1789 gjordes 1971 om till kontorslokaler. <span class="era">1789–1789</span></li>
+<li><a href="/karta?plats=ksamsok-kvarnbron-uppsala-050822"><b>Kvarnbron</b></a> — Kvarnbron i Uppsala är en byggnad från 1759 registrerad i Bebyggelseregistret. <span class="era">1759–1759</span></li>
+<li><a href="/p/ksamsok-televerkets-hus-uppsala-028975"><b>TELEVERKETS HUS</b></a> — Televerkets hus vid Kungsängsgatan restes 1916–17 i nationalromantisk stil av Aron Johansson. <span class="era">1916–1917</span></li>
+<li><a href="/karta?plats=ksamsok-domtrapphuset-uppsala-701740"><b>DOMTRAPPHUSET</b></a> — Domtrapphuset i Uppsala har medeltida rötter och finns i Bebyggelseregistret. <span class="era">0500–1500</span></li>
+<li><a href="/karta?plats=ksamsok-flygeln-uppsala-581590"><b>FLYGELN</b></a> — Flygeln vid Skytteanum är en reveterad träbyggnad från 1782 som förr rymde brygg- och bagarstugor. <span class="era">1782–1782</span></li>
+<li><a href="/p/ksamsok-f-d-prefektbostaden-uppsala-695190"><b>F.D. PREFEKTBOSTADEN</b></a> — I det Botaniska huset från 1693 bodde Carl von Linné till sin död 1778; det är i dag Linnémuseum. <span class="era">1693–1693</span></li>
+<li><a href="/karta?plats=ksamsok-smedja-uppsala-699920"><b>SMEDJA</b></a> — Smedjan i Uppsala är från 1700-talets senare hälft och finns i Bebyggelseregistret. <span class="era">1750–1799</span></li>
+<li><a href="/p/ksamsok-vaksalaskolan-uppsala-584540"><b>VAKSALASKOLAN</b></a> — Vaksalaskolan vid Vaksalatorg byggdes 1925–27 i nyklassicism och blev normgivande för kvarterens nya bebyggelse. <span class="era">1925–1927</span></li>
+<li><a href="/karta?plats=ksamsok-akademikvarnen-uppsala-583850"><b>AKADEMIKVARNEN</b></a> — Akademikvarnen från 1766–68 byggdes om 1957–59 till lokaler för Upplandsmuseet. <span class="era">1766–1768</span></li>
+<li><a href="/karta?plats=ksamsok-huslanga-uppsala-699922"><b>HUSLÄNGA</b></a> — Denna 1700-talslänga med bostadsrum och kök flyttades hit och byggdes om. <span class="era">1700–1799</span></li>
+<li><a href="/p/ksamsok-vice-pastorshuset-uppsala-701602"><b>VICE PASTORSHUSET</b></a> — Vice pastorshuset är ett av tre bevarade medeltida ringmurshus och fick sitt utseende av Carl Hårleman på 1730-talet.</li>
+<li><a href="/p/ksamsok-uppsala-tingsratt-uppsala-720281"><b>UPPSALA TINGSRÄTT</b></a> — Uppsala tingsrätt från 1971 upptar ett helt kvarter i rödbrunt tegel, med butiker i bottenvåningen. <span class="era">1971–1971</span></li>
+<li><a href="/karta?plats=ksamsok-uthuslanga-uppsala-699924"><b>UTHUSLÄNGA</b></a> — Uthuslängan är en 1700-talsbyggnad som flyttades hit tillsammans med stall och bodlänga. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-uppsala-699919"><b>MAGASIN</b></a> — Magasinet i Uppsala är en 1700-talsbyggnad registrerad i Bebyggelseregistret. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-domkapitelhuset-ecclesiasticum-uppsala-356389"><b>GAMLA DOMKAPITELHUSET, ECCLESIASTICUM</b></a> — Gamla domkapitelhuset restes på 1600-talet och byggdes om av Carl Hårleman, men Olof Rudbecks portik från 1681 finns kvar. <span class="era">1670–1699</span></li>
+<li><a href="/p/ksamsok-huvudbyggnaden-uppsala-701603"><b>HUVUDBYGGNADEN</b></a> — Skytteanums huvudbyggnad är en av Uppsalas få medeltidsbyggnader och blev 1620-talet säte för Johan Skyttes professur. <span class="era">1300–1499</span></li>
+<li><a href="/p/ksamsok-laboratorium-chemicum-uppsala-356400"><b>LABORATORIUM CHEMICUM</b></a> — Laboratorium Chemicum från 1752–53 är en av stadens äldsta universitetsbyggnader och rymde senare akademiskt boktryckeri. <span class="era">1752–1753</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-uppsala-050821"><b>Gårdshus</b></a> — Gårdshuset i Uppsala är från 1800 och finns i Bebyggelseregistret. <span class="era">1800–1800</span></li>
+<li><a href="/p/ksamsok-orangeriet-uppsala-356367"><b>ORANGERIET</b></a> — Orangeriet i Akademiska trädgården uppfördes 1742–43 efter ritningar av Carl von Linné och slottsmurmästare Kiörner. <span class="era">1742–1743</span></li>
+<li><a href="/p/ksamsok-uppsala-stationshus-uppsala-356372"><b>UPPSALA STATIONSHUS</b></a> — Uppsala stationshus restes 1866 till norra stambanans invigning och blev statligt byggnadsminne 1986. <span class="era">1866–1866</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-uppsala-356384"><b>MAGASIN</b></a> — Magasinet uppfördes som brygghus och visthus 1740 och inreddes senare för gårdens tjänstefolk. <span class="era">1740–1740</span></li>
+<li><a href="/p/ksamsok-arkebiskopshuset-uppsala-356387"><b>ÄRKEBISKOPSHUSET</b></a> — Ärkebiskopshuset restes 1737–44 av Carl Hårleman på resterna av ett domprosthus från 1330-talet. <span class="era">1330–1339</span></li>
+<li><a href="/karta?plats=ksamsok-f-d-domkapitelhuset-uppsala-356390"><b>F.D. DOMKAPITELHUSET</b></a> — Före detta domkapitelhuset döljer medeltida längor och var katedralskola fram till 1837. <span class="era">1100–1500</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-uppsala-584317"><b>UTHUS</b></a> — Uthuset i Uppsala är från decennierna kring år 1800 och finns i Bebyggelseregistret. <span class="era">1790–1809</span></li>
+<li><a href="/karta?plats=ksamsok-stallverkshuset-uppsala-694719"><b>ställverkshuset</b></a> — Ställverkshuset i Uppsala är från 1913 och finns i Bebyggelseregistret. <span class="era">1913–1913</span></li>
+<li><a href="/karta?plats=ksamsok-portlider-uppsala-701606"><b>PORTLIDER</b></a> — Portlidret i Uppsala är från 1870-talet och finns i Bebyggelseregistret. <span class="era">1870–1879</span></li>
+<li><a href="/karta?plats=ksamsok-garage-uppsala-705315"><b>GARAGE</b></a> — Garagelängan kan delvis vara lika gammal som smedjan men rymmer också delar från 1900-talet. <span class="era">1750–1799</span></li>
+<li><a href="/p/ksamsok-ekermanska-huset-uppsala-693509"><b>EKERMANSKA HUSET</b></a> — Ekermanska huset byggdes 1761 åt professor Petrus Ekerman och tjänade länge som lasarett. <span class="era">1761–1761</span></li>
+<li><a href="/karta?plats=ksamsok-bod-uppsala-356386"><b>BOD</b></a> — Boden uppfördes som brygghus och visthus 1740 och inreddes senare för gårdens tjänstefolk. <span class="era">1740–1740</span></li>
+<li><a href="/p/ksamsok-bibliotek-och-museibyggnad-uppsala-581807"><b>BIBLIOTEK- OCH MUSEIBYGGNAD</b></a> — Bibliotek- och museibyggnaden går tillbaka på Olof Rudbecks 1670-talshus åt Johannes Schefferus och skänktes 1788 till Vetenskapssocieteten. <span class="era">1770–1799</span></li>
+<li><a href="/p/ksamsok-katedralskolans-rektorsgard-uppsala-584300"><b>KATEDRALSKOLANS REKTORSGÅRD</b></a> — Katedralskolans rektorsgård från 1867 är ett välbevarat exempel på tidig svensk villaarkitektur. <span class="era">1867–1867</span></li>
+<li><a href="/p/ksamsok-norra-tingshuset-uppsala-696572"><b>NORRA TINGSHUSET</b></a> — Norra tingshuset från 1958 i rött tegel låter tingssalen skjuta ut som en tydlig volym mot Storgatan. <span class="era">1958–1958</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-anatomicum-uppsala-356395"><b>GAMLA ANATOMICUM</b></a> — Gamla Anatomicum i Uppsala är från 1850 och finns i Bebyggelseregistret. <span class="era">1850–1850</span></li>
+<li><a href="/p/ksamsok-oxenhuset-uppsala-623680"><b>oxenhuset</b></a> — Oxenhuset från 1889 räddades undan rivning och ingår i dag i Folkets Hus-komplexet. <span class="era">1889–1889</span></li>
+<li><a href="/p/ksamsok-konsistoriehuset-uppsala-435620"><b>konsistoriehuset</b></a> — Konsistoriehuset från 1749–57 av Carl Hårleman var universitetets förvaltning fram till 1887. <span class="era">1749–1757</span></li>
+<li><a href="/p/ksamsok-backmanska-huset-uppsala-623983"><b>BACKMANSKA HUSET</b></a> — Backmanska huset är en timrad framkammarstuga med välbevarade interiörer från 1700-talets senare del. <span class="era">1600–1629</span></li>
+<li><a href="/karta?plats=ksamsok-institutionsbyggnad-uppsala-356393"><b>INSTITUTIONSBYGGNAD</b></a> — Institutionsbyggnaden i Uppsala är från 1867 och finns i Bebyggelseregistret. <span class="era">1867–1867</span></li>
+<li><a href="/p/ksamsok-tiunda-tingshus-uppsala-696565"><b>TIUNDA TINGSHUS</b></a> — Tiunda tingshus från 1903 pryds av edssymbolik och Upplands riksäpple i sten och stuck. <span class="era">1903–1903</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 22</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-uppsala-domkyrka"><b>Uppsala Domkyrka</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/p/wd-uppsala-danmarks-kyrka-q5219988"><b>Danmarks kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-lotenkyrkan-q6711363"><b>Lötenkyrkan</b></a> — kyrkobyggnad i Svenska kyrkan-Evangeliska fosterlandsstiftelsen i Uppsala, Sweden</li>
+<li><a href="/karta?plats=wd-uppsala-salabackekyrkan-q7403362"><b>Salabackekyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-gamla-uppsala-kyrka-q8342836"><b>Gamla Uppsala kyrka</b></a> — kyrkobyggnad i Uppsala kommun, Sverige</li>
+<li><a href="/karta?plats=wd-uppsala-baptistkyrkan-q10426217"><b>Baptistkyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-helga-trefaldighets-kyrka-q10519482"><b>Helga Trefaldighets kyrka</b></a> — kyrkobyggnad i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-korskyrkan-q10548218"><b>Korskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-lyckebokyrkan-q10571212"><b>Lyckebokyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-mikaelskyrkan-q10585165"><b>Mikaelskyrkan</b></a> — kyrkobyggnad i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-missionskyrkan-q10586370"><b>Missionskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-pingstkyrkan-uppsala-q10631915"><b>Pingstkyrkan, Uppsala</b></a> — kyrkobyggnad i Uppsala, Sverige</li>
+<li><a href="/karta?plats=wd-uppsala-samariterhemmets-kyrka-q10660845"><b>Samariterhemmets kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/p/wd-uppsala-sankt-lars-kyrka-q10661398"><b>Sankt Lars kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-sankt-pers-kyrka-q10661467"><b>Sankt Pers kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-tunabergskyrkan-q10706292"><b>Tunabergskyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-vaksala-kyrka-q10712061"><b>Vaksala kyrka</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-vindhemskyrkan-s-ta-birgitta-q10715707"><b>Vindhemskyrkan S:ta Birgitta</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-almtunakyrkan-q16157533"><b>Almtunakyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-arstakyrkan-q28035290"><b>Årstakyrkan</b></a> — kyrkobyggnad i Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-uppsala-hospitalskyrka-q126921828"><b>Uppsala hospitalskyrka</b></a> — kyrka i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-gravkapell-q130478055"><b>Gravkapell</b></a> — kapell i Uppsala kommun</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 20</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-linnetradgarden"><b>Linnéträdgården</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/p/wd-uppsala-odinslund-q10606855"><b>Odinslund</b></a> — Odinslund är en park i stadsdelen Fjärdingen i centrala Uppsala, och är stadens äldsta offentliga promenadplats.</li>
+<li><a href="/p/wd-uppsala-universitetsparken-q10709737"><b>Universitetsparken</b></a> — park i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-vasaparken-q10713283"><b>Vasaparken</b></a> — park i Uppsala</li>
+<li><a href="/p/wd-uppsala-von-bahrska-hacken-q10716751"><b>Von Bahrska häcken</b></a> — sträng av träd i stadsdelen Löten i Uppsala</li>
+<li><a href="/p/wd-uppsala-martin-luther-kings-plan-q18292246"><b>Martin Luther Kings plan</b></a> — park i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-kallparken-q18451466"><b>Källparken</b></a> — stadsdelspark i östra Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-kapellgardsparken-q19365499"><b>Kapellgärdsparken</b></a> — park Uppsala kommun</li>
+<li><a href="/karta?plats=wd-uppsala-gunnar-leches-park-q19365551"><b>Gunnar Leches Park</b></a> — park i centrala Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-frodeparken-q19365554"><b>Frodeparken</b></a> — Frodeparken är en park i centrala Uppsala från 1930-talet.</li>
+<li><a href="/karta?plats=wd-uppsala-gotlandsparken-uppsala-q19365553"><b>Gotlandsparken, Uppsala</b></a> — park i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-borjeparken-finn-malmgrens-plan-q19365575"><b>Börjeparken, Finn Malmgrens plan</b></a> — park i Luthagen i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-bellmansparken-q19365577"><b>Bellmansparken</b></a> — Bellmansparken är en park i Uppsala i stadsdelen Löten.</li>
+<li><a href="/karta?plats=wd-uppsala-banvaktsparken-q19365593"><b>Banvaktsparken</b></a> — park i Uppsala i Sverige</li>
+<li><a href="/karta?plats=wd-uppsala-kastellparken-q19521138"><b>Kastellparken</b></a> — är en park i Uppsala som gränsar till Värnlundsgatan</li>
+<li><a href="/karta?plats=wd-uppsala-anna-petrus-park-q19977466"><b>Anna Petrus park</b></a> — park i Kungsängen, Uppsala</li>
+<li><a href="/p/wd-uppsala-artedi-park-q19977477"><b>Artedi park</b></a> — Artedi park är en småpark på mindre än en hektar som ligger i centrala Uppsala längs med Fyrisån.</li>
+<li><a href="/karta?plats=wd-uppsala-klosterparken-q19977952"><b>Klosterparken</b></a> — är en park på innergården i kvarteret Torget i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-fadimes-park-q96657006"><b>Fadimes park</b></a> — park i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-arkaparken-q117303254"><b>Arkaparken</b></a> — park i Uppsala</li>
+</ul>
+<h3 class="city-h3">Bro · 11</h3>
+<ul class="place-list">
+<li><a href="/p/wd-uppsala-dombron-q10475773"><b>Dombron</b></a> — bro i Uppsala, Sverige</li>
+<li><a href="/karta?plats=wd-uppsala-fyrisvallsbron-q10500629"><b>Fyrisvallsbron</b></a> — Fyrisvallsbron är en bro över Fyrisån i Uppsala längs Gamla Uppsalagatan som förbinder Svartbäcken med Luthagen.</li>
+<li><a href="/karta?plats=wd-uppsala-haglunds-bro-q10516015"><b>Haglunds bro</b></a> — bro i Uppsala</li>
+<li><a href="/p/wd-uppsala-hamnspangen-q10516953"><b>Hamnspången</b></a> — Hamnspången är en gång- och cykelbro i centrala Uppsala.</li>
+<li><a href="/karta?plats=wd-uppsala-jernbron-q10539992"><b>Jernbron</b></a> — bro i Uppsala</li>
+<li><a href="/p/wd-uppsala-nybron-uppsala-q22570042"><b>Nybron, Uppsala</b></a> — bro över Fyrisån i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-islandsbron-q26256713"><b>Islandsbron</b></a> — bro i Uppsala</li>
+<li><a href="/p/wd-uppsala-eddaspangen-q31898100"><b>Eddaspången</b></a> — Eddaspången är en gång- och cykelbro i Uppsala över Fyrisån mellan Fyrisgatan och Svartbäcksgatan, i Odensgatans förlängning.</li>
+<li><a href="/p/wd-uppsala-tullgarnsbron-q112036496"><b>Tullgarnsbron</b></a> — bro över Fyrisån i Uppsala</li>
+<li><a href="/karta?plats=ksamsok-bro-uppsala-0f65a2"><b>Bro</b></a> — En stenvalvsbro från 1759 med inhuggen årtalstavla.</li>
+<li><a href="/karta?plats=ksamsok-bro-uppsala-88baa1"><b>Bro</b></a> — En valvbro av huggen granit från 1899 med balustradräcke och gjutjärnslyktor.</li>
+</ul>
+<h3 class="city-h3">Torg · 10</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-svamptorget"><b>Svamptorget</b></a> — Stopp på ljudturen «Södra Norby - från bondkyrkoby till villastadsdel» i Uppsala.</li>
+<li><a href="/karta?plats=wd-uppsala-fyristorg-q10500627"><b>Fyristorg</b></a> — plats i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-gamla-torget-q10502488"><b>Gamla torget</b></a> — torg i Uppsala, Uppland</li>
+<li><a href="/karta?plats=wd-uppsala-s-t-eriks-torg-q10659378"><b>S:t Eriks torg</b></a> — plats i Uppsala</li>
+<li><a href="/p/wd-uppsala-stora-torget-q10681180"><b>Stora torget</b></a> — torg i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-vaksala-torg-q10712066"><b>Vaksala torg</b></a> — plats i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-riddartorget-q23978285"><b>Riddartorget</b></a> — plats i Uppsala</li>
+<li><a href="/p/wd-uppsala-forumtorget-q31886241"><b>Forumtorget</b></a> — Forumtorget är ett torg i centrala Uppsala.</li>
+<li><a href="/karta?plats=wd-uppsala-celsiustorget-q31886258"><b>Celsiustorget</b></a> — Celsiustorget är ett torg i centrala Uppsala.</li>
+<li><a href="/karta?plats=wd-uppsala-brantingstorget-q57409487"><b>Brantingstorget</b></a> — torg i Uppsala</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 7</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-uppsala-flora-q10496910"><b>Flora</b></a> — en bronsskulptur av Axel Wallenberg</li>
+<li><a href="/p/wd-uppsala-nackens-polska-q10605032"><b>Näckens polska</b></a> — skulptur</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-uppsala-c14962"><b>Minnesmärke</b></a> — En minnessten över Carl Wilhelm Scheele, som här upptäckte syret.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-uppsala-b0012a"><b>Minnesmärke</b></a> — En obelisk rest 1832 till minne av Gustav II Adolf.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-uppsala-54ebdd"><b>Minnesmärke</b></a> — En bronsstaty över skalden Gunnar Wennerberg.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-uppsala-643aad"><b>Minnesmärke</b></a> — En bronsstaty av Carl von Linné utförd av Carl Eldh 1930.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-uppsala-3aa925"><b>Minnesmärke</b></a> — En minnessten över en väg som byggdes om som nödhjälpsarbete 1921–1922.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-carolina-rediviva"><b>Carolina Rediviva</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-vastra-agatan-24"><b>Västra Ågatan 24</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-regnellianum"><b>Regnellianum</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=izi-uppsala-sandbol"><b>Sandbol</b></a> — Stopp på ljudturen «Svia - en by i förvandling» i Uppsala.</li>
+<li><a href="/p/wd-uppsala-gamla-uppsala-q433032"><b>Gamla Uppsala</b></a> — område i Gamla Uppsala socken</li>
+<li><a href="/karta?plats=wd-uppsala-valsgarde-q2096449"><b>Valsgärde</b></a> — gård som är främst känd för det vendel- och vikingatida gravfältet med 15 båtgravar.</li>
+</ul>
+<h3 class="city-h3">museum · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-uppsala-museum-gustavianum"><b>Museum Gustavianum</b></a> — Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</li>
+<li><a href="/karta?plats=wd-uppsala-geijersgarden-q3357825"><b>Geijersgården</b></a> — kulturbyggnad</li>
+<li><a href="/karta?plats=wd-uppsala-disagarden-q10474049"><b>Disagården</b></a> — friluftsmuseum i Gamla Uppsala utanför Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-uppsala-konstmuseum-q10710245"><b>Uppsala konstmuseum</b></a> — organisation och konstutställningar på Uppsala slott och besökare tjänst.</li>
+<li><a href="/karta?plats=wd-uppsala-gamla-uppsala-museum-q20669931"><b>Gamla Uppsala museum</b></a> — historiskt museum i Gamla Uppsala</li>
+<li><a href="/p/wd-uppsala-uppsala-domkyrkas-skattkammare-q26253232"><b>Uppsala domkyrkas skattkammare</b></a> — Uppsala domkyrkas skattkammare är ett museum i Uppsala domkyrka.</li>
+</ul>
+<h3 class="city-h3">Runsten · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-uppsala-bfe286"><b>Runristning</b></a> — Runstenen U 1011 av rödaktig granit står i Uppsala och konserverades senast 2021–2022.</li>
+<li><a href="/p/ksamsok-runristning-uppsala-094047"><b>Runristning</b></a> — Runstenen U 967 hittades 1959 i schaktmassor vid Akademiska sjukhuset och restes på nuvarande plats 1960.</li>
+<li><a href="/karta?plats=ksamsok-runristning-uppsala-ec37b1"><b>Runristning</b></a> — Två runstensdelar i Uppsala med signum U 959 och U 967, den ena av sandsten och den andra av granit.</li>
+<li><a href="/karta?plats=ksamsok-runristning-uppsala-f3e15a"><b>Runristning</b></a> — En runsten omgiven av fyndplatser för träkistgravar från vikingatiden.</li>
+<li><a href="/karta?plats=ksamsok-runristning-uppsala-8e0a77"><b>Runristning</b></a> — En runsten av gråsten som står intill ett stort flyttblock.</li>
+<li><a href="/karta?plats=ksamsok-runristning-uppsala-36a42f"><b>Runristning</b></a> — Ett runstensfragment som 1966 flyttades till Upplandsmuseet.</li>
+</ul>
+<h3 class="city-h3">Slott · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-uppsala-uppsala-slott-q1475894"><b>Uppsala slott</b></a> — slott i Uppsala</li>
+<li><a href="/karta?plats=wd-uppsala-arkebiskopsgarden-q10726042"><b>Ärkebiskopsgården</b></a> — svenska ärkebiskopens officiella residens</li>
+<li><a href="/p/ksamsok-slottsbiografen-uppsala-584250"><b>SLOTTSBIOGRAFEN</b></a> — Slottsbiografen invigdes 1914 i ett nationalromantiskt hus av Viktor Holmgren och drevs av filmpionjären Hugo Plengiér. <span class="era">1913–1914</span></li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-uppsala-uppsala-franciskankonvent-q18334437"><b>Uppsala Franciskankonvent</b></a> — Uppsala franciskankonvent var ett konvent tillhörigt Franciskanorden i Uppsala.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 234 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/uppsala/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/uppsala/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Uppsala gratis?</summary><p>Ja. Karta, alla 234 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Uppsala?</summary><p>Vandringen samlar 234 sevärdheter i Uppsala — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Carolina Rediviva?</summary><p>Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</p></details>
+<details class="faq"><summary>Vad är Dekanhuset?</summary><p>Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</p></details>
+<details class="faq"><summary>Vad är Museum Gustavianum?</summary><p>Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</p></details>
+<details class="faq"><summary>Vad är Uppsala Domkyrka?</summary><p>Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Lund</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.7193360385993" lon="13.18447257381166"><name>Minnesmärke</name><desc>Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.</desc></wpt>
+  <wpt lat="55.715571" lon="13.192395"><name>Nazi Victims Memorial in Lund</name><desc>Nazi Victims Memorial in Lund</desc></wpt>
+  <wpt lat="55.708715303513145" lon="13.197169015506546"><name>Minnesmärke</name><desc>Minnesmärke över Allhelgonaklostret, cluniacenserkloster förstört av brand 1192.</desc></wpt>
+  <wpt lat="55.7070599549115" lon="13.195803526100507"><name>Minnesmärke</name><desc>Minnesmärke i svart granit krönt av en kopparbyst.</desc></wpt>
+  <wpt lat="55.70570372433446" lon="13.194355676275267"><name>Minnesmärke</name><desc>Minnesmärke över Sven Lagerbring, en kopparbyst på granitpelare.</desc></wpt>
+  <wpt lat="55.70657809361224" lon="13.192093282578757"><name>Minnesmärke</name><desc>Bronsstaty av Carl von Linné på stensockel.</desc></wpt>
+  <wpt lat="55.704155073162745" lon="13.190714044197"><name>Minnesmärke</name><desc>Platsen för franciskanernas kloster och Nordens första högskola.</desc></wpt>
+  <wpt lat="55.70326500075556" lon="13.192887164436506"><name>Minnesmärke</name><desc>Minnestavla över Lunds äldre rådhus, som stått på platsen i fem generationer.</desc></wpt>
+  <wpt lat="55.704041915319486" lon="13.194848638269919"><name>Minnesmärke</name><desc>Skämtsamt minnesmärke Intighet, rest av Uarda-akademien 1984.</desc></wpt>
+  <wpt lat="55.70325734411023" lon="13.196928962428354"><name>Minnesmärke</name><desc>Minnessten över Sankt Mikaels medeltida kyrka, med helgonet i relief.</desc></wpt>
+  <wpt lat="55.7013017122043" lon="13.194959778542737"><name>Minnesmärke</name><desc>Minnestavla över S:t Mårtens medeltida stenkyrka, uppförd på 1100-talet och riven 1536.</desc></wpt>
+  <wpt lat="55.702101433986535" lon="13.18993248139083"><name>Minnesmärke</name><desc>Minnestavla över August Strindbergs vistelse på platsen 1897.</desc></wpt>
+  <wpt lat="55.6993384165888" lon="13.187999744155002"><name>Minnesmärke</name><desc>Minnesmärke med kopparbyst av Tycho Brahe på en granitpelare.</desc></wpt>
+  <wpt lat="55.69896409722362" lon="13.19079187796342"><name>Minnesmärke</name><desc>Minnestavla över S:t Stefans kyrka, byggd som stavkyrka 1050 och riven efter 1536.</desc></wpt>
+  <wpt lat="55.697678321314804" lon="13.185449432688044"><name>Minnesmärke</name><desc>Minnessten med drakslinga om parken Lunds stad anlade 1909–1911 efter 1907 års utställning.</desc></wpt>
+  <wpt lat="55.7" lon="13.185"><name>Lingmonumentet</name><desc>Lingmonumentet</desc></wpt>
+  <wpt lat="55.70013285682088" lon="13.185184200145326"><name>Minnesmärke</name><desc>Minnesmärke över gymnastikens fader Per Henrik Ling, avtäckt 1939.</desc></wpt>
+  <wpt lat="55.70556016904523" lon="13.200948375162719"><name>Minnesmärke</name><desc>Minnesmärke över Carl Adolf Agardh, kopparbyst på granitpelare.</desc></wpt>
+  <wpt lat="55.70135779393621" lon="13.209141789628381"><name>Minnesmärke</name><desc>Granitminnessten med en kvinna och en pojke i relief.</desc></wpt>
+  <rte><name>Konstrundan i Lund</name>
+    <rtept lat="55.7193360385993" lon="13.18447257381166"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.715571" lon="13.192395"><name>Nazi Victims Memorial in Lund</name></rtept>
+    <rtept lat="55.708715303513145" lon="13.197169015506546"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.7070599549115" lon="13.195803526100507"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70570372433446" lon="13.194355676275267"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70657809361224" lon="13.192093282578757"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.704155073162745" lon="13.190714044197"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70326500075556" lon="13.192887164436506"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.704041915319486" lon="13.194848638269919"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70325734411023" lon="13.196928962428354"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.7013017122043" lon="13.194959778542737"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.702101433986535" lon="13.18993248139083"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.6993384165888" lon="13.187999744155002"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.69896409722362" lon="13.19079187796342"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.697678321314804" lon="13.185449432688044"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.7" lon="13.185"><name>Lingmonumentet</name></rtept>
+    <rtept lat="55.70013285682088" lon="13.185184200145326"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70556016904523" lon="13.200948375162719"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.70135779393621" lon="13.209141789628381"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

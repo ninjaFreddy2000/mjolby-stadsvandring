@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Mariestad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.708565643596806" lon="13.82432479834588"><name>Minnesmärke</name><desc>Två minnesstenar av gnejs över kungabesök 1910 och 1951.</desc></wpt>
+  <wpt lat="58.70712879067634" lon="13.81861742779253"><name>Minnesmärke</name><desc>En minnessten över kungsgården Marieholm och dess trädgård.</desc></wpt>
+  <wpt lat="58.70739731951723" lon="13.813607530449284"><name>Minnesmärke</name><desc>En minnessten rest över Jonas Wærnland, som grundlade parken på platsen.</desc></wpt>
+  <rte><name>Konstrundan i Mariestad</name>
+    <rtept lat="58.708565643596806" lon="13.82432479834588"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.70712879067634" lon="13.81861742779253"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.70739731951723" lon="13.813607530449284"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

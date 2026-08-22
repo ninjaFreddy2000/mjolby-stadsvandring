@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Alingsås</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.93924534193357" lon="12.539533719634845"><name>Minnesmärke</name><desc>Ett registrerat minnesmärke i Alingsås utan säkerställd beskrivning.</desc></wpt>
+  <wpt lat="57.93290772051809" lon="12.536856934186925"><name>Minnesmärke</name><desc>Ett registrerat minnesmärke i Alingsåstrakten.</desc></wpt>
+  <wpt lat="57.9286" lon="12.5326"><name>Alingsås museum</name><desc>Stadens museum, där Alströmers manufakturstad och potatisens historia berättas.</desc></wpt>
+  <wpt lat="57.93630924423685" lon="12.554664991090178"><name>Minnesmärke</name><desc>Ett registrerat minnesmärke i Alingsås utan säkerställd beskrivning.</desc></wpt>
+  <rte><name>Konstrundan i Alingsås</name>
+    <rtept lat="57.93924534193357" lon="12.539533719634845"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.93290772051809" lon="12.536856934186925"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.9286" lon="12.5326"><name>Alingsås museum</name></rtept>
+    <rtept lat="57.93630924423685" lon="12.554664991090178"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

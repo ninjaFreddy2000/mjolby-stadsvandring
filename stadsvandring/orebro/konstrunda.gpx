@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Örebro</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.27483333" lon="15.21438889"><name>Femton meter historia</name><desc>historisk tidslinje i brons</desc></wpt>
+  <wpt lat="59.27440947582764" lon="15.217869007034752"><name>Minnesmärke</name><desc>En granitobelisk rest 1834 till minne av reformatorerna Olaus och Laurentius Petri.</desc></wpt>
+  <wpt lat="59.27264251718363" lon="15.211266355954551"><name>Minnesmärke</name><desc>Ett fragment av en minnestavla från 1600-talet, inmurat i ett senare hus.</desc></wpt>
+  <wpt lat="59.27243859301595" lon="15.225198290343723"><name>Minnesmärke</name><desc>En koppartavla som hedrar auditören Bäckströms donation till stadsparken.</desc></wpt>
+  <wpt lat="59.273577625258795" lon="15.231690369378521"><name>Minnesmärke</name><desc>En sandstensobelisk som minner om att parken anlades 1817.</desc></wpt>
+  <rte><name>Konstrundan i Örebro</name>
+    <rtept lat="59.27483333" lon="15.21438889"><name>Femton meter historia</name></rtept>
+    <rtept lat="59.27440947582764" lon="15.217869007034752"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.27264251718363" lon="15.211266355954551"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.27243859301595" lon="15.225198290343723"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.273577625258795" lon="15.231690369378521"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

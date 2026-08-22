@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Kalmar — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Kalmar till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar PDF…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/kalmar">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Kalmar — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Kalmar till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar PDF…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/kalmar">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Kalmar — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Kalmar till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar PDF…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"kalmar","sourceSlug":"stadsvandring/kalmar","centroid":{"lat":56.66435587791998,"lng":16.35913748580324},"stops":[{"name":"Storgatan","lat":56.664002861395055,"lng":16.36533498915899},{"name":"Brunn","lat":56.664208270387995,"lng":16.365919267767442},{"name":"Gerdas Te & Kaffehandel","lat":56.66368417757357,"lng":16.36407227243049}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Kalmar","description":"Upptäck Kalmar till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/kalmar","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Storgatan","description":"Hörnet av Storgatan och Västra Sjögatan.","geo":{"@type":"GeoCoordinates","latitude":56.664002861395055,"longitude":16.36533498915899}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Brunn","description":"En kommunal brunn, som stod på Stortorget fram till 1900-talets början.","geo":{"@type":"GeoCoordinates","latitude":56.664208270387995,"longitude":16.365919267767442}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Gerdas Te & Kaffehandel","description":"Hus från 1600talet","geo":{"@type":"GeoCoordinates","latitude":56.66368417757357,"longitude":16.36407227243049}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Larmtorget","description":"Bilden visar Larmtorget på Kvarnholmen i Kalmar.","geo":{"@type":"GeoCoordinates","latitude":56.66270474121701,"longitude":16.361393881839813}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"1a majtåg","description":"Förstamajtåg som gick förbi teatern vid Larmtorget.","geo":{"@type":"GeoCoordinates","latitude":56.662395729647656,"longitude":16.359921036622225}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Larmgatan med gamla Riksbanken och Eoskahuset","description":"Larmgatan med gamla Riksbanken och Eoskahuset samt gamla vattentornet i bakgrunden omkring 1935","geo":{"@type":"GeoCoordinates","latitude":56.661726132666836,"longitude":16.36258681897525}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Klädekiperingsaffären/Domun","description":"Firman Bröderna Berggren startades 1878 av Carl och Eberhard Berggren, men då i en lokal vid korsningen Kaggensgatan-Södra Långgatan där de tog över efter en E…","url":"https://stadsvandring.io/p/bht-kalmar-kladekiperingsaffaren-domun-314","geo":{"@type":"GeoCoordinates","latitude":56.66330269988811,"longitude":16.36290953075947}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Ån","description":"Stopp på ljudturen «Vattnets väsen Ljungbyån» i Kalmar.","geo":{"@type":"GeoCoordinates","latitude":56.6905968,"longitude":16.2794985}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Kalmar slott","description":"medeltida fästning och renässansslott i Kalmar","url":"https://stadsvandring.io/p/wd-kalmar-kalmar-slott-q648226","geo":{"@type":"GeoCoordinates","latitude":56.65805556,"longitude":16.35527778}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Heliga Korsets kyrka","description":"kyrka i Kalmar","geo":{"@type":"GeoCoordinates","latitude":56.67587222,"longitude":16.34282778}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Kalmar konstmuseum","description":"konstmuseum i Kalmar","url":"https://stadsvandring.io/p/wd-kalmar-kalmar-konstmuseum-q10542825","geo":{"@type":"GeoCoordinates","latitude":56.660375,"longitude":16.35584167}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Kläckeberga kyrka","description":"kyrkobyggnad i Kalmar kommun","geo":{"@type":"GeoCoordinates","latitude":56.70763889,"longitude":16.28733333}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Krusenstiernska gården","description":"kulturhistoriskt museum i Kalmar","geo":{"@type":"GeoCoordinates","latitude":56.66027778,"longitude":16.34833333}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Sankt Johannes kyrka","description":"kyrkobyggnad i Svenska kyrkan i Kalmar, Sverige","geo":{"@type":"GeoCoordinates","latitude":56.66361111,"longitude":16.32868333}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Sankta Birgitta kyrka","description":"kyrka i Kalmar","geo":{"@type":"GeoCoordinates","latitude":56.69114444,"longitude":16.34295833}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Skälby gård","description":"herrgård i Småland","geo":{"@type":"GeoCoordinates","latitude":56.682,"longitude":16.3351}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Två Systrars kapell","description":"kyrkobyggnad i Kalmar kommun","geo":{"@type":"GeoCoordinates","latitude":56.70370556,"longitude":16.35836389}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Törneby","description":"herrgård i Småland","url":"https://stadsvandring.io/p/wd-kalmar-torneby-q10708201","geo":{"@type":"GeoCoordinates","latitude":56.6754,"longitude":16.2925}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Vasakyrkan","description":"kyrka i Kalmar","geo":{"@type":"GeoCoordinates","latitude":56.66125,"longitude":16.34497222}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Västerportkyrkan","description":"kyrka i Kalmar","geo":{"@type":"GeoCoordinates","latitude":56.665,"longitude":16.361}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Kalmar 26:1","description":"minnesmärke i Småland","geo":{"@type":"GeoCoordinates","latitude":56.631924,"longitude":16.31795}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Carolus Philippus","description":"stadsbefästning i Småland (Kalmar 50:1)","geo":{"@type":"GeoCoordinates","latitude":56.666652,"longitude":16.371326}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Bastionen Regeringen","description":"stadsbefästning i Småland (Kalmar 51:1)","geo":{"@type":"GeoCoordinates","latitude":56.665283,"longitude":16.372587}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Kalmar 53:2","description":"stadsbefästning i Småland","geo":{"@type":"GeoCoordinates","latitude":56.65863,"longitude":16.353595}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Skansen","description":"stadsbefästning i Småland (Kalmar 54:1)","geo":{"@type":"GeoCoordinates","latitude":56.658021,"longitude":16.347832}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Kalmar gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 189 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Kalmar?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 189 sevärdheter i Kalmar — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Storgatan?","acceptedAnswer":{"@type":"Answer","text":"Hörnet av Storgatan och Västra Sjögatan."}},{"@type":"Question","name":"Vad är Brunn?","acceptedAnswer":{"@type":"Answer","text":"En kommunal brunn, som stod på Stortorget fram till 1900-talets början."}},{"@type":"Question","name":"Vad är Gerdas Te & Kaffehandel?","acceptedAnswer":{"@type":"Answer","text":"Hus från 1600talet"}},{"@type":"Question","name":"Vad är Larmtorget?","acceptedAnswer":{"@type":"Answer","text":"Bilden visar Larmtorget på Kvarnholmen i Kalmar."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Kalmar","item":"https://stadsvandring.io/stadsvandring/kalmar"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Kalmar</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Kalmar</span><span class="badge">189 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Kalmar — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Kalmar till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Kalmar"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-kalmar-storgatan-310"><b>1. Storgatan</b><span>Sevärdhet · Hörnet av Storgatan och Västra Sjögatan.</span></a>
+<a class="tile" href="/p/bht-kalmar-brunn-267"><b>2. Brunn</b><span>Sevärdhet · En kommunal brunn, som stod på Stortorget fram till 1900-talets början.</span></a>
+<a class="tile" href="/p/bht-kalmar-gerdas-te-kaffehandel-304"><b>3. Gerdas Te &amp; Kaffehandel</b><span>Sevärdhet · Hus från 1600talet</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Kalmar · 189</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Kalmar. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Byggnad · 55</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-kalmar-larmgatan-med-gamla-riksbanken-och-eoskahuset-266"><b>Larmgatan med gamla Riksbanken och Eoskahuset</b></a> — Larmgatan med gamla Riksbanken och Eoskahuset samt gamla vattentornet i bakgrunden omkring 1935 <span class="era">1935</span></li>
+<li><a href="/karta?plats=wd-kalmar-skalby-gard-q10670905"><b>Skälby gård</b></a> — herrgård i Småland</li>
+<li><a href="/p/wd-kalmar-torneby-q10708201"><b>Törneby</b></a> — herrgård i Småland</li>
+<li><a href="/p/wd-kalmar-svaneberg-q136483908"><b>Svaneberg</b></a> — herrgårdsbyggnad i Kalmar</li>
+<li><a href="/p/ksamsok-bostadshus-kalmar-689345"><b>BOSTADSHUS</b></a> — Ett timrat 1700-talshus på Kvarnholmen med Kalmars enda bevarade friliggande trappa. <span class="era">1690–1709</span></li>
+<li><a href="/p/ksamsok-sahlsteenska-garden-kalmar-701892"><b>SAHLSTEENSKA GÅRDEN</b></a> — Två sammanbyggda karolinska köpmansgårdar vid Kaggensgatan, uppförda under Kvarnholmens uppbyggnad kring 1660. <span class="era">1650–1669</span></li>
+<li><a href="/p/ksamsok-villa-hertha-kalmar-579650"><b>VILLA HERTHA</b></a> — Villa i kvarteret Kakelmakaren på Kvarnholmen, i den del som i folkmun kallades Kattrumpan. <span class="era">1925–1925</span></li>
+<li><a href="/p/ksamsok-handelsbanken-kalmar-579206"><b>HANDELSBANKEN</b></a> — Ett centralpalats från 1913 som förenade bank och representationsbostäder, ritat av arkitekten A Stoltz. <span class="era">1913–1913</span></li>
+<li><a href="/karta?plats=ksamsok-prastor-kummel-kalmar-028279"><b>prästör, kummel</b></a> — Ett vitt, koniskt kummel utanför Kalmar som från 1832 tjänat som sjömärke. <span class="era">1832</span></li>
+<li><a href="/karta?plats=ksamsok-vastra-postejen-kalmar-394536"><b>VÄSTRA POSTEJEN</b></a> — En hörnpostej i det vallsystem som från 1545 byggdes kring Kalmar slott. <span class="era">1545–1545</span></li>
+<li><a href="/karta?plats=ksamsok-lusthus-kalmar-701933"><b>LUSTHUS</b></a> — Ett trälusthus i Krusenstjernska gårdens trädgård, öppen för allmänheten om somrarna.</li>
+<li><a href="/p/ksamsok-kreugerska-huset-kalmar-579281"><b>KREUGERSKA HUSET</b></a> — Ett borgmästarhus från 1697 som 1967 flyttades till Norra Långgatan i Kalmar. <span class="era">1697–1697</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-kalmar-701886"><b>GÅRDSHUS</b></a> — Uthuslängor i trä och korsvirke som kantar en av Kalmars skyddade gårdar.</li>
+<li><a href="/karta?plats=ksamsok-gardslanga-med-flera-funktioner-kalmar-701932"><b>GÅRDSLÄNGA MED FLERA FUNKTIONER</b></a> — En av träbyggnaderna kring Krusenstjernska gården i centrala Kalmar.</li>
+<li><a href="/p/ksamsok-huvudbyggnaden-kalmar-585792"><b>HUVUDBYGGNADEN</b></a> — Huvudbyggnaden i Hillska gården, en ståtlig köpmansgård nära Kvarnholmens hamn från sent 1600-tal. <span class="era">1650–1699</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-kalmar-049238"><b>GÅRDSHUS</b></a> — Ett gårdshus i Hantverkshusets kvarter, uppfört i sten efter stadsbranden 1765. <span class="era">1765–1799</span></li>
+<li><a href="/karta?plats=ksamsok-m-hlenbruchska-huset-kalmar-703255"><b>MÜHLENBRUCHSKA HUSET</b></a> — En byggnad i Kalmar från omkring 1720, upptagen i Bebyggelseregistret. <span class="era">1720</span></li>
+<li><a href="/karta?plats=ksamsok-loftbod-kalmar-579229"><b>LOFTBOD</b></a> — En rödfärgad loftbod i timmer från 1600-talet, på en gård präglad av stadsarkitekten Fred-Olson. <span class="era">1600–1699</span></li>
+<li><a href="/karta?plats=ksamsok-bremerska-garden-kalmar-579404"><b>BREMERSKA GÅRDEN</b></a> — Ett reveterat timmerhus vid Södra Långgatan, uppfört efter branden 1765. <span class="era">1765–1799</span></li>
+<li><a href="/p/ksamsok-gardslanga-kalmar-701948"><b>GÅRDSLÄNGA</b></a> — Magasins- och gårdslängor vid en gammal redar- och järnhandlargård nära Kalmars hamn. <span class="era">1765–1799</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-kalmar-579633"><b>BOSTADSHUS</b></a> — Ett gatuhus i rött tegel från omkring 1900, anpassat till en äldre grannbyggnad. <span class="era">1890–1909</span></li>
+<li><a href="/p/ksamsok-wahlbomska-huset-kalmar-579114"><b>WAHLBOMSKA HUSET</b></a> — En panelad timmerbyggnad från 1600-talets mitt, senare hem åt stadsarkitekten Fred-Olson. <span class="era">1640–1659</span></li>
+<li><a href="/p/ksamsok-huvudbyggnad-kalmar-579319"><b>HUVUDBYGGNAD</b></a> — Huvudbyggnaden på en gammal redargård nära hamnen, från tiden efter branden 1765. <span class="era">1765–1799</span></li>
+<li><a href="/p/ksamsok-appeltofftska-huset-kalmar-579561"><b>APPELTOFFtSKA HUSET</b></a> — En reveterad handelsgård från 1700-talet som sträcker sig från Stortorget mot Södra Långgatan. <span class="era">1700–1765</span></li>
+<li><a href="/p/ksamsok-nelsonska-fastigheten-kalmar-579261"><b>NELSONSKA FASTIGHETEN</b></a> — En köpmansgård vid Stortorget vars källare går tillbaka till 1667, medan husen restes efter branden 1800. <span class="era">1667–1667</span></li>
+<li><a href="/karta?plats=ksamsok-ostra-postejen-kalmar-394538"><b>ÖSTRA POSTEJEN</b></a> — En av hörnpostejerna i Kalmar slotts vallsystem, anlagt från 1545. <span class="era">1545–1545</span></li>
+<li><a href="/p/ksamsok-lansresidenset-och-landsstatshuset-kalmar-394541"><b>LÄNSRESIDENSET OCH LANDSSTATSHUSET</b></a> — Kalmars länsresidens, vars äldsta del restes 1674 och som byggts ut ända in på 1920-talet. <span class="era">1674–1674</span></li>
+<li><a href="/p/ksamsok-ekska-garden-kalmar-579605"><b>EKSKA GÅRDEN</b></a> — Ett stort tvåvånings trähus vars enhetliga 1700-talsfasad döljer tre äldre hus från 1600-talet. <span class="era">1740–1759</span></li>
+<li><a href="/karta?plats=ksamsok-gardslanga-med-flera-funktioner-kalmar-701936"><b>GÅRDSLÄNGA MED FLERA FUNKTIONER</b></a> — En gårdslänga från 1847 som ursprungligen rymde stall och fähus, med en mur från 1600-talet. <span class="era">1847–1847</span></li>
+<li><a href="/p/ksamsok-gamla-posten-kalmar-579250"><b>GAMLA POSTEN</b></a> — Ett omsorgsfullt utformat posthus från 1947, ritat av Lars-Erik Lallerstedt. <span class="era">1947–1947</span></li>
+<li><a href="/p/ksamsok-skogssalen-gamla-krematoriet-kalmar-043296"><b>Skogssalen &amp; gamla krematoriet</b></a> — Ett kapell från 1935, ritat av J F Olson, som rymde Kalmars första krematorium. <span class="era">1935–1935</span></li>
+<li><a href="/p/ksamsok-sjofartsmuseet-kalmar-579591"><b>SJÖFARTSMUSEET</b></a> — En påkostad patricierbostad från 1889 som i dag rymmer Kalmar sjöfartsmuseum. <span class="era">1889–1889</span></li>
+<li><a href="/p/ksamsok-gamla-brandstationen-kalmar-585745"><b>GAMLA BRANDSTATIONEN</b></a> — Kalmars gamla brandhus från 1760, ombyggt inför Karl XIV Johans besök på 1830-talet. <span class="era">1760–1760</span></li>
+<li><a href="/p/ksamsok-huvudbyggnad-kalmar-689344"><b>HUVUDBYGGNAD</b></a> — Huvudbyggnaden i Krusenstjernska gården, den sista bevarade av Kalmarborgarnas lantliga trädgårdar. <span class="era">1770–1799</span></li>
+<li><a href="/karta?plats=ksamsok-administrationsbyggnad-kalmar-043298"><b>Administrationsbyggnad</b></a> — Kontors- och vaktmästeribyggnader vid Kalmars kyrkogårdar, uppförda i olika etapper.</li>
+<li><a href="/p/ksamsok-gamla-komministergarden-kalmar-579471"><b>GAMLA KOMMINISTERGÅRDEN</b></a> — En tvåvånings träbyggnad från 1650-talet vars källare en gång tjänade som krutupplag. <span class="era">1650–1659</span></li>
+<li><a href="/p/ksamsok-bostadshus-kalmar-579676"><b>Bostadshus</b></a> — Ett stenhus vid Lilla Torget från 1656–67 som länge var biskops- och prästgård. <span class="era">1656–1667</span></li>
+<li><a href="/karta?plats=ksamsok-fd-pastorsexpedition-kalmar-701941"><b>FD. PASTORSEXPEDITION</b></a> — En tegelbyggnad från 1909 som uppfördes för församlingens pastorsexpedition. <span class="era">1909–1909</span></li>
+<li><a href="/karta?plats=ksamsok-butiksbyggnad-kalmar-579560"><b>BUTIKSBYGGNAD</b></a> — Kullzénska husets timmerbyggnad, en handelsgård från omkring 1771 vid Kaggensgatan. <span class="era">1771–1771</span></li>
+<li><a href="/p/ksamsok-dahmska-huset-kalmar-579497"><b>DAHMSKA HUSET</b></a> — Ett av Kalmars märkligaste karolinska hus, uppfört 1666 med svängda barockgavlar. <span class="era">1666–1666</span></li>
+<li><a href="/p/ksamsok-teater-kalmar-579723"><b>TEATER</b></a> — Kalmars nyrenässansteater från 1863, ritad av teaterarkitekten B C Malmberg. <span class="era">1863–1863</span></li>
+<li><a href="/karta?plats=ksamsok-sodra-postejen-kalmar-394535"><b>SÖDRA POSTEJEN</b></a> — En av hörnpostejerna kring Kalmar slott, del av vallsystemet från 1545. <span class="era">1545–1545</span></li>
+<li><a href="/karta?plats=ksamsok-vaktmastarbostad-kalmar-394539"><b>VAKTMÄSTARBOSTAD</b></a> — En byggnad i Kalmar från tiden kring sekelskiftet 1900, upptagen i Bebyggelseregistret. <span class="era">1895–1905</span></li>
+<li><a href="/p/ksamsok-rosenlundska-huset-kalmar-579126"><b>ROSENLUNDSKA HUSET</b></a> — Ett karolinskt stenhus från 1654–58 med en unik taklist i huggen ölandssten. <span class="era">1654–1658</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-kalmar-579161"><b>BOSTADSHUS</b></a> — En liten timrad enkelstuga i ett kvarter där sjöfolk och varvsarbetare bodde.</li>
+<li><a href="/p/ksamsok-klapphuset-kalmar-579387"><b>KLAPPHUSET</b></a> — Skandinaviens enda bevarade klapphus, byggt på pålar i vattnet kring 1902–06. <span class="era">1902–1906</span></li>
+<li><a href="/p/ksamsok-radhuset-kalmar-585746"><b>RÅDHUSET</b></a> — Kalmars rådhus i holländsk klassicism, färdigt 1690 och präglat av branden 1731. <span class="era">1690–1690</span></li>
+<li><a href="/karta?plats=ksamsok-norra-postejen-kalmar-394540"><b>NORRA POSTEJEN</b></a> — Den fyra våningar höga norra postejen vid Kalmar slott, påbörjad kring 1552. <span class="era">1552–1553</span></li>
+<li><a href="/karta?plats=ksamsok-tjanstebostad-kalmar-689343"><b>TJÄNSTEBOSTAD</b></a> — En av träbyggnaderna i Krusenstjernska gården, en bevarad borgerlig trädgårdsgård i Kalmar.</li>
+<li><a href="/p/ksamsok-hantverkshuset-kalmar-049237"><b>HANTVERKSHUSET</b></a> — Ett kubiskt karolinskt stenhus från 1658, ett av Kalmars bäst bevarade 1600-talshus. <span class="era">1658–1659</span></li>
+<li><a href="/p/ksamsok-gamla-tyggarden-kalmar-579175"><b>GAMLA TYGGÅRDEN</b></a> — Ett landshövdingeresidens från 1660-talet som senare blev kronomagasin och fabrik. <span class="era">1660–1669</span></li>
+<li><a href="/p/ksamsok-kalmar-tingsratt-kalmar-696644"><b>KALMAR TINGSRÄTT</b></a> — Kalmars tingshus från 1966, tre sammanfogade byggnadskroppar med ett böljande tak över tingssalarna. <span class="era">1966–1966</span></li>
+<li><a href="/p/ksamsok-gamla-laroverket-kalmar-701890"><b>GAMLA LÄROVERKET</b></a> — Ett empirehus i sten från 1830-talet, uppfört på platsen för det gamla gymnasiet. <span class="era">1600–1699</span></li>
+<li><a href="/p/ksamsok-trappgavelhuset-kalmar-579472"><b>TRAPPGAVELHUSET</b></a> — Castenska gårdens trappgavelhus från 1667, byggt av en av stadens rikaste borgare. <span class="era">1667–1667</span></li>
+<li><a href="/p/ksamsok-apotekshuset-kalmar-579213"><b>APOTEKSHUSET</b></a> — Ett nästan kubiskt borgarhus från 1659, hörnsten i en ovanlig rad karolinska stenhus. <span class="era">1659–1659</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 46</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-kalmar-21d315"><b>Fornlämningsliknande lämning</b></a> — En fornlämningsliknande lämning nära Kalmar med en kullfallen rest sten.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-dca86e"><b>Fartygs-/båtlämning</b></a> — Resterna av en skonert som förliste i storm vid Grimskär 1860.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-4401cb"><b>Fartygs-/båtlämning</b></a> — Två ekvrak vid Grimskär, där det ena kan vara brännaren S:t Johannes från striderna 1679.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-339ec3"><b>Fyndplats</b></a> — Fyndplatsen för en båtyxa i grönsten, hittad i vattnet 1948.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-0791c2"><b>Fartygs-/båtlämning</b></a> — Ett omkring 19–20 meter långt ekvrak med flat botten och bred bog.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-a1ac28"><b>Fyndplats</b></a> — Vid schaktning 1970 hittades en flintdolk och flintavslag från stenåldern.</li>
+<li><a href="/karta?plats=ksamsok-kungabordet-naturforemal-bildning-med-bruk-tradition-eller-namn-kalmar-133087"><b>Kungabordet, Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Stenblocket Kungabordet ska förr ha omgetts av fem mindre sittstenar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-f2fe15"><b>Fartygs-/båtlämning</b></a> — Ett ekvrak på omkring sexton meter, troligen från 1400-talets senare hälft.</li>
+<li><a href="/p/ksamsok-begravningsplats-kalmar-f4bc5b"><b>Begravningsplats</b></a> — Ett femtiotal skelett och fynd från stenålder till romartid speglar Varvsholmens långa historia.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-kalmar-ffb818"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En källa som ska ha kallats Vasakällan, men som inte kunde återfinnas 1974.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-133767"><b>Fartygs-/båtlämning</b></a> — En skonert som förliste efter grundstötning 1905, troligen vid Grimskär.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-0a65c7"><b>Fartygs-/båtlämning</b></a> — Ett djupt nedsjunket, troligen odäckat vrak med tegel från en möjlig spis ombord.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-kalmar-6039ac"><b>Fornlämningsliknande lämning</b></a> — En högliknande lämning som troligen anlagts i undervisningssyfte.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-420ceb"><b>Fyndplats</b></a> — Åtta vrak som dykare fann 1988, med ännu oklar koppling till Kalmar slott.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-27c607"><b>Fartygs-/båtlämning</b></a> — Ett av de vrak dykare fann 1988 i det grunda vattnet nära slottet.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-kalmar-0abd43"><b>Stadslager</b></a> — Ett provschakt 1975 avslöjade ett tjockt kulturlager med keramik.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-6a7f07"><b>Fartygs-/båtlämning</b></a> — Ett grythandtag antyder 1600-tal för detta vrak, funnet 1988.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-c86183"><b>Fartygs-/båtlämning</b></a> — Ett välbevarat ekskepp byggt 1674–75, omgivet av ytterligare tre vrak.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-kalmar-6a8a49"><b>Grav övrig</b></a> — Skelett från en 1700-talsgrav, av en kvinna i 20–25-årsåldern, framerroderade 2017.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-fec907"><b>Fartygs-/båtlämning</b></a> — Ett grunt liggande vrak, hopfogat med träpluggar och helt utan järn.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-kalmar-814bee"><b>Fornlämningsliknande lämning</b></a> — En stensatt lämning som antagligen är ett röjningsröse.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-kalmar-8370a7"><b>Övrigt</b></a> — En antikvarisk kontroll vid kabelgrävning som inte gav några fynd.</li>
+<li><a href="/karta?plats=ksamsok-boplats-kalmar-d68149"><b>Boplats</b></a> — En stenåldersboplats som kom i dagen vid ledningsschaktning 1994.</li>
+<li><a href="/karta?plats=ksamsok-laboratorieholmen-varv-slip-kalmar-0f2b20"><b>Laboratorieholmen, Varv/slip</b></a> — Lämningar efter ett varv på Laboratorieholmen, med en hamn som avvecklades på 1960-talet.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-kalmar-1047bf"><b>Stadslager</b></a> — Ett kulturlager med spår av en gammal befästning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-kalmar-80c914"><b>Husgrund, historisk tid</b></a> — Grunden efter ett torkhus som äldre kartor placerar vid jordbruksmark.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-6a7399"><b>Fyndplats</b></a> — En liten grönstensyxa som kom fram vid grävning.</li>
+<li><a href="/karta?plats=ksamsok-stadsvall-stadsmur-kalmar-1be4df"><b>Stadsvall/stadsmur</b></a> — En rest av Kalmars stadsmur, delvis utmärkt med stenar vid Kungsgatan.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-4bdad0"><b>Fartygs-/båtlämning</b></a> — Ett av de vrak dykare fann vid slottet 1988.</li>
+<li><a href="/karta?plats=ksamsok-boplats-kalmar-86c33a"><b>Boplats</b></a> — Ett kulturlager på Varvsholmen med fynd från stenålder till romartid.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-7de786"><b>Fartygs-/båtlämning</b></a> — Ett fartyg som strandade nära Kalmars hamn 1863.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-d83d6a"><b>Fyndplats</b></a> — En järnspjutspets som en gång hittades här men nu är förkommen.</li>
+<li><a href="/karta?plats=ksamsok-stadsvall-stadsmur-kalmar-b28bf8"><b>Stadsvall/stadsmur</b></a> — En stadsmursrest med grunden till ett halvrunt torn, delad av Söderportsgatan.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-kalmar-a395f4"><b>Hamnanläggning</b></a> — Kalmars medeltida hamn Kättilen i Slottsfjärden, torrlagd på 1930-talet.</li>
+<li><a href="/p/ksamsok-stadslager-kalmar-2c3875"><b>Stadslager</b></a> — Kvarnholmens kulturlager speglar en av Sveriges äldsta städer, med Nordens äldsta stadssigill.</li>
+<li><a href="/karta?plats=ksamsok-stadsvall-stadsmur-kalmar-b4cadb"><b>Stadsvall/stadsmur</b></a> — En femtio meter lång, vinklad rest av Kalmars stadsmur.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-kalmar-34230e"><b>Avrättningsplats</b></a> — Här låg enligt en karta från 1650 stadens galge; platsen är nu bebyggd.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-kalmar-b70699"><b>Stadslager</b></a> — Ett kulturlager undersökt 1975, med mynt som troligen är från 1300-talet.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-kalmar-b7fd5f"><b>Vägmärke</b></a> — En kalkstensmilstolpe från 1737.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-kalmar-e11a4a"><b>Begravningsplats</b></a> — En ödekyrkogård med ett hundratal gravstenar och ett gravhus.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-8ce23b"><b>Fyndplats</b></a> — En trindyxa av sten som kom fram vid grävning.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-877cea"><b>Fyndplats</b></a> — Här har två flintspån påträffats.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-kalmar-827000"><b>Fartygs-/båtlämning</b></a> — Spridda vrakrester som bärgades vid muddring 1973.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-kalmar-d074be"><b>Fyndplats</b></a> — En järnkniv från Norra Ängö, kanske från romersk järnålder men osäkert daterad.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-kalmar-6032ae"><b>Stenkrets/stenrad</b></a> — En domarring som uppmättes 1930 men snart försvann i stenbrytningen.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-kalmar-329019"><b>Lägenhetsbebyggelse</b></a> — Ett hamnläge med spår av fiskebodar och av Kalmarkriget 1611.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 23</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kalmar-carolus-philippus-q29413294"><b>Carolus Philippus</b></a> — stadsbefästning i Småland (Kalmar 50:1)</li>
+<li><a href="/karta?plats=wd-kalmar-bastionen-regeringen-q29413295"><b>Bastionen Regeringen</b></a> — stadsbefästning i Småland (Kalmar 51:1)</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-53-2-q29413298"><b>Kalmar 53:2</b></a> — stadsbefästning i Småland</li>
+<li><a href="/karta?plats=wd-kalmar-skansen-q29413299"><b>Skansen</b></a> — stadsbefästning i Småland (Kalmar 54:1)</li>
+<li><a href="/karta?plats=wd-kalmar-bastionen-johannes-rex-q29413296"><b>Bastionen Johannes Rex</b></a> — stadsbefästning i Småland (Kalmar 52:1)</li>
+<li><a href="/karta?plats=wd-kalmar-danska-kullarna-q29413306"><b>Danska kullarna</b></a> — stadsbefästning i Småland (Kalmar 60:2)</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-59-1-q29413304"><b>Kalmar 59:1</b></a> — stadsbefästning i Småland</li>
+<li><a href="/karta?plats=wd-kalmar-ravelinen-prins-carl-q29413309"><b>Ravelinen Prins Carl</b></a> — stadsbefästning i Småland (Kalmar 62:1)</li>
+<li><a href="/karta?plats=wd-kalmar-hogvakten-q29413320"><b>Högvakten</b></a> — stadsbefästning i Småland (Kalmar 108:1)</li>
+<li><a href="/p/ksamsok-villa-skansen-kalmar-579009"><b>VILLA SKANSEN</b></a> — En 1883 uppförd villa av konsul Roosval, byggd på bastionen Skansens historiska mark och stilbildande för Kalmars villabyggande. <span class="era">1883–1883</span></li>
+<li><a href="/p/ksamsok-grimskars-skans-kalmar-394542"><b>GRIMSKÄRS SKANS</b></a> — En fyrstjärnig skans från 1611 på ett skär utanför Kalmar, senare även lots- och fyrplats. <span class="era">1611–1623</span></li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-kalmar-c719b4"><b>Fästning/skans</b></a> — Kartor från 1600-talet antyder en skans på Varvsholmen, men om den verkligen byggdes är osäkert.</li>
+<li><a href="/karta?plats=ksamsok-stadsbefastning-kalmar-dd6f6f"><b>Stadsbefästning</b></a> — Kalmar slotts försvarsverk går tillbaka på en kastal från 1100-talet.</li>
+<li><a href="/karta?plats=ksamsok-carolus-philippus-stadsbefastning-kalmar-359fcb"><b>Carolus Philippus, Stadsbefästning</b></a> — En huvudvall och bastion som ingår i Kvarnholmens befästningsverk.</li>
+<li><a href="/karta?plats=ksamsok-stadsbefastning-kalmar-b0c481"><b>Stadsbefästning</b></a> — En huvudvall med två bastioner där i dag ett gammalt vattentorn och ett hotell står.</li>
+<li><a href="/karta?plats=ksamsok-johannes-rex-stadsbefastning-kalmar-5ec789"><b>Johannes Rex, Stadsbefästning</b></a> — En bastion med den kalkstensvälvda Kavaljersporten, del av Kvarnholmens 1600-talsbefästning.</li>
+<li><a href="/karta?plats=ksamsok-stadsbefastning-kalmar-bd2840"><b>Stadsbefästning</b></a> — En jordbastion med stenmur som mjukt övergår i den omgivande marken.</li>
+<li><a href="/karta?plats=ksamsok-bastionen-regeringen-stadsbefastning-kalmar-8e3fb6"><b>Bastionen Regeringen, Stadsbefästning</b></a> — En bastion i Kvarnholmens befästning, med en stensatt utsiktsplats.</li>
+<li><a href="/karta?plats=ksamsok-danskakullarna-stadsbefastning-kalmar-59d67c"><b>Danskakullarna, Stadsbefästning</b></a> — En jordbastion med vallgrav och jordhög, känd som Danska kullarna.</li>
+<li><a href="/karta?plats=ksamsok-borg-kalmar-e2c7a9"><b>Borg</b></a> — Kalmar slott, ett renässansslott med rötter i en kastal från 1100-talet.</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-kalmar-a484d7"><b>Fästning/skans</b></a> — Resterna av en skans med bröstvärn och löpgrav, delvis borta genom senare markarbeten.</li>
+<li><a href="/karta?plats=ksamsok-sankt-erik-stadsbefastning-kalmar-fc9217"><b>Sankt Erik, Stadsbefästning</b></a> — En bastion från Erik XIV:s tid, bestyckad redan 1563 och utgrävd på 1930-talet.</li>
+<li><a href="/karta?plats=ksamsok-borg-kalmar-ee7e0b"><b>Borg</b></a> — En övertorvad vall med ett gjutjärnskors märkt AM.</li>
+</ul>
+<h3 class="city-h3">Torn · 21</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kalmar-huvudet-q32253995"><b>Huvudet</b></a> — kassunfyr i Kalmarsund</li>
+<li><a href="/karta?plats=wd-kalmar-krongrundets-fyr-q32269916"><b>Krongrundets fyr</b></a> — kassunfyr i Kalmarsund</li>
+<li><a href="/karta?plats=wd-kalmar-norra-midsundsgrundet-q32297642"><b>Norra Midsundsgrundet</b></a> — före detta fyr i Kalmarsund i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-osvallsgrundet-q39021034"><b>Osvallsgrundet</b></a> — en kassunfyr i Kalmarsund</li>
+<li><a href="/karta?plats=wd-kalmar-skansgrundet-q39028655"><b>Skansgrundet</b></a> — kassunfyr i Kalmarsund</li>
+<li><a href="/karta?plats=wd-kalmar-grimskars-fyr-q41798979"><b>Grimskärs fyr</b></a> — en fyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-nedre-q43193454"><b>Kalmar nedre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-ovre-q43193823"><b>Kalmar övre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-farjestaden-sodra-q110377354"><b>Färjestaden Södra</b></a> — en fyr i Mörbylånga kommun på Öland</li>
+<li><a href="/karta?plats=wd-kalmar-farjestaden-norra-q110377355"><b>Färjestaden Norra</b></a> — en fyr i Mörbylånga kommun på Öland</li>
+<li><a href="/karta?plats=wd-kalmar-ango-nedre-q110381815"><b>Ängö nedre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-ango-ovre-q110381817"><b>Ängö övre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kullo-ovre-q110382167"><b>Kullö övre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kullo-nedre-q110382165"><b>Kullö nedre</b></a> — en ensfyr i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-svensknabben-nedre-q110382568"><b>Svensknabben nedre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-svensknabben-ovre-q110382569"><b>Svensknabben övre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-stenso-nedre-q110979159"><b>Stensö nedre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-stenso-yttre-ovre-q110983498"><b>Stensö Yttre övre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-stenso-yttre-nedre-q110983497"><b>Stensö Yttre nedre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-angen-ovre-q110983662"><b>Ängen övre</b></a> — en ensfyr i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-angen-nedre-q110983661"><b>Ängen nedre</b></a> — en ensfyr i Kalmar kommun</li>
+</ul>
+<h3 class="city-h3">Kyrka · 12</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kalmar-heliga-korsets-kyrka-q10520027"><b>Heliga Korsets kyrka</b></a> — kyrka i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-klackeberga-kyrka-q10546505"><b>Kläckeberga kyrka</b></a> — kyrkobyggnad i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-sankt-johannes-kyrka-q10661372"><b>Sankt Johannes kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Kalmar, Sverige</li>
+<li><a href="/karta?plats=wd-kalmar-sankta-birgitta-kyrka-q10661515"><b>Sankta Birgitta kyrka</b></a> — kyrka i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-tva-systrars-kapell-q10706821"><b>Två Systrars kapell</b></a> — kyrkobyggnad i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-vasakyrkan-q10713260"><b>Vasakyrkan</b></a> — kyrka i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-vasterportkyrkan-q10718010"><b>Västerportkyrkan</b></a> — kyrka i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-56-2-q29413303"><b>Kalmar 56:2</b></a> — kyrka/kapell i Småland</li>
+<li><a href="/p/ksamsok-heliga-korsets-kapell-kalmar-014725"><b>Heliga Korsets kapell</b></a> — Heliga Korsets kyrka och krematorium från 1961, en typisk 1960-talsanläggning i tegel och marmor. <span class="era">1961–1961</span></li>
+<li><a href="/karta?plats=ksamsok-norra-kapellet-kalmar-043297"><b>Norra Kapellet</b></a> — Ett kapell från 1911 på Norra kyrkogården, ritat av J F Olson i historiserande stil. <span class="era">1911–1911</span></li>
+<li><a href="/p/ksamsok-kalmar-domkyrka-kalmar-442672"><b>KALMAR DOMKYRKA</b></a> — Kalmar domkyrka, ritad av Nikodemus Tessin d.ä. och byggd från 1660. <span class="era">1660–1682</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-kalmar-bb8678"><b>Kyrka/kapell</b></a> — Ödekyrkogården markerar Kalmars medeltida kyrka, vars storkyrka sprängdes 1678.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 10</h3>
+<ul class="place-list">
+<li><a href="/p/wd-kalmar-vasamonumentet-q137691805"><b>Vasamonumentet</b></a> — skulptur i Kalmar stadspark</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-1d80ae"><b>Minnesmärke</b></a> — Bronsplattan minns Martina Lundgrens gåva 1942 av en byggnad till Kalmar Sjöfartsmuseum.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-6f8763"><b>Minnesmärke</b></a> — Ett gjutjärnskors från 1971, fäst i en gråsten.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-b454fc"><b>Minnesmärke</b></a> — Ett ånglokshjul rest till minne av Kalmar järnvägs 100-årsjubileum 1974.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-2db952"><b>Minnesmärke</b></a> — En nygotisk minnesvård över Gustav Vasas landstigning 1520, rest 1851.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-fab55d"><b>Minnesmärke</b></a> — En platta på Ölandsbron som minns bygget 1968–1972 och invigningen 1972.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-1c92f2"><b>Minnesmärke</b></a> — En minnessten med bronsbyst över Johan Jeansson, som anlade stadsparken 1877–1880.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-dfdf3e"><b>Minnesmärke</b></a> — Ett gjutjärnskors märkt AM vid en gammal vall.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-7862af"><b>Minnesmärke</b></a> — En platta som minns konstnären Carl Wahlbom (1810–1858), uppvuxen i huset.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-kalmar-5d68f9"><b>Minnesmärke</b></a> — Ödekyrkogården och minnesstenen markerar platsen för Kalmars medeltida storkyrka, sprängd 1678.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 8</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-kalmar-storgatan-310"><b>Storgatan</b></a> — Hörnet av Storgatan och Västra Sjögatan. <span class="era">1875</span></li>
+<li><a href="/karta?plats=bht-kalmar-brunn-267"><b>Brunn</b></a> — En kommunal brunn, som stod på Stortorget fram till 1900-talets början. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-kalmar-gerdas-te-kaffehandel-304"><b>Gerdas Te &amp; Kaffehandel</b></a> — Hus från 1600talet <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-kalmar-1a-majtag-309"><b>1a majtåg</b></a> — Förstamajtåg som gick förbi teatern vid Larmtorget. <span class="era">1910</span></li>
+<li><a href="/p/bht-kalmar-kladekiperingsaffaren-domun-314"><b>Klädekiperingsaffären/Domun</b></a> — Firman Bröderna Berggren startades 1878 av Carl och Eberhard Berggren, men då i en lokal vid korsningen Kaggensgatan-Södra Långgatan där de… <span class="era">1950</span></li>
+<li><a href="/karta?plats=izi-kalmar-an"><b>Ån</b></a> — Stopp på ljudturen «Vattnets väsen Ljungbyån» i Kalmar.</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-26-1-q29413290"><b>Kalmar 26:1</b></a> — minnesmärke i Småland</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-79-1-q29413316"><b>Kalmar 79:1</b></a> — minnesmärke i Småland</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kalmar-margaretaplan-q10577031"><b>Margaretaplan</b></a> — öppen plats och park i Kalmar kommun</li>
+<li><a href="/karta?plats=wd-kalmar-ola-magnell-parken-q107676400"><b>Ola Magnell parken</b></a> — park i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-stadspark-q137381629"><b>Kalmar stadspark</b></a> — park i Kalmar</li>
+<li><a href="/p/wd-kalmar-kalmarsundsparken-q137381716"><b>Kalmarsundsparken</b></a> — park i Kalmar</li>
+</ul>
+<h3 class="city-h3">Torg · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-kalmar-larmtorget-247"><b>Larmtorget</b></a> — Bilden visar Larmtorget på Kvarnholmen i Kalmar. <span class="era">1910</span></li>
+<li><a href="/p/wd-kalmar-lilla-torget-q112187500"><b>Lilla torget</b></a> — torg på Kvarnholmen i Kalmar</li>
+<li><a href="/p/wd-kalmar-kalmar-torg-q137560878"><b>Kalmar torg</b></a> — torg i det medeltida Kalmar</li>
+</ul>
+<h3 class="city-h3">Slott · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-kalmar-kalmar-slott-q648226"><b>Kalmar slott</b></a> — medeltida fästning och renässansslott i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-kalmar-88-1-q29413319"><b>Kalmar 88:1</b></a> — borg i Småland</li>
+<li><a href="/karta?plats=wd-kalmar-klackeberga-113-1-q29413359"><b>Kläckeberga 113:1</b></a> — borg i Småland</li>
+</ul>
+<h3 class="city-h3">museum · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-kalmar-kalmar-konstmuseum-q10542825"><b>Kalmar konstmuseum</b></a> — konstmuseum i Kalmar</li>
+<li><a href="/karta?plats=wd-kalmar-krusenstiernska-garden-q10549592"><b>Krusenstiernska gården</b></a> — kulturhistoriskt museum i Kalmar</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-kalmar-dominikankonventet-i-kalmar-q137460428"><b>Dominikankonventet i Kalmar</b></a> — tidigaree kloster i Kalmar</li>
+</ul>
+<h3 class="city-h3">Bro · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-bro-kalmar-45d6bd"><b>Bro</b></a> — Träpålar från omkring 1720, troligen rester av en bro som brann i stadsbranden 1765.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 189 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/kalmar/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/kalmar/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Kalmar gratis?</summary><p>Ja. Karta, alla 189 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Kalmar?</summary><p>Vandringen samlar 189 sevärdheter i Kalmar — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Storgatan?</summary><p>Hörnet av Storgatan och Västra Sjögatan.</p></details>
+<details class="faq"><summary>Vad är Brunn?</summary><p>En kommunal brunn, som stod på Stortorget fram till 1900-talets början.</p></details>
+<details class="faq"><summary>Vad är Gerdas Te &amp; Kaffehandel?</summary><p>Hus från 1600talet</p></details>
+<details class="faq"><summary>Vad är Larmtorget?</summary><p>Bilden visar Larmtorget på Kvarnholmen i Kalmar.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

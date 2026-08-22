@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Luleå — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Luleå till fots: 24 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 24 stopp och nedladdningsbar PDF-gu…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/lulea">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Luleå — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Luleå till fots: 24 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 24 stopp och nedladdningsbar PDF-gu…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/lulea">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Luleå — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Luleå till fots: 24 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 24 stopp och nedladdningsbar PDF-gu…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"lulea","sourceSlug":"stadsvandring/lulea","centroid":{"lat":65.62650314562062,"lng":22.057644787703456},"stops":[{"name":"Nederluleå kyrka","lat":65.6457,"lng":22.0282},{"name":"Teknikens hus","lat":65.6169,"lng":22.135},{"name":"Gamla Gäddviksbron","lat":65.58894444,"lng":22.03286111}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Luleå","description":"Upptäck Luleå till fots: 24 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/lulea","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":24,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Nederluleå kyrka","description":"kyrkobyggnad i Gammelstads kyrkstad","geo":{"@type":"GeoCoordinates","latitude":65.6457,"longitude":22.0282}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Teknikens hus","description":"Teknikens Hus är ett science center.","url":"https://stadsvandring.io/p/wd-lulea-teknikens-hus-q7695459","geo":{"@type":"GeoCoordinates","latitude":65.6169,"longitude":22.135}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Gamla Gäddviksbron","description":"bågbro över Lule älv","geo":{"@type":"GeoCoordinates","latitude":65.58894444,"longitude":22.03286111}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mjölkuddskyrkan","description":"kyrkobyggnad i Luleå kommun","geo":{"@type":"GeoCoordinates","latitude":65.60390833,"longitude":22.11856667}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Nya Gäddviksbron","description":"Nya Gäddviksbron är en balkbro över Lule älv i Gäddvik utanför Luleå.","geo":{"@type":"GeoCoordinates","latitude":65.59027778,"longitude":22.02638889}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Porsökyrkan","description":"kyrkobyggnad i Luleå kommun","geo":{"@type":"GeoCoordinates","latitude":65.61933333,"longitude":22.14919444}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Stadsökyrkan","description":"kyrka i Luleå kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":65.6475,"longitude":21.99755556}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"The Opposite Sphere","description":"skulptur i Luleå","geo":{"@type":"GeoCoordinates","latitude":65.61433333,"longitude":22.10094444}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Stillhetens kapell","description":"kapell i Gammelstaden","geo":{"@type":"GeoCoordinates","latitude":65.643944,"longitude":22.040778}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Sjukhuskyrkan, Sunderbyn","description":"kyrkolokal i Sunderby sjukhus","geo":{"@type":"GeoCoordinates","latitude":65.671806,"longitude":21.931}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Petrikapellet","description":"gravkapell i Luleå kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":65.642067368313,"longitude":22.03760938341}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Hamnanläggning","description":"Resterna av en ångbåtsbrygga med timrade stenkistor och en möjlig kran.","url":"https://stadsvandring.io/p/ksamsok-hamnanlaggning-lulea-9137ca","geo":{"@type":"GeoCoordinates","latitude":65.61535008000318,"longitude":22.07087004111067}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Minnesmärke","description":"Ett minnesmärke vars uppgifter ännu inte har granskats.","geo":{"@type":"GeoCoordinates","latitude":65.63889620726118,"longitude":22.038386064845728}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Bytomt/gårdstomt","description":"En gammal gårdstomt där inga spår längre syntes vid inventeringen 1987.","geo":{"@type":"GeoCoordinates","latitude":65.64276784874892,"longitude":22.032203528796174}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Småindustriområde","description":"Ett gammalt kvarnhjul i sandsten, återanvänt som bord.","geo":{"@type":"GeoCoordinates","latitude":65.62083594128983,"longitude":22.066089658290455}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Husgrund, historisk tid","description":"Grunden efter en jordkällare med kvarliggande timmer.","geo":{"@type":"GeoCoordinates","latitude":65.61681232952938,"longitude":22.07208833362947}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Bytomt/gårdstomt","description":"En gårdstomt med tre hus, känd från en stadskarta 1857.","geo":{"@type":"GeoCoordinates","latitude":65.62101171292973,"longitude":22.06535017715588}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Husgrund, historisk tid","description":"En rektangulär husgrund med källargrop och rester av en spis.","geo":{"@type":"GeoCoordinates","latitude":65.62168344359645,"longitude":22.06672467134894}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Minnesmärke","description":"En minnessten över Norrbottens fältjägarkår och regemente.","geo":{"@type":"GeoCoordinates","latitude":65.62092458463883,"longitude":22.065439415059387}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Avrättningsplats","description":"En avrättningsplats vars uppgifter ännu inte är granskade.","geo":{"@type":"GeoCoordinates","latitude":65.62530924513828,"longitude":22.032360449581294}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Område med militära anläggningar","description":"Notvikens gamla mötesplats med husgrunder, minnesstenar, skans och brunn.","url":"https://stadsvandring.io/p/ksamsok-omrade-med-militara-anlaggningar-lulea-d444c4","geo":{"@type":"GeoCoordinates","latitude":65.62020389599215,"longitude":22.063903742900518}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Hamnanläggning","description":"En medeltida hamn i Gammelstad, känd genom äldre uppgifter.","geo":{"@type":"GeoCoordinates","latitude":65.62971128802648,"longitude":22.084355643097794}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Begravningsplats enstaka","description":"En liten gravplats inramad av ett utsirat järnstängsel.","geo":{"@type":"GeoCoordinates","latitude":65.63889620726118,"longitude":22.038386064845728}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Plats med tradition","description":"En plats knuten till tradition, vars uppgifter ännu inte granskats.","geo":{"@type":"GeoCoordinates","latitude":65.63895813216602,"longitude":22.089218620810833}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Luleå gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 24 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Luleå?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 24 sevärdheter i Luleå — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Nederluleå kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Gammelstads kyrkstad"}},{"@type":"Question","name":"Vad är Teknikens hus?","acceptedAnswer":{"@type":"Answer","text":"Teknikens Hus är ett science center."}},{"@type":"Question","name":"Vad är Gamla Gäddviksbron?","acceptedAnswer":{"@type":"Answer","text":"bågbro över Lule älv"}},{"@type":"Question","name":"Vad är Mjölkuddskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Luleå kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Luleå","item":"https://stadsvandring.io/stadsvandring/lulea"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Luleå</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Luleå</span><span class="badge">24 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Luleå — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Luleå till fots: 24 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Luleå"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-lulea-nederlulea-kyrka-q2365475"><b>1. Nederluleå kyrka</b><span>Kyrka · kyrkobyggnad i Gammelstads kyrkstad</span></a>
+<a class="tile" href="/p/wd-lulea-teknikens-hus-q7695459"><b>2. Teknikens hus</b><span>museum · Teknikens Hus är ett science center.</span></a>
+<a class="tile" href="/p/wd-lulea-gamla-gaddviksbron-q10502406"><b>3. Gamla Gäddviksbron</b><span>Bro · bågbro över Lule älv</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Luleå · 24</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Luleå. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 11</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-hamnanlaggning-lulea-9137ca"><b>Hamnanläggning</b></a> — Resterna av en ångbåtsbrygga med timrade stenkistor och en möjlig kran.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-lulea-5a9f04"><b>Bytomt/gårdstomt</b></a> — En gammal gårdstomt där inga spår längre syntes vid inventeringen 1987.</li>
+<li><a href="/karta?plats=ksamsok-smaindustriomrade-lulea-a6bde3"><b>Småindustriområde</b></a> — Ett gammalt kvarnhjul i sandsten, återanvänt som bord.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-lulea-1432e6"><b>Husgrund, historisk tid</b></a> — Grunden efter en jordkällare med kvarliggande timmer.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-lulea-62b28c"><b>Bytomt/gårdstomt</b></a> — En gårdstomt med tre hus, känd från en stadskarta 1857.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-lulea-aa79f6"><b>Husgrund, historisk tid</b></a> — En rektangulär husgrund med källargrop och rester av en spis.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-lulea-ca6893"><b>Avrättningsplats</b></a> — En avrättningsplats vars uppgifter ännu inte är granskade.</li>
+<li><a href="/p/ksamsok-omrade-med-militara-anlaggningar-lulea-d444c4"><b>Område med militära anläggningar</b></a> — Notvikens gamla mötesplats med husgrunder, minnesstenar, skans och brunn.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-lulea-5debc9"><b>Hamnanläggning</b></a> — En medeltida hamn i Gammelstad, känd genom äldre uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-enstaka-lulea-df52ed"><b>Begravningsplats enstaka</b></a> — En liten gravplats inramad av ett utsirat järnstängsel.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-lulea-12b665"><b>Plats med tradition</b></a> — En plats knuten till tradition, vars uppgifter ännu inte granskats.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 7</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lulea-nederlulea-kyrka-q2365475"><b>Nederluleå kyrka</b></a> — kyrkobyggnad i Gammelstads kyrkstad</li>
+<li><a href="/karta?plats=wd-lulea-mjolkuddskyrkan-q10586888"><b>Mjölkuddskyrkan</b></a> — kyrkobyggnad i Luleå kommun</li>
+<li><a href="/karta?plats=wd-lulea-porsokyrkan-q10637949"><b>Porsökyrkan</b></a> — kyrkobyggnad i Luleå kommun</li>
+<li><a href="/karta?plats=wd-lulea-stadsokyrkan-q10677236"><b>Stadsökyrkan</b></a> — kyrka i Luleå kommun, Sverige</li>
+<li><a href="/karta?plats=wd-lulea-stillhetens-kapell-q26256721"><b>Stillhetens kapell</b></a> — kapell i Gammelstaden</li>
+<li><a href="/karta?plats=wd-lulea-sjukhuskyrkan-sunderbyn-q26256770"><b>Sjukhuskyrkan, Sunderbyn</b></a> — kyrkolokal i Sunderby sjukhus</li>
+<li><a href="/karta?plats=wd-lulea-petrikapellet-q108044870"><b>Petrikapellet</b></a> — gravkapell i Luleå kommun, Sverige</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lulea-the-opposite-sphere-q10695728"><b>The Opposite Sphere</b></a> — skulptur i Luleå</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lulea-bf048f"><b>Minnesmärke</b></a> — Ett minnesmärke vars uppgifter ännu inte har granskats.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lulea-faabc1"><b>Minnesmärke</b></a> — En minnessten över Norrbottens fältjägarkår och regemente.</li>
+</ul>
+<h3 class="city-h3">Bro · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lulea-gamla-gaddviksbron-q10502406"><b>Gamla Gäddviksbron</b></a> — bågbro över Lule älv</li>
+<li><a href="/karta?plats=wd-lulea-nya-gaddviksbron-q10604261"><b>Nya Gäddviksbron</b></a> — Nya Gäddviksbron är en balkbro över Lule älv i Gäddvik utanför Luleå.</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-lulea-teknikens-hus-q7695459"><b>Teknikens hus</b></a> — Teknikens Hus är ett science center.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 24 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/lulea/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/lulea/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Luleå gratis?</summary><p>Ja. Karta, alla 24 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Luleå?</summary><p>Vandringen samlar 24 sevärdheter i Luleå — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Nederluleå kyrka?</summary><p>kyrkobyggnad i Gammelstads kyrkstad</p></details>
+<details class="faq"><summary>Vad är Teknikens hus?</summary><p>Teknikens Hus är ett science center.</p></details>
+<details class="faq"><summary>Vad är Gamla Gäddviksbron?</summary><p>bågbro över Lule älv</p></details>
+<details class="faq"><summary>Vad är Mjölkuddskyrkan?</summary><p>kyrkobyggnad i Luleå kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

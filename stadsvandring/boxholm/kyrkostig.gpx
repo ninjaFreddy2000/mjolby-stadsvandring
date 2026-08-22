@@ -4,6 +4,8 @@
   <wpt lat="58.285" lon="14.959"><name>Rinna kyrka</name><desc>Medeltida ursprung på den bördiga slätten i norra kommunen.</desc></wpt>
   <wpt lat="58.251727" lon="15.046319"><name>Ekeby kyrka</name><desc>Medeltida patronatskyrka med 1100-talsdopfunt och den rörliga &quot;Fattiggubben&quot; från 1686.</desc></wpt>
   <wpt lat="58.24" lon="15.109"><name>Åsbo kyrka</name><desc>Höjdkyrka över Åsboåns dal med 1200-talsdopfunt — bygden där skalden Atterbom verkade.</desc></wpt>
+  <wpt lat="58.2401" lon="15.1099"><name>Åsbo gravkapell</name><desc>kyrkobyggnad i Boxholms kommun</desc></wpt>
+  <wpt lat="58.18894" lon="15.05636"><name>Timmerö kapell</name><desc>kapell i Boxholms församling</desc></wpt>
   <wpt lat="58.1891" lon="15.0541"><name>Boxholms kyrka (Brukskyrkan)</name><desc>Nygotisk brukskyrka byggd av 200 000 slaggstenar från valsverket — en av landets mest ovanliga.</desc></wpt>
   <wpt lat="58.06" lon="15.062"><name>Blåviks kyrka</name><desc>Liten kyrka i den södra skogsbygden mot Tranåsgränsen.</desc></wpt>
   <wpt lat="58.032" lon="15.278"><name>Malexanders kyrka</name><desc>Vit träkyrka vackert belägen vid sjön Sömmen i skogsbygden.</desc></wpt>
@@ -11,6 +13,8 @@
     <rtept lat="58.285" lon="14.959"><name>Rinna kyrka</name></rtept>
     <rtept lat="58.251727" lon="15.046319"><name>Ekeby kyrka</name></rtept>
     <rtept lat="58.24" lon="15.109"><name>Åsbo kyrka</name></rtept>
+    <rtept lat="58.2401" lon="15.1099"><name>Åsbo gravkapell</name></rtept>
+    <rtept lat="58.18894" lon="15.05636"><name>Timmerö kapell</name></rtept>
     <rtept lat="58.1891" lon="15.0541"><name>Boxholms kyrka (Brukskyrkan)</name></rtept>
     <rtept lat="58.06" lon="15.062"><name>Blåviks kyrka</name></rtept>
     <rtept lat="58.032" lon="15.278"><name>Malexanders kyrka</name></rtept>

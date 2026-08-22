@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Gävle</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="60.6915" lon="17.11513889"><name>Mariakyrkan</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.679444444444" lon="17.140555555556"><name>Korskyrkan, Gävle</name><desc>kyrka i Gävle</desc></wpt>
+  <wpt lat="60.675472222222" lon="17.150777777778"><name>Sjömanskyrkan i Gävle</name><desc>kyrkobyggnad i Gävle</desc></wpt>
+  <wpt lat="60.672777777778" lon="17.153055555556"><name>Betlehemskyrkan, Gävle</name><desc>kyrka i Gävle</desc></wpt>
+  <wpt lat="60.67236111" lon="17.15388889"><name>Immanuelskyrkan</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.673611111111" lon="17.157777777778"><name>Frälsningsarmén i Gävle</name><desc>kyrka i Gävle</desc></wpt>
+  <wpt lat="60.67055556" lon="17.1625"><name>Staffans kyrka</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.679777777778" lon="17.157111111111"><name>Hospitalskyrkan Sofia Magdalena</name><desc>hospitalskyrka i Gävle</desc></wpt>
+  <wpt lat="60.67277778" lon="17.13805556"><name>Heliga Trefaldighets kyrka</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.67075" lon="17.12277778"><name>Soldatkyrkan</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.665" lon="17.123055555556"><name>Hedvigslundskyrkan</name><desc>kyrka i Gävle</desc></wpt>
+  <wpt lat="60.66724320893659" lon="17.105352435111676"><name>Fästning/skans</name><desc>Plats för en försvunnen övningsskans som gett namnet Skansen.</desc></wpt>
+  <wpt lat="60.67320843237419" lon="17.095445720286058"><name>GÄVLE KAPELLKREMATORIUM</name><desc>Gävle kapellkrematorium, uppfört 1958–1960.</desc></wpt>
+  <wpt lat="60.664555555556" lon="17.070111111111"><name>Valbo kyrka</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.650694444444" lon="17.032777777778"><name>Åsängekyrkan</name><desc>kyrka i Valbo</desc></wpt>
+  <wpt lat="60.65233056" lon="17.13854444"><name>Andreaskyrkan</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.654444444444" lon="17.151944444444"><name>Rikets sal, Gävle</name><desc>kyrka i Gävle</desc></wpt>
+  <wpt lat="60.65913889" lon="17.14541667"><name>Tomaskyrkan</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <wpt lat="60.660361111111" lon="17.162027777778"><name>Jesu Kristi kyrka av sista dagars heliga</name><desc>mormonkyrka i Gävle</desc></wpt>
+  <wpt lat="60.65657" lon="17.16608"><name>Hemlingby kyrka</name><desc>kyrkobyggnad i Gävle kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Gävle</name>
+    <rtept lat="60.6915" lon="17.11513889"><name>Mariakyrkan</name></rtept>
+    <rtept lat="60.679444444444" lon="17.140555555556"><name>Korskyrkan, Gävle</name></rtept>
+    <rtept lat="60.675472222222" lon="17.150777777778"><name>Sjömanskyrkan i Gävle</name></rtept>
+    <rtept lat="60.672777777778" lon="17.153055555556"><name>Betlehemskyrkan, Gävle</name></rtept>
+    <rtept lat="60.67236111" lon="17.15388889"><name>Immanuelskyrkan</name></rtept>
+    <rtept lat="60.673611111111" lon="17.157777777778"><name>Frälsningsarmén i Gävle</name></rtept>
+    <rtept lat="60.67055556" lon="17.1625"><name>Staffans kyrka</name></rtept>
+    <rtept lat="60.679777777778" lon="17.157111111111"><name>Hospitalskyrkan Sofia Magdalena</name></rtept>
+    <rtept lat="60.67277778" lon="17.13805556"><name>Heliga Trefaldighets kyrka</name></rtept>
+    <rtept lat="60.67075" lon="17.12277778"><name>Soldatkyrkan</name></rtept>
+    <rtept lat="60.665" lon="17.123055555556"><name>Hedvigslundskyrkan</name></rtept>
+    <rtept lat="60.66724320893659" lon="17.105352435111676"><name>Fästning/skans</name></rtept>
+    <rtept lat="60.67320843237419" lon="17.095445720286058"><name>GÄVLE KAPELLKREMATORIUM</name></rtept>
+    <rtept lat="60.664555555556" lon="17.070111111111"><name>Valbo kyrka</name></rtept>
+    <rtept lat="60.650694444444" lon="17.032777777778"><name>Åsängekyrkan</name></rtept>
+    <rtept lat="60.65233056" lon="17.13854444"><name>Andreaskyrkan</name></rtept>
+    <rtept lat="60.654444444444" lon="17.151944444444"><name>Rikets sal, Gävle</name></rtept>
+    <rtept lat="60.65913889" lon="17.14541667"><name>Tomaskyrkan</name></rtept>
+    <rtept lat="60.660361111111" lon="17.162027777778"><name>Jesu Kristi kyrka av sista dagars heliga</name></rtept>
+    <rtept lat="60.65657" lon="17.16608"><name>Hemlingby kyrka</name></rtept>
+  </rte>
+</gpx>

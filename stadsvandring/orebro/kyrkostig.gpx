@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Örebro</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.32137778" lon="15.22685"><name>Hovsta kyrka</name><desc>kyrkobyggnad i Örebro kommun</desc></wpt>
+  <wpt lat="59.290555555556" lon="15.193416666667"><name>Sankt Mikaels kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</desc></wpt>
+  <wpt lat="59.277245" lon="15.204901"><name>Immanuelskyrkan</name><desc>kyrkobyggnad i Örebro</desc></wpt>
+  <wpt lat="59.27351920879815" lon="15.21093437432829"><name>trefaldighetskyrkan</name><desc>Trefaldighetskyrkan, en kyrka i Örebro från 1909.</desc></wpt>
+  <wpt lat="59.2722" lon="15.2114"><name>Sankt Nikolai kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</desc></wpt>
+  <wpt lat="59.26975" lon="15.21192"><name>Betelkyrkan</name><desc>kyrka för Örebro första baptistförsamling som bildades 1854</desc></wpt>
+  <wpt lat="59.26842008050624" lon="15.213062670129059"><name>Borgen, Rudbecksskolan</name><desc>Borgen vid Rudbecksskolan i Örebro, uppförd 1901.</desc></wpt>
+  <wpt lat="59.27844274510941" lon="15.215447660432952"><name>Kloster</name><desc>Platsen för ett medeltida kloster vars grundmurar påträffades 1847.</desc></wpt>
+  <wpt lat="59.27992033229602" lon="15.218628555759599"><name>Kyrka/kapell</name><desc>Platsen för Längbro gamla kyrka, som brann ned i början av 1600-talet.</desc></wpt>
+  <wpt lat="59.28025" lon="15.21925"><name>Olaus Petri kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</desc></wpt>
+  <wpt lat="59.28077272533804" lon="15.219838259238282"><name>KYRKOGÅRDSKAPELL</name><desc>Ett kyrkogårdskapell i Örebro från 1898.</desc></wpt>
+  <wpt lat="59.27289482676223" lon="15.231477913740557"><name>BORGARHUSET I WADKÖPING (CAJSA WARGS HUS)</name><desc>Ett av Örebros äldsta trähus, förknippat med Cajsa Warg och nu i Wadköping.</desc></wpt>
+  <wpt lat="59.25747222" lon="15.24469444"><name>Almby kyrka</name><desc>kyrkobyggnad i närheten av Tybble centrum i Örebro</desc></wpt>
+  <wpt lat="59.2526" lon="15.24178333"><name>Brickebergskyrkan</name><desc>kyrkobyggnad i Örebro kommun</desc></wpt>
+  <wpt lat="59.23970556" lon="15.16604722"><name>Adolfsbergs kyrka</name><desc>kyrkobyggnad i Örebro kommun</desc></wpt>
+  <wpt lat="59.278694444444" lon="15.151388888889"><name>Längbro kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Örebro, Sverige</desc></wpt>
+  <wpt lat="59.31794167" lon="15.139825"><name>Ekers kyrka</name><desc>kyrkobyggnad i Örebro kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Örebro</name>
+    <rtept lat="59.32137778" lon="15.22685"><name>Hovsta kyrka</name></rtept>
+    <rtept lat="59.290555555556" lon="15.193416666667"><name>Sankt Mikaels kyrka</name></rtept>
+    <rtept lat="59.277245" lon="15.204901"><name>Immanuelskyrkan</name></rtept>
+    <rtept lat="59.27351920879815" lon="15.21093437432829"><name>trefaldighetskyrkan</name></rtept>
+    <rtept lat="59.2722" lon="15.2114"><name>Sankt Nikolai kyrka</name></rtept>
+    <rtept lat="59.26975" lon="15.21192"><name>Betelkyrkan</name></rtept>
+    <rtept lat="59.26842008050624" lon="15.213062670129059"><name>Borgen, Rudbecksskolan</name></rtept>
+    <rtept lat="59.27844274510941" lon="15.215447660432952"><name>Kloster</name></rtept>
+    <rtept lat="59.27992033229602" lon="15.218628555759599"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.28025" lon="15.21925"><name>Olaus Petri kyrka</name></rtept>
+    <rtept lat="59.28077272533804" lon="15.219838259238282"><name>KYRKOGÅRDSKAPELL</name></rtept>
+    <rtept lat="59.27289482676223" lon="15.231477913740557"><name>BORGARHUSET I WADKÖPING (CAJSA WARGS HUS)</name></rtept>
+    <rtept lat="59.25747222" lon="15.24469444"><name>Almby kyrka</name></rtept>
+    <rtept lat="59.2526" lon="15.24178333"><name>Brickebergskyrkan</name></rtept>
+    <rtept lat="59.23970556" lon="15.16604722"><name>Adolfsbergs kyrka</name></rtept>
+    <rtept lat="59.278694444444" lon="15.151388888889"><name>Längbro kyrka</name></rtept>
+    <rtept lat="59.31794167" lon="15.139825"><name>Ekers kyrka</name></rtept>
+  </rte>
+</gpx>

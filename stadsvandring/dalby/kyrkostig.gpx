@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Dalby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.72166667" lon="13.34111111"><name>Södra Sandby kyrka</name><desc>kyrkobyggnad i Lunds kommun</desc></wpt>
+  <wpt lat="55.695333333333" lon="13.337583333333"><name>Rögle kloster</name><desc>Rögle kloster, eller Sankt Dominikus kloster - dominikansystrarna i Rögle, är beläget mellan Södra Sandby och Dalby cirka tio kilometer öster om Lund.</desc></wpt>
+  <wpt lat="55.69777778" lon="13.29361111"><name>Hardeberga kyrka</name><desc>kyrkobyggnad i Lunds kommun</desc></wpt>
+  <wpt lat="55.66111111" lon="13.26027778"><name>Bjällerups kyrka</name><desc>kyrkobyggnad i Staffanstorps kommun</desc></wpt>
+  <wpt lat="55.64638889" lon="13.27083333"><name>Kyrkheddinge kyrka</name><desc>kyrkobyggnad i Staffanstorps kommun</desc></wpt>
+  <wpt lat="55.61888889" lon="13.32611111"><name>Esarps kyrka</name><desc>kyrkobyggnad i Staffanstorps kommun</desc></wpt>
+  <wpt lat="55.64" lon="13.35555556"><name>Bonderups kyrka</name><desc>kyrkobyggnad i Lunds kommun</desc></wpt>
+  <wpt lat="55.66395699835862" lon="13.345396525887908"><name>Kyrka/kapell</name><desc>Dalbys medeltida kyrkplats, där kungsgård, kloster och den gamla &quot;bondekyrkan&quot; en gång låg.</desc></wpt>
+  <wpt lat="55.664122945626325" lon="13.344543800663748"><name>Dalby kyrka</name><desc>Dalby kyrka eller Heligkorskyrkan byggdes under 1060-talet, att fungera som säte för biskop Egino från Hamburg-Bremen.</desc></wpt>
+  <wpt lat="55.66452915166635" lon="13.344847368267596"><name>Kloster</name><desc>Dalby bytomt med lämningar av kungsgård, kloster och kyrka under mark.</desc></wpt>
+  <wpt lat="55.6775" lon="13.42055556"><name>Hällestads kyrka</name><desc>kyrkobyggnad i Lunds kommun</desc></wpt>
+  <wpt lat="55.61455556" lon="13.4045"><name>Gödelövs kyrka</name><desc>kyrkobyggnad i Lunds kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Dalby</name>
+    <rtept lat="55.72166667" lon="13.34111111"><name>Södra Sandby kyrka</name></rtept>
+    <rtept lat="55.695333333333" lon="13.337583333333"><name>Rögle kloster</name></rtept>
+    <rtept lat="55.69777778" lon="13.29361111"><name>Hardeberga kyrka</name></rtept>
+    <rtept lat="55.66111111" lon="13.26027778"><name>Bjällerups kyrka</name></rtept>
+    <rtept lat="55.64638889" lon="13.27083333"><name>Kyrkheddinge kyrka</name></rtept>
+    <rtept lat="55.61888889" lon="13.32611111"><name>Esarps kyrka</name></rtept>
+    <rtept lat="55.64" lon="13.35555556"><name>Bonderups kyrka</name></rtept>
+    <rtept lat="55.66395699835862" lon="13.345396525887908"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="55.664122945626325" lon="13.344543800663748"><name>Dalby kyrka</name></rtept>
+    <rtept lat="55.66452915166635" lon="13.344847368267596"><name>Kloster</name></rtept>
+    <rtept lat="55.6775" lon="13.42055556"><name>Hällestads kyrka</name></rtept>
+    <rtept lat="55.61455556" lon="13.4045"><name>Gödelövs kyrka</name></rtept>
+  </rte>
+</gpx>

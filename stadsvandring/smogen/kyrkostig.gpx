@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Smögen</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.37164167" lon="11.29641944"><name>Hovenäsets kapell</name><desc>kyrkobyggnad i Sotenäs kommun</desc></wpt>
+  <wpt lat="58.35911" lon="11.25305"><name>Kungshamns kyrka</name><desc>kyrkobyggnad i Sotenäs kommun</desc></wpt>
+  <wpt lat="58.356024" lon="11.225316"><name>Smögens kyrka</name><desc>Nygotisk kyrka från 1904–1905 mitt på ön, ritad av Adrian C. Peterson och länge utsatt för havsklimatets slitage.</desc></wpt>
+  <wpt lat="58.3548349683614" lon="11.223947209799762"><name>smögens missionskyrka</name><desc>Smögens missionskyrka från 1906, om- och tillbyggd flera gånger under 1900-talet.</desc></wpt>
+  <wpt lat="58.335906" lon="11.217708"><name>Hållö kapell</name><desc>Litet kapell på Hållö, inrett 2007 i ett gammalt maskinhus invid fyren ute i havsbandet.</desc></wpt>
+  <wpt lat="58.34816667" lon="11.33638889"><name>Malmöns kyrka</name><desc>kyrkobyggnad i Sotenäs kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Smögen</name>
+    <rtept lat="58.37164167" lon="11.29641944"><name>Hovenäsets kapell</name></rtept>
+    <rtept lat="58.35911" lon="11.25305"><name>Kungshamns kyrka</name></rtept>
+    <rtept lat="58.356024" lon="11.225316"><name>Smögens kyrka</name></rtept>
+    <rtept lat="58.3548349683614" lon="11.223947209799762"><name>smögens missionskyrka</name></rtept>
+    <rtept lat="58.335906" lon="11.217708"><name>Hållö kapell</name></rtept>
+    <rtept lat="58.34816667" lon="11.33638889"><name>Malmöns kyrka</name></rtept>
+  </rte>
+</gpx>

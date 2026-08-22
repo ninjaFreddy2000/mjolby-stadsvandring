@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Sundsvall</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="62.39934239775529" lon="17.29680589580847"><name>Minnesmärke</name><desc>En samling minnesmärken med två milstolpar och Medelpads spelmansförbunds jubileumssten från 1981.</desc></wpt>
+  <wpt lat="62.39846287357289" lon="17.29414689150942"><name>Minnesmärke</name><desc>Två stenar rörande Svenska Turistföreningens Sundsvallskrets, stiftad 1893.</desc></wpt>
+  <wpt lat="62.39353544522887" lon="17.281846706001847"><name>Minnesmärke</name><desc>Ett minnesmärke i Sundsvall vars beskrivning inte är kvalitetssäkrad.</desc></wpt>
+  <wpt lat="62.393461111111" lon="17.281713888889"><name>Minnesmärket över Johan Henrik Fieandt</name><desc>Minnesmärket över Johan Henrik Fieandt</desc></wpt>
+  <wpt lat="62.38871" lon="17.29806"><name>All vår början</name><desc>skuptur i Sundsvall</desc></wpt>
+  <wpt lat="62.3907" lon="17.3044"><name>Vägval</name><desc>konstverk i Hedbergska parken i Sundsvall</desc></wpt>
+  <wpt lat="62.39079167" lon="17.30681944"><name>Gustav II Adolf</name><desc>staty i Sundsvall</desc></wpt>
+  <wpt lat="62.38986111" lon="17.30636111"><name>Dialog</name><desc>fontänskulptur i Stadshusparken, Sundsvall</desc></wpt>
+  <wpt lat="62.382378703334304" lon="17.35079672683326"><name>Minnesmärke</name><desc>En minnessten rest 1947 till minne av skarpskyttelägret 1879 och Sveriges första stora strejk.</desc></wpt>
+  <rte><name>Konstrundan i Sundsvall</name>
+    <rtept lat="62.39934239775529" lon="17.29680589580847"><name>Minnesmärke</name></rtept>
+    <rtept lat="62.39846287357289" lon="17.29414689150942"><name>Minnesmärke</name></rtept>
+    <rtept lat="62.39353544522887" lon="17.281846706001847"><name>Minnesmärke</name></rtept>
+    <rtept lat="62.393461111111" lon="17.281713888889"><name>Minnesmärket över Johan Henrik Fieandt</name></rtept>
+    <rtept lat="62.38871" lon="17.29806"><name>All vår början</name></rtept>
+    <rtept lat="62.3907" lon="17.3044"><name>Vägval</name></rtept>
+    <rtept lat="62.39079167" lon="17.30681944"><name>Gustav II Adolf</name></rtept>
+    <rtept lat="62.38986111" lon="17.30636111"><name>Dialog</name></rtept>
+    <rtept lat="62.382378703334304" lon="17.35079672683326"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

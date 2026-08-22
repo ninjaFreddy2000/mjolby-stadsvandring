@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Mariefred — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Mariefred till fots: 76 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 76 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/mariefred">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Mariefred — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Mariefred till fots: 76 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 76 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/mariefred">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Mariefred — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Mariefred till fots: 76 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 76 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"mariefred","sourceSlug":"stadsvandring/mariefred","centroid":{"lat":59.25923891919872,"lng":17.224889142300356},"stops":[{"name":"Gripsholms slott","lat":59.256111,"lng":17.219167},{"name":"Taxinge-Näsby slott","lat":59.24694444,"lng":17.30916667},{"name":"Grafikens Hus","lat":59.26,"lng":17.21361111}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Mariefred","description":"Upptäck Mariefred till fots: 76 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/mariefred","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Gripsholms slott","description":"slott i närheten av Mariefred, Strängnäs kommun","url":"https://stadsvandring.io/p/wd-mariefred-gripsholms-slott-q714783","geo":{"@type":"GeoCoordinates","latitude":59.256111,"longitude":17.219167}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Taxinge-Näsby slott","description":"gods och tidigare säteri i Nykvarns kommun","url":"https://stadsvandring.io/p/wd-mariefred-taxinge-nasby-slott-q1723008","geo":{"@type":"GeoCoordinates","latitude":59.24694444,"longitude":17.30916667}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Grafikens Hus","description":"Grafikens hus är ett svenskt centrum för grafik, som hade utställningshallar, professionella grafiska verkstäder och olika evenemang med koppling till grafisk…","url":"https://stadsvandring.io/p/wd-mariefred-grafikens-hus-q10507839","geo":{"@type":"GeoCoordinates","latitude":59.26,"longitude":17.21361111}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mariefreds kyrka","description":"kyrkobyggnad i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.2586,"longitude":17.2243}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Taxinge kyrka","description":"kyrkobyggnad i Nykvarns kommun","geo":{"@type":"GeoCoordinates","latitude":59.2428,"longitude":17.3055}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Ärja ödekyrka","description":"kyrka/kapell i Södermanland (Åker 136:1)","geo":{"@type":"GeoCoordinates","latitude":59.2739,"longitude":17.13181}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Mariefreds Båthamn","description":"en f.d. fyr i Mariefred","geo":{"@type":"GeoCoordinates","latitude":59.26,"longitude":17.23}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Loftboden","description":"Loftbod som flyttades till Callanderska gården 1961 och idag används som museibyggnad.","geo":{"@type":"GeoCoordinates","latitude":59.25766264677515,"longitude":17.22392334832464}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Annexet","description":"1740-talsbyggnad vid Callanderska gården, idag snickeri, vävstuga och hyreslägenhet.","url":"https://stadsvandring.io/p/ksamsok-annexet-mariefred-052174","geo":{"@type":"GeoCoordinates","latitude":59.257984048263424,"longitude":17.223907158010096}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"VÄNTSAL","description":"Välbevarad åttkantig väntsal från 1888 på Kölnholmen i tidstypisk snickarglädje.","url":"https://stadsvandring.io/p/ksamsok-vantsal-mariefred-585637","geo":{"@type":"GeoCoordinates","latitude":59.25724141774287,"longitude":17.22596653261911}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Färgargården","description":"Callanderska gårdens äldsta byggnad från 1740–80-talen, idag museum, kafé och bibliotek.","url":"https://stadsvandring.io/p/ksamsok-fargargarden-mariefred-052175","geo":{"@type":"GeoCoordinates","latitude":59.25797474576614,"longitude":17.223695592221894}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"RÅDHUSET, MARIEFRED","description":"Timrat rådhus från 1783–85 vid torget i Mariefred, med takryttare, urverk och dubbeltrappa.","url":"https://stadsvandring.io/p/ksamsok-radhuset-mariefred-mariefred-720298","geo":{"@type":"GeoCoordinates","latitude":59.25970310264254,"longitude":17.2229957664229}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Bodlängan","description":"Uthuslänga i trä från senast 1891, idag museibyggnad och förråd.","url":"https://stadsvandring.io/p/ksamsok-bodlangan-mariefred-052176","geo":{"@type":"GeoCoordinates","latitude":59.25770031080319,"longitude":17.223520922270367}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","description":"Välbevarad kyrkoruin av gnejs och granit med långhus, kor, absid och vapenhus.","geo":{"@type":"GeoCoordinates","latitude":59.26128074045766,"longitude":17.212748503692595}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Hägnad","description":"En registrerad hägnad utanför Mariefred utan närmare beskrivning.","geo":{"@type":"GeoCoordinates","latitude":59.25983223679794,"longitude":17.20437620000535}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Fartygs-/båtlämning","description":"Vraket efter lastfartyget Daisy, sänkt utanför Mariefred 1942.","geo":{"@type":"GeoCoordinates","latitude":59.246007649541305,"longitude":17.245927050717476}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Stensättning","description":"En stensättning registrerad utanför Mariefred, utan granskad beskrivning.","geo":{"@type":"GeoCoordinates","latitude":59.26727565514359,"longitude":17.217852885925844}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Terrassering","description":"En terrassering upptagen i registret utan närmare uppgifter.","geo":{"@type":"GeoCoordinates","latitude":59.26354606535979,"longitude":17.260646929341554}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Borg","description":"Gripsholm, där en medeltida borg gav plats åt Gustav Vasas tegelslott.","url":"https://stadsvandring.io/p/ksamsok-borg-mariefred-5d741b","geo":{"@type":"GeoCoordinates","latitude":59.256356380201815,"longitude":17.218595638431367}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Hög","description":"En hög registrerad vid Mariefred utan granskad beskrivning.","geo":{"@type":"GeoCoordinates","latitude":59.26352713098085,"longitude":17.258541080725852}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Gravfält","description":"Ett gravfält vid Mariefred som saknar närmare beskrivning.","geo":{"@type":"GeoCoordinates","latitude":59.260201910984,"longitude":17.20256451931733}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Fornlämningsliknande bildning","description":"Två stensamlingar som möjligen kan vara stensättningar.","geo":{"@type":"GeoCoordinates","latitude":59.2649980308722,"longitude":17.218018128160235}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Boplatslämning övrig","description":"Ett stolphål som spår efter förhistorisk bebyggelse.","geo":{"@type":"GeoCoordinates","latitude":59.26558326689987,"longitude":17.217055602921782}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Runristning","description":"En sentida runristning i fast häll strax norr om Mariefred 28:3.","geo":{"@type":"GeoCoordinates","latitude":59.26165770114013,"longitude":17.212264665894775}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Husgrund, historisk tid","description":"En husgrund från historisk tid utan granskad beskrivning.","geo":{"@type":"GeoCoordinates","latitude":59.262140899466026,"longitude":17.203535821215528}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Mariefred gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 76 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Mariefred?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 76 sevärdheter i Mariefred — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Gripsholms slott?","acceptedAnswer":{"@type":"Answer","text":"slott i närheten av Mariefred, Strängnäs kommun"}},{"@type":"Question","name":"Vad är Taxinge-Näsby slott?","acceptedAnswer":{"@type":"Answer","text":"gods och tidigare säteri i  Nykvarns kommun"}},{"@type":"Question","name":"Vad är Grafikens Hus?","acceptedAnswer":{"@type":"Answer","text":"Grafikens hus är ett svenskt centrum för grafik, som hade utställningshallar, professionella grafiska verkstäder och olika evenemang med koppling till grafisk konst i de tidigare e"}},{"@type":"Question","name":"Vad är Mariefreds kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Strängnäs kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Mariefred","item":"https://stadsvandring.io/stadsvandring/mariefred"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Mariefred</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Mariefred</span><span class="badge">76 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Mariefred — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Mariefred till fots: 76 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Mariefred"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-mariefred-gripsholms-slott-q714783"><b>1. Gripsholms slott</b><span>Slott · slott i närheten av Mariefred, Strängnäs kommun</span></a>
+<a class="tile" href="/p/wd-mariefred-taxinge-nasby-slott-q1723008"><b>2. Taxinge-Näsby slott</b><span>Slott · gods och tidigare säteri i Nykvarns kommun</span></a>
+<a class="tile" href="/p/wd-mariefred-grafikens-hus-q10507839"><b>3. Grafikens Hus</b><span>museum · Grafikens hus är ett svenskt centrum för grafik, som hade utställningshallar, p…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Mariefred · 76</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Mariefred. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 54</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-hagnad-mariefred-67e3b7"><b>Hägnad</b></a> — En registrerad hägnad utanför Mariefred utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-mariefred-c345f2"><b>Fartygs-/båtlämning</b></a> — Vraket efter lastfartyget Daisy, sänkt utanför Mariefred 1942.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-a45b79"><b>Stensättning</b></a> — En stensättning registrerad utanför Mariefred, utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-terrassering-mariefred-4983c4"><b>Terrassering</b></a> — En terrassering upptagen i registret utan närmare uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-hog-mariefred-281627"><b>Hög</b></a> — En hög registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-d4f4d9"><b>Gravfält</b></a> — Ett gravfält vid Mariefred som saknar närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-mariefred-e00d45"><b>Fornlämningsliknande bildning</b></a> — Två stensamlingar som möjligen kan vara stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-mariefred-1923d0"><b>Boplatslämning övrig</b></a> — Ett stolphål som spår efter förhistorisk bebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-386169"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-hard-mariefred-85579b"><b>Härd</b></a> — En härd från folkvandringstid, undersökt 2015.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-15fce3"><b>Gravfält</b></a> — Ett gravfält med ett femtiotal gravar av skilda former.</li>
+<li><a href="/karta?plats=ksamsok-finnsta-gamla-tomt-bytomt-gardstomt-mariefred-f36663"><b>Finnsta gamla tomt, Bytomt/gårdstomt</b></a> — Finnsta gamla tomt, en bytomt utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-3ed022"><b>Stensättning</b></a> — En stensättning vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-522664"><b>Gravfält</b></a> — Ett gravfält vid Mariefred som saknar granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-1335be"><b>Husgrund, historisk tid</b></a> — En kallmurad jordkällare där en hemvärnsgård en gång låg.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-mariefred-46c0a0"><b>Fartygs-/båtlämning</b></a> — Ett klinkbyggt lastskepp från 1780-talet vid Stora Härnön.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-mariefred-3fe02d"><b>Fartygs-/båtlämning</b></a> — Ett äldre båtvrak funnet 1989 vid arbeten runt slottet.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-mariefred-0d3ea9"><b>Skärvstenshög</b></a> — En skärvstenshög registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-mariefred-b47cd7"><b>Fartygs-/båtlämning</b></a> — Ett vrak som troligen ligger dolt under muddermassor vid en småbåtshamn.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-75f163"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-634d7b"><b>Gravfält</b></a> — Ett gravfält vid Mariefred som saknar närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-mariefred-43315d"><b>Källa med tradition</b></a> — Lagårdskällan, utmärkt på en karta från 1749.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-mariefred-0dd113"><b>Övrigt</b></a> — En övrig lämning vid Mariefred utan närmare uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-d680cb"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-mariefred-97b328"><b>Hamnanläggning</b></a> — Rester av en strandskoning påträffad vid schaktning 2010.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-mariefred-5f2bea"><b>Fornlämningsliknande lämning</b></a> — En fornlämningsliknande lämning utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-mariefred-64de24"><b>Fornlämningsliknande lämning</b></a> — Ännu en fornlämningsliknande lämning utan närmare uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-a03c87"><b>Stensättning</b></a> — En liten stensättning med en flat mittsten, funnen 2015.</li>
+<li><a href="/karta?plats=ksamsok-hog-mariefred-d8c560"><b>Hög</b></a> — En hög registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-3ce8f7"><b>Husgrund, historisk tid</b></a> — En husgrund med fynd, kopplad till byggnader på en karta från 1749.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-809010"><b>Stensättning</b></a> — En stensättning och en kabelskadad skärvstenshög intill varandra.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-d66231"><b>Gravfält</b></a> — Ett gravfält vid Mariefred som saknar granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-mariefred-68b82c"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning utan närmare uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-kajsa-rultas-kalla-kalla-med-tradition-mariefred-ca4d48"><b>Kajsa Rultas källa, Källa med tradition</b></a> — Kajsa Rultas källa, en källa med tradition utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-mariefred-887358"><b>Fartygs-/båtlämning</b></a> — Vraket efter en gammal seglare som plundrats på plank.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-658029"><b>Gravfält</b></a> — Ett litet gravfält med fem runda stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-mariefred-6f65b2"><b>Övrigt</b></a> — Platsen för två numera försvunna förbudsskyltar mot velocipedåkning.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mariefred-a40e39"><b>Fossil åker</b></a> — En fossil åker med röjningsrösen, undersökt 2015.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-dd7194"><b>Stensättning</b></a> — En rund, väl sammanhållen stensättning granskad 2015.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariefred-a05a64"><b>Husgrund, historisk tid</b></a> — Rester av en tegelläggning kopplad till Gripsholms slottsbyggnader.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-d0c5c8"><b>Gravfält</b></a> — Ett gravfält med ett trettiotal högar och stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-mariefred-6003b3"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning utan närmare uppgifter.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-mariefred-ddf95b"><b>Vägmärke</b></a> — En milstolpe av gjutjärn från 1858 på ett stenpostament.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-mariefred-8cd1dd"><b>Färdväg</b></a> — En färdväg registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-8f2cfd"><b>Stensättning</b></a> — En möjlig stensättning strax norr om Mariefred 28:2.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-mariefred-207cd2"><b>Stadslager</b></a> — Kulturlagret efter Mariefreds medeltida stadskärna.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-mariefred-d15dc9"><b>Lägenhetsbebyggelse</b></a> — Bebyggelselämningar med husgrunder och en källargrop.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mariefred-1f9aab"><b>Fossil åker</b></a> — En fossil åker registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-hard-mariefred-be2be5"><b>Härd</b></a> — En härd från vikingatid, undersökt 2015.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariefred-f40287"><b>Stensättning</b></a> — En stensättning vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-mariefred-ae35e6"><b>Gränsmärke</b></a> — Ett gränsmärke som markerat en numera borttagen ägogräns.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-mariefred-696b79"><b>Källa med tradition</b></a> — En källa med tradition utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-mariefred-a73811"><b>Begravningsplats</b></a> — En övergiven kyrkogård med delvis bevarad omgärdande mur.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-mariefred-01a900"><b>Gravfält</b></a> — Ett gravfält med en hög och flera stensättningar från förhistorisk tid.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-loftboden-mariefred-052177"><b>Loftboden</b></a> — Loftbod som flyttades till Callanderska gården 1961 och idag används som museibyggnad.</li>
+<li><a href="/p/ksamsok-annexet-mariefred-052174"><b>Annexet</b></a> — 1740-talsbyggnad vid Callanderska gården, idag snickeri, vävstuga och hyreslägenhet. <span class="era">1740–1749</span></li>
+<li><a href="/p/ksamsok-vantsal-mariefred-585637"><b>VÄNTSAL</b></a> — Välbevarad åttkantig väntsal från 1888 på Kölnholmen i tidstypisk snickarglädje. <span class="era">1888–1888</span></li>
+<li><a href="/p/ksamsok-fargargarden-mariefred-052175"><b>Färgargården</b></a> — Callanderska gårdens äldsta byggnad från 1740–80-talen, idag museum, kafé och bibliotek. <span class="era">1740–1790</span></li>
+<li><a href="/p/ksamsok-radhuset-mariefred-mariefred-720298"><b>RÅDHUSET, MARIEFRED</b></a> — Timrat rådhus från 1783–85 vid torget i Mariefred, med takryttare, urverk och dubbeltrappa. <span class="era">1783–1785</span></li>
+<li><a href="/p/ksamsok-bodlangan-mariefred-052176"><b>Bodlängan</b></a> — Uthuslänga i trä från senast 1891, idag museibyggnad och förråd. <span class="era">1891</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariefred-mariefreds-kyrka-q10577316"><b>Mariefreds kyrka</b></a> — kyrkobyggnad i Strängnäs kommun</li>
+<li><a href="/karta?plats=wd-mariefred-taxinge-kyrka-q10691570"><b>Taxinge kyrka</b></a> — kyrkobyggnad i Nykvarns kommun</li>
+<li><a href="/karta?plats=wd-mariefred-arja-odekyrka-q10726039"><b>Ärja ödekyrka</b></a> — kyrka/kapell i Södermanland (Åker 136:1)</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-mariefred-6896b4"><b>Kyrka/kapell</b></a> — Välbevarad kyrkoruin av gnejs och granit med långhus, kor, absid och vapenhus.</li>
+</ul>
+<h3 class="city-h3">Runsten · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-mariefred-208fbc"><b>Runristning</b></a> — En sentida runristning i fast häll strax norr om Mariefred 28:3.</li>
+<li><a href="/karta?plats=ksamsok-runristning-mariefred-b18f98"><b>Runristning</b></a> — En runristning registrerad vid Mariefred utan granskad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-runristning-mariefred-bb7463"><b>Runristning</b></a> — Runstenen Sö 178, rest efter en broder och en mor.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-mariefred-bd2de6"><b>Minnesmärke</b></a> — Ett gjutjärnskors format som ordensemblem, uppsatt på en ek.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-mariefred-66115b"><b>Minnesmärke</b></a> — En minnessten från 1905 över Sten Sture och klostret Mariefred.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-mariefred-5726f1"><b>Minnesmärke</b></a> — Ett minnesmärke vid Mariefred utan granskad beskrivning.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-mariefred-gripsholms-slott-q714783"><b>Gripsholms slott</b></a> — slott i närheten av Mariefred, Strängnäs kommun</li>
+<li><a href="/p/wd-mariefred-taxinge-nasby-slott-q1723008"><b>Taxinge-Näsby slott</b></a> — gods och tidigare säteri i Nykvarns kommun</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-mariefred-grafikens-hus-q10507839"><b>Grafikens Hus</b></a> — Grafikens hus är ett svenskt centrum för grafik, som hade utställningshallar, professionella grafiska verkstäder och olika evenemang med ko…</li>
+</ul>
+<h3 class="city-h3">Torn · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariefred-mariefreds-bathamn-q110401310"><b>Mariefreds Båthamn</b></a> — en f.d. fyr i Mariefred</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-borg-mariefred-5d741b"><b>Borg</b></a> — Gripsholm, där en medeltida borg gav plats åt Gustav Vasas tegelslott.</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-kloster-mariefred-a86e5a"><b>Kloster</b></a> — Murrester efter Mariefreds medeltida kloster nära kyrkan.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 76 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/mariefred/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/mariefred/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Mariefred gratis?</summary><p>Ja. Karta, alla 76 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Mariefred?</summary><p>Vandringen samlar 76 sevärdheter i Mariefred — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Gripsholms slott?</summary><p>slott i närheten av Mariefred, Strängnäs kommun</p></details>
+<details class="faq"><summary>Vad är Taxinge-Näsby slott?</summary><p>gods och tidigare säteri i  Nykvarns kommun</p></details>
+<details class="faq"><summary>Vad är Grafikens Hus?</summary><p>Grafikens hus är ett svenskt centrum för grafik, som hade utställningshallar, professionella grafiska verkstäder och olika evenemang med koppling till grafisk konst i de tidigare e</p></details>
+<details class="faq"><summary>Vad är Mariefreds kyrka?</summary><p>kyrkobyggnad i Strängnäs kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

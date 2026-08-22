@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Mullsjö — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="I Mullsjö finns det plats för det som är viktigt. Karta, 43 stopp och nedladdningsbar PDF-guide — gratis.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/mullsjo">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Mullsjö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="I Mullsjö finns det plats för det som är viktigt. Karta, 43 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/mullsjo">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Mullsjö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="I Mullsjö finns det plats för det som är viktigt. Karta, 43 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"mullsjo","sourceSlug":"stadsvandring/mullsjo","centroid":{"lat":57.91681,"lng":13.88047},"stops":[{"name":"Margreteholm","lat":57.9304,"lng":13.8253},{"name":"Nykyrka kyrka","lat":57.91869,"lng":13.85749},{"name":"Furusjö allianskyrka","lat":57.9287,"lng":13.9603}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Mullsjö","description":"I Mullsjö finns det plats för det som är viktigt.","url":"https://stadsvandring.io/stadsvandring/mullsjo","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Margreteholm","description":"gods i Sandhems socken","geo":{"@type":"GeoCoordinates","latitude":57.9304,"longitude":13.8253}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Nykyrka kyrka","description":"kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.91869,"longitude":13.85749}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Furusjö allianskyrka","description":"kyrkobyggnad i Furusjö, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.9287,"longitude":13.9603}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mullsjö pingstkyrka","description":"pingstkyrka i Mullsjö, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.91525,"longitude":13.87667}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Bårhus","description":"Ett bårhus i Mullsjö uppfört 1948.","geo":{"@type":"GeoCoordinates","latitude":57.91827088076966,"longitude":13.858339186115934}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Stensättning","description":"Osäker plats för en stensättning, troligen bortröjd vid husbygge.","geo":{"@type":"GeoCoordinates","latitude":57.90607309918382,"longitude":13.8992025092702}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Röjningsröse","description":"Ett sentida röjningsröse, möjligen rest av en kolarkoja.","geo":{"@type":"GeoCoordinates","latitude":57.93201886453168,"longitude":13.86066963597177}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kolningsanläggning","description":"En rund kolbotten omgiven av en ränna.","geo":{"@type":"GeoCoordinates","latitude":57.91414704246463,"longitude":13.853539905752584}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Röjningsröse","description":"Ett runt och toppigt röjningsröse av sten.","geo":{"@type":"GeoCoordinates","latitude":57.93261200233552,"longitude":13.855634993313627}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Kemisk industri","description":"Ett område med sex tjärrännor för tjärframställning.","geo":{"@type":"GeoCoordinates","latitude":57.92312219826955,"longitude":13.853330133518103}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Qvists håla, Lägenhetsbebyggelse","description":"Jordkulan där sidenvävaren Magnus Qvist bodde på 1800-talet.","url":"https://stadsvandring.io/p/ksamsok-qvists-hala-lagenhetsbebyggelse-mullsjo-5742df","geo":{"@type":"GeoCoordinates","latitude":57.91215351571175,"longitude":13.867175030702281}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Kolningsanläggning","description":"En oval kolningsgrop omgiven av en vall.","geo":{"@type":"GeoCoordinates","latitude":57.90986173296106,"longitude":13.854478403499717}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Åbo, Lägenhetsbebyggelse","description":"Rester efter ett sentida torp med husgrund och spismursrest.","geo":{"@type":"GeoCoordinates","latitude":57.91693334825749,"longitude":13.857693722085713}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Kemisk industri","description":"En 21 meter lång tjärränna med tillhörande grop.","geo":{"@type":"GeoCoordinates","latitude":57.91109787722645,"longitude":13.850687796606454}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Stensättning","description":"En övertorvad oval stensättning med kantkedja och ett påbyggt röjningsröse.","geo":{"@type":"GeoCoordinates","latitude":57.931185654391456,"longitude":13.853838508835505}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Område med skogsbrukslämningar","description":"Skogsbrukslämningar med tre kolbottnar och en kolarkojgrund.","geo":{"@type":"GeoCoordinates","latitude":57.913330322117474,"longitude":13.855836186463172}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Lägenhetsbebyggelse","description":"Platsen för Bredareds torp, utan synliga lämningar.","geo":{"@type":"GeoCoordinates","latitude":57.919030532014936,"longitude":13.855189220327333}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Område med skogsbrukslämningar","description":"Två kolbottnar med rännor och stybbgropar.","geo":{"@type":"GeoCoordinates","latitude":57.912762904716494,"longitude":13.863775956191251}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Område med skogsbrukslämningar","description":"Två runda kolbottnar med rännor och stybbgropar.","geo":{"@type":"GeoCoordinates","latitude":57.90593661065323,"longitude":13.856921121887202}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Röjningsröse","description":"Ett sentida röjningsröse påträffat vid utredning 2012.","geo":{"@type":"GeoCoordinates","latitude":57.92945309182671,"longitude":13.857984807926137}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Kolningsanläggning","description":"En rund kolbotten med en ränna och fem stybbgropar.","geo":{"@type":"GeoCoordinates","latitude":57.91234885157762,"longitude":13.865046483189827}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Stenkrets/stenrad","description":"En domarring med sju stenar och en möjlig gravförhöjning.","geo":{"@type":"GeoCoordinates","latitude":57.916050666823764,"longitude":13.88252778361725}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Vägmärke","description":"En möjlig väghållningssten med otydbara textrester.","geo":{"@type":"GeoCoordinates","latitude":57.91788820611866,"longitude":13.860342302569633}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Område med skogsbrukslämningar","description":"Tre kolbottnar och en närliggande kolningsgrop.","geo":{"@type":"GeoCoordinates","latitude":57.91387014845226,"longitude":13.852128169201887}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Område med skogsbrukslämningar","description":"Fyra kolbottnar och en kolarkojgrund samlade i ett område.","geo":{"@type":"GeoCoordinates","latitude":57.92153775366059,"longitude":13.850168276860966}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Mullsjö känt för?","acceptedAnswer":{"@type":"Answer","text":"I Mullsjö finns det plats för det som är viktigt."}},{"@type":"Question","name":"Är stadsvandringen i Mullsjö gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 43 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Mullsjö?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 43 sevärdheter i Mullsjö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Margreteholm?","acceptedAnswer":{"@type":"Answer","text":"gods i Sandhems socken"}},{"@type":"Question","name":"Vad är Nykyrka kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige"}},{"@type":"Question","name":"Vad är Furusjö allianskyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Furusjö, Sverige"}},{"@type":"Question","name":"Vad är Mullsjö pingstkyrka?","acceptedAnswer":{"@type":"Answer","text":"pingstkyrka i Mullsjö, Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Mullsjö","item":"https://stadsvandring.io/stadsvandring/mullsjo"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Mullsjö</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Mullsjö</span><span class="badge">43 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Mullsjö — gratis karta &amp; guide</h1>
+<p class="lead">I Mullsjö finns det plats för det som är viktigt.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Mullsjö"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-mullsjo-margreteholm-q10577158"><b>1. Margreteholm</b><span>Byggnad · gods i Sandhems socken</span></a>
+<a class="tile" href="/p/wd-mullsjo-nykyrka-kyrka-q10604736"><b>2. Nykyrka kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige</span></a>
+<a class="tile" href="/p/wd-mullsjo-furusjo-allianskyrka-q17518676"><b>3. Furusjö allianskyrka</b><span>Kyrka · kyrkobyggnad i Furusjö, Sverige</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Mullsjö · 43</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Mullsjö. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 38</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stensattning-mullsjo-ef53b6"><b>Stensättning</b></a> — Osäker plats för en stensättning, troligen bortröjd vid husbygge.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mullsjo-21d6b4"><b>Röjningsröse</b></a> — Ett sentida röjningsröse, möjligen rest av en kolarkoja.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-a623c6"><b>Kolningsanläggning</b></a> — En rund kolbotten omgiven av en ränna.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mullsjo-6e59e3"><b>Röjningsröse</b></a> — Ett runt och toppigt röjningsröse av sten.</li>
+<li><a href="/karta?plats=ksamsok-kemisk-industri-mullsjo-b7fad4"><b>Kemisk industri</b></a> — Ett område med sex tjärrännor för tjärframställning.</li>
+<li><a href="/p/ksamsok-qvists-hala-lagenhetsbebyggelse-mullsjo-5742df"><b>Qvists håla, Lägenhetsbebyggelse</b></a> — Jordkulan där sidenvävaren Magnus Qvist bodde på 1800-talet.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-22ba19"><b>Kolningsanläggning</b></a> — En oval kolningsgrop omgiven av en vall.</li>
+<li><a href="/karta?plats=ksamsok-abo-lagenhetsbebyggelse-mullsjo-70179d"><b>Åbo, Lägenhetsbebyggelse</b></a> — Rester efter ett sentida torp med husgrund och spismursrest.</li>
+<li><a href="/karta?plats=ksamsok-kemisk-industri-mullsjo-7c5995"><b>Kemisk industri</b></a> — En 21 meter lång tjärränna med tillhörande grop.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mullsjo-d9e5f3"><b>Stensättning</b></a> — En övertorvad oval stensättning med kantkedja och ett påbyggt röjningsröse.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-178734"><b>Område med skogsbrukslämningar</b></a> — Skogsbrukslämningar med tre kolbottnar och en kolarkojgrund.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-mullsjo-d848db"><b>Lägenhetsbebyggelse</b></a> — Platsen för Bredareds torp, utan synliga lämningar.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-0ee9c5"><b>Område med skogsbrukslämningar</b></a> — Två kolbottnar med rännor och stybbgropar.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-3d3007"><b>Område med skogsbrukslämningar</b></a> — Två runda kolbottnar med rännor och stybbgropar.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mullsjo-fcd7ca"><b>Röjningsröse</b></a> — Ett sentida röjningsröse påträffat vid utredning 2012.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-88a4ad"><b>Kolningsanläggning</b></a> — En rund kolbotten med en ränna och fem stybbgropar.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-mullsjo-ade631"><b>Stenkrets/stenrad</b></a> — En domarring med sju stenar och en möjlig gravförhöjning.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-mullsjo-53422c"><b>Vägmärke</b></a> — En möjlig väghållningssten med otydbara textrester.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-b37bab"><b>Område med skogsbrukslämningar</b></a> — Tre kolbottnar och en närliggande kolningsgrop.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-d64aec"><b>Område med skogsbrukslämningar</b></a> — Fyra kolbottnar och en kolarkojgrund samlade i ett område.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-mullsjo-5ee352"><b>Stenkrets/stenrad</b></a> — Resterna av en domarring med en enda kvarliggande sten.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-mullsjo-11b5f7"><b>Kvarn</b></a> — Lämningar efter en kvarn vid Knipsjöns tidigare utlopp.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-d495aa"><b>Kolningsanläggning</b></a> — En rund kolningsgrop med vall och sparsamt med kol.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-mullsjo-dc1e04"><b>Fornlämningsliknande bildning</b></a> — En ristad klumpsten som sannolikt är en naturbildning.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-mullsjo-55d271"><b>Lägenhetsbebyggelse</b></a> — Platsen för torpet Bäckebostugan, utan synliga lämningar.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-104860"><b>Kolningsanläggning</b></a> — En oval kolningsgrop med kol påträffat vid provstick.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-mullsjo-42cac8"><b>Vägmärke</b></a> — En milstolpe av granit från 1707 med krona och namnchiffer.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mullsjo-12d1ea"><b>Röjningsröse</b></a> — Ett sentida röjningsröse påträffat vid utredning 2012.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-mullsjo-5dd38f"><b>Källa med tradition</b></a> — En offerkälla i en bergsskreva med gammal tradition.</li>
+<li><a href="/karta?plats=ksamsok-fangstgrop-mullsjo-08bba3"><b>Fångstgrop</b></a> — En rund fångstgrop omgiven av en vall.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-mullsjo-3663e2"><b>Kvarn</b></a> — Kvarnlämning med gjuten fördämning, kanaler och en byggnadsgrund.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-mullsjo-815c62"><b>Färdväg</b></a> — En 21 meter lång hålväg.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-mullsjo-2df520"><b>Vägmärke</b></a> — En väghållningssten av granit med inskriptionen Bosebygd.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-2f3b6f"><b>Kolningsanläggning</b></a> — En kolbotten med antydan till stybbgropar.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-mullsjo-38caef"><b>Kolningsanläggning</b></a> — En rund kolbotten med flera liknande strukturer i höjddata.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-mullsjo-fe198a"><b>Område med skogsbrukslämningar</b></a> — En kolbotten och en kolarkojgrund i ett skogsbruksområde.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mullsjo-5c55e1"><b>Röjningsröse</b></a> — Ett runt röjningsröse av sten.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mullsjo-c1214b"><b>Fossil åker</b></a> — Ett fossilt åkerområde med cirka 115 röjningsrösen.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mullsjo-nykyrka-kyrka-q10604736"><b>Nykyrka kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige</li>
+<li><a href="/karta?plats=wd-mullsjo-furusjo-allianskyrka-q17518676"><b>Furusjö allianskyrka</b></a> — kyrkobyggnad i Furusjö, Sverige</li>
+<li><a href="/karta?plats=wd-mullsjo-mullsjo-pingstkyrka-q18880230"><b>Mullsjö pingstkyrka</b></a> — pingstkyrka i Mullsjö, Sverige</li>
+</ul>
+<h3 class="city-h3">Byggnad · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mullsjo-margreteholm-q10577158"><b>Margreteholm</b></a> — gods i Sandhems socken</li>
+<li><a href="/karta?plats=ksamsok-barhus-mullsjo-041732"><b>Bårhus</b></a> — Ett bårhus i Mullsjö uppfört 1948. <span class="era">1948–1948</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 43 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/mullsjo/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/mullsjo/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Vad är Mullsjö känt för?</summary><p>I Mullsjö finns det plats för det som är viktigt.</p></details>
+<details class="faq"><summary>Är stadsvandringen i Mullsjö gratis?</summary><p>Ja. Karta, alla 43 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Mullsjö?</summary><p>Vandringen samlar 43 sevärdheter i Mullsjö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Margreteholm?</summary><p>gods i Sandhems socken</p></details>
+<details class="faq"><summary>Vad är Nykyrka kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige</p></details>
+<details class="faq"><summary>Vad är Furusjö allianskyrka?</summary><p>kyrkobyggnad i Furusjö, Sverige</p></details>
+<details class="faq"><summary>Vad är Mullsjö pingstkyrka?</summary><p>pingstkyrka i Mullsjö, Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

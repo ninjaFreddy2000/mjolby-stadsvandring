@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Åtvidaberg — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Åtvidaberg till fots: 97 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 97 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/atvidaberg">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Åtvidaberg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Åtvidaberg till fots: 97 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 97 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/atvidaberg">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Åtvidaberg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Åtvidaberg till fots: 97 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 97 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"atvidaberg","sourceSlug":"stadsvandring/atvidaberg","centroid":{"lat":58.19801373029496,"lng":16.003779543636377},"stops":[{"name":"Bruksdammen vid Stallet","lat":58.19583639327657,"lng":16.00203413664978},{"name":"Stora Kyrkan","lat":58.19733092797128,"lng":15.996560143704457},{"name":"Smedjan","lat":58.19943586327429,"lng":16.00348746638999}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Åtvidaberg","description":"Upptäck Åtvidaberg till fots: 97 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/atvidaberg","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Bruksdammen vid Stallet","description":"Tre dammar gav kraft åt vattenhjulen vid smälthyttorna i åtvidaberg.","geo":{"@type":"GeoCoordinates","latitude":58.19583639327657,"longitude":16.00203413664978}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Stora Kyrkan","description":"åtvidabergs Stora kyrka stod klar 1885 och byggdes under brukets nedgångsperiod.","geo":{"@type":"GeoCoordinates","latitude":58.19733092797128,"longitude":15.996560143704457}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Smedjan","description":"Vid åtvids ström som rann genom brukssamhället anlades olika verksamheter.","geo":{"@type":"GeoCoordinates","latitude":58.19943586327429,"longitude":16.00348746638999}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Bryggeriet","description":"I mitten av 1800-talet anlade åtvidaberg Kopparverk ett bryggeri och brännvinsbränneri i det vi idag kallar Gropen.","geo":{"@type":"GeoCoordinates","latitude":58.19938317697657,"longitude":16.00135969181494}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Åtvidabergs Hushållsförening","description":"åtvidaberg Hushållsförening hade drivit verksamhet vid torget sedan 1869.","geo":{"@type":"GeoCoordinates","latitude":58.199310834785415,"longitude":16.004234027227767}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Verksgatan","description":"Ett av åtvidabergs äldsta bostadsområden.","geo":{"@type":"GeoCoordinates","latitude":58.198431635147614,"longitude":16.005804523314502}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Demonstration","description":"I början av 1900 fick arbetarrörelsen fäste i åtvidaberg.","geo":{"@type":"GeoCoordinates","latitude":58.19929966877268,"longitude":16.000449629378313}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Stallet","description":"Dragdjur var viktiga för kopparframställningen.1857 byggde åtvidabergs Kopparverk det pampiga Stallet med plats för 80 hästar.","geo":{"@type":"GeoCoordinates","latitude":58.19718185310132,"longitude":16.002373289302238}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Bruksdammen vid Torget","description":"Vid torget fanns en damm som försåg Kopparverkets blåsmaskiner med kraft.","geo":{"@type":"GeoCoordinates","latitude":58.198407820243126,"longitude":16.003222143591003}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Gamla Gymnastiken","description":"Vid vattenfallet från Bysjön har det länge funnits verksamhet.","geo":{"@type":"GeoCoordinates","latitude":58.19366793064291,"longitude":15.9952580344799}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Prästbackarna","description":"I slutet av 1800-talet byggdes ett flertal egnahemskvarter i åtvidaberg.","geo":{"@type":"GeoCoordinates","latitude":58.19933327816074,"longitude":15.9966882282248}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Simons Hörna","description":"I slutet av 1800-talet startade bagare Gustaf österberg ett bageri i huset.","geo":{"@type":"GeoCoordinates","latitude":58.19910296311277,"longitude":16.00114539259871}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Barberstugan","description":"Som en del i brukspatron Adelswärds id om ett industrimönstersamhälle byggdes i centrum en del affärslokaler.","geo":{"@type":"GeoCoordinates","latitude":58.199989308570245,"longitude":16.000704391206146}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Kasern","description":"Huset byggdes i början av 1800-talet för klädestillverkning och maskinerna drevs med vattenkraft från åtvids ström.","geo":{"@type":"GeoCoordinates","latitude":58.19531932837135,"longitude":15.99865640623063}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Gamla Kyrkan","description":"åtvidabergs Gamla kyrka härstammar från slutet av 1400-talet.","geo":{"@type":"GeoCoordinates","latitude":58.19694785228677,"longitude":15.994655774541654}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Klockareängen","description":"Klockareängen har varit en samlingsplats för åtvidabergarna och i Musikpaviljongen har det spelats musik.","geo":{"@type":"GeoCoordinates","latitude":58.19623962030404,"longitude":15.994968271449562}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Bokhandeln","description":"Den lummiga Järnvägsgatan med bokhandeln i förgrunden på 1930-talet.","geo":{"@type":"GeoCoordinates","latitude":58.20071644411574,"longitude":16.00073335976206}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Kulturhuset","description":"Huset har en spännande historia.","geo":{"@type":"GeoCoordinates","latitude":58.19868938221123,"longitude":16.00124061546502}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Mejeriet","description":"Mejeriverksamheten var en del i de nya industrierna som växte fram efter att koppartillverkningen avslutats.","geo":{"@type":"GeoCoordinates","latitude":58.199543452003,"longitude":16.002401650962753}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Konsum 1","description":"Vid Stora Torget byggde åtvidabergs Hushållsförening ett modernt Konsumvaruhus 1935.","geo":{"@type":"GeoCoordinates","latitude":58.20141294389978,"longitude":15.99938404271061}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Konsum 2","description":"Det nyuppförda Konsumvaruhuset 1940.","geo":{"@type":"GeoCoordinates","latitude":58.20116731043207,"longitude":15.998515094092951}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Getingen","description":"Som en del i skapandet av ett nytt handelscentrum byggdes det här affärs- och bostadshuset åt handlare Engström 1904.","geo":{"@type":"GeoCoordinates","latitude":58.2008129315035,"longitude":15.997386396843325}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Järnvägsbron","description":"Gångbron över järnvägen uppfördes i början av 1950-talet.","geo":{"@type":"GeoCoordinates","latitude":58.20401309115771,"longitude":16.002288236826082}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Höjdvägen","description":"På 1950-talet var behovet av bostäder stort och Långbrottsområdet började bebyggas.","geo":{"@type":"GeoCoordinates","latitude":58.204451455568666,"longitude":16.00848967852724}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Färglådan","description":"Smällgatan 7 består av tre hus hopbyggda till en länga.","geo":{"@type":"GeoCoordinates","latitude":58.20334616921614,"longitude":16.009333441098253}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Åtvidaberg gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 97 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Åtvidaberg?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 97 sevärdheter i Åtvidaberg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Bruksdammen vid Stallet?","acceptedAnswer":{"@type":"Answer","text":"Tre dammar gav kraft åt vattenhjulen vid smälthyttorna i åtvidaberg."}},{"@type":"Question","name":"Vad är Stora Kyrkan?","acceptedAnswer":{"@type":"Answer","text":"åtvidabergs Stora kyrka stod klar 1885 och byggdes under brukets nedgångsperiod."}},{"@type":"Question","name":"Vad är Smedjan?","acceptedAnswer":{"@type":"Answer","text":"Vid åtvids ström som rann genom brukssamhället anlades olika verksamheter."}},{"@type":"Question","name":"Vad är Bryggeriet?","acceptedAnswer":{"@type":"Answer","text":"I mitten av 1800-talet anlade åtvidaberg Kopparverk ett bryggeri och brännvinsbränneri i det vi idag kallar Gropen."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Åtvidaberg","item":"https://stadsvandring.io/stadsvandring/atvidaberg"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Åtvidaberg</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Åtvidaberg</span><span class="badge">97 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Åtvidaberg — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Åtvidaberg till fots: 97 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Åtvidaberg"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-atvidaberg-bruksdammen-vid-stallet-511"><b>1. Bruksdammen vid Stallet</b><span>Sevärdhet · Tre dammar gav kraft åt vattenhjulen vid smälthyttorna i åtvidaberg.</span></a>
+<a class="tile" href="/p/bht-atvidaberg-stora-kyrkan-507"><b>2. Stora Kyrkan</b><span>Sevärdhet · åtvidabergs Stora kyrka stod klar 1885 och byggdes under brukets nedgångsperiod.</span></a>
+<a class="tile" href="/p/bht-atvidaberg-smedjan-531"><b>3. Smedjan</b><span>Sevärdhet · Vid åtvids ström som rann genom brukssamhället anlades olika verksamheter.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Åtvidaberg · 97</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Åtvidaberg. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 53</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-atvidaberg-33b337"><b>Fornlämningsliknande bildning</b></a> — Två osäkra stensättningar som kan vara naturbildningar.</li>
+<li><a href="/karta?plats=ksamsok-garpgruvan-gruvomrade-atvidaberg-580e43"><b>Garpgruvan, Gruvområde</b></a> — Ett gruvområde som bröts av hertig Johan i början av 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-forvaringsanlaggning-atvidaberg-72de26"><b>Förvaringsanläggning</b></a> — En oval förvaringsgrop omgiven av en låg vall.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-atvidaberg-335bc0"><b>Område med skogsbrukslämningar</b></a> — Ett område med två tjärdalar från skogsbruket.</li>
+<li><a href="/karta?plats=ksamsok-orstorps-gamla-tomt-bytomt-gardstomt-atvidaberg-ae5fb7"><b>Örstorps gamla tomt, Bytomt/gårdstomt</b></a> — Örstorps gamla bytomt med husgrunder, uthus och jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-gruvomrade-atvidaberg-b5868c"><b>Gruvområde</b></a> — Ett gruvområde med gruvhål, skärpning och hästvandring.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-atvidaberg-62933a"><b>Stensättning</b></a> — Två stensättningar, varav den ena kan ha varit kvadratisk.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-atvidaberg-ef1481"><b>Avrättningsplats</b></a> — En galgbacke vars utsträckning inte är känd.</li>
+<li><a href="/karta?plats=ksamsok-gruvhal-atvidaberg-3baaa7"><b>Gruvhål</b></a> — En skärpning med skrotsten som kan ha använts till järnvägen.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-atvidaberg-fbb6f2"><b>Lägenhetsbebyggelse</b></a> — Torplämningen efter Hindrikstorp med husgrunder, mur och väg.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-atvidaberg-ac4620"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En ek som i folkmun kallas Kärlekseken.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-atvidaberg-486ef6"><b>Fossil åker</b></a> — En fossil åker med talrika röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-atvidaberg-0525cb"><b>Husgrund, historisk tid</b></a> — En jordkällare med svalgång och stensatt vall.</li>
+<li><a href="/p/ksamsok-dalgatan-lagenhetsbebyggelse-atvidaberg-10d0d9"><b>Dalgatan, Lägenhetsbebyggelse</b></a> — Lämningen efter jordetorpet Dalgatan med grunder och jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-atvidaberg-5efa55"><b>Stensättning</b></a> — Två runda stensättningar, den ena med mittblock och kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-atvidaberg-e658ec"><b>Husgrund, historisk tid</b></a> — En ladugårdsgrund med två övermossade körramper.</li>
+<li><a href="/p/ksamsok-gravfalt-atvidaberg-cdf30e"><b>Gravfält</b></a> — Ett gravfält med elva runda och en kvadratisk stensättning.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-atvidaberg-c6e448"><b>Begravningsplats</b></a> — En pestkyrkogård med okänd utsträckning.</li>
+<li><a href="/karta?plats=ksamsok-angefallsgruvorna-gruvomrade-atvidaberg-14daab"><b>Ängefallsgruvorna, Gruvområde</b></a> — Ängefallsgruvorna med skärpningar, gråbergsvarp och husgrund.</li>
+<li><a href="/karta?plats=ksamsok-hytt-och-hammaromrade-atvidaberg-89c18d"><b>Hytt- och hammarområde</b></a> — Ett slaggvarp efter hytt- och hammardrift vid en bäck.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-atvidaberg-db2efd"><b>Brott/täkt</b></a> — Ett skifferbrott där Bäckfall-skiffer bröts.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-atvidaberg-56e54d"><b>Fyndplats</b></a> — Fyndplatsen för en flintdolk som förvaras på hembygdsgården.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-atvidaberg-dccf8a"><b>Kolningsanläggning</b></a> — En kolbotten efter en resmila med omgivande stybbgropar.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-atvidaberg-6b25ac"><b>Vägmärke</b></a> — En milstolpe av skiffer med bokstäverna MIL.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-atvidaberg-aa4e81"><b>Fornlämningsliknande lämning</b></a> — En stensättningsliknande lämning som troligen är röjningssten.</li>
+<li><a href="/karta?plats=ksamsok-gruvomrade-atvidaberg-d4c040"><b>Gruvområde</b></a> — En skärpning med järnstift och två skrotstenshögar.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-atvidaberg-1d2b38"><b>Lägenhetsbebyggelse</b></a> — En bebyggelselämning med skorstensröse och jordkällare.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-atvidaberg-25b335"><b>Lägenhetsbebyggelse</b></a> — Platsen för ett ryttartorp under Slevringe kallat Dalgatan.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-atvidaberg-516738"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En gammal ek som i folkmun kallas Sketeken.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-atvidaberg-991a51"><b>Vägmärke</b></a> — En milstolpe av röd granit som flyttats hit av Douglas Adelswärd.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-atvidaberg-3e8c0f"><b>Husgrund, historisk tid</b></a> — En omplockad husgrund med ställvis kallmur.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-atvidaberg-f6e9ae"><b>Bytomt/gårdstomt</b></a> — Uppgift om Fagerbjörke utjords gamla hustomt, i dag en industritomt.</li>
+<li><a href="/karta?plats=ksamsok-kemisk-industri-atvidaberg-27f0ce"><b>Kemisk industri</b></a> — En tjärdal med bröst, dike och uppsamlingsgrop.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-atvidaberg-8dd0e5"><b>Stensättning</b></a> — En stensättning med block och en kantställd sten i mittgropen.</li>
+<li><a href="/karta?plats=ksamsok-kemisk-industri-atvidaberg-1d9885"><b>Kemisk industri</b></a> — En rund tjärdal med vall och uppsamlingsgrop.</li>
+<li><a href="/karta?plats=ksamsok-kalkugn-atvidaberg-a82f3a"><b>Kalkugn</b></a> — En rund kalkugn av sten med öppning mot norr.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-atvidaberg-c43036"><b>Färdväg</b></a> — En vägbank efter en äldre landsväg med brofästen.</li>
+<li><a href="/karta?plats=ksamsok-forvaringsanlaggning-atvidaberg-89a1f4"><b>Förvaringsanläggning</b></a> — En rund förvaringsgrop invid en fossil åker.</li>
+<li><a href="/karta?plats=ksamsok-backfalls-gamla-tomt-bytomt-gardstomt-atvidaberg-d70840"><b>Bäckfalls gamla tomt, Bytomt/gårdstomt</b></a> — Bäckfalls gamla gårdstomt, riven av baroniet Adelswärd.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-atvidaberg-12455e"><b>Husgrund, historisk tid</b></a> — En jordkällare med en väg strax söder om.</li>
+<li><a href="/karta?plats=ksamsok-forvaringsanlaggning-atvidaberg-fca956"><b>Förvaringsanläggning</b></a> — En rund förvaringsgrop med svag omgivande vall.</li>
+<li><a href="/karta?plats=ksamsok-gruvomrade-atvidaberg-cd52f7"><b>Gruvområde</b></a> — Ett gruvhål fyllt med sopor jämte en skärpning.</li>
+<li><a href="/karta?plats=ksamsok-boplats-atvidaberg-a7a50b"><b>Boplats</b></a> — En boplats där underlaget är ofullständigt.</li>
+<li><a href="/karta?plats=ksamsok-gruvhal-atvidaberg-596382"><b>Gruvhål</b></a> — En skärpning med borrspår och en skrotstenshög.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-atvidaberg-ca6401"><b>Husgrund, historisk tid</b></a> — En husgrund med taktegel och kringliggande järnskrot.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-atvidaberg-4a0021"><b>Ristning, medeltid/historisk tid</b></a> — Bergristningar gjorda av rallare vid järnvägsbygget 1893.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-atvidaberg-eb35e3"><b>Stensättning</b></a> — En omrörd stensättning som en gång angetts som kvadratisk.</li>
+<li><a href="/karta?plats=ksamsok-kolningsanlaggning-atvidaberg-a2bd3e"><b>Kolningsanläggning</b></a> — En rund kolbotten med stybbgropar kring kanten.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-atvidaberg-92ef22"><b>Lägenhetsbebyggelse</b></a> — Torplämningen efter Laholm med tre husgrunder.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-atvidaberg-e22a27"><b>Område med skogsbrukslämningar</b></a> — En kolbotten och en kojgrund efter skogsbruk.</li>
+<li><a href="/karta?plats=ksamsok-hyttlamning-atvidaberg-1331fc"><b>Hyttlämning</b></a> — En hyttlämning med spår av kopparslagg vid en bäck.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-atvidaberg-67db3b"><b>Fornlämningsliknande lämning</b></a> — Stensättningsliknande lämningar som troligen hör ihop med grustäkt.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-atvidaberg-c34c5c"><b>Lägenhetsbebyggelse</b></a> — En torplämning med husgrund, jordkällare och ladugårdsgrund.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 22</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-atvidaberg-bruksdammen-vid-stallet-511"><b>Bruksdammen vid Stallet</b></a> — Tre dammar gav kraft åt vattenhjulen vid smälthyttorna i åtvidaberg. <span class="era">1890</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-stora-kyrkan-507"><b>Stora Kyrkan</b></a> — åtvidabergs Stora kyrka stod klar 1885 och byggdes under brukets nedgångsperiod. <span class="era">1891</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-smedjan-531"><b>Smedjan</b></a> — Vid åtvids ström som rann genom brukssamhället anlades olika verksamheter. <span class="era">1891</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-bryggeriet-508"><b>Bryggeriet</b></a> — I mitten av 1800-talet anlade åtvidaberg Kopparverk ett bryggeri och brännvinsbränneri i det vi idag kallar Gropen. <span class="era">1895</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-verksgatan-112"><b>Verksgatan</b></a> — Ett av åtvidabergs äldsta bostadsområden. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-demonstration-533"><b>Demonstration</b></a> — I början av 1900 fick arbetarrörelsen fäste i åtvidaberg. <span class="era">1902</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-stallet-519"><b>Stallet</b></a> — Dragdjur var viktiga för kopparframställningen.1857 byggde åtvidabergs Kopparverk det pampiga Stallet med plats för 80 hästar. <span class="era">1903</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-gamla-gymnastiken-527"><b>Gamla Gymnastiken</b></a> — Vid vattenfallet från Bysjön har det länge funnits verksamhet. <span class="era">1904</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-prastbackarna-528"><b>Prästbackarna</b></a> — I slutet av 1800-talet byggdes ett flertal egnahemskvarter i åtvidaberg. <span class="era">1906</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-simons-horna-529"><b>Simons Hörna</b></a> — I slutet av 1800-talet startade bagare Gustaf österberg ett bageri i huset. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-barberstugan-534"><b>Barberstugan</b></a> — Som en del i brukspatron Adelswärds id om ett industrimönstersamhälle byggdes i centrum en del affärslokaler. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-kasern-504"><b>Kasern</b></a> — Huset byggdes i början av 1800-talet för klädestillverkning och maskinerna drevs med vattenkraft från åtvids ström. <span class="era">1915</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-gamla-kyrkan-506"><b>Gamla Kyrkan</b></a> — åtvidabergs Gamla kyrka härstammar från slutet av 1400-talet. <span class="era">1919</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-klockareangen-538"><b>Klockareängen</b></a> — Klockareängen har varit en samlingsplats för åtvidabergarna och i Musikpaviljongen har det spelats musik. <span class="era">1919</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-bokhandeln-498"><b>Bokhandeln</b></a> — Den lummiga Järnvägsgatan med bokhandeln i förgrunden på 1930-talet. <span class="era">1930</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-mejeriet-575"><b>Mejeriet</b></a> — Mejeriverksamheten var en del i de nya industrierna som växte fram efter att koppartillverkningen avslutats. <span class="era">1935</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-konsum-1-497"><b>Konsum 1</b></a> — Vid Stora Torget byggde åtvidabergs Hushållsförening ett modernt Konsumvaruhus 1935. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-konsum-2-509"><b>Konsum 2</b></a> — Det nyuppförda Konsumvaruhuset 1940. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-getingen-513"><b>Getingen</b></a> — Som en del i skapandet av ett nytt handelscentrum byggdes det här affärs- och bostadshuset åt handlare Engström 1904. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-hojdvagen-356"><b>Höjdvägen</b></a> — På 1950-talet var behovet av bostäder stort och Långbrottsområdet började bebyggas. <span class="era">1953</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-fargladan-512"><b>Färglådan</b></a> — Smällgatan 7 består av tre hus hopbyggda till en länga. <span class="era">1956</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-smallen-670"><b>Smällen</b></a> — 1960 skulle de sista av de gamla bruksarbetarbostäderna kvarteret Smällen rivas. <span class="era">1960</span></li>
+</ul>
+<h3 class="city-h3">Bro · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-atvidaberg-vy-fran-bron-312"><b>Vy från bron</b></a> — Vy från den gamla järnvägsbron 1970 <span class="era">1970</span></li>
+<li><a href="/karta?plats=ksamsok-bro-atvidaberg-b5401e"><b>Bro</b></a> — En liten valvbro av sten.</li>
+<li><a href="/karta?plats=ksamsok-bro-atvidaberg-9d4af5"><b>Bro</b></a> — En stenbro med valv och räcken av skiffer.</li>
+<li><a href="/karta?plats=ksamsok-bro-atvidaberg-8cfe8a"><b>Bro</b></a> — En stenbro från 1916 med rallarinskrift.</li>
+<li><a href="/karta?plats=ksamsok-bro-atvidaberg-16d7ca"><b>Bro</b></a> — En stenvalvsbro som fortfarande är i trafik.</li>
+<li><a href="/karta?plats=ksamsok-bro-atvidaberg-458704"><b>Bro</b></a> — En stenvalvsbro som inte längre är i trafik.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 5</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-atvidaberg-atvids-gamla-kyrka-q10727010"><b>Åtvids gamla kyrka</b></a> — kyrkobyggnad i Åtvidaberg i Linköpings stift</li>
+<li><a href="/karta?plats=wd-atvidaberg-atvids-nya-kyrka-q18335237"><b>Åtvids nya kyrka</b></a> — kyrkobyggnad i Åtvidabergs kommun</li>
+<li><a href="/karta?plats=wd-atvidaberg-johanneskyrkan-q93798166"><b>Johanneskyrkan</b></a> — kyrka i Åtvidaberg</li>
+<li><a href="/karta?plats=wd-atvidaberg-pingstkyrkan-q93798454"><b>Pingstkyrkan</b></a> — kyrka i Åtvidaberg</li>
+<li><a href="/karta?plats=wd-atvidaberg-atvids-gravkapell-q107642998"><b>Åtvids gravkapell</b></a> — gravkapell i Åtvidabergs kommun, Sverige</li>
+</ul>
+<h3 class="city-h3">Byggnad · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-atvidaberg-atvidabergs-hushallsforening-503"><b>Åtvidabergs Hushållsförening</b></a> — åtvidaberg Hushållsförening hade drivit verksamhet vid torget sedan 1869. <span class="era">1898</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-kulturhuset-530"><b>Kulturhuset</b></a> — Huset har en spännande historia. <span class="era">1934</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-hojdvagen-punkthusen-634"><b>Höjdvägen - Punkthusen</b></a> — Punkthusen på Höjdvägen 2, 4 och 6 byggdes 1958. <span class="era">1958</span></li>
+<li><a href="/p/ksamsok-alundamagasinet-atvidaberg-139114"><b>ÅLUNDAMAGASINET</b></a> — Ålundamagasinet, ett spannmålsmagasin från 1866 i Åtvidaberg. <span class="era">1866–1866</span></li>
+</ul>
+<h3 class="city-h3">Torg · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-atvidaberg-bruksdammen-vid-torget-633"><b>Bruksdammen vid Torget</b></a> — Vid torget fanns en damm som försåg Kopparverkets blåsmaskiner med kraft. <span class="era">1903</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-sunnebotorget-228"><b>Sunnebotorget</b></a> — Vid det nybbygda Sunnebotorget började det 1959 grävas för åtvidabergs första hus högre än tre våningar. <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-atvidaberg-sunnebotorget-konsum-307"><b>Sunnebotorget - Konsum</b></a> — Konsumbutiken vid Sunnebotorget. <span class="era">1959</span></li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-klockstapel-atvidaberg-041046"><b>Klockstapel</b></a> — Klockstapel vid gamla kyrkan i Åtvidaberg, rest 1753. <span class="era">1753–1753</span></li>
+<li><a href="/p/ksamsok-solkanontornet-atvidaberg-051970"><b>solkanontornet</b></a> — Ett ovanligt solkanontorn i den engelska parken vid Adelsnäs herrgård. <span class="era">1853–1853</span></li>
+</ul>
+<h3 class="city-h3">Station · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-atvidaberg-jarnvagsbron-229"><b>Järnvägsbron</b></a> — Gångbron över järnvägen uppfördes i början av 1950-talet. <span class="era">1953</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-atvidaberg-5a3a7e"><b>Minnesmärke</b></a> — En minnessten över kyrkoherdebostället som brann 1950.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 97 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/atvidaberg/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/atvidaberg/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Åtvidaberg gratis?</summary><p>Ja. Karta, alla 97 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Åtvidaberg?</summary><p>Vandringen samlar 97 sevärdheter i Åtvidaberg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Bruksdammen vid Stallet?</summary><p>Tre dammar gav kraft åt vattenhjulen vid smälthyttorna i åtvidaberg.</p></details>
+<details class="faq"><summary>Vad är Stora Kyrkan?</summary><p>åtvidabergs Stora kyrka stod klar 1885 och byggdes under brukets nedgångsperiod.</p></details>
+<details class="faq"><summary>Vad är Smedjan?</summary><p>Vid åtvids ström som rann genom brukssamhället anlades olika verksamheter.</p></details>
+<details class="faq"><summary>Vad är Bryggeriet?</summary><p>I mitten av 1800-talet anlade åtvidaberg Kopparverk ett bryggeri och brännvinsbränneri i det vi idag kallar Gropen.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

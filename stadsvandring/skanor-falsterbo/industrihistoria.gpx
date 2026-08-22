@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Skanör Falsterbo</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.41180943775576" lon="12.844300840336613"><name>Skanör&#39;s station</name><desc>The second to last stop on the Vellinge-Skanör-Falsterbo track.</desc></wpt>
+  <wpt lat="55.39054079474134" lon="12.829558069010195"><name>Panorama from the station</name><desc>A panorama from 1910 consisting of four postcards photographed by the Falsterbo photographer Matilda Månson.</desc></wpt>
+  <wpt lat="55.39026566630885" lon="12.829565197594318"><name>Crowds at the station</name><desc>There was a railroad to Skanör and Falsterbo from Malmö through Vellinge between the years of 1904 and 1971.</desc></wpt>
+  <rte><name>Industrihistoria i Skanör Falsterbo</name>
+    <rtept lat="55.41180943775576" lon="12.844300840336613"><name>Skanör&#39;s station</name></rtept>
+    <rtept lat="55.39054079474134" lon="12.829558069010195"><name>Panorama from the station</name></rtept>
+    <rtept lat="55.39026566630885" lon="12.829565197594318"><name>Crowds at the station</name></rtept>
+  </rte>
+</gpx>

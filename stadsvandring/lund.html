@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Lund — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Lund till fots: 285 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 285 stopp och nedladdningsbar PDF-g…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/lund">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Lund — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Lund till fots: 285 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 285 stopp och nedladdningsbar PDF-g…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/lund">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Lund — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Lund till fots: 285 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 285 stopp och nedladdningsbar PDF-g…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"lund","sourceSlug":"stadsvandring/lund","centroid":{"lat":55.706492506730804,"lng":13.195432628282964},"stops":[{"name":"Hökeriet","lat":55.70606522503453,"lng":13.196387995897668},{"name":"The \"new\" Bantorget","lat":55.70410261971781,"lng":13.18773206322021},{"name":"Stortorget, north-facing","lat":55.702491873964014,"lng":13.19295246695151}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Lund","description":"Upptäck Lund till fots: 285 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/lund","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Hökeriet","description":"From the mid-19th to the early 20th century, families in the neighbourhood shopped in this small shop, which was one of many grocer s shops in Lund.","geo":{"@type":"GeoCoordinates","latitude":55.70606522503453,"longitude":13.196387995897668}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"The \"new\" Bantorget","description":"It s hard to recognise Barntorget from the end of the 1850s.","geo":{"@type":"GeoCoordinates","latitude":55.70410261971781,"longitude":13.18773206322021}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Stortorget, north-facing","description":"Stortorget was Lund s first public square to have market trading stalls, and was at one time called Salutorget (roughly translated as selling square ).","url":"https://stadsvandring.io/p/bht-lund-stortorget-north-facing-52","geo":{"@type":"GeoCoordinates","latitude":55.702491873964014,"longitude":13.19295246695151}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"The Botanical Gardens","description":"The Botanical Gardens at Lund University are an oasis in the middle of Lund, with over 7,000 plants and a greenhouse with nine climate zones.","geo":{"@type":"GeoCoordinates","latitude":55.704662299114126,"longitude":13.202501302157343}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Carl Otto Borg","description":"Carl Otto Borg, who would go on to be a notable industrialist, was born in Lund in 1812 into a family of well-respected artisans and craftsmen.","url":"https://stadsvandring.io/p/bht-lund-carl-otto-borg-196","geo":{"@type":"GeoCoordinates","latitude":55.701553226875994,"longitude":13.19077398014833}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Nöden","description":"To cope with the population growth of the 1870s Nya Staden the New Town district was built, and given the nickname Nöden (Wasteland) because many poor people l…","geo":{"@type":"GeoCoordinates","latitude":55.69949498642954,"longitude":13.19104978177008}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"The Tegner museum","description":"Esaias Tegn r (1782 1846) was one of Sweden s most important writers and poets of his generation.","geo":{"@type":"GeoCoordinates","latitude":55.70418251116189,"longitude":13.191308893568102}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kraftstorg","description":"Ursprungligen var detta torg del av det inhängnade området tillhörandes kyrkan.","url":"https://stadsvandring.io/p/bht-lund-kraftstorg-275","geo":{"@type":"GeoCoordinates","latitude":55.70387805808925,"longitude":13.195122501852413}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"The University Site","description":"The University Square was designed by architect Helgo Zettervall in the 1880s and is flanked by the Main University Building on one side and the Academic Societ","geo":{"@type":"GeoCoordinates","latitude":55.70559412620832,"longitude":13.194641929544943}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Biskopsgatan","description":"Foto : Kulturen","geo":{"@type":"GeoCoordinates","latitude":55.70653057751594,"longitude":13.198616475463089}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Damer i vackra hattar","description":"Vackert klädda damer strosar längs Södergatan/Stora Torg.","geo":{"@type":"GeoCoordinates","latitude":55.8395591938527,"longitude":13.303554704799394}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Railway crossing","description":"The railway crossing in the late 1800s.","geo":{"@type":"GeoCoordinates","latitude":55.70370021929875,"longitude":13.186978697776794}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Kyrkogatan, 1890s","description":"This photograph is from the 1890s.","url":"https://stadsvandring.io/p/bht-lund-kyrkogatan-1890s-80","geo":{"@type":"GeoCoordinates","latitude":55.70558489354367,"longitude":13.192956857454874}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Stadsparken and Nygatan 1890s","description":"At the end of the 1800s, parks and boardwalks became fashionable.","geo":{"@type":"GeoCoordinates","latitude":55.70139170491581,"longitude":13.185764213366156}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Gleerups, 1890s","description":"Today no-one would pay any attention if you held your camera over people s heads on Stortorget.","url":"https://stadsvandring.io/p/bht-lund-gleerups-1890s-105","geo":{"@type":"GeoCoordinates","latitude":55.703096328101715,"longitude":13.192919432176268}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Anna Bugge","description":"Anne Bugge (1862-1928) and Knut Wicksell met for the first time in Copenhagen, and Anna fell in love instantly.","url":"https://stadsvandring.io/p/bht-lund-anna-bugge-288","geo":{"@type":"GeoCoordinates","latitude":55.70823584708218,"longitude":13.199639703704825}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Kyrkogatan & the Svanen pharmacy, ca 1900","description":"You can recognise this view of course.","url":"https://stadsvandring.io/p/bht-lund-kyrkogatan-the-svanen-pharmacy-ca-1900-57","geo":{"@type":"GeoCoordinates","latitude":55.70330937861522,"longitude":13.192683077768606}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Lilla Tvärgatan, ca 1900","description":"The buildings along Lilla Tvärgatan appeared in the second half of the 19th century.","geo":{"@type":"GeoCoordinates","latitude":55.69980127924672,"longitude":13.19731217900437}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Grand Hotel","description":"The Grand Hotel was designed by Helsingborg architect Alfred Hellerström and was built between 1896 and 1898 on Bantorget.","url":"https://stadsvandring.io/p/bht-lund-grand-hotel-68","geo":{"@type":"GeoCoordinates","latitude":55.70392575960665,"longitude":13.188823488394974}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Bankgatan, ca 1900","description":"You ll have to look hard if you want to recognise this area!","geo":{"@type":"GeoCoordinates","latitude":55.701060015965375,"longitude":13.195254271289173}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"The old city hall, ca 1900","description":"The grand building in the centre of the photograph was, for many years, the headquarters for Lund municipality.","url":"https://stadsvandring.io/p/bht-lund-the-old-city-hall-ca-1900-75","geo":{"@type":"GeoCoordinates","latitude":55.70467931174911,"longitude":13.192718951399115}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Krognoshuset, 1900 & 1950","description":"Krognoshuset is one of the few medieval buildings in Lund still remaining.","url":"https://stadsvandring.io/p/bht-lund-krognoshuset-1900-1950-88","geo":{"@type":"GeoCoordinates","latitude":55.701760811018936,"longitude":13.19565444318016}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Vårfrugatan from Skomakaregatan, 1900","description":"Vårfrugatan was a part of the medieval street network in Lund.","geo":{"@type":"GeoCoordinates","latitude":55.70269353809696,"longitude":13.194245653539156}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Vy över torget","description":"Utsikt över torget, troligtvis sent 1800tal.","geo":{"@type":"GeoCoordinates","latitude":55.83940557205568,"longitude":13.30391412080739}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Botulfsplatsen/Niklas och Emelie","description":"We met at Botufplatsen.","url":"https://stadsvandring.io/p/bht-lund-botulfsplatsen-niklas-och-emelie-209","geo":{"@type":"GeoCoordinates","latitude":55.702111608891926,"longitude":13.194358313523198}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Lund gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 285 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Lund?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 285 sevärdheter i Lund — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Hökeriet?","acceptedAnswer":{"@type":"Answer","text":"From the mid-19th to the early 20th century, families in the neighbourhood shopped in this small shop, which was one of many grocer s shops in Lund."}},{"@type":"Question","name":"Vad är The \"new\" Bantorget?","acceptedAnswer":{"@type":"Answer","text":"It s hard to recognise Barntorget from the end of the 1850s."}},{"@type":"Question","name":"Vad är Stortorget, north-facing?","acceptedAnswer":{"@type":"Answer","text":"Stortorget was Lund s first public square to have market trading stalls, and was at one time called Salutorget (roughly translated as selling square )."}},{"@type":"Question","name":"Vad är The Botanical Gardens?","acceptedAnswer":{"@type":"Answer","text":"The Botanical Gardens at Lund University are an oasis in the middle of Lund, with over 7,000 plants and a greenhouse with nine climate zones."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Lund","item":"https://stadsvandring.io/stadsvandring/lund"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Lund</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Lund</span><span class="badge">285 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Lund — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Lund till fots: 285 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Lund"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-lund-hokeriet-620"><b>1. Hökeriet</b><span>Sevärdhet · From the mid-19th to the early 20th century, families in the neighbourhood shop…</span></a>
+<a class="tile" href="/p/bht-lund-the-new-bantorget-69"><b>2. The &quot;new&quot; Bantorget</b><span>Torg · It s hard to recognise Barntorget from the end of the 1850s.</span></a>
+<a class="tile" href="/p/bht-lund-stortorget-north-facing-52"><b>3. Stortorget, north-facing</b><span>Torg · Stortorget was Lund s first public square to have market trading stalls, and wa…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Lund · 285</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Lund. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Sevärdhet · 71</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-lund-hokeriet-620"><b>Hökeriet</b></a> — From the mid-19th to the early 20th century, families in the neighbourhood shopped in this small shop, which was one of many grocer s shops… <span class="era">1855</span></li>
+<li><a href="/p/bht-lund-carl-otto-borg-196"><b>Carl Otto Borg</b></a> — Carl Otto Borg, who would go on to be a notable industrialist, was born in Lund in 1812 into a family of well-respected artisans and crafts… <span class="era">1870</span></li>
+<li><a href="/karta?plats=bht-lund-noden-935"><b>Nöden</b></a> — To cope with the population growth of the 1870s Nya Staden the New Town district was built, and given the nickname Nöden (Wasteland) becaus… <span class="era">1870</span></li>
+<li><a href="/p/bht-lund-kraftstorg-275"><b>Kraftstorg</b></a> — Ursprungligen var detta torg del av det inhängnade området tillhörandes kyrkan. <span class="era">1880</span></li>
+<li><a href="/karta?plats=bht-lund-the-university-site-703"><b>The University Site</b></a> — The University Square was designed by architect Helgo Zettervall in the 1880s and is flanked by the Main University Building on one side an… <span class="era">1880</span></li>
+<li><a href="/karta?plats=bht-lund-biskopsgatan-276"><b>Biskopsgatan</b></a> — Foto : Kulturen <span class="era">1888</span></li>
+<li><a href="/karta?plats=bht-lund-damer-i-vackra-hattar-3"><b>Damer i vackra hattar</b></a> — Vackert klädda damer strosar längs Södergatan/Stora Torg. <span class="era">1890</span></li>
+<li><a href="/karta?plats=bht-lund-railway-crossing-71"><b>Railway crossing</b></a> — The railway crossing in the late 1800s. <span class="era">1890</span></li>
+<li><a href="/p/bht-lund-kyrkogatan-1890s-80"><b>Kyrkogatan, 1890s</b></a> — This photograph is from the 1890s. <span class="era">1890</span></li>
+<li><a href="/karta?plats=bht-lund-stadsparken-and-nygatan-1890s-82"><b>Stadsparken and Nygatan 1890s</b></a> — At the end of the 1800s, parks and boardwalks became fashionable. <span class="era">1890</span></li>
+<li><a href="/p/bht-lund-gleerups-1890s-105"><b>Gleerups, 1890s</b></a> — Today no-one would pay any attention if you held your camera over people s heads on Stortorget. <span class="era">1890</span></li>
+<li><a href="/p/bht-lund-anna-bugge-288"><b>Anna Bugge</b></a> — Anne Bugge (1862-1928) and Knut Wicksell met for the first time in Copenhagen, and Anna fell in love instantly. <span class="era">1895</span></li>
+<li><a href="/p/bht-lund-kyrkogatan-the-svanen-pharmacy-ca-1900-57"><b>Kyrkogatan &amp; the Svanen pharmacy, ca 1900</b></a> — You can recognise this view of course. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-lilla-tvargatan-ca-1900-62"><b>Lilla Tvärgatan, ca 1900</b></a> — The buildings along Lilla Tvärgatan appeared in the second half of the 19th century. <span class="era">1900</span></li>
+<li><a href="/p/bht-lund-grand-hotel-68"><b>Grand Hotel</b></a> — The Grand Hotel was designed by Helsingborg architect Alfred Hellerström and was built between 1896 and 1898 on Bantorget. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-bankgatan-ca-1900-73"><b>Bankgatan, ca 1900</b></a> — You ll have to look hard if you want to recognise this area! <span class="era">1900</span></li>
+<li><a href="/p/bht-lund-the-old-city-hall-ca-1900-75"><b>The old city hall, ca 1900</b></a> — The grand building in the centre of the photograph was, for many years, the headquarters for Lund municipality. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-varfrugatan-from-skomakaregatan-1900-103"><b>Vårfrugatan from Skomakaregatan, 1900</b></a> — Vårfrugatan was a part of the medieval street network in Lund. <span class="era">1900</span></li>
+<li><a href="/p/bht-lund-botulfsplatsen-niklas-och-emelie-209"><b>Botulfsplatsen/Niklas och Emelie</b></a> — We met at Botufplatsen. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-rattestratet-277"><b>Råttesträtet</b></a> — Grynmalaregatan har genom åren inte alltid haft ett så fint namn. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-nils-bjelkegatan-278"><b>Nils Bjelkegatan</b></a> — Foto : Kulturen <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-norra-spolegatan-285"><b>Norra Spolegatan</b></a> — Foto : Kulturen <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-stadsparken-early-1900s-92"><b>Stadsparken, early 1900s</b></a> — Can you see the fountain in the middle of the photograph? <span class="era">1903</span></li>
+<li><a href="/p/bht-lund-kirurgen-helen-sivert-s-story-193"><b>Kirurgen/Helen &amp; Sivert&#39;s story</b></a> — My parents, Helen and Sivert, met at the infectious diseases clinic in Lund. <span class="era">1906</span></li>
+<li><a href="/karta?plats=bht-lund-the-university-library-626"><b>The University Library</b></a> — The neo-Gothic library building is one of Lund s most photographed sights. <span class="era">1907</span></li>
+<li><a href="/karta?plats=bht-lund-bangatan-from-the-south-1910-67"><b>Bangatan (from the south), 1910</b></a> — Gloomy weather probably felt the same in 1910 as it does now. <span class="era">1910</span></li>
+<li><a href="/p/bht-lund-corner-of-grabrodersgatan-and-kyrkogatan-1910-1911-70"><b>Corner of Gråbrödersgatan and Kyrkogatan, 1910-1911</b></a> — The building on the corner of Råbrödersgatan and Kyrkogatan, opposite Lundagård, is certainly grand. <span class="era">1910</span></li>
+<li><a href="/p/bht-lund-the-b-low-house-81"><b>The Bülow House</b></a> — The B lowska House was built in 1856. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-lund-korsningen-280"><b>Korsningen</b></a> — Foto: Universitetsbibliotekets vykortssamling <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-lund-fojers-foto-349"><b>Föjers Foto</b></a> — Något om den lilla trädoasen? <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-lund-stadsparken-pond-1910s-99"><b>Stadsparken pond 1910s</b></a> — It s not easy to recognise this area! <span class="era">1911</span></li>
+<li><a href="/karta?plats=bht-lund-familj-308"><b>Familj</b></a> — Foto : Kulturen <span class="era">1912</span></li>
+<li><a href="/p/bht-lund-stora-tvargatan-ca-1910s-20s-72"><b>Stora Tvärgatan, ca 1910s-20s</b></a> — This is the heart of Nöden, the part of town named after its poorest residents ( Nöden roughly translates as dearth or hardship ). <span class="era">1915</span></li>
+<li><a href="/p/bht-lund-hildur-sandberg-181"><b>Hildur Sandberg</b></a> — Hildur Sandberg, också kallad Lejoninnan från Lund, föddes 1881. <span class="era">1915</span></li>
+<li><a href="/karta?plats=bht-lund-bangatan-1920s-66"><b>Bangatan, 1920s</b></a> — Where are they walking? <span class="era">1920</span></li>
+<li><a href="/p/bht-lund-kyrkogtan-opposite-the-university-78"><b>Kyrkogtan, opposite the University</b></a> — The building on the left of the photograph, the Liljewalchska house, got its name from Sewerin Magnus Liljewalch who owned the building fro… <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-lund-kyrkogatan-south-facing-79"><b>Kyrkogatan, south-facing</b></a> — A real Lund special, with both the university building and the cathedral in the spotlight! <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-lund-the-observatory-98"><b>The observatory</b></a> — The observatory was inaugurated in 1867 and became the new workplace for astronomers in Lund. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-lund-stadsparken-ca-1920-108"><b>Stadsparken, ca 1920</b></a> — In 1907, the Industry, Arts and Crafts Exhibition was held in Lund, in this precise location. <span class="era">1920</span></li>
+<li><a href="/p/bht-lund-vera-och-sture-261"><b>Vera och Sture</b></a> — When my grandfather Sture was called up for military service in Lund at the end of 1920s, he served with the cavalry, among other things. <span class="era">1920</span></li>
+<li><a href="/p/bht-lund-myntverket-282"><b>Myntverket</b></a> — I hörnet av Grönegatan och Stora Fiskaregatan syns den ålderstigna fastigheten. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-lund-drottensgatan-283"><b>Drottensgatan</b></a> — Foto: Kulturen <span class="era">1923</span></li>
+<li><a href="/p/bht-lund-thomanders-268"><b>Thomanders</b></a> — As a young man, John Henrik Thomander (1978-1865) worked as a private tutor alongside his religious studies, and while doing so he met Emil… <span class="era">1924</span></li>
+<li><a href="/karta?plats=bht-lund-spolegatan-284"><b>Spolegatan</b></a> — Foto : Kulturen <span class="era">1927</span></li>
+<li><a href="/p/bht-lund-paret-mansson-179"><b>Paret Månsson</b></a> — Ester s best friend had a twin brother, Otto, and one night on her way home from her friend s house, Ester suddenly heard a voice. <span class="era">1932</span></li>
+<li><a href="/p/bht-lund-hilma-af-klint-271"><b>Hilma af Klint</b></a> — Hilma af Klint was part of the first generation of female artists to be accepted into the Royal Swedish Academy of Fine Arts (Kungliga Kons… <span class="era">1933</span></li>
+<li><a href="/karta?plats=bht-lund-botulfsgatan-1930s-96"><b>Botulfsgatan 1930s</b></a> — In the 1930s people still travelled by horse-drawn carriage on the streets of Lund. <span class="era">1934</span></li>
+<li><a href="/karta?plats=bht-lund-magle-stora-kyrkogata-254"><b>Magle Stora kyrkogata</b></a> — Idag är det till stor del bostadshus men under medeltiden fann man här ett svartbrödrakloster som var ett av de första av sitt slag i Norde… <span class="era">1935</span></li>
+<li><a href="/p/bht-lund-lund-s-innovations-the-university-building-1006"><b>Lund&#39;s innovations - The University Building</b></a> — Lund University is repeatedly ranked as one of the world s foremost institutions of higher education. <span class="era">1935</span></li>
+<li><a href="/karta?plats=bht-lund-knut-den-stores-gata-255"><b>Knut den Stores gata</b></a> — Passagen mellan Knut den Stores torg och Juridicum kallades Svarta hav i folkmun då det här var väldigt mörkt efter kvällens ankomst. <span class="era">1941</span></li>
+<li><a href="/p/bht-lund-cafe-terassen-203"><b>Café Terassen</b></a> — In the 1950s, there was a cafe called Terassen, a stone s throw from Spykenskolan. <span class="era">1950</span></li>
+<li><a href="/karta?plats=bht-lund-frick-larsson-348"><b>Frick &amp; Larsson</b></a> — Text som kanske pratar om Frick &amp; Larsson? <span class="era">1950</span></li>
+<li><a href="/p/bht-lund-gamla-tapetserarverkstaden-607"><b>Gamla Tapetserarverkstaden</b></a> — Helgo lärde sig tidigt, att även om Lund kryllade av övernaturliga väsen, så var det inte alla som var av farlig sort. <span class="era">1950</span></li>
+<li><a href="/p/bht-lund-domkyrkan-616"><b>Domkyrkan</b></a> — Ett av Helgos viktigaste verk i Lund var utan tvekan ombyggnationen av domkyrkan som pågick 1868 till 1878. <span class="era">1950</span></li>
+<li><a href="/karta?plats=bht-lund-the-clocktower-1956-93"><b>The Clocktower, 1956</b></a> — The Clocktower and wall were built in 1916 and demolished in 1957, when they were replaced with an art gallery designed by architect Klas A… <span class="era">1956</span></li>
+<li><a href="/p/bht-lund-lilla-tvargatan-and-stora-sodergatan-1960s-55"><b>Lilla Tvärgatan and Stora Södergatan 1960s</b></a> — Lilla Tvärgatan was a part of the medieval city of Lund. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-lund-125-years-of-child-s-play-58"><b>125 years of child’s play</b></a> — Take an extra look at the white building furthest away in this picture. <span class="era">1960</span></li>
+<li><a href="/p/bht-lund-noden-1960s-101"><b>Nöden, 1960s</b></a> — When this picture was taken, in the 1960s, the buildings to your right had not yet been torn down. <span class="era">1960</span></li>
+<li><a href="/p/bht-lund-the-karl-xii-house-1960s-102"><b>The Karl XII-house, 1960s</b></a> — When Swedish King Karl XII lived in Lund, for a couple of years in the 1700s, he complained about dead animals, kitchen scraps and other fi… <span class="era">1960</span></li>
+<li><a href="/p/bht-lund-efs-kapellet-187"><b>EFS-kapellet</b></a> — We met in EFS-Kapellet, at 10 Biskopsgatan. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-lund-sankt-petri-kyrkogata-1960s-53"><b>Sankt Petri Kyrkogata, 1960s</b></a> — The lady on the pavement on the right is walking alongside Lund s longest continuous row of stucco-fronted houses in the classical style. <span class="era">1962</span></li>
+<li><a href="/karta?plats=bht-lund-skomakaregatan-1960s-90"><b>Skomakaregatan, 1960s</b></a> — The 1960s: people walking along the street in central Lund. <span class="era">1962</span></li>
+<li><a href="/karta?plats=bht-lund-barnhemmet-257"><b>Barnhemmet</b></a> — Här låg 1877 ett barnhem startat av systrarna Ida och Emma Thomander. <span class="era">1977</span></li>
+<li><a href="/p/bht-lund-eva-och-hakan-260"><b>Eva och Håkan</b></a> — My husband and I met in Lund, in 1978. <span class="era">1978</span></li>
+<li><a href="/karta?plats=bht-lund-mejeriet-199"><b>Mejeriet</b></a> — Mejeriet was built around 1896 and was one of Sweden s biggest producers of milk and cheese during the first half of the century. <span class="era">1983</span></li>
+<li><a href="/p/bht-lund-diskoteket-sodom-204"><b>Diskoteket Sodom</b></a> — 10th January 1987. Sodom, Lund Outside temperature: -24 Inside temperature: 4,000 With ice crystals in my hair, I went into the club that w… <span class="era">1987</span></li>
+<li><a href="/karta?plats=bht-lund-antligen-hemma-329"><b>Äntligen hemma</b></a> — Nu känner jag igen mig! <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-lund-tradet-460"><b>Trädet</b></a> — Hej, vad heter du? Jag heter Stjärna. <span class="era">2000</span></li>
+<li><a href="/p/bht-lund-julros-1012"><b>Julros</b></a> — Julrosen växer vild i S Europa och här i Sverige är den omtyckt som prydnadsväxt eftersom den är en av de få växter som blommar på vintern. <span class="era">2023</span></li>
+<li><a href="/karta?plats=wd-lund-uppakra-hof-q17150274"><b>Uppåkra hof</b></a> — Uppåkra hof</li>
+<li><a href="/p/wd-lund-uppakra-q114496333"><b>Uppåkra</b></a> — arkeologisk lokal</li>
+</ul>
+<h3 class="city-h3">Byggnad · 59</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-lund-the-botanical-gardens-622"><b>The Botanical Gardens</b></a> — The Botanical Gardens at Lund University are an oasis in the middle of Lund, with over 7,000 plants and a greenhouse with nine climate zone… <span class="era">1867</span></li>
+<li><a href="/p/bht-lund-krognoshuset-1900-1950-88"><b>Krognoshuset, 1900 &amp; 1950</b></a> — Krognoshuset is one of the few medieval buildings in Lund still remaining. <span class="era">1900</span></li>
+<li><a href="/p/bht-lund-lundagard-286"><b>Lundagård</b></a> — Lundagård har en stor plats i Lunds historia, redan på 900-talet anlades området som då var omringat av en mur och tillhörde kyrkan och des… <span class="era">1928</span></li>
+<li><a href="/p/bht-lund-kungshuset-610"><b>Kungshuset</b></a> — ända sedan vikingatiden har Skåne haft återkommande problem med Draugar. <span class="era">1950</span></li>
+<li><a href="/p/bht-lund-tepehuset-215"><b>TePehuset</b></a> — My mother grew up in Småland but moved to Lund as a 15 year old and worked as a housemaid for the family that owned TePe-huset. <span class="era">1958</span></li>
+<li><a href="/karta?plats=wd-lund-trolleberg-q10704868"><b>Trolleberg</b></a> — herrgård i Staffanstorps kommun, Sverige</li>
+<li><a href="/karta?plats=ksamsok-gamla-kirurgen-lund-050863"><b>Gamla kirurgen</b></a> — En sengotisk sjukhusbyggnad från 1867 ritad av Helgo Zettervall. <span class="era">1867–1867</span></li>
+<li><a href="/karta?plats=ksamsok-gymnastikhuset-lund-984724"><b>GYMNASTIKHUSET</b></a> — En byggnad som börjat som stall, blivit fäktsal och fått en medeltidsport. <span class="era">1807–1807</span></li>
+<li><a href="/p/ksamsok-bostadshus-lund-985160"><b>BOSTADSHUS</b></a> — Ett gatuhus från 1794 i ekkorsvirke med en välbevarad historia. <span class="era">1794–1794</span></li>
+<li><a href="/karta?plats=ksamsok-ekska-huset-lund-985002"><b>EKSKA HUSET</b></a> — Ett tvåvåningshus från omkring 1827 i tegel och korsvirke. <span class="era">1827–1827</span></li>
+<li><a href="/p/ksamsok-botaniska-museet-lund-357045"><b>BOTANISKA MUSEET</b></a> — Ett nationalromantiskt museum från 1913 för Botaniska trädgårdens samlingar. <span class="era">1911–1913</span></li>
+<li><a href="/p/ksamsok-observatoriet-lund-lund-998764"><b>OBSERVATORIET, LUND</b></a> — Ett observatorium från 1860-talet format som en medeltida tegelborg. <span class="era">1865–1867</span></li>
+<li><a href="/karta?plats=ksamsok-brygghus-lund-998540"><b>BRYGGHUS</b></a> — Ett brygghus i Lund från 1855. <span class="era">1855–1855</span></li>
+<li><a href="/p/ksamsok-krognoshuset-lund-049287"><b>KROGNOSHUSET</b></a> — Ett medeltida tegelhus som en gång hyste Karl XII:s kansli. <span class="era">1300–1399</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-lund-984084"><b>GÅRDSHUS</b></a> — Det äldsta gårdshuset på tomten, uppfört 1857. <span class="era">1857–1857</span></li>
+<li><a href="/p/ksamsok-tegnermuseet-lund-984413"><b>TEGNÉRMUSEET</b></a> — Esaias Tegnérs gamla bostad, räddad från rivning och museum sedan 1864. <span class="era">1768–1768</span></li>
+<li><a href="/karta?plats=ksamsok-vaktmastarbostaden-lund-984487"><b>VAKTMÄSTARBOSTADEN</b></a> — En vaktmästarbostad i Lund från 1890. <span class="era">1890–1890</span></li>
+<li><a href="/p/ksamsok-westmans-villa-lund-984900"><b>WESTMANS VILLA</b></a> — Arkitekten Hans Westmans egen modernistiska bostad och ateljé från 1939. <span class="era">1939–1939</span></li>
+<li><a href="/karta?plats=ksamsok-stall-lund-998442"><b>STALL</b></a> — Ett stall i Lund från 1853. <span class="era">1853–1853</span></li>
+<li><a href="/karta?plats=ksamsok-brygghus-lund-998444"><b>Brygghus</b></a> — Ett brygghus i Lund från 1780-talet. <span class="era">1780–1789</span></li>
+<li><a href="/karta?plats=ksamsok-zettervallska-villan-lund-998660"><b>ZETTERVALLSKA VILLAN</b></a> — Zettervallska villan i Lund från 1871. <span class="era">1871–1871</span></li>
+<li><a href="/p/ksamsok-televerkets-hus-i-lund-lund-998260"><b>TELEVERKETS HUS I LUND</b></a> — Televerkets nationalromantiska hus från 1914–15 med krenelerade torn. <span class="era">1914–1915</span></li>
+<li><a href="/p/ksamsok-raknehuset-lund-998766"><b>RÄKNEHUSET</b></a> — Ett räknehus från 1911–12 som knyter an till observatoriets arkitektur. <span class="era">1911–1912</span></li>
+<li><a href="/karta?plats=ksamsok-astrografhuset-lund-998770"><b>ASTROGRAFHUSET</b></a> — Ett flyttbart astrografhus på räls intill observatoriet. <span class="era">1865–1913</span></li>
+<li><a href="/karta?plats=ksamsok-bod-lund-998448"><b>Bod</b></a> — En bod i Lund från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-kolhuset-lund-689856"><b>KOLHUSET</b></a> — En kolkällare från 1860-talet med krenelerat krön i borgstil. <span class="era">1862–1867</span></li>
+<li><a href="/p/ksamsok-vita-villan-lund-357048"><b>VITA VILLAN</b></a> — En laboratoriebyggnad för botanik från 1889–91, länge kallad Vita villan. <span class="era">1889–1891</span></li>
+<li><a href="/karta?plats=ksamsok-juridicum-lund-050864"><b>Juridicum</b></a> — Ett tidigare barnsjukhus från 1899, ombyggt till juridisk institution. <span class="era">1899–1899</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-med-butik-lund-983860"><b>BOSTADSHUS MED BUTIK</b></a> — Ett bostadshus med butik i Lund från 1804. <span class="era">1804–1804</span></li>
+<li><a href="/p/ksamsok-staket-lund-983703"><b>STÄKET</b></a> — En av Lunds få bevarade medeltida tegelbyggnader, i dag restaurang. <span class="era">1570–1579</span></li>
+<li><a href="/p/ksamsok-fru-gorvels-hus-lund-983764"><b>FRU GÖRVELS HUS</b></a> — Ett tegelhus från omkring 1570 uppfört åt Görvel Fadersdotter Sparre. <span class="era">1570–1570</span></li>
+<li><a href="/p/ksamsok-liljewalchska-huset-lund-984042"><b>LILJEWALCHSKA HUSET</b></a> — Ett korsvirkeshus från 1700-talets slut, uppkallat efter släkten Liljewalch. <span class="era">1770–1799</span></li>
+<li><a href="/p/ksamsok-theologicum-lund-357151"><b>Theologicum</b></a> — Theologicum uppfördes 1853 som anatomibyggnad i botaniska trädgården. <span class="era">1853–1853</span></li>
+<li><a href="/p/ksamsok-thomanderska-studenthemmet-lund-357150"><b>THOMANDERSKA STUDENTHEMMET</b></a> — Professor Naumanns hus från 1855 blev studenthem efter ombyggnaden 1895. <span class="era">1855–1855</span></li>
+<li><a href="/karta?plats=ksamsok-histologiska-institutionen-lund-984481"><b>HISTOLOGISKA INSTITUTIONEN</b></a> — Histologiska institutionen uppfördes 1892–93 för fysiologin. <span class="era">1892–1893</span></li>
+<li><a href="/karta?plats=ksamsok-ekonomibyggnad-lund-994320"><b>EKONOMIBYGGNAD</b></a> — Ekonomibyggnad i Lund från 1794. <span class="era">1794–1794</span></li>
+<li><a href="/p/ksamsok-lunds-tingsratt-lund-696807"><b>LUNDS TINGSRÄTT</b></a> — Lunds tingsrätt ritades 1956 av Hans Westman kring en atriumgård. <span class="era">1956–1956</span></li>
+<li><a href="/p/ksamsok-ostervangsskolan-lund-983661"><b>ÖSTERVÅNGSSKOLAN</b></a> — Östervångsskolan byggdes 1869–71 som skola för dövstumma. <span class="era">1869–1871</span></li>
+<li><a href="/karta?plats=ksamsok-wickmanska-garden-lund-998446"><b>WICKMANSKA GÅRDEN</b></a> — Wickmanska gården i Lund uppfördes 1788. <span class="era">1788–1788</span></li>
+<li><a href="/p/ksamsok-orangeri-lund-357046"><b>ORANGERI</b></a> — Botaniska trädgårdens stora växthus stod färdigt 1867. <span class="era">1862–1867</span></li>
+<li><a href="/karta?plats=ksamsok-kanikresidenset-lund-049286"><b>KANIKRESIDENSET</b></a> — Medeltida tegelhus från 1220-talet, en gång kanikens residens. <span class="era">1220–1229</span></li>
+<li><a href="/p/ksamsok-universitetshuset-lund-691592"><b>UNIVERSITETSHUSET</b></a> — Universitetshuset restes 1878–82 i hellenistisk stil av Helgo Zettervall. <span class="era">1878–1882</span></li>
+<li><a href="/p/ksamsok-agardhianum-lund-357047"><b>AGARDHIANUM</b></a> — Agardhianum byggdes 1865–67 för botaniska institutionen. <span class="era">1862–1867</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-lund-982866"><b>BOSTADSHUS</b></a> — Brunius lät 1848 uppföra ett tegelhus vid Magle Lilla Kyrkogata. <span class="era">1848–1848</span></li>
+<li><a href="/karta?plats=ksamsok-anatomiska-institutionen-lund-984485"><b>ANATOMISKA INSTITUTIONEN</b></a> — Anatomiska institutionen uppfördes 1896–97. <span class="era">1896–1897</span></li>
+<li><a href="/p/ksamsok-flygellanga-lund-982746"><b>FLYGELLÄNGA</b></a> — Flygellängan förbinder Skånska Hypoteksföreningens hus från 1910-talet. <span class="era">1918–1918</span></li>
+<li><a href="/karta?plats=ksamsok-karl-xii-huset-lund-984722"><b>KARL XII-HUSET</b></a> — Karl XII-huset från 1500-talets mitt gästades av kungen 1716–18. <span class="era">1535–1565</span></li>
+<li><a href="/karta?plats=ksamsok-seismografhuset-lund-998772"><b>SEISMOGRAFHUSET</b></a> — Seismografhuset är en underjordisk byggnad täckt av en gräskulle. <span class="era">1865–1913</span></li>
+<li><a href="/karta?plats=ksamsok-kjederqvistska-garden-lund-994344"><b>KJEDERQVISTSKA GÅRDEN</b></a> — Kjederqvistska gården i Lund uppfördes 1812–13. <span class="era">1812–1813</span></li>
+<li><a href="/p/ksamsok-radhuset-i-lund-lund-984962"><b>RÅDHUSET I LUND</b></a> — Lunds rådhus byggdes 1836 och blev rådhus efter ombyggnaden 1899–1900. <span class="era">1836–1836</span></li>
+<li><a href="/karta?plats=ksamsok-lunds-jarnvagsstation-lund-998300"><b>LUNDS JÄRNVÄGSSTATION</b></a> — Lunds stationshus uppfördes 1856–59 och byggdes ut i flera etapper. <span class="era">1856–1859</span></li>
+<li><a href="/p/ksamsok-universitetsbiblioteket-lund-lund-982660"><b>UNIVERSITETSBIBLIOTEKET, LUND</b></a> — Universitetsbiblioteket fick sitt nygotiska hus på Helgonabacken 1902–07. <span class="era">1907–1907</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-till-bruniushuset-lund-982860"><b>FLYGELBYGGNAD TILL BRUNIUSHUSET</b></a> — Apotekare Åkerblom uppförde flygelbyggnaden 1871. <span class="era">1871–1871</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-lund-982862"><b>GÅRDSHUS</b></a> — Gårdshuset från 1940 rymde ursprungligen stall och drängkammare. <span class="era">1940–1940</span></li>
+<li><a href="/p/ksamsok-skanska-hypoteksforeningen-lund-982720"><b>SKÅNSKA HYPOTEKSFÖRENINGEN</b></a> — Skånska Hypoteksföreningens hus ritades av Isak Gustaf Clason. <span class="era">1918–1918</span></li>
+<li><a href="/karta?plats=ksamsok-klassiska-institutionen-lund-984483"><b>KLASSISKA INSTITUTIONEN</b></a> — Klassiska institutionen uppfördes 1883–86 för fysiska institutionen. <span class="era">1883–1886</span></li>
+<li><a href="/karta?plats=ksamsok-vaktmastarbostaden-lund-998762"><b>VAKTMÄSTARBOSTADEN</b></a> — Vaktmästarbostaden uppfördes i en våning 1865. <span class="era">1865–1865</span></li>
+<li><a href="/karta?plats=ksamsok-norra-instrumenthuset-lund-998760"><b>NORRA INSTRUMENTHUSET</b></a> — Norra instrumenthuset i Lund finns i bebyggelseregistret. <span class="era">1865–1913</span></li>
+<li><a href="/p/ksamsok-palaestra-et-odeum-lund-357152"><b>Palaestra et odeum</b></a> — Palaestra et Odeum ritades 1882 av Zettervall som pendang till Lundagårdshuset. <span class="era">1882–1882</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 51</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lund-allhelgonakyrkan-q827091"><b>Allhelgonakyrkan</b></a> — kyrkobyggnad i Lund, Sverige</li>
+<li><a href="/karta?plats=wd-lund-helgeandskyrkan-q5704629"><b>Helgeandskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Lund, Sverige</li>
+<li><a href="/karta?plats=wd-lund-sankt-laurentii-kyrka-q7589460"><b>Sankt Laurentii kyrka</b></a> — kyrkobyggnad i Lund</li>
+<li><a href="/karta?plats=wd-lund-sankt-peters-klosters-kyrka-q7591414"><b>Sankt Peters Klosters kyrka</b></a> — kyrkobyggnad i Lund</li>
+<li><a href="/karta?plats=wd-lund-fjelie-kyrka-q10495952"><b>Fjelie kyrka</b></a> — kyrkobyggnad i Lomma kommun</li>
+<li><a href="/karta?plats=wd-lund-knastorps-kyrka-q10546807"><b>Knästorps kyrka</b></a> — kyrkobyggnad i Staffanstorps kommun</li>
+<li><a href="/karta?plats=wd-lund-maria-magdalena-kyrka-q10577192"><b>Maria Magdalena kyrka</b></a> — kyrka i Lund</li>
+<li><a href="/karta?plats=wd-lund-norra-nobbelovs-kyrka-q10602530"><b>Norra Nöbbelövs kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-odarslovs-kyrka-q10606779"><b>Odarslövs kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-petersgardens-kyrka-q10625148"><b>Petersgårdens kyrka</b></a> — kyrkobyggnad i Lund</li>
+<li><a href="/karta?plats=wd-lund-sankt-hans-kyrka-q10661359"><b>Sankt Hans kyrka</b></a> — kyrkobyggnad i Lund</li>
+<li><a href="/karta?plats=wd-lund-stora-raby-kyrka-q10681090"><b>Stora Råby kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-stangby-kyrka-q10682935"><b>Stångby kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-uppakra-kyrka-q10710320"><b>Uppåkra kyrka</b></a> — kyrkobyggnad i Staffanstorps kommun</li>
+<li><a href="/karta?plats=wd-lund-vallkarra-kyrka-q10712367"><b>Vallkärra kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-vasterkyrkan-q10717954"><b>Västerkyrkan</b></a> — kyrka i Lund</li>
+<li><a href="/karta?plats=wd-lund-bosebo-kyrka-q16503997"><b>Bosebo kyrka</b></a> — kyrkobyggnad i Lund</li>
+<li><a href="/karta?plats=wd-lund-sankt-knuts-kyrka-q18332439"><b>Sankt Knuts kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-lund-s-t-jorgens-hospital-q29475027"><b>S:t Jörgens hospital</b></a> — kyrka/kapell i Skåne (Lund 50:3)</li>
+<li><a href="/karta?plats=wd-lund-s-t-drottens-q29475025"><b>S:t Drottens</b></a> — kyrka/kapell i Skåne (Lund 28:1)</li>
+<li><a href="/p/wd-lund-sankt-peters-kyrka-q61983986"><b>Sankt Peters kyrka</b></a> — riven kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-mikaels-kyrka-q120869796"><b>Sankt Mikaels kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-pauls-kyrka-q120965780"><b>Sankt Pauls kyrka</b></a> — kyrka under medeltiden i Lund</li>
+<li><a href="/p/wd-lund-sankt-botulfs-kyrka-q121080612"><b>Sankt Botulfs kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankta-maria-magle-kyrka-q121083396"><b>Sankta Maria magle kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-thomas-kyrka-q121096669"><b>Sankt Thomas kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-clemens-kyrka-q121157380"><b>Sankt Clemens kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-olofs-kyrka-q121157590"><b>Sankt Olofs kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-jacobs-kyrka-q121159757"><b>Sankt Jacobs kyrka</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-martens-kyrka-lund-q121160711"><b>Sankt Mårtens kyrka, Lund</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-sankt-andreas-kyrka-lund-q121161444"><b>Sankt Andreas kyrka, Lund</b></a> — medeltida kyrka i Lund</li>
+<li><a href="/p/wd-lund-kraftskyrkan-q121213694"><b>Kraftskyrkan</b></a> — kyrkolokal och tidigare församling i Lund</li>
+<li><a href="/p/wd-lund-sodra-kattesundskyrkan-q121224193"><b>Södra Kattesundskyrkan</b></a> — tidigare medeltidskyrka i Lund</li>
+<li><a href="/p/wd-lund-ostra-kattesundskyrkan-q121224515"><b>Östra Kattesundskyrkan</b></a> — tidigare medeltidskyrka i Lund</li>
+<li><a href="/karta?plats=ksamsok-lasarettskapellet-lund-050865"><b>Lasarettskapellet</b></a> — Lasarettskapellet i Lund uppfördes 1887. <span class="era">1887–1887</span></li>
+<li><a href="/p/ksamsok-lunds-domkyrka-lund-439699"><b>LUNDS DOMKYRKA</b></a> — Lunds domkyrka har en snart tusenårig och händelserik byggnadshistoria. <span class="era">1100–1349</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-d3c534"><b>Kyrka/kapell</b></a> — Platsen för S:t Peters medeltidskyrka vid Bredgatan.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-276ffa"><b>Kyrka/kapell</b></a> — Platsen för en medeltidskyrka enligt Kulturens stadsmodell.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-bddce3"><b>Kyrka/kapell</b></a> — Platsen för Sankt Mikaels medeltidskyrka, markerad med en minnessten.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-0d2b1c"><b>Kyrka/kapell</b></a> — Platsen för en medeltidskyrka i Lund.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-6b959f"><b>Kyrka/kapell</b></a> — Ungefärlig plats för en medeltidskyrka vars kyrkogård påträffades 1909.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-6f8a28"><b>Kyrka/kapell</b></a> — Delvis övertorvad grund efter en treskeppig medeltidskyrka med absid.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-cf313d"><b>Kyrka/kapell</b></a> — Plats för en medeltidskyrka med gravar från 1100- och 1200-talen.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-23113b"><b>Kyrka/kapell</b></a> — Plats för en medeltidskyrka.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-fe1a29"><b>Kyrka/kapell</b></a> — Ruinrester av premonstratensklostret S:a Trinitas, bevarade i en museilokal.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-53b155"><b>Kyrka/kapell</b></a> — Plats för medeltidskyrka och en runsten som skänktes till Köpenhamn 1829.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-f1fcda"><b>Kyrka/kapell</b></a> — Plats för S:t Nikolaus kyrka, sjöfararnas skyddshelgon, byggd på 1100-talet och riven 1537.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-774a4f"><b>Kyrka/kapell</b></a> — Plats för en medeltidskyrka vid Östra Torn, känd genom skelettfynd.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-bf54b1"><b>Kyrka/kapell</b></a> — Plats för S:t Jacobs kyrka, uppförd på 1100-talet och riven 1536.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-a65cea"><b>Kyrka/kapell</b></a> — Plats för S:t Mårtens romanska stenkyrka, uppförd på 1100-talet och riven 1536.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-lund-e4ccad"><b>Kyrka/kapell</b></a> — Plats för en medeltidskyrka utanför Norre port.</li>
+</ul>
+<h3 class="city-h3">fornminne · 38</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stadsvall-stadsmur-lund-86f5ca"><b>Stadsvall/stadsmur</b></a> — En 580 meter lång stadsvall med gångväg och lövträdsallé längs krönet.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-956757"><b>Övrigt</b></a> — Industriminne efter Lunds Bryggeri, grundat 1870 och nedlagt 1967.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-lund-de980d"><b>Hägnadssystem</b></a> — Hägnadssystem av jordvallar synligt på en karta från 1704.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-lund-83e1fb"><b>Tegelindustri</b></a> — Pålsjö tegelbruk var i bruk 1850–1950 där Tekniska högskolan nu ligger.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-775172"><b>Övrigt</b></a> — Industriminne efter Anders Båths pianofabrik, nedlagd på 1930-talet.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-lund-a87bd8"><b>Bytomt/gårdstomt</b></a> — Bytomt enligt lantmäteriet, med en resultatlös förundersökning intill.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-f86443"><b>Övrigt</b></a> — Industriminne efter Nordströms Handskfabrik, verksam 1876 till 1960-talet.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-ef1659"><b>Övrigt</b></a> — Industriminne efter Lunds skofabrik, verksam 1923–1958.</li>
+<li><a href="/p/ksamsok-fyndplats-lund-1d0189"><b>Fyndplats</b></a> — Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-lund-4a998d"><b>Flatmarksgrav</b></a> — Flatmarksgravar från äldre romersk järnålder, undersökta och borttagna.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-lund-e1729f"><b>Tegelindustri</b></a> — Tegelbruk vid Norra kyrkogården, i bruk 1740–1770.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-64c40e"><b>Övrigt</b></a> — Industriminne efter Bleckvarufabriken, verksam 1898–1908.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-9f8b96"><b>Övrigt</b></a> — Industriminne efter en pianofabrik grundad 1854 av David Hansson.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-0d46b0"><b>Övrigt</b></a> — Industriminne efter Lunds Nya Gjuteri, grundat 1867 och sedermera Alfa Laval.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-94291e"><b>Övrigt</b></a> — Industriminne efter Bindgarnsfabriken i Lund.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-3d3c6b"><b>Övrigt</b></a> — Platsen för ett helgeandshus innanför Södra stadsporten.</li>
+<li><a href="/karta?plats=ksamsok-stadsvall-stadsmur-lund-9fbdcd"><b>Stadsvall/stadsmur</b></a> — Bevarad del av en stadsvall, omkring 50 meter lång.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-lund-23454a"><b>Tegelindustri</b></a> — Annetorps tegelbruk var i bruk 1874–1949.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-forhistorisk-medeltida-lund-495f19"><b>Husgrund, förhistorisk/medeltida</b></a> — Grund efter ett hospital, markerad med rader av gråsten och rester av tegel.</li>
+<li><a href="/karta?plats=ksamsok-park-tradgardsanlaggning-lund-902a7b"><b>Park-/trädgårdsanläggning</b></a> — Rester av en trädgårdsanläggning i form av stadskulturlager, funna vid schaktning.</li>
+<li><a href="/p/ksamsok-hog-lund-ec6080"><b>Hög</b></a> — Hög med avplanad topp och sentida kantkedja, känd under flera historiska namn.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-lund-4151c5"><b>Tegelindustri</b></a> — Plats för sockerraffinaderiet Öresund, i drift 1888–1914.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-79f1c5"><b>Övrigt</b></a> — Plats för Lunds gasverk, nedlagt 1963 och nu ersatt av bostäder.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-fc6410"><b>Övrigt</b></a> — Plats för Fredrik Lundboms Läderfabrik, senare postexpedition.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-93ac40"><b>Övrigt</b></a> — Plats där Lunds korkfabrik enligt uppgift tidigare låg.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-fef8e4"><b>Övrigt</b></a> — Möllers handskfabrik, verksam 1854–1965, senare flyttad till hörnet Gröngatan–Kattesund.</li>
+<li><a href="/karta?plats=ksamsok-hog-lund-fe35d2"><b>Hög</b></a> — Ungefärlig plats för en möjlig hög, kopplad till namnet Solbergshögen.</li>
+<li><a href="/karta?plats=ksamsok-boplats-lund-210500"><b>Boplats</b></a> — Boplats med gropar, stolphål och en härd, bedömd som förhistorisk eller medeltida.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-lund-f467cd"><b>Stadslager</b></a> — Kulturlager över Lunds medeltida stadskärna, innanför den forna stadsvallen.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-lund-36d566"><b>Vägmärke</b></a> — Milstolpe av gråsten med inskriften 1/4 mil, flyttad till Kulturen.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-53ee82"><b>Övrigt</b></a> — Plats för Lunds Mekaniska Verkstad, verksam 1897–1972.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-ba6185"><b>Övrigt</b></a> — Plats för en av Skånes första sockerfabriker, kortlivad 1839–1841.</li>
+<li><a href="/karta?plats=ksamsok-bildristning-lund-db24bf"><b>Bildristning</b></a> — Historiska museet med sju runstenar och en bildsten i förvar.</li>
+<li><a href="/karta?plats=ksamsok-raby-kalla-kalla-med-tradition-lund-c9b02d"><b>Råby källa, Källa med tradition</b></a> — Råby källa, en stensatt trefaldighetskälla som numera är uttorkad.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-487128"><b>Övrigt</b></a> — Rund hundkyrkogård med inskriften Djurens minneslund kring ett centralt stenblock.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-lund-03bafa"><b>Övrigt</b></a> — Plats för Carl Holmbergs gjuteri och verkstad, verksam 1864–1944.</li>
+<li><a href="/karta?plats=ksamsok-hog-lund-84b6d4"><b>Hög</b></a> — Utgrävd hög med gravar från sten- och bronsålder, undersökt 1938.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-lund-140e65"><b>Tegelindustri</b></a> — Plats för Lunds Mejeri, verksamt 1872–1947.</li>
+</ul>
+<h3 class="city-h3">Torg · 20</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-lund-the-new-bantorget-69"><b>The &quot;new&quot; Bantorget</b></a> — It s hard to recognise Barntorget from the end of the 1850s. <span class="era">1857</span></li>
+<li><a href="/p/bht-lund-stortorget-north-facing-52"><b>Stortorget, north-facing</b></a> — Stortorget was Lund s first public square to have market trading stalls, and was at one time called Salutorget (roughly translated as selli… <span class="era">1860</span></li>
+<li><a href="/karta?plats=bht-lund-vy-over-torget-110"><b>Vy över torget</b></a> — Utsikt över torget, troligtvis sent 1800tal. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-lund-clemenstorget-1904-95"><b>Clemenstorget, 1904</b></a> — When this photograph was taken in 1904, the buildings behind the two children were very newly-constructed. <span class="era">1904</span></li>
+<li><a href="/karta?plats=bht-lund-clemenstorget-1920-89"><b>Clemenstorget, 1920</b></a> — Here you can see how the large square looks without the trees. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-lund-from-bantorget-to-svanegatan-1960s-74"><b>From Bantorget to Svanegatan, 1960s</b></a> — When this photograph was taken (1960s), Nygatan was already 100 years old. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-lund-clemenstorget-1960s-104"><b>Clemenstorget, 1960s</b></a> — It appears to be spring when this photograph was taken. <span class="era">1960</span></li>
+<li><a href="/p/bht-lund-bantorget-raggarbrudar-201"><b>Bantorget / Raggarbrudar</b></a> — I met my Michael when I was 15. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-lund-busstorget-bankgatan-1960s-70s-60"><b>Busstorget Bankgatan, 1960s-70s</b></a> — The bus station on Bankgatan arrived after many detached houses were demolished here in the 1950s. <span class="era">1966</span></li>
+<li><a href="/karta?plats=wd-lund-clemenstorget-q1100219"><b>Clemenstorget</b></a> — plats i Lund</li>
+<li><a href="/karta?plats=wd-lund-botulfsplatsen-q10433937"><b>Botulfsplatsen</b></a> — plats i Lund</li>
+<li><a href="/p/wd-lund-domkyrkoplatsen-q10475821"><b>Domkyrkoplatsen</b></a> — torg i Lund, Sverige</li>
+<li><a href="/p/wd-lund-knut-den-stores-torg-q10546752"><b>Knut den Stores torg</b></a> — plats i Lund</li>
+<li><a href="/karta?plats=wd-lund-stortorget-q10681418"><b>Stortorget</b></a> — torg i Lund</li>
+<li><a href="/karta?plats=wd-lund-tegnersplatsen-q10691880"><b>Tegnérsplatsen</b></a> — plats i Lund</li>
+<li><a href="/karta?plats=wd-lund-ideontorget-q98819733"><b>Ideontorget</b></a> — plats i Lund</li>
+<li><a href="/karta?plats=wd-lund-tornaplatsen-q98820154"><b>Tornaplatsen</b></a> — plats i Lund</li>
+<li><a href="/karta?plats=wd-lund-solbjerstorget-q118869381"><b>Solbjerstorget</b></a> — torg i Lund, Sverige</li>
+<li><a href="/karta?plats=wd-lund-vastra-stationstorget-q122889932"><b>Västra stationstorget</b></a> — Västra stationstorget</li>
+<li><a href="/karta?plats=wd-lund-linero-torg-q125101318"><b>Linero torg</b></a> — torg i Lund</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 19</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lund-nazi-victims-memorial-in-lund-q110722815"><b>Nazi Victims Memorial in Lund</b></a> — Nazi Victims Memorial in Lund</li>
+<li><a href="/karta?plats=wd-lund-lingmonumentet-q118869231"><b>Lingmonumentet</b></a> — Lingmonumentet</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-fa078b"><b>Minnesmärke</b></a> — Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-5a1e9e"><b>Minnesmärke</b></a> — Minnesmärke över Sven Lagerbring, en kopparbyst på granitpelare.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-069c2c"><b>Minnesmärke</b></a> — Minnesmärke över Carl Adolf Agardh, kopparbyst på granitpelare.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-8f0ad2"><b>Minnesmärke</b></a> — Minnesmärke i svart granit krönt av en kopparbyst.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-501733"><b>Minnesmärke</b></a> — Platsen för franciskanernas kloster och Nordens första högskola.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-24b64e"><b>Minnesmärke</b></a> — Minnestavla över S:t Mårtens medeltida stenkyrka, uppförd på 1100-talet och riven 1536.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-2075af"><b>Minnesmärke</b></a> — Minnestavla över S:t Stefans kyrka, byggd som stavkyrka 1050 och riven efter 1536.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-a57aec"><b>Minnesmärke</b></a> — Minnesmärke med kopparbyst av Tycho Brahe på en granitpelare.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-ebd9ae"><b>Minnesmärke</b></a> — Minnestavla över Lunds äldre rådhus, som stått på platsen i fem generationer.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-7f94ba"><b>Minnesmärke</b></a> — Minnesmärke över gymnastikens fader Per Henrik Ling, avtäckt 1939.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-61acad"><b>Minnesmärke</b></a> — Minnesmärke över Allhelgonaklostret, cluniacenserkloster förstört av brand 1192.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-fe0813"><b>Minnesmärke</b></a> — Minnessten med drakslinga om parken Lunds stad anlade 1909–1911 efter 1907 års utställning.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-66e1d3"><b>Minnesmärke</b></a> — Skämtsamt minnesmärke Intighet, rest av Uarda-akademien 1984.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-063317"><b>Minnesmärke</b></a> — Minnestavla över August Strindbergs vistelse på platsen 1897.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-2e241a"><b>Minnesmärke</b></a> — Minnessten över Sankt Mikaels medeltida kyrka, med helgonet i relief.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-6b0d8d"><b>Minnesmärke</b></a> — Granitminnessten med en kvinna och en pojke i relief.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-lund-3ee65e"><b>Minnesmärke</b></a> — Bronsstaty av Carl von Linné på stensockel.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-lund-parkskolan-ca-1910-77"><b>Parkskolan ca 1910</b></a> — Look carefully at Parkskolan s facade, on the left of the pictures. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-lund-parkering-ca-1970-256"><b>Parkering ca 1970</b></a> — Foto : Kulturen <span class="era">1970</span></li>
+<li><a href="/p/wd-lund-sankt-hans-backar-q7418758"><b>Sankt Hans backar</b></a> — strövområde i norra Lund</li>
+<li><a href="/karta?plats=wd-lund-bananparken-q10425810"><b>Bananparken</b></a> — park i Lund, Sverige</li>
+<li><a href="/p/wd-lund-monumentparken-lund-q10588852"><b>Monumentparken, Lund</b></a> — Monumentparken är en park i Möllevången i Lund.</li>
+<li><a href="/karta?plats=wd-lund-nobbelovsparken-q10605524"><b>Nöbbelövsparken</b></a> — Nöbbelövsparken är en park anlagd på 1970-talet i den del av Lund som kallas Norra Nöbbelöv och sträcker sig som en sammanhållen grönska ge…</li>
+<li><a href="/karta?plats=wd-lund-patrik-rosengrens-park-q10621745"><b>Patrik Rosengrens park</b></a> — Patrik Rosengrens park är en park i västra Lund.</li>
+<li><a href="/p/wd-lund-sankt-jorgens-park-q10661382"><b>Sankt Jörgens park</b></a> — Sankt Jörgens park, eller Skönadalsparken som den kallades då den anlades på 1940-talet, är en park på Galjevången i Lund, norr om Villa Su…</li>
+<li><a href="/karta?plats=wd-lund-skissernas-museums-skulpturpark-q10670230"><b>Skissernas museums skulpturpark</b></a> — Skissernas museums skulpturpark är en skulpturpark utanför Skissernas museum i Lund.</li>
+<li><a href="/p/wd-lund-trolle-wachtmeisters-park-q18334112"><b>Trolle Wachtmeisters park</b></a> — Trolle Wachtmeisters park är en park på Väster i Lund.</li>
+<li><a href="/p/wd-lund-raby-sjopark-q118868883"><b>Råby sjöpark</b></a> — park i Lund</li>
+</ul>
+<h3 class="city-h3">museum · 7</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-lund-the-tegner-museum-939"><b>The Tegner museum</b></a> — Esaias Tegn r (1782 1846) was one of Sweden s most important writers and poets of his generation. <span class="era">1870</span></li>
+<li><a href="/karta?plats=wd-lund-skissernas-museum-q683097"><b>Skissernas Museum</b></a> — konstmuseum i Lund</li>
+<li><a href="/karta?plats=wd-lund-lunds-universitets-historiska-museum-q3330592"><b>Lunds universitets historiska museum</b></a> — museum i Lund</li>
+<li><a href="/karta?plats=wd-lund-akademiska-foreningens-arkiv-studentmuseum-q10403938"><b>Akademiska Föreningens Arkiv &amp; Studentmuseum</b></a> — arbetslivsmuseum och arkiv i Lund</li>
+<li><a href="/p/wd-lund-livets-museum-q30093423"><b>Livets museum</b></a> — medicinhistoriskt museum</li>
+<li><a href="/karta?plats=wd-lund-universitetsmuseet-i-lund-q30147902"><b>Universitetsmuseet i Lund</b></a> — museum i Lund</li>
+<li><a href="/karta?plats=wd-lund-lunds-universitets-konstmuseum-q85671101"><b>Lunds universitets konstmuseum</b></a> — Lunds universitets konstmuseum</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-kloster-lund-2ba363"><b>Kloster</b></a> — Platsen för dominikanernas kloster, stiftat 1223 och raserat 1536.</li>
+<li><a href="/karta?plats=ksamsok-kloster-lund-4665b7"><b>Kloster</b></a> — Plats för franciskanernas kloster, stiftat 1238, och Nordens första högskola.</li>
+<li><a href="/karta?plats=ksamsok-kloster-lund-c91f9c"><b>Kloster</b></a> — Plats för Sankt Peters kloster, grundat på 1100-talet och bestående till 1606.</li>
+<li><a href="/karta?plats=ksamsok-kloster-lund-900659"><b>Kloster</b></a> — Plats för Allhelgonaklostret, cluniacenserkloster som brann 1192.</li>
+</ul>
+<h3 class="city-h3">Runsten · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-lund-b1bcce"><b>Runristning</b></a> — Runsten i granit med en yxbärande man, flyttad till Kulturhistoriska museet.</li>
+<li><a href="/karta?plats=ksamsok-runristning-lund-6a2aa1"><b>Runristning</b></a> — Flyttad granitrunsten som står i en krets av runstenar vid en sentida hög.</li>
+<li><a href="/karta?plats=ksamsok-runristning-lund-c50cb1"><b>Runristning</b></a> — Plats för en medeltidskyrka och en runsten som 1829 skänktes till Köpenhamn.</li>
+</ul>
+<h3 class="city-h3">Station · 1</h3>
+<ul class="place-list">
+<li><a href="/p/bht-lund-lund-central-station-65"><b>Lund Central station</b></a> — Lund Central Station s original layout from the 1850s included a two-storey station building and a goods depot, both built from stone, and… <span class="era">1923</span></li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-lund-glumslov-q29475067"><b>Glumslöv</b></a> — borg i Skåne (Södra Sandby 6:1)</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 285 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/lund/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/lund/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Lund gratis?</summary><p>Ja. Karta, alla 285 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Lund?</summary><p>Vandringen samlar 285 sevärdheter i Lund — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Hökeriet?</summary><p>From the mid-19th to the early 20th century, families in the neighbourhood shopped in this small shop, which was one of many grocer s shops in Lund.</p></details>
+<details class="faq"><summary>Vad är The &quot;new&quot; Bantorget?</summary><p>It s hard to recognise Barntorget from the end of the 1850s.</p></details>
+<details class="faq"><summary>Vad är Stortorget, north-facing?</summary><p>Stortorget was Lund s first public square to have market trading stalls, and was at one time called Salutorget (roughly translated as selling square ).</p></details>
+<details class="faq"><summary>Vad är The Botanical Gardens?</summary><p>The Botanical Gardens at Lund University are an oasis in the middle of Lund, with over 7,000 plants and a greenhouse with nine climate zones.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

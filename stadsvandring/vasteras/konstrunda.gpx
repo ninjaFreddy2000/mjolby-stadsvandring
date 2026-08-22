@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Västerås</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.61547645634733" lon="16.571926950673205"><name>Minnesmärke</name><desc>Två minnesstenar med byster av Hjalmar Branting och G.F. Thelander.</desc></wpt>
+  <wpt lat="59.61238056" lon="16.54874167"><name>Kunskapens träd, Västerås</name><desc>Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Västerås, skapad av Carl-Emil Berglin och tillverkad av Ulunda Smide.</desc></wpt>
+  <wpt lat="59.61129444" lon="16.54492778"><name>Fasadutsmyckning, Smedjegatan i Västerås</name><desc>Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).</desc></wpt>
+  <wpt lat="59.61072222" lon="16.54248611"><name>Aseaströmmen</name><desc>skulptur på Stora Torget i Västerås invigd 1989</desc></wpt>
+  <wpt lat="59.61248739637252" lon="16.540494402225647"><name>Minnesmärke</name><desc>Minnesvård över biskop Johannes Rudbeckius, rest till hans 300-årsminne.</desc></wpt>
+  <wpt lat="59.6125" lon="16.54045"><name>Johannes Rudbeckius</name><desc>en skulptur av Carl Milles</desc></wpt>
+  <wpt lat="59.60823889" lon="16.54576389"><name>Vindarnas grotta</name><desc>Vindarnas grotta är en skulptur i brons och granit av Eric Grate, som är placerad vid Fiskartorget, utanför stadshuset i Västerås.</desc></wpt>
+  <wpt lat="59.60739246667508" lon="16.54842889121826"><name>Minnesmärke</name><desc>En minnessten med byst av Gustav Vasa till minne av 1527.</desc></wpt>
+  <wpt lat="59.6045" lon="16.53158333"><name>Sommarsöndag</name><desc>Sommarsöndag är en skulptur i brons av Oscar Antonsson (1898–1960).</desc></wpt>
+  <rte><name>Konstrundan i Västerås</name>
+    <rtept lat="59.61547645634733" lon="16.571926950673205"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.61238056" lon="16.54874167"><name>Kunskapens träd, Västerås</name></rtept>
+    <rtept lat="59.61129444" lon="16.54492778"><name>Fasadutsmyckning, Smedjegatan i Västerås</name></rtept>
+    <rtept lat="59.61072222" lon="16.54248611"><name>Aseaströmmen</name></rtept>
+    <rtept lat="59.61248739637252" lon="16.540494402225647"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.6125" lon="16.54045"><name>Johannes Rudbeckius</name></rtept>
+    <rtept lat="59.60823889" lon="16.54576389"><name>Vindarnas grotta</name></rtept>
+    <rtept lat="59.60739246667508" lon="16.54842889121826"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.6045" lon="16.53158333"><name>Sommarsöndag</name></rtept>
+  </rte>
+</gpx>

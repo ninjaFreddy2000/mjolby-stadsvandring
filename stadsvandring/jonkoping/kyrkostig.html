@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Jönköping — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 34 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/jonkoping/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Jönköping — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 34 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/jonkoping/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Jönköping — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv. 34 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"jonkoping","theme":"kyrkostig","sourceSlug":"stadsvandring/jonkoping/kyrkostig","centroid":{"lat":57.78128324996913,"lng":14.177824845809251},"stops":[{"name":"Trånghalla kyrka","lat":57.84128,"lng":14.14836},{"name":"Ceciliakyrkan","lat":57.81083333,"lng":14.15416667},{"name":"Bymarkskyrkan","lat":57.79111111,"lng":14.14048611},{"name":"Dunkehalla kapell","lat":57.7872,"lng":14.146},{"name":"Bäckaby gamla kyrka","lat":57.78335556,"lng":14.13910833},{"name":"Dalvikskyrkan","lat":57.787625,"lng":14.13330556},{"name":"Slottskapellet","lat":57.7840004,"lng":14.15530014},{"name":"Kyrka/kapell","lat":57.78388486816299,"lng":14.155327415311072},{"name":"Jönköpings pingstkyrka","lat":57.78195953,"lng":14.15533066},{"name":"Immanuelskyrkan","lat":57.78073056,"lng":14.15884444},{"name":"Sofiakyrkan","lat":57.781943,"lng":14.159703},{"name":"Sofia Kyrka","lat":57.78192273327511,"lng":14.15991323757577},{"name":"Jungfru Maria och Sankt Nikolaus kyrka","lat":57.783055555556,"lng":14.164444444444},{"name":"Stadsbefästning","lat":57.780361675409345,"lng":14.16738243218358},{"name":"Fästning/skans","lat":57.77973261876925,"lng":14.167739602444136},{"name":"Kristine kyrka","lat":57.78194444,"lng":14.17916667},{"name":"Jönköpings allianskyrka","lat":57.7812071,"lng":14.1798654},{"name":"Korskyrkan","lat":57.78170013,"lng":14.1953001},{"name":"Östra kapellet","lat":57.77817,"lng":14.19861},{"name":"Ekhagskyrkan","lat":57.77778333,"lng":14.22413333},{"name":"Ansgariikyrkan","lat":57.787777777778,"lng":14.238055555556},{"name":"Österängskyrkan","lat":57.7858,"lng":14.2443},{"name":"Sanna kyrka","lat":57.79005556,"lng":14.25069444},{"name":"Kungsportskyrkan","lat":57.78246,"lng":14.26003},{"name":"Garpa skans","lat":57.787129,"lng":14.272445},{"name":"Huskvarna kyrka","lat":57.7875,"lng":14.27361111},{"name":"Öxnehagakyrkan","lat":57.774025,"lng":14.26343889},{"name":"Ljungarums kyrka","lat":57.75496,"lng":14.17663},{"name":"Skogskapellet","lat":57.7539,"lng":14.1466},{"name":"Gräshagskyrkan","lat":57.7648,"lng":14.13633},{"name":"Jönköpings katolska kyrka","lat":57.7713,"lng":14.1512},{"name":"Råslätts kyrka","lat":57.7394,"lng":14.1505},{"name":"Sandseryds kyrka","lat":57.74194444,"lng":14.08472222},{"name":"Järstorps kyrka","lat":57.80277778,"lng":14.115}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Jönköping","description":"Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Trånghalla kyrka","text":"kyrkobyggnad i Trånghalla, Sverige, använd av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-tranghalla-kyrka-q10705658"},{"@type":"HowToStep","position":2,"name":"Ceciliakyrkan","text":"rumänsk-ortodox kyrka i Vilhelmsro, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-ceciliakyrkan-q17518538"},{"@type":"HowToStep","position":3,"name":"Bymarkskyrkan","text":"kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-bymarkskyrkan-q10438232"},{"@type":"HowToStep","position":4,"name":"Dunkehalla kapell","text":"kapell i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-dunkehalla-kapell-q17524825"},{"@type":"HowToStep","position":5,"name":"Bäckaby gamla kyrka","text":"tidigare kyrkobyggnad i Svenska kyrkan i Jönköpings stadspark i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-backaby-gamla-kyrka-q10438373"},{"@type":"HowToStep","position":6,"name":"Dalvikskyrkan","text":"kyrkan i Jönköpings kommun","url":"https://stadsvandring.io/p/wd-jonkoping-dalvikskyrkan-q10466301"},{"@type":"HowToStep","position":7,"name":"Slottskapellet","text":"kapell i Jönköping, Sverige, använt av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-slottskapellet-q10671640"},{"@type":"HowToStep","position":8,"name":"Kyrka/kapell","text":"Grunden efter ett medeltida kapell, undersökt 1989–1990.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-jonkoping-a97e29"},{"@type":"HowToStep","position":9,"name":"Jönköpings pingstkyrka","text":"kyrkobyggnad i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-pingstkyrka-q17524779"},{"@type":"HowToStep","position":10,"name":"Immanuelskyrkan","text":"kyrkobyggnad i Equmeniakyrkan i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-immanuelskyrkan-q10534722"},{"@type":"HowToStep","position":11,"name":"Sofiakyrkan","text":"kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-sofiakyrkan-q2302684"},{"@type":"HowToStep","position":12,"name":"Sofia Kyrka","text":"Sofia kyrka, byggd sedan den växande västra församlingen blev trångbodd i slottskapellet.","url":"https://stadsvandring.io/p/ksamsok-sofia-kyrka-jonkoping-014776"},{"@type":"HowToStep","position":13,"name":"Jungfru Maria och Sankt Nikolaus kyrka","text":"tidigare kyrka i Jönköping","url":"https://stadsvandring.io/p/wd-jonkoping-jungfru-maria-och-sankt-nikolaus-kyrka-q123479639"},{"@type":"HowToStep","position":14,"name":"Stadsbefästning","text":"Rester av bastionen Carolus och en gammal hamnstation.","url":"https://stadsvandring.io/p/ksamsok-stadsbefastning-jonkoping-cc128e"},{"@type":"HowToStep","position":15,"name":"Fästning/skans","text":"En bevarad stödmur från stadens södra befästningsvall vid Munksjön.","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-jonkoping-ccada0"},{"@type":"HowToStep","position":16,"name":"Kristine kyrka","text":"kyrkobyggnad i Jönköping","url":"https://stadsvandring.io/p/wd-jonkoping-kristine-kyrka-q10549243"},{"@type":"HowToStep","position":17,"name":"Jönköpings allianskyrka","text":"kyrkobyggnad i Svenska alliansmissionen i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-allianskyrka-q21492138"},{"@type":"HowToStep","position":18,"name":"Korskyrkan","text":"kyrka i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-korskyrkan-q10548210"},{"@type":"HowToStep","position":19,"name":"Östra kapellet","text":"kapell i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-ostra-kapellet-q20168558"},{"@type":"HowToStep","position":20,"name":"Ekhagskyrkan","text":"kyrkobyggnad i Ekhagen i Jönköping, Sverige, använd av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-ekhagskyrkan-q10480628"},{"@type":"HowToStep","position":21,"name":"Ansgariikyrkan","text":"kyrkobyggnad i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-ansgariikyrkan-q17518534"},{"@type":"HowToStep","position":22,"name":"Österängskyrkan","text":"kyrkobyggnad i Svenska kyrkan i Österängen i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-osterangskyrkan-q10728168"},{"@type":"HowToStep","position":23,"name":"Sanna kyrka","text":"kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-sanna-kyrka-q10661546"},{"@type":"HowToStep","position":24,"name":"Kungsportskyrkan","text":"EFK-kyrkobyggnad i Öxnehaga i Huskvarna, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-kungsportskyrkan-q10550363"},{"@type":"HowToStep","position":25,"name":"Garpa skans","text":"fästning/skans i Småland (Hakarp 25:1)","url":"https://stadsvandring.io/p/wd-jonkoping-garpa-skans-q29385265"},{"@type":"HowToStep","position":26,"name":"Huskvarna kyrka","text":"kyrkobyggnad i Svenska kyrkan i Huskvarna, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-huskvarna-kyrka-q10527413"},{"@type":"HowToStep","position":27,"name":"Öxnehagakyrkan","text":"kyrkobyggnad på Öxnehaga i Huskvarna, Sverige, använd av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-oxnehagakyrkan-q10728767"},{"@type":"HowToStep","position":28,"name":"Ljungarums kyrka","text":"kyrkobyggnad i Svenska kyrkan i Ljungarum i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-ljungarums-kyrka-q10568304"},{"@type":"HowToStep","position":29,"name":"Skogskapellet","text":"kapell i Jönköping, Sverige, använt av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-skogskapellet-q10670363"},{"@type":"HowToStep","position":30,"name":"Gräshagskyrkan","text":"kyrkobyggnad i Svenska kyrkan på Gräshagen i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-grashagskyrkan-q10509795"},{"@type":"HowToStep","position":31,"name":"Jönköpings katolska kyrka","text":"romersk-katolsk kyrkobyggnad i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-katolska-kyrka-q10544382"},{"@type":"HowToStep","position":32,"name":"Råslätts kyrka","text":"kyrkobyggnad på Råslätt utanför Jönköping, Sverige, använd av Svenska kyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-raslatts-kyrka-q10658755"},{"@type":"HowToStep","position":33,"name":"Sandseryds kyrka","text":"kyrkobyggnad i Svenska kyrkan i Sandseryd, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-sandseryds-kyrka-q10661225"},{"@type":"HowToStep","position":34,"name":"Järstorps kyrka","text":"kyrkobyggnad i Jönköpings kommun","url":"https://stadsvandring.io/p/wd-jonkoping-jarstorps-kyrka-q10541979"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Jönköping","description":"Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/jonkoping/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":34,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Trånghalla kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-tranghalla-kyrka-q10705658"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Ceciliakyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-ceciliakyrkan-q17518538"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Bymarkskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-bymarkskyrkan-q10438232"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Dunkehalla kapell","url":"https://stadsvandring.io/p/wd-jonkoping-dunkehalla-kapell-q17524825"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Bäckaby gamla kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-backaby-gamla-kyrka-q10438373"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Dalvikskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-dalvikskyrkan-q10466301"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Slottskapellet","url":"https://stadsvandring.io/p/wd-jonkoping-slottskapellet-q10671640"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-jonkoping-a97e29"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Jönköpings pingstkyrka","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-pingstkyrka-q17524779"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Immanuelskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-immanuelskyrkan-q10534722"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Sofiakyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-sofiakyrkan-q2302684"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Sofia Kyrka","url":"https://stadsvandring.io/p/ksamsok-sofia-kyrka-jonkoping-014776"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Jungfru Maria och Sankt Nikolaus kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-jungfru-maria-och-sankt-nikolaus-kyrka-q123479639"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Stadsbefästning","url":"https://stadsvandring.io/p/ksamsok-stadsbefastning-jonkoping-cc128e"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Fästning/skans","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-jonkoping-ccada0"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Kristine kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-kristine-kyrka-q10549243"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Jönköpings allianskyrka","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-allianskyrka-q21492138"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Korskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-korskyrkan-q10548210"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Östra kapellet","url":"https://stadsvandring.io/p/wd-jonkoping-ostra-kapellet-q20168558"}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Ekhagskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-ekhagskyrkan-q10480628"}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Ansgariikyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-ansgariikyrkan-q17518534"}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Österängskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-osterangskyrkan-q10728168"}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Sanna kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-sanna-kyrka-q10661546"}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Kungsportskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-kungsportskyrkan-q10550363"}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Garpa skans","url":"https://stadsvandring.io/p/wd-jonkoping-garpa-skans-q29385265"}},{"@type":"ListItem","position":26,"item":{"@type":"TouristAttraction","name":"Huskvarna kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-huskvarna-kyrka-q10527413"}},{"@type":"ListItem","position":27,"item":{"@type":"TouristAttraction","name":"Öxnehagakyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-oxnehagakyrkan-q10728767"}},{"@type":"ListItem","position":28,"item":{"@type":"TouristAttraction","name":"Ljungarums kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-ljungarums-kyrka-q10568304"}},{"@type":"ListItem","position":29,"item":{"@type":"TouristAttraction","name":"Skogskapellet","url":"https://stadsvandring.io/p/wd-jonkoping-skogskapellet-q10670363"}},{"@type":"ListItem","position":30,"item":{"@type":"TouristAttraction","name":"Gräshagskyrkan","url":"https://stadsvandring.io/p/wd-jonkoping-grashagskyrkan-q10509795"}},{"@type":"ListItem","position":31,"item":{"@type":"TouristAttraction","name":"Jönköpings katolska kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-jonkopings-katolska-kyrka-q10544382"}},{"@type":"ListItem","position":32,"item":{"@type":"TouristAttraction","name":"Råslätts kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-raslatts-kyrka-q10658755"}},{"@type":"ListItem","position":33,"item":{"@type":"TouristAttraction","name":"Sandseryds kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-sandseryds-kyrka-q10661225"}},{"@type":"ListItem","position":34,"item":{"@type":"TouristAttraction","name":"Järstorps kyrka","url":"https://stadsvandring.io/p/wd-jonkoping-jarstorps-kyrka-q10541979"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Jönköping","item":"https://stadsvandring.io/stadsvandring/jonkoping"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Jönköping","item":"https://stadsvandring.io/stadsvandring/jonkoping/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/jonkoping">Stadsvandring i Jönköping</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Jönköping</span><span class="badge">34 stopp</span></div>
+<h1>Kyrkostigen i Jönköping</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Jönköping — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Jönköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-jonkoping-tranghalla-kyrka-q10705658"><b>1. Trånghalla kyrka</b><span>Kyrka · kyrkobyggnad i Trånghalla, Sverige, använd av Svenska kyrkan</span></a>
+<a class="tile" href="/p/wd-jonkoping-ceciliakyrkan-q17518538"><b>2. Ceciliakyrkan</b><span>Kyrka · rumänsk-ortodox kyrka i Vilhelmsro, Sverige</span></a>
+<a class="tile" href="/p/wd-jonkoping-bymarkskyrkan-q10438232"><b>3. Bymarkskyrkan</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 34 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/jonkoping/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-jonkoping-tranghalla-kyrka-q10705658"><b>1. Trånghalla kyrka</b></a> — kyrkobyggnad i Trånghalla, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-ceciliakyrkan-q17518538"><b>2. Ceciliakyrkan</b></a> — rumänsk-ortodox kyrka i Vilhelmsro, Sverige</li>
+<li><a href="/p/wd-jonkoping-bymarkskyrkan-q10438232"><b>3. Bymarkskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige</li>
+<li><a href="/p/wd-jonkoping-dunkehalla-kapell-q17524825"><b>4. Dunkehalla kapell</b></a> — kapell i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-backaby-gamla-kyrka-q10438373"><b>5. Bäckaby gamla kyrka</b></a> — tidigare kyrkobyggnad i Svenska kyrkan i Jönköpings stadspark i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-dalvikskyrkan-q10466301"><b>6. Dalvikskyrkan</b></a> — kyrkan i Jönköpings kommun</li>
+<li><a href="/p/wd-jonkoping-slottskapellet-q10671640"><b>7. Slottskapellet</b></a> — kapell i Jönköping, Sverige, använt av Svenska kyrkan</li>
+<li><a href="/p/ksamsok-kyrka-kapell-jonkoping-a97e29"><b>8. Kyrka/kapell</b></a> — Grunden efter ett medeltida kapell, undersökt 1989–1990.</li>
+<li><a href="/p/wd-jonkoping-jonkopings-pingstkyrka-q17524779"><b>9. Jönköpings pingstkyrka</b></a> — kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-immanuelskyrkan-q10534722"><b>10. Immanuelskyrkan</b></a> — kyrkobyggnad i Equmeniakyrkan i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-sofiakyrkan-q2302684"><b>11. Sofiakyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</li>
+<li><a href="/p/ksamsok-sofia-kyrka-jonkoping-014776"><b>12. Sofia Kyrka</b></a> — Sofia kyrka, byggd sedan den växande västra församlingen blev trångbodd i slottskapellet.</li>
+<li><a href="/p/wd-jonkoping-jungfru-maria-och-sankt-nikolaus-kyrka-q123479639"><b>13. Jungfru Maria och Sankt Nikolaus kyrka</b></a> — tidigare kyrka i Jönköping</li>
+<li><a href="/p/ksamsok-stadsbefastning-jonkoping-cc128e"><b>14. Stadsbefästning</b></a> — Rester av bastionen Carolus och en gammal hamnstation.</li>
+<li><a href="/p/ksamsok-fastning-skans-jonkoping-ccada0"><b>15. Fästning/skans</b></a> — En bevarad stödmur från stadens södra befästningsvall vid Munksjön.</li>
+<li><a href="/p/wd-jonkoping-kristine-kyrka-q10549243"><b>16. Kristine kyrka</b></a> — kyrkobyggnad i Jönköping</li>
+<li><a href="/p/wd-jonkoping-jonkopings-allianskyrka-q21492138"><b>17. Jönköpings allianskyrka</b></a> — kyrkobyggnad i Svenska alliansmissionen i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-korskyrkan-q10548210"><b>18. Korskyrkan</b></a> — kyrka i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-ostra-kapellet-q20168558"><b>19. Östra kapellet</b></a> — kapell i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-ekhagskyrkan-q10480628"><b>20. Ekhagskyrkan</b></a> — kyrkobyggnad i Ekhagen i Jönköping, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-ansgariikyrkan-q17518534"><b>21. Ansgariikyrkan</b></a> — kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-osterangskyrkan-q10728168"><b>22. Österängskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Österängen i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-sanna-kyrka-q10661546"><b>23. Sanna kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-kungsportskyrkan-q10550363"><b>24. Kungsportskyrkan</b></a> — EFK-kyrkobyggnad i Öxnehaga i Huskvarna, Sverige</li>
+<li><a href="/p/wd-jonkoping-garpa-skans-q29385265"><b>25. Garpa skans</b></a> — fästning/skans i Småland (Hakarp 25:1)</li>
+<li><a href="/p/wd-jonkoping-huskvarna-kyrka-q10527413"><b>26. Huskvarna kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Huskvarna, Sverige</li>
+<li><a href="/p/wd-jonkoping-oxnehagakyrkan-q10728767"><b>27. Öxnehagakyrkan</b></a> — kyrkobyggnad på Öxnehaga i Huskvarna, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-ljungarums-kyrka-q10568304"><b>28. Ljungarums kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Ljungarum i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-skogskapellet-q10670363"><b>29. Skogskapellet</b></a> — kapell i Jönköping, Sverige, använt av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-grashagskyrkan-q10509795"><b>30. Gräshagskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan på Gräshagen i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-jonkopings-katolska-kyrka-q10544382"><b>31. Jönköpings katolska kyrka</b></a> — romersk-katolsk kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-raslatts-kyrka-q10658755"><b>32. Råslätts kyrka</b></a> — kyrkobyggnad på Råslätt utanför Jönköping, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-sandseryds-kyrka-q10661225"><b>33. Sandseryds kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Sandseryd, Sverige</li>
+<li><a href="/p/wd-jonkoping-jarstorps-kyrka-q10541979"><b>34. Järstorps kyrka</b></a> — kyrkobyggnad i Jönköpings kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/jonkoping">Stadsvandringen i Jönköping</a> <a class="cta ghost" href="/stadsvandring/jonkoping/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

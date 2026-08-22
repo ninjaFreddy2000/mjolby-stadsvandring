@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Lidköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.50381198443878" lon="13.156544660948642"><name>Minnesmärke</name><desc>Ett monument över Magnus Gabriel de la Gardie med fontäner.</desc></wpt>
+  <wpt lat="58.50358724641079" lon="13.15913447849041"><name>Minnesmärke</name><desc>Ett minnesmärke över Lidköpings första vattenledning från 1856.</desc></wpt>
+  <wpt lat="58.500683240561436" lon="13.156407397560368"><name>Minnesmärke</name><desc>Ett monument över Gunnar Wennerberg, rest på hans 100-årsdag.</desc></wpt>
+  <rte><name>Konstrundan i Lidköping</name>
+    <rtept lat="58.50381198443878" lon="13.156544660948642"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.50358724641079" lon="13.15913447849041"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.500683240561436" lon="13.156407397560368"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

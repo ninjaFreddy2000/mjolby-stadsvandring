@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Strängnäs</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.40623056" lon="16.93975"><name>Vansö kyrka</name><desc>kyrkobyggnad i Strängnäs kommun</desc></wpt>
+  <wpt lat="59.39829588948214" lon="17.015067038365572"><name>Stenby skans, Fornborg</name><desc>Stenby skans, en fornborg med flera murar på en bergshöjd.</desc></wpt>
+  <wpt lat="59.378179" lon="17.033427"><name>Strängnäs konvent</name><desc>Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner i det som nu är centrala Strängnäs.</desc></wpt>
+  <wpt lat="59.377921467319595" lon="17.03304260840503"><name>Kloster</name><desc>Platsen för ett kloster inom den medeltida stadens gräns, undersökt 1976.</desc></wpt>
+  <wpt lat="59.375578254455526" lon="17.03476273079977"><name>STRÄNGNÄS DOMKYRKA</name><desc>Strängnäs domkyrka, med anor från 1200-talet.</desc></wpt>
+  <wpt lat="59.37564492708894" lon="17.035996691703755"><name>Roggeborgen</name><desc>Ett biskopspalats i tegel från sent 1400-tal, uppkallat efter biskop Konrad Rogge.</desc></wpt>
+  <rte><name>Kyrkostigen i Strängnäs</name>
+    <rtept lat="59.40623056" lon="16.93975"><name>Vansö kyrka</name></rtept>
+    <rtept lat="59.39829588948214" lon="17.015067038365572"><name>Stenby skans, Fornborg</name></rtept>
+    <rtept lat="59.378179" lon="17.033427"><name>Strängnäs konvent</name></rtept>
+    <rtept lat="59.377921467319595" lon="17.03304260840503"><name>Kloster</name></rtept>
+    <rtept lat="59.375578254455526" lon="17.03476273079977"><name>STRÄNGNÄS DOMKYRKA</name></rtept>
+    <rtept lat="59.37564492708894" lon="17.035996691703755"><name>Roggeborgen</name></rtept>
+  </rte>
+</gpx>

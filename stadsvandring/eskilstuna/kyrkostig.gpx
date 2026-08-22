@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Eskilstuna</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.422" lon="16.4683"><name>Torshälla kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Torshälla, Sverige</desc></wpt>
+  <wpt lat="59.418223" lon="16.453771"><name>Skogskapellet</name><desc>kapell i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.39895603657051" lon="16.470075629251234"><name>Fornborg</name><desc>Fornborg kring en bergsklack, delvis inklädd med stenpackning och terrass.</desc></wpt>
+  <wpt lat="59.3923" lon="16.491"><name>Sankt Petri kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.37653611" lon="16.47241389"><name>Mariakyrkan</name><desc>kyrka i Eskilstuna kommun, Sverige</desc></wpt>
+  <wpt lat="59.382606" lon="16.459712"><name>Eskilstuna 108:2</name><desc>kyrka/kapell i Södermanland</desc></wpt>
+  <wpt lat="59.38991667" lon="16.42966667"><name>Hällby kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.375" lon="16.518333333333"><name>Klosters kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.372" lon="16.525"><name>Johanniterklostret i Eskilstuna</name><desc>Johanniterklostret i Eskilstuna var ett kloster i Eskilstuna, som grundades av Johanniterorden till minne av den engelske missionären Eskil, vilken stenades utanför Strängnäs 1080.</desc></wpt>
+  <wpt lat="59.36733333" lon="16.51623333"><name>Fors kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.3933" lon="16.54296667"><name>Sankt Pauli kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <wpt lat="59.42196111" lon="16.56541111"><name>Vallby kyrka</name><desc>kyrkobyggnad i Eskilstuna kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Eskilstuna</name>
+    <rtept lat="59.422" lon="16.4683"><name>Torshälla kyrka</name></rtept>
+    <rtept lat="59.418223" lon="16.453771"><name>Skogskapellet</name></rtept>
+    <rtept lat="59.39895603657051" lon="16.470075629251234"><name>Fornborg</name></rtept>
+    <rtept lat="59.3923" lon="16.491"><name>Sankt Petri kyrka</name></rtept>
+    <rtept lat="59.37653611" lon="16.47241389"><name>Mariakyrkan</name></rtept>
+    <rtept lat="59.382606" lon="16.459712"><name>Eskilstuna 108:2</name></rtept>
+    <rtept lat="59.38991667" lon="16.42966667"><name>Hällby kyrka</name></rtept>
+    <rtept lat="59.375" lon="16.518333333333"><name>Klosters kyrka</name></rtept>
+    <rtept lat="59.372" lon="16.525"><name>Johanniterklostret i Eskilstuna</name></rtept>
+    <rtept lat="59.36733333" lon="16.51623333"><name>Fors kyrka</name></rtept>
+    <rtept lat="59.3933" lon="16.54296667"><name>Sankt Pauli kyrka</name></rtept>
+    <rtept lat="59.42196111" lon="16.56541111"><name>Vallby kyrka</name></rtept>
+  </rte>
+</gpx>

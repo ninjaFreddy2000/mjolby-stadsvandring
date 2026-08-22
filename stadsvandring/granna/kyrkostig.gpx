@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Gränna</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.02842084059129" lon="14.457641025886979"><name>Kyrka/kapell</name><desc>Platsen för den helige Bothults kapell, rivet före 1650.</desc></wpt>
+  <wpt lat="58.0238635" lon="14.4692181"><name>Gränna missionskyrka</name><desc>kyrkobyggnad i Equmeniakyrkan i Gränna, Sverige</desc></wpt>
+  <wpt lat="58.0232549" lon="14.4684309"><name>Gränna adventkyrka</name><desc>kyrkobyggnad i Adventistsamfundet i Sverige i Gränna, Sverige</desc></wpt>
+  <wpt lat="58.02027778" lon="14.46527778"><name>Gränna kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Gränna i Sverige</desc></wpt>
+  <wpt lat="58.019238149457735" lon="14.45965210897291"><name>Gravkapell</name><desc>Ett gravkapell från 1954 i klassiserande 1950-talsstil, ritat av Johannes Dahl.</desc></wpt>
+  <wpt lat="58.00740278" lon="14.57298611"><name>Örserums kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Örserum, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Gränna</name>
+    <rtept lat="58.02842084059129" lon="14.457641025886979"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="58.0238635" lon="14.4692181"><name>Gränna missionskyrka</name></rtept>
+    <rtept lat="58.0232549" lon="14.4684309"><name>Gränna adventkyrka</name></rtept>
+    <rtept lat="58.02027778" lon="14.46527778"><name>Gränna kyrka</name></rtept>
+    <rtept lat="58.019238149457735" lon="14.45965210897291"><name>Gravkapell</name></rtept>
+    <rtept lat="58.00740278" lon="14.57298611"><name>Örserums kyrka</name></rtept>
+  </rte>
+</gpx>

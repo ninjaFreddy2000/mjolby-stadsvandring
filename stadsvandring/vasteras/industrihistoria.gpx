@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Västerås</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.6100426" lon="16.5419674"><name>Apotekarbron</name><desc>Apotekarbron är en bro i centrala Västerås nära Bondtorget och Stora torget.</desc></wpt>
+  <wpt lat="59.603805555556" lon="16.554361111111"><name>Lillåuddsbron</name><desc>en bro i Västerås</desc></wpt>
+  <wpt lat="59.5899" lon="16.4936"><name>Saltängsbron</name><desc>en fd. bro Västmanland</desc></wpt>
+  <rte><name>Industrihistoria i Västerås</name>
+    <rtept lat="59.6100426" lon="16.5419674"><name>Apotekarbron</name></rtept>
+    <rtept lat="59.603805555556" lon="16.554361111111"><name>Lillåuddsbron</name></rtept>
+    <rtept lat="59.5899" lon="16.4936"><name>Saltängsbron</name></rtept>
+  </rte>
+</gpx>

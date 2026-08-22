@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Vadstena — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vadstena/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Vadstena — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vadstena/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Vadstena — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vadstena","theme":"kyrkostig","sourceSlug":"stadsvandring/vadstena/kyrkostig","centroid":{"lat":58.438289681800846,"lng":14.908024286714733},"stops":[{"name":"Hagebyhöga kyrka","lat":58.4675,"lng":14.97472222},{"name":"Klåstads gamla kyrkoplats","lat":58.445764,"lng":14.95998},{"name":"Fivelstads kyrka","lat":58.4415,"lng":15.003},{"name":"Orlunda gamla kyrka","lat":58.412970990435,"lng":14.978362416104},{"name":"Orlunda kyrka","lat":58.4126,"lng":14.9787},{"name":"Strå kyrka","lat":58.40882222,"lng":14.89571389},{"name":"Broby gamla kyrkoplats","lat":58.403281,"lng":14.847858},{"name":"Örberga kyrka","lat":58.43458333,"lng":14.80231667},{"name":"Nässja kyrka","lat":58.46360556,"lng":14.80841111},{"name":"Vadstena slottskyrka","lat":58.44593617301,"lng":14.883100541057},{"name":"S:t Pers kyrka","lat":58.44895556,"lng":14.89275},{"name":"Kloster","lat":58.45031834867796,"lng":14.890690231932245},{"name":"Vadstena klosterkyrka","lat":58.450777777778,"lng":14.891527777778},{"name":"Ljusets kapell","lat":58.449440585311,"lng":14.905207157135}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Vadstena","description":"Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Hagebyhöga kyrka","text":"kyrkobyggnad i Vadstena kommun","url":"https://stadsvandring.io/p/wd-vadstena-hagebyhoga-kyrka-q10515952"},{"@type":"HowToStep","position":2,"name":"Klåstads gamla kyrkoplats","text":"tidigare kyrka/kapell i Vadstena, Östergötland","url":"https://stadsvandring.io/p/wd-vadstena-klastads-gamla-kyrkoplats-q29912154"},{"@type":"HowToStep","position":3,"name":"Fivelstads kyrka","text":"kyrkobyggnad i Fivelstad i Linköpings stift","url":"https://stadsvandring.io/p/wd-vadstena-fivelstads-kyrka-q10495936"},{"@type":"HowToStep","position":4,"name":"Orlunda gamla kyrka","text":"tidigare kyrka i Orlunda, Sverige","url":"https://stadsvandring.io/p/wd-vadstena-orlunda-gamla-kyrka-q113303640"},{"@type":"HowToStep","position":5,"name":"Orlunda kyrka","text":"kyrkobyggnad i Orlunda, Vadstena kommun","url":"https://stadsvandring.io/p/wd-vadstena-orlunda-kyrka-q10611588"},{"@type":"HowToStep","position":6,"name":"Strå kyrka","text":"kyrka i Vadstena kommun, Sverige","url":"https://stadsvandring.io/p/wd-vadstena-stra-kyrka-q10682130"},{"@type":"HowToStep","position":7,"name":"Broby gamla kyrkoplats","text":"kyrka/kapell i Östergötland (Strå 4:2)","url":"https://stadsvandring.io/p/wd-vadstena-broby-gamla-kyrkoplats-q30034826"},{"@type":"HowToStep","position":8,"name":"Örberga kyrka","text":"kyrka i Vadstena kommun, Sverige","url":"https://stadsvandring.io/p/wd-vadstena-orberga-kyrka-q10727424"},{"@type":"HowToStep","position":9,"name":"Nässja kyrka","text":"kyrka i Vadstena kommun, Sverige","url":"https://stadsvandring.io/p/wd-vadstena-nassja-kyrka-q10605362"},{"@type":"HowToStep","position":10,"name":"Vadstena slottskyrka","text":"kyrkobyggnad i Vadstena kommun","url":"https://stadsvandring.io/p/wd-vadstena-vadstena-slottskyrka-q113380102"},{"@type":"HowToStep","position":11,"name":"S:t Pers kyrka","text":"kyrkobyggnad i Vadstena kommun","url":"https://stadsvandring.io/p/wd-vadstena-s-t-pers-kyrka-q10659427"},{"@type":"HowToStep","position":12,"name":"Kloster","text":"En putsad stenbyggnad med sadeltak och valmade flygeltak.","url":"https://stadsvandring.io/p/ksamsok-kloster-vadstena-03ede6"},{"@type":"HowToStep","position":13,"name":"Vadstena klosterkyrka","text":"kyrkobyggnad i Vadstena kommun","url":"https://stadsvandring.io/p/wd-vadstena-vadstena-klosterkyrka-q4355128"},{"@type":"HowToStep","position":14,"name":"Ljusets kapell","text":"Gravkapell på Nya kyrkogården i Vadstena","url":"https://stadsvandring.io/p/wd-vadstena-ljusets-kapell-q106417683"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Vadstena","description":"Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/vadstena/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Hagebyhöga kyrka","url":"https://stadsvandring.io/p/wd-vadstena-hagebyhoga-kyrka-q10515952"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Klåstads gamla kyrkoplats","url":"https://stadsvandring.io/p/wd-vadstena-klastads-gamla-kyrkoplats-q29912154"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Fivelstads kyrka","url":"https://stadsvandring.io/p/wd-vadstena-fivelstads-kyrka-q10495936"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Orlunda gamla kyrka","url":"https://stadsvandring.io/p/wd-vadstena-orlunda-gamla-kyrka-q113303640"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Orlunda kyrka","url":"https://stadsvandring.io/p/wd-vadstena-orlunda-kyrka-q10611588"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Strå kyrka","url":"https://stadsvandring.io/p/wd-vadstena-stra-kyrka-q10682130"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Broby gamla kyrkoplats","url":"https://stadsvandring.io/p/wd-vadstena-broby-gamla-kyrkoplats-q30034826"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Örberga kyrka","url":"https://stadsvandring.io/p/wd-vadstena-orberga-kyrka-q10727424"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Nässja kyrka","url":"https://stadsvandring.io/p/wd-vadstena-nassja-kyrka-q10605362"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Vadstena slottskyrka","url":"https://stadsvandring.io/p/wd-vadstena-vadstena-slottskyrka-q113380102"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"S:t Pers kyrka","url":"https://stadsvandring.io/p/wd-vadstena-s-t-pers-kyrka-q10659427"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Kloster","url":"https://stadsvandring.io/p/ksamsok-kloster-vadstena-03ede6"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Vadstena klosterkyrka","url":"https://stadsvandring.io/p/wd-vadstena-vadstena-klosterkyrka-q4355128"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Ljusets kapell","url":"https://stadsvandring.io/p/wd-vadstena-ljusets-kapell-q106417683"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Vadstena","item":"https://stadsvandring.io/stadsvandring/vadstena"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Vadstena","item":"https://stadsvandring.io/stadsvandring/vadstena/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/vadstena">Stadsvandring i Vadstena</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Vadstena</span><span class="badge">14 stopp</span></div>
+<h1>Kyrkostigen i Vadstena</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Vadstena — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Vadstena"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-vadstena-hagebyhoga-kyrka-q10515952"><b>1. Hagebyhöga kyrka</b><span>Kyrka · kyrkobyggnad i Vadstena kommun</span></a>
+<a class="tile" href="/p/wd-vadstena-klastads-gamla-kyrkoplats-q29912154"><b>2. Klåstads gamla kyrkoplats</b><span>Kyrka · tidigare kyrka/kapell i Vadstena, Östergötland</span></a>
+<a class="tile" href="/p/wd-vadstena-fivelstads-kyrka-q10495936"><b>3. Fivelstads kyrka</b><span>Kyrka · kyrkobyggnad i Fivelstad i Linköpings stift</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 14 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/vadstena/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-vadstena-hagebyhoga-kyrka-q10515952"><b>1. Hagebyhöga kyrka</b></a> — kyrkobyggnad i Vadstena kommun</li>
+<li><a href="/p/wd-vadstena-klastads-gamla-kyrkoplats-q29912154"><b>2. Klåstads gamla kyrkoplats</b></a> — tidigare kyrka/kapell i Vadstena, Östergötland</li>
+<li><a href="/p/wd-vadstena-fivelstads-kyrka-q10495936"><b>3. Fivelstads kyrka</b></a> — kyrkobyggnad i Fivelstad i Linköpings stift</li>
+<li><a href="/p/wd-vadstena-orlunda-gamla-kyrka-q113303640"><b>4. Orlunda gamla kyrka</b></a> — tidigare kyrka i Orlunda, Sverige</li>
+<li><a href="/p/wd-vadstena-orlunda-kyrka-q10611588"><b>5. Orlunda kyrka</b></a> — kyrkobyggnad i Orlunda, Vadstena kommun</li>
+<li><a href="/p/wd-vadstena-stra-kyrka-q10682130"><b>6. Strå kyrka</b></a> — kyrka i Vadstena kommun, Sverige</li>
+<li><a href="/p/wd-vadstena-broby-gamla-kyrkoplats-q30034826"><b>7. Broby gamla kyrkoplats</b></a> — kyrka/kapell i Östergötland (Strå 4:2)</li>
+<li><a href="/p/wd-vadstena-orberga-kyrka-q10727424"><b>8. Örberga kyrka</b></a> — kyrka i Vadstena kommun, Sverige</li>
+<li><a href="/p/wd-vadstena-nassja-kyrka-q10605362"><b>9. Nässja kyrka</b></a> — kyrka i Vadstena kommun, Sverige</li>
+<li><a href="/p/wd-vadstena-vadstena-slottskyrka-q113380102"><b>10. Vadstena slottskyrka</b></a> — kyrkobyggnad i Vadstena kommun</li>
+<li><a href="/p/wd-vadstena-s-t-pers-kyrka-q10659427"><b>11. S:t Pers kyrka</b></a> — kyrkobyggnad i Vadstena kommun</li>
+<li><a href="/p/ksamsok-kloster-vadstena-03ede6"><b>12. Kloster</b></a> — En putsad stenbyggnad med sadeltak och valmade flygeltak.</li>
+<li><a href="/p/wd-vadstena-vadstena-klosterkyrka-q4355128"><b>13. Vadstena klosterkyrka</b></a> — kyrkobyggnad i Vadstena kommun</li>
+<li><a href="/p/wd-vadstena-ljusets-kapell-q106417683"><b>14. Ljusets kapell</b></a> — Gravkapell på Nya kyrkogården i Vadstena</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/vadstena">Stadsvandringen i Vadstena</a> <a class="cta ghost" href="/stadsvandring/vadstena/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

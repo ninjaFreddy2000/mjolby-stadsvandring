@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Hjo — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Hjo till fots: 70 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 70 stopp och nedladdningsbar PDF-guid…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/hjo">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Hjo — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Hjo till fots: 70 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 70 stopp och nedladdningsbar PDF-guid…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/hjo">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Hjo — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Hjo till fots: 70 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 70 stopp och nedladdningsbar PDF-guid…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"hjo","sourceSlug":"stadsvandring/hjo","centroid":{"lat":58.30462742916815,"lng":14.284065915109531},"stops":[{"name":"Wettern Live Museum","lat":58.305983,"lng":14.296077},{"name":"Norra Fågelås kyrka","lat":58.26718,"lng":14.26622},{"name":"Grevbäcks kyrka","lat":58.35223,"lng":14.34863}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Hjo","description":"Upptäck Hjo till fots: 70 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/hjo","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Wettern Live Museum","description":"Wettern Live Museum","geo":{"@type":"GeoCoordinates","latitude":58.305983,"longitude":14.296077}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Norra Fågelås kyrka","description":"kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.26718,"longitude":14.26622}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Grevbäcks kyrka","description":"kyrkobyggnad i Hjo kommun","geo":{"@type":"GeoCoordinates","latitude":58.35223,"longitude":14.34863}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Hjo kyrka","description":"kyrkobyggnad i Svenska kyrkan i Hjo, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.3019,"longitude":14.28785}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Svärtans kapell","description":"kyrkobyggnad i Hjo kommun","geo":{"@type":"GeoCoordinates","latitude":58.31127222,"longitude":14.25280278}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Hjo Norra","description":"en fyr i Vättern i Hjo kommun","geo":{"@type":"GeoCoordinates","latitude":58.302833333333,"longitude":14.297027777778}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Hjo Södra","description":"en fyr i Vättern i Hjo kommun","geo":{"@type":"GeoCoordinates","latitude":58.301222222222,"longitude":14.294944444444}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Stora torget","description":"torg i Hjo, Västergötland","geo":{"@type":"GeoCoordinates","latitude":58.30122,"longitude":14.28797}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Hjo stadspark","description":"park i Hjo","url":"https://stadsvandring.io/p/wd-hjo-hjo-stadspark-q108800606","geo":{"@type":"GeoCoordinates","latitude":58.305555555556,"longitude":14.295833333333}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Equmeniakyrkan","description":"kyrkobyggnad i Hjo","url":"https://stadsvandring.io/p/wd-hjo-equmeniakyrkan-q108837477","geo":{"@type":"GeoCoordinates","latitude":58.30088,"longitude":14.28666}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Baptistkyrkan","description":"tidigare kyrkobyggnad i Hjo","geo":{"@type":"GeoCoordinates","latitude":58.302305555556,"longitude":14.284972222222}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Samrealparken","description":"park i Hjo","url":"https://stadsvandring.io/p/wd-hjo-samrealparken-q109465372","geo":{"@type":"GeoCoordinates","latitude":58.303055555556,"longitude":14.290833333333}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Jacobsparken","description":"park i Hjo","url":"https://stadsvandring.io/p/wd-hjo-jacobsparken-q109465480","geo":{"@type":"GeoCoordinates","latitude":58.300888888889,"longitude":14.285638888889}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Sandtorget","description":"torg i Hjo","url":"https://stadsvandring.io/p/wd-hjo-sandtorget-q109588083","geo":{"@type":"GeoCoordinates","latitude":58.301055555556,"longitude":14.285138888889}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Norrbro","description":"bro i Hjo","url":"https://stadsvandring.io/p/wd-hjo-norrbro-q109654012","geo":{"@type":"GeoCoordinates","latitude":58.302638888889,"longitude":14.290555555556}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Magasinet","description":"Ett knuttimrat godsmagasin från järnvägens öppnande 1873, numera butik och ateljé.","url":"https://stadsvandring.io/p/ksamsok-magasinet-hjo-048818","geo":{"@type":"GeoCoordinates","latitude":58.30499586554851,"longitude":14.293785860273125}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Frikyrka / bönehus /missionshus","description":"Ett frikyrkokapell från 1885, först kallat Betelkapellet, senare Missionskyrkan.","url":"https://stadsvandring.io/p/ksamsok-frikyrka-bonehus-missionshus-hjo-042545","geo":{"@type":"GeoCoordinates","latitude":58.30090448556602,"longitude":14.287044891838907}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Villa Eira","description":"En kurortsvilla från 1892 som ovanligt väl har behållit sina ursprungliga fönster och inredning.","url":"https://stadsvandring.io/p/ksamsok-villa-eira-hjo-048824","geo":{"@type":"GeoCoordinates","latitude":58.30578477082937,"longitude":14.295232963053278}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Strandbadet","description":"En byggnad vid Hjo strand från 1913.","geo":{"@type":"GeoCoordinates","latitude":58.30390811020124,"longitude":14.294424112468429}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Villa Flora","description":"En kurortsvilla från 1882 med sidotorn och lövsågerier, senare permanentbostad.","url":"https://stadsvandring.io/p/ksamsok-villa-flora-hjo-048816","geo":{"@type":"GeoCoordinates","latitude":58.30456613266712,"longitude":14.293694481404408}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Villa Victoria","description":"En kurortsvilla från 1882 som ända sedan starten varit annex till Hotell Bellevue.","url":"https://stadsvandring.io/p/ksamsok-villa-victoria-hjo-048815","geo":{"@type":"GeoCoordinates","latitude":58.30434911987588,"longitude":14.293432547986837}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Villa Guldkroken","description":"En kurortsvilla från 1885 med bevarat centralt trapphus från hotelltiden.","url":"https://stadsvandring.io/p/ksamsok-villa-guldkroken-hjo-048817","geo":{"@type":"GeoCoordinates","latitude":58.30477324499774,"longitude":14.29389424763011}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"HJO FOLKHÖGSKOLAS KAPELL","description":"Ett kapell vid folkhögskolan, ritat efter en arkitekttävling och byggt 1987.","geo":{"@type":"GeoCoordinates","latitude":58.30557269823402,"longitude":14.264479184108945}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Villa Olga","description":"En privatägd villa från 1883 med välbevarade snickerier från sekelskiftet.","geo":{"@type":"GeoCoordinates","latitude":58.30514462344279,"longitude":14.293849172132969}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Kyrkstuga","description":"En kyrkstuga i Hjo från omkring 1990-talet.","geo":{"@type":"GeoCoordinates","latitude":58.300478208296845,"longitude":14.283140714452506}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Hjo gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 70 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Hjo?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 70 sevärdheter i Hjo — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Wettern Live Museum?","acceptedAnswer":{"@type":"Answer","text":"Wettern Live Museum"}},{"@type":"Question","name":"Vad är Norra Fågelås kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige"}},{"@type":"Question","name":"Vad är Grevbäcks kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Hjo kommun"}},{"@type":"Question","name":"Vad är Hjo kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Hjo, Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Hjo","item":"https://stadsvandring.io/stadsvandring/hjo"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Hjo</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Hjo</span><span class="badge">70 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Hjo — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Hjo till fots: 70 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Hjo"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-hjo-wettern-live-museum-q991458"><b>1. Wettern Live Museum</b><span>museum · Wettern Live Museum</span></a>
+<a class="tile" href="/p/wd-hjo-norra-fagelas-kyrka-q1742928"><b>2. Norra Fågelås kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige</span></a>
+<a class="tile" href="/p/wd-hjo-grevbacks-kyrka-q10508720"><b>3. Grevbäcks kyrka</b><span>Kyrka · kyrkobyggnad i Hjo kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Hjo · 70</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Hjo. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 31</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-hjo-675079"><b>Fornlämningsliknande bildning</b></a> — En sten som togs till vara för att en grop i den liknade en älvkvarn.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-614bad"><b>Fyndplats</b></a> — En registrerad men obeskriven fornfyndplats i Hjo.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-74351a"><b>Fyndplats</b></a> — Åkermark där välslipade stenyxor hittats, idag på Hjo museum.</li>
+<li><a href="/p/ksamsok-kraftindustri-hjo-e64854"><b>Kraftindustri</b></a> — Lämningar efter kraftverket som gav Hjo el 1902–1945, med dammen som brast 1968.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-hjo-98526d"><b>Stadslager</b></a> — Medeltida kulturlager i Hjos stadskärna, med en kyrkogård vars äldsta gravsten är från 1566.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-skogsbrukslamningar-hjo-7d0966"><b>Område med skogsbrukslämningar</b></a> — Tre kolningsgropar i skogen, spår efter äldre tiders kolframställning.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-hjo-73eaae"><b>Träindustri</b></a> — Lämningar efter en barkstamp vid ån, utmärkt på kartor 1861–1884.</li>
+<li><a href="/karta?plats=ksamsok-smaindustriomrade-hjo-269ffe"><b>Småindustriområde</b></a> — Ett gammalt industriområde vid ån med spår av stamp, spinneri och färgeri.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-hjo-fba74a"><b>Vägmärke</b></a> — En vittrad kalkstenshäll som tros vara en gammal vägvisare.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-4f6925"><b>Fyndplats</b></a> — En välbevarad skafthålsyxa hittad i åkern, nu på Hjo museum.</li>
+<li><a href="/karta?plats=ksamsok-smaindustriomrade-hjo-5a13f5"><b>Småindustriområde</b></a> — Lämningar vid ån efter Hammarsmedjan, känd från kartor sedan 1856.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-hjo-2b63b9"><b>Övrigt</b></a> — En gammal strandskoning med trästolpar längs ån ner mot Vättern.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-8f2f49"><b>Fyndplats</b></a> — En skafthålsyxa som plöjdes upp 1915, nu på Hjo museum.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-hjo-014db7"><b>Husgrund, historisk tid</b></a> — Grunden till en ekonomibyggnad som troligen hört till Grebbans kvarn.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-hjo-ef3a6c"><b>Lägenhetsbebyggelse</b></a> — En husgrund som kan vara Grebbans kvarnstuga, utmärkt som boningshus 1961.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-hjo-d67102"><b>Dammvall</b></a> — Strömsdalsdammen, byggd 1901 för kraftverket och brusten 1968.</li>
+<li><a href="/karta?plats=ksamsok-hard-hjo-0399d2"><b>Härd</b></a> — En skadad härdbotten som grävdes ut vid en utredning 2022.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-hjo-a9d8cf"><b>Dammvall</b></a> — Strömsholmsdammen från 1916, anlagd för yllefabriken och nu torrlagd.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-hjo-319979"><b>Vägmärke</b></a> — En milstolpe av kalksten från 1707 med kunglig namnchiffer.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-2185e3"><b>Fyndplats</b></a> — En registrerad men obeskriven fyndplats i Hjo.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-hjo-95dba4"><b>Kvarn</b></a> — Lämningar efter Hjos stadskvarn, omnämnd redan 1586 och ombyggd till lumpmalning 1896.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-240c00"><b>Fyndplats</b></a> — En stenyxa som påträffades under missionshuset kring 1960.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-hjo-bab827"><b>Vägmärke</b></a> — En avrundad milstolpe av kalksten från 1707.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-hjo-d71960"><b>Vägmärke</b></a> — En milstolpe från 1832 med Karl XIV Johans namnteckning, lagad efter ett brott.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-hjo-204d4f"><b>Hamnanläggning</b></a> — Rester av en brygga som traditionen kallar Hertig Johans, från 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-3adeee"><b>Fyndplats</b></a> — En trindyxa som hittades men kom bort redan vid fyndtillfället.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-hjo-b87ba9"><b>Bytomt/gårdstomt</b></a> — Knäpplans gamla gårdstomt, känd från en karta 1836 och undersökt 2023.</li>
+<li><a href="/karta?plats=ksamsok-metallindustri-jarnbruk-hjo-1b5986"><b>Metallindustri/järnbruk</b></a> — Slagg och grunder vid ån efter Strömsdals gjuteri, grundat 1867.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hjo-f0ec25"><b>Fyndplats</b></a> — En järndolk från 1300–1400-talet hittades vid dykning på badplatsen.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-hjo-b091cd"><b>Skärvstenshög</b></a> — En utgrävd stenpackning från 1700–1800-talet med bland annat ett mynt från 1724.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-hjo-df4d06"><b>Plats med tradition</b></a> — Kosackbacken, där ryska krigsfångar från tidigt 1700-tal ska ha begravts.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 16</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-magasinet-hjo-048818"><b>Magasinet</b></a> — Ett knuttimrat godsmagasin från järnvägens öppnande 1873, numera butik och ateljé. <span class="era">1873–1873</span></li>
+<li><a href="/p/ksamsok-villa-eira-hjo-048824"><b>Villa Eira</b></a> — En kurortsvilla från 1892 som ovanligt väl har behållit sina ursprungliga fönster och inredning. <span class="era">1892–1892</span></li>
+<li><a href="/karta?plats=ksamsok-strandbadet-hjo-048825"><b>Strandbadet</b></a> — En byggnad vid Hjo strand från 1913. <span class="era">1913–1913</span></li>
+<li><a href="/p/ksamsok-villa-flora-hjo-048816"><b>Villa Flora</b></a> — En kurortsvilla från 1882 med sidotorn och lövsågerier, senare permanentbostad. <span class="era">1882–1882</span></li>
+<li><a href="/p/ksamsok-villa-victoria-hjo-048815"><b>Villa Victoria</b></a> — En kurortsvilla från 1882 som ända sedan starten varit annex till Hotell Bellevue. <span class="era">1882–1882</span></li>
+<li><a href="/p/ksamsok-villa-guldkroken-hjo-048817"><b>Villa Guldkroken</b></a> — En kurortsvilla från 1885 med bevarat centralt trapphus från hotelltiden. <span class="era">1885–1885</span></li>
+<li><a href="/karta?plats=ksamsok-villa-olga-hjo-048819"><b>Villa Olga</b></a> — En privatägd villa från 1883 med välbevarade snickerier från sekelskiftet. <span class="era">1883–1883</span></li>
+<li><a href="/p/ksamsok-villa-gotha-hjo-048820"><b>Villa Götha</b></a> — En putsad stenvilla från kurortens tidiga år, ovanlig bland parkens trävillor. <span class="era">1878–1878</span></li>
+<li><a href="/p/ksamsok-villa-svea-hjo-048821"><b>Villa Svea</b></a> — En hotellpaviljong från 1892 med ett tjugotal gästrum, numera bland annat ateljéer. <span class="era">1892–1892</span></li>
+<li><a href="/karta?plats=ksamsok-radhuset-hjo-hjo-697400"><b>RÅDHUSET, HJO</b></a> — Hjos klassicerande trärådhus från 1850-talet, mitt emot kyrkan. <span class="era">1852–1853</span></li>
+<li><a href="/p/ksamsok-uthuset-hjo-048838"><b>Uthuset</b></a> — Ett rikt utsmyckat uthus från 1892, det enda på kurorten med bevarat papptak. <span class="era">1892–1892</span></li>
+<li><a href="/p/ksamsok-villa-idun-hjo-048814"><b>Villa Idun</b></a> — Den sydligaste kurortsvillan, ursprungligen en gårdsbyggnad, ombyggd i jugendstil. <span class="era">1870</span></li>
+<li><a href="/karta?plats=ksamsok-hotell-hjo-028082"><b>Hotell</b></a> — En hotellbyggnad i Hjo från 1970-talet. <span class="era">1970–1979</span></li>
+<li><a href="/p/ksamsok-eirapaviljongen-hjo-048823"><b>Eirapaviljongen</b></a> — Kurortens sista gästbyggnad från 1907, med en jugendtornhuv över verandan. <span class="era">1907–1907</span></li>
+<li><a href="/p/ksamsok-doktors-villan-hjo-048837"><b>Doktors villan</b></a> — En villa från 1920-talet med oklar historia, sedan länge klädd i eternit. <span class="era">1924–1926</span></li>
+<li><a href="/p/ksamsok-varmbadhuset-hjo-048822"><b>Varmbadhuset</b></a> — Kurortens varmbadhus med badinrättning och en bevarad societetssalong på övervåningen. <span class="era">1877–1878</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 10</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-hjo-norra-fagelas-kyrka-q1742928"><b>Norra Fågelås kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige</li>
+<li><a href="/karta?plats=wd-hjo-grevbacks-kyrka-q10508720"><b>Grevbäcks kyrka</b></a> — kyrkobyggnad i Hjo kommun</li>
+<li><a href="/karta?plats=wd-hjo-hjo-kyrka-q10524738"><b>Hjo kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Hjo, Sverige</li>
+<li><a href="/karta?plats=wd-hjo-svartans-kapell-q10686413"><b>Svärtans kapell</b></a> — kyrkobyggnad i Hjo kommun</li>
+<li><a href="/p/wd-hjo-equmeniakyrkan-q108837477"><b>Equmeniakyrkan</b></a> — kyrkobyggnad i Hjo</li>
+<li><a href="/karta?plats=wd-hjo-baptistkyrkan-q108837652"><b>Baptistkyrkan</b></a> — tidigare kyrkobyggnad i Hjo</li>
+<li><a href="/p/ksamsok-frikyrka-bonehus-missionshus-hjo-042545"><b>Frikyrka / bönehus /missionshus</b></a> — Ett frikyrkokapell från 1885, först kallat Betelkapellet, senare Missionskyrkan. <span class="era">1885–1885</span></li>
+<li><a href="/karta?plats=ksamsok-hjo-folkhogskolas-kapell-hjo-028787"><b>HJO FOLKHÖGSKOLAS KAPELL</b></a> — Ett kapell vid folkhögskolan, ritat efter en arkitekttävling och byggt 1987. <span class="era">1987–1987</span></li>
+<li><a href="/karta?plats=ksamsok-kyrkstuga-hjo-041594"><b>Kyrkstuga</b></a> — En kyrkstuga i Hjo från omkring 1990-talet. <span class="era">1990–2000</span></li>
+<li><a href="/karta?plats=ksamsok-hjo-begravningskapell-hjo-549622"><b>HJO BEGRAVNINGSKAPELL</b></a> — Ett begravningskapell från 1898, utbyggt åt söder 1971. <span class="era">1898–1898</span></li>
+</ul>
+<h3 class="city-h3">Torn · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-hjo-hjo-norra-q40459870"><b>Hjo Norra</b></a> — en fyr i Vättern i Hjo kommun</li>
+<li><a href="/karta?plats=wd-hjo-hjo-sodra-q40460470"><b>Hjo Södra</b></a> — en fyr i Vättern i Hjo kommun</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-hjo-041593"><b>Klockstapel</b></a> — En klockstapel i Hjo från 1900-talets slut. <span class="era">1975–1999</span></li>
+</ul>
+<h3 class="city-h3">Naturreservat · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-hjo-hjo-stadspark-q108800606"><b>Hjo stadspark</b></a> — park i Hjo</li>
+<li><a href="/p/wd-hjo-samrealparken-q109465372"><b>Samrealparken</b></a> — park i Hjo</li>
+<li><a href="/p/wd-hjo-jacobsparken-q109465480"><b>Jacobsparken</b></a> — park i Hjo</li>
+</ul>
+<h3 class="city-h3">Bro · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-hjo-norrbro-q109654012"><b>Norrbro</b></a> — bro i Hjo</li>
+<li><a href="/karta?plats=ksamsok-bro-hjo-98c094"><b>Bro</b></a> — En stenbro från en äldre väg som hamnade under vatten när dammen byggdes.</li>
+<li><a href="/karta?plats=ksamsok-bro-hjo-425c04"><b>Bro</b></a> — Norrbro, en stenvalvsbro från 1881 på gamla landsvägen mot Askersund, ännu i bruk.</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-hjo-stora-torget-q107721079"><b>Stora torget</b></a> — torg i Hjo, Västergötland</li>
+<li><a href="/p/wd-hjo-sandtorget-q109588083"><b>Sandtorget</b></a> — torg i Hjo</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-hjo-wettern-live-museum-q991458"><b>Wettern Live Museum</b></a> — Wettern Live Museum</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-medborgarhus-hjo-028100"><b>Medborgarhus</b></a> — Ett medborgarhus i Hjo från 1958. <span class="era">1958–1958</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 70 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/hjo/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/hjo/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Hjo gratis?</summary><p>Ja. Karta, alla 70 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Hjo?</summary><p>Vandringen samlar 70 sevärdheter i Hjo — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Wettern Live Museum?</summary><p>Wettern Live Museum</p></details>
+<details class="faq"><summary>Vad är Norra Fågelås kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige</p></details>
+<details class="faq"><summary>Vad är Grevbäcks kyrka?</summary><p>kyrkobyggnad i Hjo kommun</p></details>
+<details class="faq"><summary>Vad är Hjo kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Hjo, Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

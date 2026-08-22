@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Hela stadsvandringen i Eksjö (PDF) | Stadsvandring.io</title>
+<meta name="description" content="Hela den självguidade stadsvandringen i Eksjö — alla 116 stopp att spara som PDF.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/eksjo/guide">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Hela stadsvandringen i Eksjö (PDF) | Stadsvandring.io">
+<meta property="og:description" content="Hela den självguidade stadsvandringen i Eksjö — alla 116 stopp att spara som PDF.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/eksjo/guide">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hela stadsvandringen i Eksjö (PDF) | Stadsvandring.io">
+<meta name="twitter:description" content="Hela den självguidade stadsvandringen i Eksjö — alla 116 stopp att spara som PDF.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+.stop h3{font-size:20px;margin:0 0 6px}
+.lock{text-align:center}
+@media print{
+  .no-print{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:100%;padding:0}
+  header.site,footer.site{display:none}
+  .card{border:0;box-shadow:none;padding:0;margin:0 0 18px;break-inside:avoid}
+  .badge{border:1px solid #ccc}
+}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="guide">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/eksjo">Stadsvandring i Eksjö</a> › Hela guiden</nav>
+
+<section id="lm-locked" class="card lock no-print">
+  <h1>Hela stadsvandringen i Eksjö</h1>
+  <p>Den fullständiga guiden låses upp när du angett din e-post. Det tar tio sekunder och är gratis.</p>
+  <p><a class="cta" href="/stadsvandring/eksjo#lm-gate">Lås upp via e-post →</a></p>
+</section>
+
+<div id="lm-guide-full" hidden>
+  <div class="badges no-print"><span class="badge">🚶 Hela vandringen</span><span class="badge">📍 Eksjö</span><span class="badge">116 stopp</span></div>
+  <h1>Stadsvandring i Eksjö — hela guiden</h1>
+  <p class="lead">Upptäck Eksjö till fots: 116 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+  <p class="no-print"><button id="lm-print" class="cta">💾 Spara som PDF / skriv ut</button></p>
+  <article class="card stop">
+<h3>1. Eksjö kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Eksjö kyrka är en kyrkobyggnad som tillhör Eksjö församling i Linköpings stift. Kyrkan ligger vid Stora torget i Eksjö samhälle.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>2. Höreda kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Höreda kyrka är en kyrkobyggnad som tillhör Höreda församling, Linköpings stift. Den ligger i Höreda 9 kilometer sydost om Eksjö.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>3. Eksjö museum</h3>
+<div class="badges"><span class="badge">museum</span></div>
+
+<p>Eksjö museum, ursprungligen Albert Engströmmuseet, är ett kommunalt museum i Eksjö.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>4. Stora Torget</h3>
+<div class="badges"><span class="badge">Torg</span></div>
+
+<p>torg i Eksjö</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>5. Eksjö missionskyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Eksjö missionskyrka är en kyrkobyggnad i Eksjö. Kyrkan tillhör Equmeniakyrkan Eksjö, en församling inom Equmeniakyrkan.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>6. BRÄNNERIGÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1670–1729</span></div>
+
+<p>Gårdens exakta ålder är okänd, men byggnadsstilen pekar mot sent 1600-tal eller förra hälften av 1700-talet. Namnet kommer från den bränneriverksamhet som bedrevs här kring sekelskiftet 1800. Under 1960- och 1970-talen renoverades gården genomgripande av dåvarande ägaren och stadsarkitekten Ulf Boardy. Huvudlängan är av timmer i två våningar med utkragad övervåning, körport, locklistpanel och sadeltak, kompletterad med två flyglar.</p>
+<ul class="facts"><li>Nybyggnadsår: 1670 - 1729</li><li>EKSJÖ BRÄNNERIGÅRDEN 7 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>7. UTHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1745–1754</span></div>
+
+<p>Längorna ligger i tomtens nordöstra del och bildar en asymmetrisk U-form. Det liggande timret är synligt i fasaderna utom mot Brännerigatan, där locklistpanel klär väggen, och gavelröstena har panel med sicksackmönstrad nederkant. Sadeltaken är täckta med skilda material, från en- och tvåkupigt tegel till papp. Invändigt är längorna ombyggda.</p>
+<ul class="facts"><li>Nybyggnadsår: 1745 - 1754</li><li>EKSJÖ BRÄNNERIGÅRDEN 1 - husnr 9003</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>8. DRÄNGSTUGA</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1857–1857</span></div>
+
+<p>Huset byggdes för att hysa gårdens drängar och butiksbiträden. Det är uppfört av timmer i två våningar med en fasad av locklistpanel. År 1924 byggdes det om och moderniserades invändigt.</p>
+<ul class="facts"><li>Nybyggnadsår: 1857 - 1857</li><li>EKSJÖ BORGEN 2 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>9. MARIAKAPELLET</h3>
+<div class="badges"><span class="badge">Kyrka</span><span class="badge">1994–1994</span></div>
+
+<p>När Mariakapellet uppfördes vintern 1993–1994 blev det stadens första stadsdelskyrka. Stadsdelen Kvarnarp hade vuxit fram redan på 1970-talet men saknat samhällsservice. Byggnaden med sin församlingsgård kallades först Kvarnarpsgården men fick snart namnet Mariakapellet. Familjer med barn och ungdomar var den viktigaste målgruppen, och som arkitekt anlitades Lennart Arfwidsson vid ATRIO i Västervik.</p>
+<ul class="facts"><li>Nybyggnadsår: 1994 - 1994</li><li>EKSJÖ RÖDFIBBLAN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>10. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Längan ligger längs tomtens södra gräns och är uppförd av timmer i två våningar. Fasaden har locklistpanel, utom nederst där panelen är lagd på förvandring. Entrén har spegeldörrar och taket är ett sadeltak, medan sockeln inte syns.</p>
+<ul class="facts"><li>EKSJÖ KOMMINISTERN 2 - husnr 9003</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>11. FORSELLSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1830–1839</span></div>
+
+<p>Gårdens längor byggdes på 1830-talet för garveriverksamhet, och vid en restaurering 1961 lämnades exteriören i stort oförändrad medan interiören förändrades kraftigt. Längan mot Norra Storgatan är av timmer i två och en halv våning med locklistpanel, tre balkonger mot bakgården, skyltfönster och brutet sadeltak. Utmed Vaxblekargränd och Arendt Byggmästares gata står två timmerlängor i vinkel, förbundna med en körport.</p>
+<ul class="facts"><li>Nybyggnadsår: 1830 - 1839</li><li>EKSJÖ CISELÖREN 1 - husnr 9001</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>12. HENNES NÅD HOLMS HUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1700–1729</span></div>
+
+<p>På fastigheten Vinskänken 3 står en trelängad byggnad utmed Stora Torget, Nygatan och norra tomtgränsen. Åldern är osäker, men längan mot torget syns redan på en målning från omkring 1840, och gårdslängan ritades av Hj. Rahmstedt i början av 1900-talet. Längorna mot torget och Nygatan är av timmer i två våningar med reveterade fasader, medan gårdslängan är murad i tegel med pulpettak.</p>
+<ul class="facts"><li>Nybyggnadsår: 1700 - 1729</li><li>EKSJÖ VINSKÄNKEN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>13. UTHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1898–1898</span></div>
+
+<p>På gården står två uthus, båda uppförda 1898. Det ena är av trä i två våningar, panelat och ljust gulmålat. Det andra, som tidigare rymt ett bageri, är av tegel i en och en halv våning. Båda har tegeltak.</p>
+<ul class="facts"><li>Nybyggnadsår: 1898 - 1898</li><li>EKSJÖ TIGERN 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>14. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1857–1864</span></div>
+
+<p>Byggnaderna uppfördes kort efter den stora branden 1856, som ödelade staden söder om kyrkan. Gathuset är av reveterat och rosakalkat timmer i två våningar under ett tegeltäckt sadeltak. Mitt på huvudfasaden finns en frontespis med ett halvrunt fönster, och den rusticerade bottenvåningen inrymmer butiker.</p>
+<ul class="facts"><li>Nybyggnadsår: 1857 - 1864</li><li>EKSJÖ BORGEN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>15. BÅTSMANSTORPET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1745–1754</span></div>
+
+<p>Boningshuset uppfördes omkring 1750 och är av timmer i en våning med locklistpanel. Huvudingången mot nordväst har pardörrar, medan ingången i sydöst fått en modern enkeldörr. Vid en ombyggnad 1881 byggdes husets södra sida ut, vilket gav det en osymmetrisk form. Interiören har under senare decennier fått nya tak och dörrar.</p>
+<ul class="facts"><li>Nybyggnadsår: 1745 - 1754</li><li>EKSJÖ BRÄNNERIGÅRDEN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>16. BOKTRYCKAREN 4, BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Byggnaden på Boktryckaren 4 är av timmer i två våningar, med gatufasaden klädd i dels spontpanel, dels locklistpanel. Fönstren är av tvåluftstyp och huvudentrén mot gatan har pardörrar av spegeltyp. Taket är ett sadeltak med tvåkupiga betongpannor. Åldern är osäker, men det nuvarande utseendet härrör från 1800-talets andra hälft.</p>
+<ul class="facts"><li>EKSJÖ BOKTRYCKAREN 4 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>17. Fornminnesgården</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1620–1699</span></div>
+
+<p>Den kringbyggda gården är av timmer i två våningar, delvis panelklädd och rödfärgad under sadeltak, med sina äldsta delar från 1620. Här bedrevs kopparslageri i generationer. Sedan 1924 bär gården namnet Fornminnesgården och fungerar som museigård för Eksjö fornminnes- och hembygdsförening.</p>
+<ul class="facts"><li>Nybyggnadsår: 1620 - 1699</li><li>EKSJÖ KOPPARSLAGAREN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>18. MUSEIBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Husets äldsta delar kan möjligen härröra från slutet av 1600-talet. Något närmare om byggnaden framgår inte av det bevarade underlaget.</p>
+<ul class="facts"><li>EKSJÖ GULDSMEDEN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>19. BOKTRYCKAREN 10, BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1700–1799</span></div>
+
+<p>Byggnaden upptar hela fastigheten Boktryckaren 10 och är av timmer i två våningar med rosa locklistpanel. Fönstren är av tvåluftstyp, och i gavelröstet sitter ett lunettfönster. Taket är ett oliksidigt sadeltak med tvåkupiga betongpannor. Huset kan vara från 1700-talet och är i allt väsentligt oförändrat sedan Nordiska Museets dokumentation 1933.</p>
+<ul class="facts"><li>Nybyggnadsår: 1700 - 1799</li><li>EKSJÖ BOKTRYCKAREN 10 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>20. BIOGRAF METROPOL</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1916–1916</span></div>
+
+<p>Biografen är uppförd av tegel i motsvarande två våningar med putsad fasad, rödbrun mot gatan och gulgrön mot gården. Publikentrén mot öster har ett litet kopparklätt tak, och övervåningen bär tre tvåluftsfönster. Byggnaden restes 1916 efter ritningar av byggmästaren J W Lundberg i Eksjö. Exteriören har sedan dess förändrats obetydligt, medan interiören byggts om.</p>
+<ul class="facts"><li>Nybyggnadsår: 1916 - 1916</li><li>EKSJÖ BOKTRYCKAREN 15 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>21. STORA TORGET I EKSJÖ (KV. BANKEN 1), BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Torg</span><span class="badge">1855–1864</span></div>
+
+<p>Huset ligger i kvarteret med långsidan mot Södra Storgatan och restes omkring 1860 i två våningar. Bottenvåningens fasad är klädd med bred liggande fasspontpanel, medan övervåningen har locklistpanel.</p>
+<ul class="facts"><li>Nybyggnadsår: 1855 - 1864</li><li>EKSJÖ BANKEN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>22. ASCHANSKA STALLET</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Magasinet, kallat Aschanska stallet, är tvåvånigt och timrat på en gråstenssockel, med utskjutande knutar och sexrutiga fönster. Luckor och dörrar är tjärade och taket är ett sadeltak med tegel. Övervåningen kragar ut något, och genom byggnaden leder en körport.</p>
+<ul class="facts"><li>EKSJÖ VAXBLEKAREN 11 - husnr 4</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>23. UTHUSLÄNGA</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1857–1857</span></div>
+
+<p>Längan utmed Guldsmedsgränd byggdes från början som stall, vedbod, magasin och svinbod. Den är i två plan och stommens liggtimmer är opanelat. Sockeln är av natursten.</p>
+<ul class="facts"><li>Nybyggnadsår: 1857 - 1857</li><li>EKSJÖ BORGEN 2 - husnr 6</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>24. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1770–1829</span></div>
+
+<p>Bostadshuset är uppfört i liggtimmer i två våningar med sadeltak och en sockel av huggna granitblock. Gatusidan har en fasad av liggande fasspontpanel och gårdssidan locklistpanel, med två utanpåliggande trapphus mot gården. Gatufasaden fick sitt nuvarande utseende 1910, men den äldre planlösningen är i stort intakt. Mot Skomakargränd är uthus och boningshus sammanbyggda med en överbyggd port.</p>
+<ul class="facts"><li>Nybyggnadsår: 1770 - 1829</li><li>EKSJÖ GELBGJUTAREN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>25. MAGASIN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1885–1894</span></div>
+
+<p>Magasinet uppfördes kring 1890 av timmer i en våning. Det är målat dels i grönt, dels i smutsgult.</p>
+<ul class="facts"><li>Nybyggnadsår: 1885 - 1894</li><li>EKSJÖ TIGERN 2 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>26. Rådhus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1857–1857</span></div>
+
+<p>Rådhuset är en trevåningsbyggnad med inredd vind och takkupor, där bottenvåning och omfattningar är slätputsade och övrigt spritputsat. Det tegelklädda mansardtaket kröns av en takryttare med en flygande drakfigur. Över huvudentrén, som präglas av ett jugendinspirerat formspråk, vilar en paradbalkong på konsoler med eklöv, en anspelning på stadsvapnets ek. Mittpartiet avslutas av en fronton med urverk, och tredje våningen tillkom när huset gjordes om till hotell.</p>
+<ul class="facts"><li>Nybyggnadsår: 1857 - 1857</li><li>EKSJÖ RÅDHUSET 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>27. HEIDEMANSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1700–1799</span></div>
+
+<p>Boningshuset är byggt av timmer i vinkel, i en och två våningar, där gatulängan har utkragad övervåning och fasad av falurött liggtimmer. Gårdslängan bär faluröd locklistpanel, och taket är ett sadeltak med tvåkupiga tegelpannor. Huset härrör troligen från 1700-talet och fanns sannolikt när gården försäkrades 1836. Åren 1965–67 byggdes gården om kraftigt, då bland annat brädfodringen togs bort.</p>
+<ul class="facts"><li>Nybyggnadsår: 1700 - 1799</li><li>EKSJÖ BOKTRYCKAREN 5 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>28. Klockstapel</h3>
+<div class="badges"><span class="badge">Torn</span><span class="badge">1994–1994</span></div>
+
+<p>Klockstapeln uppfördes 1994 och räknas som ett torn. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister.</p>
+<ul class="facts"><li>Nybyggnadsår: 1994 - 1994</li><li>EKSJÖ RÖDFIBBLAN 1 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>29. SÖDRA VEDBO HÄRADS TINGSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1870–1875</span></div>
+
+<p>Det tidigare tingshuset är idag ombyggt till flerbostadshus. Det är en reveterad tvåvåningsbyggnad med inredd vind på en hög naturstenssockel, krönt av ett brant mansardtak med takkupor. Entrén ligger i en framskjutande mittrisalit och nås via en svängd dubbeltrappa. Ursprungligen var tingshuset en panelbeklädd envåningsbyggnad med sadeltak, men vid ombyggnaden 1910 tillkom två nya våningar för häradshövdingebostad och nämndemansrum.</p>
+<ul class="facts"><li>Nybyggnadsår: 1870 - 1875</li><li>EKSJÖ VÄSTANÅ 5 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>30. FÖRRÅD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1700–1729</span></div>
+
+<p>År 1706 drabbades området av brand, och gårdens äldre byggnadskroppar kan ha rests under åren därefter. Gatubyggnaden består av en äldre sydlig del med portlider och en yngre nordlig del. Den är uppförd av timmer i två våningar med utkragad övervåning. Fasaden är klädd med faluröd locklistpanel, medan fönster, knutlådor, knutar och våningsband är vita.</p>
+<ul class="facts"><li>Nybyggnadsår: 1700 - 1729</li><li>EKSJÖ VAXBLEKAREN 12 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>31. SOCIETETSHUSET</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Societetshuset består av fyra sammanbyggda hus kring en inbyggd gård, sammanslagna av två fastigheter på 1700-talet. Vid en ombyggnad omkring 1830 skapades offentliga nöjes- och samlingslokaler, en verksamhet som pågick till 1860-talet. En omfattande restaurering 1986–87 återställde exteriören till sekelskiftets utseende. Huvudfasaden vetter mot Lilla Torget, och byggnaden är timrad i två våningar med fasader indelade av pilastrar.</p>
+<ul class="facts"><li>EKSJÖ SOCIETETEN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>32. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1855–1864</span></div>
+
+<p>Fastighetens huvudbyggnad är av timmer i två våningar och uppfördes omkring 1860. År 1895 tillbyggdes den i vinkel utmed Österlånggatan. Fasaderna är locklistpanelade och ljust gulmålade, och taket är täckt med tegel.</p>
+<ul class="facts"><li>Nybyggnadsår: 1855 - 1864</li><li>EKSJÖ TIGERN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>33. sKOMAKARVERKSTAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1650–1700</span></div>
+
+<p>Byggnaden uppfördes sannolikt under senare delen av 1600-talet och tros ha tjänat som skomakarverkstad för Peder Hansson, som bodde i huset öster om. Den förefaller ha flyttats och byggts om vid flera tillfällen. Sitt nuvarande utseende fick den 1989–90.</p>
+<ul class="facts"><li>Nybyggnadsår: 1650 - 1700</li><li>EKSJÖ FÄRGAREN 3 - husnr 6</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>34. SKOGSKAPELLET</h3>
+<div class="badges"><span class="badge">Kyrka</span><span class="badge">1979–1980</span></div>
+
+<p>År 1842 förbjöds nya begravningar vid stadskyrkan, och samma år invigdes Sankt Lars begravningsplats vid Norrtull, som utökades fram till 1955. När ytterligare utvidgning inte var möjlig tillsatte kyrkorådet 1969 en kommitté för ny begravningsplats och krematorium. Trädgårdsarkitekten Sven A Hermelin från Stockholm knöts till projektet, och 1974 köptes ett skogsparti vid Brudbadet. Tillsammans med kollegan Ulla Samuelsson utarbetade han det slutliga förslaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1979 - 1980</li><li>EKSJÖ VÄSTRA BRUDBADET 1:2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>35. BOKTRYCKAREN 1, BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1907–1907</span></div>
+
+<p>Byggnaden består av två längor ställda i vinkel och är uppförd av trä i en och en halv våning med ljusgrön fasspontpanel under ett sadeltak av tvåkupigt tegel. Sockeln av huggen granit och putsad sten är särskilt hög mot väster, där en suterrängvåning med skyltfönster tar vid. Huset restes som tryckeribyggnad efter ritningar från 1907, upprättade av byggmästarfirman Andersson &amp; Abrahamsson.</p>
+<ul class="facts"><li>Nybyggnadsår: 1907 - 1907</li><li>EKSJÖ BOKTRYCKAREN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>36. EKSJÖ TINGSRÄTT</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1959–1959</span></div>
+
+<p>Tingsrätten består av flera sammanfogade byggnadskroppar i två till tre våningar, med fasader av gult tegel och ett sadeltak täckt med grönärgad kopparplåt. Delen med entréhall och stora tingssalen höjer sig en våning och markeras av avfasade hörn med höga fönster. Huvudentrén mot öster nås via en arkad av naturstenspelare, och ovanför ingången syns Södra Vedbo häradsvapen och en halvrelief av Fru Justitia.</p>
+<ul class="facts"><li>Nybyggnadsår: 1959 - 1959</li><li>EKSJÖ BOKEN 12 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>37. BERGMANSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1690–1709</span></div>
+
+<p>Bergmanska gården på Vinskänken 2 är sannolikt densamma som konstnären Axel Otto Mörner avbildade omkring 1840. Den består av två längor i vinkel, uppförda i timmer i två våningar med profilerad spontpanel nedtill och locklistpanel på övervåningen. Gatufasaden indelas av släta pilastrar och har stora skyltfönster i bottenvåningen. Taket är helvalmat och byggnaden vilar på en putsad stensockel.</p>
+<ul class="facts"><li>Nybyggnadsår: 1690 - 1709</li><li>EKSJÖ VINSKÄNKEN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>38. VILLA LUSTIGKULLE</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1896–1896</span></div>
+
+<p>Villa Lustigkulle ligger högt beläget vid Eksjös södra utfart. Ett lusthus från omkring 1830 byggdes 1896 om till en tidstypisk, asymmetrisk villa med åttakantigt hörntorn, femsidigt trapphus och en veranda med lövsågeridekor. Villan är timrad i en och en halv våning under rödmålat plåttak och klädd med gulmålad panel i rutmönster. Runt huset finns en trädgård anlagd i början av 1900-talet.</p>
+<ul class="facts"><li>Nybyggnadsår: 1896 - 1896</li><li>EKSJÖ LUSTIGKULLE 5 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>39. KRUSAGÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1600–1900</span></div>
+
+<p>Krusagården är en kringbyggd handelsgård som delvis går tillbaka till 1600-talet. I hörnet av Lilla Torget och Storgatan ligger ett tvåvånings panelat bostadshus, och i vinkel mot det ett lägre, likaledes tvåvånigt hus med en gustaviansk ytterdörr mot Storgatan och en körport in till gården. Både bostadshuset och magasinsbyggnaden mot norr har svalgång, och gården omges i övrigt av rödfärgade timrade uthus.</p>
+<ul class="facts"><li>Nybyggnadsår: 1600 - 1900</li><li>EKSJÖ FÄRGAREN 4 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>40. Lusthus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1890–1890</span></div>
+
+<p>Byggnaden är ett lusthus uppfört 1890. Det finns registrerat i Riksantikvarieämbetets bebyggelseregister.</p>
+<ul class="facts"><li>Nybyggnadsår: 1890 - 1890</li><li>EKSJÖ VAXBLEKAREN 11 - husnr 6</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>41. STALL</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1857–1864</span></div>
+
+<p>Uthuslängan är timrad i två våningar och klädd med locklistpanel, rödfärgad och täckt av ett tegeltäckt sadeltak.</p>
+<ul class="facts"><li>Nybyggnadsår: 1857 - 1864</li><li>EKSJÖ BORGEN 3 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>42. UTHUSLÄNGA</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Byggnaden användes från början bland annat som stall och hade då en körport, som togs bort vid en senare ombyggnad. Den är uppförd av timmer i en våning med fasad av locklistpanel. Taket är ett sadeltak och byggnaden vilar på en sockel av huggen granit.</p>
+<ul class="facts"><li>EKSJÖ REKTORN 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>43. Fd magasin</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1840–1859</span></div>
+
+<p>Magasinsbyggnaden är i två våningar och uppförd av rödfärgat timmer under ett tegeltäckt sadeltak. Den härrör från mitten av 1800-talet.</p>
+<ul class="facts"><li>Nybyggnadsår: 1840 - 1859</li><li>EKSJÖ KOPPARSLAGAREN 2 - husnr 4</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>44. NORDSTRÖMSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1800–1829</span></div>
+
+<p>Nordströmska gårdens huvudbyggnad och de två gårdshusen uppfördes i början av 1800-talet. Huvudbyggnaden är av timmer i två våningar med locklistpanel och breda profilerade lister, mot Nygatan avfärgad i svagt gammalrosa ton. Entrén mot Nygatan har pardörrar och en omfattning med pilastrar, dit en dubbelarmad trappa med balustrad leder upp. Sadeltaket bär två tegelskorstenar, och mot gården finns veranda och balkong.</p>
+<ul class="facts"><li>Nybyggnadsår: 1800 - 1829</li><li>EKSJÖ BOKTRYCKAREN 6 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>45. REKTORSGÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>År 1904 upphörde gårdens funktion som rektorsbostad, och därefter har boningshuset byggts på och om vid flera tillfällen. Det är uppfört av timmer i två och en halv våning med brutet tak och fasad av locklistpanel, på en sockel av huggen granit. Det sydöstra hörnet är avfasat och försett med en senare entré, medan bottenvåningen mot gatan har skyltfönster. Mot gården finns ett utskjutande trapphus, två balkonger och ett karnap.</p>
+<ul class="facts"><li>EKSJÖ REKTORN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>46. STORA TORGET I EKSJÖ (KV. BANKEN 1)</h3>
+<div class="badges"><span class="badge">Torg</span><span class="badge">1856–1949</span></div>
+
+<p>Platsen utgör Stora Torget i Eksjö inom kvarteret Banken 1. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister.</p>
+<ul class="facts"><li>Nybyggnadsår: 1856 - 1949</li><li>EKSJÖ BANKEN 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>47. Gathus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1860–1860</span></div>
+
+<p>Byggnaden är ett gathus uppfört 1860. Det finns registrerat i Riksantikvarieämbetets bebyggelseregister.</p>
+<ul class="facts"><li>Nybyggnadsår: 1860 - 1860</li><li>EKSJÖ BORGEN 4 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>48. Gamla färgeriet (Färgaregården)</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1800–1829</span></div>
+
+<p>Byggnaden är ett magasin av ålderdomlig typ, uppfört av rödfärgat timmer i två våningar med loftgång mot gården. Här inrymdes ett ångfärgeri som var i drift till början av 1950-talet. Delar av färgeriets inventarier finns fortfarande bevarade på platsen.</p>
+<ul class="facts"><li>Nybyggnadsår: 1800 - 1829</li><li>EKSJÖ FÄRGAREN 3 - husnr 5</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>49. Klockstapel</h3>
+<div class="badges"><span class="badge">Torn</span><span class="badge">1979–1980</span></div>
+
+<p>Klockstapeln uppfördes 1979–1980 och räknas som ett torn. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister.</p>
+<ul class="facts"><li>Nybyggnadsår: 1979 - 1980</li><li>EKSJÖ VÄSTRA BRUDBADET 1:2 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>50. APOTEKARVILLAN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1922–1922</span></div>
+
+<p>Apotekarvillan ligger centralt i Eksjö, omgiven av villabebyggelse från tidigt 1900-tal. Den ritades 1922 av arkitekten Gunnar Wetterling från Äppelviken i tidig 1920-talsklassicism, med burspråk, kolonner och festonger. Byggherre var apotekaren Carl Gustaf Matérn-Lindewald och hans hustru Maj. Villan är uppförd av trä i två våningar med locklistpanel, flackt sadeltak och en sockel av huggen granit.</p>
+<ul class="facts"><li>Nybyggnadsår: 1922 - 1922</li><li>EKSJÖ MAGISTERN 6 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>51. TROLLEGÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1700–1799</span></div>
+
+<p>Trollegården är ett gatuhus utmed Nygatan, byggt av timmer i två våningar med en tillbyggnad mot väster. Fasaderna kläs av spont- och locklistpanel, och huset vilar på en putsad stensockel under ett sadeltak. Byggnaden härrör sannolikt från 1700-talet, men interiören är höggradigt ombyggd i senare tid.</p>
+<ul class="facts"><li>Nybyggnadsår: 1700 - 1799</li><li>EKSJÖ BOKTRYCKAREN 3 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>52. Gårdshus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1860–1860</span></div>
+
+<p>Gårdshus är en byggnad i Eksjö som finns upptagen i Riksantikvarieämbetets bebyggelseregister. Underlaget är knapphändigt, men huset dateras till 1860.</p>
+<ul class="facts"><li>Nybyggnadsår: 1860 - 1860</li><li>EKSJÖ BORGEN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>53. Villa Cairo</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1933–1933</span></div>
+
+<p>Villa Cairo uppfördes 1933 åt paret Stenkil efter ritningar av Tage Kjellberg vid Landsbro Trävarubolag, mer känt som Borohus. Huset levererades i företagets kapsystem, alltså som ett färdigsågat och märkt lösvirkeshus som en byggmästare monterade på plats. Under åren 1935–38 använde Borohus villan i sin marknadsföring som ett fint exempel på en funktionalistisk villa.</p>
+<ul class="facts"><li>Nybyggnadsår: 1933 - 1933</li><li>EKSJÖ RIDDAREN 12 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>54. STALL</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Den forna stallbyggnaden har oviss ålder och renoverades på 1980-talet, då ett mindre skjul restes intill. Den är byggd av timmer i två våningar med sadeltak och vilar på en sockel av putsad sten. Fasaden bär locklistpanel med rundade lister, och byggnaden är skyddad som byggnadsminne.</p>
+<ul class="facts"><li>EKSJÖ VAXBLEKAREN 11 - husnr 5</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>55. BOSTADHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Detta bostadshus är en gårdslänga av timmer i två våningar och ingår i en fyrlängad gård på Cicelören 5. Fasaderna kläs i huvudsak av locklistpanel och byggnaden vilar på en sockel av putsad sten. Den hör till de byggnadsminnen som skyddas i Eksjös norra stadskärna.</p>
+<ul class="facts"><li>EKSJÖ CISELÖREN 5 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>56. pEDER SKOMAKARES GÅRD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1600–1699</span></div>
+
+<p>Gårdens södra del rymmer tre sammanfogade hus från olika tider, där de äldsta delarna troligen går tillbaka till 1600-talet. De är byggda av timmer i två våningar under tegeltäckta sadeltak och klädda dels med rosafärgad, dels med nyare rödfärgad locklistpanel. År 1687 beboddes gården av skomakaren Peder Hansson, som gett den dess namn.</p>
+<ul class="facts"><li>Nybyggnadsår: 1600 - 1699</li><li>EKSJÖ FÄRGAREN 3 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>57. BERGMANSKA HUSET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1880–1889</span></div>
+
+<p>Bergmanska huset på Brännerigården 6 består av två sammanbyggda längor i vinkel, uppförda i timmer med reveterad fasad och ett sadeltak med takkupor och takfönster. Huvudentrén mot väster har en spegeldörr, och fasaden mot öster bär en svalgång. Huset uppfördes troligen omkring 1885 och byggdes om invändigt i större omfattning 1965.</p>
+<ul class="facts"><li>Nybyggnadsår: 1880 - 1889</li><li>EKSJÖ BRÄNNERIGÅRDEN 6 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>58. BOKTRYCKAREN 2, BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1878–1878</span></div>
+
+<p>Byggnaden vid Nygatan hör till kvarteret Boktryckaren och är uppförd av timmer i två våningar, med fasspontpanel mot gatan och locklistpanel mot gården. Genom huset löper en körport med en senare trägrind, och sadeltaket kröns av tre tegelmurade skorstenar. Huset restes troligen omkring 1878 och gatufasaden är sedan dess i allt väsentligt oförändrad.</p>
+<ul class="facts"><li>Nybyggnadsår: 1878 - 1878</li><li>EKSJÖ BOKTRYCKAREN 2 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>59. Fd garveri</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1840–1859</span></div>
+
+<p>Det forna garveriet är en rödfärgad timmerbyggnad i två våningar med loftgång och tegeltäckt sadeltak. Byggnaden härrör troligen från mitten av 1800-talet.</p>
+<ul class="facts"><li>Nybyggnadsår: 1840 - 1859</li><li>EKSJÖ KOPPARSLAGAREN 2 - husnr 9001</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>60. KRUKMAKAREGÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Boningshusets ålder är oviss, men stommens timmer kan vara från 1600- eller 1700-talet. Huset ligger utmed Nygatan, är byggt i två våningar och kläs i huvudsak av locklistpanel, medan norra gaveln visar omålat timmer. Huvudingången har pardörrar av spegeltyp och mot gården finns en balkong. Vid en ombyggnad omkring 1947 fick byggnaden sin nuvarande brädfodring.</p>
+<ul class="facts"><li>EKSJÖ BOKTRYCKAREN 7 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>61. FAGERBERGSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1844–1844</span></div>
+
+<p>Boningshuset uppfördes 1844 i timmer i två våningar med fasad av locklistpanel och sammanlagt fyra balkonger på tre sidor. Enligt traditionen kommer huvudingången från Eksjö gamla kyrka. Huset har sadeltak och vilar på en stensockel, och vid en ombyggnad 1957 förändrades interiören genomgripande.</p>
+<ul class="facts"><li>Nybyggnadsår: 1844 - 1844</li><li>EKSJÖ VAXBLEKAREN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>62. Samlingsplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här låg Eksjös gamla tingsplats, som omnämns i skrift redan 1345 och 1371. Ting hölls först omväxlande i Eksjö och Bredestad, men under 1400-talets mitt förlades det stadigvarande hit. På Dukers karta från 1697–1699 finns platsen utmärkt och namngiven som Tingshagen.</p>
+<ul class="facts"><li>L1974:6012</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>63. Militär mötesplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>På platsen finns lämningar efter en skjutbana, bestående av skjutvall, kulfång och ett ammunitionsförråd. Anläggningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9666</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>64. Övrigt</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Vid schaktning för ledningar påträffades en bogårdsmur som hört till Eksjö kyrka. Muren fortsätter både åt norr och söder och finns återgiven på äldre kartor från bland annat 1699 och 1798.</p>
+<ul class="facts"><li>L2024:6496</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>65. Boplatsvall</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en möjlig boplatsvall i form av en hästskoformad ränna med en öppning mot nordöst. Fyllningen av humös sand med små kolbitar och rännans form antyder att det kan röra sig om resterna av en hyddkonstruktion. I närheten påträffades två härdar och en kniv vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1970:2874</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>66. Grav markerad av sten/block</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen utgörs av en rest sten av granit som smalnar av uppåt. Något norr om den ska det enligt en inventering på 1950-talet ha stått ytterligare tre eller fyra mindre stenar, vilka enligt hembygdsföreningen försvunnit under årens lopp.</p>
+<ul class="facts"><li>L1974:6855</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>67. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området rymmer ett omfattande röjningsröseområde med minst 300 röjningsrösen, alltså sten som en gång röjts undan från odlingsmark. I den södra delen anas oregelbundna åkerytor mellan rösena. Lämningen framkom vid arkeologiska utredningar 2011 och 2014, och delar av den har förundersökts 2024 och 2025.</p>
+<ul class="facts"><li>L1971:9066</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>68. Fyndplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här hittades två klotrunda stenkulor till grindstolpar, genomborrade och daterade till tiden efter reformationen. De bärgades vid magnetfiske i Eksjöåns utlopp i Hunsnäsen i september 2023.</p>
+<ul class="facts"><li>L2023:5363</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>69. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Minnesmärket utgörs av en granitsten med en inhuggen minnesinskrift. På stenens östra sida är årtalet 1900 återgivet i lågrelief.</p>
+<ul class="facts"><li>L1974:6906</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>70. Plats med tradition</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Enligt muntlig tradition ska detta ha varit platsen för en galgbacke. Någon bekräftelse i äldre kartor finns dock inte.</p>
+<ul class="facts"><li>L1973:872</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>71. Husgrund, historisk tid</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en rektangulär husgrund från historisk tid, med en syllstensrad av sprängsten. Grunden framträder tydligast utmed sin västra långsida.</p>
+<ul class="facts"><li>L2020:562</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>72. Svensholm, Lägenhetsbebyggelse</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen utgörs av en torplämning vid Svensholm. Underlaget är knapphändigt och uppgifterna är inte kvalitetssäkrade.</p>
+<ul class="facts"><li>L1974:7556</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>73. Fyndplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här påträffades ett bryne av bergart under en arkeologisk utredning 2014. I närområdet framkom även en härd och några möjliga stolphål.</p>
+<ul class="facts"><li>L1970:2897</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>74. Boplatslämning övrig</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Vid schaktning under en arkeologisk utredning 2017 framkom en boplatslämning med tre nedgrävda rännor och tre stolphål. Rännorna bildar en till synes sammanhängande oval form, och i den största fanns mörk humus med skörbränd sten, kol och enstaka bitar bränt ben.</p>
+<ul class="facts"><li>L1970:3537</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>75. Härd</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en oregelbunden härd med fyllning av grå humus blandad med kol och sot. Den framkom i sökschakt vid en arkeologisk utredning 2014, tillsammans med ytterligare en härd och en möjlig boplatsvall i närheten.</p>
+<ul class="facts"><li>L1970:2876</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>76. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med omkring sexton glest liggande röjningsrösen. Flera av dem är upplagda mot markfasta större block.</p>
+<ul class="facts"><li>L2022:2589</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>77. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här breder ett röjningsröseområde ut sig med minst 250 runda röjningsrösen, alltså sten som röjts undan från gammal odlingsmark. Väster om skogsvägen finns mindre, sanka partier som saknar rösen. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9669</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>78. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området rymmer ett fåtal röjningsrösen, kraftigt överväxta och nersjunkna i marken. Deras form och storlek antyder ett förhistoriskt eller medeltida ursprung.</p>
+<ul class="facts"><li>L2019:4890</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>79. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Detta är ett stort röjningsröseområde med omkring 500 röjningsrösen. Området är bitvis sankt och blockrikt, men rösen förekommer även i dessa partier. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9479</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>80. Stensättning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en rund stensättning, omkring åtta meter i diameter, med en delvis övermossad fyllning av sten.</p>
+<ul class="facts"><li>L2019:4601</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>81. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med ett tiotal runda röjningsrösen med välvd profil. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9637</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>82. Hög</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen är känd genom prästerskapets rannsakningar om gamla antikviteter 1667, då det uppgavs finnas några högar nära prästgården. Man menade att det kunde ha varit en rätteplats, eftersom människoben påträffats där. Vid en besiktning 1987 kunde dock inga högar återfinnas.</p>
+<ul class="facts"><li>L1974:7883</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>83. Runristning</h3>
+<div class="badges"><span class="badge">Runsten</span></div>
+
+<p>Runstenen av granit bär en runslinga som avslutas med ett rundjur som biter sig i svansen. Inskriften från 1000-talet lyder enligt Smålands runinskrifter att Järp lät resa stenen efter sin broder Sibbe och göra bro. Stenen påträffades 1887 vid rivningen av Eksjö gamla kyrka, redan då delad i två hälfter, och målades upp på nytt 1966 och 1982.</p>
+<ul class="facts"><li>L1974:6311</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>84. Stensättning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en rund stensättning, omkring sju meter i diameter, med en fyllning av mestadels övermossade stenar. I mitten syns en fördjupning, och platsen är bevuxen med två stora björkar, en tall och några enbuskar.</p>
+<ul class="facts"><li>L1974:7416</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>85. Fyndplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här påträffades 1918 en halsring av brons med silverbeslag i ett trädgårdsland, som samma år lämnades till Statens Historiska Museum. Från samma plats kommer även ett bryne, en krukskärva, en glasflussklump och flera brända lerstycken. På fyndplatsen står i dag en villa med trädgård.</p>
+<ul class="facts"><li>L1974:7880</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>86. Runristning</h3>
+<div class="badges"><span class="badge">Runsten</span></div>
+
+<p>Detta är fyndplatsen för en runsten som enligt rannsakningarna 1667 ska ha varit sockenmärke mellan Eksjö och Höreda. Stenen restes i början av 1800-talet men föll omkull och restes på nytt. År 1900 flyttades den in till staden, där den nu står i vattenledningsparken.</p>
+<ul class="facts"><li>L1974:8050</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>87. Röse</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns ett kvadratiskt röse, omkring sex meter i sida, med en kraftigt övermossad fyllning av sten. Södra delen är något omrörd, där sten från den närliggande åkern lagts upp.</p>
+<ul class="facts"><li>L2019:4600</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>88. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med ett fåtal röjningsrösen uppbyggda av stora stenar.</p>
+<ul class="facts"><li>L2020:554</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>89. Fyndplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Vid en arkeologisk utredning 2014 påträffades här en kniv av järn av okänd ålder samt en bit porslin. Porslinet är av ostindisk typ med landskapsmotiv i blått och vitt och dateras till 1700-talet. I närheten framkom också en härd och en trolig boplatsvall.</p>
+<ul class="facts"><li>L1970:2854</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>90. Härd</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en rund härd med skörbrända stenar i fyllningen. Den framkom i sökschakt vid en arkeologisk utredning 2014, då ett femtontal schakt togs upp runt omkring utan att några fynd påträffades.</p>
+<ul class="facts"><li>L1970:2877</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>91. Färdväg</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här löper en gammal fägata, kantad av två parallella stenrader med en försänkning emellan. En fägata var den inhägnade väg som förr ledde byns boskap ut till bete.</p>
+<ul class="facts"><li>L2020:558</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>92. Kolningsanläggning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en oval kolningsgrop, där provstick gett rikligt med kol. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9612</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>93. Plats med tradition</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen är känd genom muntlig tradition. Uppgifterna är knapphändiga och inte kvalitetssäkrade.</p>
+<ul class="facts"><li>L1974:8276</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>94. Hällristning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns ett område med älvkvarnar, alltså små inhuggna skålgropar, fördelade på sex stenar. Sammanlagt räknas nitton älvkvarnar, flest på den största stenen där tolv gropar sitter samlade.</p>
+<ul class="facts"><li>L1974:6236</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>95. Härd</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en liten rund härd med kol och sot i fyllningen. Den påträffades i ett av flera schakt vid en arkeologisk utredning 2013.</p>
+<ul class="facts"><li>L1970:3266</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>96. Vägmärke</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Detta är en milstolpe av kalksten, avrundad upptill, som står i ett postament av kallmurad gråsten. På västra sidan bär den inskriptionen 1/4 MIL i lågrelief.</p>
+<ul class="facts"><li>L1973:1529</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>97. Stadslager</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här ligger Eksjös medeltida stadslager. Staden torde ha grundlagts kring sekelskiftet 1400, och kvarndrift förekom vid den redan från 1300-talet. Under nordiska sjuårskriget brändes staden ner 1568 och återuppbyggdes strax nordnordost om den gamla platsen, av militära och strategiska skäl. I ett köpebrev från 1590 omnämns det så kallade gambla torget.</p>
+<ul class="facts"><li>L1974:6667</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>98. Område med skogsbrukslämningar</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området rymmer skogsbrukslämningar i form av två kolbottnar, var och en omgiven av en ränna. Vid provstick framkom kol och sotblandad jord, spår efter äldre kolning på platsen.</p>
+<ul class="facts"><li>L1973:1722</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>99. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med ett tiotal röjningsrösen med flack profil. Enstaka är upplagda vid jordfasta block. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9668</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>100. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns ett röjningsröseområde med ett femtiotal röjningsrösen med välvd profil. Flera av dem är upplagda vid jordfasta block. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9636</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>101. Stenkammargrav</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här låg en hällkista i en stensättning, sedan undersökt och borttagen. Vid Kjellmarks undersökning 1921 påträffades bland annat eldslagningssten och skära av flinta, en tandad spjutspets, en metkrok av brons och en bronspincett, vilka förvaras vid Statens Historiska Museum.</p>
+<ul class="facts"><li>L1974:6856</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>102. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med ett tiotal röjningsrösen och en terrasskant efter äldre odling.</p>
+<ul class="facts"><li>L2020:535</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>103. Kvarn</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Enligt en karta från 1796 låg här en kvarn. På platsen syns i dag enstaka huggna stenar, och strax norr om den finns en möjlig dammvall. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9664</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>104. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området rymmer en fossil åker med mellan tio och femton röjningsrösen efter äldre odling.</p>
+<ul class="facts"><li>L2020:547</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>105. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en fossil åker med ett fåtal röjningsrösen, kraftigt överväxta av gräs.</p>
+<ul class="facts"><li>L2020:550</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>106. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området utgör en fossil åker med ett tiotal oregelbundna röjningsrösen, övervägande med flack profil. Flera är uppslängda mot jordfasta block. Lämningen framkom vid en arkeologisk utredning 2014.</p>
+<ul class="facts"><li>L1971:9638</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>107. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Minnesmärket föreställer en husarryttare till häst i brons i naturlig storlek, rest på en stensockel. På sockeln sitter en bronsplakett med ett krönt lejon i högrelief och en inskrift till minne av Kungl. Smålands husarregemente.</p>
+<ul class="facts"><li>L1974:7494</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>108. Kolningsanläggning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här finns en oval kolningsgrop omgiven av en låg vall. Vid provstick i botten och vallen framkom kol och sot, spår efter äldre kolning.</p>
+<ul class="facts"><li>L2019:93</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>109. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Området rymmer ett röjningsröseområde med omkring 100 röjningsrösen, i allmänhet flacka och glest liggande, flera uppslängda kring större block. Här har senare bedrivits stentäkt, vilket lämnat gropar och borrspår i stenarna. Lämningen påträffades vid en utredning 2007, då även två härdbottnar framkom.</p>
+<ul class="facts"><li>L1971:4868</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>110. Fornlämningsliknande lämning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen är registrerad som en fornlämningsliknande lämning. Underlaget är knapphändigt och uppgifterna är inte kvalitetssäkrade.</p>
+<ul class="facts"><li>L1974:6385</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>111. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Här ligger spåren av gammal odlingsmark i form av ett tiotal röjningsrösen, samlade högar av sten som en gång rensats bort från åkern. Flera av stenarna är i dag delvis övervuxna av mossa. Uppgifterna är inte kvalitetssäkrade och kan vara ofullständiga.</p>
+<ul class="facts"><li>L1974:7056</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>112. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>På platsen finns ett tiotal oregelbundna röjningsrösen, byggda av bortrensad odlingssten. Många av dem har en flack form och har lagts upp mot fasta jordblock i marken. Lämningarna dokumenterades i samband med en arkeologisk utredning år 2014.</p>
+<ul class="facts"><li>L1971:9480</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>113. Naturföremål/-bildning med bruk, tradition eller namn</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Den runda stenen mäter omkring 1,35 meter i diameter och har ett genomborrat hål mitt i, ungefär 0,2 meter brett. Stenen är kluven rakt itu, och de två halvorna hålls samman av järnband. I dag står den på kant i marken och är förknippad med en tradition. Uppgifterna är inte kvalitetssäkrade.</p>
+<ul class="facts"><li>L1974:7495</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>114. Fossil åker</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Inom ett område på ungefär 160 gånger 100 meter finns tydliga spår av äldre odling. Här syns sex terrasskanter, röjda ytor och omkring tjugo röjningsrösen som mäter mellan 1,5 och 6 meter i diameter. Terrasserna är mellan 20 och 55 meter långa och avgränsar odlingsytorna i olika riktningar.</p>
+<ul class="facts"><li>L2019:4598</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>115. Fyndplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>På denna plats påträffades kopparmynt som dateras till slutet av 1600-talet. Fynden gjordes med metalldetektor under den andra etappen av en arkeologisk utredning år 2014.</p>
+<ul class="facts"><li>L1970:2893</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>116. Runristning</h3>
+<div class="badges"><span class="badge">Runsten</span></div>
+
+<p>Runstenen av granit bär en ristning som slingrar sig i form av ett rundjur, med nacktofs, mandelformigt öga och en lång, uppåtrullad överläpp. Enligt Smålands runinskrifter lyder texten att någon lät göra denna bro efter sin son Klint, med orden Gud hjälpe hans ande. Ristningen målades upp 1966.</p>
+<ul class="facts"><li>L1974:6907</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+  <footer class="guide-foot"><p>Källa: Stadsvandring.io — Eksjö. Innehåll från Wikipedia/Wikidata m.fl. under fria licenser.</p></footer>
+</div>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

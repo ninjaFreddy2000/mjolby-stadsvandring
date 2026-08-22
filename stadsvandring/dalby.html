@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Dalby — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Dalby till fots: 81 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 81 stopp och nedladdningsbar PDF-gu…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/dalby">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Dalby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Dalby till fots: 81 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 81 stopp och nedladdningsbar PDF-gu…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/dalby">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Dalby — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Dalby till fots: 81 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 81 stopp och nedladdningsbar PDF-gu…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"dalby","sourceSlug":"stadsvandring/dalby","centroid":{"lat":55.66107301987637,"lng":13.347337804432572},"stops":[{"name":"Strädelängan","lat":55.665783375981846,"lng":13.344087849599987},{"name":"Tingshuset","lat":55.66397246482232,"lng":13.346623438092013},{"name":"Lanthandeln","lat":55.66607357745143,"lng":13.343453095310116}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Dalby","description":"Upptäck Dalby till fots: 81 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/dalby","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Strädelängan","description":"Strädelängan är ett gammalt hus med ett nytt namn.","url":"https://stadsvandring.io/p/bht-dalby-stradelangan-980","geo":{"@type":"GeoCoordinates","latitude":55.665783375981846,"longitude":13.344087849599987}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Tingshuset","description":"Dalby tingshus stod färdigt 1783.","url":"https://stadsvandring.io/p/bht-dalby-tingshuset-995","geo":{"@type":"GeoCoordinates","latitude":55.66397246482232,"longitude":13.346623438092013}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Lanthandeln","description":"Redan 1860 öppnade Edla Jönsson lanthandeln på Lundavägen 10, och den benämndes länge som Skånes äldsta.","url":"https://stadsvandring.io/p/bht-dalby-lanthandeln-1032","geo":{"@type":"GeoCoordinates","latitude":55.66607357745143,"longitude":13.343453095310116}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mellanskolan","description":"På Mellanskolans fasad står kort och gott Dalby Skola .","url":"https://stadsvandring.io/p/bht-dalby-mellanskolan-1033","geo":{"@type":"GeoCoordinates","latitude":55.664589633279476,"longitude":13.346441479852297}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Gästis","description":"Det har funnits gästgiveri i Dalby sedan 1666, och fram till att Tingshuset byggdes 1783 hölls även rättegångar här.","url":"https://stadsvandring.io/p/bht-dalby-gastis-985","geo":{"@type":"GeoCoordinates","latitude":55.66430407993245,"longitude":13.346099640006987}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Dalby kungsgård","description":"Dalby kungsgård är en herrgård vars historia går tillbaka till det kloster som etablerades jämte kyrkan i byn i slutet av 1000-talet.","url":"https://stadsvandring.io/p/bht-dalby-dalby-kungsgard-994","geo":{"@type":"GeoCoordinates","latitude":55.664739087594846,"longitude":13.34458213840593}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Trekanten","description":"Tomten mellan Tingsgatan, Lundavägen och Hällestadsvägen skänktes vid förra sekelskiftet av Dalby kungsgård till kommunen med syftet att en park skulle kunna an","url":"https://stadsvandring.io/p/bht-dalby-trekanten-1001","geo":{"@type":"GeoCoordinates","latitude":55.665059592586346,"longitude":13.345756902210963}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Järnvägen","description":"Tågen började rulla mellan Dalby och Malmö 1892, och ett år senare tillkom tåg mellan Dalby och Tomelilla.","url":"https://stadsvandring.io/p/bht-dalby-jarnvagen-1028","geo":{"@type":"GeoCoordinates","latitude":55.66178069843784,"longitude":13.345133699154099}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Dalby Järn och Diverse","description":"I Trekantens ena hörn ligger sedan 1875 den byggnad som i folkmun är känd som Dalby Järn och Diverse; ett namn som även återfinns i relief på fasaden.","url":"https://stadsvandring.io/p/bht-dalby-dalby-jarn-och-diverse-989","geo":{"@type":"GeoCoordinates","latitude":55.66391329940971,"longitude":13.346201400708692}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Dalby kyrka","description":"Dalby kyrka eller Heligkorskyrkan byggdes under 1060-talet, att fungera som säte för biskop Egino från Hamburg-Bremen.","url":"https://stadsvandring.io/p/bht-dalby-dalby-kyrka-993","geo":{"@type":"GeoCoordinates","latitude":55.664122945626325,"longitude":13.344543800663748}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Ståhls smedja","description":"Under 70 år var smedjan på Lundavägen 9 navet för byns bönder, på samma vis som Gästis var samlingsplatsen för byns nöjeslystna.","url":"https://stadsvandring.io/p/bht-dalby-stahls-smedja-1000","geo":{"@type":"GeoCoordinates","latitude":55.665300963197645,"longitude":13.345177019648919}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"AB Dalby Spritfabrik","description":"1902 började AB Dalby Spritfabrik att producera alkohol i sin nybyggda fabrik strax utanför centrala Dalby.","url":"https://stadsvandring.io/p/bht-dalby-ab-dalby-spritfabrik-1025","geo":{"@type":"GeoCoordinates","latitude":55.660835971263204,"longitude":13.35058892791996}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Alba Fabrikers AB","description":"Den gamla spritfabrikens lokaler såldes till Alba Fabrikers AB 1934.","url":"https://stadsvandring.io/p/bht-dalby-alba-fabrikers-ab-1027","geo":{"@type":"GeoCoordinates","latitude":55.66082208001209,"longitude":13.349760546727362}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Missionshuset","description":"Det vita huset på Hällestadsvägen 3 kallas ofta för Missionshuset, men faktum är att byggnaden hyste flera olika typer av verksamhet innan den kom att användas…","url":"https://stadsvandring.io/p/bht-dalby-missionshuset-1030","geo":{"@type":"GeoCoordinates","latitude":55.66483418174234,"longitude":13.346113392394177}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Dalby vårdcentral","description":"När vårdcentralen i Dalby öppnades 1968 var den Sveriges första i sitt slag.","url":"https://stadsvandring.io/p/bht-dalby-dalby-vardcentral-1029","geo":{"@type":"GeoCoordinates","latitude":55.663050776292664,"longitude":13.351057111122286}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Galgabacken","description":"Galgabacken fungerade som avrättningsplats från första halvan av 1700-talet till 1800-talets första årtionde, då avrättningsplatsen flyttades.","url":"https://stadsvandring.io/p/bht-dalby-galgabacken-981","geo":{"@type":"GeoCoordinates","latitude":55.662216199999996,"longitude":13.3631716}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Dalby Granit","description":"Vid östra Mölla mitt i centrala Dalby har det brutits sten sedan slutet av 1800-talet.","url":"https://stadsvandring.io/p/bht-dalby-dalby-granit-982","geo":{"@type":"GeoCoordinates","latitude":55.66436483781093,"longitude":13.360531700634874}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Siporexfabriken","description":"Det har brutits och förädlats sten där Dalby Siporexfabrik AB kom att ligga ända sedan 1892, då tegelbruksägare A.","url":"https://stadsvandring.io/p/bht-dalby-siporexfabriken-1002","geo":{"@type":"GeoCoordinates","latitude":55.6543865874791,"longitude":13.371498428813569}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Biorama Dalby","description":"Enligt en lag från 1649 skulle ett gästgiveri tillhandahålla stall där gästerna kunde byta hästar.","url":"https://stadsvandring.io/p/bht-dalby-biorama-dalby-1023","geo":{"@type":"GeoCoordinates","latitude":55.66438121900847,"longitude":13.347613836170053}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Vita villan","description":"åldringsvården i Dalby har i närmare 150 år till stor del varit koncentrerad kring Hällestadsvägen.","url":"https://stadsvandring.io/p/bht-dalby-vita-villan-1003","geo":{"@type":"GeoCoordinates","latitude":55.66496177687531,"longitude":13.350912284002549}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Fiskaffären","description":"Det händer ibland att människor med glimten i ögat säger att Dalby har allt utom närheten till havet.","url":"https://stadsvandring.io/p/bht-dalby-fiskaffaren-1004","geo":{"@type":"GeoCoordinates","latitude":55.66329206347142,"longitude":13.349418719175175}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Björnstorps slott","description":"slott i Gödelövs socken i Lunds kommun","geo":{"@type":"GeoCoordinates","latitude":55.628,"longitude":13.4066}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Bjällerups kyrka","description":"kyrkobyggnad i Staffanstorps kommun","geo":{"@type":"GeoCoordinates","latitude":55.66111111,"longitude":13.26027778}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Bonderups kyrka","description":"kyrkobyggnad i Lunds kommun","geo":{"@type":"GeoCoordinates","latitude":55.64,"longitude":13.35555556}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Esarps kyrka","description":"kyrkobyggnad i Staffanstorps kommun","geo":{"@type":"GeoCoordinates","latitude":55.61888889,"longitude":13.32611111}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Dalby gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 81 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Dalby?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 81 sevärdheter i Dalby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Strädelängan?","acceptedAnswer":{"@type":"Answer","text":"Strädelängan är ett gammalt hus med ett nytt namn."}},{"@type":"Question","name":"Vad är Tingshuset?","acceptedAnswer":{"@type":"Answer","text":"Dalby tingshus stod färdigt 1783."}},{"@type":"Question","name":"Vad är Lanthandeln?","acceptedAnswer":{"@type":"Answer","text":"Redan 1860 öppnade Edla Jönsson lanthandeln på Lundavägen 10, och den benämndes länge som Skånes äldsta."}},{"@type":"Question","name":"Vad är Mellanskolan?","acceptedAnswer":{"@type":"Answer","text":"På Mellanskolans fasad står kort och gott Dalby Skola ."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Dalby","item":"https://stadsvandring.io/stadsvandring/dalby"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Dalby</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Dalby</span><span class="badge">81 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Dalby — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Dalby till fots: 81 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Dalby"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-dalby-stradelangan-980"><b>1. Strädelängan</b><span>Sevärdhet · Strädelängan är ett gammalt hus med ett nytt namn.</span></a>
+<a class="tile" href="/p/bht-dalby-tingshuset-995"><b>2. Tingshuset</b><span>Byggnad · Dalby tingshus stod färdigt 1783.</span></a>
+<a class="tile" href="/p/bht-dalby-lanthandeln-1032"><b>3. Lanthandeln</b><span>Sevärdhet · Redan 1860 öppnade Edla Jönsson lanthandeln på Lundavägen 10, och den benämndes…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Dalby · 81</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Dalby. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 36</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-hog-dalby-493e8f"><b>Hög</b></a> — Platsen för en gravhög i Dalby, känd genom namnet &quot;Södre Toftehög&quot; på en karta från 1795.</li>
+<li><a href="/karta?plats=ksamsok-kvinnhog-hog-dalby-511d5a"><b>Kvinnhög, Hög</b></a> — En till största delen bortodlad gravhög i Dalby, känd som Kvinnhög sedan 1700-talet.</li>
+<li><a href="/p/ksamsok-boplats-dalby-28f640"><b>Boplats</b></a> — Spår av järnåldersboplatser vid Dalby, med keramik, ben och en ornamenterad eldbock av lera.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-dalby-71cef5"><b>Vägmärke</b></a> — En rad väghållningsstenar i Dalby, märkta med gårdsnamn som visade vem som skötte vägen.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-dalby-9bac24"><b>Lägenhetsbebyggelse</b></a> — Resterna av en liten gård i Dalby, anlagd omkring år 1800.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-d4456d"><b>Hög</b></a> — Platsen för en försvunnen gravhög i Dalby, minnesbevarad genom åkernamnet &quot;Kropphöyarne&quot;.</li>
+<li><a href="/karta?plats=ksamsok-boplats-dalby-0130d7"><b>Boplats</b></a> — En stenåldersboplats i Dalby, känd genom fynd av bearbetad flinta.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-335e06"><b>Fyndplats</b></a> — En fyndplats sydöst om Dalby där ett bearbetat flintavslag kom i dagen 2003.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-7a0194"><b>Fyndplats</b></a> — En tunnackig flintyxa funnen på en gård i Dalby, ett redskap från stenåldern.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-a1f140"><b>Hög</b></a> — Platsen för en möjlig gravhög i Dalby, i dag försvunnen men utsatt på en karta från 1775.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-dalby-7eac31"><b>Vägmärke</b></a> — En milstolpe av sandsten från 1798 vid vägen i Dalby.</li>
+<li><a href="/karta?plats=ksamsok-galgabacken-avrattningsplats-dalby-d3d087"><b>Galgabacken, Avrättningsplats</b></a> — Galgabacken i Dalby, enligt traditionen en gammal avrättningsplats.</li>
+<li><a href="/karta?plats=ksamsok-rose-dalby-1ff8d2"><b>Röse</b></a> — Ett övertorvat gravröse i Dalby, omnämnt redan 1570 som &quot;Allinderörsåker&quot;.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-dalby-d2dfdc"><b>Bytomt/gårdstomt</b></a> — Dalbys medeltida bytomt, med spår av kyrka, kloster och kungsgård under jorden.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-d15ad0"><b>Fyndplats</b></a> — En fyndplats vid Dalby med flintyxor, pilspetsar och en bronsholkyxa.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-774b96"><b>Hög</b></a> — Platsen för en gravhög i Dalby, känd som &quot;Norre Toftehög&quot; på en karta från 1795.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-7f3293"><b>Hög</b></a> — En kulle i Dalby, på gamla kartor utmärkt som &quot;ättehög&quot; men kanske ändå naturlig.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-54e192"><b>Fyndplats</b></a> — En tjocknackig flintyxa funnen vid en gård i Dalby, ett fynd från stenåldern.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-972e82"><b>Hög</b></a> — Ytterligare en försvunnen gravhög i Dalby, minnesbevarad genom namnet &quot;Kropphöyarne&quot;.</li>
+<li><a href="/karta?plats=ksamsok-hard-dalby-ecf70f"><b>Härd</b></a> — En forntida härd sydöst om Dalby, funnen vid en utredning 2003.</li>
+<li><a href="/karta?plats=ksamsok-boplats-dalby-6b53e5"><b>Boplats</b></a> — En förhistorisk boplats vid Dalby, med rikligt av slagen flinta i marken.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-dalby-c42fd6"><b>Stenkrets/stenrad</b></a> — Platsen för en osäker domarring i Dalby, utmärkt på en karta från 1887 men i dag försvunnen.</li>
+<li><a href="/karta?plats=ksamsok-hard-dalby-6e6c46"><b>Härd</b></a> — En forntida härd i Dalby med kol och skörbränd sten, funnen 2013.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-b2f3ca"><b>Fyndplats</b></a> — Här hittades en flintskrapa vid en arkeologisk utredning 2003.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-dalby-9b3828"><b>Plats med tradition</b></a> — En avstyckning som bär på en tradition känd i trakten.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-dalby-dca52a"><b>Boplatsområde</b></a> — Ett boplatsområde där gropar, stolphål och flintavslag dokumenterades 2003.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-76f8fd"><b>Hög</b></a> — Platsen för en förmodad hög som vid grävning visade sig vara annat.</li>
+<li><a href="/karta?plats=ksamsok-hog-dalby-13d303"><b>Hög</b></a> — En uppgift om en hög knuten till markstycket Kyllehögsäng.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-dalby-1f2a14"><b>Vägmärke</b></a> — En milstolpe av sandsten från 1728 med krönt inskription.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-dalby-69980b"><b>Grav- och boplatsområde</b></a> — Ett boplatsområde med fynd av flinta och tidigneolitisk keramik.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-dalby-f63466"><b>Fyndplats</b></a> — Fyndplats för flintskrapor och flintavslag från utredningen 2003.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-dalby-f4db21"><b>Boplatsområde</b></a> — En liten boplats där bland annat en flintyxa påträffades 2003.</li>
+<li><a href="/p/ksamsok-tegelindustri-dalby-9e078b"><b>Tegelindustri</b></a> — Ett äldre område för tegeltillverkning med ugn och lergravar.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-dalby-24b587"><b>Boplatslämning övrig</b></a> — En oval grop som framkom vid schaktning för en VA-ledning.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-dalby-b5a3ba"><b>Bytomt/gårdstomt</b></a> — Lunnarps bytomt, känd sedan 1500-talet och alltjämt bebyggd.</li>
+<li><a href="/karta?plats=ksamsok-vallanlaggning-dalby-e5b3b0"><b>Vallanläggning</b></a> — En jordfylld vall omgiven av en urgrävning och genombruten på flera ställen.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 16</h3>
+<ul class="place-list">
+<li><a href="/p/bht-dalby-tingshuset-995"><b>Tingshuset</b></a> — Dalby tingshus stod färdigt 1783. <span class="era">1890</span></li>
+<li><a href="/p/bht-dalby-mellanskolan-1033"><b>Mellanskolan</b></a> — På Mellanskolans fasad står kort och gott Dalby Skola . <span class="era">1890</span></li>
+<li><a href="/p/bht-dalby-dalby-kungsgard-994"><b>Dalby kungsgård</b></a> — Dalby kungsgård är en herrgård vars historia går tillbaka till det kloster som etablerades jämte kyrkan i byn i slutet av 1000-talet. <span class="era">1900</span></li>
+<li><a href="/p/bht-dalby-ab-dalby-spritfabrik-1025"><b>AB Dalby Spritfabrik</b></a> — 1902 började AB Dalby Spritfabrik att producera alkohol i sin nybyggda fabrik strax utanför centrala Dalby. <span class="era">1932</span></li>
+<li><a href="/p/bht-dalby-alba-fabrikers-ab-1027"><b>Alba Fabrikers AB</b></a> — Den gamla spritfabrikens lokaler såldes till Alba Fabrikers AB 1934. <span class="era">1940</span></li>
+<li><a href="/p/bht-dalby-missionshuset-1030"><b>Missionshuset</b></a> — Det vita huset på Hällestadsvägen 3 kallas ofta för Missionshuset, men faktum är att byggnaden hyste flera olika typer av verksamhet innan… <span class="era">1960</span></li>
+<li><a href="/p/bht-dalby-siporexfabriken-1002"><b>Siporexfabriken</b></a> — Det har brutits och förädlats sten där Dalby Siporexfabrik AB kom att ligga ända sedan 1892, då tegelbruksägare A. <span class="era">1970</span></li>
+<li><a href="/p/bht-dalby-vita-villan-1003"><b>Vita villan</b></a> — åldringsvården i Dalby har i närmare 150 år till stor del varit koncentrerad kring Hällestadsvägen. <span class="era">1980</span></li>
+<li><a href="/p/ksamsok-sodra-langan-dalby-448280"><b>SÖDRA LÄNGAN</b></a> — Södra längan på Dalby kungsgård, med medeltida magasin och ett brygghus där man länge tvättade, bryggde och bakade. <span class="era">1400–1499</span></li>
+<li><a href="/p/ksamsok-magasin-sodra-langan-dalby-051316"><b>Magasin (södra längan)</b></a> — Ett magasin i Dalby med rötter i den tidigmedeltida kungsgården, kanske ända från 1100-talet. <span class="era">1100–1349</span></li>
+<li><a href="/p/ksamsok-stall-dalby-699452"><b>STALL</b></a> — Dalby kungsgårds häststall, med medeltida murar och spår av gotiska fönster från 1200-talet. <span class="era">1200–1299</span></li>
+<li><a href="/p/ksamsok-svinhus-dalby-051313"><b>Svinhus</b></a> — Ett svinhus från 1915 på Dalby kungsgård, senare hönshus och i dag stall för hästar. <span class="era">1915–1915</span></li>
+<li><a href="/karta?plats=ksamsok-nya-arbetarbostaden-dalby-051318"><b>Nya arbetarbostaden</b></a> — Gårdens enda kvarvarande arbetarbostad, byggd 1965 på Dalby kungsgård. <span class="era">1965–1965</span></li>
+<li><a href="/p/ksamsok-maskinhall-dalby-051315"><b>Maskinhall</b></a> — En ladugård från 1915 på Dalby kungsgård, återuppförd efter en brand 1946 och nu maskinhall. <span class="era">1915–1915</span></li>
+<li><a href="/p/ksamsok-lada-med-loge-och-troskvandring-dalby-699453"><b>LADA MED LOGE OCH TRÖSKVANDRING</b></a> — En lada och loge från 1780-talet på Dalby kungsgård, med en tröskvandring i korsvirke. <span class="era">1780–1787</span></li>
+<li><a href="/p/ksamsok-ladugard-dalby-699454"><b>LADUGÅRD</b></a> — Ett ungdjursstall från omkring år 1800 på Dalby kungsgård, med ett tak som bytt skepnad många gånger. <span class="era">1770–1799</span></li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 11</h3>
+<ul class="place-list">
+<li><a href="/p/bht-dalby-stradelangan-980"><b>Strädelängan</b></a> — Strädelängan är ett gammalt hus med ett nytt namn. <span class="era">1890</span></li>
+<li><a href="/p/bht-dalby-lanthandeln-1032"><b>Lanthandeln</b></a> — Redan 1860 öppnade Edla Jönsson lanthandeln på Lundavägen 10, och den benämndes länge som Skånes äldsta. <span class="era">1890</span></li>
+<li><a href="/p/bht-dalby-gastis-985"><b>Gästis</b></a> — Det har funnits gästgiveri i Dalby sedan 1666, och fram till att Tingshuset byggdes 1783 hölls även rättegångar här. <span class="era">1900</span></li>
+<li><a href="/p/bht-dalby-trekanten-1001"><b>Trekanten</b></a> — Tomten mellan Tingsgatan, Lundavägen och Hällestadsvägen skänktes vid förra sekelskiftet av Dalby kungsgård till kommunen med syftet att en… <span class="era">1910</span></li>
+<li><a href="/p/bht-dalby-dalby-jarn-och-diverse-989"><b>Dalby Järn och Diverse</b></a> — I Trekantens ena hörn ligger sedan 1875 den byggnad som i folkmun är känd som Dalby Järn och Diverse; ett namn som även återfinns i relief… <span class="era">1920</span></li>
+<li><a href="/p/bht-dalby-stahls-smedja-1000"><b>Ståhls smedja</b></a> — Under 70 år var smedjan på Lundavägen 9 navet för byns bönder, på samma vis som Gästis var samlingsplatsen för byns nöjeslystna. <span class="era">1930</span></li>
+<li><a href="/p/bht-dalby-dalby-vardcentral-1029"><b>Dalby vårdcentral</b></a> — När vårdcentralen i Dalby öppnades 1968 var den Sveriges första i sitt slag. <span class="era">1968</span></li>
+<li><a href="/p/bht-dalby-galgabacken-981"><b>Galgabacken</b></a> — Galgabacken fungerade som avrättningsplats från första halvan av 1700-talet till 1800-talets första årtionde, då avrättningsplatsen flyttad… <span class="era">1970</span></li>
+<li><a href="/p/bht-dalby-dalby-granit-982"><b>Dalby Granit</b></a> — Vid östra Mölla mitt i centrala Dalby har det brutits sten sedan slutet av 1800-talet. <span class="era">1970</span></li>
+<li><a href="/p/bht-dalby-biorama-dalby-1023"><b>Biorama Dalby</b></a> — Enligt en lag från 1649 skulle ett gästgiveri tillhandahålla stall där gästerna kunde byta hästar. <span class="era">1970</span></li>
+<li><a href="/p/bht-dalby-fiskaffaren-1004"><b>Fiskaffären</b></a> — Det händer ibland att människor med glimten i ögat säger att Dalby har allt utom närheten till havet. <span class="era">1980</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 10</h3>
+<ul class="place-list">
+<li><a href="/p/bht-dalby-dalby-kyrka-993"><b>Dalby kyrka</b></a> — Dalby kyrka eller Heligkorskyrkan byggdes under 1060-talet, att fungera som säte för biskop Egino från Hamburg-Bremen. <span class="era">1930</span></li>
+<li><a href="/karta?plats=wd-dalby-bjallerups-kyrka-q10430455"><b>Bjällerups kyrka</b></a> — kyrkobyggnad i Staffanstorps kommun</li>
+<li><a href="/karta?plats=wd-dalby-bonderups-kyrka-q10432847"><b>Bonderups kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-dalby-esarps-kyrka-q10489000"><b>Esarps kyrka</b></a> — kyrkobyggnad i Staffanstorps kommun</li>
+<li><a href="/karta?plats=wd-dalby-godelovs-kyrka-q10512609"><b>Gödelövs kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-dalby-hardeberga-kyrka-q10518045"><b>Hardeberga kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-dalby-hallestads-kyrka-q10531402"><b>Hällestads kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/karta?plats=wd-dalby-kyrkheddinge-kyrka-q10551457"><b>Kyrkheddinge kyrka</b></a> — kyrkobyggnad i Staffanstorps kommun</li>
+<li><a href="/karta?plats=wd-dalby-sodra-sandby-kyrka-q10688989"><b>Södra Sandby kyrka</b></a> — kyrkobyggnad i Lunds kommun</li>
+<li><a href="/p/ksamsok-kyrka-kapell-dalby-75bcc1"><b>Kyrka/kapell</b></a> — Dalbys medeltida kyrkplats, där kungsgård, kloster och den gamla &quot;bondekyrkan&quot; en gång låg.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-dalby-bjornstorps-slott-q4357541"><b>Björnstorps slott</b></a> — slott i Gödelövs socken i Lunds kommun</li>
+<li><a href="/karta?plats=ksamsok-slott-herresate-dalby-4e80b0"><b>Slott/herresäte</b></a> — Platsen för Dalby kungsgård med lämningar ända från 1000-talet.</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-dalby-rogle-kloster-q63226232"><b>Rögle kloster</b></a> — Rögle kloster, eller Sankt Dominikus kloster - dominikansystrarna i Rögle, är beläget mellan Södra Sandby och Dalby cirka tio kilometer öst…</li>
+<li><a href="/p/ksamsok-kloster-dalby-9f5596"><b>Kloster</b></a> — Dalby bytomt med lämningar av kungsgård, kloster och kyrka under mark.</li>
+</ul>
+<h3 class="city-h3">Station · 1</h3>
+<ul class="place-list">
+<li><a href="/p/bht-dalby-jarnvagen-1028"><b>Järnvägen</b></a> — Tågen började rulla mellan Dalby och Malmö 1892, och ett år senare tillkom tåg mellan Dalby och Tomelilla. <span class="era">1910</span></li>
+</ul>
+<h3 class="city-h3">Torn · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-torna-och-bara-harads-forna-tingshus-dalby-696796"><b>TORNA OCH BARA HÄRADS FORNA TINGSHUS</b></a> — Häradets tingshus från 1783, påbyggt 1906 och märkt med både Gustav III:s och Oscar II:s namn. <span class="era">1783–1783</span></li>
+</ul>
+<h3 class="city-h3">Torg · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-traktorgarage-dalby-051314"><b>Traktorgarage</b></a> — Ett traktorgarage från 1950-talet på Dalby kungsgård, reparerat efter en stormskada 2017. <span class="era">1950–1959</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-dalby-f8c73e"><b>Minnesmärke</b></a> — En liten inskriven granitsten vid Dalby.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 81 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/dalby/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/dalby/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Dalby gratis?</summary><p>Ja. Karta, alla 81 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Dalby?</summary><p>Vandringen samlar 81 sevärdheter i Dalby — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Strädelängan?</summary><p>Strädelängan är ett gammalt hus med ett nytt namn.</p></details>
+<details class="faq"><summary>Vad är Tingshuset?</summary><p>Dalby tingshus stod färdigt 1783.</p></details>
+<details class="faq"><summary>Vad är Lanthandeln?</summary><p>Redan 1860 öppnade Edla Jönsson lanthandeln på Lundavägen 10, och den benämndes länge som Skånes äldsta.</p></details>
+<details class="faq"><summary>Vad är Mellanskolan?</summary><p>På Mellanskolans fasad står kort och gott Dalby Skola .</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

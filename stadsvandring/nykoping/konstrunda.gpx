@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Nyköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.761722" lon="17.021806"><name>Palmemonumentet</name><desc>Palmemonumentet är ett minnesmärke i brons utanför Träffen i Nyköping.</desc></wpt>
+  <wpt lat="58.753" lon="17.0086"><name>Torgbrunnen, Nyköping</name><desc>Torgbrunnen är en tidigare vattenpost och dricksvattenfontän belägen framför Länsstyrelsens byggnad på Stora torget i Nyköping.</desc></wpt>
+  <wpt lat="58.75166028744032" lon="17.010722423028646"><name>Minnesmärke</name><desc>En minnessten från 1768 rest intill en bro.</desc></wpt>
+  <rte><name>Konstrundan i Nyköping</name>
+    <rtept lat="58.761722" lon="17.021806"><name>Palmemonumentet</name></rtept>
+    <rtept lat="58.753" lon="17.0086"><name>Torgbrunnen, Nyköping</name></rtept>
+    <rtept lat="58.75166028744032" lon="17.010722423028646"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

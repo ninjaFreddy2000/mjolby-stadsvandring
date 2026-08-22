@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Sala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.92729526389882" lon="16.592256941421084"><name>Minnesmärke</name><desc>Minnessten över Västmanlands trängkårs övningar, rest 1967.</desc></wpt>
+  <wpt lat="59.925853070296455" lon="16.596763196683284"><name>Minnesmärke</name><desc>Minnessten av dolomit rest 1995 över chauffören Elon Pettersson, Översalaligans sista offer 1936.</desc></wpt>
+  <wpt lat="59.9222364720845" lon="16.59931149376718"><name>Minnesmärke</name><desc>Minnessten över bergshauptman J.H. af Forselles, verksam i Sala.</desc></wpt>
+  <wpt lat="59.92039919865213" lon="16.59829965536907"><name>Minnesmärke</name><desc>Minnesstenar i en park, bland dem en tavla om ett riksträd.</desc></wpt>
+  <wpt lat="59.92241530744988" lon="16.605959932262106"><name>Minnesmärke</name><desc>Minnessten över Nils Samuel Swederus.</desc></wpt>
+  <wpt lat="59.91458956832857" lon="16.602411717271693"><name>Minnesmärke</name><desc>Två inmurade granitplattor som minner om invigningen av en begravningsplats 1888 och den första jordfästningen 1889.</desc></wpt>
+  <rte><name>Konstrundan i Sala</name>
+    <rtept lat="59.92729526389882" lon="16.592256941421084"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.925853070296455" lon="16.596763196683284"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.9222364720845" lon="16.59931149376718"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.92039919865213" lon="16.59829965536907"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.92241530744988" lon="16.605959932262106"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.91458956832857" lon="16.602411717271693"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

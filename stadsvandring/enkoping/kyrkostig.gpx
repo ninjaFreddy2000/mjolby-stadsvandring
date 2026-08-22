@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Enköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.644222222222" lon="17.054583333333"><name>Sankt Lars kyrka</name><desc>kyrkobyggnad i Enköpings kommun</desc></wpt>
+  <wpt lat="59.64386111" lon="17.06538889"><name>Västerledskyrkan</name><desc>kyrka i Enköping</desc></wpt>
+  <wpt lat="59.6426171" lon="17.0720786917"><name>S:t Olofs kapell</name><desc>Enköping</desc></wpt>
+  <wpt lat="59.638493" lon="17.08006"><name>S.Ilians kyrka</name><desc>kyrka/kapell i Uppland (Enköping 5:1)</desc></wpt>
+  <wpt lat="59.6376019422587" lon="17.080497989103286"><name>Kyrka/kapell</name><desc>En uppmålad runsten rest efter Igul samt platsen för S:t Olofs kyrka.</desc></wpt>
+  <wpt lat="59.63870281102069" lon="17.082575844285763"><name>Kyrka/kapell</name><desc>Vårfrukyrkan från 1125 med en försvunnen labyrint på kyrkogården.</desc></wpt>
+  <wpt lat="59.63869167" lon="17.08263056"><name>Vårfrukyrkan</name><desc>kyrkan är belägen på Kyrkåsen i Enköping</desc></wpt>
+  <wpt lat="59.63655" lon="17.07483333"><name>Enakyrkan</name><desc>frikyrka i Enköping</desc></wpt>
+  <wpt lat="59.63212778" lon="17.07454167"><name>Enköpings franciskankonvent</name><desc>Enköpings franciskankonvent var ett franciskankloster i Enköping som upprättades på 1200-talet.</desc></wpt>
+  <wpt lat="59.63212654969775" lon="17.07453572736547"><name>Kloster</name><desc>En klosterruin med grundmurar av gråsten och tegel samt en bevarad klostergård.</desc></wpt>
+  <wpt lat="59.639634" lon="17.1021616"><name>Sankt Adai ﻿syrisk-ortodoxa kyrka</name><desc>Sankt Adai syrisk-ortodoxa kyrka är en kyrka i centrala Enköping.</desc></wpt>
+  <wpt lat="59.636353525900105" lon="17.0351471570421"><name>Borg</name><desc>Lämningar efter en borg intill åfåran, med spridda tegel- och slaggfynd.</desc></wpt>
+  <wpt lat="59.63338333" lon="16.98914722"><name>Tillinge kyrka</name><desc>kyrkobyggnad i Enköpings kommun</desc></wpt>
+  <wpt lat="59.588083333333" lon="17.00125"><name>Svinnegarns kyrka</name><desc>kyrkobyggnad i Enköpings kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Enköping</name>
+    <rtept lat="59.644222222222" lon="17.054583333333"><name>Sankt Lars kyrka</name></rtept>
+    <rtept lat="59.64386111" lon="17.06538889"><name>Västerledskyrkan</name></rtept>
+    <rtept lat="59.6426171" lon="17.0720786917"><name>S:t Olofs kapell</name></rtept>
+    <rtept lat="59.638493" lon="17.08006"><name>S.Ilians kyrka</name></rtept>
+    <rtept lat="59.6376019422587" lon="17.080497989103286"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.63870281102069" lon="17.082575844285763"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.63869167" lon="17.08263056"><name>Vårfrukyrkan</name></rtept>
+    <rtept lat="59.63655" lon="17.07483333"><name>Enakyrkan</name></rtept>
+    <rtept lat="59.63212778" lon="17.07454167"><name>Enköpings franciskankonvent</name></rtept>
+    <rtept lat="59.63212654969775" lon="17.07453572736547"><name>Kloster</name></rtept>
+    <rtept lat="59.639634" lon="17.1021616"><name>Sankt Adai ﻿syrisk-ortodoxa kyrka</name></rtept>
+    <rtept lat="59.636353525900105" lon="17.0351471570421"><name>Borg</name></rtept>
+    <rtept lat="59.63338333" lon="16.98914722"><name>Tillinge kyrka</name></rtept>
+    <rtept lat="59.588083333333" lon="17.00125"><name>Svinnegarns kyrka</name></rtept>
+  </rte>
+</gpx>

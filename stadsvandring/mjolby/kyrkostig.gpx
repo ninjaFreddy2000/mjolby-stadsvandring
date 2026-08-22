@@ -4,15 +4,31 @@
   <wpt lat="58.3982617" lon="15.0827455"><name>S:ta Ingrids klosterruin</name><desc>Sveriges första kvinnliga dominikankloster.</desc></wpt>
   <wpt lat="58.3947888" lon="15.0867153"><name>Vårfrukyrkan (&#39;Garpekyrkan&#39;), Skänninge</name><desc>De tyska köpmännens mäktiga tegelkyrka — en av få stora medeltida tegelkyrkor i Östergötland.</desc></wpt>
   <wpt lat="58.3925" lon="15.085"><name>S:t Olofs kloster &amp; Petrus de Dacia</name><desc>Dominikankonventet i Skänninge där &#39;Sveriges förste författare&#39; verkade.</desc></wpt>
-  <wpt lat="58.372155" lon="15.0052593"><name>Bjälbo kyrka</name><desc>Folkungaättens gårdskyrka och Birger jarls trakt — med ett mäktigt medeltida torn.</desc></wpt>
+  <wpt lat="58.35046667" lon="15.09780833"><name>Högby kyrka</name><desc>kyrkobyggnad i Mjölby kommun</desc></wpt>
+  <wpt lat="58.33358056" lon="15.08331111"><name>Västra Skrukeby kyrka</name><desc>kyrkobyggnad i Mjölby kommun</desc></wpt>
+  <wpt lat="58.327795543076" lon="15.126848510773"><name>Pingstkyrkan</name><desc>kyrka i Mjölby</desc></wpt>
   <wpt lat="58.3260763" lon="15.1310782"><name>Mjölby kyrka</name><desc>Stadens kyrka på byns högsta punkt, med ett medeltida torn som överlevde stadsbranden 1771.</desc></wpt>
+  <wpt lat="58.325183333333" lon="15.139491666667"><name>Baptistkyrkan</name><desc>tidigare kyrka i Mjölby kommun, Sverige</desc></wpt>
+  <wpt lat="58.33263270438524" lon="15.128283572071478"><name>Mjölby gravkapell</name><desc>Mjölbys gravkapell från 1899, ritat av Joh. Lagerström.</desc></wpt>
+  <wpt lat="58.311904" lon="15.114375"><name>Mjölby 43:1</name><desc>kyrka/kapell i Östergötland</desc></wpt>
+  <wpt lat="58.33366667" lon="15.02502778"><name>Hogstads kyrka</name><desc>kyrka i Mjölby kommun, Sverige</desc></wpt>
+  <wpt lat="58.372155" lon="15.0052593"><name>Bjälbo kyrka</name><desc>Folkungaättens gårdskyrka och Birger jarls trakt — med ett mäktigt medeltida torn.</desc></wpt>
+  <wpt lat="58.33615" lon="15.22709"><name>Sya kyrka</name><desc>kyrkobyggnad i Mjölby kommun</desc></wpt>
   <wpt lat="58.2703521" lon="15.2830875"><name>Svaneholms borgruin</name><desc>Ruinerna av en 1300-talsborg på en udde i Kilarpesjön.</desc></wpt>
   <rte><name>Kyrkostigen i Mjölby</name>
     <rtept lat="58.3982617" lon="15.0827455"><name>S:ta Ingrids klosterruin</name></rtept>
     <rtept lat="58.3947888" lon="15.0867153"><name>Vårfrukyrkan (&#39;Garpekyrkan&#39;), Skänninge</name></rtept>
     <rtept lat="58.3925" lon="15.085"><name>S:t Olofs kloster &amp; Petrus de Dacia</name></rtept>
-    <rtept lat="58.372155" lon="15.0052593"><name>Bjälbo kyrka</name></rtept>
+    <rtept lat="58.35046667" lon="15.09780833"><name>Högby kyrka</name></rtept>
+    <rtept lat="58.33358056" lon="15.08331111"><name>Västra Skrukeby kyrka</name></rtept>
+    <rtept lat="58.327795543076" lon="15.126848510773"><name>Pingstkyrkan</name></rtept>
     <rtept lat="58.3260763" lon="15.1310782"><name>Mjölby kyrka</name></rtept>
+    <rtept lat="58.325183333333" lon="15.139491666667"><name>Baptistkyrkan</name></rtept>
+    <rtept lat="58.33263270438524" lon="15.128283572071478"><name>Mjölby gravkapell</name></rtept>
+    <rtept lat="58.311904" lon="15.114375"><name>Mjölby 43:1</name></rtept>
+    <rtept lat="58.33366667" lon="15.02502778"><name>Hogstads kyrka</name></rtept>
+    <rtept lat="58.372155" lon="15.0052593"><name>Bjälbo kyrka</name></rtept>
+    <rtept lat="58.33615" lon="15.22709"><name>Sya kyrka</name></rtept>
     <rtept lat="58.2703521" lon="15.2830875"><name>Svaneholms borgruin</name></rtept>
   </rte>
 </gpx>

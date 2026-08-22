@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Stockholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.32829627282206" lon="18.07004521967852"><name>Bro</name><desc>En stenvalvbro byggd 1787–1807, cirka 180 meter lång.</desc></wpt>
+  <wpt lat="59.324912" lon="18.0656419"><name>Centralbron</name><desc>Stopp på ljudturen «Urbirun Stockholm - Highlights» i Stockholm.</desc></wpt>
+  <wpt lat="59.32366151398022" lon="18.07290703782811"><name>Polisstationen</name><desc>På Samfundet S:t Eriks kulturhusskylt om Gamla Synagogan, Själagårdsgatan 19: &quot;På platsen för detta hus låg det medeltida Vårfrugillet.</desc></wpt>
+  <wpt lat="59.32737206268565" lon="18.07924630025783"><name>Bro</name><desc>Resterna av en cirka 140 meter lång bro med de äldsta pålarna daterade till 1625.</desc></wpt>
+  <rte><name>Industrihistoria i Stockholm</name>
+    <rtept lat="59.32829627282206" lon="18.07004521967852"><name>Bro</name></rtept>
+    <rtept lat="59.324912" lon="18.0656419"><name>Centralbron</name></rtept>
+    <rtept lat="59.32366151398022" lon="18.07290703782811"><name>Polisstationen</name></rtept>
+    <rtept lat="59.32737206268565" lon="18.07924630025783"><name>Bro</name></rtept>
+  </rte>
+</gpx>

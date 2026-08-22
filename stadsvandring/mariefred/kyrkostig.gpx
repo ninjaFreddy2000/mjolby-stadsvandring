@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Mariefred</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.2739" lon="17.13181"><name>Ärja ödekyrka</name><desc>kyrka/kapell i Södermanland (Åker 136:1)</desc></wpt>
+  <wpt lat="59.26128074045766" lon="17.212748503692595"><name>Kyrka/kapell</name><desc>Välbevarad kyrkoruin av gnejs och granit med långhus, kor, absid och vapenhus.</desc></wpt>
+  <wpt lat="59.256356380201815" lon="17.218595638431367"><name>Borg</name><desc>Gripsholm, där en medeltida borg gav plats åt Gustav Vasas tegelslott.</desc></wpt>
+  <wpt lat="59.258255774816845" lon="17.224731271557683"><name>Kloster</name><desc>Murrester efter Mariefreds medeltida kloster nära kyrkan.</desc></wpt>
+  <wpt lat="59.2586" lon="17.2243"><name>Mariefreds kyrka</name><desc>kyrkobyggnad i Strängnäs kommun</desc></wpt>
+  <wpt lat="59.2428" lon="17.3055"><name>Taxinge kyrka</name><desc>kyrkobyggnad i Nykvarns kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Mariefred</name>
+    <rtept lat="59.2739" lon="17.13181"><name>Ärja ödekyrka</name></rtept>
+    <rtept lat="59.26128074045766" lon="17.212748503692595"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.256356380201815" lon="17.218595638431367"><name>Borg</name></rtept>
+    <rtept lat="59.258255774816845" lon="17.224731271557683"><name>Kloster</name></rtept>
+    <rtept lat="59.2586" lon="17.2243"><name>Mariefreds kyrka</name></rtept>
+    <rtept lat="59.2428" lon="17.3055"><name>Taxinge kyrka</name></rtept>
+  </rte>
+</gpx>

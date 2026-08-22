@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Piteå</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="65.422283" lon="21.491706"><name>Norrfjärdens kyrka</name><desc>Församlingskyrkan i Norrfjärden, vars första träkyrka av stadionarkitekten Torben Grut brann efter ett blixtnedslag och ersattes 1967.</desc></wpt>
+  <wpt lat="65.37227" lon="21.3632"><name>Johannes Döparens kapell</name><desc>kapell i Piteå kommun</desc></wpt>
+  <wpt lat="65.34605" lon="21.39644444"><name>Piteå landsförsamlings kyrka</name><desc>kyrkobyggnad i Piteå kommun</desc></wpt>
+  <wpt lat="65.318376" lon="21.483631"><name>Piteå stadskyrka</name><desc>Den enda byggnaden som finns kvar från den nya stadens äldsta tid, räddad undan branden 1721 tack vare sitt läge på fastlandet.</desc></wpt>
+  <wpt lat="65.30943333" lon="21.51165556"><name>Strömnäskyrkan</name><desc>kyrkobyggnad i Piteå kommun</desc></wpt>
+  <wpt lat="65.29575278" lon="21.50053611"><name>Furubergskyrkan</name><desc>kyrkobyggnad i Piteå kommun</desc></wpt>
+  <wpt lat="65.272171" lon="21.520221"><name>Skuthamns småkyrka</name><desc>Skuthamns småkyrka</desc></wpt>
+  <wpt lat="65.28404722" lon="21.40240833"><name>Hortlax kyrka</name><desc>kyrkobyggnad i Piteå kommun</desc></wpt>
+  <wpt lat="65.284611" lon="21.399995"><name>Skogskapellet</name><desc>kapell i Hortlax, Piteå kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Piteå</name>
+    <rtept lat="65.422283" lon="21.491706"><name>Norrfjärdens kyrka</name></rtept>
+    <rtept lat="65.37227" lon="21.3632"><name>Johannes Döparens kapell</name></rtept>
+    <rtept lat="65.34605" lon="21.39644444"><name>Piteå landsförsamlings kyrka</name></rtept>
+    <rtept lat="65.318376" lon="21.483631"><name>Piteå stadskyrka</name></rtept>
+    <rtept lat="65.30943333" lon="21.51165556"><name>Strömnäskyrkan</name></rtept>
+    <rtept lat="65.29575278" lon="21.50053611"><name>Furubergskyrkan</name></rtept>
+    <rtept lat="65.272171" lon="21.520221"><name>Skuthamns småkyrka</name></rtept>
+    <rtept lat="65.28404722" lon="21.40240833"><name>Hortlax kyrka</name></rtept>
+    <rtept lat="65.284611" lon="21.399995"><name>Skogskapellet</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Gävle</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="60.6746086" lon="17.1101277"><name>Gustavsbron</name><desc>Stopp på ljudturen «Gävle - Stadswandeling» i Gävle.</desc></wpt>
+  <wpt lat="60.67452081608478" lon="17.110084791424274"><name>Gustavs bro, Bro</name><desc>Gustavs bro i Gävle, upptagen som fornlämning i registret.</desc></wpt>
+  <wpt lat="60.672353" lon="17.135786"><name>Drottningbron</name><desc>Drottningbron är en bro över Gavleån, belägen i centrala Gävle vid Kvarnparken.</desc></wpt>
+  <rte><name>Industrihistoria i Gävle</name>
+    <rtept lat="60.6746086" lon="17.1101277"><name>Gustavsbron</name></rtept>
+    <rtept lat="60.67452081608478" lon="17.110084791424274"><name>Gustavs bro, Bro</name></rtept>
+    <rtept lat="60.672353" lon="17.135786"><name>Drottningbron</name></rtept>
+  </rte>
+</gpx>

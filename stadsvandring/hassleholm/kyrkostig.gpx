@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Hässleholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.19109444" lon="13.74571389"><name>Vankiva kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Vankiva, Sverige</desc></wpt>
+  <wpt lat="56.16111111" lon="13.75694444"><name>Västerkyrkan</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <wpt lat="56.15684167" lon="13.77022222"><name>Hässleholms kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Hässleholm, Sverige</desc></wpt>
+  <wpt lat="56.15417534641419" lon="13.778688355645833"><name>Hässleholms begravningskapell</name><desc>Ett medeltidsinspirerat tegelkapell från 1906–07, ritat av Theodor Wåhlin.</desc></wpt>
+  <wpt lat="56.1672" lon="13.78727778"><name>Ljungdala kyrka</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <wpt lat="56.17980278" lon="13.83200556"><name>Stoby kyrka</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <wpt lat="56.124555555556" lon="13.830083333333"><name>Ignaberga nya kyrka</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <wpt lat="56.12166667" lon="13.83055556"><name>Ignaberga gamla kyrka</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <wpt lat="56.158611111111" lon="13.683333333333"><name>Finja kyrka</name><desc>kyrkobyggnad i Hässleholms kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Hässleholm</name>
+    <rtept lat="56.19109444" lon="13.74571389"><name>Vankiva kyrka</name></rtept>
+    <rtept lat="56.16111111" lon="13.75694444"><name>Västerkyrkan</name></rtept>
+    <rtept lat="56.15684167" lon="13.77022222"><name>Hässleholms kyrka</name></rtept>
+    <rtept lat="56.15417534641419" lon="13.778688355645833"><name>Hässleholms begravningskapell</name></rtept>
+    <rtept lat="56.1672" lon="13.78727778"><name>Ljungdala kyrka</name></rtept>
+    <rtept lat="56.17980278" lon="13.83200556"><name>Stoby kyrka</name></rtept>
+    <rtept lat="56.124555555556" lon="13.830083333333"><name>Ignaberga nya kyrka</name></rtept>
+    <rtept lat="56.12166667" lon="13.83055556"><name>Ignaberga gamla kyrka</name></rtept>
+    <rtept lat="56.158611111111" lon="13.683333333333"><name>Finja kyrka</name></rtept>
+  </rte>
+</gpx>

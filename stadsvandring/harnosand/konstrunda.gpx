@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Härnösand</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="62.64439609239822" lon="17.929967659253084"><name>Minnesmärke</name><desc>Ett minnesmärke vid Murbergets friluftsmuseum, bland milstolpar och en minnessten.</desc></wpt>
+  <wpt lat="62.63403903487974" lon="17.935403857678136"><name>Minnesmärke</name><desc>En minnessten från 1969 om Härnösands marknad, stadsgrundandet 1585 och varvet på Kronholmen.</desc></wpt>
+  <wpt lat="62.641042341302075" lon="17.963320516254846"><name>Minnesmärke</name><desc>Ett registrerat minnesmärke i Härnösand utan närmare uppgifter.</desc></wpt>
+  <rte><name>Konstrundan i Härnösand</name>
+    <rtept lat="62.64439609239822" lon="17.929967659253084"><name>Minnesmärke</name></rtept>
+    <rtept lat="62.63403903487974" lon="17.935403857678136"><name>Minnesmärke</name></rtept>
+    <rtept lat="62.641042341302075" lon="17.963320516254846"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Karlskrona</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.208111111111" lon="15.531527777778"><name>Nättraby 88:1</name><desc>Stenbro i Blekinge</desc></wpt>
+  <wpt lat="56.15880787182301" lon="15.59326159178601"><name>Alamedan Kungsbron</name><desc>Since the middle of the 19th century, this street has been called Alamedan.</desc></wpt>
+  <wpt lat="56.15784007943763" lon="15.59317801237509"><name>Kungsbron - View towards Stumholmen</name><desc>Kungsbron is official/Royal entrance to Karlskrona - which is clearly noticeable in the stately environment.</desc></wpt>
+  <rte><name>Industrihistoria i Karlskrona</name>
+    <rtept lat="56.208111111111" lon="15.531527777778"><name>Nättraby 88:1</name></rtept>
+    <rtept lat="56.15880787182301" lon="15.59326159178601"><name>Alamedan Kungsbron</name></rtept>
+    <rtept lat="56.15784007943763" lon="15.59317801237509"><name>Kungsbron - View towards Stumholmen</name></rtept>
+  </rte>
+</gpx>

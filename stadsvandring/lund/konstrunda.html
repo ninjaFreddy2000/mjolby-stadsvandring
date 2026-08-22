@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Konstrundan i Lund — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida. 19 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/lund/konstrunda">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Konstrundan i Lund — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida. 19 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/lund/konstrunda">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konstrundan i Lund — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida. 19 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"lund","theme":"konstrunda","sourceSlug":"stadsvandring/lund/konstrunda","centroid":{"lat":55.70442727628627,"lng":13.192688187541103},"stops":[{"name":"Minnesmärke","lat":55.7193360385993,"lng":13.18447257381166},{"name":"Nazi Victims Memorial in Lund","lat":55.715571,"lng":13.192395},{"name":"Minnesmärke","lat":55.708715303513145,"lng":13.197169015506546},{"name":"Minnesmärke","lat":55.7070599549115,"lng":13.195803526100507},{"name":"Minnesmärke","lat":55.70570372433446,"lng":13.194355676275267},{"name":"Minnesmärke","lat":55.70657809361224,"lng":13.192093282578757},{"name":"Minnesmärke","lat":55.704155073162745,"lng":13.190714044197},{"name":"Minnesmärke","lat":55.70326500075556,"lng":13.192887164436506},{"name":"Minnesmärke","lat":55.704041915319486,"lng":13.194848638269919},{"name":"Minnesmärke","lat":55.70325734411023,"lng":13.196928962428354},{"name":"Minnesmärke","lat":55.7013017122043,"lng":13.194959778542737},{"name":"Minnesmärke","lat":55.702101433986535,"lng":13.18993248139083},{"name":"Minnesmärke","lat":55.6993384165888,"lng":13.187999744155002},{"name":"Minnesmärke","lat":55.69896409722362,"lng":13.19079187796342},{"name":"Minnesmärke","lat":55.697678321314804,"lng":13.185449432688044},{"name":"Lingmonumentet","lat":55.7,"lng":13.185},{"name":"Minnesmärke","lat":55.70013285682088,"lng":13.185184200145326},{"name":"Minnesmärke","lat":55.70556016904523,"lng":13.200948375162719},{"name":"Minnesmärke","lat":55.70135779393621,"lng":13.209141789628381}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Konstrundan i Lund","description":"Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida.","step":[{"@type":"HowToStep","position":1,"name":"Minnesmärke","text":"Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-fa078b"},{"@type":"HowToStep","position":2,"name":"Nazi Victims Memorial in Lund","text":"Nazi Victims Memorial in Lund","url":"https://stadsvandring.io/p/wd-lund-nazi-victims-memorial-in-lund-q110722815"},{"@type":"HowToStep","position":3,"name":"Minnesmärke","text":"Minnesmärke över Allhelgonaklostret, cluniacenserkloster förstört av brand 1192.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-61acad"},{"@type":"HowToStep","position":4,"name":"Minnesmärke","text":"Minnesmärke i svart granit krönt av en kopparbyst.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-8f0ad2"},{"@type":"HowToStep","position":5,"name":"Minnesmärke","text":"Minnesmärke över Sven Lagerbring, en kopparbyst på granitpelare.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-5a1e9e"},{"@type":"HowToStep","position":6,"name":"Minnesmärke","text":"Bronsstaty av Carl von Linné på stensockel.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-3ee65e"},{"@type":"HowToStep","position":7,"name":"Minnesmärke","text":"Platsen för franciskanernas kloster och Nordens första högskola.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-501733"},{"@type":"HowToStep","position":8,"name":"Minnesmärke","text":"Minnestavla över Lunds äldre rådhus, som stått på platsen i fem generationer.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-ebd9ae"},{"@type":"HowToStep","position":9,"name":"Minnesmärke","text":"Skämtsamt minnesmärke Intighet, rest av Uarda-akademien 1984.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-66e1d3"},{"@type":"HowToStep","position":10,"name":"Minnesmärke","text":"Minnessten över Sankt Mikaels medeltida kyrka, med helgonet i relief.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-2e241a"},{"@type":"HowToStep","position":11,"name":"Minnesmärke","text":"Minnestavla över S:t Mårtens medeltida stenkyrka, uppförd på 1100-talet och riven 1536.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-24b64e"},{"@type":"HowToStep","position":12,"name":"Minnesmärke","text":"Minnestavla över August Strindbergs vistelse på platsen 1897.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-063317"},{"@type":"HowToStep","position":13,"name":"Minnesmärke","text":"Minnesmärke med kopparbyst av Tycho Brahe på en granitpelare.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-a57aec"},{"@type":"HowToStep","position":14,"name":"Minnesmärke","text":"Minnestavla över S:t Stefans kyrka, byggd som stavkyrka 1050 och riven efter 1536.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-2075af"},{"@type":"HowToStep","position":15,"name":"Minnesmärke","text":"Minnessten med drakslinga om parken Lunds stad anlade 1909–1911 efter 1907 års utställning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-fe0813"},{"@type":"HowToStep","position":16,"name":"Lingmonumentet","text":"Lingmonumentet","url":"https://stadsvandring.io/p/wd-lund-lingmonumentet-q118869231"},{"@type":"HowToStep","position":17,"name":"Minnesmärke","text":"Minnesmärke över gymnastikens fader Per Henrik Ling, avtäckt 1939.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-7f94ba"},{"@type":"HowToStep","position":18,"name":"Minnesmärke","text":"Minnesmärke över Carl Adolf Agardh, kopparbyst på granitpelare.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-069c2c"},{"@type":"HowToStep","position":19,"name":"Minnesmärke","text":"Granitminnessten med en kvinna och en pojke i relief.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-6b0d8d"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Konstrundan i Lund","description":"Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida.","url":"https://stadsvandring.io/stadsvandring/lund/konstrunda","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":19,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-fa078b"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Nazi Victims Memorial in Lund","url":"https://stadsvandring.io/p/wd-lund-nazi-victims-memorial-in-lund-q110722815"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-61acad"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-8f0ad2"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-5a1e9e"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-3ee65e"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-501733"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-ebd9ae"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-66e1d3"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-2e241a"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-24b64e"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-063317"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-a57aec"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-2075af"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-fe0813"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Lingmonumentet","url":"https://stadsvandring.io/p/wd-lund-lingmonumentet-q118869231"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-7f94ba"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-069c2c"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-lund-6b0d8d"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Lund","item":"https://stadsvandring.io/stadsvandring/lund"},{"@type":"ListItem","position":3,"name":"Konstrundan i Lund","item":"https://stadsvandring.io/stadsvandring/lund/konstrunda"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/lund">Stadsvandring i Lund</a> › konstrunda</nav>
+<div class="badges"><span class="badge">🎨 Tematisk rutt</span><span class="badge">📍 Lund</span><span class="badge">19 stopp</span></div>
+<h1>Konstrundan i Lund</h1>
+<p class="lead">Statyer, konst och museer i Lund — en runda för dig som vill se ortens kreativa sida.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Konstrundan i Lund"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/ksamsok-minnesmarke-lund-fa078b"><b>1. Minnesmärke</b><span>Konst &amp; staty · Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.</span></a>
+<a class="tile" href="/p/wd-lund-nazi-victims-memorial-in-lund-q110722815"><b>2. Nazi Victims Memorial in Lund</b><span>Konst &amp; staty · Nazi Victims Memorial in Lund</span></a>
+<a class="tile" href="/p/ksamsok-minnesmarke-lund-61acad"><b>3. Minnesmärke</b><span>Konst &amp; staty · Minnesmärke över Allhelgonaklostret, cluniacenserkloster förstört av brand 1192.</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 19 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/lund/konstrunda.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/ksamsok-minnesmarke-lund-fa078b"><b>1. Minnesmärke</b></a> — Minnesmonument över slaget vid Lund 1676, format som en obelisk med kanoner.</li>
+<li><a href="/p/wd-lund-nazi-victims-memorial-in-lund-q110722815"><b>2. Nazi Victims Memorial in Lund</b></a> — Nazi Victims Memorial in Lund</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-61acad"><b>3. Minnesmärke</b></a> — Minnesmärke över Allhelgonaklostret, cluniacenserkloster förstört av brand 1192.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-8f0ad2"><b>4. Minnesmärke</b></a> — Minnesmärke i svart granit krönt av en kopparbyst.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-5a1e9e"><b>5. Minnesmärke</b></a> — Minnesmärke över Sven Lagerbring, en kopparbyst på granitpelare.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-3ee65e"><b>6. Minnesmärke</b></a> — Bronsstaty av Carl von Linné på stensockel.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-501733"><b>7. Minnesmärke</b></a> — Platsen för franciskanernas kloster och Nordens första högskola.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-ebd9ae"><b>8. Minnesmärke</b></a> — Minnestavla över Lunds äldre rådhus, som stått på platsen i fem generationer.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-66e1d3"><b>9. Minnesmärke</b></a> — Skämtsamt minnesmärke Intighet, rest av Uarda-akademien 1984.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-2e241a"><b>10. Minnesmärke</b></a> — Minnessten över Sankt Mikaels medeltida kyrka, med helgonet i relief.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-24b64e"><b>11. Minnesmärke</b></a> — Minnestavla över S:t Mårtens medeltida stenkyrka, uppförd på 1100-talet och riven 1536.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-063317"><b>12. Minnesmärke</b></a> — Minnestavla över August Strindbergs vistelse på platsen 1897.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-a57aec"><b>13. Minnesmärke</b></a> — Minnesmärke med kopparbyst av Tycho Brahe på en granitpelare.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-2075af"><b>14. Minnesmärke</b></a> — Minnestavla över S:t Stefans kyrka, byggd som stavkyrka 1050 och riven efter 1536.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-fe0813"><b>15. Minnesmärke</b></a> — Minnessten med drakslinga om parken Lunds stad anlade 1909–1911 efter 1907 års utställning.</li>
+<li><a href="/p/wd-lund-lingmonumentet-q118869231"><b>16. Lingmonumentet</b></a> — Lingmonumentet</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-7f94ba"><b>17. Minnesmärke</b></a> — Minnesmärke över gymnastikens fader Per Henrik Ling, avtäckt 1939.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-069c2c"><b>18. Minnesmärke</b></a> — Minnesmärke över Carl Adolf Agardh, kopparbyst på granitpelare.</li>
+<li><a href="/p/ksamsok-minnesmarke-lund-6b0d8d"><b>19. Minnesmärke</b></a> — Granitminnessten med en kvinna och en pojke i relief.</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/lund">Stadsvandringen i Lund</a> <a class="cta ghost" href="/stadsvandring/lund/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

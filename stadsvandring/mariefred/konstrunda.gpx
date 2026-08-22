@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Mariefred</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.26277959169352" lon="17.254481240852137"><name>Minnesmärke</name><desc>Ett minnesmärke vid Mariefred utan granskad beskrivning.</desc></wpt>
+  <wpt lat="59.25825394050445" lon="17.224338619678367"><name>Minnesmärke</name><desc>En minnessten från 1905 över Sten Sture och klostret Mariefred.</desc></wpt>
+  <wpt lat="59.25501432773757" lon="17.21065570707404"><name>Minnesmärke</name><desc>Ett gjutjärnskors format som ordensemblem, uppsatt på en ek.</desc></wpt>
+  <rte><name>Konstrundan i Mariefred</name>
+    <rtept lat="59.26277959169352" lon="17.254481240852137"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.25825394050445" lon="17.224338619678367"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.25501432773757" lon="17.21065570707404"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

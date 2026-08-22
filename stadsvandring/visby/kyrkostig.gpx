@@ -1,28 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Kyrkostigen i Visby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.6575" lon="18.31433"><name>Allhelgonakapellet</name><desc>kapell på Gotland</desc></wpt>
+  <wpt lat="57.64767521592031" lon="18.303350663014218"><name>Sankt Göran, Kyrka/kapell</name><desc>En kyrkoruin efter Visbys medeltida spetälskehospital, omgiven av pestkyrkogårdar.</desc></wpt>
   <wpt lat="57.6475" lon="18.3033"><name>Sankt Görans kyrkoruin</name><desc>Nordens näst största hospitalskyrka – byggd utanför muren för spetälskesjuka.</desc></wpt>
+  <wpt lat="57.6441379632708" lon="18.29808933255932"><name>S:t Nikolaus kyrkoruin, Kyrka/kapell</name><desc>En medeltida kyrkoruin i Visby.</desc></wpt>
   <wpt lat="57.644119" lon="18.298061"><name>Sankt Nicolai kyrkoruin</name><desc>Visbys största kyrkoruin, dominikanernas klosterkyrka, idag känd konsert- och scenplats.</desc></wpt>
+  <wpt lat="57.643694055174336" lon="18.298811040879738"><name>S:ta Gertruds kapellruin, Kyrka/kapell</name><desc>Ruinen efter S:ta Gertruds kapell i Visby.</desc></wpt>
+  <wpt lat="57.643062634011685" lon="18.298382901301743"><name>Helgeands kyrkoruin, Kyrka/kapell</name><desc>Ruinen efter Helgeands kyrka i Visby.</desc></wpt>
   <wpt lat="57.643056" lon="18.298333"><name>Helige Andes kyrkoruin</name><desc>Unik åttkantig tvåvåningskyrka utan motsvarighet i Sverige, kopplad till ett medeltida helgeandshus.</desc></wpt>
+  <wpt lat="57.64314340719373" lon="18.29613974833117"><name>S:t Klemens ruin, Kyrka/kapell</name><desc>En medeltida kyrkoruin i Visby.</desc></wpt>
   <wpt lat="57.643056" lon="18.296111"><name>Sankt Clemens kyrkoruin</name><desc>En av Visbys äldsta kyrkor, helgad åt sjöfararnas skyddshelgon Clemens.</desc></wpt>
-  <wpt lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name><desc>Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.</desc></wpt>
+  <wpt lat="57.64227" lon="18.29536"><name>Kristi Lekamens kyrka</name><desc>kyrka på Gotland</desc></wpt>
   <wpt lat="57.641758" lon="18.2952"><name>Drottens kyrkoruin</name><desc>Kyrkoruin invid S:t Lars, byggd ca 1240, egentligen helgad åt Heliga Trefaldigheten.</desc></wpt>
   <wpt lat="57.641386" lon="18.295033"><name>Sankt Lars kyrkoruin</name><desc>Kyrkoruin med tjocka murar och inbyggda trappor, med arkitektur inspirerad av ortodoxa kyrkor.</desc></wpt>
   <wpt lat="57.6409" lon="18.2949"><name>Sankt Hans och Sankt Pers kyrkoruiner</name><desc>Två sammanbyggda kyrkoruiner i kvarteret S:t Hans, idag inramning till en känd trädgårdskrog.</desc></wpt>
+  <wpt lat="57.640411788475625" lon="18.295640756667"><name>S:ta Katarina kyrkoruin, Kyrka/kapell</name><desc>En medeltida kyrkoruin i Visby.</desc></wpt>
   <wpt lat="57.640278" lon="18.295556"><name>Sankta Karins kyrkoruin</name><desc>Franciskanernas gotiska klosterkyrka vid Stora Torget, med slanka pelare och tegelvalv.</desc></wpt>
+  <wpt lat="57.64080048" lon="18.29669952"><name>Ryska kyrkan</name><desc>kyrkobyggnad på Gotland</desc></wpt>
   <wpt lat="57.641667" lon="18.2975"><name>Sankta Maria domkyrka</name><desc>Visbys enda bevarade medeltidskyrka i bruk, invigd 1225, domkyrka sedan 1572.</desc></wpt>
+  <wpt lat="57.643080146594315" lon="18.29387576328694"><name>Kyrka/kapell</name><desc>En kyrkoruin i Visby.</desc></wpt>
+  <wpt lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name><desc>Kyrkoruin belägen mitt i DBW:s botaniska trädgård, helgad åt helgonkungen Olav.</desc></wpt>
+  <wpt lat="57.63857693070983" lon="18.295657614750834"><name>METODISTKYRKA</name><desc>Metodistkyrkan från 1870-talet, vars klocka en gång hängde i S:ta Katarinas rivna klocktorn.</desc></wpt>
+  <wpt lat="57.63812751345468" lon="18.2929296288329"><name>S:t Hans kyrkoruin, Kyrka/kapell</name><desc>Ruinen efter S:t Hans kyrka i Visby.</desc></wpt>
+  <wpt lat="57.63796793583059" lon="18.292531494061123"><name>S:t Pers kyrkoruin, Kyrka/kapell</name><desc>En av Visbys medeltida kyrkoruiner.</desc></wpt>
+  <wpt lat="57.63334522241661" lon="18.298603513501774"><name>Kloster</name><desc>Ett klosterområde i Visby med ruin och flera grundmurar.</desc></wpt>
   <wpt lat="57.63334" lon="18.29859"><name>Solberga klosterruin</name><desc>Cisterciensnunnornas kloster utanför Söderport – det var på dess mark slaget 1361 stod.</desc></wpt>
+  <wpt lat="57.63126603680596" lon="18.29500952666889"><name>Östra gravkapellet</name><desc>Ett gravkapell från 1870, ritat av stadsarkitekten A. W. Lundberg.</desc></wpt>
+  <wpt lat="57.6247" lon="18.28502778"><name>Visborgskyrkan</name><desc>kyrka i Visby, Gotland, Sverige</desc></wpt>
+  <wpt lat="57.63581" lon="18.30913"><name>Tjelvarkyrkan</name><desc>Tjelvarkyrkan</desc></wpt>
+  <wpt lat="57.636617658469" lon="18.310227731691"><name>Sankt Mikaels kapell</name><desc>kapell i Visby</desc></wpt>
+  <wpt lat="57.61340556" lon="18.31151944"><name>Terra Nova-kyrkan</name><desc>kyrkobyggnad på Gotland</desc></wpt>
+  <wpt lat="57.60078" lon="18.24987"><name>Vibble kapell</name><desc>byggnad på Gotland</desc></wpt>
   <rte><name>Kyrkostigen i Visby</name>
+    <rtept lat="57.6575" lon="18.31433"><name>Allhelgonakapellet</name></rtept>
+    <rtept lat="57.64767521592031" lon="18.303350663014218"><name>Sankt Göran, Kyrka/kapell</name></rtept>
     <rtept lat="57.6475" lon="18.3033"><name>Sankt Görans kyrkoruin</name></rtept>
+    <rtept lat="57.6441379632708" lon="18.29808933255932"><name>S:t Nikolaus kyrkoruin, Kyrka/kapell</name></rtept>
     <rtept lat="57.644119" lon="18.298061"><name>Sankt Nicolai kyrkoruin</name></rtept>
+    <rtept lat="57.643694055174336" lon="18.298811040879738"><name>S:ta Gertruds kapellruin, Kyrka/kapell</name></rtept>
+    <rtept lat="57.643062634011685" lon="18.298382901301743"><name>Helgeands kyrkoruin, Kyrka/kapell</name></rtept>
     <rtept lat="57.643056" lon="18.298333"><name>Helige Andes kyrkoruin</name></rtept>
+    <rtept lat="57.64314340719373" lon="18.29613974833117"><name>S:t Klemens ruin, Kyrka/kapell</name></rtept>
     <rtept lat="57.643056" lon="18.296111"><name>Sankt Clemens kyrkoruin</name></rtept>
-    <rtept lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name></rtept>
+    <rtept lat="57.64227" lon="18.29536"><name>Kristi Lekamens kyrka</name></rtept>
     <rtept lat="57.641758" lon="18.2952"><name>Drottens kyrkoruin</name></rtept>
     <rtept lat="57.641386" lon="18.295033"><name>Sankt Lars kyrkoruin</name></rtept>
     <rtept lat="57.6409" lon="18.2949"><name>Sankt Hans och Sankt Pers kyrkoruiner</name></rtept>
+    <rtept lat="57.640411788475625" lon="18.295640756667"><name>S:ta Katarina kyrkoruin, Kyrka/kapell</name></rtept>
     <rtept lat="57.640278" lon="18.295556"><name>Sankta Karins kyrkoruin</name></rtept>
+    <rtept lat="57.64080048" lon="18.29669952"><name>Ryska kyrkan</name></rtept>
     <rtept lat="57.641667" lon="18.2975"><name>Sankta Maria domkyrka</name></rtept>
+    <rtept lat="57.643080146594315" lon="18.29387576328694"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="57.643889" lon="18.294167"><name>Sankt Olofs kyrkoruin</name></rtept>
+    <rtept lat="57.63857693070983" lon="18.295657614750834"><name>METODISTKYRKA</name></rtept>
+    <rtept lat="57.63812751345468" lon="18.2929296288329"><name>S:t Hans kyrkoruin, Kyrka/kapell</name></rtept>
+    <rtept lat="57.63796793583059" lon="18.292531494061123"><name>S:t Pers kyrkoruin, Kyrka/kapell</name></rtept>
+    <rtept lat="57.63334522241661" lon="18.298603513501774"><name>Kloster</name></rtept>
     <rtept lat="57.63334" lon="18.29859"><name>Solberga klosterruin</name></rtept>
+    <rtept lat="57.63126603680596" lon="18.29500952666889"><name>Östra gravkapellet</name></rtept>
+    <rtept lat="57.6247" lon="18.28502778"><name>Visborgskyrkan</name></rtept>
+    <rtept lat="57.63581" lon="18.30913"><name>Tjelvarkyrkan</name></rtept>
+    <rtept lat="57.636617658469" lon="18.310227731691"><name>Sankt Mikaels kapell</name></rtept>
+    <rtept lat="57.61340556" lon="18.31151944"><name>Terra Nova-kyrkan</name></rtept>
+    <rtept lat="57.60078" lon="18.24987"><name>Vibble kapell</name></rtept>
   </rte>
 </gpx>

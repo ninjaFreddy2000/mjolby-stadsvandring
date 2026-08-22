@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Alingsås</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.94847222" lon="12.60222222"><name>Bälinge kyrka</name><desc>kyrkobyggnad i Alingsås kommun</desc></wpt>
+  <wpt lat="57.93422" lon="12.55934"><name>Ljusets kapell</name><desc>begravningskapell i Alingsås</desc></wpt>
+  <wpt lat="57.93386111" lon="12.53919444"><name>Landskyrkan</name><desc>kyrkobyggnad i Alingsås kommun</desc></wpt>
+  <wpt lat="57.931078796886126" lon="12.537428152356409"><name>KARLBORGSKA GÅRDEN, BOSTADSHUS</name><desc>Bostadshus i Karlborgska gården från 1800-talets mitt.</desc></wpt>
+  <wpt lat="57.930994987577506" lon="12.537599707726825"><name>KARLBORGSKA HUSET, BRYGGHUS</name><desc>Ett brygghus vid Karlborgska huset från tiden kring 1790.</desc></wpt>
+  <wpt lat="57.929908495348556" lon="12.540491764761798"><name>ALINGSÅS MISSIONSKYRKA</name><desc>Missionskyrka från 1938 som byggts ut i flera omgångar in på 1970-talet.</desc></wpt>
+  <wpt lat="57.931173073100425" lon="12.532020626661696"><name>CHRISTINAE KYRKA</name><desc>Stadskyrka påbörjad 1642 och ombyggd på 1780-talet.</desc></wpt>
+  <wpt lat="57.931726004475884" lon="12.531570651578377"><name>Frikyrka / bönehus /missionshus</name><desc>Frikyrka i Alingsås från åren kring 1970.</desc></wpt>
+  <wpt lat="57.9296" lon="12.531"><name>Christinae kyrka</name><desc>Stadens 1600-talskyrka, uppkallad efter drottning Kristina.</desc></wpt>
+  <wpt lat="57.92866905499492" lon="12.527004535902448"><name>Frikyrka / bönehus /missionshus</name><desc>Ett frikyrkohus från 1903 i två våningar med panelklädd fasad.</desc></wpt>
+  <wpt lat="57.937625" lon="12.51856944"><name>Noltorpskyrkan</name><desc>kyrkobyggnad i Alingsås kommun</desc></wpt>
+  <wpt lat="57.92138889" lon="12.55305556"><name>Stockslyckekyrkan</name><desc>kyrkobyggnad i Alingsås kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Alingsås</name>
+    <rtept lat="57.94847222" lon="12.60222222"><name>Bälinge kyrka</name></rtept>
+    <rtept lat="57.93422" lon="12.55934"><name>Ljusets kapell</name></rtept>
+    <rtept lat="57.93386111" lon="12.53919444"><name>Landskyrkan</name></rtept>
+    <rtept lat="57.931078796886126" lon="12.537428152356409"><name>KARLBORGSKA GÅRDEN, BOSTADSHUS</name></rtept>
+    <rtept lat="57.930994987577506" lon="12.537599707726825"><name>KARLBORGSKA HUSET, BRYGGHUS</name></rtept>
+    <rtept lat="57.929908495348556" lon="12.540491764761798"><name>ALINGSÅS MISSIONSKYRKA</name></rtept>
+    <rtept lat="57.931173073100425" lon="12.532020626661696"><name>CHRISTINAE KYRKA</name></rtept>
+    <rtept lat="57.931726004475884" lon="12.531570651578377"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="57.9296" lon="12.531"><name>Christinae kyrka</name></rtept>
+    <rtept lat="57.92866905499492" lon="12.527004535902448"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="57.937625" lon="12.51856944"><name>Noltorpskyrkan</name></rtept>
+    <rtept lat="57.92138889" lon="12.55305556"><name>Stockslyckekyrkan</name></rtept>
+  </rte>
+</gpx>

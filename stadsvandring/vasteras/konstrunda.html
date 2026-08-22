@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Konstrundan i Västerås — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida. 9 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vasteras/konstrunda">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Konstrundan i Västerås — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida. 9 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vasteras/konstrunda">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konstrundan i Västerås — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida. 9 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vasteras","theme":"konstrunda","sourceSlug":"stadsvandring/vasteras/konstrunda","centroid":{"lat":59.61055471437722,"lng":16.5460892249019},"stops":[{"name":"Minnesmärke","lat":59.61547645634733,"lng":16.571926950673205},{"name":"Kunskapens träd, Västerås","lat":59.61238056,"lng":16.54874167},{"name":"Fasadutsmyckning, Smedjegatan i Västerås","lat":59.61129444,"lng":16.54492778},{"name":"Aseaströmmen","lat":59.61072222,"lng":16.54248611},{"name":"Minnesmärke","lat":59.61248739637252,"lng":16.540494402225647},{"name":"Johannes Rudbeckius","lat":59.6125,"lng":16.54045},{"name":"Vindarnas grotta","lat":59.60823889,"lng":16.54576389},{"name":"Minnesmärke","lat":59.60739246667508,"lng":16.54842889121826},{"name":"Sommarsöndag","lat":59.6045,"lng":16.53158333}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Konstrundan i Västerås","description":"Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida.","step":[{"@type":"HowToStep","position":1,"name":"Minnesmärke","text":"Två minnesstenar med byster av Hjalmar Branting och G.F. Thelander.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-c05874"},{"@type":"HowToStep","position":2,"name":"Kunskapens träd, Västerås","text":"Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Västerås, skapad av Carl-Emil Berglin och tillverkad av Ulunda Smide.","url":"https://stadsvandring.io/p/wd-vasteras-kunskapens-trad-vasteras-q10550432"},{"@type":"HowToStep","position":3,"name":"Fasadutsmyckning, Smedjegatan i Västerås","text":"Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).","url":"https://stadsvandring.io/p/wd-vasteras-fasadutsmyckning-smedjegatan-i-vasteras-q10494244"},{"@type":"HowToStep","position":4,"name":"Aseaströmmen","text":"skulptur på Stora Torget i Västerås invigd 1989","url":"https://stadsvandring.io/p/wd-vasteras-aseastrommen-q10419577"},{"@type":"HowToStep","position":5,"name":"Minnesmärke","text":"Minnesvård över biskop Johannes Rudbeckius, rest till hans 300-årsminne.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-943b5c"},{"@type":"HowToStep","position":6,"name":"Johannes Rudbeckius","text":"en skulptur av Carl Milles","url":"https://stadsvandring.io/p/wd-vasteras-johannes-rudbeckius-q10540489"},{"@type":"HowToStep","position":7,"name":"Vindarnas grotta","text":"Vindarnas grotta är en skulptur i brons och granit av Eric Grate, som är placerad vid Fiskartorget, utanför stadshuset i Västerås.","url":"https://stadsvandring.io/p/wd-vasteras-vindarnas-grotta-q10715683"},{"@type":"HowToStep","position":8,"name":"Minnesmärke","text":"En minnessten med byst av Gustav Vasa till minne av 1527.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-8d5ff4"},{"@type":"HowToStep","position":9,"name":"Sommarsöndag","text":"Sommarsöndag är en skulptur i brons av Oscar Antonsson (1898–1960).","url":"https://stadsvandring.io/p/wd-vasteras-sommarsondag-q10673620"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Konstrundan i Västerås","description":"Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida.","url":"https://stadsvandring.io/stadsvandring/vasteras/konstrunda","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-c05874"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Kunskapens träd, Västerås","url":"https://stadsvandring.io/p/wd-vasteras-kunskapens-trad-vasteras-q10550432"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Fasadutsmyckning, Smedjegatan i Västerås","url":"https://stadsvandring.io/p/wd-vasteras-fasadutsmyckning-smedjegatan-i-vasteras-q10494244"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Aseaströmmen","url":"https://stadsvandring.io/p/wd-vasteras-aseastrommen-q10419577"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-943b5c"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Johannes Rudbeckius","url":"https://stadsvandring.io/p/wd-vasteras-johannes-rudbeckius-q10540489"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Vindarnas grotta","url":"https://stadsvandring.io/p/wd-vasteras-vindarnas-grotta-q10715683"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-vasteras-8d5ff4"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sommarsöndag","url":"https://stadsvandring.io/p/wd-vasteras-sommarsondag-q10673620"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Västerås","item":"https://stadsvandring.io/stadsvandring/vasteras"},{"@type":"ListItem","position":3,"name":"Konstrundan i Västerås","item":"https://stadsvandring.io/stadsvandring/vasteras/konstrunda"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/vasteras">Stadsvandring i Västerås</a> › konstrunda</nav>
+<div class="badges"><span class="badge">🎨 Tematisk rutt</span><span class="badge">📍 Västerås</span><span class="badge">9 stopp</span></div>
+<h1>Konstrundan i Västerås</h1>
+<p class="lead">Statyer, konst och museer i Västerås — en runda för dig som vill se ortens kreativa sida.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Konstrundan i Västerås"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/ksamsok-minnesmarke-vasteras-c05874"><b>1. Minnesmärke</b><span>Konst &amp; staty · Två minnesstenar med byster av Hjalmar Branting och G.F. Thelander.</span></a>
+<a class="tile" href="/p/wd-vasteras-kunskapens-trad-vasteras-q10550432"><b>2. Kunskapens träd, Västerås</b><span>Konst &amp; staty · Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Väste…</span></a>
+<a class="tile" href="/p/wd-vasteras-fasadutsmyckning-smedjegatan-i-vasteras-q10494244"><b>3. Fasadutsmyckning, Smedjegatan i Västerås</b><span>Konst &amp; staty · Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 9 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/vasteras/konstrunda.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/ksamsok-minnesmarke-vasteras-c05874"><b>1. Minnesmärke</b></a> — Två minnesstenar med byster av Hjalmar Branting och G.F. Thelander.</li>
+<li><a href="/p/wd-vasteras-kunskapens-trad-vasteras-q10550432"><b>2. Kunskapens träd, Västerås</b></a> — Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Västerås, skapad av Carl-Emil Berglin och til…</li>
+<li><a href="/p/wd-vasteras-fasadutsmyckning-smedjegatan-i-vasteras-q10494244"><b>3. Fasadutsmyckning, Smedjegatan i Västerås</b></a> — Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).</li>
+<li><a href="/p/wd-vasteras-aseastrommen-q10419577"><b>4. Aseaströmmen</b></a> — skulptur på Stora Torget i Västerås invigd 1989</li>
+<li><a href="/p/ksamsok-minnesmarke-vasteras-943b5c"><b>5. Minnesmärke</b></a> — Minnesvård över biskop Johannes Rudbeckius, rest till hans 300-årsminne.</li>
+<li><a href="/p/wd-vasteras-johannes-rudbeckius-q10540489"><b>6. Johannes Rudbeckius</b></a> — en skulptur av Carl Milles</li>
+<li><a href="/p/wd-vasteras-vindarnas-grotta-q10715683"><b>7. Vindarnas grotta</b></a> — Vindarnas grotta är en skulptur i brons och granit av Eric Grate, som är placerad vid Fiskartorget, utanför stadshuset…</li>
+<li><a href="/p/ksamsok-minnesmarke-vasteras-8d5ff4"><b>8. Minnesmärke</b></a> — En minnessten med byst av Gustav Vasa till minne av 1527.</li>
+<li><a href="/p/wd-vasteras-sommarsondag-q10673620"><b>9. Sommarsöndag</b></a> — Sommarsöndag är en skulptur i brons av Oscar Antonsson (1898–1960).</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/vasteras">Stadsvandringen i Västerås</a> <a class="cta ghost" href="/stadsvandring/vasteras/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

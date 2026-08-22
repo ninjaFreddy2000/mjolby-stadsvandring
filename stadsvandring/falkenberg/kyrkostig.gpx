@@ -2,11 +2,23 @@
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Kyrkostigen i Falkenberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
   <wpt lat="56.926951" lon="12.545486"><name>Vinbergs kyrka</name><desc>Nygotisk granitkyrka från 1899 vid en gammal sockenby där författaren Olof von Dalin föddes.</desc></wpt>
-  <wpt lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name><desc>Nyklassicistisk kyrka från 1865 i en bygd som var ett viktigt maktcentrum redan under medeltiden.</desc></wpt>
+  <wpt lat="56.90753391808801" lon="12.505352147238758"><name>Kyrka/kapell</name><desc>Platsen för Ny-Falkenbergs medeltida kyrka, som förföll sedan staden flyttades 1552.</desc></wpt>
+  <wpt lat="56.904198" lon="12.498923"><name>Kapellkyrkogårdens kapell</name><desc>kapell i Falkenbergs kommun</desc></wpt>
+  <wpt lat="56.90320540340031" lon="12.495938415655042"><name>Borg</name><desc>Ruinen av en medeltida borg som ödelades under Engelbrektsupproret 1434.</desc></wpt>
   <wpt lat="56.901016" lon="12.494258"><name>Sankt Laurentii kyrka</name><desc>Falkenbergs äldsta byggnad, en medeltidskyrka från omkring år 1300, uppkallad efter den romerske diakonen Laurentius.</desc></wpt>
+  <wpt lat="56.90209722" lon="12.48951944"><name>Falkenbergs kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Falkenberg, Sverige</desc></wpt>
+  <wpt lat="56.89198611" lon="12.50441667"><name>Hertings kyrka</name><desc>kyrkobyggnad i Falkenbergs kommun</desc></wpt>
+  <wpt lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name><desc>Nyklassicistisk kyrka från 1865 i en bygd som var ett viktigt maktcentrum redan under medeltiden.</desc></wpt>
+  <wpt lat="56.88455556" lon="12.57455556"><name>Skrea kyrka</name><desc>kyrkobyggnad i Falkenbergs kommun</desc></wpt>
   <rte><name>Kyrkostigen i Falkenberg</name>
     <rtept lat="56.926951" lon="12.545486"><name>Vinbergs kyrka</name></rtept>
-    <rtept lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name></rtept>
+    <rtept lat="56.90753391808801" lon="12.505352147238758"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="56.904198" lon="12.498923"><name>Kapellkyrkogårdens kapell</name></rtept>
+    <rtept lat="56.90320540340031" lon="12.495938415655042"><name>Borg</name></rtept>
     <rtept lat="56.901016" lon="12.494258"><name>Sankt Laurentii kyrka</name></rtept>
+    <rtept lat="56.90209722" lon="12.48951944"><name>Falkenbergs kyrka</name></rtept>
+    <rtept lat="56.89198611" lon="12.50441667"><name>Hertings kyrka</name></rtept>
+    <rtept lat="56.919652" lon="12.486663"><name>Stafsinge kyrka</name></rtept>
+    <rtept lat="56.88455556" lon="12.57455556"><name>Skrea kyrka</name></rtept>
   </rte>
 </gpx>

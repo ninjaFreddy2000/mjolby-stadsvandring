@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Kinda — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform! Karta, 27 stopp och nedladdningsbar PDF-guide — gratis.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/kinda">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Kinda — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform! Karta, 27 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/kinda">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Kinda — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform! Karta, 27 stopp och nedladdningsbar PDF-guide — gratis.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"kinda","sourceSlug":"stadsvandring/kinda","centroid":{"lat":58.04674,"lng":15.36642},"stops":[{"name":"Malexanders kyrka","lat":58.03222222,"lng":15.27777778},{"name":"Bålnäs","lat":58.0304,"lng":15.2545},{"name":"Gravkapell","lat":58.032429,"lng":15.279329}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Kinda","description":"Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!","url":"https://stadsvandring.io/stadsvandring/kinda","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Malexanders kyrka","description":"kyrka i Linköpings stift","geo":{"@type":"GeoCoordinates","latitude":58.03222222,"longitude":15.27777778}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Bålnäs","description":"herrgård i Malexanders socken","geo":{"@type":"GeoCoordinates","latitude":58.0304,"longitude":15.2545}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Gravkapell","description":"kapell i Boxholms kommun","geo":{"@type":"GeoCoordinates","latitude":58.032429,"longitude":15.279329}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Gripensköld-Kinningmundtska gravkoret","description":"Gripensköld-Kinningmundtska gravkoret är en byggnad i Kinda från 1789.","geo":{"@type":"GeoCoordinates","latitude":58.03226270182831,"longitude":15.278745695763757}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Hällristning","description":"Älvkvarnsförekomst på ett flyttblock i Kinda med minst fyra skålgropar.","geo":{"@type":"GeoCoordinates","latitude":58.03443170457284,"longitude":15.281087586296877}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Övrigt","description":"Fyndplats vid sjön Sommen i Kinda där tre skelett påträffades 1926.","geo":{"@type":"GeoCoordinates","latitude":58.02804527713224,"longitude":15.27093494627421}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Svartmålen, Lägenhetsbebyggelse","description":"Lämningar efter Svartmålen i Kinda, avfolkat 1936.","geo":{"@type":"GeoCoordinates","latitude":58.03391626817379,"longitude":15.322383071211576}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Pelaregrottan, Naturföremål/-bildning med bruk, tradition eller namn","description":"Pelaregrottan i Kinda, en namngiven grotta under ett förvittrat berg.","geo":{"@type":"GeoCoordinates","latitude":58.03660227402876,"longitude":15.283710745581018}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Källstugan, Lägenhetsbebyggelse","description":"Torplämning efter Källstugan i Kinda med husgrund, uthus och jordkällare.","geo":{"@type":"GeoCoordinates","latitude":58.024710981096334,"longitude":15.306648303722682}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Vägmärke","description":"Kilometerstolpe i Kinda med inskriptionen 25.","geo":{"@type":"GeoCoordinates","latitude":58.03383930910005,"longitude":15.270341137490984}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Naturföremål/-bildning med bruk, tradition eller namn","description":"Jättekast i Kinda med sägen om två stridande jättar.","geo":{"@type":"GeoCoordinates","latitude":58.04452091813124,"longitude":15.291403587661136}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Gölstugan, Lägenhetsbebyggelse","description":"Lämningar efter Gölstugan i Kinda, avfolkat 1933.","geo":{"@type":"GeoCoordinates","latitude":58.05051488906298,"longitude":15.263972487593426}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Fossil åker","description":"Fossil åkermark i Kinda med ett tolvtal röjningsrösen.","geo":{"@type":"GeoCoordinates","latitude":58.04578762608725,"longitude":15.297768786680669}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Blommedal, Lägenhetsbebyggelse","description":"Lämningar efter Blommedal i Kinda, avfolkat på 1880-talet.","geo":{"@type":"GeoCoordinates","latitude":58.03671672946748,"longitude":15.293153319357351}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Stenstorp, Lägenhetsbebyggelse","description":"Lämningar efter Stenstorp i Kinda, avfolkat 1917.","geo":{"@type":"GeoCoordinates","latitude":58.04797353791944,"longitude":15.267969717999948}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Dalen, Lägenhetsbebyggelse","description":"Lämningar efter Dalen i Kinda, avfolkat omkring 1860–1880.","geo":{"@type":"GeoCoordinates","latitude":58.033488275691845,"longitude":15.290801963625475}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Skogstorp, Lägenhetsbebyggelse","description":"Lämning efter backstugan Skogstorp under Tumbo i Kinda, avfolkat 1898.","geo":{"@type":"GeoCoordinates","latitude":58.04474764719515,"longitude":15.318067645411446}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Gränsmärke","description":"Flyttad häradssten i Kinda med inskriptionerna YDRE och GÖSTRING.","geo":{"@type":"GeoCoordinates","latitude":58.03148162714515,"longitude":15.278110904076764}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Gränsmärke","description":"Gränsstenar i Kinda i gränsen mellan Bålsnäs och Högbo.","geo":{"@type":"GeoCoordinates","latitude":58.031375922376974,"longitude":15.26445432404416}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Lägenhetsbebyggelse","description":"Torplämning i Kinda som brukades fram till 1926.","geo":{"@type":"GeoCoordinates","latitude":58.03310487994015,"longitude":15.310773251466337}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Dammstugan, Lägenhetsbebyggelse","description":"Lämning efter Dammstugan i Kinda, avfolkat 1893.","geo":{"@type":"GeoCoordinates","latitude":58.026519845272134,"longitude":15.322336569366174}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Gränsmärke","description":"Gränsstenar i Kinda i gränsen mellan Bålsnäs och Högbo.","geo":{"@type":"GeoCoordinates","latitude":58.029483784094865,"longitude":15.265027299996664}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Dammvall","description":"Dammvall vid en kvarnlämning sydost om Dammstugugölen i Kinda.","geo":{"@type":"GeoCoordinates","latitude":58.025666220389304,"longitude":15.323121125133}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Bergsnäs, Lägenhetsbebyggelse","description":"Lämning efter backstugan Bergsnäs i Kinda, avfolkat 1895.","geo":{"@type":"GeoCoordinates","latitude":58.03997478413361,"longitude":15.3226043658475}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Fornlämningsliknande lämning","description":"Högliknande lämning i Kinda av oklar karaktär.","geo":{"@type":"GeoCoordinates","latitude":58.04468992507328,"longitude":15.299001820077804}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vad är Kinda känt för?","acceptedAnswer":{"@type":"Answer","text":"Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!"}},{"@type":"Question","name":"Är stadsvandringen i Kinda gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 27 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Kinda?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 27 sevärdheter i Kinda — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Malexanders kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrka i Linköpings stift"}},{"@type":"Question","name":"Vad är Bålnäs?","acceptedAnswer":{"@type":"Answer","text":"herrgård i Malexanders socken"}},{"@type":"Question","name":"Vad är Gravkapell?","acceptedAnswer":{"@type":"Answer","text":"kapell i Boxholms kommun"}},{"@type":"Question","name":"Vad är Gripensköld-Kinningmundtska gravkoret?","acceptedAnswer":{"@type":"Answer","text":"Gripensköld-Kinningmundtska gravkoret är en byggnad i Kinda från 1789."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Kinda","item":"https://stadsvandring.io/stadsvandring/kinda"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Kinda</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Kinda</span><span class="badge">27 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Kinda — gratis karta &amp; guide</h1>
+<p class="lead">Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Kinda"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-kinda-malexanders-kyrka-q3358329"><b>1. Malexanders kyrka</b><span>Kyrka · kyrka i Linköpings stift</span></a>
+<a class="tile" href="/p/wd-kinda-balnas-q16506811"><b>2. Bålnäs</b><span>Byggnad · herrgård i Malexanders socken</span></a>
+<a class="tile" href="/p/wd-kinda-gravkapell-q130477735"><b>3. Gravkapell</b><span>Kyrka · kapell i Boxholms kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Kinda · 27</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Kinda. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 23</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-hallristning-kinda-463f7c"><b>Hällristning</b></a> — Älvkvarnsförekomst på ett flyttblock i Kinda med minst fyra skålgropar.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-kinda-755919"><b>Övrigt</b></a> — Fyndplats vid sjön Sommen i Kinda där tre skelett påträffades 1926.</li>
+<li><a href="/karta?plats=ksamsok-svartmalen-lagenhetsbebyggelse-kinda-ddbe48"><b>Svartmålen, Lägenhetsbebyggelse</b></a> — Lämningar efter Svartmålen i Kinda, avfolkat 1936.</li>
+<li><a href="/karta?plats=ksamsok-pelaregrottan-naturforemal-bildning-med-bruk-tradition-eller-namn-kinda-bd4d79"><b>Pelaregrottan, Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Pelaregrottan i Kinda, en namngiven grotta under ett förvittrat berg.</li>
+<li><a href="/karta?plats=ksamsok-kallstugan-lagenhetsbebyggelse-kinda-a51837"><b>Källstugan, Lägenhetsbebyggelse</b></a> — Torplämning efter Källstugan i Kinda med husgrund, uthus och jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-kinda-619e5d"><b>Vägmärke</b></a> — Kilometerstolpe i Kinda med inskriptionen 25.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-kinda-566e2d"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Jättekast i Kinda med sägen om två stridande jättar.</li>
+<li><a href="/karta?plats=ksamsok-golstugan-lagenhetsbebyggelse-kinda-c64e33"><b>Gölstugan, Lägenhetsbebyggelse</b></a> — Lämningar efter Gölstugan i Kinda, avfolkat 1933.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-kinda-88d2e1"><b>Fossil åker</b></a> — Fossil åkermark i Kinda med ett tolvtal röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-blommedal-lagenhetsbebyggelse-kinda-7de0b8"><b>Blommedal, Lägenhetsbebyggelse</b></a> — Lämningar efter Blommedal i Kinda, avfolkat på 1880-talet.</li>
+<li><a href="/karta?plats=ksamsok-stenstorp-lagenhetsbebyggelse-kinda-af9f69"><b>Stenstorp, Lägenhetsbebyggelse</b></a> — Lämningar efter Stenstorp i Kinda, avfolkat 1917.</li>
+<li><a href="/karta?plats=ksamsok-dalen-lagenhetsbebyggelse-kinda-bdedda"><b>Dalen, Lägenhetsbebyggelse</b></a> — Lämningar efter Dalen i Kinda, avfolkat omkring 1860–1880.</li>
+<li><a href="/karta?plats=ksamsok-skogstorp-lagenhetsbebyggelse-kinda-04f885"><b>Skogstorp, Lägenhetsbebyggelse</b></a> — Lämning efter backstugan Skogstorp under Tumbo i Kinda, avfolkat 1898.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-kinda-c25b77"><b>Gränsmärke</b></a> — Flyttad häradssten i Kinda med inskriptionerna YDRE och GÖSTRING.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-kinda-100f80"><b>Gränsmärke</b></a> — Gränsstenar i Kinda i gränsen mellan Bålsnäs och Högbo.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-kinda-b28b05"><b>Lägenhetsbebyggelse</b></a> — Torplämning i Kinda som brukades fram till 1926.</li>
+<li><a href="/karta?plats=ksamsok-dammstugan-lagenhetsbebyggelse-kinda-e9e713"><b>Dammstugan, Lägenhetsbebyggelse</b></a> — Lämning efter Dammstugan i Kinda, avfolkat 1893.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-kinda-5fdc3d"><b>Gränsmärke</b></a> — Gränsstenar i Kinda i gränsen mellan Bålsnäs och Högbo.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-kinda-96fb1c"><b>Dammvall</b></a> — Dammvall vid en kvarnlämning sydost om Dammstugugölen i Kinda.</li>
+<li><a href="/karta?plats=ksamsok-bergsnas-lagenhetsbebyggelse-kinda-e50dcb"><b>Bergsnäs, Lägenhetsbebyggelse</b></a> — Lämning efter backstugan Bergsnäs i Kinda, avfolkat 1895.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-kinda-31604a"><b>Fornlämningsliknande lämning</b></a> — Högliknande lämning i Kinda av oklar karaktär.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-kinda-c2ef8b"><b>Kvarn</b></a> — Kvarnlämning vid en bäck sydost om Dammstugugölen i Kinda.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-kinda-34026c"><b>Vägmärke</b></a> — Försvunnen väghållningstavla i Kinda, senast belagd 1947.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kinda-malexanders-kyrka-q3358329"><b>Malexanders kyrka</b></a> — kyrka i Linköpings stift</li>
+<li><a href="/karta?plats=wd-kinda-gravkapell-q130477735"><b>Gravkapell</b></a> — kapell i Boxholms kommun</li>
+</ul>
+<h3 class="city-h3">Byggnad · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-kinda-balnas-q16506811"><b>Bålnäs</b></a> — herrgård i Malexanders socken</li>
+<li><a href="/karta?plats=ksamsok-gripenskold-kinningmundtska-gravkoret-kinda-041264"><b>Gripensköld-Kinningmundtska gravkoret</b></a> — Gripensköld-Kinningmundtska gravkoret är en byggnad i Kinda från 1789. <span class="era">1789–1789</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 27 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/kinda/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/kinda/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Vad är Kinda känt för?</summary><p>Visst kan man vandra året runt på Östgötaleden, från maj är den säkrad och i toppform!</p></details>
+<details class="faq"><summary>Är stadsvandringen i Kinda gratis?</summary><p>Ja. Karta, alla 27 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Kinda?</summary><p>Vandringen samlar 27 sevärdheter i Kinda — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Malexanders kyrka?</summary><p>kyrka i Linköpings stift</p></details>
+<details class="faq"><summary>Vad är Bålnäs?</summary><p>herrgård i Malexanders socken</p></details>
+<details class="faq"><summary>Vad är Gravkapell?</summary><p>kapell i Boxholms kommun</p></details>
+<details class="faq"><summary>Vad är Gripensköld-Kinningmundtska gravkoret?</summary><p>Gripensköld-Kinningmundtska gravkoret är en byggnad i Kinda från 1789.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

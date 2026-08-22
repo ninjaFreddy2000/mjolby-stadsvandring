@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Trosa</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.9473" lon="17.49920556"><name>Vagnhärads kyrka</name><desc>kyrkobyggnad i Trosa kommun</desc></wpt>
+  <wpt lat="58.93876667" lon="17.51515"><name>Trosa landskyrka</name><desc>kyrkobyggnad i Trosa kommun</desc></wpt>
+  <wpt lat="58.92222222" lon="17.44861111"><name>Västerljungs kyrka</name><desc>kyrkobyggnad i Trosa kommun</desc></wpt>
+  <wpt lat="58.89819511266923" lon="17.54425651349881"><name>TROSA STADS KYRKAS KLOCKSTAPEL</name><desc>Klockstapeln till Trosa stads kyrka, uppförd i början av 1700-talet.</desc></wpt>
+  <wpt lat="58.898" lon="17.5441"><name>Trosa stads kyrka</name><desc>kyrkobyggnad i Trosa kommun</desc></wpt>
+  <wpt lat="58.89799484317509" lon="17.544660119379586"><name>MEURLINGS GRAVKAPELL</name><desc>Meurlings gravkapell i Trosa från 1920-talet, registrerat i Bebyggelseregistret.</desc></wpt>
+  <rte><name>Kyrkostigen i Trosa</name>
+    <rtept lat="58.9473" lon="17.49920556"><name>Vagnhärads kyrka</name></rtept>
+    <rtept lat="58.93876667" lon="17.51515"><name>Trosa landskyrka</name></rtept>
+    <rtept lat="58.92222222" lon="17.44861111"><name>Västerljungs kyrka</name></rtept>
+    <rtept lat="58.89819511266923" lon="17.54425651349881"><name>TROSA STADS KYRKAS KLOCKSTAPEL</name></rtept>
+    <rtept lat="58.898" lon="17.5441"><name>Trosa stads kyrka</name></rtept>
+    <rtept lat="58.89799484317509" lon="17.544660119379586"><name>MEURLINGS GRAVKAPELL</name></rtept>
+  </rte>
+</gpx>

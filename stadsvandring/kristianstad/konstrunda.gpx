@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Kristianstad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.04720905438337" lon="14.149062095939248"><name>Minnesmärke</name><desc>En minnessten i röd granit över infanteriregementet som flyttade till Kristianstad 1923.</desc></wpt>
+  <wpt lat="56.0467374013619" lon="14.146717314693399"><name>Minnesmärke</name><desc>Minnessten i Kristianstad över fallna vid Norra Skånska infanteriregementet 1939–1945.</desc></wpt>
+  <wpt lat="56.043330766208825" lon="14.151857319314718"><name>Minnesmärke</name><desc>En minnessten över August Palms första socialistiska tal i Kristianstad 1883.</desc></wpt>
+  <wpt lat="56.03354485431077" lon="14.152222674206557"><name>Minnesmärke</name><desc>Norreport från 1750-talet med en minnesplatta över Adolf Fredriks befästningsarbeten.</desc></wpt>
+  <wpt lat="56.03229328044718" lon="14.156017043018787"><name>Minnesmärke</name><desc>Minnessten i Kristianstad över stenhuggaren Rasmus Clausen.</desc></wpt>
+  <wpt lat="56.03003227899299" lon="14.157716586458529"><name>Minnesmärke</name><desc>Minnesskylt i Kristianstad över Sveriges äldsta filmatelje i Cosmorama.</desc></wpt>
+  <wpt lat="56.027957760639616" lon="14.156851024906258"><name>Minnesmärke</name><desc>En minnesplatta på husväggen över C. J. F. Ljunggren, född här 1858.</desc></wpt>
+  <wpt lat="56.027952478205506" lon="14.15432013304453"><name>Minnesmärke</name><desc>En minnessten över överste Axel Ankarcrona, som vårdade Tivoliparken.</desc></wpt>
+  <wpt lat="56.027038703666626" lon="14.152460940078914"><name>Minnesmärke</name><desc>Minnessten i Kristianstad över Tivolis grundare J.H. Romann.</desc></wpt>
+  <wpt lat="56.032578599601614" lon="14.160698472208704"><name>Minnesmärke</name><desc>Minnessten i Kristianstad över Sveriges första Folkets Hus.</desc></wpt>
+  <wpt lat="56.03830681600595" lon="14.122385336990948"><name>Minnesmärke</name><desc>Minnessten i Kristianstad över Herluf Trolle, född på Lillö 1516.</desc></wpt>
+  <rte><name>Konstrundan i Kristianstad</name>
+    <rtept lat="56.04720905438337" lon="14.149062095939248"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.0467374013619" lon="14.146717314693399"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.043330766208825" lon="14.151857319314718"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.03354485431077" lon="14.152222674206557"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.03229328044718" lon="14.156017043018787"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.03003227899299" lon="14.157716586458529"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.027957760639616" lon="14.156851024906258"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.027952478205506" lon="14.15432013304453"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.027038703666626" lon="14.152460940078914"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.032578599601614" lon="14.160698472208704"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.03830681600595" lon="14.122385336990948"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

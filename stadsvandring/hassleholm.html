@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Hässleholm — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Hässleholm till fots: 113 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 113 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/hassleholm">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Hässleholm — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Hässleholm till fots: 113 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 113 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/hassleholm">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Hässleholm — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Hässleholm till fots: 113 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 113 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"hassleholm","sourceSlug":"stadsvandring/hassleholm","centroid":{"lat":56.14663055651894,"lng":13.758132420969849},"stops":[{"name":"The Train Station","lat":56.157723447024054,"lng":13.764635405775957},{"name":"Hässleholms väderkvarn","lat":56.1518564768397,"lng":13.758621538131205},{"name":"Torggatan, omkring 1890","lat":56.10365413526791,"lng":13.913451213442109}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Hässleholm","description":"Upptäck Hässleholm till fots: 113 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/hassleholm","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"The Train Station","description":"Today, being able to travel across the Skåne region in an hour or so is a given - but before the railway was finished your only option was pretty much to go by","url":"https://stadsvandring.io/p/bht-hassleholm-the-train-station-598","geo":{"@type":"GeoCoordinates","latitude":56.157723447024054,"longitude":13.764635405775957}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Hässleholms väderkvarn","description":"På bilden ser du Hässleholms väderkvarn som revs 1934 - idag finns här bara en grön kulle kvar!","geo":{"@type":"GeoCoordinates","latitude":56.1518564768397,"longitude":13.758621538131205}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Torggatan, omkring 1890","description":"Här ser du en riktigt gammal bild på Stora Torggatan, eller Torggatan som den hette då.","geo":{"@type":"GeoCoordinates","latitude":56.10365413526791,"longitude":13.913451213442109}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Trobecks pensionat","description":"Vittsjö är ju känt som gammal kurort och hade i det avseendet sina glansdagar under första halvan av 1900-talet, då det som mest fanns omkring fyrtio pensionat…","url":"https://stadsvandring.io/p/bht-hassleholm-trobecks-pensionat-350","geo":{"@type":"GeoCoordinates","latitude":56.34621730959543,"longitude":13.661839881089763}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Amelies plats","description":"Amelie Ehrenborg (1811-1876) bodde på Hässleholmsgården under den tid järnvägen kom till orten.","url":"https://stadsvandring.io/p/bht-hassleholm-amelies-plats-359","geo":{"@type":"GeoCoordinates","latitude":56.15780463288243,"longitude":13.764139204431345}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Vinslövs järnvägsstation","description":"Den här järnvägsstationen uppfördes redan 1865 vilket alltså var året då Vinslöv övergick från att vara en bondby till ett stationssamhälle.","url":"https://stadsvandring.io/p/bht-hassleholm-vinslovs-jarnvagsstation-385","geo":{"@type":"GeoCoordinates","latitude":56.105055597364384,"longitude":13.916385480004635}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Urmakeriet och Bildsköne Bengtsson","description":"år 1900 öppnade den skicklige urmakaren Olander Wahlqvist ett urmakeri här där det reparerades klockor, men också paraplyer, munspel, spinnrockar, och mycket a…","url":"https://stadsvandring.io/p/bht-hassleholm-urmakeriet-och-bildskone-bengtsson-450","geo":{"@type":"GeoCoordinates","latitude":56.34257083411287,"longitude":13.664183128836042}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Lindbomska huset","description":"Det här var en gång Vinslövs stolthet - ett blickfång som inte kunde undgå någon som besökte torget.","url":"https://stadsvandring.io/p/bht-hassleholm-lindbomska-huset-496","geo":{"@type":"GeoCoordinates","latitude":56.10412484291415,"longitude":13.916550784886738}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Piil's Studio","description":"Above the offices of local newspaper Norra Skåne (still in print today), was one of master photographer Herman Piil's studios during the early 1900s.","url":"https://stadsvandring.io/p/bht-hassleholm-piil-s-studio-500","geo":{"@type":"GeoCoordinates","latitude":56.158014071637545,"longitude":13.765386824908473}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Condis","description":"Den här platsen har förstås inte alltid använts till att parkera bilar.","url":"https://stadsvandring.io/p/bht-hassleholm-condis-536","geo":{"@type":"GeoCoordinates","latitude":56.291323205217736,"longitude":13.710865329683957}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Sösdala torg","description":"När järnvägssträckan Malmö-Hässleholm öppnade på 1860-talet och Sösdala strax efter fick en egen station fick samhället sig ett ordentligt uppsving.","url":"https://stadsvandring.io/p/bht-hassleholm-sosdala-torg-570","geo":{"@type":"GeoCoordinates","latitude":56.036081255627465,"longitude":13.678903468648773}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Smedjan på Broslätt","description":"Intill Hovdala gård växte det under 1600-talet fram en by där många av de som behövdes för att bygga och sköta Hovdala gård bosatte sig.","url":"https://stadsvandring.io/p/bht-hassleholm-smedjan-pa-broslatt-596","geo":{"@type":"GeoCoordinates","latitude":56.10256423381121,"longitude":13.711469793492403}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Godtemplarsalen","description":"Eftersom svenskarnas intensiva brännvinsdrickande under 1800-talet ställde till så stora problem uppstod motreaktioner som förespråkade nykterhet, eller åtminst","url":"https://stadsvandring.io/p/bht-hassleholm-godtemplarsalen-630","geo":{"@type":"GeoCoordinates","latitude":56.15831374782756,"longitude":13.76684604523446}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"The Railroad Park","description":"This spot, right where the bus shelters are today, used to look quite different at the start of the 20th century.","url":"https://stadsvandring.io/p/bht-hassleholm-the-railroad-park-631","geo":{"@type":"GeoCoordinates","latitude":56.15845319527083,"longitude":13.7640234477798}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Biograf Metropol","description":"Den första filmvisningen i Tyringe hölls förmodligen några år in på 1900-talet, och under 1910-talet blev det ett allt vanligare nöje.","url":"https://stadsvandring.io/p/bht-hassleholm-biograf-metropol-909","geo":{"@type":"GeoCoordinates","latitude":56.15948748737904,"longitude":13.601052537248885}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Lindells Pappershandel","description":"Idag är det inte så vanligt att stöta på en renodlad pappershandel, men vid förra seklets början var situationen en annan.","url":"https://stadsvandring.io/p/bht-hassleholm-lindells-pappershandel-924","geo":{"@type":"GeoCoordinates","latitude":56.10345724336813,"longitude":13.912868515896694}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Hässleholms första apotek och läkemedelsfabriken","description":"Här låg Hässleholms första apotek, i hörnet där Järnvägsgatan och Andra avenyn möts.","url":"https://stadsvandring.io/p/bht-hassleholm-hassleholms-forsta-apotek-och-lakemedelsfabriken-1056","geo":{"@type":"GeoCoordinates","latitude":56.15679856133849,"longitude":13.763182678837254}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"The Hot Water Bath House","description":"The hot water bath house opening in 1902 meant an instantaneous increase in living standards for people in Hässleholm.","url":"https://stadsvandring.io/p/bht-hassleholm-the-hot-water-bath-house-587","geo":{"@type":"GeoCoordinates","latitude":56.15586821417552,"longitude":13.76719179115342}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Karamellfabriken på Bryggaregatan","description":"På den här sidan järnvägen tillverkades inte bara tågvagnar och öl döpt efter snapphanar, utan också konfekt.","url":"https://stadsvandring.io/p/bht-hassleholm-karamellfabriken-pa-bryggaregatan-627","geo":{"@type":"GeoCoordinates","latitude":56.16093923404515,"longitude":13.763036149062419}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Röingegatan genom tiderna","description":"Här får du se tre bilder från nästan exakt samma plats, tagna med flera decenniers mellanrum.","geo":{"@type":"GeoCoordinates","latitude":56.15803574763252,"longitude":13.769929050884619}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Hantverksföreningens hus","description":"Kring 1900-talets början vimlade det av hantverkare i Hässleholm.","url":"https://stadsvandring.io/p/bht-hassleholm-hantverksforeningens-hus-594","geo":{"@type":"GeoCoordinates","latitude":56.15882557531243,"longitude":13.764248557539393}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Hantverkshuset","description":"Hantverkshuset byggdes 1880 och fick stå kvar till 1963 då det revs - namnet fick byggnaden efter att Hantverksföreningen köpte fastigheten 1949.","url":"https://stadsvandring.io/p/bht-hassleholm-hantverkshuset-919","geo":{"@type":"GeoCoordinates","latitude":56.03636658931494,"longitude":13.678508233798844}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Anna Barnekow och Spöket på Sinclairsholm","description":"Den här bilden är tagen omkring 1905 och det är fröken Anna Barnekow som kommer farandes i sin \"gigg\", som man kallade den här typen av tvåhjuliga hästvagnar so","url":"https://stadsvandring.io/p/bht-hassleholm-anna-barnekow-och-spoket-pa-sinclairsholm-923","geo":{"@type":"GeoCoordinates","latitude":56.106021457545246,"longitude":13.913323720625845}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Baptistkyrkan Ebeneser","description":"Väckelserörelsen kom under 1700-talet till trakten kring Hässleholm, då en hel del göingar hade börjat läsa och själva tolka bibeln.","url":"https://stadsvandring.io/p/bht-hassleholm-baptistkyrkan-ebeneser-636","geo":{"@type":"GeoCoordinates","latitude":56.15813482463258,"longitude":13.76767072506902}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Stora Hotellet","description":"När Stora Hotellet byggdes 1908 hade Sösdala ungefär 500 invånare.","url":"https://stadsvandring.io/p/bht-hassleholm-stora-hotellet-928","geo":{"@type":"GeoCoordinates","latitude":56.03552216309243,"longitude":13.678029038697765}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Hässleholm gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 113 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Hässleholm?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 113 sevärdheter i Hässleholm — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är The Train Station?","acceptedAnswer":{"@type":"Answer","text":"Today, being able to travel across the Skåne region in an hour or so is a given - but before the railway was finished your only option was pretty much to go by"}},{"@type":"Question","name":"Vad är Hässleholms väderkvarn?","acceptedAnswer":{"@type":"Answer","text":"På bilden ser du Hässleholms väderkvarn som revs 1934 - idag finns här bara en grön kulle kvar!"}},{"@type":"Question","name":"Vad är Torggatan, omkring 1890?","acceptedAnswer":{"@type":"Answer","text":"Här ser du en riktigt gammal bild på Stora Torggatan, eller Torggatan som den hette då."}},{"@type":"Question","name":"Vad är Trobecks pensionat?","acceptedAnswer":{"@type":"Answer","text":"Vittsjö är ju känt som gammal kurort och hade i det avseendet sina glansdagar under första halvan av 1900-talet, då det som mest fanns omkring fyrtio pensionat här."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Hässleholm","item":"https://stadsvandring.io/stadsvandring/hassleholm"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Hässleholm</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Hässleholm</span><span class="badge">113 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Hässleholm — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Hässleholm till fots: 113 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Hässleholm"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-hassleholm-the-train-station-598"><b>1. The Train Station</b><span>Station · Today, being able to travel across the Skåne region in an hour or so is a given…</span></a>
+<a class="tile" href="/p/bht-hassleholm-hassleholms-vaderkvarn-1070"><b>2. Hässleholms väderkvarn</b><span>Sevärdhet · På bilden ser du Hässleholms väderkvarn som revs 1934 - idag finns här bara en…</span></a>
+<a class="tile" href="/p/bht-hassleholm-torggatan-omkring-1890-912"><b>3. Torggatan, omkring 1890</b><span>Sevärdhet · Här ser du en riktigt gammal bild på Stora Torggatan, eller Torggatan som den h…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Hässleholm · 113</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Hässleholm. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Sevärdhet · 46</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-hassleholm-hassleholms-vaderkvarn-1070"><b>Hässleholms väderkvarn</b></a> — På bilden ser du Hässleholms väderkvarn som revs 1934 - idag finns här bara en grön kulle kvar! <span class="era">1870</span></li>
+<li><a href="/karta?plats=bht-hassleholm-torggatan-omkring-1890-912"><b>Torggatan, omkring 1890</b></a> — Här ser du en riktigt gammal bild på Stora Torggatan, eller Torggatan som den hette då. <span class="era">1890</span></li>
+<li><a href="/p/bht-hassleholm-trobecks-pensionat-350"><b>Trobecks pensionat</b></a> — Vittsjö är ju känt som gammal kurort och hade i det avseendet sina glansdagar under första halvan av 1900-talet, då det som mest fanns omkr… <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-amelies-plats-359"><b>Amelies plats</b></a> — Amelie Ehrenborg (1811-1876) bodde på Hässleholmsgården under den tid järnvägen kom till orten. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-urmakeriet-och-bildskone-bengtsson-450"><b>Urmakeriet och Bildsköne Bengtsson</b></a> — år 1900 öppnade den skicklige urmakaren Olander Wahlqvist ett urmakeri här där det reparerades klockor, men också paraplyer, munspel, spinn… <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-piil-s-studio-500"><b>Piil&#39;s Studio</b></a> — Above the offices of local newspaper Norra Skåne (still in print today), was one of master photographer Herman Piil&#39;s studios during the ea… <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-condis-536"><b>Condis</b></a> — Den här platsen har förstås inte alltid använts till att parkera bilar. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-smedjan-pa-broslatt-596"><b>Smedjan på Broslätt</b></a> — Intill Hovdala gård växte det under 1600-talet fram en by där många av de som behövdes för att bygga och sköta Hovdala gård bosatte sig. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-godtemplarsalen-630"><b>Godtemplarsalen</b></a> — Eftersom svenskarnas intensiva brännvinsdrickande under 1800-talet ställde till så stora problem uppstod motreaktioner som förespråkade nyk… <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-lindells-pappershandel-924"><b>Lindells Pappershandel</b></a> — Idag är det inte så vanligt att stöta på en renodlad pappershandel, men vid förra seklets början var situationen en annan. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-the-hot-water-bath-house-587"><b>The Hot Water Bath House</b></a> — The hot water bath house opening in 1902 meant an instantaneous increase in living standards for people in Hässleholm. <span class="era">1902</span></li>
+<li><a href="/p/bht-hassleholm-karamellfabriken-pa-bryggaregatan-627"><b>Karamellfabriken på Bryggaregatan</b></a> — På den här sidan järnvägen tillverkades inte bara tågvagnar och öl döpt efter snapphanar, utan också konfekt. <span class="era">1902</span></li>
+<li><a href="/karta?plats=bht-hassleholm-roingegatan-genom-tiderna-926"><b>Röingegatan genom tiderna</b></a> — Här får du se tre bilder från nästan exakt samma plats, tagna med flera decenniers mellanrum. <span class="era">1902</span></li>
+<li><a href="/p/bht-hassleholm-anna-barnekow-och-spoket-pa-sinclairsholm-923"><b>Anna Barnekow och Spöket på Sinclairsholm</b></a> — Den här bilden är tagen omkring 1905 och det är fröken Anna Barnekow som kommer farandes i sin &quot;gigg&quot;, som man kallade den här typen av två… <span class="era">1905</span></li>
+<li><a href="/p/bht-hassleholm-baptistkyrkan-ebeneser-636"><b>Baptistkyrkan Ebeneser</b></a> — Väckelserörelsen kom under 1700-talet till trakten kring Hässleholm, då en hel del göingar hade börjat läsa och själva tolka bibeln. <span class="era">1906</span></li>
+<li><a href="/p/bht-hassleholm-adolf-nilssons-lanthandel-569"><b>Adolf Nilssons lanthandel</b></a> — Norra vägen har onekligen förändrats en del sedan tidigt 1910-tal. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-boketorp-579"><b>Boketorp</b></a> — Boketorp har gamla anor men byggdes helt om år 1870 för att bli ett änkesäte åt frun på Hovdala. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-wesens-konditori-589"><b>Weséns konditori</b></a> — På den här platsen började Bror Wes n sin bana som sockerbagare när Wes ns Conditori och Caf öppnade 1897. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-radiumkallan-628"><b>Radiumkällan</b></a> — Mot slutet av 1800-talet började folk vallfärdas till Radiumkällan i Tyringe för att dricka brunn , det vill säga dricka ur källor vars vat… <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-lilla-springvattnet-629"><b>Lilla springvattnet</b></a> — Här ser du Lilla springvattnet , ursprungligen tänkt att vara en oas av lugn för de som kommit till kurorten Tyringe för att vila upp sig. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-the-new-pharmacy-640"><b>The &quot;New&quot; Pharmacy</b></a> — This is where the &quot;new&quot; pharmacy was, where the shopping mall is today, that was taken over by pharmacist Paul G. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-hotel-temperance-677"><b>Hotel Temperance</b></a> — During the first half of the 20th century, there was a hotel here on Frykholmsgatan, called Hotel Temperance. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-bazaren-och-telegrafins-betydelse-913"><b>Bazaren, och telegrafins betydelse</b></a> — Bazaren, som huset rakt fram på bilden (idag en bank) kom att kallas byggdes redan omkring 1890 och revs 1969. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-hassleholm-frykholmsgatan-och-holmqvist-specerier-1082"><b>Frykholmsgatan och Holmqvist specerier</b></a> — Här ser vi en bild på Frykholmsgatan, som den såg ut i början av 1900-talet, med Holmqvist specerier på hörnan. <span class="era">1910</span></li>
+<li><a href="/p/bht-hassleholm-kyrkan-583"><b>Kyrkan</b></a> — Hässleholm såg som ung stad snabb utveckling under 1900-talet. <span class="era">1914</span></li>
+<li><a href="/p/bht-hassleholm-orangeriet-590"><b>Orangeriet</b></a> — I parken fanns det flera exotiska växter som hämtats in från andra delar av världen. <span class="era">1920</span></li>
+<li><a href="/p/bht-hassleholm-cafeerna-pa-stora-torggatan-918"><b>Caféerna på Stora Torggatan</b></a> — Här får du se något ganska speciellt - två bilder, tagna på samma plats, med ett par decenniers mellanrum - 1920 och 1940, dessutom med ett… <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-hassleholm-smedjan-i-sosdala-920"><b>Smedjan i Sösdala</b></a> — Här byggdes i slutet av 1800-talet en smedja - som då låg i samhällets utkant, Sösdala har växt ordentligt sen dess! <span class="era">1920</span></li>
+<li><a href="/p/bht-hassleholm-garveriet-922"><b>Garveriet</b></a> — Den här bilden från 1920-talet visar ett garveri, där djurhudar bearbetades till läder, som upptog hela kvarteret innan det revs 1971. <span class="era">1920</span></li>
+<li><a href="/p/bht-hassleholm-august-benson-organ-builder-641"><b>August Benson, Organ Builder</b></a> — When was the last time you saw or heard an organ playing? <span class="era">1925</span></li>
+<li><a href="/p/bht-hassleholm-tomtarna-i-stenberget-597"><b>Tomtarna i Stenberget</b></a> — På bilden ser du de målningar, som mystiskt dök upp en dag här på berghällen under sent 1920-tal. <span class="era">1929</span></li>
+<li><a href="/p/bht-hassleholm-hotel-statt-a-proper-city-hotel-330"><b>Hotel Statt - A Proper City Hotel</b></a> — Even though Hässleholm was still waiting for the decision on whether it would actually be granted city status, officials felt an urgent nee… <span class="era">1930</span></li>
+<li><a href="/p/bht-hassleholm-hassleholms-verkstader-573"><b>Hässleholms Verkstäder</b></a> — Området som idag kallas Norra Station har länge varit en plats för företagande. <span class="era">1930</span></li>
+<li><a href="/p/bht-hassleholm-tyrs-hov-580"><b>Tyrs hov</b></a> — Här spelas det hockey sedan länge! <span class="era">1930</span></li>
+<li><a href="/p/bht-hassleholm-davidshall-914"><b>Davidshall</b></a> — På den här tomten låg förr Davidshall, som byggdes 1880 av skogvaktare David Petterson (och som alltså döpte byggnaden efter sig själv). <span class="era">1930</span></li>
+<li><a href="/p/bht-hassleholm-snapphanen-och-hembygdsparken-586"><b>Snapphanen och Hembygdsparken</b></a> — Här var det fest! Närmare bestämt invigningsfest år 1934, för Axel Ebbes staty Snapphanen . <span class="era">1934</span></li>
+<li><a href="/p/bht-hassleholm-stubbamollan-490"><b>Stubbamöllan</b></a> — Stubbamöllan, eller stubben som den kallas, var en speciell sorts kvarn som fått sitt namn av att den är byggd runt en grov trästolpe (elle… <span class="era">1940</span></li>
+<li><a href="/p/bht-hassleholm-barndaghemmet-548"><b>Barndaghemmet</b></a> — Det lilla huset till höger i bilden var troligen Sösdalas första barndaghem eller dagis som grundades under 1940-talet. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-hassleholm-kooperativa-1067"><b>Kooperativa</b></a> — Här låg förut Kooperativa - föregångaren till Konsum, och Coop som butikskedjan ju heter idag. <span class="era">1940</span></li>
+<li><a href="/karta?plats=bht-hassleholm-vinter-i-hassleholm-1076"><b>Vinter i Hässleholm</b></a> — Hässleholm i vinterskrud. <span class="era">1940</span></li>
+<li><a href="/p/bht-hassleholm-the-fish-market-1083"><b>The Fish Market</b></a> — The Fish Market has been a very important place historically, for several reasons: At first it was called Spruttomten - literally &quot;Sprayer&#39;… <span class="era">1940</span></li>
+<li><a href="/p/bht-hassleholm-hedbergs-i-vinslov-574"><b>Hedbergs i Vinslöv</b></a> — Möbelvaruhuset Hedbergs i Vinslöv var under sin storhetstid på 1950-1970-talen så känt att det nästan var synonymt med själva orten Vinslöv. <span class="era">1950</span></li>
+<li><a href="/p/bht-hassleholm-far-och-flyg-915"><b>Far och flyg</b></a> — Här ser du en oväntad syn: Ett flygplan som nödlandat på taket på Börje Nilssons ESSO-mack! <span class="era">1952</span></li>
+<li><a href="/karta?plats=wd-hassleholm-stoby-42-1-q29470325"><b>Stoby 42:1</b></a> — minnesmärke i Skåne</li>
+<li><a href="/karta?plats=wd-hassleholm-stoby-49-1-q29470328"><b>Stoby 49:1</b></a> — minnesmärke i Skåne</li>
+<li><a href="/karta?plats=wd-hassleholm-stoby-51-1-q29470344"><b>Stoby 51:1</b></a> — minnesmärke i Skåne</li>
+</ul>
+<h3 class="city-h3">fornminne · 35</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-rose-hassleholm-cbecdc"><b>Röse</b></a> — Ett röse med plan topp i ett landskap präglat av röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-hassleholm-910eee"><b>Område med fossil åkermark</b></a> — Ett område med fossil åkermark med ett hundratal röjningsrösen.</li>
+<li><a href="/p/ksamsok-blastbrukslamning-hassleholm-e34af3"><b>Blästbrukslämning</b></a> — Ett slaggvarp i en brant sluttning, vittne om äldre järnframställning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-hassleholm-dfd6f9"><b>Gravfält</b></a> — Ett gravfält med resta stenar och flera undersökta brandgravar.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-hassleholm-a079ca"><b>Bytomt/gårdstomt</b></a> — Sjörröds gamla tomt, känd från en skånsk rekognosceringskarta 1812–20.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-hassleholm-ce7519"><b>Grav markerad av sten/block</b></a> — En möjlig rest sten som markerar en grav.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-hassleholm-1960cb"><b>Avrättningsplats</b></a> — Platsen för traktens sista avrättning, den 25 maj 1866.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-hassleholm-d91ff6"><b>Bytomt/gårdstomt</b></a> — Hässleholmsgårdens gamla tomt, känd från en karta 1745.</li>
+<li><a href="/karta?plats=ksamsok-boplats-hassleholm-9b85e4"><b>Boplats</b></a> — En delundersökt boplats där slagen flinta hittats i åkern.</li>
+<li><a href="/karta?plats=ksamsok-fyndsamling-hassleholm-12b1a7"><b>Fyndsamling</b></a> — En omfattande privatsamling med bland annat Sveriges äldsta kända redskap.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-hassleholm-f859f2"><b>Grav markerad av sten/block</b></a> — En rest sten av granit som markerar en grav.</li>
+<li><a href="/p/ksamsok-fornlamningsliknande-lamning-hassleholm-9f5ede"><b>Fornlämningsliknande lämning</b></a> — En hembygdspark med museum och en gånggrift som Folke Hansen byggde 1949.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-hassleholm-1a04b7"><b>Hällristning</b></a> — Ett block med sex älvkvarnar, en hällristningstyp.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-hassleholm-4a9c55"><b>Gränsmärke</b></a> — Ett gränsmärke av femstenarörstyp med lutande hjärtsten.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-hassleholm-0dd7e3"><b>Hällristning</b></a> — Ett jordfast block med fem älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-hassleholm-41bdea"><b>Fossil åker</b></a> — Ett röjningsröseområde med ett femtiotal rösen.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-hassleholm-c9aca9"><b>Lägenhetsbebyggelse</b></a> — En torplämning som framkom vid en arkeologisk utredning 2008.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-hassleholm-f24e52"><b>Grav markerad av sten/block</b></a> — Två resta stenar som flyttats hit från Vanneberga i Vinslöv.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-hassleholm-621456"><b>Vägmärke</b></a> — En hembygdspark med museum och en gånggrift byggd 1949 av Folke Hansen.</li>
+<li><a href="/karta?plats=ksamsok-galgbacken-avrattningsplats-hassleholm-c3b540"><b>Galgbacken, Avrättningsplats</b></a> — En anlagd galgbacke där skelett- och gravfynd gjorts på 1940-talet.</li>
+<li><a href="/p/ksamsok-omrade-med-fossil-akermark-hassleholm-247a22"><b>Område med fossil åkermark</b></a> — Ett stort fossilt åkerområde med åkeryta, rösen, gärdesgårdar och diken.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-hassleholm-272d37"><b>Område med fossil åkermark</b></a> — Ett röjningsröseområde med omkring 140 rösen.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-hassleholm-d13997"><b>Gränsmärke</b></a> — En granitsten som markerar Hässleholms gamla stadsgräns.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-hassleholm-2c392d"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En klippformation med en djup klippskreva i bergets högsta del.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-hassleholm-124679"><b>Område med fossil åkermark</b></a> — Ett fossilt åkerområde med en åkeryta och ett femtiotal rösen.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-hassleholm-41365b"><b>Stensättning</b></a> — En rund, delvis övermossad stensättning med ett block i kanten.</li>
+<li><a href="/karta?plats=ksamsok-mor-nillas-stuga-husgrund-historisk-tid-hassleholm-bf5b11"><b>Mor Nillas stuga, Husgrund, historisk tid</b></a> — Resterna av Mor Nillas backstuga, uppförd 1891.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-hassleholm-095b54"><b>Fossil åker</b></a> — Fossil åkermark med ett hundratal runda röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-hassleholm-60edab"><b>Fossil åker</b></a> — Ett mindre röjningsröseområde med ett femtontal rösen.</li>
+<li><a href="/karta?plats=ksamsok-boplats-hassleholm-e1479b"><b>Boplats</b></a> — En boplats utan synliga anläggningar där flinta hittats i åkern.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-hassleholm-792ddb"><b>Stensättning</b></a> — En möjlig, oregelbunden stensättning i ett område med röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-boplats-hassleholm-d80d0c"><b>Boplats</b></a> — En boplats vid järnvägen där slagen flinta påträffats.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-hassleholm-078d04"><b>Grav markerad av sten/block</b></a> — En sentida rest granitsten med spår av borrning.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-hassleholm-564d21"><b>Lägenhetsbebyggelse</b></a> — Ett område med två torplämningar dokumenterade vid en utredning 2008.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-hassleholm-af6ac0"><b>Fyndplats</b></a> — En fyndplats för ett depåfynd av flintredskap från 1948.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 14</h3>
+<ul class="place-list">
+<li><a href="/p/bht-hassleholm-lindbomska-huset-496"><b>Lindbomska huset</b></a> — Det här var en gång Vinslövs stolthet - ett blickfång som inte kunde undgå någon som besökte torget. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-biograf-metropol-909"><b>Biograf Metropol</b></a> — Den första filmvisningen i Tyringe hölls förmodligen några år in på 1900-talet, och under 1910-talet blev det ett allt vanligare nöje. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-hassleholms-forsta-apotek-och-lakemedelsfabriken-1056"><b>Hässleholms första apotek och läkemedelsfabriken</b></a> — Här låg Hässleholms första apotek, i hörnet där Järnvägsgatan och Andra avenyn möts. <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-hantverksforeningens-hus-594"><b>Hantverksföreningens hus</b></a> — Kring 1900-talets början vimlade det av hantverkare i Hässleholm. <span class="era">1905</span></li>
+<li><a href="/p/bht-hassleholm-hantverkshuset-919"><b>Hantverkshuset</b></a> — Hantverkshuset byggdes 1880 och fick stå kvar till 1963 då det revs - namnet fick byggnaden efter att Hantverksföreningen köpte fastigheten… <span class="era">1905</span></li>
+<li><a href="/p/bht-hassleholm-august-petterssons-villa-495"><b>August Petterssons villa</b></a> — På platsen där apoteket ligger idag, med ingången på ungefär samma plats, fanns tidigare en riktigt storslagen byggnad möbelfabrikör August… <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-hassleholm-kommunala-mellanskolan-946"><b>Kommunala mellanskolan</b></a> — 1912 invigdes här kommunala mellanskolan. <span class="era">1912</span></li>
+<li><a href="/p/bht-hassleholm-hassleholms-tekniska-skola-1079"><b>Hässleholms Tekniska Skola</b></a> — Hässleholms Tekniska Skola startade sin verksamhet redan 1912 och höll då till i ett hus i Stadsparken. <span class="era">1914</span></li>
+<li><a href="/p/bht-hassleholm-hassleholmsgarden-1081"><b>Hässleholmsgården</b></a> — Att Hässleholm blev stad 1914 är till stor del tack vare Hässleholmsgårdens tidigare ägare August Ehrenborg. <span class="era">1920</span></li>
+<li><a href="/p/bht-hassleholm-hassleholms-bryggeri-och-maltfabrik-571"><b>Hässleholms Bryggeri och Maltfabrik</b></a> — Nu står du på platsen där August Malta-Svensson Svensson 1889 började tillverka malt i Hässleholms maltfabrik. <span class="era">1930</span></li>
+<li><a href="/karta?plats=bht-hassleholm-utsikt-over-bangarden-1077"><b>Utsikt över bangården</b></a> — Hässleholm var en järnvägsknutpunkt redan på 1930-talet. <span class="era">1930</span></li>
+<li><a href="/p/bht-hassleholm-yttre-borggarden-577"><b>Yttre borggården</b></a> — Porttornet har i över 400 år stått som en mäktig silhuett i landskapet. <span class="era">1945</span></li>
+<li><a href="/karta?plats=wd-hassleholm-hovdala-slott-q1939159"><b>Hovdala slott</b></a> — slott i Hässleholms kommun</li>
+<li><a href="/p/ksamsok-hassleholms-tingsratt-hassleholm-696809"><b>HÄSSLEHOLMS TINGSRÄTT</b></a> — Hässleholms tingshus från 1866 i rött tegel med rundbågsfris och tornliknande fronton. <span class="era">1866–1866</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 9</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-hassleholm-finja-kyrka-q10495351"><b>Finja kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/karta?plats=wd-hassleholm-hassleholms-kyrka-q10531824"><b>Hässleholms kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Hässleholm, Sverige</li>
+<li><a href="/karta?plats=wd-hassleholm-ignaberga-nya-kyrka-q10534255"><b>Ignaberga nya kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-ignaberga-gamla-kyrka-q10534252"><b>Ignaberga gamla kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/karta?plats=wd-hassleholm-ljungdala-kyrka-q10568342"><b>Ljungdala kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/karta?plats=wd-hassleholm-stoby-kyrka-q10680410"><b>Stoby kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/karta?plats=wd-hassleholm-vankiva-kyrka-q10712663"><b>Vankiva kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Vankiva, Sverige</li>
+<li><a href="/karta?plats=wd-hassleholm-vasterkyrkan-q10717955"><b>Västerkyrkan</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/ksamsok-hassleholms-begravningskapell-hassleholm-052172"><b>Hässleholms begravningskapell</b></a> — Ett medeltidsinspirerat tegelkapell från 1906–07, ritat av Theodor Wåhlin. <span class="era">1906–1907</span></li>
+</ul>
+<h3 class="city-h3">Station · 3</h3>
+<ul class="place-list">
+<li><a href="/p/bht-hassleholm-the-train-station-598"><b>The Train Station</b></a> — Today, being able to travel across the Skåne region in an hour or so is a given - but before the railway was finished your only option was… <span class="era">1860</span></li>
+<li><a href="/p/bht-hassleholm-vinslovs-jarnvagsstation-385"><b>Vinslövs järnvägsstation</b></a> — Den här järnvägsstationen uppfördes redan 1865 vilket alltså var året då Vinslöv övergick från att vara en bondby till ett stationssamhälle. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-hassleholm-polisstationen-och-parkeringen-1080"><b>Polisstationen och parkeringen</b></a> — På 1930-talet hade antalet bilar i trakten blivit så många att de fick ett par officiella parkeringsplatser nära torget (med skylt och allt… <span class="era">1930</span></li>
+</ul>
+<h3 class="city-h3">Torg · 3</h3>
+<ul class="place-list">
+<li><a href="/p/bht-hassleholm-sosdala-torg-570"><b>Sösdala torg</b></a> — När järnvägssträckan Malmö-Hässleholm öppnade på 1860-talet och Sösdala strax efter fick en egen station fick samhället sig ett ordentligt… <span class="era">1900</span></li>
+<li><a href="/p/bht-hassleholm-nytorget-1061"><b>Nytorget</b></a> — Såhär såg Nytorget ut för ungefär 80 år sedan! <span class="era">1935</span></li>
+<li><a href="/p/bht-hassleholm-torget-och-vinslovsutstallningen-547"><b>Torget och Vinslövsutställningen</b></a> — Du står nu på den plats där torgets gamla brunn tidigare låg. <span class="era">1948</span></li>
+</ul>
+<h3 class="city-h3">Naturreservat · 1</h3>
+<ul class="place-list">
+<li><a href="/p/bht-hassleholm-the-railroad-park-631"><b>The Railroad Park</b></a> — This spot, right where the bus shelters are today, used to look quite different at the start of the 20th century. <span class="era">1900</span></li>
+</ul>
+<h3 class="city-h3">Hotell · 1</h3>
+<ul class="place-list">
+<li><a href="/p/bht-hassleholm-stora-hotellet-928"><b>Stora Hotellet</b></a> — När Stora Hotellet byggdes 1908 hade Sösdala ungefär 500 invånare. <span class="era">1908</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-hassleholm-307669"><b>Minnesmärke</b></a> — En minnessten rest 1907 till Carl von Linnés 200-årsminne.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 113 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/hassleholm/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/hassleholm/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Hässleholm gratis?</summary><p>Ja. Karta, alla 113 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Hässleholm?</summary><p>Vandringen samlar 113 sevärdheter i Hässleholm — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är The Train Station?</summary><p>Today, being able to travel across the Skåne region in an hour or so is a given - but before the railway was finished your only option was pretty much to go by</p></details>
+<details class="faq"><summary>Vad är Hässleholms väderkvarn?</summary><p>På bilden ser du Hässleholms väderkvarn som revs 1934 - idag finns här bara en grön kulle kvar!</p></details>
+<details class="faq"><summary>Vad är Torggatan, omkring 1890?</summary><p>Här ser du en riktigt gammal bild på Stora Torggatan, eller Torggatan som den hette då.</p></details>
+<details class="faq"><summary>Vad är Trobecks pensionat?</summary><p>Vittsjö är ju känt som gammal kurort och hade i det avseendet sina glansdagar under första halvan av 1900-talet, då det som mest fanns omkring fyrtio pensionat här.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

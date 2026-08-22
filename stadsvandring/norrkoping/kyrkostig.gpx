@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Norrköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.64766667" lon="16.13430556"><name>Kvillinge kyrka</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <wpt lat="58.6097" lon="16.1364"><name>Östra Eneby kyrka</name><desc>kyrka i Norrköping</desc></wpt>
+  <wpt lat="58.60172222" lon="16.154525"><name>Taborsberg</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <wpt lat="58.5931" lon="16.1711"><name>Matteus kyrka</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <wpt lat="58.5937653261591" lon="16.183821196227974"><name>RINGBORGSKA HUSET</name><desc>Ringborgska huset i Norrköping, uppfört 1784.</desc></wpt>
+  <wpt lat="58.59475" lon="16.185111111111"><name>Pingstkyrkan</name><desc>kyrka i Norrköping</desc></wpt>
+  <wpt lat="58.592811" lon="16.187918"><name>Hedvigs kyrka</name><desc>Norrköpings tyska kyrka från 1673, uppförd för stadens tysktalande befolkning och uppkallad efter drottning Hedvig Eleonora.</desc></wpt>
+  <wpt lat="58.59" lon="16.189"><name>Sankt Olai kyrka</name><desc>Stadens domkyrka vid Olai kyrkogata, en barock pärla.</desc></wpt>
+  <wpt lat="58.589583333333" lon="16.189666666667"><name>Sankta Birgitta kyrka</name><desc>kyrka i Norrköping</desc></wpt>
+  <wpt lat="58.5841" lon="16.1923"><name>Kyrkan vid Vasaparken</name><desc>kyrkobyggnad i Norrköping, Sverige</desc></wpt>
+  <wpt lat="58.57677841" lon="16.19786072"><name>Sankt Johannes kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Norrköping, Sverige</desc></wpt>
+  <wpt lat="58.57417222" lon="16.16673889"><name>Söderledskyrkan</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <wpt lat="58.57775" lon="16.155944444444"><name>Adventkyrkan, Norrköping</name><desc>kyrka i Norrköping</desc></wpt>
+  <wpt lat="58.575772655005" lon="16.145354940435"><name>Borgsmo kapell</name><desc>kapell i Norrköping</desc></wpt>
+  <wpt lat="58.57368" lon="16.09599"><name>Borgs kyrka</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <wpt lat="58.5618" lon="16.2694"><name>Styrstads kyrka</name><desc>kyrkobyggnad i Norrköpings kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Norrköping</name>
+    <rtept lat="58.64766667" lon="16.13430556"><name>Kvillinge kyrka</name></rtept>
+    <rtept lat="58.6097" lon="16.1364"><name>Östra Eneby kyrka</name></rtept>
+    <rtept lat="58.60172222" lon="16.154525"><name>Taborsberg</name></rtept>
+    <rtept lat="58.5931" lon="16.1711"><name>Matteus kyrka</name></rtept>
+    <rtept lat="58.5937653261591" lon="16.183821196227974"><name>RINGBORGSKA HUSET</name></rtept>
+    <rtept lat="58.59475" lon="16.185111111111"><name>Pingstkyrkan</name></rtept>
+    <rtept lat="58.592811" lon="16.187918"><name>Hedvigs kyrka</name></rtept>
+    <rtept lat="58.59" lon="16.189"><name>Sankt Olai kyrka</name></rtept>
+    <rtept lat="58.589583333333" lon="16.189666666667"><name>Sankta Birgitta kyrka</name></rtept>
+    <rtept lat="58.5841" lon="16.1923"><name>Kyrkan vid Vasaparken</name></rtept>
+    <rtept lat="58.57677841" lon="16.19786072"><name>Sankt Johannes kyrka</name></rtept>
+    <rtept lat="58.57417222" lon="16.16673889"><name>Söderledskyrkan</name></rtept>
+    <rtept lat="58.57775" lon="16.155944444444"><name>Adventkyrkan, Norrköping</name></rtept>
+    <rtept lat="58.575772655005" lon="16.145354940435"><name>Borgsmo kapell</name></rtept>
+    <rtept lat="58.57368" lon="16.09599"><name>Borgs kyrka</name></rtept>
+    <rtept lat="58.5618" lon="16.2694"><name>Styrstads kyrka</name></rtept>
+  </rte>
+</gpx>

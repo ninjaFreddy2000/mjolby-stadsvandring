@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Växjö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.934277777778" lon="14.790722222222"><name>Sankt Sigfrids kapell</name><desc>kapell i Växjö</desc></wpt>
+  <wpt lat="56.91375" lon="14.79236111"><name>Johannesgården</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.909472222222" lon="14.806388888889"><name>Hovshaga kapell</name><desc>kapell i Svenska kyrkan i Hovshaga, Sverige</desc></wpt>
+  <wpt lat="56.89904167" lon="14.80107222"><name>Mariakyrkan</name><desc>kyrka i Växjö kommun, Sverige</desc></wpt>
+  <wpt lat="56.88946844559467" lon="14.813090972380296"><name>Skogslyckans kyrka</name><desc>Skogslyckans kyrka i Växjö, uppförd 1943.</desc></wpt>
+  <wpt lat="56.88741111" lon="14.81281111"><name>Skogslyckans kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.877400604156804" lon="14.812182258712287"><name>Växjö Domkyrka</name><desc>Domkyrka med rötter i en träkyrka från 1000-talet, ombyggd genom seklerna.</desc></wpt>
+  <wpt lat="56.87774444" lon="14.80083611"><name>Tegnérkapellet</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.88436944" lon="14.78411111"><name>Västrabo kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.87721" lon="14.84066"><name>Högstorps kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.8538" lon="14.8182"><name>Teleborgs kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.86030556" lon="14.74575"><name>Bergunda kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <wpt lat="56.9071" lon="14.7404"><name>Öjaby kyrka</name><desc>kyrkobyggnad i Växjö kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Växjö</name>
+    <rtept lat="56.934277777778" lon="14.790722222222"><name>Sankt Sigfrids kapell</name></rtept>
+    <rtept lat="56.91375" lon="14.79236111"><name>Johannesgården</name></rtept>
+    <rtept lat="56.909472222222" lon="14.806388888889"><name>Hovshaga kapell</name></rtept>
+    <rtept lat="56.89904167" lon="14.80107222"><name>Mariakyrkan</name></rtept>
+    <rtept lat="56.88946844559467" lon="14.813090972380296"><name>Skogslyckans kyrka</name></rtept>
+    <rtept lat="56.88741111" lon="14.81281111"><name>Skogslyckans kyrka</name></rtept>
+    <rtept lat="56.877400604156804" lon="14.812182258712287"><name>Växjö Domkyrka</name></rtept>
+    <rtept lat="56.87774444" lon="14.80083611"><name>Tegnérkapellet</name></rtept>
+    <rtept lat="56.88436944" lon="14.78411111"><name>Västrabo kyrka</name></rtept>
+    <rtept lat="56.87721" lon="14.84066"><name>Högstorps kyrka</name></rtept>
+    <rtept lat="56.8538" lon="14.8182"><name>Teleborgs kyrka</name></rtept>
+    <rtept lat="56.86030556" lon="14.74575"><name>Bergunda kyrka</name></rtept>
+    <rtept lat="56.9071" lon="14.7404"><name>Öjaby kyrka</name></rtept>
+  </rte>
+</gpx>

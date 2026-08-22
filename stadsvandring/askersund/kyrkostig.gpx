@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Askersund</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.886389" lon="14.903333"><name>Gravkapellet, Askersund</name><desc>kyrkobyggnad som tillhör Askersund-Hammars församling i Strängnäs stift.</desc></wpt>
+  <wpt lat="58.88136111" lon="14.90247222"><name>Sofia Magdalena kyrka</name><desc>kyrkobyggnad som tillhör Askersund-Hammars församling i Strängnäs stift</desc></wpt>
+  <wpt lat="58.87798611" lon="14.89730556"><name>Askersunds landskyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Askersund, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Askersund</name>
+    <rtept lat="58.886389" lon="14.903333"><name>Gravkapellet, Askersund</name></rtept>
+    <rtept lat="58.88136111" lon="14.90247222"><name>Sofia Magdalena kyrka</name></rtept>
+    <rtept lat="58.87798611" lon="14.89730556"><name>Askersunds landskyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Linköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.42058097265141" lon="15.631490640730767"><name>Bro</name><desc>Läget för en cirka 68 meter lång bro över Stångån som byggdes 1773.</desc></wpt>
+  <wpt lat="58.412462501155744" lon="15.631063143411817"><name>Bro</name><desc>En utrasad stenkista som kan ha burit en bro i Ågatans förlängning.</desc></wpt>
+  <wpt lat="58.411805555556" lon="15.631527777778"><name>Stångebro</name><desc>bro i Linköping</desc></wpt>
+  <rte><name>Industrihistoria i Linköping</name>
+    <rtept lat="58.42058097265141" lon="15.631490640730767"><name>Bro</name></rtept>
+    <rtept lat="58.412462501155744" lon="15.631063143411817"><name>Bro</name></rtept>
+    <rtept lat="58.411805555556" lon="15.631527777778"><name>Stångebro</name></rtept>
+  </rte>
+</gpx>

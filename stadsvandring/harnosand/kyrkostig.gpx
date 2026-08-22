@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Härnösand</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="62.646296" lon="17.9245"><name>Murbergskyrkan</name><desc>kyrkobyggnad i Härnösands kommun</desc></wpt>
+  <wpt lat="62.64141389" lon="17.92413333"><name>Ängekyrkan</name><desc>kyrkobyggnad i Härnösands kommun</desc></wpt>
+  <wpt lat="62.63082289386156" lon="17.94174371259822"><name>HÄRNÖSANDS DOMKYRKA</name><desc>Stadens domkyrka från 1842–1846, klassicistisk och rest på platsen för en kyrka som ryssarna brände 1721.</desc></wpt>
+  <wpt lat="62.64216" lon="17.85006"><name>Säbrå kyrka</name><desc>kyrkobyggnad i Härnösands kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Härnösand</name>
+    <rtept lat="62.646296" lon="17.9245"><name>Murbergskyrkan</name></rtept>
+    <rtept lat="62.64141389" lon="17.92413333"><name>Ängekyrkan</name></rtept>
+    <rtept lat="62.63082289386156" lon="17.94174371259822"><name>HÄRNÖSANDS DOMKYRKA</name></rtept>
+    <rtept lat="62.64216" lon="17.85006"><name>Säbrå kyrka</name></rtept>
+  </rte>
+</gpx>

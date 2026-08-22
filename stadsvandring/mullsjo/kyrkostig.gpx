@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Mullsjö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.9287" lon="13.9603"><name>Furusjö allianskyrka</name><desc>kyrkobyggnad i Furusjö, Sverige</desc></wpt>
+  <wpt lat="57.91525" lon="13.87667"><name>Mullsjö pingstkyrka</name><desc>pingstkyrka i Mullsjö, Sverige</desc></wpt>
+  <wpt lat="57.91869" lon="13.85749"><name>Nykyrka kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Mullsjö kommun, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Mullsjö</name>
+    <rtept lat="57.9287" lon="13.9603"><name>Furusjö allianskyrka</name></rtept>
+    <rtept lat="57.91525" lon="13.87667"><name>Mullsjö pingstkyrka</name></rtept>
+    <rtept lat="57.91869" lon="13.85749"><name>Nykyrka kyrka</name></rtept>
+  </rte>
+</gpx>

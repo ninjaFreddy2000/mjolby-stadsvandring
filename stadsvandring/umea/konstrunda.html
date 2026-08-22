@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Konstrundan i Umeå — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida. 36 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/umea/konstrunda">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Konstrundan i Umeå — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida. 36 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/umea/konstrunda">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konstrundan i Umeå — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida. 36 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"umea","theme":"konstrunda","sourceSlug":"stadsvandring/umea/konstrunda","centroid":{"lat":63.82566811292487,"lng":20.265605399261947},"stops":[{"name":"Minnesmärke","lat":63.83571837310419,"lng":20.254597822517606},{"name":"Minnesmärke","lat":63.834174335732214,"lng":20.259111841435452},{"name":"Järnfågel","lat":63.831807,"lng":20.249676},{"name":"Studier och lek i skolan","lat":63.830333,"lng":20.240894},{"name":"Sittande kvinna vid källa","lat":63.82689,"lng":20.250093},{"name":"Apollon 350","lat":63.825397,"lng":20.258269},{"name":"Fontänskulptur","lat":63.826111111111,"lng":20.26},{"name":"Standing Man","lat":63.825597222222,"lng":20.262405555556},{"name":"Listen","lat":63.82548,"lng":20.26332},{"name":"Gustav II Adolfs byst","lat":63.825104,"lng":20.262668},{"name":"Minnesmärke","lat":63.82508703379547,"lng":20.262589837297625},{"name":"Hantverk","lat":63.823831,"lng":20.264261},{"name":"Hoppare","lat":63.82382,"lng":20.26778},{"name":"Dunkermomentet","lat":63.823555,"lng":20.267978},{"name":"Tellus","lat":63.824333,"lng":20.268567},{"name":"Wilhelm Peterson- Berger","lat":63.822931,"lng":20.269997},{"name":"Minnesmärke","lat":63.82306561263525,"lng":20.271430530032045},{"name":"Håll-ning, Mot-stod, För-står,","lat":63.824044,"lng":20.272928},{"name":"Lill-Inga","lat":63.826395,"lng":20.274275},{"name":"Morgon","lat":63.826654,"lng":20.27776},{"name":"Laddningsplats för ljushuvuden","lat":63.82802,"lng":20.26786},{"name":"Gustav Rosén","lat":63.827867,"lng":20.265068},{"name":"Väsen","lat":63.826795,"lng":20.265942},{"name":"Grön eld, Umeå","lat":63.8294,"lng":20.2664},{"name":"Ask och Embla","lat":63.827976,"lng":20.258957},{"name":"Line of Thoughts","lat":63.820869444444,"lng":20.261941666667},{"name":"Odelsgutt","lat":63.820018,"lng":20.277196},{"name":"Skin 4","lat":63.819722222222,"lng":20.278888888889},{"name":"2 × 3² Cube","lat":63.819166666667,"lng":20.281111111111},{"name":"Struktur Mandala","lat":63.822592,"lng":20.288628},{"name":"3D π","lat":63.82,"lng":20.300833333333},{"name":"Norra Skenet","lat":63.820805555556,"lng":20.302444444444},{"name":"Vågspel","lat":63.820555555556,"lng":20.305833333333},{"name":"Najad","lat":63.831416666667,"lng":20.278833333333},{"name":"Minnesmärke","lat":63.822931376693994,"lng":20.236875119925504},{"name":"Eye Benches II","lat":63.835588888889,"lng":20.166380555556}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Konstrundan i Umeå","description":"Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida.","step":[{"@type":"HowToStep","position":1,"name":"Minnesmärke","text":"Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-c2c469"},{"@type":"HowToStep","position":2,"name":"Minnesmärke","text":"Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-f9f04a"},{"@type":"HowToStep","position":3,"name":"Järnfågel","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-jarnfagel-q102442353"},{"@type":"HowToStep","position":4,"name":"Studier och lek i skolan","text":"Studier och lek i skolan","url":"https://stadsvandring.io/p/wd-umea-studier-och-lek-i-skolan-q102442359"},{"@type":"HowToStep","position":5,"name":"Sittande kvinna vid källa","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-sittande-kvinna-vid-kalla-q102442355"},{"@type":"HowToStep","position":6,"name":"Apollon 350","text":"Apollon 350","url":"https://stadsvandring.io/p/wd-umea-apollon-350-q102740661"},{"@type":"HowToStep","position":7,"name":"Fontänskulptur","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-fontanskulptur-q81530265"},{"@type":"HowToStep","position":8,"name":"Standing Man","text":"bronsskulptur","url":"https://stadsvandring.io/p/wd-umea-standing-man-q81013227"},{"@type":"HowToStep","position":9,"name":"Listen","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-listen-q83395037"},{"@type":"HowToStep","position":10,"name":"Gustav II Adolfs byst","text":"En byst av Umeås grundare, Gustav II Adolf, är placerad mitt emellan Storgatan och dubbeltrappan på Rådhusets södra sida","url":"https://stadsvandring.io/p/wd-umea-gustav-ii-adolfs-byst-q102348069"},{"@type":"HowToStep","position":11,"name":"Minnesmärke","text":"Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-940156"},{"@type":"HowToStep","position":12,"name":"Hantverk","text":"Hantverk","url":"https://stadsvandring.io/p/wd-umea-hantverk-q102530714"},{"@type":"HowToStep","position":13,"name":"Hoppare","text":"Skulpturkonstverk i Umeå.","url":"https://stadsvandring.io/p/wd-umea-hoppare-q28005416"},{"@type":"HowToStep","position":14,"name":"Dunkermomentet","text":"begravningsplats i Västerbotten","url":"https://stadsvandring.io/p/wd-umea-dunkermomentet-q29867255"},{"@type":"HowToStep","position":15,"name":"Tellus","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-tellus-q102442349"},{"@type":"HowToStep","position":16,"name":"Wilhelm Peterson- Berger","text":"Wilhelm Peterson- Berger","url":"https://stadsvandring.io/p/wd-umea-wilhelm-peterson-berger-q102443958"},{"@type":"HowToStep","position":17,"name":"Minnesmärke","text":"Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-f85c84"},{"@type":"HowToStep","position":18,"name":"Håll-ning, Mot-stod, För-står,","text":"Håll-ning, Mot-stod, För-står,","url":"https://stadsvandring.io/p/wd-umea-hall-ning-mot-stod-for-star-q102740677"},{"@type":"HowToStep","position":19,"name":"Lill-Inga","text":"Lill-Inga","url":"https://stadsvandring.io/p/wd-umea-lill-inga-q102740673"},{"@type":"HowToStep","position":20,"name":"Morgon","text":"skulptur i Umeå kommun","url":"https://stadsvandring.io/p/wd-umea-morgon-q102740652"},{"@type":"HowToStep","position":21,"name":"Laddningsplats för ljushuvuden","text":"Konstsoffor uppvärmda med fjärrvärme med inbyggd bredbandsanslutning.","url":"https://stadsvandring.io/p/wd-umea-laddningsplats-for-ljushuvuden-q27980474"},{"@type":"HowToStep","position":22,"name":"Gustav Rosén","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-gustav-rosen-q102442351"},{"@type":"HowToStep","position":23,"name":"Väsen","text":"Väsen","url":"https://stadsvandring.io/p/wd-umea-vasen-q102442360"},{"@type":"HowToStep","position":24,"name":"Grön eld, Umeå","text":"Grön eld är en 9 meter hög grön glasskulptur utförd av Vicke Lindstrand.","url":"https://stadsvandring.io/p/wd-umea-gron-eld-umea-q10509958"},{"@type":"HowToStep","position":25,"name":"Ask och Embla","text":"Ask och Embla","url":"https://stadsvandring.io/p/wd-umea-ask-och-embla-q102740648"},{"@type":"HowToStep","position":26,"name":"Line of Thoughts","text":"Line of Thoughts är en bronsskulptur i Umeå, skapad av den brittiske konstnären Tony Cragg.","url":"https://stadsvandring.io/p/wd-umea-line-of-thoughts-q73905466"},{"@type":"HowToStep","position":27,"name":"Odelsgutt","text":"Skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-odelsgutt-q102442358"},{"@type":"HowToStep","position":28,"name":"Skin 4","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-skin-4-q94743541"},{"@type":"HowToStep","position":29,"name":"2 × 3² Cube","text":"konstverk i Umeå","url":"https://stadsvandring.io/p/wd-umea-2-3-cube-q94952198"},{"@type":"HowToStep","position":30,"name":"Struktur Mandala","text":"Struktur Mandala","url":"https://stadsvandring.io/p/wd-umea-struktur-mandala-q102740656"},{"@type":"HowToStep","position":31,"name":"3D π","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-3d-q96238009"},{"@type":"HowToStep","position":32,"name":"Norra Skenet","text":"Norra skenet är en skulptur av Ernst Nordin och en symbol för Umeå universitet.","url":"https://stadsvandring.io/p/wd-umea-norra-skenet-q10602562"},{"@type":"HowToStep","position":33,"name":"Vågspel","text":"skulptur i Umeå","url":"https://stadsvandring.io/p/wd-umea-vagspel-q94237277"},{"@type":"HowToStep","position":34,"name":"Najad","text":"Konstverket Najad, skulptur och fontän i Umeå","url":"https://stadsvandring.io/p/wd-umea-najad-q102740669"},{"@type":"HowToStep","position":35,"name":"Minnesmärke","text":"Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-d8c38c"},{"@type":"HowToStep","position":36,"name":"Eye Benches II","text":"Eye Benches II är en skulptur av den fransk-amerikanska skulptören Louise Bourgeois, inköpt av Balticgruppen för Umedalens skulpturpark.","url":"https://stadsvandring.io/p/wd-umea-eye-benches-ii-q23007429"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Konstrundan i Umeå","description":"Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida.","url":"https://stadsvandring.io/stadsvandring/umea/konstrunda","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":36,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-c2c469"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-f9f04a"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Järnfågel","url":"https://stadsvandring.io/p/wd-umea-jarnfagel-q102442353"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Studier och lek i skolan","url":"https://stadsvandring.io/p/wd-umea-studier-och-lek-i-skolan-q102442359"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Sittande kvinna vid källa","url":"https://stadsvandring.io/p/wd-umea-sittande-kvinna-vid-kalla-q102442355"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Apollon 350","url":"https://stadsvandring.io/p/wd-umea-apollon-350-q102740661"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Fontänskulptur","url":"https://stadsvandring.io/p/wd-umea-fontanskulptur-q81530265"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Standing Man","url":"https://stadsvandring.io/p/wd-umea-standing-man-q81013227"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Listen","url":"https://stadsvandring.io/p/wd-umea-listen-q83395037"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Gustav II Adolfs byst","url":"https://stadsvandring.io/p/wd-umea-gustav-ii-adolfs-byst-q102348069"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-940156"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Hantverk","url":"https://stadsvandring.io/p/wd-umea-hantverk-q102530714"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Hoppare","url":"https://stadsvandring.io/p/wd-umea-hoppare-q28005416"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Dunkermomentet","url":"https://stadsvandring.io/p/wd-umea-dunkermomentet-q29867255"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Tellus","url":"https://stadsvandring.io/p/wd-umea-tellus-q102442349"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Wilhelm Peterson- Berger","url":"https://stadsvandring.io/p/wd-umea-wilhelm-peterson-berger-q102443958"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-f85c84"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Håll-ning, Mot-stod, För-står,","url":"https://stadsvandring.io/p/wd-umea-hall-ning-mot-stod-for-star-q102740677"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Lill-Inga","url":"https://stadsvandring.io/p/wd-umea-lill-inga-q102740673"}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Morgon","url":"https://stadsvandring.io/p/wd-umea-morgon-q102740652"}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Laddningsplats för ljushuvuden","url":"https://stadsvandring.io/p/wd-umea-laddningsplats-for-ljushuvuden-q27980474"}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Gustav Rosén","url":"https://stadsvandring.io/p/wd-umea-gustav-rosen-q102442351"}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Väsen","url":"https://stadsvandring.io/p/wd-umea-vasen-q102442360"}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Grön eld, Umeå","url":"https://stadsvandring.io/p/wd-umea-gron-eld-umea-q10509958"}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Ask och Embla","url":"https://stadsvandring.io/p/wd-umea-ask-och-embla-q102740648"}},{"@type":"ListItem","position":26,"item":{"@type":"TouristAttraction","name":"Line of Thoughts","url":"https://stadsvandring.io/p/wd-umea-line-of-thoughts-q73905466"}},{"@type":"ListItem","position":27,"item":{"@type":"TouristAttraction","name":"Odelsgutt","url":"https://stadsvandring.io/p/wd-umea-odelsgutt-q102442358"}},{"@type":"ListItem","position":28,"item":{"@type":"TouristAttraction","name":"Skin 4","url":"https://stadsvandring.io/p/wd-umea-skin-4-q94743541"}},{"@type":"ListItem","position":29,"item":{"@type":"TouristAttraction","name":"2 × 3² Cube","url":"https://stadsvandring.io/p/wd-umea-2-3-cube-q94952198"}},{"@type":"ListItem","position":30,"item":{"@type":"TouristAttraction","name":"Struktur Mandala","url":"https://stadsvandring.io/p/wd-umea-struktur-mandala-q102740656"}},{"@type":"ListItem","position":31,"item":{"@type":"TouristAttraction","name":"3D π","url":"https://stadsvandring.io/p/wd-umea-3d-q96238009"}},{"@type":"ListItem","position":32,"item":{"@type":"TouristAttraction","name":"Norra Skenet","url":"https://stadsvandring.io/p/wd-umea-norra-skenet-q10602562"}},{"@type":"ListItem","position":33,"item":{"@type":"TouristAttraction","name":"Vågspel","url":"https://stadsvandring.io/p/wd-umea-vagspel-q94237277"}},{"@type":"ListItem","position":34,"item":{"@type":"TouristAttraction","name":"Najad","url":"https://stadsvandring.io/p/wd-umea-najad-q102740669"}},{"@type":"ListItem","position":35,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-umea-d8c38c"}},{"@type":"ListItem","position":36,"item":{"@type":"TouristAttraction","name":"Eye Benches II","url":"https://stadsvandring.io/p/wd-umea-eye-benches-ii-q23007429"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Umeå","item":"https://stadsvandring.io/stadsvandring/umea"},{"@type":"ListItem","position":3,"name":"Konstrundan i Umeå","item":"https://stadsvandring.io/stadsvandring/umea/konstrunda"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/umea">Stadsvandring i Umeå</a> › konstrunda</nav>
+<div class="badges"><span class="badge">🎨 Tematisk rutt</span><span class="badge">📍 Umeå</span><span class="badge">36 stopp</span></div>
+<h1>Konstrundan i Umeå</h1>
+<p class="lead">Statyer, konst och museer i Umeå — en runda för dig som vill se ortens kreativa sida.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Konstrundan i Umeå"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/ksamsok-minnesmarke-umea-c2c469"><b>1. Minnesmärke</b><span>Konst &amp; staty · Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</span></a>
+<a class="tile" href="/p/ksamsok-minnesmarke-umea-f9f04a"><b>2. Minnesmärke</b><span>Konst &amp; staty · Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</span></a>
+<a class="tile" href="/p/wd-umea-jarnfagel-q102442353"><b>3. Järnfågel</b><span>Konst &amp; staty · skulptur i Umeå</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 36 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/umea/konstrunda.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/ksamsok-minnesmarke-umea-c2c469"><b>1. Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/ksamsok-minnesmarke-umea-f9f04a"><b>2. Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/wd-umea-jarnfagel-q102442353"><b>3. Järnfågel</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-studier-och-lek-i-skolan-q102442359"><b>4. Studier och lek i skolan</b></a> — Studier och lek i skolan</li>
+<li><a href="/p/wd-umea-sittande-kvinna-vid-kalla-q102442355"><b>5. Sittande kvinna vid källa</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-apollon-350-q102740661"><b>6. Apollon 350</b></a> — Apollon 350</li>
+<li><a href="/p/wd-umea-fontanskulptur-q81530265"><b>7. Fontänskulptur</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-standing-man-q81013227"><b>8. Standing Man</b></a> — bronsskulptur</li>
+<li><a href="/p/wd-umea-listen-q83395037"><b>9. Listen</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-gustav-ii-adolfs-byst-q102348069"><b>10. Gustav II Adolfs byst</b></a> — En byst av Umeås grundare, Gustav II Adolf, är placerad mitt emellan Storgatan och dubbeltrappan på Rådhusets södra sida</li>
+<li><a href="/p/ksamsok-minnesmarke-umea-940156"><b>11. Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/wd-umea-hantverk-q102530714"><b>12. Hantverk</b></a> — Hantverk</li>
+<li><a href="/p/wd-umea-hoppare-q28005416"><b>13. Hoppare</b></a> — Skulpturkonstverk i Umeå.</li>
+<li><a href="/p/wd-umea-dunkermomentet-q29867255"><b>14. Dunkermomentet</b></a> — begravningsplats i Västerbotten</li>
+<li><a href="/p/wd-umea-tellus-q102442349"><b>15. Tellus</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-wilhelm-peterson-berger-q102443958"><b>16. Wilhelm Peterson- Berger</b></a> — Wilhelm Peterson- Berger</li>
+<li><a href="/p/ksamsok-minnesmarke-umea-f85c84"><b>17. Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/wd-umea-hall-ning-mot-stod-for-star-q102740677"><b>18. Håll-ning, Mot-stod, För-står,</b></a> — Håll-ning, Mot-stod, För-står,</li>
+<li><a href="/p/wd-umea-lill-inga-q102740673"><b>19. Lill-Inga</b></a> — Lill-Inga</li>
+<li><a href="/p/wd-umea-morgon-q102740652"><b>20. Morgon</b></a> — skulptur i Umeå kommun</li>
+<li><a href="/p/wd-umea-laddningsplats-for-ljushuvuden-q27980474"><b>21. Laddningsplats för ljushuvuden</b></a> — Konstsoffor uppvärmda med fjärrvärme med inbyggd bredbandsanslutning.</li>
+<li><a href="/p/wd-umea-gustav-rosen-q102442351"><b>22. Gustav Rosén</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-vasen-q102442360"><b>23. Väsen</b></a> — Väsen</li>
+<li><a href="/p/wd-umea-gron-eld-umea-q10509958"><b>24. Grön eld, Umeå</b></a> — Grön eld är en 9 meter hög grön glasskulptur utförd av Vicke Lindstrand.</li>
+<li><a href="/p/wd-umea-ask-och-embla-q102740648"><b>25. Ask och Embla</b></a> — Ask och Embla</li>
+<li><a href="/p/wd-umea-line-of-thoughts-q73905466"><b>26. Line of Thoughts</b></a> — Line of Thoughts är en bronsskulptur i Umeå, skapad av den brittiske konstnären Tony Cragg.</li>
+<li><a href="/p/wd-umea-odelsgutt-q102442358"><b>27. Odelsgutt</b></a> — Skulptur i Umeå</li>
+<li><a href="/p/wd-umea-skin-4-q94743541"><b>28. Skin 4</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-2-3-cube-q94952198"><b>29. 2 × 3² Cube</b></a> — konstverk i Umeå</li>
+<li><a href="/p/wd-umea-struktur-mandala-q102740656"><b>30. Struktur Mandala</b></a> — Struktur Mandala</li>
+<li><a href="/p/wd-umea-3d-q96238009"><b>31. 3D π</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-norra-skenet-q10602562"><b>32. Norra Skenet</b></a> — Norra skenet är en skulptur av Ernst Nordin och en symbol för Umeå universitet.</li>
+<li><a href="/p/wd-umea-vagspel-q94237277"><b>33. Vågspel</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-najad-q102740669"><b>34. Najad</b></a> — Konstverket Najad, skulptur och fontän i Umeå</li>
+<li><a href="/p/ksamsok-minnesmarke-umea-d8c38c"><b>35. Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/wd-umea-eye-benches-ii-q23007429"><b>36. Eye Benches II</b></a> — Eye Benches II är en skulptur av den fransk-amerikanska skulptören Louise Bourgeois, inköpt av Balticgruppen för Umedal…</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/umea">Stadsvandringen i Umeå</a> <a class="cta ghost" href="/stadsvandring/umea/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

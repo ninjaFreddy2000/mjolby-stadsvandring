@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Sundsvall — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Sundsvall till fots: 143 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 143 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/sundsvall">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Sundsvall — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Sundsvall till fots: 143 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 143 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/sundsvall">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Sundsvall — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Sundsvall till fots: 143 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 143 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"sundsvall","sourceSlug":"stadsvandring/sundsvall","centroid":{"lat":62.39382544120721,"lng":17.311534155554032},"stops":[{"name":"Bergsåkersbron","lat":62.4074,"lng":17.2335},{"name":"Betlehemskyrkan","lat":62.38888889,"lng":17.30388889},{"name":"Bosvedjans kyrka","lat":62.41909444,"lng":17.33617778}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Sundsvall","description":"Upptäck Sundsvall till fots: 143 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/sundsvall","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Bergsåkersbron","description":"Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo till Bergsåker i Sundsvall.","geo":{"@type":"GeoCoordinates","latitude":62.4074,"longitude":17.2335}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Betlehemskyrkan","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.38888889,"longitude":17.30388889}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Bosvedjans kyrka","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.41909444,"longitude":17.33617778}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Brokyrkan","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.39797222,"longitude":17.34366667}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Bydalens gravkapell","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.41027778,"longitude":17.33083333}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Bünsowska tjärnen","description":"park i Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-b-nsowska-tjarnen-q10438810","geo":{"@type":"GeoCoordinates","latitude":62.391175,"longitude":17.29571111}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Dialog","description":"fontänskulptur i Stadshusparken, Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-dialog-q10470436","geo":{"@type":"GeoCoordinates","latitude":62.38986111,"longitude":17.30636111}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Sundsvallsbron","description":"bro i Sundsvall i Sverige","url":"https://stadsvandring.io/p/wd-sundsvall-sundsvallsbron-q10477352","geo":{"@type":"GeoCoordinates","latitude":62.389,"longitude":17.342}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"EFS-kyrkan, Sundsvall","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.38833333,"longitude":17.31277778}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Elimkyrkan","description":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-elimkyrkan-q10481528","geo":{"@type":"GeoCoordinates","latitude":62.38833333,"longitude":17.30583333}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Fagerdalsbron","description":"Fagerdalsbron är en bro, som utgör Sidsjövägens sträckning över Sidsjöbäcken mellan Södermalm och Sallyhill i Sundsvall.","geo":{"@type":"GeoCoordinates","latitude":62.3846,"longitude":17.2823}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Fotomuseet","description":"museum i Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-fotomuseet-q10498335","geo":{"@type":"GeoCoordinates","latitude":62.391555555556,"longitude":17.312111111111}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Granlo kyrka","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.39966667,"longitude":17.26159722}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Granloholms kyrka","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.41083333,"longitude":17.26944444}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Gustav Adolfs kyrka","description":"kyrkobyggnad i Sundsvall","geo":{"@type":"GeoCoordinates","latitude":62.39119444,"longitude":17.30011111}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Gustav II Adolf","description":"staty i Sundsvall","geo":{"@type":"GeoCoordinates","latitude":62.39079167,"longitude":17.30681944}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Hedbergska parken","description":"park i Stenstan, Sundsvall","geo":{"@type":"GeoCoordinates","latitude":62.39055556,"longitude":17.30361111}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Medelpads Fornminnesförening","description":"svensk historieförening","url":"https://stadsvandring.io/p/wd-sundsvall-medelpads-fornminnesforening-q10579116","geo":{"@type":"GeoCoordinates","latitude":62.39916667,"longitude":17.30333333}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Nacksta kyrka","description":"katolsk kyrka i Sundsvall","geo":{"@type":"GeoCoordinates","latitude":62.38921667,"longitude":17.271775}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Norrmalmsbron","description":"Norrmalmsbron är en balkbro i betong, som förbinder Skönsbergsvägen med Esplanaden i centrala Sundsvall.","geo":{"@type":"GeoCoordinates","latitude":62.39286111,"longitude":17.30930556}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan, Sundsvall","description":"kyrka i Sundsvall, Sverige","geo":{"@type":"GeoCoordinates","latitude":62.39027778,"longitude":17.30319444}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Puckelbron","description":"Puckelbron är en balkbro i betong, som utgör Torggatans sträckning över Selångersån i centrala Sundsvall.","geo":{"@type":"GeoCoordinates","latitude":62.39263889,"longitude":17.30694444}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Selångers kyrka","description":"kyrkobyggnad i Svenska kyrkan i Selånger, Sverige","geo":{"@type":"GeoCoordinates","latitude":62.40833,"longitude":17.20693}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Sidsjöbron","description":"bro i Sverige","geo":{"@type":"GeoCoordinates","latitude":62.3788,"longitude":17.2807}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Sköns kyrka","description":"kyrkobyggnad i Sundsvalls kommun","geo":{"@type":"GeoCoordinates","latitude":62.44795278,"longitude":17.35249722}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Sundsvall gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 143 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Sundsvall?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 143 sevärdheter i Sundsvall — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Bergsåkersbron?","acceptedAnswer":{"@type":"Answer","text":"Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo till Bergsåker i Sundsvall."}},{"@type":"Question","name":"Vad är Betlehemskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Sundsvalls kommun"}},{"@type":"Question","name":"Vad är Bosvedjans kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Sundsvalls kommun"}},{"@type":"Question","name":"Vad är Brokyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Sundsvalls kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Sundsvall","item":"https://stadsvandring.io/stadsvandring/sundsvall"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Sundsvall</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Sundsvall</span><span class="badge">143 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Sundsvall — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Sundsvall till fots: 143 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Sundsvall"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-sundsvall-bergsakersbron-q10428593"><b>1. Bergsåkersbron</b><span>Bro · Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo til…</span></a>
+<a class="tile" href="/p/wd-sundsvall-betlehemskyrkan-q10429015"><b>2. Betlehemskyrkan</b><span>Kyrka · kyrkobyggnad i Sundsvalls kommun</span></a>
+<a class="tile" href="/p/wd-sundsvall-bosvedjans-kyrka-q10433554"><b>3. Bosvedjans kyrka</b><span>Kyrka · kyrkobyggnad i Sundsvalls kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Sundsvall · 143</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Sundsvall. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 50</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-vagmarke-sundsvall-26023e"><b>Vägmärke</b></a> — En järnmilstolpe och en vägsten som visar mot Kungsvägen respektive Gustaf Adolfsvägen.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-sundsvall-24af90"><b>Fartygs-/båtlämning</b></a> — Rester av ett fartygsvrak som påträffades vid ombyggnaden av Sundsvalls hamn 1926.</li>
+<li><a href="/karta?plats=ksamsok-vardkase-sundsvall-c74a13"><b>Vårdkase</b></a> — En vårdkase vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sundsvall-d65d96"><b>Fornlämningsliknande lämning</b></a> — En fornlämningsliknande lämning i Sundsvall vars underlag är knapphändigt.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-sundsvall-024d6d"><b>Begravningsplats</b></a> — Här låg en gång stadens kyrka och kyrkogård, byggd omkring 1650 och riven 1764.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-sundsvall-0292af"><b>Vägmärke</b></a> — En gjuten milstolpe från 1811 rest under landshövding Nieroth.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-sundsvall-e2ea9c"><b>Fartygs-/båtlämning</b></a> — Ett litet kravellbyggt vrak nära strandlinjen, funnet vid marinarkeologisk inventering 1996.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-159dce"><b>Fyndplats</b></a> — En fyndplats på sju meters djup med ett stockankare och rester av plankor.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-eceb21"><b>Fyndplats</b></a> — En fyndplats i Sundsvall vars beskrivning ännu inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-skare-jaktvarn-sundsvall-7f8093"><b>Skåre/jaktvärn</b></a> — En möjlig skåre bestående av en stenvall med två större block i sydväst.</li>
+<li><a href="/p/ksamsok-stadslager-sundsvall-8deacc"><b>Stadslager</b></a> — Kulturlager efter Sundsvalls äldsta 1600-talsstad på Västermalm.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-sundsvall-8d90d3"><b>Bytomt/gårdstomt</b></a> — En by- eller gårdstomt i Sundsvall med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-sundsvall-ae1ed3"><b>Fartygs-/båtlämning</b></a> — Ett medeltida vrak daterat till omkring 1400–1420, äldre än Sundsvall självt.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-sundsvall-044399"><b>Bytomt/gårdstomt</b></a> — En by- eller gårdstomt i Sundsvall vars uppgifter inte är kvalitetssäkrade.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-sundsvall-12455f"><b>Röjningsröse</b></a> — Ett röjningsröse av större stenar.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sundsvall-3831f8"><b>Övrigt</b></a> — En övrig lämning i Sundsvall med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-sundsvall-f9b616"><b>Vägmärke</b></a> — En plats med två milstolpar och Medelpads spelmansförbunds jubileumssten från 1981.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-sundsvall-3fc68f"><b>Vägmärke</b></a> — En uppgiven milstolpe som inte kunde återfinnas på platsen.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-317e3b"><b>Fyndplats</b></a> — En fyndplats på drygt tio meters djup med ett stockankare och ett klinkspant.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-sundsvall-3fe5ba"><b>Vägmärke</b></a> — Ett vägmärke i Sundsvall vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-sundsvall-b66d92"><b>Källa med tradition</b></a> — En källa med tradition i Sundsvall, med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fortojningsanordning-sundsvall-0a658f"><b>Förtöjningsanordning</b></a> — Sju inåtlutande pålar tolkade som resterna av en dykdalb.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-sundsvall-231123"><b>Fartygs-/båtlämning</b></a> — En fyrkantspråm om ett tjugotal meter, funnen vid marinarkeologisk inventering 1996.</li>
+<li><a href="/karta?plats=ksamsok-fortojningsanordning-sundsvall-918390"><b>Förtöjningsanordning</b></a> — Fem pålar i ring, tolkade som en dykdalb och daterade till omkring 1849.</li>
+<li><a href="/karta?plats=ksamsok-hard-sundsvall-4b68eb"><b>Härd</b></a> — En rund, stenfylld härd med sju synliga härdstenar.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-c1c781"><b>Fyndplats</b></a> — En fyndplats i Sundsvall vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-sundsvall-150c36"><b>Källa med tradition</b></a> — En källa med tradition i Sundsvall, ännu utan kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sundsvall-4eaef4"><b>Övrigt</b></a> — Delar av en möjlig stenkista med urhuggna timmer, funna vid inventering 1996.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sundsvall-677497"><b>Husgrund, historisk tid</b></a> — En möjlig husgrund i form av en rektangulär, stenfylld konstruktion.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-f8db3d"><b>Fyndplats</b></a> — En fyndplats i Sundsvall med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-rosning-sundsvall-96427a"><b>Rösning</b></a> — En rösning av större stenar, omkring två meter i diameter.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sundsvall-d51b94"><b>Övrigt</b></a> — En halvmåneformad stenrad om tolv meter, delvis övertorvad.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-sundsvall-21114f"><b>Fartygs-/båtlämning</b></a> — Ett kravellbyggt vrak delvis inbäddat i strandens stenfyllnadsmassor.</li>
+<li><a href="/p/ksamsok-fyndplats-sundsvall-7fd205"><b>Fyndplats</b></a> — Stadshuset från 1865–68 med fynd av ett svärdfäste av valrosstand från folkvandringstid.</li>
+<li><a href="/p/ksamsok-hamnanlaggning-sundsvall-b261d1"><b>Hamnanläggning</b></a> — Rester av en lastbrygga med A-formade träställningar för timmerhantering.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-sundsvall-5c0367"><b>Hamnanläggning</b></a> — Fyra grova balkar på fyra meters djup, möjligen del av en kajkonstruktion.</li>
+<li><a href="/karta?plats=ksamsok-boplatsgrop-sundsvall-798d26"><b>Boplatsgrop</b></a> — En rektangulär boplatsgrop med en hög urplockad sten intill.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-sundsvall-6a7a93"><b>Hamnanläggning</b></a> — En strandskoning av eroderade pålar, daterad till 1730-talet och sekelskiftet 1900.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-sundsvall-103ed2"><b>Husgrund, historisk tid</b></a> — En möjlig källare inhuggen i en bergssida med murad natursten kring öppningen.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-sundsvall-d82679"><b>Ristning, medeltid/historisk tid</b></a> — En svårtydd ristning i ett trekantigt granitblock, med möjligt talvärde 68 eller 89.</li>
+<li><a href="/karta?plats=ksamsok-flottningsanlaggning-sundsvall-d6b588"><b>Flottningsanläggning</b></a> — Ett tiotal pålar på 4,5 meters djup, kopplade till en flytbom enligt en karta från 1886.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-bbaff2"><b>Fyndplats</b></a> — En fyndplats för ett sänke eller hänge av glimmerskiffer, funnet 1966.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-sundsvall-474a50"><b>Fornlämningsliknande lämning</b></a> — En oregelbunden, omplockad stensättningsliknande lämning av större stenar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-sundsvall-b685ca"><b>Fartygs-/båtlämning</b></a> — En vitmålad segeljolle som troligen sänktes avsiktligt vid mitten av 1900-talet.</li>
+<li><a href="/p/ksamsok-fyndplats-sundsvall-a0c6d3"><b>Fyndplats</b></a> — Fyndplats för ett numera försvunnet myrjärnsredskap från tidigt 1900-tal.</li>
+<li><a href="/p/ksamsok-ovrigt-sundsvall-284680"><b>Övrigt</b></a> — En minnessten i granit med Sundsvalls stadsvapen och namn på landshövdingar och borgmästare.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-sundsvall-4725be"><b>Övrigt</b></a> — En övrig lämning i Sundsvall vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-hog-sundsvall-7c73f6"><b>Hög</b></a> — En hög känd från 1964 som troligen utplånats vid bygget av en motorvägsavfart.</li>
+<li><a href="/karta?plats=ksamsok-gruvhal-sundsvall-5f2e85"><b>Gruvhål</b></a> — En skärpning i en sluttning, sannolikt bruten genom tillmakning.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-sundsvall-c2e5fc"><b>Fyndplats</b></a> — En fyndplats i Sundsvall med ännu ej kvalitetssäkrad beskrivning.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 36</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-blombergska-husen-sundsvall-581298"><b>BLOMBERGSKA HUSEN</b></a> — Två nyrenässanshus från 1893, ritade av stadsarkitekten Sven Malm för grosshandlare J.G. Blomberg. <span class="era">1893–1893</span></li>
+<li><a href="/p/ksamsok-gustaf-adolfskolan-sundsvall-672544"><b>GUSTAF ADOLFSKOLAN</b></a> — En påkostad skolbyggnad från 1892 i florentinsk renässansstil med rik naturstensdekor. <span class="era">1892–1892</span></li>
+<li><a href="/p/ksamsok-grahnska-huset-sundsvall-581080"><b>GRAHNSKA HUSET</b></a> — Ett apotekshus från 1889–1891 i nederländsk renässansstil, ritat av Gustaf Hermansson. <span class="era">1893–1893</span></li>
+<li><a href="/p/ksamsok-sundsvallsbankens-byggnad-sundsvall-581503"><b>SUNDSVALLSBANKENS BYGGNAD</b></a> — En monumental bankbyggnad från 1886 vid Stora Torget, restaurerad efter stadsbranden 1888. <span class="era">1886–1886</span></li>
+<li><a href="/p/ksamsok-tillbudet-sundsvall-581384"><b>TILLBUDET</b></a> — Ett putsat tvåvåningshus från stenstadens mindre exklusiva del, godkänt 1903. <span class="era">1898–1907</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-sundsvall-693939"><b>BOSTADSHUS</b></a> — Ett påfallande smalt bostadshus vid Tullgatan, uppfört efter 1899 års byggnadslov. <span class="era">1899–1910</span></li>
+<li><a href="/p/ksamsok-fd-centralhotellet-sundsvall-581400"><b>FD CENTRALHOTELLET</b></a> — Ett hotellhus rest 1891 av nykterhetsföreningen Hoppets Här efter stadsbranden 1888. <span class="era">1891–1891</span></li>
+<li><a href="/p/ksamsok-dahlman-nordlingska-huset-sundsvall-581166"><b>DAHLMAN-NORDLINGSKA HUSET</b></a> — Kvarterets största hus, ett nygotiskt praktbygge från 1891–1892 med muralmålningar av Axel Söderberg. <span class="era">1891–1892</span></li>
+<li><a href="/p/ksamsok-forsakringsbolaget-sveas-hus-sundsvall-581330"><b>FÖRSÄKRINGSBOLAGET SVEAS HUS</b></a> — Ett nyrenässanshus från 1892, byggt på platsen för ett trähotell som brann 1888. <span class="era">1892–1892</span></li>
+<li><a href="/karta?plats=ksamsok-perrongtak-sundsvall-633682"><b>Perrongtak</b></a> — Ett perrongtak i en ovanlig stationsmiljö i nationalromantik och jugend från 1925.</li>
+<li><a href="/p/ksamsok-gamla-riksbankshuset-sundsvall-694611"><b>GAMLA RIKSBANKSHUSET</b></a> — Riksbankens tidigare Sundsvallshus från 1907 i jugendstil, senare stadsmuseum. <span class="era">1907–1907</span></li>
+<li><a href="/karta?plats=ksamsok-elfstromska-huset-sundsvall-672957"><b>ELFSTRÖMSKA HUSET</b></a> — Ett nationalromantiskt fyravåningshus från 1911–1912 med dekorationsmålningar av Yngve Lundström. <span class="era">1911–1912</span></li>
+<li><a href="/p/ksamsok-hantverksforeningens-hus-sundsvall-581599"><b>HANTVERKSFÖRENINGENS HUS</b></a> — Ett nyrenässanshus från 1892 ritat av Sven Malm, med byster i fasadens nischer. <span class="era">1892–1892</span></li>
+<li><a href="/p/ksamsok-kopmannens-hus-sundsvall-581269"><b>KÖPMÄNNENS HUS</b></a> — Ett tidstypiskt sten- och putshus från omkring 1890, ritat av norrmannen Andreas Bugge. <span class="era">1885–1894</span></li>
+<li><a href="/karta?plats=ksamsok-rahmska-huset-sundsvall-049974"><b>RAHMSKA HUSET</b></a> — Ett hus i florentinsk renässansstil med släta tegelfasader och rundbågiga fönster. <span class="era">1891–1891</span></li>
+<li><a href="/p/ksamsok-hovratten-for-nedre-norrland-sundsvall-581542"><b>HOVRÄTTEN FÖR NEDRE NORRLAND</b></a> — En hovrättsbyggnad från 1947–1948, ritad av Backström och Reinius efter en arkitekttävling. <span class="era">1947–1948</span></li>
+<li><a href="/p/ksamsok-sundsvalls-tingsratt-sundsvall-581255"><b>SUNDSVALLS TINGSRÄTT</b></a> — En diskret tingsrätt från 1974 med tegelfasader, inbyggd i en byggnad med flera verksamheter. <span class="era">1974–1974</span></li>
+<li><a href="/p/ksamsok-tryckeribolagets-hus-sundsvall-581532"><b>TRYCKERIBOLAGETS HUS</b></a> — Ett nyrenässanshus från 1891 för Sundsvalls boktryckeribolag, med byster av Gutenberg och kungar. <span class="era">1891–1891</span></li>
+<li><a href="/karta?plats=ksamsok-lokstall-sundsvall-357718"><b>Lokstall</b></a> — Ett rundlokstall från 1925 med åtta stallplatser, i samma stil som stationshuset. <span class="era">1925–1925</span></li>
+<li><a href="/p/ksamsok-hirschska-huset-sundsvall-581313"><b>HIRSCHSKA HUSET</b></a> — Ett fyravåningshus vid Stora torget, uppfört 1890–1891 för Isaak Hirsch efter branden 1888. <span class="era">1890–1891</span></li>
+<li><a href="/p/ksamsok-hedbergska-huset-sundsvall-581572"><b>HEDBERGSKA HUSET</b></a> — Ett välbevarat patricierhus från 1890 i tysk-holländsk renässansstil. <span class="era">1890–1899</span></li>
+<li><a href="/p/ksamsok-sundsvalls-teater-sundsvall-581506"><b>SUNDSVALLS TEATER</b></a> — En nyrenässansteater från 1893–1894, ritad av J.E. Stenberg och dekorerad av Carl Grabow. <span class="era">1893–1894</span></li>
+<li><a href="/p/ksamsok-sundsvalls-radhus-sundsvall-581142"><b>Sundsvalls rådhus</b></a> — Sundsvalls rådhus från 1865–1868, om- och tillbyggt efter stadsbranden 1888. <span class="era">1865–1868</span></li>
+<li><a href="/p/ksamsok-malmstromska-huset-sundsvall-581321"><b>MALMSTRÖMSKA HUSET</b></a> — Ett putsat hus från 1897 för handlanden C.O. Malmström, med yrkesemblem på fasaden. <span class="era">1897–1897</span></li>
+<li><a href="/p/ksamsok-thuressonska-huset-sundsvall-028584"><b>Thuressonska huset</b></a> — Ett privat bostadshus från 1890 i den nya Stenstaden, byggt för flottningsombudsmannen Thure Thuresson. <span class="era">1890–1890</span></li>
+<li><a href="/karta?plats=ksamsok-vaktmastarbostad-sundsvall-693937"><b>VAKTMÄSTARBOSTAD</b></a> — En vaktmästarbostad från 1947–1948 med rött tegel och tvärställda kopparklädda skorstenar. <span class="era">1947–1948</span></li>
+<li><a href="/p/ksamsok-medelpads-ostra-domsagas-tingshus-sundsvall-696939"><b>MEDELPADS ÖSTRA DOMSAGAS TINGSHUS</b></a> — Ett tingshus från 1925 med en rund tingssal, organiserat kring en tydlig mittaxel. <span class="era">1925–1925</span></li>
+<li><a href="/p/ksamsok-bernska-huset-sundsvall-696942"><b>BERNSKA HUSET</b></a> — Ett påkostat hus från 1894 i fransk nyrenässans, ritat av Gustaf Hermansson. <span class="era">1894–1894</span></li>
+<li><a href="/p/ksamsok-medelpads-vastra-domsagas-tingshus-sundsvall-704384"><b>MEDELPADS VÄSTRA DOMSAGAS TINGSHUS</b></a> — Ett tingshus från 1912–1913 i rött tegel, indraget bakom en mur med granitkrönta pelare. <span class="era">1912–1913</span></li>
+<li><a href="/p/ksamsok-posthuset-sundsvall-581299"><b>POSTHUSET</b></a> — Ett posthus från 1955 med marmorklädda och tegelklädda volymer kring en gammal posthall. <span class="era">1955–1955</span></li>
+<li><a href="/p/ksamsok-hotell-knaust-sundsvall-581412"><b>HOTELL KNAUST</b></a> — Ett nyrenässanshotell från 1891 med en berömd solfjäderformad marmortrappa. <span class="era">1891–1891</span></li>
+<li><a href="/p/ksamsok-sundsvalls-stationshus-sundsvall-357704"><b>Sundsvalls stationshus</b></a> — Sundsvalls centralstation från 1925, ritad av SJ:s chefsarkitekt Folke Zettervall. <span class="era">1925–1925</span></li>
+<li><a href="/p/ksamsok-wikstromska-huset-sundsvall-581514"><b>WIKSTRÖMSKA HUSET</b></a> — Ett stenhus från 1892 med spansk-moriska motiv, ritat av A.E. Melander. <span class="era">1892–1892</span></li>
+<li><a href="/p/ksamsok-casselska-huset-sundsvall-533206"><b>CASSELSKA HUSET</b></a> — Ett hus från 1894–1895 av Sven Malm, ovanligt för sin genomgående spritputsade fasad. <span class="era">1894–1895</span></li>
+<li><a href="/p/ksamsok-biografteatern-svea-sundsvall-581082"><b>BIOGRAFTEATERN SVEA</b></a> — En biograf från 1912 ritad av Ragnar Östberg, med takmålningar av Yngve Lundström. <span class="era">1912–1912</span></li>
+<li><a href="/karta?plats=ksamsok-gymnastikbyggnaden-sundsvall-673014"><b>GYMNASTIKBYGGNADEN</b></a> — En gymnastikbyggnad från 1921 besläktad med huvudbyggnaden i sitt utförande. <span class="era">1921–1921</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 19</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sundsvall-betlehemskyrkan-q10429015"><b>Betlehemskyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-bosvedjans-kyrka-q10433554"><b>Bosvedjans kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-brokyrkan-q10435999"><b>Brokyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-bydalens-gravkapell-q10438146"><b>Bydalens gravkapell</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-efs-kyrkan-sundsvall-q10478809"><b>EFS-kyrkan, Sundsvall</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-elimkyrkan-q10481528"><b>Elimkyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-granlo-kyrka-q10508126"><b>Granlo kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-granloholms-kyrka-q10508128"><b>Granloholms kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-gustav-adolfs-kyrka-q10511120"><b>Gustav Adolfs kyrka</b></a> — kyrkobyggnad i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-nacksta-kyrka-q10593942"><b>Nacksta kyrka</b></a> — katolsk kyrka i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-pingstkyrkan-sundsvall-q10631912"><b>Pingstkyrkan, Sundsvall</b></a> — kyrka i Sundsvall, Sverige</li>
+<li><a href="/karta?plats=wd-sundsvall-selangers-kyrka-q10665450"><b>Selångers kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Selånger, Sverige</li>
+<li><a href="/karta?plats=wd-sundsvall-skons-kyrka-q10671270"><b>Sköns kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-skonsmons-gravkapell-q10671278"><b>Skönsmons gravkapell</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-skonsmons-kyrka-q10671279"><b>Skönsmons kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-selanger-86-1-q29898644"><b>Selånger 86:1</b></a> — kyrka/kapell i Medelpad</li>
+<li><a href="/p/ksamsok-birgittakyrkan-sundsvall-581259"><b>BIRGITTAKYRKAN</b></a> — En kyrka från 1970–1972 ritad av arkitekten och formgivaren Carl-Axel Acking. <span class="era">1970–1972</span></li>
+<li><a href="/p/ksamsok-metodistkyrkan-sundsvall-694189"><b>METODISTKYRKAN</b></a> — En metodistkyrka från 1892 ritad av byggmästaren C.J. Henriksson, restaurerad 1979. <span class="era">1892–1892</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-sundsvall-da2df0"><b>Kyrka/kapell</b></a> — Platsen för Sundsvalls äldsta kyrka och kyrkogård, i bruk fram till 1640-talet.</li>
+</ul>
+<h3 class="city-h3">Bro · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sundsvall-bergsakersbron-q10428593"><b>Bergsåkersbron</b></a> — Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo till Bergsåker i Sundsvall.</li>
+<li><a href="/p/wd-sundsvall-sundsvallsbron-q10477352"><b>Sundsvallsbron</b></a> — bro i Sundsvall i Sverige</li>
+<li><a href="/karta?plats=wd-sundsvall-fagerdalsbron-q10493541"><b>Fagerdalsbron</b></a> — Fagerdalsbron är en bro, som utgör Sidsjövägens sträckning över Sidsjöbäcken mellan Södermalm och Sallyhill i Sundsvall.</li>
+<li><a href="/karta?plats=wd-sundsvall-norrmalmsbron-q10602911"><b>Norrmalmsbron</b></a> — Norrmalmsbron är en balkbro i betong, som förbinder Skönsbergsvägen med Esplanaden i centrala Sundsvall.</li>
+<li><a href="/karta?plats=wd-sundsvall-puckelbron-q10646427"><b>Puckelbron</b></a> — Puckelbron är en balkbro i betong, som utgör Torggatans sträckning över Selångersån i centrala Sundsvall.</li>
+<li><a href="/karta?plats=wd-sundsvall-sidsjobron-q10667404"><b>Sidsjöbron</b></a> — bro i Sverige</li>
+<li><a href="/karta?plats=wd-sundsvall-sporthallsbron-q10676528"><b>Sporthallsbron</b></a> — Sporthallsbron är en gång- och cykelbro från Västra Allén i Västermalm till Sundsvalls sporthall och Badhusparken i Norrmalm på andra sidan…</li>
+<li><a href="/karta?plats=wd-sundsvall-storbron-q10681216"><b>Storbron</b></a> — bro i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-thulebron-q10697337"><b>Thulebron</b></a> — Thulebron är en gång- och cykelbro i Sundsvall som utgör Thulegatans förlängning över Selångersån till Norrmalmsparken.</li>
+<li><a href="/karta?plats=wd-sundsvall-tivolibron-q10698858"><b>Tivolibron</b></a> — Tivolibron är en balkrambro i betong i centrala Sundsvall mellan Finnkajen i Stenstan och Skepparplatsen i Norrmalm.</li>
+<li><a href="/karta?plats=wd-sundsvall-widesbron-q10719986"><b>Widesbron</b></a> — Widesbron eller Videsbron är en balkbro i betong, som utgör Västra vägens sträckning över Selångersån mellan Åkroken och Västhagen i Sundsv…</li>
+</ul>
+<h3 class="city-h3">Torn · 11</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-sundsvall-tjuvholmens-fyr-q41561176"><b>Tjuvholmens fyr</b></a> — fyr på Tjuvholmen i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-kubikenborg-nedre-q110609187"><b>Kubikenborg nedre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-kubikenborg-ovre-q110609188"><b>Kubikenborg övre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-kokaren-nedre-q110609431"><b>Kokaren nedre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-kokaren-ovre-q110609432"><b>Kokaren övre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-kaptensudden-nedre-q111191112"><b>Kaptensudden nedre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-kaptensudden-ovre-q111191113"><b>Kaptensudden övre</b></a> — en f.d. ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-vi-telekabel-nedre-q111248711"><b>Vi Telekabel nedre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-vi-telekabel-ovre-q111248712"><b>Vi Telekabel övre</b></a> — en ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=wd-sundsvall-nas-telekabel-ovre-q111248765"><b>Näs Telekabel övre</b></a> — en f.d. ensfyr i Sundsvalls kommun</li>
+<li><a href="/karta?plats=ksamsok-expeditonshus-med-vattentorn-sundsvall-632960"><b>Expeditonshus med vattentorn</b></a> — Ett expeditionshus med vattentorn i Sundsvall från 1925. <span class="era">1925–1925</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 9</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sundsvall-dialog-q10470436"><b>Dialog</b></a> — fontänskulptur i Stadshusparken, Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-gustav-ii-adolf-q10511147"><b>Gustav II Adolf</b></a> — staty i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-vagval-q10717217"><b>Vägval</b></a> — konstverk i Hedbergska parken i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-all-var-borjan-q123110494"><b>All vår början</b></a> — skuptur i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-minnesmarket-over-johan-henrik-fieandt-q134979102"><b>Minnesmärket över Johan Henrik Fieandt</b></a> — Minnesmärket över Johan Henrik Fieandt</li>
+<li><a href="/p/ksamsok-minnesmarke-sundsvall-fa79d9"><b>Minnesmärke</b></a> — En samling minnesmärken med två milstolpar och Medelpads spelmansförbunds jubileumssten från 1981.</li>
+<li><a href="/p/ksamsok-minnesmarke-sundsvall-30bff1"><b>Minnesmärke</b></a> — Två stenar rörande Svenska Turistföreningens Sundsvallskrets, stiftad 1893.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-sundsvall-7ac867"><b>Minnesmärke</b></a> — Ett minnesmärke i Sundsvall vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-sundsvall-f7baee"><b>Minnesmärke</b></a> — En minnessten rest 1947 till minne av skarpskyttelägret 1879 och Sveriges första stora strejk.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sundsvall-b-nsowska-tjarnen-q10438810"><b>Bünsowska tjärnen</b></a> — park i Sundsvall</li>
+<li><a href="/karta?plats=wd-sundsvall-hedbergska-parken-q10519080"><b>Hedbergska parken</b></a> — park i Stenstan, Sundsvall</li>
+<li><a href="/p/wd-sundsvall-vangavan-q10717388"><b>Vängåvan</b></a> — park i Sundsvall</li>
+</ul>
+<h3 class="city-h3">museum · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sundsvall-fotomuseet-q10498335"><b>Fotomuseet</b></a> — museum i Sundsvall</li>
+<li><a href="/p/wd-sundsvall-medelpads-fornminnesforening-q10579116"><b>Medelpads Fornminnesförening</b></a> — svensk historieförening</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-sundsvall-stora-torget-q10681179"><b>Stora torget</b></a> — torg i Sundsvall, Medelpad</li>
+<li><a href="/karta?plats=wd-sundsvall-olof-palmes-torg-q122902908"><b>Olof Palmes torg</b></a> — torg i Sundsvall</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 143 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/sundsvall/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/sundsvall/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Sundsvall gratis?</summary><p>Ja. Karta, alla 143 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Sundsvall?</summary><p>Vandringen samlar 143 sevärdheter i Sundsvall — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Bergsåkersbron?</summary><p>Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo till Bergsåker i Sundsvall.</p></details>
+<details class="faq"><summary>Vad är Betlehemskyrkan?</summary><p>kyrkobyggnad i Sundsvalls kommun</p></details>
+<details class="faq"><summary>Vad är Bosvedjans kyrka?</summary><p>kyrkobyggnad i Sundsvalls kommun</p></details>
+<details class="faq"><summary>Vad är Brokyrkan?</summary><p>kyrkobyggnad i Sundsvalls kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

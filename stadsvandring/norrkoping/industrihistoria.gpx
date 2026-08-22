@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Norrköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.6275" lon="16.212222222222"><name>Kardonbron</name><desc>bro över Motala ström</desc></wpt>
+  <wpt lat="58.596944444444" lon="16.211666666667"><name>Johannisborgsbron</name><desc>planerat broprojekt i Norrköping</desc></wpt>
+  <wpt lat="58.594166666667" lon="16.193888888889"><name>Hamnbron</name><desc>bro i Norrköping</desc></wpt>
+  <wpt lat="58.589768" lon="16.178321"><name>Bergsbron, Norrköping</name><desc>En av Norrköpings äldsta broövergångar över Strömmen, vars nuvarande monumentala betongbro stod färdig 1901.</desc></wpt>
+  <wpt lat="58.58973034612917" lon="16.178316712472927"><name>Bro</name><desc>En valvbro i stenklädd betong från 1902, teknikhistoriskt intressant.</desc></wpt>
+  <wpt lat="58.58694444" lon="16.155"><name>Femöresbron</name><desc>gångbro</desc></wpt>
+  <wpt lat="58.5875" lon="16.151111111111"><name>Riksbron, Norrköping</name><desc>fordonsbro i Norrköping</desc></wpt>
+  <rte><name>Industrihistoria i Norrköping</name>
+    <rtept lat="58.6275" lon="16.212222222222"><name>Kardonbron</name></rtept>
+    <rtept lat="58.596944444444" lon="16.211666666667"><name>Johannisborgsbron</name></rtept>
+    <rtept lat="58.594166666667" lon="16.193888888889"><name>Hamnbron</name></rtept>
+    <rtept lat="58.589768" lon="16.178321"><name>Bergsbron, Norrköping</name></rtept>
+    <rtept lat="58.58973034612917" lon="16.178316712472927"><name>Bro</name></rtept>
+    <rtept lat="58.58694444" lon="16.155"><name>Femöresbron</name></rtept>
+    <rtept lat="58.5875" lon="16.151111111111"><name>Riksbron, Norrköping</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Trelleborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.41388889" lon="13.16083333"><name>Västra Vemmerlövs kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.41333333" lon="13.13527778"><name>Hammarlövs kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.39861111" lon="13.10777778"><name>Västra Tommarps kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.38805556" lon="13.08305556"><name>Maglarps kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.382222222222" lon="13.069722222222"><name>Maglarps nya kyrka</name><desc>före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007</desc></wpt>
+  <wpt lat="55.405" lon="13.06527778"><name>Skegrie kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.375055555556" lon="13.142833333333"><name>Kapell Västra kyrkogården i Trelleborg</name><desc>Trelleborg</desc></wpt>
+  <wpt lat="55.376048666109824" lon="13.147819702656115"><name>Fornborg</name><desc>En fornborg vars beskrivning finns i inventeringsboken.</desc></wpt>
+  <wpt lat="55.376167124172206" lon="13.150655815594039"><name>SANKT NIKOLAI KYRKA</name><desc>Sankt Nikolai kyrka, en medeltida tegelkyrka som byggts om i flera omgångar.</desc></wpt>
+  <wpt lat="55.37611111" lon="13.15111111"><name>Sankt Nicolai kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.37443016429967" lon="13.150245104951022"><name>Kloster</name><desc>Ruinen efter franciskanerklostrets kyrka, grundat 1267 och nedrivet 1616.</desc></wpt>
+  <wpt lat="55.37345861998792" lon="13.15789931534583"><name>TRELLEBORGS GAMLA RÅDHUS</name><desc>Trelleborgs gamla rådhus från 1867 i rött tegel med urkrönt fronton.</desc></wpt>
+  <wpt lat="55.37174541000134" lon="13.159208047997895"><name>Trelleborgs järnvägsstation</name><desc>Trelleborgs station från 1898, i dag kontor med ett tågmuseum i banhallen.</desc></wpt>
+  <wpt lat="55.38356432628894" lon="13.15677742167649"><name>Kapell</name><desc>Norra kapellet i Trelleborg, ett kapellkrematorium invigt 1937.</desc></wpt>
+  <wpt lat="55.385" lon="13.18611111"><name>Kyrkoköpinge kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.37916667" lon="13.21833333"><name>Dalköpinge kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.38277778" lon="13.24361111"><name>Gislövs kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <wpt lat="55.358774" lon="13.226528"><name>Dalköpinge 3:1</name><desc>kyrka/kapell i Skåne</desc></wpt>
+  <wpt lat="55.40861111" lon="13.19722222"><name>Gylle kyrka</name><desc>kyrkobyggnad i Trelleborgs kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Trelleborg</name>
+    <rtept lat="55.41388889" lon="13.16083333"><name>Västra Vemmerlövs kyrka</name></rtept>
+    <rtept lat="55.41333333" lon="13.13527778"><name>Hammarlövs kyrka</name></rtept>
+    <rtept lat="55.39861111" lon="13.10777778"><name>Västra Tommarps kyrka</name></rtept>
+    <rtept lat="55.38805556" lon="13.08305556"><name>Maglarps kyrka</name></rtept>
+    <rtept lat="55.382222222222" lon="13.069722222222"><name>Maglarps nya kyrka</name></rtept>
+    <rtept lat="55.405" lon="13.06527778"><name>Skegrie kyrka</name></rtept>
+    <rtept lat="55.375055555556" lon="13.142833333333"><name>Kapell Västra kyrkogården i Trelleborg</name></rtept>
+    <rtept lat="55.376048666109824" lon="13.147819702656115"><name>Fornborg</name></rtept>
+    <rtept lat="55.376167124172206" lon="13.150655815594039"><name>SANKT NIKOLAI KYRKA</name></rtept>
+    <rtept lat="55.37611111" lon="13.15111111"><name>Sankt Nicolai kyrka</name></rtept>
+    <rtept lat="55.37443016429967" lon="13.150245104951022"><name>Kloster</name></rtept>
+    <rtept lat="55.37345861998792" lon="13.15789931534583"><name>TRELLEBORGS GAMLA RÅDHUS</name></rtept>
+    <rtept lat="55.37174541000134" lon="13.159208047997895"><name>Trelleborgs järnvägsstation</name></rtept>
+    <rtept lat="55.38356432628894" lon="13.15677742167649"><name>Kapell</name></rtept>
+    <rtept lat="55.385" lon="13.18611111"><name>Kyrkoköpinge kyrka</name></rtept>
+    <rtept lat="55.37916667" lon="13.21833333"><name>Dalköpinge kyrka</name></rtept>
+    <rtept lat="55.38277778" lon="13.24361111"><name>Gislövs kyrka</name></rtept>
+    <rtept lat="55.358774" lon="13.226528"><name>Dalköpinge 3:1</name></rtept>
+    <rtept lat="55.40861111" lon="13.19722222"><name>Gylle kyrka</name></rtept>
+  </rte>
+</gpx>

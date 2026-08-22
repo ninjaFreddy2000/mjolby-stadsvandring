@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Motala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.549630838121686" lon="15.050108171354383"><name>Minnesmärke</name><desc>En minnessten över metallarbetarförbundets avdelning 37, rest 1946.</desc></wpt>
+  <wpt lat="58.5455" lon="15.0428"><name>Sveriges Rundradiomuseum</name><desc>Här berättas historien om hur Motala blev rösten som nådde hela Sverige.</desc></wpt>
+  <wpt lat="58.53812149433669" lon="15.053027262871991"><name>Minnesmärke</name><desc>Baltzar von Platens gravplats med järnräcke och rest minnessten.</desc></wpt>
+  <wpt lat="58.5333" lon="15.0373"><name>Motala Motormuseum</name><desc>Blanka bilar, motorcyklar och tidsbilder från svenskt 1900-tal — vid hamnen.</desc></wpt>
+  <wpt lat="58.54544926033497" lon="15.065465385648427"><name>Minnesmärke</name><desc>En minnessten över skeppsbyggaren Otto Edvard Carlsund.</desc></wpt>
+  <wpt lat="58.543166276593894" lon="15.0792782403698"><name>Minnesmärke</name><desc>En minnessten på ett löst stenblock med årtalet 1896.</desc></wpt>
+  <rte><name>Konstrundan i Motala</name>
+    <rtept lat="58.549630838121686" lon="15.050108171354383"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.5455" lon="15.0428"><name>Sveriges Rundradiomuseum</name></rtept>
+    <rtept lat="58.53812149433669" lon="15.053027262871991"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.5333" lon="15.0373"><name>Motala Motormuseum</name></rtept>
+    <rtept lat="58.54544926033497" lon="15.065465385648427"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.543166276593894" lon="15.0792782403698"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

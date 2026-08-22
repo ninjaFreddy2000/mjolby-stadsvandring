@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Jönköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.790277777778" lon="14.265"><name>Kavlabron</name><desc>namn på broar över Huskvarnaån i Huskvarna</desc></wpt>
+  <wpt lat="57.788888888889" lon="14.268055555556"><name>Esplanadbron</name><desc>vägbro i Huskvarna</desc></wpt>
+  <wpt lat="57.782777777778" lon="14.168611111111"><name>Vindbron</name><desc>bro i Jönköping</desc></wpt>
+  <wpt lat="57.781666666667" lon="14.168611111111"><name>Slottsbron</name><desc>bro över Hamnkanalen i Jönköping</desc></wpt>
+  <wpt lat="57.77861111" lon="14.1675"><name>Munksjöbron</name><desc>bro över Munksjön i Sverige</desc></wpt>
+  <wpt lat="57.7675" lon="14.153333333333"><name>Jordbron</name><desc>bro i Jönköping</desc></wpt>
+  <rte><name>Industrihistoria i Jönköping</name>
+    <rtept lat="57.790277777778" lon="14.265"><name>Kavlabron</name></rtept>
+    <rtept lat="57.788888888889" lon="14.268055555556"><name>Esplanadbron</name></rtept>
+    <rtept lat="57.782777777778" lon="14.168611111111"><name>Vindbron</name></rtept>
+    <rtept lat="57.781666666667" lon="14.168611111111"><name>Slottsbron</name></rtept>
+    <rtept lat="57.77861111" lon="14.1675"><name>Munksjöbron</name></rtept>
+    <rtept lat="57.7675" lon="14.153333333333"><name>Jordbron</name></rtept>
+  </rte>
+</gpx>

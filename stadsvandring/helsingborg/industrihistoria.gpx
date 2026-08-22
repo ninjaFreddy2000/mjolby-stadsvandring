@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Helsingborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.0465166667" lon="12.6872166667"><name>Kvickbron</name><desc>bro i Helsingborg</desc></wpt>
+  <wpt lat="56.040732" lon="12.698515"><name>Gamla järnvägen</name><desc>Järnvägen över gamla Gasverksgatan mot stationen.</desc></wpt>
+  <wpt lat="56.036588" lon="12.701456"><name>Gamla Järnvägen 2</name><desc>Järnvägen över gamla Furutorpsgatan mot stationen.</desc></wpt>
+  <rte><name>Industrihistoria i Helsingborg</name>
+    <rtept lat="56.0465166667" lon="12.6872166667"><name>Kvickbron</name></rtept>
+    <rtept lat="56.040732" lon="12.698515"><name>Gamla järnvägen</name></rtept>
+    <rtept lat="56.036588" lon="12.701456"><name>Gamla Järnvägen 2</name></rtept>
+  </rte>
+</gpx>

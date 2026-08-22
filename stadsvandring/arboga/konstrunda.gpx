@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Arboga</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.396113180408435" lon="15.848462169820765"><name>Minnesmärke</name><desc>Granitobelisk rest 1890 till minne av Sten Stures val 1471.</desc></wpt>
+  <wpt lat="59.39428558504965" lon="15.841215300779806"><name>Minnesmärke</name><desc>Bronsstaty av frihetshjälten Engelbrekt, rest 1935.</desc></wpt>
+  <wpt lat="59.38791315535342" lon="15.84141293416375"><name>Minnesmärke</name><desc>En minnessten med inskriften H. Svens Capell intill en husgrund i Arboga.</desc></wpt>
+  <rte><name>Konstrundan i Arboga</name>
+    <rtept lat="59.396113180408435" lon="15.848462169820765"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.39428558504965" lon="15.841215300779806"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.38791315535342" lon="15.84141293416375"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

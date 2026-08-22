@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Falun</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="60.62277778" lon="15.60416667"><name>Annagården</name><desc>kyrkobyggnad i Falu kommun</desc></wpt>
+  <wpt lat="60.614444444444" lon="15.629722222222"><name>Stora Kopparbergs kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Falun, Sverige</desc></wpt>
+  <wpt lat="60.611514" lon="15.6335047"><name>Den Gode Herdens kyrka</name><desc>kyrka i Falu kommun</desc></wpt>
+  <wpt lat="60.607777777778" lon="15.631111111111"><name>Kristine kyrka</name><desc>kyrka i Falun</desc></wpt>
+  <wpt lat="60.6145" lon="15.6573"><name>Lugnetkyrkan</name><desc>frikyrka i Falun</desc></wpt>
+  <wpt lat="60.58972222" lon="15.63916667"><name>Sankt Örjans kapell</name><desc>kyrkobyggnad i Falu kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Falun</name>
+    <rtept lat="60.62277778" lon="15.60416667"><name>Annagården</name></rtept>
+    <rtept lat="60.614444444444" lon="15.629722222222"><name>Stora Kopparbergs kyrka</name></rtept>
+    <rtept lat="60.611514" lon="15.6335047"><name>Den Gode Herdens kyrka</name></rtept>
+    <rtept lat="60.607777777778" lon="15.631111111111"><name>Kristine kyrka</name></rtept>
+    <rtept lat="60.6145" lon="15.6573"><name>Lugnetkyrkan</name></rtept>
+    <rtept lat="60.58972222" lon="15.63916667"><name>Sankt Örjans kapell</name></rtept>
+  </rte>
+</gpx>

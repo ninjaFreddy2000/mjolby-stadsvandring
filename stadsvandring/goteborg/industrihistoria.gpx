@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Göteborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.72902778" lon="11.99366667"><name>Marieholmsbron</name><desc>bro för järnvägs-, gång- och cykeltrafik i Göteborg</desc></wpt>
+  <wpt lat="57.72578" lon="12.0015"><name>Walckesbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.723592" lon="12.004881"><name>Partihallsförbindelsen</name><desc>bro i Göteborgs kommun</desc></wpt>
+  <wpt lat="57.72746277" lon="12.00777626"><name>Gamlestadsbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.716696" lon="11.994731"><name>Godstågsviadukten</name><desc>järnvägsbro i Göteborg</desc></wpt>
+  <wpt lat="57.71005" lon="11.99138333"><name>J. Sigfrid Edströms bro</name><desc>gångbro i Göteborg</desc></wpt>
+  <wpt lat="57.7079" lon="11.98981667"><name>Dämmebron</name><desc>Dämmebron är en 20 meter lång gång- och cykelbro över Gullbergsån i Göteborg.</desc></wpt>
+  <wpt lat="57.70917" lon="11.99667"><name>Willinsbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.700358" lon="11.991926"><name>Valhallabron</name><desc>bro i centrala Göteborg</desc></wpt>
+  <wpt lat="57.69742" lon="11.992661"><name>Underåsbron</name><desc>bro över Mölndalsån i Göteborg</desc></wpt>
+  <wpt lat="57.70361111" lon="11.97035"><name>Kungsportsbron</name><desc>bro över vallgraven i Göteborg</desc></wpt>
+  <wpt lat="57.701877" lon="11.965742"><name>Vasabron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.700903" lon="11.964025"><name>Viktoriabron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.70192778" lon="11.9548"><name>Pusterviksbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.702977777778" lon="11.953063888889"><name>Yttre Järnvågsbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.705929" lon="11.962888"><name>Kämpebron</name><desc>bro i centrala Göteborg</desc></wpt>
+  <wpt lat="57.706992" lon="11.968912"><name>Brunnsparksbron</name><desc>Brunnsparksbron är en gångbro över Stora Hamnkanalen, placerad mellan Fontän- och Fredsbron, i Brunnsparken i Göteborg.</desc></wpt>
+  <wpt lat="57.707126" lon="11.969717"><name>Fredsbron</name><desc>För bron i Tbilisi, se Fredsbron, Tbilisi Fredsbron är en gångbro över Stora Hamnkanalen, placerad mellan Brunnsparksbron och Palacehusets personalbro, i Brunnsparken i Göteborg.</desc></wpt>
+  <wpt lat="57.707436" lon="11.971737"><name>Kvarnbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.70745833" lon="11.97395"><name>Drottningtorgsbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.70729444" lon="11.97435833"><name>Slussbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.70496" lon="11.9264"><name>Sannegårdsbron</name><desc>bro i Göteborg</desc></wpt>
+  <wpt lat="57.6985" lon="11.90903"><name>Dockbron</name><desc>bro i Göteborg</desc></wpt>
+  <rte><name>Industrihistoria i Göteborg</name>
+    <rtept lat="57.72902778" lon="11.99366667"><name>Marieholmsbron</name></rtept>
+    <rtept lat="57.72578" lon="12.0015"><name>Walckesbron</name></rtept>
+    <rtept lat="57.723592" lon="12.004881"><name>Partihallsförbindelsen</name></rtept>
+    <rtept lat="57.72746277" lon="12.00777626"><name>Gamlestadsbron</name></rtept>
+    <rtept lat="57.716696" lon="11.994731"><name>Godstågsviadukten</name></rtept>
+    <rtept lat="57.71005" lon="11.99138333"><name>J. Sigfrid Edströms bro</name></rtept>
+    <rtept lat="57.7079" lon="11.98981667"><name>Dämmebron</name></rtept>
+    <rtept lat="57.70917" lon="11.99667"><name>Willinsbron</name></rtept>
+    <rtept lat="57.700358" lon="11.991926"><name>Valhallabron</name></rtept>
+    <rtept lat="57.69742" lon="11.992661"><name>Underåsbron</name></rtept>
+    <rtept lat="57.70361111" lon="11.97035"><name>Kungsportsbron</name></rtept>
+    <rtept lat="57.701877" lon="11.965742"><name>Vasabron</name></rtept>
+    <rtept lat="57.700903" lon="11.964025"><name>Viktoriabron</name></rtept>
+    <rtept lat="57.70192778" lon="11.9548"><name>Pusterviksbron</name></rtept>
+    <rtept lat="57.702977777778" lon="11.953063888889"><name>Yttre Järnvågsbron</name></rtept>
+    <rtept lat="57.705929" lon="11.962888"><name>Kämpebron</name></rtept>
+    <rtept lat="57.706992" lon="11.968912"><name>Brunnsparksbron</name></rtept>
+    <rtept lat="57.707126" lon="11.969717"><name>Fredsbron</name></rtept>
+    <rtept lat="57.707436" lon="11.971737"><name>Kvarnbron</name></rtept>
+    <rtept lat="57.70745833" lon="11.97395"><name>Drottningtorgsbron</name></rtept>
+    <rtept lat="57.70729444" lon="11.97435833"><name>Slussbron</name></rtept>
+    <rtept lat="57.70496" lon="11.9264"><name>Sannegårdsbron</name></rtept>
+    <rtept lat="57.6985" lon="11.90903"><name>Dockbron</name></rtept>
+  </rte>
+</gpx>

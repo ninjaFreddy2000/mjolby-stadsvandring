@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Västerås</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.64847222" lon="16.50675"><name>Rönnby kyrk-center</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.64444444" lon="16.48027778"><name>Skerike kyrka</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.64655" lon="16.53483333"><name>Önsta Gryta kyrka</name><desc>kyrka i Västerås</desc></wpt>
+  <wpt lat="59.62760833" lon="16.556575"><name>Gideonsbergskyrkan</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.61423164676952" lon="16.5529111934987"><name>Östra kapellet</name><desc>Östra kapellet i Västerås från 1882, format som ett grekiskt kors.</desc></wpt>
+  <wpt lat="59.61255699741894" lon="16.541410602946982"><name>VÄSTERÅS DOMKYRKA</name><desc>Domkyrkan i Västerås, grundlagd på 1230-talet i mörkrött tegel.</desc></wpt>
+  <wpt lat="59.60913102859542" lon="16.542136737719904"><name>Kyrka/kapell</name><desc>Platsen för S:t Nicolaikyrkan och en fyndplats för en runristad gravhäll.</desc></wpt>
+  <wpt lat="59.60555556" lon="16.53111111"><name>Pingstkyrkan, Västerås</name><desc>pingstkyrka i Västerås, Sverige</desc></wpt>
+  <wpt lat="59.60541389" lon="16.51803333"><name>Mikaelikyrkan</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.61742" lon="16.51996"><name>Ansgarskyrkan, Västerås</name><desc>Ansgarskyrkan är en kyrka i Pettersberg i Västerås, vilken är huvudkyrka för Ansgarsförsamlingen i Västerås.</desc></wpt>
+  <wpt lat="59.619608" lon="16.534921"><name>S:ta Ursulas kapell</name><desc>kyrka/kapell i Västmanland (Västerås 355:1)</desc></wpt>
+  <wpt lat="59.60869" lon="16.49483"><name>Sparvens kapell</name><desc>Sparvens kapell var en kyrkobyggnad i Västerås Lundby församling i Västerås stift.</desc></wpt>
+  <wpt lat="59.6" lon="16.46777778"><name>Bäckbykyrkan</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.57741667" lon="16.46663889"><name>Lundby kyrka</name><desc>Kyrka i Västerås kommun</desc></wpt>
+  <wpt lat="59.562026" lon="16.512342"><name>Västerlövsta 318:1</name><desc>kyrka/kapell i Uppland</desc></wpt>
+  <wpt lat="59.60555556" lon="16.57972222"><name>Viksängskyrkan</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.616666666667" lon="16.603888888889"><name>Lifecenter International Church</name><desc>kyrka och församling i Västerås</desc></wpt>
+  <wpt lat="59.62135278" lon="16.58983333"><name>Tomaskyrkan</name><desc>kyrkobyggnad i Västerås kommun</desc></wpt>
+  <wpt lat="59.64055556" lon="16.62805556"><name>Badelunda kyrka</name><desc>Kyrka i Västerås kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Västerås</name>
+    <rtept lat="59.64847222" lon="16.50675"><name>Rönnby kyrk-center</name></rtept>
+    <rtept lat="59.64444444" lon="16.48027778"><name>Skerike kyrka</name></rtept>
+    <rtept lat="59.64655" lon="16.53483333"><name>Önsta Gryta kyrka</name></rtept>
+    <rtept lat="59.62760833" lon="16.556575"><name>Gideonsbergskyrkan</name></rtept>
+    <rtept lat="59.61423164676952" lon="16.5529111934987"><name>Östra kapellet</name></rtept>
+    <rtept lat="59.61255699741894" lon="16.541410602946982"><name>VÄSTERÅS DOMKYRKA</name></rtept>
+    <rtept lat="59.60913102859542" lon="16.542136737719904"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.60555556" lon="16.53111111"><name>Pingstkyrkan, Västerås</name></rtept>
+    <rtept lat="59.60541389" lon="16.51803333"><name>Mikaelikyrkan</name></rtept>
+    <rtept lat="59.61742" lon="16.51996"><name>Ansgarskyrkan, Västerås</name></rtept>
+    <rtept lat="59.619608" lon="16.534921"><name>S:ta Ursulas kapell</name></rtept>
+    <rtept lat="59.60869" lon="16.49483"><name>Sparvens kapell</name></rtept>
+    <rtept lat="59.6" lon="16.46777778"><name>Bäckbykyrkan</name></rtept>
+    <rtept lat="59.57741667" lon="16.46663889"><name>Lundby kyrka</name></rtept>
+    <rtept lat="59.562026" lon="16.512342"><name>Västerlövsta 318:1</name></rtept>
+    <rtept lat="59.60555556" lon="16.57972222"><name>Viksängskyrkan</name></rtept>
+    <rtept lat="59.616666666667" lon="16.603888888889"><name>Lifecenter International Church</name></rtept>
+    <rtept lat="59.62135278" lon="16.58983333"><name>Tomaskyrkan</name></rtept>
+    <rtept lat="59.64055556" lon="16.62805556"><name>Badelunda kyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Sigtuna</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.67060278" lon="17.69875"><name>Haga kyrka</name><desc>kyrkobyggnad i Sigtuna kommun</desc></wpt>
+  <wpt lat="59.6338839762466" lon="17.733066811738205"><name>Kyrka/kapell</name><desc>Grundmurar som tolkats som Visby klosterkyrka, delundersökta 1973.</desc></wpt>
+  <wpt lat="59.62862251245006" lon="17.737042547527242"><name>Kloster</name><desc>En klosterlämning i Sigtuna utan närmare beskrivning i underlaget.</desc></wpt>
+  <wpt lat="59.61936536115087" lon="17.72260381883167"><name>Tilkyrkan</name><desc>Tilkyrkan i Sigtuna, uppförd 1979.</desc></wpt>
+  <wpt lat="59.619361111111" lon="17.722583333333"><name>Olov Hartmans studiokyrka</name><desc>kyrkobyggnad i Sigtuna kommun</desc></wpt>
+  <wpt lat="59.61841751898908" lon="17.723023825386782"><name>Kyrka/kapell</name><desc>En kyrka med medeltida kyrktomt.</desc></wpt>
+  <wpt lat="59.6184" lon="17.7229"><name>Mariakyrkan</name><desc>kyrkobyggnad i Svenska kyrkan i Sigtuna, Sverige</desc></wpt>
+  <wpt lat="59.618273708589335" lon="17.723346275398157"><name>Kloster</name><desc>En registrerad klosterlämning i Sigtuna där uppgifterna är knapphändiga.</desc></wpt>
+  <wpt lat="59.6184" lon="17.7212"><name>Sankt Olofs kyrkoruin</name><desc>kyrkobyggnad i Sigtuna kommun</desc></wpt>
+  <wpt lat="59.616965648025676" lon="17.72000568640653"><name>Kyrka/kapell</name><desc>En kyrkoruin med bevarat torn och en närbelägen fyndplats för skelett.</desc></wpt>
+  <wpt lat="59.61510518263619" lon="17.719209696257305"><name>Kyrka/kapell</name><desc>Kyrklämningar i Fornhemmets trädgård i form av bearbetade stenar.</desc></wpt>
+  <wpt lat="59.61631337904296" lon="17.713784172239755"><name>Sankt Pers ruin, Kyrka/kapell</name><desc>Sankt Pers kyrkoruin med ett av landets äldsta kryssvalv, byggd på 1100-talet.</desc></wpt>
+  <wpt lat="59.615421" lon="17.710152"><name>Kapell</name><desc>kapell i Sigtuna kommun</desc></wpt>
+  <wpt lat="59.61420588984695" lon="17.709729782913417"><name>Kyrka/kapell</name><desc>Den tänkta platsen för det försvunna St. Görans kapell.</desc></wpt>
+  <wpt lat="59.62484858112771" lon="17.712520196124817"><name>Fornborg</name><desc>En fornborg skyddad av branta stup och en stenvall.</desc></wpt>
+  <wpt lat="59.618257270684296" lon="17.676453302820477"><name>Kyrka/kapell</name><desc>En plats som enligt en 1600-talskälla ska ha varit en kyrka.</desc></wpt>
+  <wpt lat="59.58853333" lon="17.66088889"><name>Håbo-Tibble kyrka</name><desc>kyrkobyggnad som tillhör Bro församling i Uppsala stift</desc></wpt>
+  <wpt lat="59.623138888889" lon="17.609305555556"><name>Håtuna kyrka</name><desc>kyrkobyggnad i Upplands-Bro kommun</desc></wpt>
+  <wpt lat="59.616972222222" lon="17.829722222222"><name>Valsta kyrka</name><desc>kyrkobyggnad i Sigtuna kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Sigtuna</name>
+    <rtept lat="59.67060278" lon="17.69875"><name>Haga kyrka</name></rtept>
+    <rtept lat="59.6338839762466" lon="17.733066811738205"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.62862251245006" lon="17.737042547527242"><name>Kloster</name></rtept>
+    <rtept lat="59.61936536115087" lon="17.72260381883167"><name>Tilkyrkan</name></rtept>
+    <rtept lat="59.619361111111" lon="17.722583333333"><name>Olov Hartmans studiokyrka</name></rtept>
+    <rtept lat="59.61841751898908" lon="17.723023825386782"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.6184" lon="17.7229"><name>Mariakyrkan</name></rtept>
+    <rtept lat="59.618273708589335" lon="17.723346275398157"><name>Kloster</name></rtept>
+    <rtept lat="59.6184" lon="17.7212"><name>Sankt Olofs kyrkoruin</name></rtept>
+    <rtept lat="59.616965648025676" lon="17.72000568640653"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.61510518263619" lon="17.719209696257305"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.61631337904296" lon="17.713784172239755"><name>Sankt Pers ruin, Kyrka/kapell</name></rtept>
+    <rtept lat="59.615421" lon="17.710152"><name>Kapell</name></rtept>
+    <rtept lat="59.61420588984695" lon="17.709729782913417"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.62484858112771" lon="17.712520196124817"><name>Fornborg</name></rtept>
+    <rtept lat="59.618257270684296" lon="17.676453302820477"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.58853333" lon="17.66088889"><name>Håbo-Tibble kyrka</name></rtept>
+    <rtept lat="59.623138888889" lon="17.609305555556"><name>Håtuna kyrka</name></rtept>
+    <rtept lat="59.616972222222" lon="17.829722222222"><name>Valsta kyrka</name></rtept>
+  </rte>
+</gpx>

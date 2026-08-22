@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Malmö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.61222222" lon="12.99611111"><name>Universitetsbron</name><desc>Universitetsbron i Malmö, byggd 2004 (invigd 28 augusti), är en snedkabelbro som sammanbinder Skeppsbron med Hjälmarekajen.</desc></wpt>
+  <wpt lat="55.610972222222" lon="12.992777777778"><name>Beijers bro</name><desc>Beijers bro</desc></wpt>
+  <wpt lat="55.609444444444" lon="12.990833333333"><name>Styrmansbron</name><desc>Styrmansbron</desc></wpt>
+  <wpt lat="55.60734167" lon="12.99606389"><name>Älvsborgsbron</name><desc>bro i Malmö</desc></wpt>
+  <wpt lat="55.6075833333" lon="12.9970833333"><name>Hjälmarbron</name><desc>Hjälmarbron</desc></wpt>
+  <wpt lat="55.6079166667" lon="12.9994833333"><name>Mälarbron</name><desc>bro i Malmö</desc></wpt>
+  <wpt lat="55.608472" lon="13.002035"><name>Petribron</name><desc>Petribron</desc></wpt>
+  <wpt lat="55.60113430292459" lon="13.000841143426088"><name>Morescobron</name><desc>Pälsar och damkappor var största inkomstkällan för AB Moresco som lät bygga upp sitt fabrikshus precis intill vid Torggatan.</desc></wpt>
+  <wpt lat="55.601602358239" lon="12.995329112885"><name>Fersens bro</name><desc>bro i Malmö</desc></wpt>
+  <wpt lat="55.59006528253193" lon="13.005418961066745"><name>Omnibusstationen</name><desc>In 1887, horse-drawn trams were introduced to Malmö, operated by a private company.</desc></wpt>
+  <wpt lat="55.58835420775585" lon="13.007422171827695"><name>Södervärns station</name><desc>Södervärn station was built in 1886, on the Malmö-Ystad line that opened in 1874.</desc></wpt>
+  <wpt lat="55.58706292229833" lon="13.011218366120811"><name>Järnvägsövergången</name><desc>From 1874, when the railway between Malmö and Ystad was opened, trains ran along what is now Lönngatan, and effectively divided the area into North and South Sofielund.</desc></wpt>
+  <rte><name>Industrihistoria i Malmö</name>
+    <rtept lat="55.61222222" lon="12.99611111"><name>Universitetsbron</name></rtept>
+    <rtept lat="55.610972222222" lon="12.992777777778"><name>Beijers bro</name></rtept>
+    <rtept lat="55.609444444444" lon="12.990833333333"><name>Styrmansbron</name></rtept>
+    <rtept lat="55.60734167" lon="12.99606389"><name>Älvsborgsbron</name></rtept>
+    <rtept lat="55.6075833333" lon="12.9970833333"><name>Hjälmarbron</name></rtept>
+    <rtept lat="55.6079166667" lon="12.9994833333"><name>Mälarbron</name></rtept>
+    <rtept lat="55.608472" lon="13.002035"><name>Petribron</name></rtept>
+    <rtept lat="55.60113430292459" lon="13.000841143426088"><name>Morescobron</name></rtept>
+    <rtept lat="55.601602358239" lon="12.995329112885"><name>Fersens bro</name></rtept>
+    <rtept lat="55.59006528253193" lon="13.005418961066745"><name>Omnibusstationen</name></rtept>
+    <rtept lat="55.58835420775585" lon="13.007422171827695"><name>Södervärns station</name></rtept>
+    <rtept lat="55.58706292229833" lon="13.011218366120811"><name>Järnvägsövergången</name></rtept>
+  </rte>
+</gpx>

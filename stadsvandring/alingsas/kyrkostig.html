@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Alingsås — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 12 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/alingsas/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Alingsås — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 12 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/alingsas/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Alingsås — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 12 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"alingsas","theme":"kyrkostig","sourceSlug":"stadsvandring/alingsas/kyrkostig","centroid":{"lat":57.93239313603195,"lng":12.542458091582295},"stops":[{"name":"Bälinge kyrka","lat":57.94847222,"lng":12.60222222},{"name":"Ljusets kapell","lat":57.93422,"lng":12.55934},{"name":"Landskyrkan","lat":57.93386111,"lng":12.53919444},{"name":"KARLBORGSKA GÅRDEN, BOSTADSHUS","lat":57.931078796886126,"lng":12.537428152356409},{"name":"KARLBORGSKA HUSET, BRYGGHUS","lat":57.930994987577506,"lng":12.537599707726825},{"name":"ALINGSÅS MISSIONSKYRKA","lat":57.929908495348556,"lng":12.540491764761798},{"name":"CHRISTINAE KYRKA","lat":57.931173073100425,"lng":12.532020626661696},{"name":"Frikyrka / bönehus /missionshus","lat":57.931726004475884,"lng":12.531570651578377},{"name":"Christinae kyrka","lat":57.9296,"lng":12.531},{"name":"Frikyrka / bönehus /missionshus","lat":57.92866905499492,"lng":12.527004535902448},{"name":"Noltorpskyrkan","lat":57.937625,"lng":12.51856944},{"name":"Stockslyckekyrkan","lat":57.92138889,"lng":12.55305556}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Alingsås","description":"Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Bälinge kyrka","text":"kyrkobyggnad i Alingsås kommun","url":"https://stadsvandring.io/p/wd-alingsas-balinge-kyrka-q10438470"},{"@type":"HowToStep","position":2,"name":"Ljusets kapell","text":"begravningskapell i Alingsås","url":"https://stadsvandring.io/p/wd-alingsas-ljusets-kapell-q136327988"},{"@type":"HowToStep","position":3,"name":"Landskyrkan","text":"kyrkobyggnad i Alingsås kommun","url":"https://stadsvandring.io/p/wd-alingsas-landskyrkan-q10553956"},{"@type":"HowToStep","position":4,"name":"KARLBORGSKA GÅRDEN, BOSTADSHUS","text":"Bostadshus i Karlborgska gården från 1800-talets mitt.","url":"https://stadsvandring.io/p/ksamsok-karlborgska-garden-bostadshus-alingsas-580660"},{"@type":"HowToStep","position":5,"name":"KARLBORGSKA HUSET, BRYGGHUS","text":"Ett brygghus vid Karlborgska huset från tiden kring 1790.","url":"https://stadsvandring.io/p/ksamsok-karlborgska-huset-brygghus-alingsas-698699"},{"@type":"HowToStep","position":6,"name":"ALINGSÅS MISSIONSKYRKA","text":"Missionskyrka från 1938 som byggts ut i flera omgångar in på 1970-talet.","url":"https://stadsvandring.io/p/ksamsok-alingsas-missionskyrka-alingsas-487840"},{"@type":"HowToStep","position":7,"name":"CHRISTINAE KYRKA","text":"Stadskyrka påbörjad 1642 och ombyggd på 1780-talet.","url":"https://stadsvandring.io/p/ksamsok-christinae-kyrka-alingsas-443632"},{"@type":"HowToStep","position":8,"name":"Frikyrka / bönehus /missionshus","text":"Frikyrka i Alingsås från åren kring 1970.","url":"https://stadsvandring.io/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-029901"},{"@type":"HowToStep","position":9,"name":"Christinae kyrka","text":"Stadens 1600-talskyrka, uppkallad efter drottning Kristina.","url":"https://stadsvandring.io/p/alingsas-christinae"},{"@type":"HowToStep","position":10,"name":"Frikyrka / bönehus /missionshus","text":"Ett frikyrkohus från 1903 i två våningar med panelklädd fasad.","url":"https://stadsvandring.io/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-661905"},{"@type":"HowToStep","position":11,"name":"Noltorpskyrkan","text":"kyrkobyggnad i Alingsås kommun","url":"https://stadsvandring.io/p/wd-alingsas-noltorpskyrkan-q10601806"},{"@type":"HowToStep","position":12,"name":"Stockslyckekyrkan","text":"kyrkobyggnad i Alingsås kommun","url":"https://stadsvandring.io/p/wd-alingsas-stockslyckekyrkan-q10680727"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Alingsås","description":"Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/alingsas/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Bälinge kyrka","url":"https://stadsvandring.io/p/wd-alingsas-balinge-kyrka-q10438470"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Ljusets kapell","url":"https://stadsvandring.io/p/wd-alingsas-ljusets-kapell-q136327988"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Landskyrkan","url":"https://stadsvandring.io/p/wd-alingsas-landskyrkan-q10553956"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"KARLBORGSKA GÅRDEN, BOSTADSHUS","url":"https://stadsvandring.io/p/ksamsok-karlborgska-garden-bostadshus-alingsas-580660"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"KARLBORGSKA HUSET, BRYGGHUS","url":"https://stadsvandring.io/p/ksamsok-karlborgska-huset-brygghus-alingsas-698699"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"ALINGSÅS MISSIONSKYRKA","url":"https://stadsvandring.io/p/ksamsok-alingsas-missionskyrka-alingsas-487840"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"CHRISTINAE KYRKA","url":"https://stadsvandring.io/p/ksamsok-christinae-kyrka-alingsas-443632"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Frikyrka / bönehus /missionshus","url":"https://stadsvandring.io/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-029901"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Christinae kyrka","url":"https://stadsvandring.io/p/alingsas-christinae"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Frikyrka / bönehus /missionshus","url":"https://stadsvandring.io/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-661905"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Noltorpskyrkan","url":"https://stadsvandring.io/p/wd-alingsas-noltorpskyrkan-q10601806"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Stockslyckekyrkan","url":"https://stadsvandring.io/p/wd-alingsas-stockslyckekyrkan-q10680727"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Alingsås","item":"https://stadsvandring.io/stadsvandring/alingsas"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Alingsås","item":"https://stadsvandring.io/stadsvandring/alingsas/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/alingsas">Stadsvandring i Alingsås</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Alingsås</span><span class="badge">12 stopp</span></div>
+<h1>Kyrkostigen i Alingsås</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Alingsås — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Alingsås"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-alingsas-balinge-kyrka-q10438470"><b>1. Bälinge kyrka</b><span>Kyrka · kyrkobyggnad i Alingsås kommun</span></a>
+<a class="tile" href="/p/wd-alingsas-ljusets-kapell-q136327988"><b>2. Ljusets kapell</b><span>Kyrka · begravningskapell i Alingsås</span></a>
+<a class="tile" href="/p/wd-alingsas-landskyrkan-q10553956"><b>3. Landskyrkan</b><span>Kyrka · kyrkobyggnad i Alingsås kommun</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 12 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/alingsas/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-alingsas-balinge-kyrka-q10438470"><b>1. Bälinge kyrka</b></a> — kyrkobyggnad i Alingsås kommun</li>
+<li><a href="/p/wd-alingsas-ljusets-kapell-q136327988"><b>2. Ljusets kapell</b></a> — begravningskapell i Alingsås</li>
+<li><a href="/p/wd-alingsas-landskyrkan-q10553956"><b>3. Landskyrkan</b></a> — kyrkobyggnad i Alingsås kommun</li>
+<li><a href="/p/ksamsok-karlborgska-garden-bostadshus-alingsas-580660"><b>4. KARLBORGSKA GÅRDEN, BOSTADSHUS</b></a> — Bostadshus i Karlborgska gården från 1800-talets mitt.</li>
+<li><a href="/p/ksamsok-karlborgska-huset-brygghus-alingsas-698699"><b>5. KARLBORGSKA HUSET, BRYGGHUS</b></a> — Ett brygghus vid Karlborgska huset från tiden kring 1790.</li>
+<li><a href="/p/ksamsok-alingsas-missionskyrka-alingsas-487840"><b>6. ALINGSÅS MISSIONSKYRKA</b></a> — Missionskyrka från 1938 som byggts ut i flera omgångar in på 1970-talet.</li>
+<li><a href="/p/ksamsok-christinae-kyrka-alingsas-443632"><b>7. CHRISTINAE KYRKA</b></a> — Stadskyrka påbörjad 1642 och ombyggd på 1780-talet.</li>
+<li><a href="/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-029901"><b>8. Frikyrka / bönehus /missionshus</b></a> — Frikyrka i Alingsås från åren kring 1970.</li>
+<li><a href="/p/alingsas-christinae"><b>9. Christinae kyrka</b></a> — Stadens 1600-talskyrka, uppkallad efter drottning Kristina.</li>
+<li><a href="/p/ksamsok-frikyrka-bonehus-missionshus-alingsas-661905"><b>10. Frikyrka / bönehus /missionshus</b></a> — Ett frikyrkohus från 1903 i två våningar med panelklädd fasad.</li>
+<li><a href="/p/wd-alingsas-noltorpskyrkan-q10601806"><b>11. Noltorpskyrkan</b></a> — kyrkobyggnad i Alingsås kommun</li>
+<li><a href="/p/wd-alingsas-stockslyckekyrkan-q10680727"><b>12. Stockslyckekyrkan</b></a> — kyrkobyggnad i Alingsås kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/alingsas">Stadsvandringen i Alingsås</a> <a class="cta ghost" href="/stadsvandring/alingsas/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

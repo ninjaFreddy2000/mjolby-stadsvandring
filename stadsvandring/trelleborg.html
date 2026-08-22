@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Trelleborg — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Trelleborg till fots: 85 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 85 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/trelleborg">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Trelleborg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Trelleborg till fots: 85 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 85 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/trelleborg">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Trelleborg — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Trelleborg till fots: 85 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 85 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"trelleborg","sourceSlug":"stadsvandring/trelleborg","centroid":{"lat":55.383820868478644,"lng":13.146401317597713},"stops":[{"name":"Maglarps nya kyrka","lat":55.382222222222,"lng":13.069722222222},{"name":"Axel Ebbes Konsthall","lat":55.37537222,"lng":13.16137778},{"name":"Böst","lat":55.37416111,"lng":13.15623056}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Trelleborg","description":"Upptäck Trelleborg till fots: 85 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/trelleborg","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Maglarps nya kyrka","description":"före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007","url":"https://stadsvandring.io/p/wd-trelleborg-maglarps-nya-kyrka-q1979608","geo":{"@type":"GeoCoordinates","latitude":55.382222222222,"longitude":13.069722222222}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Axel Ebbes Konsthall","description":"konstmuseum i Trelleborg","url":"https://stadsvandring.io/p/wd-trelleborg-axel-ebbes-konsthall-q10423688","geo":{"@type":"GeoCoordinates","latitude":55.37537222,"longitude":13.16137778}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Böst","description":"fontän i Trelleborg, Sverige","url":"https://stadsvandring.io/p/wd-trelleborg-bost-q10438791","geo":{"@type":"GeoCoordinates","latitude":55.37416111,"longitude":13.15623056}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Gislövs kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.38277778,"longitude":13.24361111}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Gylle kyrka","description":"kyrkobyggnad i Trelleborgs kommun","url":"https://stadsvandring.io/p/wd-trelleborg-gylle-kyrka-q10511298","geo":{"@type":"GeoCoordinates","latitude":55.40861111,"longitude":13.19722222}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Hammarlövs kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.41333333,"longitude":13.13527778}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Kyrkoköpinge kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.385,"longitude":13.18611111}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Maglarps kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.38805556,"longitude":13.08305556}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Sankt Nicolai kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.37611111,"longitude":13.15111111}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Skegrie kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.405,"longitude":13.06527778}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Stavsten","description":"Stavsten är en plats i Maglarps socken, på Stavstensudde vid den skånska sydkusten cirka fem kilometer väster om centrala Trelleborg, öster om Kämpinge.","url":"https://stadsvandring.io/p/wd-trelleborg-stavsten-q10677922","geo":{"@type":"GeoCoordinates","latitude":55.36861111,"longitude":13.07722222}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Västra Tommarps kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.39861111,"longitude":13.10777778}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Västra Vemmerlövs kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.41388889,"longitude":13.16083333}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Dalköpinge kyrka","description":"kyrkobyggnad i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.37916667,"longitude":13.21833333}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Trelleborgs museum","description":"museum i Trelleborg","url":"https://stadsvandring.io/p/wd-trelleborg-trelleborgs-museum-q26253376","geo":{"@type":"GeoCoordinates","latitude":55.375916666667,"longitude":13.158083333333}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Trelleborgs kassunfyr","description":"fyr utanför Trelleborg","geo":{"@type":"GeoCoordinates","latitude":55.356861111111,"longitude":13.149194444444}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Trelleborgs hamnfyr","description":"fyr i Trelleborgs hamn","geo":{"@type":"GeoCoordinates","latitude":55.3675,"longitude":13.153444444444}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Dalköpinge 3:1","description":"kyrka/kapell i Skåne","geo":{"@type":"GeoCoordinates","latitude":55.358774,"longitude":13.226528}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Svenstorps herrgård","description":"borg i Skåne (Trelleborg 11:1)","geo":{"@type":"GeoCoordinates","latitude":55.391907,"longitude":13.130595}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Invalidmonumentet","description":"krigsmonument på Norra Kyrkogården i Trelleborg","geo":{"@type":"GeoCoordinates","latitude":55.38258,"longitude":13.15702}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Västra Tommarp 18:1","description":"minnesmärke i Skåne","geo":{"@type":"GeoCoordinates","latitude":55.398069,"longitude":13.107355}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Skåre fyr","description":"en fyr i Trelleborgs kommun","geo":{"@type":"GeoCoordinates","latitude":55.374361111111,"longitude":13.054166666667}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Västra piren","description":"en fyr i Trelleborg","geo":{"@type":"GeoCoordinates","latitude":55.360433333333,"longitude":13.148083333333}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Östra piren","description":"en fyr i Trelleborg","geo":{"@type":"GeoCoordinates","latitude":55.359683333333,"longitude":13.150183333333}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Trelleborgsrännan nedre","description":"en ensfyr i Trelleborg","geo":{"@type":"GeoCoordinates","latitude":55.370388888889,"longitude":13.154416666667}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Trelleborg gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 85 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Trelleborg?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 85 sevärdheter i Trelleborg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Maglarps nya kyrka?","acceptedAnswer":{"@type":"Answer","text":"före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007"}},{"@type":"Question","name":"Vad är Axel Ebbes Konsthall?","acceptedAnswer":{"@type":"Answer","text":"konstmuseum i Trelleborg"}},{"@type":"Question","name":"Vad är Böst?","acceptedAnswer":{"@type":"Answer","text":"fontän i Trelleborg, Sverige"}},{"@type":"Question","name":"Vad är Gislövs kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Trelleborgs kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Trelleborg","item":"https://stadsvandring.io/stadsvandring/trelleborg"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Trelleborg</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Trelleborg</span><span class="badge">85 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Trelleborg — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Trelleborg till fots: 85 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Trelleborg"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-trelleborg-maglarps-nya-kyrka-q1979608"><b>1. Maglarps nya kyrka</b><span>Kyrka · före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007</span></a>
+<a class="tile" href="/p/wd-trelleborg-axel-ebbes-konsthall-q10423688"><b>2. Axel Ebbes Konsthall</b><span>museum · konstmuseum i Trelleborg</span></a>
+<a class="tile" href="/p/wd-trelleborg-bost-q10438791"><b>3. Böst</b><span>Konst &amp; staty · fontän i Trelleborg, Sverige</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Trelleborg · 85</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Trelleborg. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 43</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-boplats-trelleborg-e47121"><b>Boplats</b></a> — En boplats med spår från vikingatid och tidig medeltid, förundersökt 2025.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-trelleborg-2e6f4b"><b>Flatmarksgrav</b></a> — Ett flatmarksgravfält där lantbrukaren B Larsson fann skelett under jordbruksarbete 1933.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-trelleborg-7ade0b"><b>Flatmarksgrav</b></a> — En senneolitisk grav med stenpackning som rymde två individer och gravgåvor.</li>
+<li><a href="/p/ksamsok-boplats-trelleborg-10eadf"><b>Boplats</b></a> — Boplatslämningar med gropar och härdar som daterats till både tidigneolitikum och yngre bronsålder.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-f6d184"><b>Boplatsområde</b></a> — Ett undersökt boplatsområde med ett åttiotal anläggningar och enstaka fynd.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-b8e5d9"><b>Fyndplats</b></a> — Fyndplats strax norr om Villa Flora där två flintyxor hittades under jordbruksarbete 1898.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-trelleborg-3e1916"><b>Övrigt</b></a> — En arkeologisk provundersökning inför villabygge som inte gav några fynd.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-c662ff"><b>Fyndplats</b></a> — En samling stenålderslösfynd som Harry Nilsson hittade under jordbruksarbete på 1930-talet.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-trelleborg-0f6e3d"><b>Flatmarksgrav</b></a> — En osäker uppgift om att ett skelett hittades vid källargrävning på 1930-talet.</li>
+<li><a href="/p/ksamsok-grav-och-boplatsomrade-trelleborg-6991af"><b>Grav- och boplatsområde</b></a> — Ett flatmarksgravfält där ett trettiotal skelettgravar kommit fram sedan 1870-talet.</li>
+<li><a href="/karta?plats=ksamsok-boplatsgrop-trelleborg-3b80ac"><b>Boplatsgrop</b></a> — Tre boplatsgropar som kom fram vid en arkeologisk utredning 2023.</li>
+<li><a href="/karta?plats=ksamsok-fyndsamling-trelleborg-9e7555"><b>Fyndsamling</b></a> — Ett museum med förhistoriska föremålssamlingar och uppställda väghållningsstenar.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-add09d"><b>Boplatsområde</b></a> — En undersökt boplats vid en numera torrlagd bäck med gropar, stolphål och härdar.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-5843d4"><b>Boplatsområde</b></a> — Ett boplatsområde med gropar och stolphål där bland annat vikingatida silver hittades.</li>
+<li><a href="/karta?plats=ksamsok-hard-trelleborg-202a6f"><b>Härd</b></a> — En härd som påträffades nordväst om boplatsen Trelleborg 41 vid en utredning 2009.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-trelleborg-274896"><b>Övrigt</b></a> — En gles stenansamling som kom fram vid en arkeologisk utredning 2023.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-trelleborg-07dcc5"><b>Boplatslämning övrig</b></a> — Boplatslämningar med sex gropar som troligen hör till en bo- eller aktivitetsplats.</li>
+<li><a href="/p/ksamsok-boplats-trelleborg-378109"><b>Boplats</b></a> — En stenåldersboplats i åkermark där markägaren Arthur Andersson samlat mängder av flintföremål.</li>
+<li><a href="/karta?plats=ksamsok-vallanlaggning-trelleborg-7904e3"><b>Vallanläggning</b></a> — En övertorvad vall med stenar i ytan som inte tycks ha bildats genom odling.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-71907e"><b>Boplatsområde</b></a> — Ett boplatsområde daterat till yngre bronsålder eller äldre järnålder.</li>
+<li><a href="/p/ksamsok-hard-trelleborg-3f4ca2"><b>Härd</b></a> — En plats knuten till den medeltida byn V Köpinge, känd i skrift redan 1303.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-f3533b"><b>Fyndplats</b></a> — Fyndplats för en järnyxa som Arthur Andersson hittade omkring 1975.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-5a693e"><b>Boplatsområde</b></a> — Ett boplatsområde med gropar och stolphål där medeltida bronsföremål togs tillvara.</li>
+<li><a href="/karta?plats=ksamsok-boplats-trelleborg-ac7852"><b>Boplats</b></a> — En trolig stenåldersboplats där flinta kom fram vid inventering 1985.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-8b66df"><b>Fyndplats</b></a> — Ett lösfynd av slagen flinta inom ett område med förhöjda fosfathalter.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-trelleborg-26e4af"><b>Gränsmärke</b></a> — En granitgränssten som markerar Trelleborgs stadsgräns mot Tomarp.</li>
+<li><a href="/karta?plats=ksamsok-boplats-trelleborg-e827d0"><b>Boplats</b></a> — En boplats med stolphål och gropar som kan höra till boplatsen Trelleborg 39.</li>
+<li><a href="/p/ksamsok-stadslager-trelleborg-170332"><b>Stadslager</b></a> — Det medeltida stadsområdet i Trelleborg med lämningar från kloster, kyrka och stadsbebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-boplats-trelleborg-e50729"><b>Boplats</b></a> — En neolitisk boplats med stolphål, gropar och härdar från en utredning 2007.</li>
+<li><a href="/p/ksamsok-boplats-trelleborg-7b70b1"><b>Boplats</b></a> — En tidigneolitisk stenåldersboplats där Otto Andersson samlat tusentals flintavslag.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-06b160"><b>Boplatsområde</b></a> — Ett boplatsområde vars beskrivning finns i inventeringsboken.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-60024d"><b>Fyndplats</b></a> — Fyndplats för ett människoskelett som Arbman undersökte vid ledningsgrävning 1951.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-61f02f"><b>Fyndplats</b></a> — Fyndplats för ett fibulafragment daterat till yngre romersk järnålder eller folkvandringstid.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-trelleborg-9126fb"><b>Gränsmärke</b></a> — En granitgränssten som markerar Trelleborgs stadsgräns mot Vemmerlöv.</li>
+<li><a href="/p/ksamsok-hog-trelleborg-2941f5"><b>Hög</b></a> — En undersökt gravhög med bronsåldersfynd, undersökt av Lydbeck 1916 och Hallbert 1953.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-74982b"><b>Boplatsområde</b></a> — En förhistorisk boplats med ett fyrtiotal stolphål från en utredning 2007.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-trelleborg-7775f7"><b>Bytomt/gårdstomt</b></a> — Bebyggelselämningar knutna till den medeltida byn V Köpinge, känd i skrift från 1303.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-89344f"><b>Boplatsområde</b></a> — Ett boplatsområde med benoffer och lämningar från mellanneolitikum till järnålder.</li>
+<li><a href="/p/ksamsok-fyndsamling-trelleborg-e2cbca"><b>Fyndsamling</b></a> — En samling om ett femtiotal flint- och stenföremål från gården Ståstorp nr 7.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-trelleborg-fdb896"><b>Boplatsområde</b></a> — En boplats med 21 anläggningar från en särskild utredning 2003.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-d5a48a"><b>Fyndplats</b></a> — Fyndplats för en tjocknackig flintyxa som hittades vid grundgrävning 1887.</li>
+<li><a href="/karta?plats=ksamsok-boplats-trelleborg-e19663"><b>Boplats</b></a> — En boplats med gropar och stolphål som preliminärt dateras till järnålder.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-trelleborg-98d9f8"><b>Fyndplats</b></a> — Fyndplats för en tjocknackig grönstensyxa nära den forna sjöbotten söder om kyrkan.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 15</h3>
+<ul class="place-list">
+<li><a href="/p/wd-trelleborg-maglarps-nya-kyrka-q1979608"><b>Maglarps nya kyrka</b></a> — före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007</li>
+<li><a href="/karta?plats=wd-trelleborg-gislovs-kyrka-q10505075"><b>Gislövs kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/p/wd-trelleborg-gylle-kyrka-q10511298"><b>Gylle kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-hammarlovs-kyrka-q10516887"><b>Hammarlövs kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-kyrkokopinge-kyrka-q10551511"><b>Kyrkoköpinge kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-maglarps-kyrka-q10575268"><b>Maglarps kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-sankt-nicolai-kyrka-q10661431"><b>Sankt Nicolai kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-skegrie-kyrka-q10669944"><b>Skegrie kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-vastra-tommarps-kyrka-q10718381"><b>Västra Tommarps kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-vastra-vemmerlovs-kyrka-q10718409"><b>Västra Vemmerlövs kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-dalkopinge-kyrka-q15977869"><b>Dalköpinge kyrka</b></a> — kyrkobyggnad i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-dalkopinge-3-1-q29476995"><b>Dalköpinge 3:1</b></a> — kyrka/kapell i Skåne</li>
+<li><a href="/karta?plats=wd-trelleborg-kapell-vastra-kyrkogarden-i-trelleborg-q50888327"><b>Kapell Västra kyrkogården i Trelleborg</b></a> — Trelleborg</li>
+<li><a href="/p/ksamsok-sankt-nikolai-kyrka-trelleborg-439847"><b>SANKT NIKOLAI KYRKA</b></a> — Sankt Nikolai kyrka, en medeltida tegelkyrka som byggts om i flera omgångar. <span class="era">1100–1349</span></li>
+<li><a href="/p/ksamsok-kapell-trelleborg-051472"><b>Kapell</b></a> — Norra kapellet i Trelleborg, ett kapellkrematorium invigt 1937. <span class="era">1937–1937</span></li>
+</ul>
+<h3 class="city-h3">Torn · 9</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-trelleborg-trelleborgs-kassunfyr-q28375963"><b>Trelleborgs kassunfyr</b></a> — fyr utanför Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-trelleborgs-hamnfyr-q28375967"><b>Trelleborgs hamnfyr</b></a> — fyr i Trelleborgs hamn</li>
+<li><a href="/karta?plats=wd-trelleborg-skare-fyr-q42433507"><b>Skåre fyr</b></a> — en fyr i Trelleborgs kommun</li>
+<li><a href="/karta?plats=wd-trelleborg-vastra-piren-q42433619"><b>Västra piren</b></a> — en fyr i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-ostra-piren-q42434501"><b>Östra piren</b></a> — en fyr i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-trelleborgsrannan-nedre-q42434621"><b>Trelleborgsrännan nedre</b></a> — en ensfyr i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-trelleborgsrannan-ovre-q42434701"><b>Trelleborgsrännan övre</b></a> — en ensfyr i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-trelleborgs-telekabel-nedre-q110300742"><b>Trelleborgs Telekabel nedre</b></a> — en ensfyr i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-trelleborgs-telekabel-ovre-q110300743"><b>Trelleborgs Telekabel övre</b></a> — en ensfyr i Trelleborg</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 7</h3>
+<ul class="place-list">
+<li><a href="/p/wd-trelleborg-bost-q10438791"><b>Böst</b></a> — fontän i Trelleborg, Sverige</li>
+<li><a href="/p/wd-trelleborg-stavsten-q10677922"><b>Stavsten</b></a> — Stavsten är en plats i Maglarps socken, på Stavstensudde vid den skånska sydkusten cirka fem kilometer väster om centrala Trelleborg, öster…</li>
+<li><a href="/karta?plats=wd-trelleborg-gestalt-i-storm-q70623105"><b>Gestalt i storm</b></a> — Gestalt i storm är en bronsskulptur av Bror Marklund, som han skapade mellan 1960 och 1964.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-trelleborg-7032d2"><b>Minnesmärke</b></a> — En minnessten som berättar att en del av parken anlades 1926.</li>
+<li><a href="/p/ksamsok-minnesmarke-trelleborg-f4b21d"><b>Minnesmärke</b></a> — En minnessten över krigsfångar som avled på hemväg genom Trelleborg 1915–1918.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-trelleborg-bb9c27"><b>Minnesmärke</b></a> — En marmorsten rest 1926 som det tyska folkets tack till svenskarna för medmänsklighet.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-trelleborg-e8883d"><b>Minnesmärke</b></a> — En minnessten som berättar att kung Oscar II planterade en ek i parken 1899.</li>
+</ul>
+<h3 class="city-h3">museum · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-trelleborg-axel-ebbes-konsthall-q10423688"><b>Axel Ebbes Konsthall</b></a> — konstmuseum i Trelleborg</li>
+<li><a href="/p/wd-trelleborg-trelleborgs-museum-q26253376"><b>Trelleborgs museum</b></a> — museum i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-skare-fiskemuseum-q55003014"><b>Skåre Fiskemuseum</b></a> — bevara kunskapen om det hårda arbete som utgjorde grunden för fiskeläget</li>
+</ul>
+<h3 class="city-h3">Borgruin · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-trelleborgs-jarnvagsstation-trelleborg-050857"><b>Trelleborgs järnvägsstation</b></a> — Trelleborgs station från 1898, i dag kontor med ett tågmuseum i banhallen. <span class="era">1898–1898</span></li>
+<li><a href="/karta?plats=ksamsok-trelleborgs-gamla-radhus-trelleborg-696788"><b>TRELLEBORGS GAMLA RÅDHUS</b></a> — Trelleborgs gamla rådhus från 1867 i rött tegel med urkrönt fronton. <span class="era">1867–1867</span></li>
+<li><a href="/karta?plats=ksamsok-fornborg-trelleborg-35826d"><b>Fornborg</b></a> — En fornborg vars beskrivning finns i inventeringsboken.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-trelleborg-invalidmonumentet-q29477125"><b>Invalidmonumentet</b></a> — krigsmonument på Norra Kyrkogården i Trelleborg</li>
+<li><a href="/karta?plats=wd-trelleborg-vastra-tommarp-18-1-q29477141"><b>Västra Tommarp 18:1</b></a> — minnesmärke i Skåne</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-trelleborg-svenstorps-herrgard-q29477123"><b>Svenstorps herrgård</b></a> — borg i Skåne (Trelleborg 11:1)</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-trelleborg-ostervangsparken-q69964114"><b>Östervångsparken</b></a> — Trelleborgs största park</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-kloster-trelleborg-47e879"><b>Kloster</b></a> — Ruinen efter franciskanerklostrets kyrka, grundat 1267 och nedrivet 1616.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 85 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/trelleborg/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/trelleborg/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Trelleborg gratis?</summary><p>Ja. Karta, alla 85 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Trelleborg?</summary><p>Vandringen samlar 85 sevärdheter i Trelleborg — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Maglarps nya kyrka?</summary><p>före detta kyrkobyggnad i Maglarps socken uppförd 1909 och riven 2007</p></details>
+<details class="faq"><summary>Vad är Axel Ebbes Konsthall?</summary><p>konstmuseum i Trelleborg</p></details>
+<details class="faq"><summary>Vad är Böst?</summary><p>fontän i Trelleborg, Sverige</p></details>
+<details class="faq"><summary>Vad är Gislövs kyrka?</summary><p>kyrkobyggnad i Trelleborgs kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

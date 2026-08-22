@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Östersund</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="63.20432104" lon="14.63544682"><name>Lugnviks kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Östersund, Sverige</desc></wpt>
+  <wpt lat="63.183159149816426" lon="14.617579127851648"><name>Hornsbergs kyrkan</name><desc>Kyrka i Hornsberg på Frösön, i en stadsdel med rötter i ett villasamhälle från slutet av 1800-talet.</desc></wpt>
+  <wpt lat="63.18319722" lon="14.61730556"><name>Hornsbergskyrkan</name><desc>kyrkobyggnad i Östersunds kommun</desc></wpt>
+  <wpt lat="63.1786" lon="14.63956667"><name>Östersunds gamla kyrka</name><desc>kyrkobyggnad i Östersund, Sverige</desc></wpt>
+  <wpt lat="63.17427807685585" lon="14.6397729532"><name>Betelkyrkan</name><desc>Betelkyrkan i Östersund uppförd 1883.</desc></wpt>
+  <wpt lat="63.174152277571594" lon="14.635503053347813"><name>Hotell Jämteborg</name><desc>Hotell Jämteborg i Östersund med anor från 1885.</desc></wpt>
+  <wpt lat="63.17169444" lon="14.64238889"><name>Stora kyrkan</name><desc>kyrkobyggnad i Svenska kyrkan i Östersund, Sverige</desc></wpt>
+  <wpt lat="63.16666667" lon="14.65"><name>Marielundskyrkan</name><desc>kyrkobyggnad i Östersunds kommun</desc></wpt>
+  <wpt lat="63.16520016796338" lon="14.665109763441503"><name>MARIELUNDSKYRKA</name><desc>Treskeppig basilika från 1969 ritad av Tore Virke, samordnad med ett angränsande daghem.</desc></wpt>
+  <wpt lat="63.175642" lon="14.665671"><name>Hoppets kapell</name><desc>kapell i Östersunds kommun</desc></wpt>
+  <wpt lat="63.15856111" lon="14.70849444"><name>Odensalakyrkan</name><desc>kyrkobyggnad i Östersunds kommun</desc></wpt>
+  <wpt lat="63.1583" lon="14.74301"><name>Heliga Ljusets kyrka</name><desc>kyrkobyggnad i Östersunds kommun</desc></wpt>
+  <wpt lat="63.17913" lon="14.52022"><name>Frösö kyrka</name><desc>kyrkobyggnad i Östersunds kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Östersund</name>
+    <rtept lat="63.20432104" lon="14.63544682"><name>Lugnviks kyrka</name></rtept>
+    <rtept lat="63.183159149816426" lon="14.617579127851648"><name>Hornsbergs kyrkan</name></rtept>
+    <rtept lat="63.18319722" lon="14.61730556"><name>Hornsbergskyrkan</name></rtept>
+    <rtept lat="63.1786" lon="14.63956667"><name>Östersunds gamla kyrka</name></rtept>
+    <rtept lat="63.17427807685585" lon="14.6397729532"><name>Betelkyrkan</name></rtept>
+    <rtept lat="63.174152277571594" lon="14.635503053347813"><name>Hotell Jämteborg</name></rtept>
+    <rtept lat="63.17169444" lon="14.64238889"><name>Stora kyrkan</name></rtept>
+    <rtept lat="63.16666667" lon="14.65"><name>Marielundskyrkan</name></rtept>
+    <rtept lat="63.16520016796338" lon="14.665109763441503"><name>MARIELUNDSKYRKA</name></rtept>
+    <rtept lat="63.175642" lon="14.665671"><name>Hoppets kapell</name></rtept>
+    <rtept lat="63.15856111" lon="14.70849444"><name>Odensalakyrkan</name></rtept>
+    <rtept lat="63.1583" lon="14.74301"><name>Heliga Ljusets kyrka</name></rtept>
+    <rtept lat="63.17913" lon="14.52022"><name>Frösö kyrka</name></rtept>
+  </rte>
+</gpx>

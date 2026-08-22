@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Linköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Linköping till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/linkoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Linköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Linköping till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/linkoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Linköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Linköping till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 189 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"linkoping","sourceSlug":"stadsvandring/linkoping","centroid":{"lat":58.406714911717955,"lng":15.618116143378254},"stops":[{"name":"Datamuseet IT-ceum","lat":58.41388889,"lng":15.61555556},{"name":"Linköpings slott","lat":58.41055556,"lng":15.61583333},{"name":"Ansgarskyrkan","lat":58.41416667,"lng":15.6}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Linköping","description":"Upptäck Linköping till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/linkoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Datamuseet IT-ceum","description":"museum om datorrelaterad historia i Linköping","url":"https://stadsvandring.io/p/wd-linkoping-datamuseet-it-ceum-q4703332","geo":{"@type":"GeoCoordinates","latitude":58.41388889,"longitude":15.61555556}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Linköpings slott","description":"Sveriges äldsta bevarade profana byggnad med delar från 1100-talet","url":"https://stadsvandring.io/p/wd-linkoping-linkopings-slott-q6554440","geo":{"@type":"GeoCoordinates","latitude":58.41055556,"longitude":15.61583333}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Ansgarskyrkan","description":"kyrkobyggnad i Svenska kyrkan i Linköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.41416667,"longitude":15.6}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Berga kyrka","description":"kyrka i Linköpings kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.39277778,"longitude":15.63916667}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Folkungabrunnen","description":"svensk skulptur","geo":{"@type":"GeoCoordinates","latitude":58.410734,"longitude":15.621481}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Garnisonskyrkan","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.39758333,"longitude":15.61152778}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Hospitalstorget","description":"torg i centrala Linköping","geo":{"@type":"GeoCoordinates","latitude":58.40956667,"longitude":15.62193056}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kärna kyrka","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.41666667,"longitude":15.52361111}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Lambohovskyrkan","description":"kyrkobyggnad i Linköpings kommun","url":"https://stadsvandring.io/p/wd-linkoping-lambohovskyrkan-q10553526","geo":{"@type":"GeoCoordinates","latitude":58.3875,"longitude":15.56666667}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Lilla torget","description":"plats i Linköping","geo":{"@type":"GeoCoordinates","latitude":58.41027778,"longitude":15.62655556}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Mikaelskyrkan","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.40988889,"longitude":15.56697222}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Rystads kyrka","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.45036111,"longitude":15.71154444}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Sankt Hans kyrka","description":"kyrka i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.38083333,"longitude":15.67861111}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Sankt Lars kyrka","description":"kyrka i Linköpings kommun, Sverige","url":"https://stadsvandring.io/p/wd-linkoping-sankt-lars-kyrka-q10661395","geo":{"@type":"GeoCoordinates","latitude":58.41139167,"longitude":15.62466111}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Sankt Nikolai katolska kyrka","description":"romersk-katolsk kyrkobyggnad i Linköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.41341667,"longitude":15.61794444}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Sankta Maria i Johannelund","description":"kyrka i Linköpings kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.39600278,"longitude":15.66344167}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Skäggetorps kyrka","description":"kyrka i Linköpings kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.4251,"longitude":15.5788}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Slaka kyrka","description":"kyrka i Linköpings stift","geo":{"@type":"GeoCoordinates","latitude":58.37125,"longitude":15.556}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Stora torget","description":"torg i Linköping","url":"https://stadsvandring.io/p/wd-linkoping-stora-torget-q10681178","geo":{"@type":"GeoCoordinates","latitude":58.411087,"longitude":15.621572}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Tannefors kyrka","description":"kyrka i Linköpings kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.40722222,"longitude":15.64361111}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Tomaskyrkan","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.4025,"longitude":15.61}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Trädgårdstorget","description":"plats i Linköping","geo":{"@type":"GeoCoordinates","latitude":58.40966667,"longitude":15.6245}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Vidingsjö kyrka","description":"kyrkobyggnad i Linköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.37769167,"longitude":15.64323889}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Saint Mary's Chapel (Linköping Cathedral)","description":"Saint Mary's Chapel (Linköping Cathedral)","geo":{"@type":"GeoCoordinates","latitude":58.411389,"longitude":15.618278}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Uppståndelsens kapell","description":"kapell i Linköpings kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.4062578,"longitude":15.6053224}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Linköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 189 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Linköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 189 sevärdheter i Linköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Datamuseet IT-ceum?","acceptedAnswer":{"@type":"Answer","text":"museum om datorrelaterad historia i Linköping"}},{"@type":"Question","name":"Vad är Linköpings slott?","acceptedAnswer":{"@type":"Answer","text":"Sveriges äldsta bevarade profana byggnad med delar från 1100-talet"}},{"@type":"Question","name":"Vad är Ansgarskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Linköping, Sverige"}},{"@type":"Question","name":"Vad är Berga kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrka i Linköpings kommun, Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Linköping","item":"https://stadsvandring.io/stadsvandring/linkoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Linköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Linköping</span><span class="badge">189 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Linköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Linköping till fots: 189 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Linköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-linkoping-datamuseet-it-ceum-q4703332"><b>1. Datamuseet IT-ceum</b><span>museum · museum om datorrelaterad historia i Linköping</span></a>
+<a class="tile" href="/p/wd-linkoping-linkopings-slott-q6554440"><b>2. Linköpings slott</b><span>Slott · Sveriges äldsta bevarade profana byggnad med delar från 1100-talet</span></a>
+<a class="tile" href="/p/wd-linkoping-ansgarskyrkan-q10412958"><b>3. Ansgarskyrkan</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Linköping, Sverige</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Linköping · 189</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Linköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 99</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-lararhogskolan-linkoping-092163"><b>LÄRARHÖGSKOLAN</b></a> — Byggnaden restes 1926 som folkskoleseminarium kring en öppen gård. <span class="era">1926–1926</span></li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-061806"><b>Hällristning</b></a> — En hällristning med ett tiotal skålgropar i berghällen.</li>
+<li><a href="/p/ksamsok-hallristning-linkoping-cd3e3c"><b>Hällristning</b></a> — En älvkvarnssten flyttad från Linghem intill ett stenmonument med inskriften &quot;Fader vår gif oss bröd&quot;.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-linkoping-97093a"><b>Fornlämningsliknande lämning</b></a> — En förekomst av älvkvarnar i granithällen, delvis av osäker natur.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-linkoping-6b8162"><b>Fossil åker</b></a> — En fossil åker med spår av bränd lera och skärvsten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-daf251"><b>Stensättning</b></a> — Rester av tre osäkra stensättningar, i dag svåra att bedöma som gravar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-5f9232"><b>Stensättning</b></a> — En rund stensättning invid en härd daterad till bronsålder eller äldre järnålder.</li>
+<li><a href="/karta?plats=ksamsok-hard-linkoping-9811b8"><b>Härd</b></a> — En förhistorisk härd som påträffades vid en utredning 2012.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-9a274e"><b>Hällristning</b></a> — Två älvkvarnar huggna i en vittrad berghäll.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-f0b94f"><b>Stensättning</b></a> — Resterna av en treuddig stensättning, delvis övertorvad.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-f4d3e5"><b>Hällristning</b></a> — En skålgropsförekomst med två gropar i fast häll.</li>
+<li><a href="/karta?plats=ksamsok-grav-uppgift-om-typ-saknas-linkoping-45a343"><b>Grav - uppgift om typ saknas</b></a> — En stenåldersgrav, känd som båtyxegraven vid Bergsvägen, är undersökt och borttagen.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-linkoping-9699c3"><b>Lägenhetsbebyggelse</b></a> — Lämningar efter torpet Stattute, rivet efter 1945.</li>
+<li><a href="/karta?plats=ksamsok-skarvstenshog-linkoping-ca6997"><b>Skärvstenshög</b></a> — Två övertorvade skärvstenshögar med rikligt inslag av skärvsten.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-linkoping-efbf19"><b>Boplatsområde</b></a> — Ett boplatsområde vid Bergsvägen, delvis undersökt och delvis täckt av jordmassor.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-linkoping-77b36b"><b>Färdväg</b></a> — En hålväg omgiven av flera stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-8d18fb"><b>Stensättning</b></a> — Flera stensättningar i anslutning till en hålväg.</li>
+<li><a href="/karta?plats=ksamsok-hog-linkoping-707d75"><b>Hög</b></a> — En misstänkt gravhög som undersöktes och togs bort 1945 utan att kunna bekräftas som grav.</li>
+<li><a href="/karta?plats=ksamsok-terrassering-linkoping-311d90"><b>Terrassering</b></a> — En terrassering med stenskoning, påträffad vid en förundersökning 2011.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-linkoping-6e203e"><b>Hamnanläggning</b></a> — Rester av kajkanten till Nykvarns hamn, byggd 1837–43.</li>
+<li><a href="/karta?plats=ksamsok-hard-linkoping-c77fd0"><b>Härd</b></a> — En härd i Linköping som endast är knapphändigt dokumenterad.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-0d3839"><b>Stensättning</b></a> — En rund stensättning som påträffades vid en specialinventering.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-linkoping-23e5ff"><b>Gravfält</b></a> — Ett gravfält med nio runda stensättningar och en rest sten.</li>
+<li><a href="/karta?plats=ksamsok-fortojningsanordning-linkoping-d364b8"><b>Förtöjningsanordning</b></a> — En pollare registrerad vid en arkeologisk utredning 2024.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-linkoping-6b2bee"><b>Gravfält</b></a> — Ett gravfält med fem vendeltida gravar längs åsen.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-linkoping-426512"><b>Avrättningsplats</b></a> — Platsen för Linköpings galge och rätteplats, markerad på kartor sedan 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-81c9cb"><b>Stensättning</b></a> — Resterna av en treuddig stensättning, delvis skuren av en gångstig.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-linkoping-50f018"><b>Boplatsområde</b></a> — En boplats med förhistoriskt kulturlager under ett senare stadslager.</li>
+<li><a href="/p/ksamsok-boplatsomrade-linkoping-ab43cb"><b>Boplatsområde</b></a> — Ett delundersökt boplatsområde med hus, brunnar, härdar och ässjor.</li>
+<li><a href="/p/ksamsok-boplats-linkoping-f241cb"><b>Boplats</b></a> — En boplats med ett hundratal anläggningar och härdar daterade till järnåldern.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-linkoping-8ad9f2"><b>Hägnadssystem</b></a> — Ett hägnadssystem med två stensträngar, påträffat vid en förundersökning 2011.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-linkoping-c8eefb"><b>Brunn/kallkälla</b></a> — Här låg enligt en karta från 1757 en källa som gett namn åt Kattbrunnsgatan.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-linkoping-6a6037"><b>Bytomt/gårdstomt</b></a> — Här låg Djurgården, kunglig jaktpark från 1606 skapad av hertig Johan av Östergötland.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-linkoping-1b0026"><b>Hamnanläggning</b></a> — En trekantig, knuttimrad stenkista är rester av en gammal hamnanläggning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-987ffd"><b>Stensättning</b></a> — En kvadratisk stensättning intill lämningar efter ett torp kallat stattinne.</li>
+<li><a href="/p/ksamsok-boplatsomrade-linkoping-128573"><b>Boplatsområde</b></a> — En undersökt boplats med spår av bosättning från både neolitikum och äldre järnålder.</li>
+<li><a href="/p/ksamsok-tegelindustri-linkoping-5cf492"><b>Tegelindustri</b></a> — Resterna av en tegelindustri med brännugn och torklada intill Kinda kanal.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-8ae5f2"><b>Hällristning</b></a> — En berghäll med fem älvkvarnar, delvis skadad av senare bergssprängning.</li>
+<li><a href="/p/ksamsok-begravningsplats-linkoping-bf1aaf"><b>Begravningsplats</b></a> — En pestkyrkogård vid Kampen där ett åttiotal offer för pesten 1710–1711 begravdes.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-linkoping-816928"><b>Husgrund, historisk tid</b></a> — Lämning efter en husgrund från historisk tid.</li>
+<li><a href="/karta?plats=ksamsok-boplats-linkoping-da35d9"><b>Boplats</b></a> — En undersökt boplats med stenpackningar av skörbränd sten.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-linkoping-671fcf"><b>Hägnad</b></a> — En 46 meter lång stensträng, rest av en äldre hägnad.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-linkoping-709049"><b>Hägnadssystem</b></a> — Två stensträngar som i väster bildar en fägata.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-9f655f"><b>Stensättning</b></a> — En rund stensättning av staplade stenar, delvis fylld med jord.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-linkoping-63a899"><b>Boplatsområde</b></a> — En undersökt boplats med två stolphus från stenålderns övergång till bondestenålder.</li>
+<li><a href="/karta?plats=ksamsok-hard-linkoping-006079"><b>Härd</b></a> — En härd daterad till äldre järnålder, undersökt och borttagen.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-ef6a00"><b>Hällristning</b></a> — Tre älvkvarnar inhuggna på ett stort flyttblock.</li>
+<li><a href="/karta?plats=ksamsok-grav-uppgift-om-typ-saknas-linkoping-3b3ad3"><b>Grav - uppgift om typ saknas</b></a> — Ett par brandlager efter gravar, undersökta redan 1926.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-linkoping-3523d7"><b>Lägenhetsbebyggelse</b></a> — Platsen för torpet Gumpekulla, troligen med medeltida ursprung.</li>
+<li><a href="/karta?plats=ksamsok-hard-linkoping-cfdd57"><b>Härd</b></a> — En härd med svårbestämd datering, påträffad vid schaktning längs cykelvägen.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-linkoping-164209"><b>Färdväg</b></a> — Ett gravfält med runda och kvadratiska stensättningar, genomkorsat av en hålväg.</li>
+<li><a href="/karta?plats=ksamsok-boplats-linkoping-3a6c7e"><b>Boplats</b></a> — En ännu oavgränsad boplats med ett tiotal anläggningar.</li>
+<li><a href="/karta?plats=ksamsok-hard-linkoping-a4c137"><b>Härd</b></a> — En odaterad härdbotten med sotsvart fyllning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-029a75"><b>Stensättning</b></a> — En välbevarad kvadratisk stensättning med nästan intakta kantkedjor.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-d77af3"><b>Hällristning</b></a> — Åtta skålgropar inhuggna i fast häll, tre av dem på rad.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-linkoping-c7b9e9"><b>Hägnad</b></a> — En 30 meter lång stensträng, delvis övertorvad.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-linkoping-c45181"><b>Hägnadssystem</b></a> — Två stensträngar, den ena över 200 meter lång, som bildar en fägata.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-0902de"><b>Stensättning</b></a> — En stensättningsliknande bildning intill platsen för en sedan länge undersökt grav.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-linkoping-e608e3"><b>Gravfält</b></a> — Ett gravfält med ett tiotal runda stensättningar, delvis undersökt och skadat vid parkanläggning.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-ad1bd4"><b>Hällristning</b></a> — Ett åttatal älvkvarnar inhuggna i berghällen, en del i dag bortsprängd.</li>
+<li><a href="/karta?plats=ksamsok-blastplats-linkoping-787a04"><b>Blästplats</b></a> — En järnframställningsplats med ugnar daterade till äldre järnålder.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-989e4c"><b>Hällristning</b></a> — Ett femtontal älvkvarnar och en ränna inhuggna i granithällen.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-linkoping-d5e93a"><b>Område med fossil åkermark</b></a> — Fossil åkermark inramad av ett stensträngssystem på över 300 meter.</li>
+<li><a href="/p/ksamsok-fardvag-linkoping-1c2695"><b>Färdväg</b></a> — En förhistorisk väg med förstärkta hjulspår, nära knuten till en intilliggande boplats.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-linkoping-3d06fd"><b>Husgrund, historisk tid</b></a> — Platsen för Östra tullens tullbom och tullstuga.</li>
+<li><a href="/karta?plats=ksamsok-stattute-hallristning-linkoping-e2f516"><b>Stattute, Hällristning</b></a> — Två älvkvarnar på en bergrygg, belägna inom en gammal torplämning.</li>
+<li><a href="/karta?plats=ksamsok-stenrojd-yta-linkoping-cfac50"><b>Stenröjd yta</b></a> — En stenröjd yta i landskapet.</li>
+<li><a href="/karta?plats=ksamsok-fardvagssystem-linkoping-7d055f"><b>Färdvägssystem</b></a> — Ett färdvägssystem med två möjliga hålvägar, synliga som svackor i marken.</li>
+<li><a href="/karta?plats=ksamsok-boplats-linkoping-2bc759"><b>Boplats</b></a> — En registrerad boplats utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-linkoping-ca0c98"><b>Vägmärke</b></a> — En milstolpe av kalksten med årtalet 1755.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-linkoping-92677e"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning som troligen är en naturlig moränrest.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-linkoping-098366"><b>Bytomt/gårdstomt</b></a> — Hunnebergs bytomt, känd i skrift sedan 1309 och riven först 1944.</li>
+<li><a href="/karta?plats=ksamsok-fardvagssystem-linkoping-6d1975"><b>Färdvägssystem</b></a> — Delundersökta hålvägar, på en sträcka fyra parallella spår.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-linkoping-dd053a"><b>Gravfält</b></a> — Ett gravfält med ett tiotal runda stensättningar och två minnesstenar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-2b9b78"><b>Stensättning</b></a> — En osäker, närmast rund stensättning på ett bergkrön.</li>
+<li><a href="/karta?plats=ksamsok-gumpekullastenen-grav-markerad-av-sten-block-linkoping-7935d4"><b>Gumpekullastenen, Grav markerad av sten/block</b></a> — Gumpekullastenen, en rest sten som en sägen knyter till Stångebroslaget.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-linkoping-4fa6e9"><b>Husgrund, historisk tid</b></a> — Grunden efter en 1800-talspaviljong uppförd av C.F. Ridderstad.</li>
+<li><a href="/karta?plats=ksamsok-boplats-linkoping-5209a8"><b>Boplats</b></a> — En boplats med två husgrunder från neolitikum och ett femtontal härdar.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-linkoping-f1a73b"><b>Fossil åker</b></a> — Fossil åker med parceller som stämmer med en storskifteskarta från 1773.</li>
+<li><a href="/karta?plats=ksamsok-rose-linkoping-b48306"><b>Röse</b></a> — Ett möjligt röse, påträffat vid inventering.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-linkoping-8da518"><b>Boplatsområde</b></a> — Ett boplatsområde med en nedsänkt hydda och neolitisk keramik.</li>
+<li><a href="/p/ksamsok-boplatsomrade-linkoping-ba164d"><b>Boplatsområde</b></a> — En stenåldersboplats där kvartsverktyg och härdar tyder på jägare för tusentals år sedan.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-linkoping-80e2f7"><b>Dammvall</b></a> — En dammvall som ännu inte hunnit dokumenteras närmare.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-forhistorisk-medeltida-linkoping-dd329e"><b>Husgrund, förhistorisk/medeltida</b></a> — Spåren efter ett äldre hus, känt endast som en terrass i marken.</li>
+<li><a href="/p/ksamsok-kemisk-industri-linkoping-9e7ab6"><b>Kemisk industri</b></a> — Platsen för ett salpetersjuderi som redan 1639 fanns utmärkt på karta.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-linkoping-da6f90"><b>Hägnad</b></a> — En hägnad vars uppgifter ännu inte är granskade.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-linkoping-74ccb1"><b>Stensättning</b></a> — En låg stensättning i en hästhage, upptäckt vid en utredning 2012.</li>
+<li><a href="/karta?plats=ksamsok-militar-motesplats-linkoping-9894e3"><b>Militär mötesplats</b></a> — Ett gammalt exercisfält där stadens borgerskap en gång övade.</li>
+<li><a href="/karta?plats=ksamsok-hog-linkoping-f32b28"><b>Hög</b></a> — En gravhög som numera bär en runsten på sin topp.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-linkoping-6299e6"><b>Boplatsområde</b></a> — En delvis undersökt boplats med spår av stenålderns kvartsteknik.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-6de73b"><b>Hällristning</b></a> — En hällristning vars beskrivning ännu inte har granskats.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-linkoping-89a5aa"><b>Husgrund, historisk tid</b></a> — Grunden till Nykvarns utvärdshus, som slog igen på 1880-talet.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-linkoping-aa9d8c"><b>Vägmärke</b></a> — En sliten väghållningssten i grå kalksten på sannolikt ursprunglig plats.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-linkoping-e2af6f"><b>Färdväg</b></a> — En äldre vägbank, undersökt och sedan borttagen, med spår av en bro.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-linkoping-2e4598"><b>Gravfält</b></a> — Ett gravfält med åtta stensättningar och en genomkorsande hålväg.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-linkoping-abbf2d"><b>Stadslager</b></a> — Det medeltida kulturlagret som markerar Linköpings gamla stadskärna.</li>
+<li><a href="/karta?plats=ksamsok-boplats-linkoping-545e1b"><b>Boplats</b></a> — En fyndplats där både historiskt och förhistoriskt material blandats i jorden.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-linkoping-b7b0f4"><b>Hällristning</b></a> — En hällristning med sju älvkvarnar inhuggna i en flack berghäll.</li>
+<li><a href="/p/ksamsok-grav-och-boplatsomrade-linkoping-9e337c"><b>Grav- och boplatsområde</b></a> — Ett kombinerat grav- och boplatsområde som spänner över järnåldern.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 28</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-blastad-gard-q95547769"><b>Blästad gård</b></a> — herrgård i Östergötland</li>
+<li><a href="/karta?plats=ksamsok-lusthus-linkoping-050063"><b>LUSTHUS</b></a> — Ett lusthus i Linköping från 1800-talet. <span class="era">1800–1899</span></li>
+<li><a href="/karta?plats=ksamsok-annexet-linkoping-052070"><b>Annexet</b></a> — Byggnaden Annexet i Linköping från 1940-talet. <span class="era">1940–1945</span></li>
+<li><a href="/karta?plats=ksamsok-kallare-linkoping-692884"><b>Källare</b></a> — En medeltida källare, rest av den forna Bredgården i Linköping. <span class="era">1400–1499</span></li>
+<li><a href="/p/ksamsok-flygelbyggnad-linkoping-092589"><b>Flygelbyggnad</b></a> — En flygelbyggnad vid Ågatan med murverk från 1400-talet. <span class="era">1400–1499</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-linkoping-050623"><b>BOSTADSHUS</b></a> — Ett bostadshus i Linköping från slutet av 1700-talet. <span class="era">1770–1799</span></li>
+<li><a href="/p/ksamsok-konsistoriegarden-linkoping-434840"><b>KONSISTORIEGÅRDEN</b></a> — Konsistoriegården vid domkyrkan, med medeltida rötter och skola från 1827. <span class="era">1827–1830</span></li>
+<li><a href="/p/ksamsok-brygghus-linkoping-692887"><b>Brygghus</b></a> — Ett brygghus från 1820-talet med bevarad eldstad och bykkar. <span class="era">1820–1829</span></li>
+<li><a href="/p/ksamsok-hyd-nska-garden-linkoping-092096"><b>HYDÈNSKA GÅRDEN</b></a> — Hydénska gården vid Storgatan, med anor från tidigt 1700-tal. <span class="era">1700–1729</span></li>
+<li><a href="/p/ksamsok-gymnastikhuset-linkoping-092658"><b>GYMNASTIKHUSET</b></a> — Ett av landets äldsta ännu använda gymnastikhus, färdigt 1882 och prytt med en medaljong av Per Henrik Ling. <span class="era">1882–1882</span></li>
+<li><a href="/p/ksamsok-akerbo-harads-tingshus-linkoping-095693"><b>ÅKERBO HÄRADS TINGSHUS</b></a> — Tingshuset från 1888–89 byggdes senare om till äldreboende men behåller sin frontprydda gatufasad. <span class="era">1888–1889</span></li>
+<li><a href="/p/ksamsok-linkopings-centralstation-linkoping-102126"><b>LINKÖPINGS CENTRALSTATION</b></a> — Stationshuset från 1872 ritades av Adolf Wilhelm Edelsvärd i fransk renässansstil. <span class="era">1871–1872</span></li>
+<li><a href="/p/ksamsok-biskopsgarden-linkoping-092588"><b>BISKOPSGÅRDEN</b></a> — Biskopsgårdens stenhus vid Ågatan uppfördes 1733–35 efter ritningar av Carl Gustaf Tessin. <span class="era">1733–1735</span></li>
+<li><a href="/karta?plats=ksamsok-stallbyggnad-linkoping-050060"><b>STALLBYGGNAD</b></a> — En stallbyggnad från 1816 upptagen i Bebyggelseregistret. <span class="era">1816–1816</span></li>
+<li><a href="/karta?plats=ksamsok-roda-magasinet-linkoping-019022"><b>RÖDA MAGASINET</b></a> — Förrådsbyggnaden från 1835 på Malmslätt bar en gång målade ryttarfigurer för övningsskjutningar. <span class="era">1835–1835</span></li>
+<li><a href="/p/ksamsok-klostret-linkoping-092103"><b>&quot;KLOSTRET&quot;</b></a> — Trots namnet var Klostret sannolikt en prästgård från 1500-talet, i dag museum för kyrklig stenskulptur. <span class="era">1400–1499</span></li>
+<li><a href="/karta?plats=ksamsok-vaxthuset-linkoping-092165"><b>VÄXTHUSET</b></a> — Växthuset ritades av Ture Rydberg och uppfördes 1926. <span class="era">1926–1926</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-linkoping-092587"><b>Uthus</b></a> — Uthuset vid Ågatan består av två sammanbyggda hus från olika tider. <span class="era">1700–1799</span></li>
+<li><a href="/p/ksamsok-stall-linkoping-050066"><b>Stall</b></a> — Ett timrat stall, kanske från 1700-talet, med vitkalkade timmerväggar och ålderdomliga portar. <span class="era">1750–1799</span></li>
+<li><a href="/karta?plats=ksamsok-fd-vaktmastarbostaden-linkoping-092585"><b>FD VAKTMÄSTARBOSTADEN</b></a> — Bostadshuset uppfördes som vaktmästarbostad, troligen när domkapitelhuset byggdes till 1875. <span class="era">1875–1879</span></li>
+<li><a href="/p/ksamsok-tingshus-linkoping-092592"><b>Tingshus</b></a> — Tingshuset från 1972–74 rymmer Linköpings tingsrätt bakom en fasad av trä och natursten. <span class="era">1972–1974</span></li>
+<li><a href="/p/ksamsok-bod-linkoping-393800"><b>Bod</b></a> — Boden från 1820-talet har tjänat som drängbostad, magasin och kontor. <span class="era">1820–1829</span></li>
+<li><a href="/karta?plats=ksamsok-vedbod-linkoping-692811"><b>VEDBOD</b></a> — En vedbod från 1800-talet upptagen i Bebyggelseregistret. <span class="era">1800–1899</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshuset-linkoping-092161"><b>BOSTADSHUSET</b></a> — Bostadshuset av sten ritades av Ture Rydberg och uppfördes 1926. <span class="era">1926–1926</span></li>
+<li><a href="/karta?plats=ksamsok-uthuslanga-med-flera-funktioner-linkoping-050062"><b>UTHUSLÄNGA MED FLERA FUNKTIONER</b></a> — En uthuslänga med flera funktioner från 1800-talet, upptagen i Bebyggelseregistret. <span class="era">1800–1899</span></li>
+<li><a href="/p/ksamsok-linkopings-radhus-linkoping-095111"><b>Linköpings rådhus</b></a> — Rådhuset fick sitt nyklassicistiska uttryck vid en ombyggnad 1926–27 och rymmer en väggmålning av Fru Justitia. <span class="era">1795–1805</span></li>
+<li><a href="/p/ksamsok-stenhusgarden-linkoping-050040"><b>STENHUSGÅRDEN</b></a> — Den senmedeltida stenbyggnaden hörde till S:t Andreas prebende och är i dag utställningslokal. <span class="era">1400–1499</span></li>
+<li><a href="/karta?plats=ksamsok-vagnsbod-linkoping-050061"><b>VAGNSBOD</b></a> — En vagnsbod från 1800-talet upptagen i Bebyggelseregistret. <span class="era">1800–1899</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 27</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-ansgarskyrkan-q10412958"><b>Ansgarskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Linköping, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-berga-kyrka-q10428342"><b>Berga kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-garnisonskyrkan-q10503146"><b>Garnisonskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-karna-kyrka-q10551855"><b>Kärna kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-lambohovskyrkan-q10553526"><b>Lambohovskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-mikaelskyrkan-q10585164"><b>Mikaelskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-rystads-kyrka-q10658349"><b>Rystads kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-sankt-hans-kyrka-q10661358"><b>Sankt Hans kyrka</b></a> — kyrka i Linköpings kommun</li>
+<li><a href="/p/wd-linkoping-sankt-lars-kyrka-q10661395"><b>Sankt Lars kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-sankt-nikolai-katolska-kyrka-q10661435"><b>Sankt Nikolai katolska kyrka</b></a> — romersk-katolsk kyrkobyggnad i Linköping, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-sankta-maria-i-johannelund-q10661532"><b>Sankta Maria i Johannelund</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-skaggetorps-kyrka-q10670889"><b>Skäggetorps kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-slaka-kyrka-q10671437"><b>Slaka kyrka</b></a> — kyrka i Linköpings stift</li>
+<li><a href="/karta?plats=wd-linkoping-tannefors-kyrka-q10690657"><b>Tannefors kyrka</b></a> — kyrka i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-tomaskyrkan-q10699465"><b>Tomaskyrkan</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-vidingsjo-kyrka-q10715124"><b>Vidingsjö kyrka</b></a> — kyrkobyggnad i Linköpings kommun</li>
+<li><a href="/karta?plats=wd-linkoping-saint-mary-s-chapel-linkoping-cathedral-q11735120"><b>Saint Mary&#39;s Chapel (Linköping Cathedral)</b></a> — Saint Mary&#39;s Chapel (Linköping Cathedral)</li>
+<li><a href="/karta?plats=wd-linkoping-uppstandelsens-kapell-q26256741"><b>Uppståndelsens kapell</b></a> — kapell i Linköpings kommun, Sverige</li>
+<li><a href="/karta?plats=wd-linkoping-sankt-martins-kyrka-q110288810"><b>Sankt Martins kyrka</b></a> — kyrka i Linköpigs kommun och stift</li>
+<li><a href="/karta?plats=wd-linkoping-ljusets-kapell-q126599126"><b>Ljusets kapell</b></a> — kapell i vid Lilla aska griftegård</li>
+<li><a href="/karta?plats=wd-linkoping-stolplyckans-kyrka-q133856086"><b>Stolplyckans kyrka</b></a> — kyrka i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-linkopings-missionskyrka-q134170566"><b>Linköpings missionskyrka</b></a> — Equmeniakyrkan är en kyrkobyggnad i Linköping.</li>
+<li><a href="/p/ksamsok-linkopings-domkyrka-linkoping-040458"><b>Linköpings domkyrka</b></a> — Linköpings domkyrka, med grunder efter en föregångare från 1100-talet. <span class="era">1100–1150</span></li>
+<li><a href="/p/ksamsok-domkyrkosysslomansgarden-linkoping-092591"><b>DOMKYRKOSYSSLOMANSGÅRDEN</b></a> — Huvudbyggnaden restes 1813 och rymmer än idag flera bevarade inredningsdetaljer. <span class="era">1813–1813</span></li>
+<li><a href="/p/ksamsok-tanneforskyrkan-linkoping-102306"><b>TANNEFORSKYRKAN</b></a> — Tanneforskyrkan från 1963–64 ritades av bröderna Kandell och ligger monumentalt på berget. <span class="era">1963–1964</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-linkoping-d76f7e"><b>Kyrka/kapell</b></a> — Ett flertal runristade gravhällar av kalksten som bevaras under kyrkan.</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-linkoping-e07f37"><b>Kyrka/kapell</b></a> — Platsen för det medeltida Sankt Örjans kapell, där skelett påträffats vid byggnadsarbeten.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 13</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-folkungabrunnen-q10497482"><b>Folkungabrunnen</b></a> — svensk skulptur</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-447b71"><b>Minnesmärke</b></a> — Ett stenmonument av granit med treenighetsmärke i brons och inskriften &quot;Fader vår gif oss bröd&quot;.</li>
+<li><a href="/p/ksamsok-minnesmarke-linkoping-3c3a83"><b>Minnesmärke</b></a> — En samling minnesstenar med en bronsstaty av Moder Svea och lejonet.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-194f67"><b>Minnesmärke</b></a> — Ett minnesmärke i Linköping som endast är knapphändigt dokumenterat.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-c16ff8"><b>Minnesmärke</b></a> — En minnestavla som erinrar om Linköpings gamla skola och gymnasium.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-adbe35"><b>Minnesmärke</b></a> — En minnessten som hedrar slaget vid Stångebro 1598.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-496fd3"><b>Minnesmärke</b></a> — Bronsstatyn med moder Svea och lejonet restes 1928 och bär orden PÅ VAKT FÖR FOSTERLANDET.</li>
+<li><a href="/p/ksamsok-minnesmarke-linkoping-b979e1"><b>Minnesmärke</b></a> — Minnessten från 1891 över östgötska soldater som stupade under krigstågen 1563–1815.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-0c9424"><b>Minnesmärke</b></a> — En minnestavla över Elsa Brändström, Sibiriens ängel, som gick i skola i Linköping.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-4b4d33"><b>Minnesmärke</b></a> — En minnessten över livgrenadjärer som omkom under beredskapstjänst 1939–1945.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-8b4953"><b>Minnesmärke</b></a> — En minnestavla över författaren Carl Anton Wetterbergh, känd som Onkel Adam.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-25800b"><b>Minnesmärke</b></a> — En minnessten av granit med en uppmaning att vårda fält och skog.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-linkoping-9a1584"><b>Minnesmärke</b></a> — En minnessten över Östgöta trängkårs tid på platsen 1911–1927.</li>
+</ul>
+<h3 class="city-h3">Torg · 6</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-hospitalstorget-q10526506"><b>Hospitalstorget</b></a> — torg i centrala Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-lilla-torget-q10561807"><b>Lilla torget</b></a> — plats i Linköping</li>
+<li><a href="/p/wd-linkoping-stora-torget-q10681178"><b>Stora torget</b></a> — torg i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-tradgardstorget-q10705554"><b>Trädgårdstorget</b></a> — plats i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-farbror-melins-torg-q31898175"><b>Farbror Melins torg</b></a> — mindre torg i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-magasintorget-q31898188"><b>Magasintorget</b></a> — Magasintorget är ett torg i Linköpings innerstad.</li>
+</ul>
+<h3 class="city-h3">museum · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-linkoping-datamuseet-it-ceum-q4703332"><b>Datamuseet IT-ceum</b></a> — museum om datorrelaterad historia i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-lassemajas-deckarhus-q116791776"><b>LasseMajas Deckarhus</b></a> — attraktion i Gamla Linköping</li>
+<li><a href="/karta?plats=ksamsok-ostergotlands-lansmuseum-linkoping-092186"><b>ÖSTERGÖTLANDS LÄNSMUSEUM</b></a> — Östergötlands länsmuseum inrymt i en byggnad från 1939. <span class="era">1939–1939</span></li>
+</ul>
+<h3 class="city-h3">Bro · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-stangebro-q116375479"><b>Stångebro</b></a> — bro i Linköping</li>
+<li><a href="/karta?plats=ksamsok-bro-linkoping-ed84d2"><b>Bro</b></a> — Läget för en cirka 68 meter lång bro över Stångån som byggdes 1773.</li>
+<li><a href="/karta?plats=ksamsok-bro-linkoping-9c3075"><b>Bro</b></a> — En utrasad stenkista som kan ha burit en bro i Ågatans förlängning.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-linkoping-lektorshagen-q136298853"><b>Lektorshagen</b></a> — park- och skogsområde i Linköping</li>
+<li><a href="/p/wd-linkoping-magistratshagen-q136996801"><b>Magistratshagen</b></a> — park i Linköping</li>
+<li><a href="/karta?plats=wd-linkoping-hjalmsatersberget-q137916803"><b>Hjälmsätersberget</b></a> — park i Linköping</li>
+</ul>
+<h3 class="city-h3">Runsten · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-linkoping-f1b1bf"><b>Runristning</b></a> — Under domkyrkan förvaras flera runristade gravhällar med drakslingor och djurornamentik.</li>
+<li><a href="/karta?plats=ksamsok-runristning-linkoping-8864b6"><b>Runristning</b></a> — En runsten som bär det första säkra omnämnandet av England i Östergötlands runinskrifter.</li>
+<li><a href="/p/ksamsok-runristning-linkoping-f2a6a4"><b>Runristning</b></a> — En runsten rest efter Bove och Äsgärd, återfunnen bland stenar från gamla Stångebron.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-linkoping-linkopings-slott-q6554440"><b>Linköpings slott</b></a> — Sveriges äldsta bevarade profana byggnad med delar från 1100-talet</li>
+<li><a href="/karta?plats=ksamsok-slott-herresate-linkoping-fe6ae2"><b>Slott/herresäte</b></a> — Ett slott med rötter i en medeltida biskopsgård, byggnadsminne sedan 1935.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-linkoping-365-1-q30032034"><b>Linköping 365:1</b></a> — minnesmärke i Östergötland</li>
+</ul>
+<h3 class="city-h3">Torn · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-linkoping-linkopings-fyr-q40441949"><b>Linköpings fyr</b></a> — fyr i Linköping vid sjön Roxen</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 189 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/linkoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/linkoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Linköping gratis?</summary><p>Ja. Karta, alla 189 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Linköping?</summary><p>Vandringen samlar 189 sevärdheter i Linköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Datamuseet IT-ceum?</summary><p>museum om datorrelaterad historia i Linköping</p></details>
+<details class="faq"><summary>Vad är Linköpings slott?</summary><p>Sveriges äldsta bevarade profana byggnad med delar från 1100-talet</p></details>
+<details class="faq"><summary>Vad är Ansgarskyrkan?</summary><p>kyrkobyggnad i Svenska kyrkan i Linköping, Sverige</p></details>
+<details class="faq"><summary>Vad är Berga kyrka?</summary><p>kyrka i Linköpings kommun, Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

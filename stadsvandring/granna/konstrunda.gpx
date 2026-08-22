@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Gränna</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.02199405116932" lon="14.466256738398528"><name>Minnesmärke</name><desc>Ett minnesmärke som är registrerat men saknar närmare beskrivning.</desc></wpt>
+  <wpt lat="58.01912395635432" lon="14.466077885019521"><name>Minnesmärke</name><desc>Ett minnesmärke som är registrerat men saknar närmare beskrivning.</desc></wpt>
+  <wpt lat="58.01763822578653" lon="14.464292131956828"><name>Minnesmärke</name><desc>Ett minnesmärke som är registrerat men saknar närmare beskrivning.</desc></wpt>
+  <rte><name>Konstrundan i Gränna</name>
+    <rtept lat="58.02199405116932" lon="14.466256738398528"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.01912395635432" lon="14.466077885019521"><name>Minnesmärke</name></rtept>
+    <rtept lat="58.01763822578653" lon="14.464292131956828"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

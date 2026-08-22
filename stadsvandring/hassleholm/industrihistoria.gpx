@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Hässleholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.157723447024054" lon="13.764635405775957"><name>The Train Station</name><desc>Today, being able to travel across the Skåne region in an hour or so is a given - but before the railway was finished your only option was pretty much to go by</desc></wpt>
+  <wpt lat="56.157578849390674" lon="13.76613769828567"><name>Polisstationen och parkeringen</name><desc>På 1930-talet hade antalet bilar i trakten blivit så många att de fick ett par officiella parkeringsplatser nära torget (med skylt och allt).</desc></wpt>
+  <wpt lat="56.105055597364384" lon="13.916385480004635"><name>Vinslövs järnvägsstation</name><desc>Den här järnvägsstationen uppfördes redan 1865 vilket alltså var året då Vinslöv övergick från att vara en bondby till ett stationssamhälle.</desc></wpt>
+  <rte><name>Industrihistoria i Hässleholm</name>
+    <rtept lat="56.157723447024054" lon="13.764635405775957"><name>The Train Station</name></rtept>
+    <rtept lat="56.157578849390674" lon="13.76613769828567"><name>Polisstationen och parkeringen</name></rtept>
+    <rtept lat="56.105055597364384" lon="13.916385480004635"><name>Vinslövs järnvägsstation</name></rtept>
+  </rte>
+</gpx>

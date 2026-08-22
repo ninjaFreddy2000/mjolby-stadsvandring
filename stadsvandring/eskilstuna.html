@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Eskilstuna — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Eskilstuna till fots: 149 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 149 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/eskilstuna">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Eskilstuna — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Eskilstuna till fots: 149 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 149 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/eskilstuna">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Eskilstuna — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Eskilstuna till fots: 149 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 149 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"eskilstuna","sourceSlug":"stadsvandring/eskilstuna","centroid":{"lat":59.39924656784408,"lng":16.50386827540694},"stops":[{"name":"Kvarnfallet","lat":59.4210647,"lng":16.4705568},{"name":"Husberget","lat":59.4210292,"lng":16.4716866},{"name":"Holmberget","lat":59.419583,"lng":16.471907}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Eskilstuna","description":"Upptäck Eskilstuna till fots: 149 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/eskilstuna","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Kvarnfallet","description":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.","geo":{"@type":"GeoCoordinates","latitude":59.4210647,"longitude":16.4705568}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Husberget","description":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.","geo":{"@type":"GeoCoordinates","latitude":59.4210292,"longitude":16.4716866}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Holmberget","description":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.","geo":{"@type":"GeoCoordinates","latitude":59.419583,"longitude":16.471907}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Torshälla kyrka","description":"kyrkobyggnad i Svenska kyrkan i Torshälla, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.422,"longitude":16.4683}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Arbetets ära och glädje","description":"Arbetets ära och glädje är en brunn som står på Fristadstorget i Eskilstuna.","url":"https://stadsvandring.io/p/wd-eskilstuna-arbetets-ara-och-gladje-q10416937","geo":{"@type":"GeoCoordinates","latitude":59.37036111,"longitude":16.51347222}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Eskilstuna konstmuseum","description":"Eskilstuna konstmuseum är ett svenskt kommunalt konstmuseum i Eskilstuna.","url":"https://stadsvandring.io/p/wd-eskilstuna-eskilstuna-konstmuseum-q10489092","geo":{"@type":"GeoCoordinates","latitude":59.37777778,"longitude":16.51}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Faktoriet","description":"tidigare museum i Eskilstuna","geo":{"@type":"GeoCoordinates","latitude":59.375,"longitude":16.50972222}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Fors kyrka","description":"kyrkobyggnad i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.36733333,"longitude":16.51623333}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Fristadstorget","description":"plats i Eskilstuna","url":"https://stadsvandring.io/p/wd-eskilstuna-fristadstorget-q10499241","geo":{"@type":"GeoCoordinates","latitude":59.37083333,"longitude":16.51388889}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Guds hand","description":"skulptur av Carl Milles","geo":{"@type":"GeoCoordinates","latitude":59.373,"longitude":16.517916666667}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Hällby kyrka","description":"kyrkobyggnad i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.38991667,"longitude":16.42966667}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Johanniterklostret i Eskilstuna","description":"Johanniterklostret i Eskilstuna var ett kloster i Eskilstuna, som grundades av Johanniterorden till minne av den engelske missionären Eskil, vilken stenades ut…","url":"https://stadsvandring.io/p/wd-eskilstuna-johanniterklostret-i-eskilstuna-q10540527","geo":{"@type":"GeoCoordinates","latitude":59.372,"longitude":16.525}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Järntorget","description":"plats i Eskilstuna","url":"https://stadsvandring.io/p/wd-eskilstuna-jarntorget-q10541851","geo":{"@type":"GeoCoordinates","latitude":59.36638889,"longitude":16.50861111}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Klosters kyrka","description":"kyrkobyggnad i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.375,"longitude":16.518333333333}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Mariakyrkan","description":"kyrka i Eskilstuna kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.37653611,"longitude":16.47241389}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Munktellmuseet","description":"arbetslivsmuseum i Eskilstuna kommun","url":"https://stadsvandring.io/p/wd-eskilstuna-munktellmuseet-q10590327","geo":{"@type":"GeoCoordinates","latitude":59.3761,"longitude":16.511617}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Nybron","description":"bro i Eskilstuna","geo":{"@type":"GeoCoordinates","latitude":59.37333333,"longitude":16.51583333}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Rademachersmedjorna","description":"arbetslivsmuseum i Eskilstuna kommun","url":"https://stadsvandring.io/p/wd-eskilstuna-rademachersmedjorna-q10648346","geo":{"@type":"GeoCoordinates","latitude":59.37425,"longitude":16.508283}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Sankt Pauli kyrka","description":"kyrkobyggnad i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.3933,"longitude":16.54296667}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Sankt Petri kyrka","description":"kyrkobyggnad i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.3923,"longitude":16.491}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Sörmlandsgården","description":"friluftsmuseum i Eskilstuna","url":"https://stadsvandring.io/p/wd-eskilstuna-sormlandsgarden-q10689235","geo":{"@type":"GeoCoordinates","latitude":59.3675,"longitude":16.535}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Vallby kyrka","description":"kyrkobyggnad i Eskilstuna kommun","url":"https://stadsvandring.io/p/wd-eskilstuna-vallby-kyrka-q10712307","geo":{"@type":"GeoCoordinates","latitude":59.42196111,"longitude":16.56541111}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Eskilstuna 108:2","description":"kyrka/kapell i Södermanland","geo":{"@type":"GeoCoordinates","latitude":59.382606,"longitude":16.459712}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Stavskallen","description":"en fyr i Mälaren i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.47165,"longitude":16.526}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Torshälla fyr","description":"en fyr i Mälaren i Eskilstuna kommun","geo":{"@type":"GeoCoordinates","latitude":59.460861111111,"longitude":16.471111111111}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Eskilstuna gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 149 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Eskilstuna?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 149 sevärdheter i Eskilstuna — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Kvarnfallet?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna."}},{"@type":"Question","name":"Vad är Husberget?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna."}},{"@type":"Question","name":"Vad är Holmberget?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna."}},{"@type":"Question","name":"Vad är Torshälla kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Torshälla, Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Eskilstuna","item":"https://stadsvandring.io/stadsvandring/eskilstuna"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Eskilstuna</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Eskilstuna</span><span class="badge">149 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Eskilstuna — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Eskilstuna till fots: 149 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Eskilstuna"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/izi-eskilstuna-kvarnfallet"><b>1. Kvarnfallet</b><span>Sevärdhet · Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</span></a>
+<a class="tile" href="/p/izi-eskilstuna-husberget"><b>2. Husberget</b><span>Byggnad · Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</span></a>
+<a class="tile" href="/p/izi-eskilstuna-holmberget"><b>3. Holmberget</b><span>Sevärdhet · Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Eskilstuna · 149</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Eskilstuna. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 116</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-dab889"><b>Stensättning</b></a> — Ett par stensättningar och ett röse på en berghäll, forntida gravar.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-eskilstuna-8fed86"><b>Område med fossil åkermark</b></a> — Åtta gamla odlingsytor, enligt kartor brukade kring 1646.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-5f5013"><b>Stensättning</b></a> — En otydlig stensättning, en av traktens många forntida gravar.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-eskilstuna-95bb64"><b>Röjningsröse</b></a> — Ett övertorvat röjningsröse efter äldre odling.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-3f07aa"><b>Gravfält</b></a> — Ett gravfält med ett niotal stensättningar, präglat av gammalt bete.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-4151b2"><b>Hög</b></a> — En gravhög med en ladgrund alldeles intill.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-6f4f0e"><b>Fornlämningsliknande lämning</b></a> — Två osäkra stensamlingar, möjligen rester av forntida stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-94e0b2"><b>Gravfält</b></a> — Ett stort gravfält med ett sjuttiotal gravar av skiftande form.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-2e86b7"><b>Stensättning</b></a> — Tre stensättningar som trängts av trädgård och villabygge.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-c9c939"><b>Hällristning</b></a> — En stensättning, en älvkvarn och en gravhög samlade på samma plats.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-0e45b2"><b>Hög</b></a> — En gravhög nära platsen där utgrävningar vid E3 fann förhistoriska boplatslager.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-13b84a"><b>Stensättning</b></a> — Två omplockade stensättningar, forntida gravar som skadats över tid.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-34d145"><b>Gravfält</b></a> — Ett stort gravfält med högar och stensättningar, de största i norr.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-d21a2b"><b>Stensättning</b></a> — Tre otydliga men troliga forntida stensättningar.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-aa3a55"><b>Fornlämningsliknande bildning</b></a> — En naturlig vittringsgrop som påminner om en älvkvarn.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-341e80"><b>Gravfält</b></a> — Ett gravfält med ett niotal stensättningar och en hög strax intill.</li>
+<li><a href="/karta?plats=ksamsok-esta-gamla-tomt-bytomt-gardstomt-eskilstuna-db3f22"><b>Esta gamla tomt, Bytomt/gårdstomt</b></a> — Esta gamla bytomt, med spår av trädgård och rötter långt före 1720.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-dc1524"><b>Stensättning</b></a> — En stensättning med resta stenar, den ena lutande, den andra kullfallen.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-252a15"><b>Fornlämningsliknande lämning</b></a> — Tre gravliknande stenlämningar av osäkert ursprung.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-4c41a1"><b>Fornlämningsliknande bildning</b></a> — En röseliknande men naturligt bildad stensamling.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-eskilstuna-88a50c"><b>Husgrund, historisk tid</b></a> — Stengrunden efter en gammal ekonomibyggnad.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-df377d"><b>Gravfält</b></a> — Ett bortgrävt gravfält vars vikingatida gravar undersöktes vid E3-bygget.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-1e1d9b"><b>Stensättning</b></a> — En övertorvad stensättning, svår att avgränsa i terrängen.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-bf1d21"><b>Gravfält</b></a> — Ett gravfält med högar och stensättningar, en hög delvis bortschaktad.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-ab9d62"><b>Stensättning</b></a> — En övermossad stensättning som smälter samman med marken runt om.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-0035db"><b>Hällristning</b></a> — Berghällar med flera grupper av inslipade älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-6907cb"><b>Stensättning</b></a> — Ett gravfält med ett femtontal stensättningar, däribland en triangulär.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-eskilstuna-efe7ed"><b>Grav markerad av sten/block</b></a> — En stensättning flankerad av resta stenar, den ena kullfallen.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-cafd02"><b>Gravfält</b></a> — Ett gravfält med ovanliga former som skeppssättning och treudd.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-616e5b"><b>Hällristning</b></a> — Tre älvkvarnar inslipade i en långsträckt klipphäll.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-eskilstuna-e7f4ab"><b>Grav- och boplatsområde</b></a> — Ett grav- och boplatsområde med en stensättning som numera korsas av en vandringsled.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-4a424d"><b>Fornlämningsliknande lämning</b></a> — Tre stensättningsliknande lämningar av oklart ursprung.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-6d1aa4"><b>Stensättning</b></a> — Tre osäkra stensättningar präglade av senare stentäkt.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-a9e00e"><b>Fornlämningsliknande lämning</b></a> — En stensättning som troligen försvann när en villa uppfördes.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-e18207"><b>Stensättning</b></a> — Tre stensättningar med olika grad av bevarad kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-f2fddf"><b>Hög</b></a> — En stor, stenig gravhög som fått ett röseliknande utseende.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-e29306"><b>Gravfält</b></a> — Ett gravfält med ett femtontal gravar av två skilda slag.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-4bc8fc"><b>Hägnad</b></a> — En forntida stensträng, troligen rester av en gammal hägnad.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-eskilstuna-15ebac"><b>Bytomt/gårdstomt</b></a> — Ärsta bytomt, känd i skrift ända sedan 1347.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-1caf09"><b>Hällristning</b></a> — Två berghällar med inslipade älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-bb3576"><b>Stensättning</b></a> — Två stensättningar, den ena med ett markant mittblock.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-e0b9c6"><b>Hällristning</b></a> — En berghäll rik på älvkvarnar, med ett tjugofemtal skålgropar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-3c5bc2"><b>Stensättning</b></a> — Ett litet gravfält med en central stensättning och en hög intill.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-8eee57"><b>Stensättning</b></a> — Del av ett stort gravfält med ett sjuttiotal gravar.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-eskilstuna-e313dd"><b>Fyndplats</b></a> — Fyndplats på Gultbrunns ägor där en kopparyxa och bärnstenspärlor ska ha påträffats.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-5c9233"><b>Hög</b></a> — En liten gravgrupp med rund stensättning, en älvkvarn och en kantskadad hög.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-eskilstuna-9f2930"><b>Område med fossil åkermark</b></a> — Två stensättningar som vid undersökning visade sig vara odlingssten.</li>
+<li><a href="/karta?plats=ksamsok-park-tradgardsanlaggning-eskilstuna-36248d"><b>Park-/trädgårdsanläggning</b></a> — En park- eller trädgårdsanläggning som bara finns dokumenterad i inventeringsboken.</li>
+<li><a href="/p/ksamsok-hallristning-eskilstuna-821849"><b>Hällristning</b></a> — En bergsklack inklädd av omfattande stenpackningar och terrasseringar.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-87ca91"><b>Hägnad</b></a> — Ett gravfält med ett trettiotal runda stensättningar och en närliggande stensträng.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-53c5e7"><b>Stensättning</b></a> — En rund stensättning som undersökts och tagits bort.</li>
+<li><a href="/karta?plats=ksamsok-hard-eskilstuna-1ceb4c"><b>Härd</b></a> — En rundad härd som påträffades och togs bort vid en förundersökning 2011.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-5131ef"><b>Gravfält</b></a> — Ett stort gravfält med ett sjuttiotal gravar av flera olika former.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-678a4d"><b>Stensättning</b></a> — En rund stensättning byggd delvis på berg, med skadad kantkedja i norr.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-915e66"><b>Fornlämningsliknande lämning</b></a> — Tre stensättningsliknande lämningar av osäker karaktär.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-eskilstuna-b0112f"><b>Hällristning</b></a> — En bytomt med husgrunder och källargrop, kompletterad av flera älvkvarnsförekomster.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-2aa727"><b>Gravfält</b></a> — Ett gravfält med ett fyrtiotal gravar, delvis skadat av grustäkt och motionsspår.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-eskilstuna-e9e4da"><b>Bytomt/gårdstomt</b></a> — En bytomt som i dag täcks av villor, parkmark och fotbollsplan.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-a72282"><b>Gravfält</b></a> — En grav och stensättning intill en rik älvkvarnshäll med över hundra skålgropar.</li>
+<li><a href="/karta?plats=ksamsok-masta-bytomt-gardstomt-eskilstuna-bd665b"><b>Måsta, Bytomt/gårdstomt</b></a> — Måsta bytomt, delvis förstörd av villor och rivningen av gårdens huvudbyggnad.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-4a8773"><b>Fornlämningsliknande bildning</b></a> — En stensättningsliknande bildning som bedömts vara naturlig.</li>
+<li><a href="/karta?plats=ksamsok-rose-eskilstuna-83d150"><b>Röse</b></a> — Två stensättningar och ett röse byggt kring stora naturliga block.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-c7eb04"><b>Gravfält</b></a> — Ett gravfält med ett tjugotal stensättningar där Ivar Schnell undersökte en grav 1927.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-d41053"><b>Fornlämningsliknande bildning</b></a> — Ett fåtal älvkvarnsliknande gropar av osäker karaktär.</li>
+<li><a href="/karta?plats=ksamsok-terrassering-eskilstuna-f09dfd"><b>Terrassering</b></a> — En stenfri terrassering som kan vara fossil åkermark eller en husgrundsterrass.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-772e48"><b>Hög</b></a> — En något oregelbunden hög bevuxen med två ekar.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-c4d3d8"><b>Hög</b></a> — Två högar med mittgropar, delvis dolda av täta slånbärssnår.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-c14e3e"><b>Stensättning</b></a> — Två övertorvade stensättningar, den ena bevuxen med en ek.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-eskilstuna-589888"><b>Bytomt/gårdstomt</b></a> — En bytomt som schaktats om och används som upplagsplats.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-4f516b"><b>Stensättning</b></a> — En rund stensättning intill en älvkvarn och en kantskadad hög.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-b3796c"><b>Stensättning</b></a> — En liten gravgrupp med två stensättningar och rester av en husgrund.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-d312da"><b>Gravfält</b></a> — Ett gravfält med ett trettiotal gravar, kantat av en stenmur och en ladugårdsgrund.</li>
+<li><a href="/karta?plats=ksamsok-hattersta-gamla-tomt-bytomt-gardstomt-eskilstuna-bacfec"><b>Hättersta gamla tomt, Bytomt/gårdstomt</b></a> — Hättersta gamla tomt med husgrunder, källargrop och flera älvkvarnsförekomster.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-c10cc5"><b>Stensättning</b></a> — En stensättning med mittblock och kantkedja, belägen nära en stenmur.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-3bb1a9"><b>Hägnad</b></a> — En stensträng som troligen försvann när en ny väg byggdes.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-a06f15"><b>Stensättning</b></a> — Ett gravfält med ett fyrtiotal gravar, skadat av grustäkt och ett motionsspår.</li>
+<li><a href="/karta?plats=ksamsok-stenrojd-yta-eskilstuna-7a617f"><b>Stenröjd yta</b></a> — En troligen ålderdomlig röjd yta avgränsad av stensvall och terrasskant.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-fd731a"><b>Hög</b></a> — En avplanad hög av osäker karaktär, bevuxen med tall och kastanj.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-c2e5c2"><b>Stensättning</b></a> — En stensättning på en moränrygg, omgiven av talrika block.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-14295d"><b>Fornlämningsliknande lämning</b></a> — En rund stensättningsliknande lämning som inte kunnat säkert identifieras.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-749a01"><b>Stensättning</b></a> — En rund stensättning med noggrant kantställda stenar, skadad i sydväst.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-a27fc8"><b>Gravfält</b></a> — Ett gravfält med ett tjugotal gravar, däribland en kvadratisk stensättning på högsta punkten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-1b472b"><b>Stensättning</b></a> — En högliknande stensättning byggd mot tre naturliga block.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-a12191"><b>Hägnad</b></a> — En stensträng som är bred i öster men avsmalnar och blir otydlig i väster.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-eskilstuna-7dbb02"><b>Lägenhetsbebyggelse</b></a> — En husgrund av tuktad sten med ett spisröse av tegel.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-79294f"><b>Gravfält</b></a> — Ett gravfält med ett trettiotal runda stensättningar och en angränsande stensträng.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-eskilstuna-4b7c14"><b>Lägenhetsbebyggelse</b></a> — En torplämning med minst tre husgrunder och en jordkällare med tegeltak.</li>
+<li><a href="/p/ksamsok-gravfalt-eskilstuna-b26adf"><b>Gravfält</b></a> — Ett stort gravfält med ett sextiotal gravar, delvis övergånget i tomtmark och trädgård.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-eskilstuna-0e124c"><b>Fornlämningsliknande lämning</b></a> — Två stensättningsliknande lämningar, den ena med en klumpformad mittsten.</li>
+<li><a href="/karta?plats=ksamsok-boplats-eskilstuna-bd0d97"><b>Boplats</b></a> — En boplats med stolphål och härdar, undersökt och borttagen 2011.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-90548a"><b>Stensättning</b></a> — Resterna av ett gravfält, hårt skadat av hästar och grävning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-456666"><b>Gravfält</b></a> — Ett gravfält med ett fåtal stensättningar, undersökt och borttaget.</li>
+<li><a href="/p/ksamsok-gravfalt-eskilstuna-362b10"><b>Gravfält</b></a> — Ett gravfält undersökt vid E3-bygget 1965, med fynd som en ornerad benkam.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-382e82"><b>Hägnad</b></a> — En stenmur på sockengränsen mellan Kloster och Vallby.</li>
+<li><a href="/karta?plats=ksamsok-gravhagnad-eskilstuna-96ff12"><b>Gravhägnad</b></a> — En gravhägnad av två stensträngar intill älvkvarnar på en bergklack.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-e538c0"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning utan närmare beskrivning i materialet.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-eskilstuna-af9743"><b>Bytomt/gårdstomt</b></a> — En bytomt som numera täcks av en skola byggd på 1960–70-talet.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-c2e25f"><b>Hög</b></a> — Ett litet gravfält med runda stensättningar och en närliggande hög.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-dd40cf"><b>Stensättning</b></a> — En stensättning med kantkedja, delvis bortgrävd i söder och sydost.</li>
+<li><a href="/p/ksamsok-lonsta-gamla-tomt-bytomt-gardstomt-eskilstuna-c32c1d"><b>Lönsta gamla tomt, Bytomt/gårdstomt</b></a> — Lönsta gamla tomt med husgrunder och spår av att bebyggelsen flyttats inom byn.</li>
+<li><a href="/p/ksamsok-grav-markerad-av-sten-block-eskilstuna-ce94b3"><b>Grav markerad av sten/block</b></a> — En rest granitsten som tillsammans med en runsten restes 1951.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-532ae4"><b>Stensättning</b></a> — Två osäkra stensättningar med oklar form och begränsning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-f21756"><b>Gravfält</b></a> — Ett gravfält med ett tjugotal gravar där odlingssten lagts upp i kanterna.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-eskilstuna-38fc9e"><b>Hägnad</b></a> — Rester av tre stensträngar i en sydostsluttning utanför Eskilstuna, tolkade som hägnad.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-3baeac"><b>Hög</b></a> — Gravfält med ett femtontal stensättningar, varav en triangulär, i blandskog vid Eskilstuna.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-eskilstuna-84b1d3"><b>Grav markerad av sten/block</b></a> — Omkring fyrtio gravar i barrskog vid Eskilstuna, delvis skadade av senare markarbeten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-eskilstuna-70acad"><b>Stensättning</b></a> — En rund, nästan ofylld stensättning med mittblock och gles kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-hog-eskilstuna-95764c"><b>Hög</b></a> — Stort gravfält vid Eskilstuna med ett sjuttiotal fornlämningar av flera slag.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-eskilstuna-682f03"><b>Bytomt/gårdstomt</b></a> — Rester av en bytomt vid Måsta som till stor del försvunnit under villabebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-7287e6"><b>Gravfält</b></a> — Ett sextiotal gravar samlade i grupper på de bästa krönlägena vid Eskilstuna.</li>
+<li><a href="/karta?plats=ksamsok-hagnadssystem-eskilstuna-0c7303"><b>Hägnadssystem</b></a> — Ett T-format stensträngssystem av två enkla, enskiktade strängar vid Eskilstuna.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-666f35"><b>Gravfält</b></a> — Litet gravfält med en hög och ett tiotal runda stensättningar vid Eskilstuna.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-eskilstuna-e133de"><b>Gravfält</b></a> — Ett tjugofemtal runda stensättningar i tallskog vid Eskilstuna.</li>
+<li><a href="/karta?plats=ksamsok-depafynd-eskilstuna-a27181"><b>Depåfynd</b></a> — Fyndplats för en vikingatida silverskatt som grävdes fram vid Ärsta 1805.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-eskilstuna-f074b3"><b>Bytomt/gårdstomt</b></a> — En rekonstruerad bytomt vid Eskilstuna som idag upptas av industritomter.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-eskilstuna-740640"><b>Fornlämningsliknande bildning</b></a> — En osäker älvkvarn vid Eskilstuna, sannolikt en naturbildning.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 10</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-eskilstuna-torshalla-kyrka-q7827193"><b>Torshälla kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Torshälla, Sverige</li>
+<li><a href="/karta?plats=wd-eskilstuna-fors-kyrka-q10498050"><b>Fors kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-hallby-kyrka-q10531361"><b>Hällby kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-klosters-kyrka-q10546436"><b>Klosters kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-mariakyrkan-q10577230"><b>Mariakyrkan</b></a> — kyrka i Eskilstuna kommun, Sverige</li>
+<li><a href="/karta?plats=wd-eskilstuna-sankt-pauli-kyrka-q10661459"><b>Sankt Pauli kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-sankt-petri-kyrka-q10661478"><b>Sankt Petri kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/p/wd-eskilstuna-vallby-kyrka-q10712307"><b>Vallby kyrka</b></a> — kyrkobyggnad i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-eskilstuna-108-2-q29944070"><b>Eskilstuna 108:2</b></a> — kyrka/kapell i Södermanland</li>
+<li><a href="/karta?plats=wd-eskilstuna-skogskapellet-q130477791"><b>Skogskapellet</b></a> — kapell i Eskilstuna kommun</li>
+</ul>
+<h3 class="city-h3">museum · 5</h3>
+<ul class="place-list">
+<li><a href="/p/wd-eskilstuna-eskilstuna-konstmuseum-q10489092"><b>Eskilstuna konstmuseum</b></a> — Eskilstuna konstmuseum är ett svenskt kommunalt konstmuseum i Eskilstuna.</li>
+<li><a href="/karta?plats=wd-eskilstuna-faktoriet-q10493647"><b>Faktoriet</b></a> — tidigare museum i Eskilstuna</li>
+<li><a href="/p/wd-eskilstuna-munktellmuseet-q10590327"><b>Munktellmuseet</b></a> — arbetslivsmuseum i Eskilstuna kommun</li>
+<li><a href="/p/wd-eskilstuna-rademachersmedjorna-q10648346"><b>Rademachersmedjorna</b></a> — arbetslivsmuseum i Eskilstuna kommun</li>
+<li><a href="/p/wd-eskilstuna-sormlandsgarden-q10689235"><b>Sörmlandsgården</b></a> — friluftsmuseum i Eskilstuna</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 4</h3>
+<ul class="place-list">
+<li><a href="/p/wd-eskilstuna-arbetets-ara-och-gladje-q10416937"><b>Arbetets ära och glädje</b></a> — Arbetets ära och glädje är en brunn som står på Fristadstorget i Eskilstuna.</li>
+<li><a href="/karta?plats=wd-eskilstuna-guds-hand-q10510299"><b>Guds hand</b></a> — skulptur av Carl Milles</li>
+<li><a href="/karta?plats=wd-eskilstuna-hjalmar-branting-av-carl-eldh-q52822180"><b>Hjalmar Branting av Carl Eldh</b></a> — byst i Eskilstuna</li>
+<li><a href="/karta?plats=wd-eskilstuna-tor-och-bockarna-q130221747"><b>Tor och bockarna</b></a> — gjutjärnsskulptur skapad av Allan Ebeling</li>
+</ul>
+<h3 class="city-h3">Torg · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-eskilstuna-fristadstorget-q10499241"><b>Fristadstorget</b></a> — plats i Eskilstuna</li>
+<li><a href="/p/wd-eskilstuna-jarntorget-q10541851"><b>Järntorget</b></a> — plats i Eskilstuna</li>
+<li><a href="/karta?plats=wd-eskilstuna-radhustorget-q137394702"><b>Rådhustorget</b></a> — torg i Torshälla</li>
+</ul>
+<h3 class="city-h3">Torn · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-eskilstuna-stavskallen-q41012220"><b>Stavskallen</b></a> — en fyr i Mälaren i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-torshalla-fyr-q41018880"><b>Torshälla fyr</b></a> — en fyr i Mälaren i Eskilstuna kommun</li>
+<li><a href="/karta?plats=wd-eskilstuna-abborrstenen-q41075593"><b>Abborrstenen</b></a> — en fyr i Mälaren i Eskilstuna kommun</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-eskilstuna-kvarnfallet"><b>Kvarnfallet</b></a> — Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</li>
+<li><a href="/karta?plats=izi-eskilstuna-holmberget"><b>Holmberget</b></a> — Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</li>
+</ul>
+<h3 class="city-h3">Bro · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-eskilstuna-nybron-q10604378"><b>Nybron</b></a> — bro i Eskilstuna</li>
+<li><a href="/karta?plats=wd-eskilstuna-stadskallarbron-q137738366"><b>Stadskällarbron</b></a> — bro i Torshälla</li>
+</ul>
+<h3 class="city-h3">Byggnad · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-eskilstuna-husberget"><b>Husberget</b></a> — Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-eskilstuna-johanniterklostret-i-eskilstuna-q10540527"><b>Johanniterklostret i Eskilstuna</b></a> — Johanniterklostret i Eskilstuna var ett kloster i Eskilstuna, som grundades av Johanniterorden till minne av den engelske missionären Eskil…</li>
+</ul>
+<h3 class="city-h3">Runsten · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-eskilstuna-4ec0b3"><b>Runristning</b></a> — En korsprydd runsten intill en rest sten och flera stensättningar.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fornborg-eskilstuna-6160bc"><b>Fornborg</b></a> — Fornborg kring en bergsklack, delvis inklädd med stenpackning och terrass.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 149 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/eskilstuna/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/eskilstuna/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Eskilstuna gratis?</summary><p>Ja. Karta, alla 149 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Eskilstuna?</summary><p>Vandringen samlar 149 sevärdheter i Eskilstuna — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Kvarnfallet?</summary><p>Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</p></details>
+<details class="faq"><summary>Vad är Husberget?</summary><p>Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</p></details>
+<details class="faq"><summary>Vad är Holmberget?</summary><p>Stopp på ljudturen «Torshälla cultural walking tour» i Eskilstuna.</p></details>
+<details class="faq"><summary>Vad är Torshälla kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Torshälla, Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

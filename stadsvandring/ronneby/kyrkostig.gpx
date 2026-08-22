@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Ronneby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.25443056" lon="15.25144444"><name>Bredåkra kyrka</name><desc>kyrkobyggnad i Ronneby kommun</desc></wpt>
+  <wpt lat="56.24263889" lon="15.29022222"><name>Kallinge kyrka</name><desc>kyrkobyggnad i Ronneby kommun</desc></wpt>
+  <wpt lat="56.21166667" lon="15.27833333"><name>Heliga Kors kyrka</name><desc>kyrkobyggnad i Ronneby kommun</desc></wpt>
+  <wpt lat="56.19307251536266" lon="15.28894419249713"><name>Silverberget, Fornborg</name><desc>En fornborg på en bergsplatå med naturliga stup och anlagda vallar.</desc></wpt>
+  <wpt lat="56.18013199857653" lon="15.306549260375403"><name>Borg</name><desc>Ruinen efter en kastal med rundat inre murverk.</desc></wpt>
+  <wpt lat="56.15665" lon="15.32481"><name>Göholms gravkapell</name><desc>gravkapell på Göholms gods</desc></wpt>
+  <wpt lat="56.16755278" lon="15.23045278"><name>Saxemara kyrka</name><desc>kyrkobyggnad i Ronneby kommun</desc></wpt>
+  <wpt lat="56.21725278" lon="15.35948889"><name>Edestads kyrka</name><desc>kyrkobyggnad i Ronneby kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Ronneby</name>
+    <rtept lat="56.25443056" lon="15.25144444"><name>Bredåkra kyrka</name></rtept>
+    <rtept lat="56.24263889" lon="15.29022222"><name>Kallinge kyrka</name></rtept>
+    <rtept lat="56.21166667" lon="15.27833333"><name>Heliga Kors kyrka</name></rtept>
+    <rtept lat="56.19307251536266" lon="15.28894419249713"><name>Silverberget, Fornborg</name></rtept>
+    <rtept lat="56.18013199857653" lon="15.306549260375403"><name>Borg</name></rtept>
+    <rtept lat="56.15665" lon="15.32481"><name>Göholms gravkapell</name></rtept>
+    <rtept lat="56.16755278" lon="15.23045278"><name>Saxemara kyrka</name></rtept>
+    <rtept lat="56.21725278" lon="15.35948889"><name>Edestads kyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Kalmar</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.681563361098654" lon="16.381475215781524"><name>Minnesmärke</name><desc>En platta på Ölandsbron som minns bygget 1968–1972 och invigningen 1972.</desc></wpt>
+  <wpt lat="56.67262330218633" lon="16.375354092792275"><name>Minnesmärke</name><desc>Ett gjutjärnskors märkt AM vid en gammal vall.</desc></wpt>
+  <wpt lat="56.66503776196908" lon="16.37159043148672"><name>Minnesmärke</name><desc>Bronsplattan minns Martina Lundgrens gåva 1942 av en byggnad till Kalmar Sjöfartsmuseum.</desc></wpt>
+  <wpt lat="56.663095396873885" lon="16.366171706010263"><name>Minnesmärke</name><desc>En platta som minns konstnären Carl Wahlbom (1810–1858), uppvuxen i huset.</desc></wpt>
+  <wpt lat="56.661614888109526" lon="16.360165779438177"><name>Minnesmärke</name><desc>Ett ånglokshjul rest till minne av Kalmar järnvägs 100-årsjubileum 1974.</desc></wpt>
+  <wpt lat="56.66118977509706" lon="16.35547584711076"><name>Minnesmärke</name><desc>En minnessten med bronsbyst över Johan Jeansson, som anlade stadsparken 1877–1880.</desc></wpt>
+  <wpt lat="56.65923300486159" lon="16.353846926820236"><name>Minnesmärke</name><desc>En nygotisk minnesvård över Gustav Vasas landstigning 1520, rest 1851.</desc></wpt>
+  <wpt lat="56.659166666667" lon="16.353611111111"><name>Vasamonumentet</name><desc>skulptur i Kalmar stadspark</desc></wpt>
+  <wpt lat="56.6603920892311" lon="16.35183454043131"><name>Minnesmärke</name><desc>Ödekyrkogården och minnesstenen markerar platsen för Kalmars medeltida storkyrka, sprängd 1678.</desc></wpt>
+  <wpt lat="56.65986924384804" lon="16.347827506374816"><name>Minnesmärke</name><desc>Ett gjutjärnskors från 1971, fäst i en gråsten.</desc></wpt>
+  <rte><name>Konstrundan i Kalmar</name>
+    <rtept lat="56.681563361098654" lon="16.381475215781524"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.67262330218633" lon="16.375354092792275"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.66503776196908" lon="16.37159043148672"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.663095396873885" lon="16.366171706010263"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.661614888109526" lon="16.360165779438177"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.66118977509706" lon="16.35547584711076"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.65923300486159" lon="16.353846926820236"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.659166666667" lon="16.353611111111"><name>Vasamonumentet</name></rtept>
+    <rtept lat="56.6603920892311" lon="16.35183454043131"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.65986924384804" lon="16.347827506374816"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

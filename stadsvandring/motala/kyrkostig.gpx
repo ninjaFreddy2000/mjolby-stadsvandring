@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Motala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.55471111" lon="15.07456111"><name>Lillkyrkan</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.53816512928991" lon="15.065144901995618"><name>CHARLOTTENBORGS KYRKA</name><desc>En modern rundkyrka i Charlottenborg, invigd 1988.</desc></wpt>
+  <wpt lat="58.53814167" lon="15.06509167"><name>Charlottenborgskyrkan</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.540742" lon="15.043409"><name>Heliga korsets kapell</name><desc>kapell i Motala kommun, Sverige</desc></wpt>
+  <wpt lat="58.5354" lon="15.0387"><name>Motala kyrka</name><desc>Stadens stora 1700-talskyrka — känd för en ovanligt rik orgelskatt.</desc></wpt>
+  <wpt lat="58.53310278" lon="15.04324722"><name>Motala hus</name><desc>Motala hus var en kungsgård som låg vid Motala ströms inlopp från Vättern i Östergötland.</desc></wpt>
+  <wpt lat="58.53582222" lon="15.00289722"><name>Råssnäskyrkan</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.51634167" lon="15.08949167"><name>Vinnerstads kyrka</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.4969" lon="15.0726"><name>Sjökumla missionshus</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.48472222" lon="15.04944444"><name>Västra Stenby kyrka</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <wpt lat="58.482825" lon="15.016371"><name>Västra Stenby 23:2</name><desc>kyrka/kapell i Östergötland</desc></wpt>
+  <wpt lat="58.5186" lon="15.1347"><name>Asks kyrka</name><desc>kyrkobyggnad i Motala kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Motala</name>
+    <rtept lat="58.55471111" lon="15.07456111"><name>Lillkyrkan</name></rtept>
+    <rtept lat="58.53816512928991" lon="15.065144901995618"><name>CHARLOTTENBORGS KYRKA</name></rtept>
+    <rtept lat="58.53814167" lon="15.06509167"><name>Charlottenborgskyrkan</name></rtept>
+    <rtept lat="58.540742" lon="15.043409"><name>Heliga korsets kapell</name></rtept>
+    <rtept lat="58.5354" lon="15.0387"><name>Motala kyrka</name></rtept>
+    <rtept lat="58.53310278" lon="15.04324722"><name>Motala hus</name></rtept>
+    <rtept lat="58.53582222" lon="15.00289722"><name>Råssnäskyrkan</name></rtept>
+    <rtept lat="58.51634167" lon="15.08949167"><name>Vinnerstads kyrka</name></rtept>
+    <rtept lat="58.4969" lon="15.0726"><name>Sjökumla missionshus</name></rtept>
+    <rtept lat="58.48472222" lon="15.04944444"><name>Västra Stenby kyrka</name></rtept>
+    <rtept lat="58.482825" lon="15.016371"><name>Västra Stenby 23:2</name></rtept>
+    <rtept lat="58.5186" lon="15.1347"><name>Asks kyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Umeå</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="63.88286111" lon="20.31755556"><name>Ersmarkskyrkan</name><desc>kyrkobyggnad i Umeå</desc></wpt>
+  <wpt lat="63.85666667" lon="20.31166667"><name>Ersbodakyrkan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.846572162545" lon="20.289156154101"><name>Heliga korsets kapell</name><desc>kapell i Umeå kommun, Sverige</desc></wpt>
+  <wpt lat="63.84444427" lon="20.32805634"><name>Mariakyrkan</name><desc>kyrka i Umeå, Sverige</desc></wpt>
+  <wpt lat="63.8287" lon="20.2895"><name>Helena Elisabeth kyrka</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.8243" lon="20.2732"><name>Umeå pingstkyrka</name><desc>kyrkobyggnad i Umeå, Sverige</desc></wpt>
+  <wpt lat="63.823531980359" lon="20.268165601353523"><name>Umeå stads kyrka</name><desc>Nygotisk stadskyrka från 1892–1894, byggd efter att både gamla kyrkan och stadskärnan brunnit.</desc></wpt>
+  <wpt lat="63.82586389" lon="20.26687222"><name>Vasakyrkan</name><desc>kyrka i Umeå kommun, Sverige</desc></wpt>
+  <wpt lat="63.8276" lon="20.25918333"><name>Korskyrkan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.81958889" lon="20.25465833"><name>Tegs kyrka</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.83164978" lon="20.23576736"><name>Hedlundakyrkan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.83638889" lon="20.2325"><name>Västerslättskyrkan S:t Staffan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.83413889" lon="20.21741667"><name>Grisbackakyrkan</name><desc>kyrka i Umeå kommun, Sverige</desc></wpt>
+  <wpt lat="63.8175" lon="20.21194444"><name>Böleängkyrkan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.79748333" lon="20.20033333"><name>Röbäcks kapell</name><desc>kyrka i Umeå kommun, Sverige</desc></wpt>
+  <wpt lat="63.83030323309" lon="20.167798326317"><name>Backens kapell</name><desc>kapell i Umeå kommun, Sverige</desc></wpt>
+  <wpt lat="63.8308" lon="20.1699"><name>Backens kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Umeå, Sverige</desc></wpt>
+  <wpt lat="63.8125" lon="20.30361111"><name>Ålidhemskyrkan</name><desc>kyrkobyggnad i Umeå kommun</desc></wpt>
+  <wpt lat="63.805" lon="20.32194444"><name>Jesu Kristi kyrka</name><desc>mormonernas kyrkobyggnad i Umeå</desc></wpt>
+  <wpt lat="63.79861111" lon="20.31527778"><name>Carlskyrkan</name><desc>kyrkobyggnad i stadsdelen Carlshem i Umeå, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Umeå</name>
+    <rtept lat="63.88286111" lon="20.31755556"><name>Ersmarkskyrkan</name></rtept>
+    <rtept lat="63.85666667" lon="20.31166667"><name>Ersbodakyrkan</name></rtept>
+    <rtept lat="63.846572162545" lon="20.289156154101"><name>Heliga korsets kapell</name></rtept>
+    <rtept lat="63.84444427" lon="20.32805634"><name>Mariakyrkan</name></rtept>
+    <rtept lat="63.8287" lon="20.2895"><name>Helena Elisabeth kyrka</name></rtept>
+    <rtept lat="63.8243" lon="20.2732"><name>Umeå pingstkyrka</name></rtept>
+    <rtept lat="63.823531980359" lon="20.268165601353523"><name>Umeå stads kyrka</name></rtept>
+    <rtept lat="63.82586389" lon="20.26687222"><name>Vasakyrkan</name></rtept>
+    <rtept lat="63.8276" lon="20.25918333"><name>Korskyrkan</name></rtept>
+    <rtept lat="63.81958889" lon="20.25465833"><name>Tegs kyrka</name></rtept>
+    <rtept lat="63.83164978" lon="20.23576736"><name>Hedlundakyrkan</name></rtept>
+    <rtept lat="63.83638889" lon="20.2325"><name>Västerslättskyrkan S:t Staffan</name></rtept>
+    <rtept lat="63.83413889" lon="20.21741667"><name>Grisbackakyrkan</name></rtept>
+    <rtept lat="63.8175" lon="20.21194444"><name>Böleängkyrkan</name></rtept>
+    <rtept lat="63.79748333" lon="20.20033333"><name>Röbäcks kapell</name></rtept>
+    <rtept lat="63.83030323309" lon="20.167798326317"><name>Backens kapell</name></rtept>
+    <rtept lat="63.8308" lon="20.1699"><name>Backens kyrka</name></rtept>
+    <rtept lat="63.8125" lon="20.30361111"><name>Ålidhemskyrkan</name></rtept>
+    <rtept lat="63.805" lon="20.32194444"><name>Jesu Kristi kyrka</name></rtept>
+    <rtept lat="63.79861111" lon="20.31527778"><name>Carlskyrkan</name></rtept>
+  </rte>
+</gpx>

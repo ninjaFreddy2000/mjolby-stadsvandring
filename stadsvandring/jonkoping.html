@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Jönköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Jönköping till fots: 148 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 148 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/jonkoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Jönköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Jönköping till fots: 148 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 148 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/jonkoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Jönköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Jönköping till fots: 148 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 148 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"jonkoping","sourceSlug":"stadsvandring/jonkoping","centroid":{"lat":57.7802865564133,"lng":14.175219345709463},"stops":[{"name":"Sofiakyrkan","lat":57.781943,"lng":14.159703},{"name":"Tändsticksmuseet","lat":57.78465,"lng":14.159617},{"name":"Björneberg","lat":57.81044444,"lng":14.12627778}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Jönköping","description":"Upptäck Jönköping till fots: 148 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/jonkoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Sofiakyrkan","description":"kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.781943,"longitude":14.159703}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Tändsticksmuseet","description":"arbetslivsmuseum i Jönköpings kommun","url":"https://stadsvandring.io/p/wd-jonkoping-tandsticksmuseet-q2355491","geo":{"@type":"GeoCoordinates","latitude":57.78465,"longitude":14.159617}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Björneberg","description":"Björneberg är en herrgård i Järstorps socken, Jönköpings kommun, fyra kilometer nordväst om Jönköping.","geo":{"@type":"GeoCoordinates","latitude":57.81044444,"longitude":14.12627778}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Bymarkskyrkan","description":"kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige","geo":{"@type":"GeoCoordinates","latitude":57.79111111,"longitude":14.14048611}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Bäckaby gamla kyrka","description":"tidigare kyrkobyggnad i Svenska kyrkan i Jönköpings stadspark i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.78335556,"longitude":14.13910833}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Dalvikskyrkan","description":"kyrkan i Jönköpings kommun","geo":{"@type":"GeoCoordinates","latitude":57.787625,"longitude":14.13330556}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Ekhagskyrkan","description":"kyrkobyggnad i Ekhagen i Jönköping, Sverige, använd av Svenska kyrkan","geo":{"@type":"GeoCoordinates","latitude":57.77778333,"longitude":14.22413333}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Fågelmuseet","description":"museum i Jönköping","url":"https://stadsvandring.io/p/wd-jonkoping-fagelmuseet-q10500930","geo":{"@type":"GeoCoordinates","latitude":57.781444,"longitude":14.144565}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Gräshagskyrkan","description":"kyrkobyggnad i Svenska kyrkan på Gräshagen i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.7648,"longitude":14.13633}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Huskvarna kyrka","description":"kyrkobyggnad i Svenska kyrkan i Huskvarna, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.7875,"longitude":14.27361111}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Immanuelskyrkan","description":"kyrkobyggnad i Equmeniakyrkan i Jönköping, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-immanuelskyrkan-q10534722","geo":{"@type":"GeoCoordinates","latitude":57.78073056,"longitude":14.15884444}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Juneporten","description":"torg i Jönköping","url":"https://stadsvandring.io/p/wd-jonkoping-juneporten-q10541347","geo":{"@type":"GeoCoordinates","latitude":57.78353,"longitude":14.1622}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Järstorps kyrka","description":"kyrkobyggnad i Jönköpings kommun","geo":{"@type":"GeoCoordinates","latitude":57.80277778,"longitude":14.115}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Jönköpings slott och fästningsverk","description":"Jönköpings slott och fästningsverk var ett slott och en fästning i Jönköping.","geo":{"@type":"GeoCoordinates","latitude":57.78166667,"longitude":14.16638889}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Jönköpings katolska kyrka","description":"romersk-katolsk kyrkobyggnad i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.7713,"longitude":14.1512}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Korskyrkan","description":"kyrka i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.78170013,"longitude":14.1953001}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Kristine kyrka","description":"kyrkobyggnad i Jönköping","geo":{"@type":"GeoCoordinates","latitude":57.78194444,"longitude":14.17916667}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Kungsportskyrkan","description":"EFK-kyrkobyggnad i Öxnehaga i Huskvarna, Sverige","url":"https://stadsvandring.io/p/wd-jonkoping-kungsportskyrkan-q10550363","geo":{"@type":"GeoCoordinates","latitude":57.78246,"longitude":14.26003}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Ljungarums kyrka","description":"kyrkobyggnad i Svenska kyrkan i Ljungarum i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.75496,"longitude":14.17663}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Rumlaborg","description":"medeltida borg i Småland","geo":{"@type":"GeoCoordinates","latitude":57.791669,"longitude":14.266925}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Råslätts kyrka","description":"kyrkobyggnad på Råslätt utanför Jönköping, Sverige, använd av Svenska kyrkan","geo":{"@type":"GeoCoordinates","latitude":57.7394,"longitude":14.1505}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Sandseryds kyrka","description":"kyrkobyggnad i Svenska kyrkan i Sandseryd, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.74194444,"longitude":14.08472222}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Sanna kyrka","description":"kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":57.79005556,"longitude":14.25069444}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Skogskapellet","description":"kapell i Jönköping, Sverige, använt av Svenska kyrkan","geo":{"@type":"GeoCoordinates","latitude":57.7539,"longitude":14.1466}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Slottskapellet","description":"kapell i Jönköping, Sverige, använt av Svenska kyrkan","geo":{"@type":"GeoCoordinates","latitude":57.7840004,"longitude":14.15530014}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Jönköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 148 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Jönköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 148 sevärdheter i Jönköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Sofiakyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige"}},{"@type":"Question","name":"Vad är Tändsticksmuseet?","acceptedAnswer":{"@type":"Answer","text":"arbetslivsmuseum i Jönköpings kommun"}},{"@type":"Question","name":"Vad är Björneberg?","acceptedAnswer":{"@type":"Answer","text":"Björneberg är en herrgård i Järstorps socken, Jönköpings kommun, fyra kilometer nordväst om Jönköping."}},{"@type":"Question","name":"Vad är Bymarkskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Jönköping","item":"https://stadsvandring.io/stadsvandring/jonkoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Jönköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Jönköping</span><span class="badge">148 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Jönköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Jönköping till fots: 148 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Jönköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-jonkoping-sofiakyrkan-q2302684"><b>1. Sofiakyrkan</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</span></a>
+<a class="tile" href="/p/wd-jonkoping-tandsticksmuseet-q2355491"><b>2. Tändsticksmuseet</b><span>museum · arbetslivsmuseum i Jönköpings kommun</span></a>
+<a class="tile" href="/p/wd-jonkoping-bjorneberg-q10430698"><b>3. Björneberg</b><span>Byggnad · Björneberg är en herrgård i Järstorps socken, Jönköpings kommun, fyra kilometer…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Jönköping · 148</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Jönköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 42</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-18c1e3"><b>Fyndplats</b></a> — En fyndplats för del av ett hästbetsel av brons och järn.</li>
+<li><a href="/p/ksamsok-fyndplats-jonkoping-6b0b55"><b>Fyndplats</b></a> — En gammal kvarnplats med flera stenåldersfynd från Dunkehallaåns dalgång.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-d0039d"><b>Fyndplats</b></a> — Här hittades en stenyxa i sentida, omrörda raseringslager.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-32be35"><b>Fyndplats</b></a> — En minnessten från 1836 över en parkanläggare, tillsammans med äldre stenyxefynd.</li>
+<li><a href="/karta?plats=ksamsok-samlingsplats-jonkoping-f235ba"><b>Samlingsplats</b></a> — En gammal kreatursmarknadsplats i Jönköping.</li>
+<li><a href="/karta?plats=ksamsok-spangerna-fardvag-jonkoping-b6c7ad"><b>Spängerna, Färdväg</b></a> — Spängerna, en gammal spångad väg mellan Rocksjön och Munksjön.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-jonkoping-b56771"><b>Färdväg</b></a> — Rester av torpet Stickelösa och en uppgiven medeltida hålväg vid Lurakulle.</li>
+<li><a href="/karta?plats=ksamsok-friaredalen-plats-med-tradition-jonkoping-031128"><b>Friaredalen, Plats med tradition</b></a> — Friaredalen, en namngiven bäckdalgång i Jönköping.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-cdf8dd"><b>Fyndplats</b></a> — Ett offerfynd från folkvandringstid med sadelbeslag, hittat vid grävning 1927.</li>
+<li><a href="/karta?plats=ksamsok-munkplan-plats-med-tradition-jonkoping-de7e12"><b>Munkplan, Plats med tradition</b></a> — Munkplan med ett monument över Munksjö Aktiebolags grundare.</li>
+<li><a href="/karta?plats=ksamsok-kalmar-plats-med-tradition-jonkoping-94023c"><b>Kalmar, Plats med tradition</b></a> — Kalmar, en namngiven udde i Jönköping.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-jonkoping-80145a"><b>Husgrund, historisk tid</b></a> — Grunden efter statsbanans gamla järnvägsstation.</li>
+<li><a href="/karta?plats=ksamsok-fangstanlaggning-ovrig-jonkoping-ae0aaf"><b>Fångstanläggning övrig</b></a> — Gamla fiskeplatser för laxfiske vid Munksjön.</li>
+<li><a href="/karta?plats=ksamsok-grona-kulle-hog-jonkoping-747708"><b>Gröna kulle, Hög</b></a> — Gröna kulle, en gravhög med plan toppyta.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-jonkoping-c4aead"><b>Stadslager</b></a> — Ett stadslager med kulturlager från medeltid och 1500–1600-tal.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-enstaka-jonkoping-589f13"><b>Begravningsplats enstaka</b></a> — En inhägnad gravplats nära Munksjö pappersbruk.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-jonkoping-ae975b"><b>Plats med tradition</b></a> — En park uppkallad efter den gamla Idas skola.</li>
+<li><a href="/p/ksamsok-depafynd-jonkoping-2f1e43"><b>Depåfynd</b></a> — Ett folkvandringstida offerfynd med sadelbeslag, funnet i orörd torv 1927.</li>
+<li><a href="/karta?plats=ksamsok-ryhovs-gamla-tomt-bytomt-gardstomt-jonkoping-9c67a7"><b>Ryhovs gamla tomt, Bytomt/gårdstomt</b></a> — Ryhovs gamla bytomt, i dag kraftigt omrörd.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-jonkoping-f6d0d6"><b>Bytomt/gårdstomt</b></a> — Ryhov bys gamla tomtmark, numera starkt omrörd.</li>
+<li><a href="/karta?plats=ksamsok-tegelindustri-jonkoping-ac03e9"><b>Tegelindustri</b></a> — En uppgift om ett 1600-talstegelbruk vid en bronsåldershög.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-jonkoping-402c54"><b>Lägenhetsbebyggelse</b></a> — Lämningar efter torpet Stickelösa och en uppgiven hålväg vid Lurakulle.</li>
+<li><a href="/karta?plats=ksamsok-livsmedelsindustri-jonkoping-754079"><b>Livsmedelsindustri</b></a> — Platsen för statsbanans station, ett gammalt bryggeri och en minnestavla över Halmstad–Nässjö Järnvägar.</li>
+<li><a href="/karta?plats=ksamsok-kalkugn-jonkoping-9c074f"><b>Kalkugn</b></a> — Platsen för borttagna kalkugnar, varav en blev värdshus.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-jonkoping-a5d87b"><b>Brunn/kallkälla</b></a> — En försvunnen källa vid det gamla kasernområdet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-6c4f92"><b>Fyndplats</b></a> — Två kanonkulor i järn upptagna ur Munksjön genom magnetfiske.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-jonkoping-2a63b5"><b>Plats med tradition</b></a> — En namngiven bäckdalgång i Jönköping.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-jonkoping-df13ca"><b>Begravningsplats</b></a> — En begravningsplats med kapell från 1600-talets början.</li>
+<li><a href="/karta?plats=ksamsok-hog-jonkoping-65ff57"><b>Hög</b></a> — Platsen för tre borttagna gravhögar.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-jonkoping-81b723"><b>Vägmärke</b></a> — En milstolpe från 1779 med Gustav III:s namnchiffer.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-jonkoping-034421"><b>Fyndplats</b></a> — En karteschkula och en kanonkula upptagna vid Vindbron.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-jonkoping-3f421c"><b>Plats med tradition</b></a> — Dag Hammarskjölds plats med skulpturen Fredens man.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-jonkoping-329808"><b>Husgrund, historisk tid</b></a> — Platsen för en borttagen skjutsinrättning.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-jonkoping-fb033c"><b>Färdväg</b></a> — En träbyggd rustbädd, trolig föregångare till Västra Holmgatan.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-jonkoping-971e07"><b>Boplatsområde</b></a> — Ett boplatsområde från 1600- till 1800-tal, undersökt 2004.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-jonkoping-97df17"><b>Avrättningsplats</b></a> — En möjlig avrättningsplats vid det gamla Galgelyckan.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-jonkoping-0930ff"><b>Träindustri</b></a> — En före detta tändsticksfabrik, i dag kulturhus och ateljéer.</li>
+<li><a href="/karta?plats=ksamsok-grav-ovrig-jonkoping-e1dd9f"><b>Grav övrig</b></a> — En hög som troligen tjänat som stadens medeltida avrättningsplats.</li>
+<li><a href="/karta?plats=ksamsok-boplats-jonkoping-c4575f"><b>Boplats</b></a> — En förhistorisk boplats undersökt och borttagen 1991.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-jonkoping-44aa9f"><b>Kvarn</b></a> — En gammal kvarnplats vid Dunkehalla med flera stenåldersfynd i närheten.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-jonkoping-051f5f"><b>Övrigt</b></a> — Den gamla läroverksbyggnaden från 1910–1912 och statyn Flickorna i Småland.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-jonkoping-b48d15"><b>Färdväg</b></a> — En hålväg i en naturlig ravin, till stora delar bortschaktad.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 31</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-jonkoping-sofiakyrkan-q2302684"><b>Sofiakyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-bymarkskyrkan-q10438232"><b>Bymarkskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-backaby-gamla-kyrka-q10438373"><b>Bäckaby gamla kyrka</b></a> — tidigare kyrkobyggnad i Svenska kyrkan i Jönköpings stadspark i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-dalvikskyrkan-q10466301"><b>Dalvikskyrkan</b></a> — kyrkan i Jönköpings kommun</li>
+<li><a href="/karta?plats=wd-jonkoping-ekhagskyrkan-q10480628"><b>Ekhagskyrkan</b></a> — kyrkobyggnad i Ekhagen i Jönköping, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/karta?plats=wd-jonkoping-grashagskyrkan-q10509795"><b>Gräshagskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan på Gräshagen i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-huskvarna-kyrka-q10527413"><b>Huskvarna kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Huskvarna, Sverige</li>
+<li><a href="/p/wd-jonkoping-immanuelskyrkan-q10534722"><b>Immanuelskyrkan</b></a> — kyrkobyggnad i Equmeniakyrkan i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-jarstorps-kyrka-q10541979"><b>Järstorps kyrka</b></a> — kyrkobyggnad i Jönköpings kommun</li>
+<li><a href="/karta?plats=wd-jonkoping-jonkopings-katolska-kyrka-q10544382"><b>Jönköpings katolska kyrka</b></a> — romersk-katolsk kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-korskyrkan-q10548210"><b>Korskyrkan</b></a> — kyrka i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-kristine-kyrka-q10549243"><b>Kristine kyrka</b></a> — kyrkobyggnad i Jönköping</li>
+<li><a href="/p/wd-jonkoping-kungsportskyrkan-q10550363"><b>Kungsportskyrkan</b></a> — EFK-kyrkobyggnad i Öxnehaga i Huskvarna, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-ljungarums-kyrka-q10568304"><b>Ljungarums kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Ljungarum i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-raslatts-kyrka-q10658755"><b>Råslätts kyrka</b></a> — kyrkobyggnad på Råslätt utanför Jönköping, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/karta?plats=wd-jonkoping-sandseryds-kyrka-q10661225"><b>Sandseryds kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Sandseryd, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-sanna-kyrka-q10661546"><b>Sanna kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-skogskapellet-q10670363"><b>Skogskapellet</b></a> — kapell i Jönköping, Sverige, använt av Svenska kyrkan</li>
+<li><a href="/karta?plats=wd-jonkoping-slottskapellet-q10671640"><b>Slottskapellet</b></a> — kapell i Jönköping, Sverige, använt av Svenska kyrkan</li>
+<li><a href="/karta?plats=wd-jonkoping-tranghalla-kyrka-q10705658"><b>Trånghalla kyrka</b></a> — kyrkobyggnad i Trånghalla, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/karta?plats=wd-jonkoping-osterangskyrkan-q10728168"><b>Österängskyrkan</b></a> — kyrkobyggnad i Svenska kyrkan i Österängen i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-oxnehagakyrkan-q10728767"><b>Öxnehagakyrkan</b></a> — kyrkobyggnad på Öxnehaga i Huskvarna, Sverige, använd av Svenska kyrkan</li>
+<li><a href="/p/wd-jonkoping-ansgariikyrkan-q17518534"><b>Ansgariikyrkan</b></a> — kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-ceciliakyrkan-q17518538"><b>Ceciliakyrkan</b></a> — rumänsk-ortodox kyrka i Vilhelmsro, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-jonkopings-pingstkyrka-q17524779"><b>Jönköpings pingstkyrka</b></a> — kyrkobyggnad i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-dunkehalla-kapell-q17524825"><b>Dunkehalla kapell</b></a> — kapell i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-ostra-kapellet-q20168558"><b>Östra kapellet</b></a> — kapell i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-jonkopings-allianskyrka-q21492138"><b>Jönköpings allianskyrka</b></a> — kyrkobyggnad i Svenska alliansmissionen i Jönköping, Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-jungfru-maria-och-sankt-nikolaus-kyrka-q123479639"><b>Jungfru Maria och Sankt Nikolaus kyrka</b></a> — tidigare kyrka i Jönköping</li>
+<li><a href="/p/ksamsok-sofia-kyrka-jonkoping-014776"><b>Sofia Kyrka</b></a> — Sofia kyrka, byggd sedan den växande västra församlingen blev trångbodd i slottskapellet. <span class="era">1850</span></li>
+<li><a href="/p/ksamsok-kyrka-kapell-jonkoping-a97e29"><b>Kyrka/kapell</b></a> — Grunden efter ett medeltida kapell, undersökt 1989–1990.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 17</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-jonkoping-bjorneberg-q10430698"><b>Björneberg</b></a> — Björneberg är en herrgård i Järstorps socken, Jönköpings kommun, fyra kilometer nordväst om Jönköping.</li>
+<li><a href="/karta?plats=wd-jonkoping-stromsberg-q10682223"><b>Strömsberg</b></a> — herrgård i Ljungarums socken i Jönköpings kommun</li>
+<li><a href="/karta?plats=wd-jonkoping-rosenlunds-herrgard-q18332288"><b>Rosenlunds herrgård</b></a> — Herrgård i Jönköping</li>
+<li><a href="/p/wd-jonkoping-malskog-sateri-q121540236"><b>Målskog säteri</b></a> — herrgård i Småland</li>
+<li><a href="/karta?plats=ksamsok-gardshuset-jonkoping-356633"><b>GÅRDSHUSET</b></a> — Den kvarvarande av två ekonomibyggnader till residenset, uppförd på 1880-talet. <span class="era">1884–1886</span></li>
+<li><a href="/p/ksamsok-bostadshus-jonkoping-689958"><b>BOSTADSHUS</b></a> — Ett timrat 1850-talshus som visar Jönköpings rika panelarkitektur. <span class="era">1856–1857</span></li>
+<li><a href="/p/ksamsok-automobilpalatset-jonkoping-586124"><b>AUTOMOBILPALATSET</b></a> — Ett femvånings bilpalats från 1930 med parkeringsdäck för nära 300 bilar. <span class="era">1930–1930</span></li>
+<li><a href="/p/ksamsok-gota-hovratt-ambetsbyggnaden-jonkoping-356630"><b>GÖTA HOVRÄTT, ÄMBETSBYGGNADEN</b></a> — Göta hovrätts ämbetsbyggnad från 1867–69 i nyklassisk stil. <span class="era">1867–1869</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-jonkoping-689847"><b>BOSTADSHUS</b></a> — Ett bostadshus i Jönköping från 1790-talet. <span class="era">1790–1799</span></li>
+<li><a href="/p/ksamsok-tveta-vista-och-mo-haraders-tingshus-jonkoping-696618"><b>TVETA, VISTA OCH MO HÄRADERS TINGSHUS</b></a> — Tveta, Vista och Mo häraders tingshus från 1908 i gult tegel med torn. <span class="era">1908–1908</span></li>
+<li><a href="/p/ksamsok-gamla-residenset-jonkoping-580109"><b>GAMLA RESIDENSET</b></a> — Ett trähus från 1790-talet som blev länsresidens och ombyggdes på 1830-talet. <span class="era">1790–1795</span></li>
+<li><a href="/karta?plats=ksamsok-lansresidenset-jonkoping-356632"><b>LÄNSRESIDENSET</b></a> — Länsresidenset i Jönköping, uppfört 1884–1886. <span class="era">1884–1886</span></li>
+<li><a href="/karta?plats=ksamsok-kontorsbyggnad-jonkoping-689850"><b>KONTORSBYGGNAD</b></a> — En kontorsbyggnad i Jönköping från 1790-talet. <span class="era">1790–1799</span></li>
+<li><a href="/p/ksamsok-gota-hovratt-hovrattshuset-domstolsbyggnaden-jonkoping-356631"><b>GÖTA HOVRÄTT, HOVRÄTTSHUSET (DOMSTOLSBYGGNADEN)</b></a> — Göta hovrätts hovrättshus, påbörjat 1639 och ett av Sveriges äldsta domstolshus. <span class="era">1639–1655</span></li>
+<li><a href="/p/ksamsok-gamla-polishuset-jonkoping-580428"><b>GAMLA POLISHUSET</b></a> — Gamla polishuset från 1937 i funktionalistisk stil, ritat av Göran Pauli. <span class="era">1937–1937</span></li>
+<li><a href="/p/ksamsok-gamla-radhuset-jonkoping-586118"><b>GAMLA RÅDHUSET</b></a> — Jönköpings gamla rådhus från 1690-talet, byggnadsminne sedan 1977. <span class="era">1696–1699</span></li>
+<li><a href="/karta?plats=ksamsok-forrad-jonkoping-689851"><b>FÖRRÅD</b></a> — En förrådsbyggnad i Jönköping från 1790-talet. <span class="era">1790–1799</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 16</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-e5fa21"><b>Minnesmärke</b></a> — En byst rest 1936 till minne av uppfinnaren Alexander Lagerman.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-a9bb67"><b>Minnesmärke</b></a> — En minnestavla över Storkenfeldtska flickskolan och ett fynd av 121 medeltida silvermynt.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-96a8e2"><b>Minnesmärke</b></a> — En minnestavla över konstnären Johan Fredrik Höckert, född här 1826.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-868aff"><b>Minnesmärke</b></a> — Braheskolan, stadens lärdomsskola 1696–1867, där Viktor Rydberg gick.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-f9c03b"><b>Minnesmärke</b></a> — En minnessten från 1836 över en parkanläggare, med äldre stenyxefynd i närheten.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-bf613b"><b>Minnesmärke</b></a> — Ett hamnmonument av ankare och propeller, skänkt av Lions Club 1970.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-237b1d"><b>Minnesmärke</b></a> — En minnessten över Smålands artilleriregemente och gravar från spanska sjukan.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-6bcc49"><b>Minnesmärke</b></a> — Ett monument på Munkplan över Munksjö Aktiebolags grundare.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-f5aa66"><b>Minnesmärke</b></a> — En minnessten över Johan Printz, guvernör över Nya Sverige.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-0fe8e7"><b>Minnesmärke</b></a> — En minnessten över Smålands artilleriregemente, med ett äldre flintyxefynd i närheten.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-690b50"><b>Minnesmärke</b></a> — En minnesplatta på Dag Hammarskjölds födelsehus.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-6cd449"><b>Minnesmärke</b></a> — Ett minnesmonument över stamhästen Gossen.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-75be28"><b>Minnesmärke</b></a> — Ett monument vid den gamla Junebron och namnet Junaköping.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-da21d5"><b>Minnesmärke</b></a> — Läroverksbyggnaden från 1910–1912 med statyn Flickorna i Småland.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-c2fd54"><b>Minnesmärke</b></a> — En minnessten över mosskulturmannen Carl von Feilitzen.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-jonkoping-37f886"><b>Minnesmärke</b></a> — Platsen för statsbanans station med en minnestavla över Halmstad–Nässjö Järnvägar.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 14</h3>
+<ul class="place-list">
+<li><a href="/p/wd-jonkoping-radhusparken-q2178633"><b>Rådhusparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-hamnparken-q120762799"><b>Hamnparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-john-bauers-park-q123815985"><b>John Bauers Park</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-knektaparken-q123908808"><b>Knektaparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-bastionsparken-q123908832"><b>Bastionsparken</b></a> — park i Jönköping</li>
+<li><a href="/karta?plats=wd-jonkoping-vattenledningsparken-q123909833"><b>Vattenledningsparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-braheparken-q124071470"><b>Braheparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-lundstroms-plats-q124307907"><b>Lundströms plats</b></a> — plats i Jönköping</li>
+<li><a href="/p/wd-jonkoping-friaredalen-q124409606"><b>Friaredalen</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-kalgardsparken-q124529296"><b>Kålgårdsparken</b></a> — park i Jönköping</li>
+<li><a href="/p/wd-jonkoping-strandparken-jonkoping-q124654594"><b>Strandparken, Jönköping</b></a> — aktivitetspark och badplats vid Vätterstranden</li>
+<li><a href="/p/wd-jonkoping-liljeholmsparken-q124654798"><b>Liljeholmsparken</b></a> — park i Jönköping</li>
+<li><a href="/karta?plats=wd-jonkoping-munkplam-q124658968"><b>Munkplam</b></a> — park i stadsdelen Söder i Jönköping</li>
+<li><a href="/karta?plats=wd-jonkoping-lasarettsparken-q124733764"><b>Lasarettsparken</b></a> — park i Jönköping</li>
+</ul>
+<h3 class="city-h3">Torg · 11</h3>
+<ul class="place-list">
+<li><a href="/p/wd-jonkoping-juneporten-q10541347"><b>Juneporten</b></a> — torg i Jönköping</li>
+<li><a href="/karta?plats=wd-jonkoping-hovrattstorget-q27910323"><b>Hovrättstorget</b></a> — torg i Jönköping</li>
+<li><a href="/karta?plats=wd-jonkoping-ostra-torget-q27941396"><b>Östra torget</b></a> — torg i Jönköping, Sverige</li>
+<li><a href="/p/wd-jonkoping-hoppets-torg-q105770063"><b>Hoppets torg</b></a> — torg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-vedtorget-q122922624"><b>Vedtorget</b></a> — torg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-oxtorget-q123499388"><b>Oxtorget</b></a> — tidigare torg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-svintorget-q123499814"><b>Svintorget</b></a> — tidigare marknadstorg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-jarnvagstorget-q123508657"><b>Järnvägstorget</b></a> — torg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-fisktorget-q124248059"><b>Fisktorget</b></a> — tidigare torg i Jönköping</li>
+<li><a href="/p/wd-jonkoping-gronsakstorget-q131756116"><b>Grönsakstorget</b></a> — tidigare torg i Jönköping</li>
+<li><a href="/karta?plats=ksamsok-rackartorget-plats-med-tradition-jonkoping-89b4c5"><b>Rackartorget, Plats med tradition</b></a> — Rackartorget, ett gammalt torg som i dag är parkeringsplats.</li>
+</ul>
+<h3 class="city-h3">Bro · 6</h3>
+<ul class="place-list">
+<li><a href="/p/wd-jonkoping-munksjobron-q10590317"><b>Munksjöbron</b></a> — bro över Munksjön i Sverige</li>
+<li><a href="/karta?plats=wd-jonkoping-esplanadbron-q123015851"><b>Esplanadbron</b></a> — vägbro i Huskvarna</li>
+<li><a href="/p/wd-jonkoping-kavlabron-q123158424"><b>Kavlabron</b></a> — namn på broar över Huskvarnaån i Huskvarna</li>
+<li><a href="/p/wd-jonkoping-jordbron-q124070071"><b>Jordbron</b></a> — bro i Jönköping</li>
+<li><a href="/p/wd-jonkoping-slottsbron-q131628661"><b>Slottsbron</b></a> — bro över Hamnkanalen i Jönköping</li>
+<li><a href="/p/wd-jonkoping-vindbron-q136677029"><b>Vindbron</b></a> — bro i Jönköping</li>
+</ul>
+<h3 class="city-h3">museum · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-jonkoping-tandsticksmuseet-q2355491"><b>Tändsticksmuseet</b></a> — arbetslivsmuseum i Jönköpings kommun</li>
+<li><a href="/p/wd-jonkoping-fagelmuseet-q10500930"><b>Fågelmuseet</b></a> — museum i Jönköping</li>
+<li><a href="/p/wd-jonkoping-viktor-rydbergsmuseet-q124403096"><b>Viktor Rydbergsmuseet</b></a> — tidigare författarmuseum i Jönköping</li>
+</ul>
+<h3 class="city-h3">Slott · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-jonkoping-jonkopings-slott-och-fastningsverk-q10542131"><b>Jönköpings slott och fästningsverk</b></a> — Jönköpings slott och fästningsverk var ett slott och en fästning i Jönköping.</li>
+<li><a href="/karta?plats=wd-jonkoping-rumlaborg-q10657736"><b>Rumlaborg</b></a> — medeltida borg i Småland</li>
+<li><a href="/p/wd-jonkoping-jonkopings-medeltida-borg-q123479618"><b>Jönköpings medeltida borg</b></a> — tidigare borg i Jönköping</li>
+</ul>
+<h3 class="city-h3">Borgruin · 3</h3>
+<ul class="place-list">
+<li><a href="/p/wd-jonkoping-garpa-skans-q29385265"><b>Garpa skans</b></a> — fästning/skans i Småland (Hakarp 25:1)</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-jonkoping-ccada0"><b>Fästning/skans</b></a> — En bevarad stödmur från stadens södra befästningsvall vid Munksjön.</li>
+<li><a href="/karta?plats=ksamsok-stadsbefastning-jonkoping-cc128e"><b>Stadsbefästning</b></a> — Rester av bastionen Carolus och en gammal hamnstation.</li>
+</ul>
+<h3 class="city-h3">Torn · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-jonkoping-jonkopings-fyr-q40524309"><b>Jönköpings fyr</b></a> — en fyr vid Vättern i Jönköping</li>
+</ul>
+<h3 class="city-h3">Runsten · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-jonkoping-f2ce93"><b>Runristning</b></a> — Ett runstensfragment från Markestad med inskrift av Gunnulv och Sixten.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 148 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/jonkoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/jonkoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Jönköping gratis?</summary><p>Ja. Karta, alla 148 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Jönköping?</summary><p>Vandringen samlar 148 sevärdheter i Jönköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Sofiakyrkan?</summary><p>kyrkobyggnad i Svenska kyrkan i Jönköping, Sverige</p></details>
+<details class="faq"><summary>Vad är Tändsticksmuseet?</summary><p>arbetslivsmuseum i Jönköpings kommun</p></details>
+<details class="faq"><summary>Vad är Björneberg?</summary><p>Björneberg är en herrgård i Järstorps socken, Jönköpings kommun, fyra kilometer nordväst om Jönköping.</p></details>
+<details class="faq"><summary>Vad är Bymarkskyrkan?</summary><p>kyrkobyggnad i Svenska kyrkan på Bynarken i Jönköping i Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

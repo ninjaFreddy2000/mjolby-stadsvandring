@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Strängnäs — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Strängnäs till fots: 118 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 118 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/strangnas">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Strängnäs — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Strängnäs till fots: 118 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 118 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/strangnas">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Strängnäs — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Strängnäs till fots: 118 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 118 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"strangnas","sourceSlug":"stadsvandring/strangnas","centroid":{"lat":59.38310632282422,"lng":17.016890310627254},"stops":[{"name":"Tynnelsö slott","lat":59.41222222,"lng":17.10027778},{"name":"Försvarsfordonsmuseet Arsenalen","lat":59.36745,"lng":16.9314},{"name":"Strängnäs konvent","lat":59.378179,"lng":17.033427}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Strängnäs","description":"Upptäck Strängnäs till fots: 118 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/strangnas","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Tynnelsö slott","description":"slott på Tynnelsö i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.41222222,"longitude":17.10027778}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Försvarsfordonsmuseet Arsenalen","description":"arbetslivsmuseum i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.36745,"longitude":16.9314}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Strängnäs konvent","description":"Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner i det som nu är centrala Strängnäs.","url":"https://stadsvandring.io/p/wd-strangnas-strangnas-konvent-q10682096","geo":{"@type":"GeoCoordinates","latitude":59.378179,"longitude":17.033427}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Strängnäsbron","description":"bro över Mälaren i Strängnäs","geo":{"@type":"GeoCoordinates","latitude":59.39722222,"longitude":17.01111111}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Ulvhäll","description":"herrgård vid Mälaren i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.362683,"longitude":17.042567}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Vansö kyrka","description":"kyrkobyggnad i Strängnäs kommun","url":"https://stadsvandring.io/p/wd-strangnas-vanso-kyrka-q18449842","geo":{"@type":"GeoCoordinates","latitude":59.40623056,"longitude":16.93975}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Näsbyholms säteri","description":"herrgård i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.36861111,"longitude":16.92583333}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Tosteröbron NV","description":"en fyr i Mälaren i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.378444444444,"longitude":17.037416666667}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Tosteröbron SÖ","description":"en fyr i Mälaren i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.377916666667,"longitude":17.037972222222}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Tosteröbron NÖ","description":"en fyr i Mälaren i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.377972222222,"longitude":17.038583333333}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Tosteröbron SV","description":"en fyr i Mälaren i Strängnäs kommun","geo":{"@type":"GeoCoordinates","latitude":59.378194444444,"longitude":17.037027777778}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Visholmen","description":"stadspark i Strängnäs","geo":{"@type":"GeoCoordinates","latitude":59.380833,"longitude":17.024403}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"GÅRDSHUS","description":"Ett gårdshus i Strängnäs, uppfört någon gång omkring 1710–1730.","geo":{"@type":"GeoCoordinates","latitude":59.377787977507936,"longitude":17.031603946946223}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"WICKMANS VILLA","description":"En timrad villa från 1898, byggd av jägmästare Wickman som exempel på borgerlig bostad.","url":"https://stadsvandring.io/p/ksamsok-wickmans-villa-strangnas-578842","geo":{"@type":"GeoCoordinates","latitude":59.37217726241796,"longitude":17.03173528448346}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"VILLA ULLVI","description":"En villa vid Mälaren från 1912–13, ritad i nationalromantisk stil.","geo":{"@type":"GeoCoordinates","latitude":59.381142863516416,"longitude":17.017662390977378}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"GRASSAGÅRDEN","description":"Grassagårdens äldsta hus från tidigt 1600-tal, med ett yngre bostadshus från cirka hundra år senare.","geo":{"@type":"GeoCoordinates","latitude":59.37790322207237,"longitude":17.031595631263038}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"DOMKAPITELHUSET (KONSISTORIEHUSET)","description":"Ett hus från 1480-talet vid domkyrkan som växlat mellan skola, konsistorium och stiftskansli.","url":"https://stadsvandring.io/p/ksamsok-domkapitelhuset-konsistoriehuset-strangnas-356626","geo":{"@type":"GeoCoordinates","latitude":59.375450858016144,"longitude":17.033098177956106}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"TRYCKERIHUSET","description":"Domkyrkans tryckeri från 1794, senare bibliotek och museum.","url":"https://stadsvandring.io/p/ksamsok-tryckerihuset-strangnas-356627","geo":{"@type":"GeoCoordinates","latitude":59.375789048008905,"longitude":17.033068535617424}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"UTHUS","description":"Två timrade uthus som kan höra till länets äldsta träbyggnader.","geo":{"@type":"GeoCoordinates","latitude":59.37834193814059,"longitude":17.031664040255627}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"TULLMAGASIN","description":"Ett timrat gårdshus som fick sitt nuvarande utseende i början av 1800-talet.","geo":{"@type":"GeoCoordinates","latitude":59.37374927112171,"longitude":17.032858057928163}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"RÅDHUSET, STRÄNGNÄS","description":"Strängnäs rådhus från 1876, en typisk institutionsbyggnad med urverk i frontonen.","url":"https://stadsvandring.io/p/ksamsok-radhuset-strangnas-strangnas-720297","geo":{"@type":"GeoCoordinates","latitude":59.37720079797638,"longitude":17.03576096848873}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"TULLHUS","description":"Ett timrat gathus med rikt utformad klassicistisk fasad och välbevarad inredning.","url":"https://stadsvandring.io/p/ksamsok-tullhus-strangnas-586115","geo":{"@type":"GeoCoordinates","latitude":59.37376977416498,"longitude":17.03269296233302}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"STRÄNGNÄS KVARN","description":"En holländarkvarn från 1850-talet på Kvarnberget, med bevarat maskineri i trä.","url":"https://stadsvandring.io/p/ksamsok-strangnas-kvarn-strangnas-585635","geo":{"@type":"GeoCoordinates","latitude":59.379296217332005,"longitude":17.02982261003993}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"LEJONPORTEN","description":"Lejonporten i Strängnäs, enligt registret uppförd 1658.","geo":{"@type":"GeoCoordinates","latitude":59.37562303628161,"longitude":17.033233326323682}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"LEKTORSGÅRDEN (MALMENIUS GÅRD)","description":"En lektorsbostad från 1850-talet, även kallad Malmenius gård.","geo":{"@type":"GeoCoordinates","latitude":59.37570991810736,"longitude":17.036696282942206}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Strängnäs gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 118 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Strängnäs?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 118 sevärdheter i Strängnäs — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Tynnelsö slott?","acceptedAnswer":{"@type":"Answer","text":"slott på Tynnelsö i Strängnäs kommun"}},{"@type":"Question","name":"Vad är Försvarsfordonsmuseet Arsenalen?","acceptedAnswer":{"@type":"Answer","text":"arbetslivsmuseum i Strängnäs kommun"}},{"@type":"Question","name":"Vad är Strängnäs konvent?","acceptedAnswer":{"@type":"Answer","text":"Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner i det som nu är centrala Strängnäs."}},{"@type":"Question","name":"Vad är Strängnäsbron?","acceptedAnswer":{"@type":"Answer","text":"bro över Mälaren i Strängnäs"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Strängnäs","item":"https://stadsvandring.io/stadsvandring/strangnas"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Strängnäs</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Strängnäs</span><span class="badge">118 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Strängnäs — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Strängnäs till fots: 118 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Strängnäs"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-strangnas-tynnelso-slott-q2243791"><b>1. Tynnelsö slott</b><span>Slott · slott på Tynnelsö i Strängnäs kommun</span></a>
+<a class="tile" href="/p/wd-strangnas-forsvarsfordonsmuseet-arsenalen-q10501569"><b>2. Försvarsfordonsmuseet Arsenalen</b><span>museum · arbetslivsmuseum i Strängnäs kommun</span></a>
+<a class="tile" href="/p/wd-strangnas-strangnas-konvent-q10682096"><b>3. Strängnäs konvent</b><span>Klosterruin · Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Strängnäs · 118</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Strängnäs. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 73</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fardvag-strangnas-02879f"><b>Färdväg</b></a> — En sentida färdväg med stensatt kant som fortfarande används som genväg.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-strangnas-fc5e06"><b>Röjningsröse</b></a> — Ett sentida röjningsröse som kom fram vid en utredning 2008.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-strangnas-5f23a8"><b>Stridsvärn</b></a> — Ett stridsvärn intill ett stort stenblock, kopplat till Södermanlands regemente P10.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-2a9ad1"><b>Område med militära anläggningar</b></a> — Ett område med små skyttevärn byggda vid naturliga stenblock.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-74d572"><b>Område med militära anläggningar</b></a> — Ett rikt fält av skyttevärn med betongfundament i söder.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-strangnas-a8023a"><b>Stridsvärn</b></a> — Ett stridsvärn av upplagd stenvall vid ett större block.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-4e788b"><b>Stensättning</b></a> — En osäker, närmast rund stensättning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-strangnas-9c9cba"><b>Husgrund, historisk tid</b></a> — En källargrund efter den rivna gården Valhalla.</li>
+<li><a href="/karta?plats=ksamsok-forvaringsanlaggning-strangnas-b688cb"><b>Förvaringsanläggning</b></a> — En trattformad grop som tolkas som en möjlig potatisgrop.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-strangnas-c340a1"><b>Fartygs-/båtlämning</b></a> — En liten båtlämning känd genom en sonarbild.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-cf1ee2"><b>Område med militära anläggningar</b></a> — Ett område med flera skyttevärn i gropar, stenvallar och diken.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-strangnas-78ef73"><b>Gravfält</b></a> — Ett skyltat gravfält med sex stensättningar, delvis överlagrade av skyttevärn.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-8d5a42"><b>Område med militära anläggningar</b></a> — Ett fält med rikligt med skyttevärn och en stenmur.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-strangnas-fc814d"><b>Brott/täkt</b></a> — Ett mindre stenbrott, möjligen i granit.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-strangnas-bd3255"><b>Vägmärke</b></a> — En milstolpe i gjutjärn från 1857.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-strangnas-3576d7"><b>Fartygs-/båtlämning</b></a> — En båtlämning som beskrivs närmare i inventeringsboken.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-strangnas-257ac3"><b>Hällristning</b></a> — En enstaka skålgrop på ovansidan av ett stenblock.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-strangnas-face76"><b>Stridsvärn</b></a> — Ett stridsvärn med två skyttevärn kring ett stenblock.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-strangnas-813a8e"><b>Vägmärke</b></a> — En milstolpe i gjutjärn från 1857 på ett kallmurat postament.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-strangnas-ca93ce"><b>Hägnad</b></a> — En låg stenmur med ett gränsmärke av en rest sten.</li>
+<li><a href="/karta?plats=ksamsok-hog-strangnas-cb4cef"><b>Hög</b></a> — En gravhög med avlång grop och ett röjningsröse intill.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-strangnas-a281bf"><b>Fartygs-/båtlämning</b></a> — En modern, kraftigt eroderad eka i ett område med sjunktimmer.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-strangnas-b00dba"><b>Röjningsröse</b></a> — Ett lågt röjningsröse med övermossade stenar.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-0baa0d"><b>Område med militära anläggningar</b></a> — Ett område med skyttevärn i gropar, jordvallar och diken.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-strangnas-7d9322"><b>Stadslager</b></a> — Strängnäs stadslager med kulturlager från medeltid och 1500–1600-tal.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-strangnas-2342de"><b>Bytomt/gårdstomt</b></a> — Gårdstomten för biskopsbostället Sundby.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-c09e0e"><b>Fyndplats</b></a> — En fyndplats för ett större stycke flinta.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-e9236e"><b>Område med militära anläggningar</b></a> — Skyttevärn av sten kring ett mindre höjdparti.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-strangnas-3a3a95"><b>Gravfält</b></a> — Ett gravfält med ett tjugotal stensättningar, delvis skadat av en väg.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-strangnas-256db6"><b>Gravfält</b></a> — Ett gravfält med runda stensättningar och en rest sten.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-strangnas-745199"><b>Lägenhetsbebyggelse</b></a> — Platsen för ett soldattorp enligt en 1700-talskarta.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-b778ec"><b>Stensättning</b></a> — En rund stensättning byggd av sten.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-bef2c6"><b>Fyndplats</b></a> — En fyndplats för mynt vid en uppgiven handelsplats.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-strangnas-ef25a9"><b>Gravfält</b></a> — Ett gravfält med fyra stensättningar och en treudd.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-strangnas-3adfcf"><b>Fartygs-/båtlämning</b></a> — Ett nerbrunnet fritidsfartyg vars ombordvarande alla räddades.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-strangnas-00a2ef"><b>Röjningsröse</b></a> — Ett runt röjningsröse med jämn form, bedömt som sentida.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-strangnas-c2175f"><b>Färdväg</b></a> — En bevarad vägbank i nordväst–sydöstlig sträckning.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-strangnas-44fa2f"><b>Militär anläggning övrig</b></a> — En oval husgrund, troligen ett äldre skyttevärn.</li>
+<li><a href="/karta?plats=ksamsok-grav-markerad-av-sten-block-strangnas-160d4a"><b>Grav markerad av sten/block</b></a> — En rest sten som flyttats vid en vägrätning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-strangnas-63f621"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid med spismursröse.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-e9acf6"><b>Stensättning</b></a> — En rund stensättning med en grop i västra kanten.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-strangnas-198fc0"><b>Bytomt/gårdstomt</b></a> — Gårdstomten för Stenby, ett hemman under Strängnäs hospital.</li>
+<li><a href="/karta?plats=ksamsok-sparranordning-strangnas-088e14"><b>Spärranordning</b></a> — En uppgiven spärranordning av nedslagna ekstammar.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-strangnas-956e0c"><b>Röjningsröse</b></a> — Ett oregelbundet röjningsröse med talrika stenar.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-strangnas-7cedf2"><b>Bytomt/gårdstomt</b></a> — Gårdstomten för Bresshammar, ett domkyrkohemman under Strängnäs.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-2cd74f"><b>Stensättning</b></a> — En närmast rund stensättning med grop och kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-strangnas-82764f"><b>Militär anläggning övrig</b></a> — En oval husgrund, troligen ett skyttevärn från tidigt 1900-tal.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-247793"><b>Stensättning</b></a> — En kvadratisk, röseliknande stensättning med senare skyttevärn.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-strangnas-deca05"><b>Övrigt</b></a> — En omsorgsfullt bearbetad stenskiva som nu används som trädgårdsbord.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-257848"><b>Fyndplats</b></a> — En fyndplats för två bitar förhistorisk keramik i en rotvälta.</li>
+<li><a href="/karta?plats=ksamsok-hog-strangnas-7a945d"><b>Hög</b></a> — En gravhög med avplanat, grustäckt krön och spår av grustäkt.</li>
+<li><a href="/karta?plats=ksamsok-gravklot-strangnas-8e94c3"><b>Gravklot</b></a> — Ett ovalt gravklot.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-strangnas-1024a2"><b>Fornlämningsliknande lämning</b></a> — En stensättningsliknande lämning med ett block i mitten.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-strangnas-5fd315"><b>Fartygs-/båtlämning</b></a> — Delar av en segelskuta daterad genom trädringar till omkring 1819.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-b4cab4"><b>Stensättning</b></a> — En osäker rund stensättning som kan bestå av naturligt block.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-76a378"><b>Fyndplats</b></a> — En fyndplats för eggen av en tjocknackig flintyxa.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-2eb64f"><b>Fyndplats</b></a> — En fyndplats för en järnyxa daterad till omkring 1500-tal.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-strangnas-2a24cd"><b>Färdväg</b></a> — En vägbank som stämmer med en väg på en karta från 1812.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-strangnas-6a2350"><b>Plats med tradition</b></a> — En plats vid Vikingaberget där traditionen talar om lämningar efter en vikingaborg.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-strangnas-df58a2"><b>Fyndplats</b></a> — Här hittades botten av ett kopparkärl som troligen dateras till 900-talet.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-6e821d"><b>Område med militära anläggningar</b></a> — Ett område med flera enkla skyttevärn som hörde till Södermanlands regemente.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-e38535"><b>Stensättning</b></a> — En rund, mossbevuxen stensättning med bevarad kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-06514c"><b>Område med militära anläggningar</b></a> — Ett militärt övningsområde med en inrasad betongbunker och flera skyttevärn.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-militara-anlaggningar-strangnas-b40df9"><b>Område med militära anläggningar</b></a> — Tre skyttevärn från Södermanlands regementes övningsfält, ett intill ett stort stenblock.</li>
+<li><a href="/karta?plats=ksamsok-fortojningsanordning-strangnas-b76f64"><b>Förtöjningsanordning</b></a> — En pålrad från 1800-talet längs Nabbvikens strand, troligen rester av en förtöjningsanordning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-ae0d3a"><b>Stensättning</b></a> — En närmast rund, mossbevuxen stensättning med naturbildningar i närheten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-3cb9cc"><b>Stensättning</b></a> — Rester av en ursprungligen rund stensättning med delvis bevarad kantkedja.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-strangnas-bb6963"><b>Bytomt/gårdstomt</b></a> — Den gamla bytomten Eldsund med skriftliga belägg ända från 1293.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-strangnas-4193ee"><b>Hägnad</b></a> — En stenmur uppförd av större stenar.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-strangnas-db9d12"><b>Vägmärke</b></a> — En kvartsmils milstolpe i gjutjärn från 1856, rest på ett kallmurat postament.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-strangnas-dcf3cb"><b>Stensättning</b></a> — En rund, starkt övertorvad stensättning från förstagångsinventeringen.</li>
+<li><a href="/karta?plats=ksamsok-broasen-stensattning-strangnas-41bd16"><b>Broåsen, Stensättning</b></a> — En triangulär, skyltad stensättning på Broåsen med en grop i väster.</li>
+<li><a href="/karta?plats=ksamsok-sankt-eskils-kalla-kalla-med-tradition-strangnas-38cfcb"><b>Sankt Eskils källa, Källa med tradition</b></a> — En offerkälla som enligt traditionen är Sankt Eskils källa, med en minnessten rest av frimurarna 1925.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 27</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-ulvhall-q10709003"><b>Ulvhäll</b></a> — herrgård vid Mälaren i Strängnäs kommun</li>
+<li><a href="/karta?plats=wd-strangnas-nasbyholms-sateri-q29475712"><b>Näsbyholms säteri</b></a> — herrgård i Strängnäs kommun</li>
+<li><a href="/karta?plats=ksamsok-gardshus-strangnas-578636"><b>GÅRDSHUS</b></a> — Ett gårdshus i Strängnäs, uppfört någon gång omkring 1710–1730. <span class="era">1710–1730</span></li>
+<li><a href="/p/ksamsok-wickmans-villa-strangnas-578842"><b>WICKMANS VILLA</b></a> — En timrad villa från 1898, byggd av jägmästare Wickman som exempel på borgerlig bostad. <span class="era">1898–1898</span></li>
+<li><a href="/karta?plats=ksamsok-villa-ullvi-strangnas-578169"><b>VILLA ULLVI</b></a> — En villa vid Mälaren från 1912–13, ritad i nationalromantisk stil. <span class="era">1912–1913</span></li>
+<li><a href="/karta?plats=ksamsok-grassagarden-strangnas-585872"><b>GRASSAGÅRDEN</b></a> — Grassagårdens äldsta hus från tidigt 1600-tal, med ett yngre bostadshus från cirka hundra år senare. <span class="era">1600–1629</span></li>
+<li><a href="/p/ksamsok-domkapitelhuset-konsistoriehuset-strangnas-356626"><b>DOMKAPITELHUSET (KONSISTORIEHUSET)</b></a> — Ett hus från 1480-talet vid domkyrkan som växlat mellan skola, konsistorium och stiftskansli. <span class="era">1480–1480</span></li>
+<li><a href="/p/ksamsok-tryckerihuset-strangnas-356627"><b>TRYCKERIHUSET</b></a> — Domkyrkans tryckeri från 1794, senare bibliotek och museum. <span class="era">1794–1794</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-strangnas-695391"><b>UTHUS</b></a> — Två timrade uthus som kan höra till länets äldsta träbyggnader. <span class="era">1500–1599</span></li>
+<li><a href="/karta?plats=ksamsok-tullmagasin-strangnas-697735"><b>TULLMAGASIN</b></a> — Ett timrat gårdshus som fick sitt nuvarande utseende i början av 1800-talet.</li>
+<li><a href="/p/ksamsok-radhuset-strangnas-strangnas-720297"><b>RÅDHUSET, STRÄNGNÄS</b></a> — Strängnäs rådhus från 1876, en typisk institutionsbyggnad med urverk i frontonen. <span class="era">1876–1876</span></li>
+<li><a href="/p/ksamsok-tullhus-strangnas-586115"><b>TULLHUS</b></a> — Ett timrat gathus med rikt utformad klassicistisk fasad och välbevarad inredning. <span class="era">1600–1699</span></li>
+<li><a href="/p/ksamsok-strangnas-kvarn-strangnas-585635"><b>STRÄNGNÄS KVARN</b></a> — En holländarkvarn från 1850-talet på Kvarnberget, med bevarat maskineri i trä. <span class="era">1840–1859</span></li>
+<li><a href="/karta?plats=ksamsok-lejonporten-strangnas-017517"><b>LEJONPORTEN</b></a> — Lejonporten i Strängnäs, enligt registret uppförd 1658. <span class="era">1658–1658</span></li>
+<li><a href="/karta?plats=ksamsok-lektorsgarden-malmenius-gard-strangnas-048196"><b>LEKTORSGÅRDEN (MALMENIUS GÅRD)</b></a> — En lektorsbostad från 1850-talet, även kallad Malmenius gård. <span class="era">1850–1859</span></li>
+<li><a href="/karta?plats=ksamsok-portlider-strangnas-695169"><b>PORTLIDER</b></a> — Ett portlider i Strängnäs, uppfört omkring 1710–1730. <span class="era">1710–1730</span></li>
+<li><a href="/karta?plats=ksamsok-gardshuset-strangnas-585658"><b>GÅRDSHUSET</b></a> — Ett vinkelbyggt gårdshus i en våning, sannolikt från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/p/ksamsok-paulinska-huset-strangnas-356599"><b>Paulinska huset</b></a> — Ett putsat 1600-talshus byggt åt biskop Laurentius Paulinus Gothus. <span class="era">1500–1599</span></li>
+<li><a href="/karta?plats=ksamsok-biskopsgarden-strangnas-356592"><b>BISKOPSGÅRDEN</b></a> — Biskopsgården i Strängnäs, enligt registret från 1660-talets början. <span class="era">1660–1664</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-gymnastikhuset-strangnas-356595"><b>Gamla gymnastikhuset</b></a> — Läroverkets gymnastiksal från 1852–54, senare använd som slöjdsal. <span class="era">1852–1854</span></li>
+<li><a href="/p/ksamsok-lyktan-strangnas-356624"><b>Lyktan</b></a> — En biskopsgård från 1600-talet, senare lektorsbostad, granne med den medeltida Biskopens trädgård. <span class="era">1600–1699</span></li>
+<li><a href="/karta?plats=ksamsok-gropgarden-strangnas-578651"><b>GROPGÅRDEN</b></a> — Ett rödfärgat gathus i två våningar, troligen från 1800-talets början. <span class="era">1800–1810</span></li>
+<li><a href="/p/ksamsok-villa-parma-strangnas-582504"><b>VILLA PARMA</b></a> — En vinkelbyggd villa med torn från 1920-talet, byggd av en skruvfabrikör. <span class="era">1920–1929</span></li>
+<li><a href="/karta?plats=ksamsok-visthusbod-strangnas-695381"><b>VISTHUSBOD</b></a> — En visthusbod i Strängnäs, uppförd omkring 1710–1730. <span class="era">1710–1730</span></li>
+<li><a href="/p/ksamsok-rektorsgarden-strangnas-356593"><b>Rektorsgården</b></a> — Ett timrat hus, även kallat Grubbs gård, med källare från medeltiden. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-strangnas-695167"><b>UTHUS</b></a> — Ett uthus i Strängnäs, uppfört 1913. <span class="era">1913–1913</span></li>
+<li><a href="/karta?plats=ksamsok-uthuslanga-strangnas-695168"><b>UTHUSLÄNGA</b></a> — En uthuslänga i Strängnäs, uppförd omkring 1710–1730. <span class="era">1710–1730</span></li>
+</ul>
+<h3 class="city-h3">Torn · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-tosterobron-nv-q111022386"><b>Tosteröbron NV</b></a> — en fyr i Mälaren i Strängnäs kommun</li>
+<li><a href="/karta?plats=wd-strangnas-tosterobron-so-q111022387"><b>Tosteröbron SÖ</b></a> — en fyr i Mälaren i Strängnäs kommun</li>
+<li><a href="/karta?plats=wd-strangnas-tosterobron-no-q111022385"><b>Tosteröbron NÖ</b></a> — en fyr i Mälaren i Strängnäs kommun</li>
+<li><a href="/karta?plats=wd-strangnas-tosterobron-sv-q111022388"><b>Tosteröbron SV</b></a> — en fyr i Mälaren i Strängnäs kommun</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-strangnas-f90e62"><b>Minnesmärke</b></a> — S:t Eskils källa och en minnessten rest av frimurare 1925.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-strangnas-61540d"><b>Minnesmärke</b></a> — En minnessten i rödaktig granit rest till minne av Magnus Lund 1902.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-strangnas-7c7397"><b>Minnesmärke</b></a> — En minnestavla vid platsen där en sprängbomb slog ned under ett flyganfall 1944.</li>
+</ul>
+<h3 class="city-h3">Klosterruin · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-strangnas-strangnas-konvent-q10682096"><b>Strängnäs konvent</b></a> — Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner i det som nu är centrala Strängnäs.</li>
+<li><a href="/karta?plats=ksamsok-kloster-strangnas-8222ff"><b>Kloster</b></a> — Platsen för ett kloster inom den medeltida stadens gräns, undersökt 1976.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-strangnas-vanso-kyrka-q18449842"><b>Vansö kyrka</b></a> — kyrkobyggnad i Strängnäs kommun</li>
+<li><a href="/karta?plats=ksamsok-strangnas-domkyrka-strangnas-440971"><b>STRÄNGNÄS DOMKYRKA</b></a> — Strängnäs domkyrka, med anor från 1200-talet. <span class="era">1250–1339</span></li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-roggeborgen-strangnas-356628"><b>Roggeborgen</b></a> — Ett biskopspalats i tegel från sent 1400-tal, uppkallat efter biskop Konrad Rogge. <span class="era">1470–1499</span></li>
+<li><a href="/p/ksamsok-stenby-skans-fornborg-strangnas-9deead"><b>Stenby skans, Fornborg</b></a> — Stenby skans, en fornborg med flera murar på en bergshöjd.</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-tynnelso-slott-q2243791"><b>Tynnelsö slott</b></a> — slott på Tynnelsö i Strängnäs kommun</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-forsvarsfordonsmuseet-arsenalen-q10501569"><b>Försvarsfordonsmuseet Arsenalen</b></a> — arbetslivsmuseum i Strängnäs kommun</li>
+</ul>
+<h3 class="city-h3">Bro · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-strangnasbron-q10682105"><b>Strängnäsbron</b></a> — bro över Mälaren i Strängnäs</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-strangnas-visholmen-q118133766"><b>Visholmen</b></a> — stadspark i Strängnäs</li>
+</ul>
+<h3 class="city-h3">Runsten · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-strangnas-2fd47e"><b>Runristning</b></a> — Runstenen Sö 275, sliten men med en läsbar hyllning.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 118 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/strangnas/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/strangnas/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Strängnäs gratis?</summary><p>Ja. Karta, alla 118 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Strängnäs?</summary><p>Vandringen samlar 118 sevärdheter i Strängnäs — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Tynnelsö slott?</summary><p>slott på Tynnelsö i Strängnäs kommun</p></details>
+<details class="faq"><summary>Vad är Försvarsfordonsmuseet Arsenalen?</summary><p>arbetslivsmuseum i Strängnäs kommun</p></details>
+<details class="faq"><summary>Vad är Strängnäs konvent?</summary><p>Strängnäs konvent var ett konvent som byggdes efter 1260-talet för dominikaner i det som nu är centrala Strängnäs.</p></details>
+<details class="faq"><summary>Vad är Strängnäsbron?</summary><p>bro över Mälaren i Strängnäs</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

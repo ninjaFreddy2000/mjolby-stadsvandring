@@ -3,12 +3,16 @@
 <metadata><name>Industrihistoria i Mjölby</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
   <wpt lat="58.3784" lon="15.1957"><name>Öjebro stenvalvsbro</name><desc>Gammal stenvalvsbro i den forna kvarnbyn Öjebro.</desc></wpt>
   <wpt lat="58.328" lon="15.1285"><name>Mjölby Bryggeri (historiskt)</name><desc>Ortens anrika bryggeri, sedermera inriktat på svagdricka och läsk.</desc></wpt>
+  <wpt lat="58.324145674344" lon="15.127036339766"><name>Burensköldsbron</name><desc>bro i Mjölby, Sverige.</desc></wpt>
+  <wpt lat="58.323362796152" lon="15.126783728257"><name>Kvarnparksbron</name><desc>bro i Mjölby, Sverige</desc></wpt>
   <wpt lat="58.3227753" lon="15.1322308"><name>Mjölby järnvägsstation</name><desc>Stationen som förvandlade kvarnbyn till järnvägsknut och regioncentrum.</desc></wpt>
   <wpt lat="58.3159719" lon="15.1116332"><name>Mjölby Intarsia / Fanerami AB</name><desc>Träinläggnings­företaget som klädde atlantångare och bankpalats i intarsia.</desc></wpt>
   <wpt lat="58.3308934" lon="15.1098531"><name>Ols Möbler (idag Mio Mjölby)</name><desc>Möbeldynasti som startade 1887 och fortfarande drivs av samma familj.</desc></wpt>
   <rte><name>Industrihistoria i Mjölby</name>
     <rtept lat="58.3784" lon="15.1957"><name>Öjebro stenvalvsbro</name></rtept>
     <rtept lat="58.328" lon="15.1285"><name>Mjölby Bryggeri (historiskt)</name></rtept>
+    <rtept lat="58.324145674344" lon="15.127036339766"><name>Burensköldsbron</name></rtept>
+    <rtept lat="58.323362796152" lon="15.126783728257"><name>Kvarnparksbron</name></rtept>
     <rtept lat="58.3227753" lon="15.1322308"><name>Mjölby järnvägsstation</name></rtept>
     <rtept lat="58.3159719" lon="15.1116332"><name>Mjölby Intarsia / Fanerami AB</name></rtept>
     <rtept lat="58.3308934" lon="15.1098531"><name>Ols Möbler (idag Mio Mjölby)</name></rtept>

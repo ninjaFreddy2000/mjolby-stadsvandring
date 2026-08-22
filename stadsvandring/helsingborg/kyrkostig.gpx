@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Helsingborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.108969" lon="12.691778"><name>Allerums kyrka</name><desc>kyrka i Sverige</desc></wpt>
+  <wpt lat="56.08114" lon="12.68581"><name>Sankt Andreas kyrka</name><desc>kyrkobyggnad i Helsingborgs kommun</desc></wpt>
+  <wpt lat="56.07343375" lon="12.698038781"><name>Pålsjö kapell</name><desc>Pålsjö kapell</desc></wpt>
+  <wpt lat="56.06615" lon="12.69995"><name>Sankta Anna kyrka</name><desc>kyrkobyggnad i Helsingborg</desc></wpt>
+  <wpt lat="56.06277778" lon="12.72666667"><name>Den gode herdens kyrka</name><desc>kyrkobyggnad i Helsingborgs kommun</desc></wpt>
+  <wpt lat="56.0536361" lon="12.7299449"><name>Rosengårdskyrkan</name><desc>frikyrkobyggnad i Helsingborg</desc></wpt>
+  <wpt lat="56.04654722" lon="12.71975278"><name>Sankt Olofs kyrka</name><desc>kyrkobyggnad i Helsingborg</desc></wpt>
+  <wpt lat="56.050243" lon="12.69757"><name>St Clemens kyrka</name><desc>kyrka/kapell i Skåne (Helsingborg 11:1)</desc></wpt>
+  <wpt lat="56.049235" lon="12.6966128"><name>Slottshagskyrkan</name><desc>frikyrkobyggnad i Helsingborg</desc></wpt>
+  <wpt lat="56.04638889" lon="12.69638889"><name>Sankta Maria kyrka</name><desc>kyrkobyggnad i Helsingborg</desc></wpt>
+  <wpt lat="56.03694444" lon="12.61333333"><name>Sankt Mariæ kyrka</name><desc>Sankt Mariæ kyrka</desc></wpt>
+  <wpt lat="56.03744444" lon="12.60786111"><name>Sankt Vincent kyrka</name><desc>Sankt Vincent kirke är en katolsk kyrka i Helsingör i Danmark.</desc></wpt>
+  <wpt lat="56.07474" lon="12.54775"><name>Hellebæk kyrka</name><desc>Hellebæk kyrka</desc></wpt>
+  <wpt lat="56.09734722" lon="12.74751389"><name>Björkakyrkan</name><desc>kyrkobyggnad i Helsingborgs kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Helsingborg</name>
+    <rtept lat="56.108969" lon="12.691778"><name>Allerums kyrka</name></rtept>
+    <rtept lat="56.08114" lon="12.68581"><name>Sankt Andreas kyrka</name></rtept>
+    <rtept lat="56.07343375" lon="12.698038781"><name>Pålsjö kapell</name></rtept>
+    <rtept lat="56.06615" lon="12.69995"><name>Sankta Anna kyrka</name></rtept>
+    <rtept lat="56.06277778" lon="12.72666667"><name>Den gode herdens kyrka</name></rtept>
+    <rtept lat="56.0536361" lon="12.7299449"><name>Rosengårdskyrkan</name></rtept>
+    <rtept lat="56.04654722" lon="12.71975278"><name>Sankt Olofs kyrka</name></rtept>
+    <rtept lat="56.050243" lon="12.69757"><name>St Clemens kyrka</name></rtept>
+    <rtept lat="56.049235" lon="12.6966128"><name>Slottshagskyrkan</name></rtept>
+    <rtept lat="56.04638889" lon="12.69638889"><name>Sankta Maria kyrka</name></rtept>
+    <rtept lat="56.03694444" lon="12.61333333"><name>Sankt Mariæ kyrka</name></rtept>
+    <rtept lat="56.03744444" lon="12.60786111"><name>Sankt Vincent kyrka</name></rtept>
+    <rtept lat="56.07474" lon="12.54775"><name>Hellebæk kyrka</name></rtept>
+    <rtept lat="56.09734722" lon="12.74751389"><name>Björkakyrkan</name></rtept>
+  </rte>
+</gpx>

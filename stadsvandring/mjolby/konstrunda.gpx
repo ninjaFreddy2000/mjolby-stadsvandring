@@ -4,15 +4,33 @@
   <wpt lat="58.395489" lon="15.086764"><name>Ture Lång (Rolandsstaty), Skänninge</name><desc>Ståljätte på Skänninges torg, symbol för rättsskipning i medeltida tysk tradition.</desc></wpt>
   <wpt lat="58.3943436" lon="15.0828304"><name>Lindbladsparken &amp; bysten av A.F. Lindblad</name><desc>Park i Skänninge med en byst av tonsättaren Adolf Fredrik Lindblad.</desc></wpt>
   <wpt lat="58.328396" lon="15.1295005"><name>Mjölby hembygdsgård (Norrgårdsholmen)</name><desc>Faluröda museihus på en holme i ån, med en fin intarsiasamling.</desc></wpt>
+  <wpt lat="58.328135799857" lon="15.129378010373"><name>Det Sköldska monumentet</name><desc>skulptur på Mjölby hembygdsgård, Sverige</desc></wpt>
+  <wpt lat="58.328190610278334" lon="15.129045934540054"><name>Minnesmärke</name><desc>En minnessten av granit formad som en kvarnsten.</desc></wpt>
   <wpt lat="58.326445" lon="15.1268935"><name>Statyn av Skånska Lasse</name><desc>Staty i Kvarnparken över ortens folkkäre bondkomiker.</desc></wpt>
+  <wpt lat="58.325816957028" lon="15.128648252"><name>Det kom en gång en mjölnare</name><desc>skulptur av Elise Dahlberg i Mjölby, Sverige</desc></wpt>
+  <wpt lat="58.325125878593" lon="15.130025773263"><name>Ungdom</name><desc>skulptur från 1961 i Mjölby, Mjölby kommun, Sverige av Nils Möllerberg</desc></wpt>
+  <wpt lat="58.323542878667" lon="15.128118634913"><name>Per-Olof Ahls plats</name><desc>svenskt konstverk i Mjölby av Asp</desc></wpt>
+  <wpt lat="58.322756597234" lon="15.124859440665"><name>Skånska Lasse</name><desc>skulptur från 1987 i Mjölby, Mjölby kommun, Sverige av Karl Göte Bejemark</desc></wpt>
+  <wpt lat="58.324728042456" lon="15.124682753879"><name>Danserskorna</name><desc>skulptur från 1917 i Mjölby, Mjölby kommun, Sverige av Carl Milles</desc></wpt>
   <wpt lat="58.3248271" lon="15.125268"><name>Carl Milles-skulptur (dansande figurer), Stadshuset</name><desc>Skulptur av den världskände Carl Milles framför Stadshusets entré.</desc></wpt>
+  <wpt lat="58.32500926498" lon="15.136735368091"><name>Tecken</name><desc>skulptur från 1984 i Mjölby, Mjölby kommun, Sverige av Sune Rehn</desc></wpt>
+  <wpt lat="58.317720424157" lon="15.116988358744"><name>Fontän</name><desc>skulptur i Mjölby, Mjölby kommun, Sverige av Jörgen Svensson</desc></wpt>
   <wpt lat="58.32282" lon="15.0939495"><name>Potatisrondellen (Mjölbypotäten)</name><desc>Ortens mest omtalade symbol: en jättelik King Edward-potatis i en rondell.</desc></wpt>
   <rte><name>Konstrundan i Mjölby</name>
     <rtept lat="58.395489" lon="15.086764"><name>Ture Lång (Rolandsstaty), Skänninge</name></rtept>
     <rtept lat="58.3943436" lon="15.0828304"><name>Lindbladsparken &amp; bysten av A.F. Lindblad</name></rtept>
     <rtept lat="58.328396" lon="15.1295005"><name>Mjölby hembygdsgård (Norrgårdsholmen)</name></rtept>
+    <rtept lat="58.328135799857" lon="15.129378010373"><name>Det Sköldska monumentet</name></rtept>
+    <rtept lat="58.328190610278334" lon="15.129045934540054"><name>Minnesmärke</name></rtept>
     <rtept lat="58.326445" lon="15.1268935"><name>Statyn av Skånska Lasse</name></rtept>
+    <rtept lat="58.325816957028" lon="15.128648252"><name>Det kom en gång en mjölnare</name></rtept>
+    <rtept lat="58.325125878593" lon="15.130025773263"><name>Ungdom</name></rtept>
+    <rtept lat="58.323542878667" lon="15.128118634913"><name>Per-Olof Ahls plats</name></rtept>
+    <rtept lat="58.322756597234" lon="15.124859440665"><name>Skånska Lasse</name></rtept>
+    <rtept lat="58.324728042456" lon="15.124682753879"><name>Danserskorna</name></rtept>
     <rtept lat="58.3248271" lon="15.125268"><name>Carl Milles-skulptur (dansande figurer), Stadshuset</name></rtept>
+    <rtept lat="58.32500926498" lon="15.136735368091"><name>Tecken</name></rtept>
+    <rtept lat="58.317720424157" lon="15.116988358744"><name>Fontän</name></rtept>
     <rtept lat="58.32282" lon="15.0939495"><name>Potatisrondellen (Mjölbypotäten)</name></rtept>
   </rte>
 </gpx>

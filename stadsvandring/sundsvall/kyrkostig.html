@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Sundsvall — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/sundsvall/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Sundsvall — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/sundsvall/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Sundsvall — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"sundsvall","theme":"kyrkostig","sourceSlug":"stadsvandring/sundsvall/kyrkostig","centroid":{"lat":62.398835062833406,"lng":17.302387031751657},"stops":[{"name":"Sköns kyrka","lat":62.44795278,"lng":17.35249722},{"name":"Bosvedjans kyrka","lat":62.41909444,"lng":17.33617778},{"name":"Bydalens gravkapell","lat":62.41027778,"lng":17.33083333},{"name":"BIRGITTAKYRKAN","lat":62.400343772026325,"lng":17.34637538147017},{"name":"Brokyrkan","lat":62.39797222,"lng":17.34366667},{"name":"EFS-kyrkan, Sundsvall","lat":62.38833333,"lng":17.31277778},{"name":"Elimkyrkan","lat":62.38833333,"lng":17.30583333},{"name":"Betlehemskyrkan","lat":62.38888889,"lng":17.30388889},{"name":"Pingstkyrkan, Sundsvall","lat":62.39027778,"lng":17.30319444},{"name":"METODISTKYRKAN","lat":62.39080519280593,"lng":17.302330412072642},{"name":"Gustav Adolfs kyrka","lat":62.39119444,"lng":17.30011111},{"name":"Kyrka/kapell","lat":62.39264812900242,"lng":17.28478426973869},{"name":"Nacksta kyrka","lat":62.38921667,"lng":17.271775},{"name":"Granlo kyrka","lat":62.39966667,"lng":17.26159722},{"name":"Granloholms kyrka","lat":62.41083333,"lng":17.26944444},{"name":"Selånger 86:1","lat":62.405353,"lng":17.208553},{"name":"Selångers kyrka","lat":62.40833,"lng":17.20693},{"name":"Skönsmons gravkapell","lat":62.37944444,"lng":17.34833333},{"name":"Skönsmons kyrka","lat":62.3789,"lng":17.35625}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Sundsvall","description":"Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Sköns kyrka","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-skons-kyrka-q10671270"},{"@type":"HowToStep","position":2,"name":"Bosvedjans kyrka","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-bosvedjans-kyrka-q10433554"},{"@type":"HowToStep","position":3,"name":"Bydalens gravkapell","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-bydalens-gravkapell-q10438146"},{"@type":"HowToStep","position":4,"name":"BIRGITTAKYRKAN","text":"En kyrka från 1970–1972 ritad av arkitekten och formgivaren Carl-Axel Acking.","url":"https://stadsvandring.io/p/ksamsok-birgittakyrkan-sundsvall-581259"},{"@type":"HowToStep","position":5,"name":"Brokyrkan","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-brokyrkan-q10435999"},{"@type":"HowToStep","position":6,"name":"EFS-kyrkan, Sundsvall","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-efs-kyrkan-sundsvall-q10478809"},{"@type":"HowToStep","position":7,"name":"Elimkyrkan","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-elimkyrkan-q10481528"},{"@type":"HowToStep","position":8,"name":"Betlehemskyrkan","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-betlehemskyrkan-q10429015"},{"@type":"HowToStep","position":9,"name":"Pingstkyrkan, Sundsvall","text":"kyrka i Sundsvall, Sverige","url":"https://stadsvandring.io/p/wd-sundsvall-pingstkyrkan-sundsvall-q10631912"},{"@type":"HowToStep","position":10,"name":"METODISTKYRKAN","text":"En metodistkyrka från 1892 ritad av byggmästaren C.J. Henriksson, restaurerad 1979.","url":"https://stadsvandring.io/p/ksamsok-metodistkyrkan-sundsvall-694189"},{"@type":"HowToStep","position":11,"name":"Gustav Adolfs kyrka","text":"kyrkobyggnad i Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-gustav-adolfs-kyrka-q10511120"},{"@type":"HowToStep","position":12,"name":"Kyrka/kapell","text":"Platsen för Sundsvalls äldsta kyrka och kyrkogård, i bruk fram till 1640-talet.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-sundsvall-da2df0"},{"@type":"HowToStep","position":13,"name":"Nacksta kyrka","text":"katolsk kyrka i Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-nacksta-kyrka-q10593942"},{"@type":"HowToStep","position":14,"name":"Granlo kyrka","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-granlo-kyrka-q10508126"},{"@type":"HowToStep","position":15,"name":"Granloholms kyrka","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-granloholms-kyrka-q10508128"},{"@type":"HowToStep","position":16,"name":"Selånger 86:1","text":"kyrka/kapell i Medelpad","url":"https://stadsvandring.io/p/wd-sundsvall-selanger-86-1-q29898644"},{"@type":"HowToStep","position":17,"name":"Selångers kyrka","text":"kyrkobyggnad i Svenska kyrkan i Selånger, Sverige","url":"https://stadsvandring.io/p/wd-sundsvall-selangers-kyrka-q10665450"},{"@type":"HowToStep","position":18,"name":"Skönsmons gravkapell","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-skonsmons-gravkapell-q10671278"},{"@type":"HowToStep","position":19,"name":"Skönsmons kyrka","text":"kyrkobyggnad i Sundsvalls kommun","url":"https://stadsvandring.io/p/wd-sundsvall-skonsmons-kyrka-q10671279"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Sundsvall","description":"Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/sundsvall/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":19,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Sköns kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-skons-kyrka-q10671270"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Bosvedjans kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-bosvedjans-kyrka-q10433554"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Bydalens gravkapell","url":"https://stadsvandring.io/p/wd-sundsvall-bydalens-gravkapell-q10438146"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"BIRGITTAKYRKAN","url":"https://stadsvandring.io/p/ksamsok-birgittakyrkan-sundsvall-581259"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Brokyrkan","url":"https://stadsvandring.io/p/wd-sundsvall-brokyrkan-q10435999"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"EFS-kyrkan, Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-efs-kyrkan-sundsvall-q10478809"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Elimkyrkan","url":"https://stadsvandring.io/p/wd-sundsvall-elimkyrkan-q10481528"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Betlehemskyrkan","url":"https://stadsvandring.io/p/wd-sundsvall-betlehemskyrkan-q10429015"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan, Sundsvall","url":"https://stadsvandring.io/p/wd-sundsvall-pingstkyrkan-sundsvall-q10631912"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"METODISTKYRKAN","url":"https://stadsvandring.io/p/ksamsok-metodistkyrkan-sundsvall-694189"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Gustav Adolfs kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-gustav-adolfs-kyrka-q10511120"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-sundsvall-da2df0"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Nacksta kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-nacksta-kyrka-q10593942"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Granlo kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-granlo-kyrka-q10508126"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Granloholms kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-granloholms-kyrka-q10508128"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Selånger 86:1","url":"https://stadsvandring.io/p/wd-sundsvall-selanger-86-1-q29898644"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Selångers kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-selangers-kyrka-q10665450"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Skönsmons gravkapell","url":"https://stadsvandring.io/p/wd-sundsvall-skonsmons-gravkapell-q10671278"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Skönsmons kyrka","url":"https://stadsvandring.io/p/wd-sundsvall-skonsmons-kyrka-q10671279"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Sundsvall","item":"https://stadsvandring.io/stadsvandring/sundsvall"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Sundsvall","item":"https://stadsvandring.io/stadsvandring/sundsvall/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/sundsvall">Stadsvandring i Sundsvall</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Sundsvall</span><span class="badge">19 stopp</span></div>
+<h1>Kyrkostigen i Sundsvall</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Sundsvall — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Sundsvall"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-sundsvall-skons-kyrka-q10671270"><b>1. Sköns kyrka</b><span>Kyrka · kyrkobyggnad i Sundsvalls kommun</span></a>
+<a class="tile" href="/p/wd-sundsvall-bosvedjans-kyrka-q10433554"><b>2. Bosvedjans kyrka</b><span>Kyrka · kyrkobyggnad i Sundsvalls kommun</span></a>
+<a class="tile" href="/p/wd-sundsvall-bydalens-gravkapell-q10438146"><b>3. Bydalens gravkapell</b><span>Kyrka · kyrkobyggnad i Sundsvalls kommun</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 19 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/sundsvall/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-sundsvall-skons-kyrka-q10671270"><b>1. Sköns kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-bosvedjans-kyrka-q10433554"><b>2. Bosvedjans kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-bydalens-gravkapell-q10438146"><b>3. Bydalens gravkapell</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/ksamsok-birgittakyrkan-sundsvall-581259"><b>4. BIRGITTAKYRKAN</b></a> — En kyrka från 1970–1972 ritad av arkitekten och formgivaren Carl-Axel Acking.</li>
+<li><a href="/p/wd-sundsvall-brokyrkan-q10435999"><b>5. Brokyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-efs-kyrkan-sundsvall-q10478809"><b>6. EFS-kyrkan, Sundsvall</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-elimkyrkan-q10481528"><b>7. Elimkyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-betlehemskyrkan-q10429015"><b>8. Betlehemskyrkan</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-pingstkyrkan-sundsvall-q10631912"><b>9. Pingstkyrkan, Sundsvall</b></a> — kyrka i Sundsvall, Sverige</li>
+<li><a href="/p/ksamsok-metodistkyrkan-sundsvall-694189"><b>10. METODISTKYRKAN</b></a> — En metodistkyrka från 1892 ritad av byggmästaren C.J. Henriksson, restaurerad 1979.</li>
+<li><a href="/p/wd-sundsvall-gustav-adolfs-kyrka-q10511120"><b>11. Gustav Adolfs kyrka</b></a> — kyrkobyggnad i Sundsvall</li>
+<li><a href="/p/ksamsok-kyrka-kapell-sundsvall-da2df0"><b>12. Kyrka/kapell</b></a> — Platsen för Sundsvalls äldsta kyrka och kyrkogård, i bruk fram till 1640-talet.</li>
+<li><a href="/p/wd-sundsvall-nacksta-kyrka-q10593942"><b>13. Nacksta kyrka</b></a> — katolsk kyrka i Sundsvall</li>
+<li><a href="/p/wd-sundsvall-granlo-kyrka-q10508126"><b>14. Granlo kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-granloholms-kyrka-q10508128"><b>15. Granloholms kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-selanger-86-1-q29898644"><b>16. Selånger 86:1</b></a> — kyrka/kapell i Medelpad</li>
+<li><a href="/p/wd-sundsvall-selangers-kyrka-q10665450"><b>17. Selångers kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Selånger, Sverige</li>
+<li><a href="/p/wd-sundsvall-skonsmons-gravkapell-q10671278"><b>18. Skönsmons gravkapell</b></a> — kyrkobyggnad i Sundsvalls kommun</li>
+<li><a href="/p/wd-sundsvall-skonsmons-kyrka-q10671279"><b>19. Skönsmons kyrka</b></a> — kyrkobyggnad i Sundsvalls kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/sundsvall">Stadsvandringen i Sundsvall</a> <a class="cta ghost" href="/stadsvandring/sundsvall/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

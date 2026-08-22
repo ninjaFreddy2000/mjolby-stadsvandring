@@ -1,12 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Konstrundan i Göteborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.75213" lon="12.03263"><name>Spegling</name><desc>skulptur av Åke Thornblad</desc></wpt>
+  <wpt lat="57.750056" lon="11.984608"><name>Pojken och fågeln</name><desc>Pojken och fågeln</desc></wpt>
+  <wpt lat="57.74418" lon="11.967499"><name>Mellanrum</name><desc>Mellanrum</desc></wpt>
+  <wpt lat="57.723992" lon="11.935257"><name>Dold i sitt eget ljus</name><desc>Dold i sitt eget ljus</desc></wpt>
+  <wpt lat="57.7193055556" lon="11.9478611111"><name>Susanna</name><desc>bronsstaty på Kvilletorget i Göteborg</desc></wpt>
+  <wpt lat="57.71898611" lon="11.95029167"><name>Hising Island</name><desc>Hising Island är en liten skulptur i brons av Berit Lindfeldt som numera står vid Kvillebäcken (Brämaregatan/Herkulesgatan) på ön Hisingen i Göteborg.</desc></wpt>
+  <wpt lat="57.71485150200143" lon="11.940493477957574"><name>Minnesmärke</name><desc>Ett minnesmärke i Göteborg utan närmare beskrivning i registret.</desc></wpt>
+  <wpt lat="57.713127328366404" lon="11.939588460766293"><name>Minnesmärke</name><desc>Ett minnesmärke i Göteborg utan närmare beskrivning i registret.</desc></wpt>
+  <wpt lat="57.71075" lon="11.94439"><name>Samuraj</name><desc>skulptur av Claes Hake</desc></wpt>
+  <wpt lat="57.70586" lon="11.93781"><name>Gränslös tanke</name><desc>Gränslös tanke</desc></wpt>
+  <wpt lat="57.69946005517317" lon="11.933186697068505"><name>Minnesmärke</name><desc>Ett minnesmärke i Göteborg som saknar närmare beskrivning i registret.</desc></wpt>
+  <wpt lat="57.6995" lon="11.932527777778"><name>Kvinna vid havet</name><desc>skulptur på Sjömanstornet i Göteborg</desc></wpt>
+  <wpt lat="57.69889722" lon="11.93404167"><name>Ett segelfartyg sover i hamnen</name><desc>en skulpturgrupp i brons av Bianca Maria Barmen</desc></wpt>
+  <wpt lat="57.698138888889" lon="11.934638888889"><name>Tegel</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.697451080853" lon="11.933210975424"><name>Stigbergs-Lasse</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.697316718572" lon="11.932246685028"><name>Totemistic</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.69759" lon="11.931964"><name>Rymlingen</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.696972222222" lon="11.932583333333"><name>Bil</name><desc>skulptur av Lars Hansson</desc></wpt>
+  <wpt lat="57.697861111111" lon="11.930555555556"><name>Ekosystem</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.69578889" lon="11.92422222"><name>Bergslagsurnan</name><desc>skulptur i gjutjärn</desc></wpt>
+  <wpt lat="57.702416666667" lon="11.9245"><name>Vindarnas tempel</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.70114" lon="11.9155"><name>Granit</name><desc>skulptur av Claes Hake</desc></wpt>
+  <wpt lat="57.71189" lon="11.90741"><name>Långa benet före</name><desc>Långa benet före</desc></wpt>
+  <wpt lat="57.713667" lon="11.912"><name>Mimi</name><desc>Mimi</desc></wpt>
+  <wpt lat="57.73344" lon="11.89894"><name>Shirehäst</name><desc>offentlig skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.7117" lon="11.9639"><name>Evert Taube (staty, 1996)</name><desc>Evert Taube, är en staty i brons av Eino Hanski upprest 1996 på Jussi Björlings plats intill Operan i Göteborg.</desc></wpt>
+  <wpt lat="57.70688056" lon="11.96565556"><name>Sittande flicka</name><desc>Sittande flicka är en staty i Göteborg inne på Rådhusets gård vid Gustaf Adolfs Torg.</desc></wpt>
+  <wpt lat="57.70662222" lon="11.96775833"><name>Lejonen vid Lejontrappan</name><desc>Lejonen vid Lejontrappan är två lejonskulpturer uppförda 1991 vid Lejontrappan i Brunnsparken i Göteborg.</desc></wpt>
+  <wpt lat="57.706758333333" lon="11.968575"><name>Såningskvinnan</name><desc>staty i Brunnsparken, Göteborg</desc></wpt>
+  <wpt lat="57.70422" lon="11.96882"><name>Nikes Göteborg</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.70302778" lon="11.97055556"><name>Tidsdokumentet</name><desc>monument i Göteborg</desc></wpt>
+  <wpt lat="57.702866666667" lon="11.971675"><name>Bältespännarna</name><desc>skulptur av Peter Molin</desc></wpt>
+  <wpt lat="57.70205556" lon="11.97213889"><name>John Ericsson (staty)</name><desc>staty i Göteborg</desc></wpt>
+  <wpt lat="57.7017" lon="11.96928333"><name>Rådjur</name><desc>en skulptur i Kungsparken i Göteborg</desc></wpt>
+  <wpt lat="57.70198333" lon="11.96835"><name>Våren (staty, 1995)</name><desc>Våren är en staty i Kungsparken vid Vallgraven i Göteborg.</desc></wpt>
+  <wpt lat="57.70199722" lon="11.96691111"><name>Flickan och sjötrollen</name><desc>Flickan och sjötrollen, även kallad Skogsråfontänen, är en skulptur av Ivar Johnsson, placerad 1919 på Floras kulle i Kungsparken i centrala Göteborg.</desc></wpt>
+  <wpt lat="57.70049444" lon="11.96877778"><name>Krokus (skulptur)</name><desc>Skulptur av Tore Strindberg</desc></wpt>
+  <wpt lat="57.6975" lon="11.97138889"><name>Acceleration</name><desc>Acceleration är en ungefär manshög abstrakt skulptur i brons och sten av Ida Isaksson-Sillén som står i Vasaparken, Göteborg.</desc></wpt>
+  <wpt lat="57.69622222" lon="11.97677778"><name>Viktor Rydbergsmonumentet</name><desc>skulptur i Göteborg rest till minnet av författaren Viktor Rydberg</desc></wpt>
+  <wpt lat="57.6972" lon="11.9796"><name>Poseidon med brunnskar</name><desc>bronsskulptur på Götaplatsen i Göteborg</desc></wpt>
+  <wpt lat="57.696972222222" lon="11.9805"><name>Danserskorna</name><desc>skulpturgrupp i brons av Carl Milles</desc></wpt>
   <wpt lat="57.6964" lon="11.9806"><name>Göteborgs konstmuseum &amp; Götaplatsen</name><desc>Stadens konstskatt vid Götaplatsen, där Poseidon vakar över Avenyn.</desc></wpt>
-  <wpt lat="57.6956" lon="11.9892"><name>Universeum</name><desc>Science center med regnskog, hajakvarium och rymd under samma tak.</desc></wpt>
+  <wpt lat="57.69606944" lon="11.98284444"><name>Incantatio</name><desc>offentligt konstverk i Göteborg</desc></wpt>
+  <wpt lat="57.695213" lon="11.983445"><name>Gustav III (Göteborg)</name><desc>skulptur av konstnären Johan Tobias Sergel</desc></wpt>
+  <wpt lat="57.695" lon="11.98444444"><name>Solringen</name><desc>skulptur av Claes Hake</desc></wpt>
   <wpt lat="57.6947" lon="11.9892"><name>Världskulturmuseet</name><desc>Modernt museum om människor, kulturer och de stora frågorna i världen.</desc></wpt>
+  <wpt lat="57.6956" lon="11.9892"><name>Universeum</name><desc>Science center med regnskog, hajakvarium och rymd under samma tak.</desc></wpt>
+  <wpt lat="57.697199" lon="11.987886"><name>Silverbåge</name><desc>Silverbåge är en metallskulptur skapad 2001 av Pål Svensson, placerad på planen framför entrén till Svenska Mässan i Göteborg, nära Korsvägen.</desc></wpt>
+  <wpt lat="57.70011667" lon="11.98634167"><name>Mut</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.700133" lon="11.985439"><name>Öppen famn</name><desc>skulptur av Roland Anderson</desc></wpt>
+  <wpt lat="57.70164722" lon="11.98594444"><name>Tre Flickor (staty)</name><desc>Tre Flickor är en 1,4 meter hög skulpturgrupp i brons utförd av Britta Nehrman.</desc></wpt>
+  <wpt lat="57.70477222" lon="11.985525"><name>Kulan i luften</name><desc>skulptur</desc></wpt>
+  <wpt lat="57.70689" lon="11.98564"><name>Ingo - the Champ</name><desc>Ingo – the Champ är en staty skapad av skulptören Peter Linde.</desc></wpt>
+  <wpt lat="57.70705556" lon="11.98894444"><name>VM Fri Idrott (skulptur)</name><desc>VM Fri Idrott är en tre meter hög skulptur i brons vid Ullevi i Göteborg.</desc></wpt>
+  <wpt lat="57.70768333" lon="11.99045"><name>RymdConfetti</name><desc>Rymdconfetti är en skulptur i rostfritt stål, ornamenterat glas och ljus, utförd av Pia Hedström.</desc></wpt>
+  <wpt lat="57.70665833" lon="11.99628333"><name>Södra porten</name><desc>en granitskulptur i Göteborg skapad av Claes Hake</desc></wpt>
+  <wpt lat="57.71457778" lon="12.00294167"><name>Elementens kamp</name><desc>Elementens kamp är en fontängrupp i brons utförd av Anders Jönsson.</desc></wpt>
+  <wpt lat="57.7164766" lon="11.9926895"><name>bLINK</name><desc>konstverk i Göteborg av Katharina Grosse</desc></wpt>
+  <wpt lat="57.70696111" lon="11.97905556"><name>Gunnar Gren</name><desc>staty i Göteborg föreställande fotbollsspelaren Gunnar Gren</desc></wpt>
+  <wpt lat="57.70513889" lon="11.97795556"><name>Polhemsmonumentet</name><desc>Polhemsmonumentet är en staty i bohuslänsk granit, utförd av Ivar Johnsson, som avbildar Christopher Polhem.</desc></wpt>
+  <wpt lat="57.70661111" lon="11.97447222"><name>Mandala</name><desc>skulptur i Göteborg av Takashi Naraha</desc></wpt>
+  <wpt lat="57.70873889" lon="11.9721"><name>Bohuslän</name><desc>skulptur</desc></wpt>
+  <wpt lat="57.705586111111" lon="11.961761111111"><name>Staty av Jonas</name><desc>staty i Göteborg, Sverige</desc></wpt>
+  <wpt lat="57.70646111" lon="11.95722778"><name>Krigsseglarnas minnesmärke</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.70247778" lon="11.96179444"><name>Möte</name><desc>skulptur i Göteborg</desc></wpt>
+  <wpt lat="57.70083333" lon="11.95833333"><name>Skärgårdsfiskare</name><desc>en grupp bronsskulpturer av Svenrobert Lundquist</desc></wpt>
+  <wpt lat="57.7006" lon="11.95336667"><name>Charles Lindley</name><desc>staty</desc></wpt>
+  <wpt lat="57.7006" lon="11.95281389"><name>Genom arbete i arbete</name><desc>Genom arbete i arbete är en skulpturgrupp, utförd av Sam Westerholm, på Olof Palmes plats vid Järntorget i Göteborg.</desc></wpt>
+  <wpt lat="57.69966667" lon="11.95344444"><name>Dan Andersson</name><desc>staty i Göteborg</desc></wpt>
+  <wpt lat="57.69839" lon="11.96163"><name>Minnesmärke – Raoul Wallenberg</name><desc>Minnesmärke – Raoul Wallenberg är en skulptur i Göteborg, skapad av Charlotte Gyllenhammar.</desc></wpt>
+  <wpt lat="57.69347222" lon="11.97163611"><name>Arbetarhustru</name><desc>Arbetarhustru är en skulptur av Elma Oijens på Landala torg i Göteborg.</desc></wpt>
+  <wpt lat="57.689275" lon="11.97529722"><name>Emil och Emilia</name><desc>Emil och Emilia är en benämning på chalmerister, studenter vid Chalmers tekniska högskola.</desc></wpt>
+  <wpt lat="57.687407" lon="11.975891"><name>Att se sig själv i andra</name><desc>skulptur av Emma Ströde-Falk på Chalmers i Göteborg</desc></wpt>
+  <wpt lat="57.68411389" lon="11.97221111"><name>Fina fisken</name><desc>Fina fisken, är en skulptur i rostfritt stål i en fontändamm på den norra delen av Doktor Fries torg i stadsdelen Guldheden i Göteborg.</desc></wpt>
+  <wpt lat="57.68877778" lon="11.96830556"><name>Här</name><desc>skulptur</desc></wpt>
+  <wpt lat="57.68979444" lon="11.95186111"><name>Badresorna till Askim</name><desc>Badresorna till Askim är en skulptur utförd av Jerd Mellander, som uppställdes år 1973 vid Linnéplatsen i Göteborg.</desc></wpt>
+  <wpt lat="57.688611111111" lon="11.950277777778"><name>Shoreline memorial</name><desc>Shoreline memorial</desc></wpt>
+  <wpt lat="57.684223" lon="11.948698"><name>Scoutmonumentet</name><desc>monument i Slottsskogen, Göteborg</desc></wpt>
+  <wpt lat="57.68133" lon="11.95223"><name>0121-1110=116045</name><desc>0121-1110=116045</desc></wpt>
+  <wpt lat="57.67931" lon="11.93897"><name>Bollspelande flickor</name><desc>Bollspelande flickor</desc></wpt>
+  <wpt lat="57.68308333" lon="11.92497222"><name>Ung man</name><desc>bronsstaty av Astrid Noack</desc></wpt>
+  <wpt lat="57.68519444" lon="11.92022222"><name>Boll</name><desc>en skulptur av Berit Lindfeldt</desc></wpt>
+  <wpt lat="57.69888889" lon="11.94305556"><name>Masterna</name><desc>skulptur i Göteborg av Erling Torkelsen</desc></wpt>
+  <wpt lat="57.698" lon="11.97886667"><name>Karin Boye</name><desc>staty av Peter Linde i Göteborg</desc></wpt>
+  <wpt lat="57.69851667" lon="11.97967778"><name>Karl Gerhard</name><desc>en byst i brons utförd av Carina Ari</desc></wpt>
+  <wpt lat="57.67898056" lon="11.97378889"><name>Havre och betong</name><desc>konstverk i Göteborg</desc></wpt>
+  <wpt lat="57.67822" lon="11.97257"><name>Balansören</name><desc>skulptur av Rino Bozajic</desc></wpt>
+  <wpt lat="57.65287222" lon="11.91145"><name>Ställbart universum</name><desc>skulptur av Arne Jones vid Frölunda torg i Göteborg</desc></wpt>
+  <wpt lat="57.71803056" lon="12.03810278"><name>Ensam</name><desc>en skulptur av Margareta Ryndel</desc></wpt>
+  <wpt lat="57.72310833" lon="12.03497222"><name>Våren (skulptur av Eric Grate)</name><desc>Våren är bronsskulptur av Eric Grate, som skapades 1944.</desc></wpt>
   <rte><name>Konstrundan i Göteborg</name>
+    <rtept lat="57.75213" lon="12.03263"><name>Spegling</name></rtept>
+    <rtept lat="57.750056" lon="11.984608"><name>Pojken och fågeln</name></rtept>
+    <rtept lat="57.74418" lon="11.967499"><name>Mellanrum</name></rtept>
+    <rtept lat="57.723992" lon="11.935257"><name>Dold i sitt eget ljus</name></rtept>
+    <rtept lat="57.7193055556" lon="11.9478611111"><name>Susanna</name></rtept>
+    <rtept lat="57.71898611" lon="11.95029167"><name>Hising Island</name></rtept>
+    <rtept lat="57.71485150200143" lon="11.940493477957574"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.713127328366404" lon="11.939588460766293"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.71075" lon="11.94439"><name>Samuraj</name></rtept>
+    <rtept lat="57.70586" lon="11.93781"><name>Gränslös tanke</name></rtept>
+    <rtept lat="57.69946005517317" lon="11.933186697068505"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.6995" lon="11.932527777778"><name>Kvinna vid havet</name></rtept>
+    <rtept lat="57.69889722" lon="11.93404167"><name>Ett segelfartyg sover i hamnen</name></rtept>
+    <rtept lat="57.698138888889" lon="11.934638888889"><name>Tegel</name></rtept>
+    <rtept lat="57.697451080853" lon="11.933210975424"><name>Stigbergs-Lasse</name></rtept>
+    <rtept lat="57.697316718572" lon="11.932246685028"><name>Totemistic</name></rtept>
+    <rtept lat="57.69759" lon="11.931964"><name>Rymlingen</name></rtept>
+    <rtept lat="57.696972222222" lon="11.932583333333"><name>Bil</name></rtept>
+    <rtept lat="57.697861111111" lon="11.930555555556"><name>Ekosystem</name></rtept>
+    <rtept lat="57.69578889" lon="11.92422222"><name>Bergslagsurnan</name></rtept>
+    <rtept lat="57.702416666667" lon="11.9245"><name>Vindarnas tempel</name></rtept>
+    <rtept lat="57.70114" lon="11.9155"><name>Granit</name></rtept>
+    <rtept lat="57.71189" lon="11.90741"><name>Långa benet före</name></rtept>
+    <rtept lat="57.713667" lon="11.912"><name>Mimi</name></rtept>
+    <rtept lat="57.73344" lon="11.89894"><name>Shirehäst</name></rtept>
+    <rtept lat="57.7117" lon="11.9639"><name>Evert Taube (staty, 1996)</name></rtept>
+    <rtept lat="57.70688056" lon="11.96565556"><name>Sittande flicka</name></rtept>
+    <rtept lat="57.70662222" lon="11.96775833"><name>Lejonen vid Lejontrappan</name></rtept>
+    <rtept lat="57.706758333333" lon="11.968575"><name>Såningskvinnan</name></rtept>
+    <rtept lat="57.70422" lon="11.96882"><name>Nikes Göteborg</name></rtept>
+    <rtept lat="57.70302778" lon="11.97055556"><name>Tidsdokumentet</name></rtept>
+    <rtept lat="57.702866666667" lon="11.971675"><name>Bältespännarna</name></rtept>
+    <rtept lat="57.70205556" lon="11.97213889"><name>John Ericsson (staty)</name></rtept>
+    <rtept lat="57.7017" lon="11.96928333"><name>Rådjur</name></rtept>
+    <rtept lat="57.70198333" lon="11.96835"><name>Våren (staty, 1995)</name></rtept>
+    <rtept lat="57.70199722" lon="11.96691111"><name>Flickan och sjötrollen</name></rtept>
+    <rtept lat="57.70049444" lon="11.96877778"><name>Krokus (skulptur)</name></rtept>
+    <rtept lat="57.6975" lon="11.97138889"><name>Acceleration</name></rtept>
+    <rtept lat="57.69622222" lon="11.97677778"><name>Viktor Rydbergsmonumentet</name></rtept>
+    <rtept lat="57.6972" lon="11.9796"><name>Poseidon med brunnskar</name></rtept>
+    <rtept lat="57.696972222222" lon="11.9805"><name>Danserskorna</name></rtept>
     <rtept lat="57.6964" lon="11.9806"><name>Göteborgs konstmuseum &amp; Götaplatsen</name></rtept>
-    <rtept lat="57.6956" lon="11.9892"><name>Universeum</name></rtept>
+    <rtept lat="57.69606944" lon="11.98284444"><name>Incantatio</name></rtept>
+    <rtept lat="57.695213" lon="11.983445"><name>Gustav III (Göteborg)</name></rtept>
+    <rtept lat="57.695" lon="11.98444444"><name>Solringen</name></rtept>
     <rtept lat="57.6947" lon="11.9892"><name>Världskulturmuseet</name></rtept>
+    <rtept lat="57.6956" lon="11.9892"><name>Universeum</name></rtept>
+    <rtept lat="57.697199" lon="11.987886"><name>Silverbåge</name></rtept>
+    <rtept lat="57.70011667" lon="11.98634167"><name>Mut</name></rtept>
+    <rtept lat="57.700133" lon="11.985439"><name>Öppen famn</name></rtept>
+    <rtept lat="57.70164722" lon="11.98594444"><name>Tre Flickor (staty)</name></rtept>
+    <rtept lat="57.70477222" lon="11.985525"><name>Kulan i luften</name></rtept>
+    <rtept lat="57.70689" lon="11.98564"><name>Ingo - the Champ</name></rtept>
+    <rtept lat="57.70705556" lon="11.98894444"><name>VM Fri Idrott (skulptur)</name></rtept>
+    <rtept lat="57.70768333" lon="11.99045"><name>RymdConfetti</name></rtept>
+    <rtept lat="57.70665833" lon="11.99628333"><name>Södra porten</name></rtept>
+    <rtept lat="57.71457778" lon="12.00294167"><name>Elementens kamp</name></rtept>
+    <rtept lat="57.7164766" lon="11.9926895"><name>bLINK</name></rtept>
+    <rtept lat="57.70696111" lon="11.97905556"><name>Gunnar Gren</name></rtept>
+    <rtept lat="57.70513889" lon="11.97795556"><name>Polhemsmonumentet</name></rtept>
+    <rtept lat="57.70661111" lon="11.97447222"><name>Mandala</name></rtept>
+    <rtept lat="57.70873889" lon="11.9721"><name>Bohuslän</name></rtept>
+    <rtept lat="57.705586111111" lon="11.961761111111"><name>Staty av Jonas</name></rtept>
+    <rtept lat="57.70646111" lon="11.95722778"><name>Krigsseglarnas minnesmärke</name></rtept>
+    <rtept lat="57.70247778" lon="11.96179444"><name>Möte</name></rtept>
+    <rtept lat="57.70083333" lon="11.95833333"><name>Skärgårdsfiskare</name></rtept>
+    <rtept lat="57.7006" lon="11.95336667"><name>Charles Lindley</name></rtept>
+    <rtept lat="57.7006" lon="11.95281389"><name>Genom arbete i arbete</name></rtept>
+    <rtept lat="57.69966667" lon="11.95344444"><name>Dan Andersson</name></rtept>
+    <rtept lat="57.69839" lon="11.96163"><name>Minnesmärke – Raoul Wallenberg</name></rtept>
+    <rtept lat="57.69347222" lon="11.97163611"><name>Arbetarhustru</name></rtept>
+    <rtept lat="57.689275" lon="11.97529722"><name>Emil och Emilia</name></rtept>
+    <rtept lat="57.687407" lon="11.975891"><name>Att se sig själv i andra</name></rtept>
+    <rtept lat="57.68411389" lon="11.97221111"><name>Fina fisken</name></rtept>
+    <rtept lat="57.68877778" lon="11.96830556"><name>Här</name></rtept>
+    <rtept lat="57.68979444" lon="11.95186111"><name>Badresorna till Askim</name></rtept>
+    <rtept lat="57.688611111111" lon="11.950277777778"><name>Shoreline memorial</name></rtept>
+    <rtept lat="57.684223" lon="11.948698"><name>Scoutmonumentet</name></rtept>
+    <rtept lat="57.68133" lon="11.95223"><name>0121-1110=116045</name></rtept>
+    <rtept lat="57.67931" lon="11.93897"><name>Bollspelande flickor</name></rtept>
+    <rtept lat="57.68308333" lon="11.92497222"><name>Ung man</name></rtept>
+    <rtept lat="57.68519444" lon="11.92022222"><name>Boll</name></rtept>
+    <rtept lat="57.69888889" lon="11.94305556"><name>Masterna</name></rtept>
+    <rtept lat="57.698" lon="11.97886667"><name>Karin Boye</name></rtept>
+    <rtept lat="57.69851667" lon="11.97967778"><name>Karl Gerhard</name></rtept>
+    <rtept lat="57.67898056" lon="11.97378889"><name>Havre och betong</name></rtept>
+    <rtept lat="57.67822" lon="11.97257"><name>Balansören</name></rtept>
+    <rtept lat="57.65287222" lon="11.91145"><name>Ställbart universum</name></rtept>
+    <rtept lat="57.71803056" lon="12.03810278"><name>Ensam</name></rtept>
+    <rtept lat="57.72310833" lon="12.03497222"><name>Våren (skulptur av Eric Grate)</name></rtept>
   </rte>
 </gpx>

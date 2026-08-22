@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Hjo</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.35223" lon="14.34863"><name>Grevbäcks kyrka</name><desc>kyrkobyggnad i Hjo kommun</desc></wpt>
+  <wpt lat="58.303501193971876" lon="14.29024030403181"><name>Medborgarhus</name><desc>Ett medborgarhus i Hjo från 1958.</desc></wpt>
+  <wpt lat="58.3019" lon="14.28785"><name>Hjo kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Hjo, Sverige</desc></wpt>
+  <wpt lat="58.30090448556602" lon="14.287044891838907"><name>Frikyrka / bönehus /missionshus</name><desc>Ett frikyrkokapell från 1885, först kallat Betelkapellet, senare Missionskyrkan.</desc></wpt>
+  <wpt lat="58.30088" lon="14.28666"><name>Equmeniakyrkan</name><desc>kyrkobyggnad i Hjo</desc></wpt>
+  <wpt lat="58.302305555556" lon="14.284972222222"><name>Baptistkyrkan</name><desc>tidigare kyrkobyggnad i Hjo</desc></wpt>
+  <wpt lat="58.300478208296845" lon="14.283140714452506"><name>Kyrkstuga</name><desc>En kyrkstuga i Hjo från omkring 1990-talet.</desc></wpt>
+  <wpt lat="58.30044899073813" lon="14.28209824584424"><name>HJO BEGRAVNINGSKAPELL</name><desc>Ett begravningskapell från 1898, utbyggt åt söder 1971.</desc></wpt>
+  <wpt lat="58.30557269823402" lon="14.264479184108945"><name>HJO FOLKHÖGSKOLAS KAPELL</name><desc>Ett kapell vid folkhögskolan, ritat efter en arkitekttävling och byggt 1987.</desc></wpt>
+  <wpt lat="58.31127222" lon="14.25280278"><name>Svärtans kapell</name><desc>kyrkobyggnad i Hjo kommun</desc></wpt>
+  <wpt lat="58.26718" lon="14.26622"><name>Norra Fågelås kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Norra Fågelås, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Hjo</name>
+    <rtept lat="58.35223" lon="14.34863"><name>Grevbäcks kyrka</name></rtept>
+    <rtept lat="58.303501193971876" lon="14.29024030403181"><name>Medborgarhus</name></rtept>
+    <rtept lat="58.3019" lon="14.28785"><name>Hjo kyrka</name></rtept>
+    <rtept lat="58.30090448556602" lon="14.287044891838907"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="58.30088" lon="14.28666"><name>Equmeniakyrkan</name></rtept>
+    <rtept lat="58.302305555556" lon="14.284972222222"><name>Baptistkyrkan</name></rtept>
+    <rtept lat="58.300478208296845" lon="14.283140714452506"><name>Kyrkstuga</name></rtept>
+    <rtept lat="58.30044899073813" lon="14.28209824584424"><name>HJO BEGRAVNINGSKAPELL</name></rtept>
+    <rtept lat="58.30557269823402" lon="14.264479184108945"><name>HJO FOLKHÖGSKOLAS KAPELL</name></rtept>
+    <rtept lat="58.31127222" lon="14.25280278"><name>Svärtans kapell</name></rtept>
+    <rtept lat="58.26718" lon="14.26622"><name>Norra Fågelås kyrka</name></rtept>
+  </rte>
+</gpx>

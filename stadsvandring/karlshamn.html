@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Karlshamn — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Karlshamn till fots: 88 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 88 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/karlshamn">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Karlshamn — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Karlshamn till fots: 88 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 88 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/karlshamn">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Karlshamn — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Karlshamn till fots: 88 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 88 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"karlshamn","sourceSlug":"stadsvandring/karlshamn","centroid":{"lat":56.164304749588794,"lng":14.857578947080356},"stops":[{"name":"Carl Gustafs kyrka","lat":56.17138889,"lng":14.86211111},{"name":"Elleholms hovgård","lat":56.163055555556,"lng":14.750555555556},{"name":"Asarums kyrka","lat":56.20570278,"lng":14.83326944}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Karlshamn","description":"Upptäck Karlshamn till fots: 88 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/karlshamn","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Carl Gustafs kyrka","description":"kyrkobyggnad i Karlshamns kommun","url":"https://stadsvandring.io/p/wd-karlshamn-carl-gustafs-kyrka-q1036484","geo":{"@type":"GeoCoordinates","latitude":56.17138889,"longitude":14.86211111}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Elleholms hovgård","description":"Elleholms hovgård är en herrgård i Elleholms socken i Karlshamns kommun.","geo":{"@type":"GeoCoordinates","latitude":56.163055555556,"longitude":14.750555555556}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Asarums kyrka","description":"kyrkobyggnad i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.20570278,"longitude":14.83326944}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Hällaryds kyrka","description":"kyrkobyggnad i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.20633333,"longitude":14.94745833}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Kastellkyrkan","description":"kyrkobyggnad i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.16036111,"longitude":14.86611111}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Sjöborg, Blekinge","description":"borg i Blekinge","url":"https://stadsvandring.io/p/wd-karlshamn-sjoborg-blekinge-q10669400","geo":{"@type":"GeoCoordinates","latitude":56.16666667,"longitude":14.75222778}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Gunnöns fyr","description":"en fyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.149527777778,"longitude":14.774583333333}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Kölö nedre","description":"en ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.155444444444,"longitude":14.823861111111}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Kölö övre","description":"en ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.158527777778,"longitude":14.824833333333}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Ortholmens fyr","description":"en fyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.155666666667,"longitude":14.875944444444}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Vägga Fiskehamn","description":"en fyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.154944444444,"longitude":14.885111111111}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Vägga Södra","description":"en f.d. fyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.152166666667,"longitude":14.884694444444}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Karlshamn nedre","description":"en ensfyr Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.1635,"longitude":14.867083333333}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Karlshamn övre","description":"en ensfyr Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.166333333333,"longitude":14.865138888889}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Sutudden nedre","description":"en ensfyr Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.157777777778,"longitude":14.860472222222}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Sutudden övre","description":"en ensfyr Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.1605,"longitude":14.856083333333}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Baggahegna fyr","description":"en fyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.153833333333,"longitude":14.9685}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Stilleryd herrgård","description":"herrgård Asarum","geo":{"@type":"GeoCoordinates","latitude":56.1623,"longitude":14.8191}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Utvandrarmonumentet","description":"skulptur i Karlshamn, Sverige","geo":{"@type":"GeoCoordinates","latitude":56.164661111111,"longitude":14.869430555556}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Stilleryd nedre","description":"en ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.160027777778,"longitude":14.812972222222}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Stilleryd övre","description":"en ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.161166666667,"longitude":14.8125}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Kastellets Pirhuvud","description":"en fyr i Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.158083333333,"longitude":14.863527777778}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Sutuddens Pirhuvud","description":"en fyr i Karlshamn","geo":{"@type":"GeoCoordinates","latitude":56.158055555556,"longitude":14.861805555556}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Vindhamn övre","description":"en f.d. ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.14515,"longitude":14.851666666667}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Vindhamn nedre","description":"en f.d. ensfyr i Karlshamns kommun","geo":{"@type":"GeoCoordinates","latitude":56.145616666667,"longitude":14.852083333333}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Karlshamn gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 88 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Karlshamn?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 88 sevärdheter i Karlshamn — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Carl Gustafs kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Karlshamns kommun"}},{"@type":"Question","name":"Vad är Elleholms hovgård?","acceptedAnswer":{"@type":"Answer","text":"Elleholms hovgård är en herrgård i Elleholms socken i Karlshamns kommun."}},{"@type":"Question","name":"Vad är Asarums kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Karlshamns kommun"}},{"@type":"Question","name":"Vad är Hällaryds kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Karlshamns kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Karlshamn","item":"https://stadsvandring.io/stadsvandring/karlshamn"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Karlshamn</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Karlshamn</span><span class="badge">88 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Karlshamn — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Karlshamn till fots: 88 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Karlshamn"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-karlshamn-carl-gustafs-kyrka-q1036484"><b>1. Carl Gustafs kyrka</b><span>Kyrka · kyrkobyggnad i Karlshamns kommun</span></a>
+<a class="tile" href="/p/wd-karlshamn-elleholms-hovgard-q5364695"><b>2. Elleholms hovgård</b><span>Byggnad · Elleholms hovgård är en herrgård i Elleholms socken i Karlshamns kommun.</span></a>
+<a class="tile" href="/p/wd-karlshamn-asarums-kyrka-q10419123"><b>3. Asarums kyrka</b><span>Kyrka · kyrkobyggnad i Karlshamns kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Karlshamn · 88</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Karlshamn. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 40</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-karlshamn-0b7694"><b>Bytomt/gårdstomt</b></a> — Norra Stärnös gårdstomt, känd från 1794 års karta och nämnd redan 1583.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-karlshamn-8f1e8f"><b>Stensättning</b></a> — En stensättning vars uppgifter inte är närmare säkerställda.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlshamn-df64f6"><b>Fyndplats</b></a> — Ett större ankare med bevarad trästock i bottensedimentet.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-karlshamn-670c7c"><b>Ristning, medeltid/historisk tid</b></a> — En inhuggen ristning med två tecken, ett av dem ett S.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-karlshamn-098753"><b>Flatmarksgrav</b></a> — En stenåldersgrav funnen vid boplatsundersökningen 1923–1925.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-0aa10a"><b>Stridsvärn</b></a> — Ett förseglat betongvärn insprängt i berget.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-karlshamn-eead04"><b>Stensättning</b></a> — En stensättning som ännu inte är närmare undersökt.</li>
+<li><a href="/karta?plats=ksamsok-stenindustri-karlshamn-5bf555"><b>Stenindustri</b></a> — Ett granitstenbrott med upp till fem meter höga brottkanter.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-karlshamn-28b1ec"><b>Begravningsplats</b></a> — Pestkyrkogård där kastellkommendanten Gustaf Undén begravdes 1711.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-6a772f"><b>Stridsvärn</b></a> — Ett stenvärn som ingick i Per Albin-linjen.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-karlshamn-95b8b4"><b>Brunn/kallkälla</b></a> — En gammal stensatt brunn.</li>
+<li><a href="/karta?plats=ksamsok-hoga-ror-rose-karlshamn-1c5d31"><b>Höga rör, Röse</b></a> — Ett gravröse vars uppgifter inte är närmare säkerställda.</li>
+<li><a href="/karta?plats=ksamsok-boplats-karlshamn-dc5111"><b>Boplats</b></a> — Boplats där stenyxor och keramik grävdes fram 1911–1925.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-karlshamn-451de8"><b>Militär anläggning övrig</b></a> — Stridsvagnshinder i betong från Per Albin-linjen och skansen &quot;Utsikten&quot;.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-945e31"><b>Stridsvärn</b></a> — Kulsprutevärnet K 59, en del av Per Albin-linjen.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-karlshamn-e1e7d4"><b>Stadslager</b></a> — Ett stadslager efter äldre bebyggelse, ännu inte närmare undersökt.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlshamn-9ca9ec"><b>Fartygs-/båtlämning</b></a> — Spant efter minst två vrak, synliga från vattnet vid Boön.</li>
+<li><a href="/karta?plats=ksamsok-stenindustri-karlshamn-538795"><b>Stenindustri</b></a> — Ett stenbrott med ett femtiotal skrotstenshögar.</li>
+<li><a href="/karta?plats=ksamsok-smaindustriomrade-karlshamn-5793b3"><b>Småindustriområde</b></a> — Rester av ett litet industriområde med stensliperi och äldre kvarn vid ån.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlshamn-0cfd8d"><b>Fyndplats</b></a> — En osäker fyndplats med ett möjligt flintavslag.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlshamn-3323c0"><b>Fartygs-/båtlämning</b></a> — En ihopfallen fartygslämning, i dag svår att tolka.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlshamn-343b28"><b>Fartygs-/båtlämning</b></a> — Ett kravellbyggt trävrak som står upprätt på fyra meters djup.</li>
+<li><a href="/karta?plats=ksamsok-stenindustri-karlshamn-8f5bd6"><b>Stenindustri</b></a> — Ett stenbrott med ett femtiotal skrotstenshögar och många täktgropar.</li>
+<li><a href="/karta?plats=ksamsok-varv-slip-karlshamn-9a6d69"><b>Varv/slip</b></a> — Örlogsvarvet 1659–1676 där fjorton fartyg byggdes, varav fyra regalskepp.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-karlshamn-127ec7"><b>Hamnanläggning</b></a> — En hamnbrygga av skrotsten med en sjunken stenpråm intill.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-fa7b36"><b>Stridsvärn</b></a> — Ett restaurerat kulsprutevärn vid en skyltad vandringsled.</li>
+<li><a href="/karta?plats=ksamsok-stenindustri-karlshamn-d86c9c"><b>Stenindustri</b></a> — Ett område med ett tjugotal grunda stenbrott.</li>
+<li><a href="/karta?plats=ksamsok-sodra-starno-gamla-tomt-bytomt-gardstomt-karlshamn-d3a4b8"><b>Södra Stärnö gamla tomt, Bytomt/gårdstomt</b></a> — Södra Stärnös övergivna gårdstomt, känd från 1794 och nämnd redan 1583.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlshamn-675648"><b>Fartygs-/båtlämning</b></a> — En fartygslämning som ska ha sänkts avsiktligt på 1920-talet.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-karlshamn-613e73"><b>Bytomt/gårdstomt</b></a> — Munkahus gårdstomt, känd från 1725 och nämnd redan 1606.</li>
+<li><a href="/karta?plats=ksamsok-pengaberget-naturforemal-bildning-med-bruk-tradition-eller-namn-karlshamn-967546"><b>Pengaberget, Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En uppsprucken bergbildning från kritperioden, naturminne sedan 1919.</li>
+<li><a href="/karta?plats=ksamsok-vardkase-karlshamn-93fa96"><b>Vårdkase</b></a> — Resterna av en vårdkase på Hinseberget, tidigare kallat Orbötsberg.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-karlshamn-fc6608"><b>Bytomt/gårdstomt</b></a> — Tubbaryds gårdstomt, känd från 1870 och nämnd redan på 1570-talet.</li>
+<li><a href="/karta?plats=ksamsok-tomtning-karlshamn-3ecf93"><b>Tomtning</b></a> — En rektangulär tomtning anlagd i en bergskreva.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-8a31b8"><b>Stridsvärn</b></a> — Ett sexkantigt betongkanonvärn som ingick i Per Albin-linjen och skulle försvara Karlshamn under andra världskriget.</li>
+<li><a href="/karta?plats=ksamsok-stenindustri-karlshamn-8336a7"><b>Stenindustri</b></a> — Ett omfattande stenbrott med hundratals skrotstenshögar och täktgropar som vittnar om tidigare stenhantering.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-karlshamn-6c23ed"><b>Vägmärke</b></a> — En gjutjärnsmilstolpe från 1794 med Gustav IV Adolfs krönta namnchiffer, rest på ett stenpostament.</li>
+<li><a href="/p/ksamsok-begravningsplats-karlshamn-ee95a3"><b>Begravningsplats</b></a> — En gammal pest- och kolerakyrkogård omgärdad av stenmur och branta bergväggar, med ett tiotal bevarade gravvårdar.</li>
+<li><a href="/p/ksamsok-frokens-kalla-kalla-med-tradition-karlshamn-898c4b"><b>Frökens källa, Källa med tradition</b></a> — En källa omgiven av inskrivna stenar, däribland ett flyttblock där den kallas &quot;Frökens källa&quot; och &quot;Hippokrene&quot;.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlshamn-d48714"><b>Stridsvärn</b></a> — Ett femkantigt betongkulsprutevärn på berghäll som byggdes i Per Albin-linjen under andra världskriget.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 20</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlshamn-elleholms-hovgard-q5364695"><b>Elleholms hovgård</b></a> — Elleholms hovgård är en herrgård i Elleholms socken i Karlshamns kommun.</li>
+<li><a href="/karta?plats=wd-karlshamn-stilleryd-herrgard-q68295735"><b>Stilleryd herrgård</b></a> — herrgård Asarum</li>
+<li><a href="/p/ksamsok-karlshamns-tingsratt-karlshamn-696771"><b>KARLSHAMNS TINGSRÄTT</b></a> — En tingsrätt från 1962 formad som en slägga, med tingssal i huvudet och kansli i skaftet. <span class="era">1962–1962</span></li>
+<li><a href="/karta?plats=ksamsok-nya-skolan-karlshamn-578461"><b>NYA SKOLAN</b></a> — Gunnar Asplunds strama funkisskola från 1936–37, sammanbyggd med Gamla skolan. <span class="era">1936–1937</span></li>
+<li><a href="/p/ksamsok-televerkets-hus-karlshamn-578443"><b>TELEVERKETS HUS</b></a> — Televerkets huvudbyggnad från 1915, ritad av Fredrik Olaus Lindström. <span class="era">1913–1913</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-skolan-karlshamn-578397"><b>GAMLA SKOLAN</b></a> — Gamla skolan från 1917 är Gunnar Asplunds första betydande verk. <span class="era">1917–1917</span></li>
+<li><a href="/karta?plats=ksamsok-uthuslanga-med-stall-och-avtrade-karlshamn-029083"><b>UTHUSLÄNGA MED STALL OCH AVTRÄDE</b></a> — En uthuslänga med stall och avträde från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/karta?plats=ksamsok-lusthus-karlshamn-689480"><b>LUSTHUS</b></a> — Ett lusthus i Karlshamn från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-wahlstromska-garden-karlshamn-578403"><b>WAHLSTRÖMSKA GÅRDEN</b></a> — 1700-talsgård med väggmålningar målade direkt på timret i övervåningen. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-vagnslider-karlshamn-029085"><b>VAGNSLIDER</b></a> — Ett vagnslider från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/karta?plats=ksamsok-bagarstuga-karlshamn-029084"><b>BAGARSTUGA</b></a> — En bagarstuga från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/p/ksamsok-asschierska-huset-gamla-radhuset-karlshamn-578404"><b>ASSCHIERSKA HUSET, GAMLA RÅDHUSET</b></a> — Karlshamns forna rådhus från 1682, byggt i korsvirke med torn och klocka. <span class="era">1682–1682</span></li>
+<li><a href="/p/ksamsok-tennishallen-i-karlshamn-karlshamn-578407"><b>TENNISHALLEN I KARLSHAMN</b></a> — Tennishallen från 1937 med fribärande limträbågar i &quot;system Töreboda&quot;. <span class="era">1937–1937</span></li>
+<li><a href="/p/ksamsok-gathus-med-butik-karlshamn-578452"><b>GATHUS MED BUTIK</b></a> — En av Karlshamns bäst bevarade köpmansgårdar, uppförd omkring 1800. <span class="era">1790–1809</span></li>
+<li><a href="/p/ksamsok-skottbergska-garden-karlshamn-578469"><b>SKOTTBERGSKA GÅRDEN</b></a> — En av landets bäst bevarade 1700-talshandelsgårdar, i dag museum. <span class="era">1766–1766</span></li>
+<li><a href="/p/ksamsok-karlshamns-radhus-karlshamn-696761"><b>KARLSHAMNS RÅDHUS</b></a> — Karlshamns rådhus från sekelskiftet 1900 med imponerande torn mot torget. <span class="era">1898–1900</span></li>
+<li><a href="/karta?plats=ksamsok-bod-karlshamn-676037"><b>BOD</b></a> — En bod från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/p/ksamsok-pengabergets-vattenreservoar-karlshamn-578459"><b>PENGABERGETS VATTENRESERVOAR</b></a> — Vattenreservoaren på Pengaberget, uppförd 1901–03 med granittorn. <span class="era">1901–1903</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-karlshamn-676018"><b>MAGASIN</b></a> — Ett magasin från 1766. <span class="era">1766–1766</span></li>
+<li><a href="/p/ksamsok-bostadshus-karlshamn-578390"><b>BOSTADSHUS</b></a> — Ett välbevarat karlshamnskt stadshus från slutet av 1700-talet. <span class="era">1770–1799</span></li>
+</ul>
+<h3 class="city-h3">Torn · 17</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlshamn-gunnons-fyr-q42784252"><b>Gunnöns fyr</b></a> — en fyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-kolo-nedre-q42788249"><b>Kölö nedre</b></a> — en ensfyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-kolo-ovre-q42788421"><b>Kölö övre</b></a> — en ensfyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-ortholmens-fyr-q42792156"><b>Ortholmens fyr</b></a> — en fyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-vagga-fiskehamn-q42797087"><b>Vägga Fiskehamn</b></a> — en fyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-vagga-sodra-q42797468"><b>Vägga Södra</b></a> — en f.d. fyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-karlshamn-nedre-q42880865"><b>Karlshamn nedre</b></a> — en ensfyr Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-karlshamn-ovre-q42881043"><b>Karlshamn övre</b></a> — en ensfyr Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-sutudden-nedre-q42881240"><b>Sutudden nedre</b></a> — en ensfyr Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-sutudden-ovre-q42881341"><b>Sutudden övre</b></a> — en ensfyr Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-baggahegna-fyr-q64933586"><b>Baggahegna fyr</b></a> — en fyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-stilleryd-nedre-q110316830"><b>Stilleryd nedre</b></a> — en ensfyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-stilleryd-ovre-q110316831"><b>Stilleryd övre</b></a> — en ensfyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-kastellets-pirhuvud-q110316998"><b>Kastellets Pirhuvud</b></a> — en fyr i Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-sutuddens-pirhuvud-q110316996"><b>Sutuddens Pirhuvud</b></a> — en fyr i Karlshamn</li>
+<li><a href="/karta?plats=wd-karlshamn-vindhamn-ovre-q110322827"><b>Vindhamn övre</b></a> — en f.d. ensfyr i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-vindhamn-nedre-q110322825"><b>Vindhamn nedre</b></a> — en f.d. ensfyr i Karlshamns kommun</li>
+</ul>
+<h3 class="city-h3">Kyrka · 4</h3>
+<ul class="place-list">
+<li><a href="/p/wd-karlshamn-carl-gustafs-kyrka-q1036484"><b>Carl Gustafs kyrka</b></a> — kyrkobyggnad i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-asarums-kyrka-q10419123"><b>Asarums kyrka</b></a> — kyrkobyggnad i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-hallaryds-kyrka-q10531349"><b>Hällaryds kyrka</b></a> — kyrkobyggnad i Karlshamns kommun</li>
+<li><a href="/karta?plats=wd-karlshamn-kastellkyrkan-q10544249"><b>Kastellkyrkan</b></a> — kyrkobyggnad i Karlshamns kommun</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlshamn-utvandrarmonumentet-q103689141"><b>Utvandrarmonumentet</b></a> — skulptur i Karlshamn, Sverige</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlshamn-12147e"><b>Minnesmärke</b></a> — Inhuggna initialer och järnringar på en berghäll.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlshamn-0526d1"><b>Minnesmärke</b></a> — En minnessten med en fosterländsk dikt om hembygden kring Mörrumsån och Asarum.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fastning-skans-karlshamn-97c5dc"><b>Fästning/skans</b></a> — Resterna av en övertorvad, kallmurad skans.</li>
+<li><a href="/karta?plats=ksamsok-kastellet-fastning-skans-karlshamn-ff8e7d"><b>Kastellet, Fästning/skans</b></a> — Kastellets ringmur, en fästning som tillskrivs Erik Dahlberg.</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-karlshamn-sjoborg-blekinge-q10669400"><b>Sjöborg, Blekinge</b></a> — borg i Blekinge</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlshamn-punsch-museum-q114233752"><b>Punsch Museum</b></a> — sveriges enda punschmuseum</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 88 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/karlshamn/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/karlshamn/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Karlshamn gratis?</summary><p>Ja. Karta, alla 88 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Karlshamn?</summary><p>Vandringen samlar 88 sevärdheter i Karlshamn — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Carl Gustafs kyrka?</summary><p>kyrkobyggnad i Karlshamns kommun</p></details>
+<details class="faq"><summary>Vad är Elleholms hovgård?</summary><p>Elleholms hovgård är en herrgård i Elleholms socken i Karlshamns kommun.</p></details>
+<details class="faq"><summary>Vad är Asarums kyrka?</summary><p>kyrkobyggnad i Karlshamns kommun</p></details>
+<details class="faq"><summary>Vad är Hällaryds kyrka?</summary><p>kyrkobyggnad i Karlshamns kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

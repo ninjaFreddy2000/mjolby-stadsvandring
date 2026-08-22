@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Växjö — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Växjö till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar PDF-…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vaxjo">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Växjö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Växjö till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar PDF-…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vaxjo">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Växjö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Växjö till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar PDF-…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vaxjo","sourceSlug":"stadsvandring/vaxjo","centroid":{"lat":56.88219158042946,"lng":14.803473291135283},"stops":[{"name":"Smålands museum","lat":56.8756,"lng":14.8072},{"name":"Teleborgs slott","lat":56.856944444444,"lng":14.834444444444},{"name":"Linnéparken","lat":56.876513,"lng":14.813111}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Växjö","description":"Upptäck Växjö till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/vaxjo","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Smålands museum","description":"museum i Växjö","url":"https://stadsvandring.io/p/wd-vaxjo-smalands-museum-q396260","geo":{"@type":"GeoCoordinates","latitude":56.8756,"longitude":14.8072}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Teleborgs slott","description":"slott i Växjö","url":"https://stadsvandring.io/p/wd-vaxjo-teleborgs-slott-q441865","geo":{"@type":"GeoCoordinates","latitude":56.856944444444,"longitude":14.834444444444}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Linnéparken","description":"Linnéparken är en park i centrala Växjö.","geo":{"@type":"GeoCoordinates","latitude":56.876513,"longitude":14.813111}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Bergunda kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.86030556,"longitude":14.74575}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Högstorps kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.87721,"longitude":14.84066}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Johannesgården","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.91375,"longitude":14.79236111}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Mariakyrkan","description":"kyrka i Växjö kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":56.89904167,"longitude":14.80107222}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Psykiatrihistoriska museet","description":"museum i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.8670166667,"longitude":14.8269333333}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"S/S Thor","description":"ångbåt som trafikerar Helgasjön med angränsande vatten","geo":{"@type":"GeoCoordinates","latitude":56.9407333333,"longitude":14.7945333333}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Skogslyckans kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.88741111,"longitude":14.81281111}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Stortorget","description":"torg i Växjö, Småland","url":"https://stadsvandring.io/p/wd-vaxjo-stortorget-q10681420","geo":{"@type":"GeoCoordinates","latitude":56.87852778,"longitude":14.80938889}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Tegnérkapellet","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.87774444,"longitude":14.80083611}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Teleborgs kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.8538,"longitude":14.8182}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Utvandrarnas hus","description":"museum i Växjö kommun, Sverige","url":"https://stadsvandring.io/p/wd-vaxjo-utvandrarnas-hus-q10711604","geo":{"@type":"GeoCoordinates","latitude":56.8756666667,"longitude":14.8087333333}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Västrabo kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.88436944,"longitude":14.78411111}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Öjaby kyrka","description":"kyrkobyggnad i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.9071,"longitude":14.7404}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Linnés arboretum","description":"arboretum, uppkallat efter Linné, i Teleborg i södra Växjö","url":"https://stadsvandring.io/p/wd-vaxjo-linnes-arboretum-q15992263","geo":{"@type":"GeoCoordinates","latitude":56.846,"longitude":14.7958}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Sankt Sigfrids kapell","description":"kapell i Växjö","geo":{"@type":"GeoCoordinates","latitude":56.934277777778,"longitude":14.790722222222}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Bergunda 32:1","description":"borg i Småland","geo":{"@type":"GeoCoordinates","latitude":56.867778,"longitude":14.724222}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Esaias Tegner staty","description":"staty i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.8772115,"longitude":14.8119213}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Linné staty","description":"staty i Växjö kommun","geo":{"@type":"GeoCoordinates","latitude":56.876686111111,"longitude":14.810769444444}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Peter Wieselgren staty","description":"staty i Växjö","geo":{"@type":"GeoCoordinates","latitude":56.87602,"longitude":14.81054}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Hovshaga kapell","description":"kapell i Svenska kyrkan i Hovshaga, Sverige","geo":{"@type":"GeoCoordinates","latitude":56.909472222222,"longitude":14.806388888889}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Sveriges glasmuseum","description":"del av Smålands museum","geo":{"@type":"GeoCoordinates","latitude":56.883333333333,"longitude":14.816666666667}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Universitetsplatsen","description":"torg i Växjö","geo":{"@type":"GeoCoordinates","latitude":56.85493,"longitude":14.83064}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Växjö gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 109 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Växjö?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 109 sevärdheter i Växjö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Smålands museum?","acceptedAnswer":{"@type":"Answer","text":"museum i Växjö"}},{"@type":"Question","name":"Vad är Teleborgs slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Växjö"}},{"@type":"Question","name":"Vad är Linnéparken?","acceptedAnswer":{"@type":"Answer","text":"Linnéparken är en park i centrala Växjö."}},{"@type":"Question","name":"Vad är Bergunda kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Växjö kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Växjö","item":"https://stadsvandring.io/stadsvandring/vaxjo"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Växjö</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Växjö</span><span class="badge">109 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Växjö — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Växjö till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Växjö"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-vaxjo-smalands-museum-q396260"><b>1. Smålands museum</b><span>museum · museum i Växjö</span></a>
+<a class="tile" href="/p/wd-vaxjo-teleborgs-slott-q441865"><b>2. Teleborgs slott</b><span>Slott · slott i Växjö</span></a>
+<a class="tile" href="/p/wd-vaxjo-linneparken-q1826943"><b>3. Linnéparken</b><span>Naturreservat · Linnéparken är en park i centrala Växjö.</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Växjö · 109</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Växjö. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 54</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-boplatsomrade-vaxjo-52a4ec"><b>Boplatsområde</b></a> — Boplats med härd, stolphål och gropar daterade till brons- och järnålder.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vaxjo-3448a6"><b>Bytomt/gårdstomt</b></a> — En by- eller gårdstomt i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-vaxjo-8289c4"><b>Fossil åker</b></a> — En fossil åker i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vaxjo-9fbd93"><b>Stensättning</b></a> — En stensättning i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-vaxjo-a8d7df"><b>Stenkammargrav</b></a> — Två hällkistor i rösen med välbevarade sidohällar.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-vaxjo-d94595"><b>Grav- och boplatsområde</b></a> — Undersökt grav- och boplatsområde med stolphål, härdar och en stensträng.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vaxjo-ea351e"><b>Stensättning</b></a> — En stensättning i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-rose-vaxjo-d17f15"><b>Röse</b></a> — Ett röse i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-hog-vaxjo-c19589"><b>Hög</b></a> — En hög i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-kalla-med-tradition-vaxjo-25d0ce"><b>Källa med tradition</b></a> — Uppgift om en offerkälla som inte återfunnits vid inventeringen.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-vaxjo-f58e7b"><b>Fornlämningsliknande bildning</b></a> — Platsen för naturbildningar som liknade resta stenar, borttagna 1994.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vaxjo-8303bd"><b>Boplats</b></a> — En boplats i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-vaxjo-a5fb00"><b>Fossil åker</b></a> — Fossil åkermark med ett tjugotal röjningsrösen, delvis kringskuren av bebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-vaxjo-8908fc"><b>Stenkammargrav</b></a> — En stenkammargrav i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-vaxjo-e837b5"><b>Stenkammargrav</b></a> — Rund stensättning med hällkista, undersökt och restaurerad efter skadegörelse 1939.</li>
+<li><a href="/karta?plats=ksamsok-rose-vaxjo-636ce5"><b>Röse</b></a> — Ett röse i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-13cfe6"><b>Hällristning</b></a> — En berghäll med två älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vaxjo-a1bd01"><b>Begravningsplats</b></a> — 1820-talskyrkogård vid hospitalet med bevarat fundament över dess förste styrelseman.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-vaxjo-6d584c"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Ett brant bergsstup som enligt traditionen fungerat som ättestupa.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-enstaka-vaxjo-b515ea"><b>Begravningsplats enstaka</b></a> — Två jordgravar troligen knutna till en näraliggande avrättningsplats.</li>
+<li><a href="/karta?plats=ksamsok-omrade-med-fossil-akermark-vaxjo-a725d8"><b>Område med fossil åkermark</b></a> — Ett område med fossil åkermark i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-vaxjo-e9d029"><b>Övrigt</b></a> — Plats undersökt 1976 där träkol och skal av sjönöt påträffades.</li>
+<li><a href="/karta?plats=ksamsok-sigfridsstenarna-kalla-med-tradition-vaxjo-7f54e0"><b>Sigfridsstenarna, Källa med tradition</b></a> — Sigfridsstenarna, en källa med tradition och kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-78007c"><b>Hällristning</b></a> — En hällristning i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vaxjo-6d7a05"><b>Stensättning</b></a> — En stensättning i Växjö beskriven i inventeringsboken.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-e5f181"><b>Hällristning</b></a> — En hällristning som ingår i fornminnesregistret i Växjö.</li>
+<li><a href="/p/ksamsok-gravfalt-vaxjo-c1fc30"><b>Gravfält</b></a> — Ett stort gravfält med ett sextiotal fornlämningar, skadat av militär verksamhet.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-vaxjo-c20d85"><b>Gravfält</b></a> — Ett gravfält registrerat i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vaxjo-f1cf17"><b>Bytomt/gårdstomt</b></a> — En registrerad by- eller gårdstomt i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vaxjo-38facc"><b>Stensättning</b></a> — Resterna av en stensättning, delvis borttagen och övermossad.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-vaxjo-c494e2"><b>Gränsmärke</b></a> — Platsen för ett gränsmärke från 1858, nu borttaget.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-91ae85"><b>Hällristning</b></a> — En hällristning upptagen i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vaxjo-3d6c81"><b>Boplats</b></a> — En förhistorisk boplats registrerad i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-vaxjo-cc3686"><b>Gravfält</b></a> — Ett gravfält upptaget i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vaxjo-b9a1ef"><b>Fyndplats</b></a> — Fyndplats för ett tyskt silvermynt från 1200-talet.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-a36741"><b>Hällristning</b></a> — En hällristning upptagen i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-vaxjo-29507a"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning registrerad i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vaxjo-939108"><b>Hällristning</b></a> — En hällristning med två ringfigurer på en västsluttande häll.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-vaxjo-9fb459"><b>Fossil åker</b></a> — En fossil åker registrerad i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-vaxjo-cbfe4e"><b>Fossil åker</b></a> — Fossil åkermark med ett femtontal röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vaxjo-4d01a1"><b>Fyndplats</b></a> — Fyndplats för flinta, kritpipsfragment och slagg i en trädgård.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-vaxjo-abc2b2"><b>Boplatslämning övrig</b></a> — Möjligt kulturlager daterat till senneolitikum vid en arkeologisk utredning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-vaxjo-71f5a7"><b>Gravfält</b></a> — Ett gravfält upptaget i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vaxjo-e32d99"><b>Boplats</b></a> — En boplats utan synliga lämningar, funnen vid utredning 1993.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-vaxjo-38473a"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning registrerad i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vaxjo-1dc804"><b>Begravningsplats</b></a> — En begravningsplats registrerad i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-rose-vaxjo-5f7381"><b>Röse</b></a> — Ett röse registrerat i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-vaxjo-13d024"><b>Stadslager</b></a> — Kulturlager från Växjö medeltidsstad.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-vaxjo-ec43e4"><b>Gränsmärke</b></a> — Platsen för ett gränsmärke från 1858, borttaget 1994.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-vaxjo-d6c10d"><b>Fornlämningsliknande bildning</b></a> — En rest sten som visade sig vara en naturbildning, borttagen 1994.</li>
+<li><a href="/karta?plats=ksamsok-rose-vaxjo-9187f1"><b>Röse</b></a> — Ett röse registrerat i fornminnesregistret i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-vaxjo-46f0be"><b>Ristning, medeltid/historisk tid</b></a> — En muntlig uppgift om inknackade figurer på ett berg.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-vaxjo-db41c8"><b>Avrättningsplats</b></a> — Växjös avrättningsplats under 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vaxjo-22e643"><b>Stensättning</b></a> — En stensättning registrerad i fornminnesregistret i Växjö.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 17</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-ostrabo-biskopgard-vaxjo-586225"><b>ÖSTRABO BISKOPGÅRD</b></a> — Biskopsgården Östrabo, uppförd på 1790-talet öster om Växjö. <span class="era">1792–1796</span></li>
+<li><a href="/karta?plats=ksamsok-lilla-gunnarbo-vaxjo-579222"><b>LILLA GUNNARBO</b></a> — Jugendvilla från 1907–08 ritad av slöjdläraren Gunnar Ell åt sig själv. <span class="era">1907–1908</span></li>
+<li><a href="/karta?plats=ksamsok-magasinbod-vaxjo-691501"><b>MAGASINBOD</b></a> — En magasinbod i Växjö upptagen i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/karta?plats=ksamsok-drangstuga-vaxjo-691500"><b>DRÄNGSTUGA</b></a> — En drängstuga i Växjö upptagen i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/karta?plats=ksamsok-vavatelje-vaxjo-691471"><b>VÄVATELJÉ</b></a> — Trädgårdsbyggnad som på 1950-talet delvis inreddes till vävateljé. <span class="era">1900–1929</span></li>
+<li><a href="/karta?plats=ksamsok-nordostra-flygeln-vaxjo-586226"><b>NORDÖSTRA FLYGELN</b></a> — Nordöstra flygeln vid Östrabo, upptagen i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/karta?plats=ksamsok-sydostra-flygeln-vaxjo-586224"><b>SYDÖSTRA FLYGELN</b></a> — Sydöstra flygeln vid Östrabo, upptagen i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/karta?plats=ksamsok-gamla-teatern-vaxjo-694556"><b>GAMLA TEATERN</b></a> — Växjö teater från 1849, en av landets bäst bevarade äldre teatrar. <span class="era">1849–1849</span></li>
+<li><a href="/p/ksamsok-residenset-vaxjo-356760"><b>RESIDENSET</b></a> — Landsresidenset från 1840-talet längs torgets norra sida i senempire. <span class="era">1844–1848</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-vaxjo-691499"><b>FLYGELBYGGNAD</b></a> — En flygelbyggnad i Växjö upptagen i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/p/ksamsok-gamla-hospitalsbyggnaden-vaxjo-691567"><b>GAMLA HOSPITALSBYGGNADEN</b></a> — Timrad sjukhusbyggnad från 1826 som senare rymt kyrka och nu museum. <span class="era">1826–1826</span></li>
+<li><a href="/p/ksamsok-televerkets-hus-fd-riksbankshuset-vaxjo-579474"><b>TELEVERKETS HUS (FD RIKSBANKSHUSET)</b></a> — Monumental byggnad från 1909–11 som rymde både televerket och riksbanken. <span class="era">1909–1911</span></li>
+<li><a href="/p/ksamsok-stora-hospitalsbyggnaden-vaxjo-691579"><b>STORA HOSPITALSBYGGNADEN</b></a> — Sjukhusbyggnad från 1852–57 ritad efter tidens nya vårdprinciper. <span class="era">1852–1857</span></li>
+<li><a href="/karta?plats=ksamsok-avtrade-vaxjo-691502"><b>AVTRÄDE</b></a> — Ett avträde i Växjö upptaget i bebyggelseregistret. <span class="era">1792–1796</span></li>
+<li><a href="/p/ksamsok-gamla-domprostgarden-vaxjo-672537"><b>GAMLA DOMPROSTGÅRDEN</b></a> — Växjös äldsta bevarade trähus, uppfört 1750 som domprostboställe. <span class="era">1750–1750</span></li>
+<li><a href="/p/ksamsok-gamla-gymnasiet-vaxjo-356759"><b>GAMLA GYMNASIET</b></a> — Klassicistisk skolbyggnad från 1696–1715 med Linné och Tegnér bland eleverna. <span class="era">1696–1715</span></li>
+<li><a href="/p/ksamsok-ostra-varends-domsagas-tingshus-vaxjo-696629"><b>ÖSTRA VÄRENDS DOMSAGAS TINGSHUS</b></a> — Tingshus från 1921–22 i rött tegel med pampig naturstensportal. <span class="era">1921–1922</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 13</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxjo-bergunda-kyrka-q10428609"><b>Bergunda kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-hogstorps-kyrka-q10532421"><b>Högstorps kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-johannesgarden-q10540508"><b>Johannesgården</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-mariakyrkan-q10577242"><b>Mariakyrkan</b></a> — kyrka i Växjö kommun, Sverige</li>
+<li><a href="/karta?plats=wd-vaxjo-skogslyckans-kyrka-q10670377"><b>Skogslyckans kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-tegnerkapellet-q10691874"><b>Tegnérkapellet</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-teleborgs-kyrka-q10692265"><b>Teleborgs kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-vastrabo-kyrka-q10718451"><b>Västrabo kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-ojaby-kyrka-q10727185"><b>Öjaby kyrka</b></a> — kyrkobyggnad i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-sankt-sigfrids-kapell-q26256947"><b>Sankt Sigfrids kapell</b></a> — kapell i Växjö</li>
+<li><a href="/karta?plats=wd-vaxjo-hovshaga-kapell-q104519220"><b>Hovshaga kapell</b></a> — kapell i Svenska kyrkan i Hovshaga, Sverige</li>
+<li><a href="/p/ksamsok-vaxjo-domkyrka-vaxjo-549577"><b>Växjö Domkyrka</b></a> — Domkyrka med rötter i en träkyrka från 1000-talet, ombyggd genom seklerna. <span class="era">1040–1059</span></li>
+<li><a href="/karta?plats=ksamsok-skogslyckans-kyrka-vaxjo-014716"><b>Skogslyckans kyrka</b></a> — Skogslyckans kyrka i Växjö, uppförd 1943. <span class="era">1943–1943</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 12</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxjo-esaias-tegner-staty-q56435878"><b>Esaias Tegner staty</b></a> — staty i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-linne-staty-q56437020"><b>Linné staty</b></a> — staty i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-peter-wieselgren-staty-q56437214"><b>Peter Wieselgren staty</b></a> — staty i Växjö</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-6d634d"><b>Minnesmärke</b></a> — Ett minnesmärke i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-04204b"><b>Minnesmärke</b></a> — Ett minnesmärke i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-7751ac"><b>Minnesmärke</b></a> — Ett minnesmärke i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-3d0ed4"><b>Minnesmärke</b></a> — Ett minnesmärke i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-5823d6"><b>Minnesmärke</b></a> — Minnessten rest 1929 över en väg anlagd av pionjärskolan.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-23b461"><b>Minnesmärke</b></a> — Ett minnesmärke i Växjö med kortfattat underlag.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-e06f7f"><b>Minnesmärke</b></a> — Ett minnesmärke registrerat i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-099950"><b>Minnesmärke</b></a> — Ett minnesmärke registrerat i Växjö.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxjo-1057b6"><b>Minnesmärke</b></a> — En minnessten över Kungl. Kronobergs regementes övningsplats.</li>
+</ul>
+<h3 class="city-h3">museum · 5</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vaxjo-smalands-museum-q396260"><b>Smålands museum</b></a> — museum i Växjö</li>
+<li><a href="/karta?plats=wd-vaxjo-psykiatrihistoriska-museet-q10645235"><b>Psykiatrihistoriska museet</b></a> — museum i Växjö kommun</li>
+<li><a href="/karta?plats=wd-vaxjo-s-s-thor-q10659345"><b>S/S Thor</b></a> — ångbåt som trafikerar Helgasjön med angränsande vatten</li>
+<li><a href="/p/wd-vaxjo-utvandrarnas-hus-q10711604"><b>Utvandrarnas hus</b></a> — museum i Växjö kommun, Sverige</li>
+<li><a href="/karta?plats=wd-vaxjo-sveriges-glasmuseum-q111033876"><b>Sveriges glasmuseum</b></a> — del av Smålands museum</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vaxjo-teleborgs-slott-q441865"><b>Teleborgs slott</b></a> — slott i Växjö</li>
+<li><a href="/karta?plats=wd-vaxjo-bergunda-32-1-q29441880"><b>Bergunda 32:1</b></a> — borg i Småland</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxjo-linneparken-q1826943"><b>Linnéparken</b></a> — Linnéparken är en park i centrala Växjö.</li>
+<li><a href="/p/wd-vaxjo-linnes-arboretum-q15992263"><b>Linnés arboretum</b></a> — arboretum, uppkallat efter Linné, i Teleborg i södra Växjö</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vaxjo-stortorget-q10681420"><b>Stortorget</b></a> — torg i Växjö, Småland</li>
+<li><a href="/karta?plats=wd-vaxjo-universitetsplatsen-q125101402"><b>Universitetsplatsen</b></a> — torg i Växjö</li>
+</ul>
+<h3 class="city-h3">Runsten · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-vaxjo-e6239d"><b>Runristning</b></a> — En runsten rest av Tyke vikingen till minne av Gunnar, Grims son.</li>
+<li><a href="/karta?plats=ksamsok-runristning-vaxjo-624b86"><b>Runristning</b></a> — En runristning registrerad i fornminnesregistret i Växjö.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 109 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/vaxjo/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/vaxjo/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Växjö gratis?</summary><p>Ja. Karta, alla 109 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Växjö?</summary><p>Vandringen samlar 109 sevärdheter i Växjö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Smålands museum?</summary><p>museum i Växjö</p></details>
+<details class="faq"><summary>Vad är Teleborgs slott?</summary><p>slott i Växjö</p></details>
+<details class="faq"><summary>Vad är Linnéparken?</summary><p>Linnéparken är en park i centrala Växjö.</p></details>
+<details class="faq"><summary>Vad är Bergunda kyrka?</summary><p>kyrkobyggnad i Växjö kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

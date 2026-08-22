@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Varberg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.11641667" lon="12.263725"><name>Den gudomliga barmhärtighetens kyrka</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <wpt lat="57.11249339402504" lon="12.25317873092448"><name>Kyrka/kapell</name><desc>Ruinen efter en medeltida kyrka i Varberg, i bruk mellan 1300 och 1578.</desc></wpt>
+  <wpt lat="57.11251389" lon="12.25306944"><name>Getakärrs kyrkoruin</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <wpt lat="57.105975" lon="12.250685"><name>Varbergs kyrka</name><desc>Stadens största och äldsta kyrka, uppförd i gustaviansk stil 1769–1772 efter en förödande stadsbrand.</desc></wpt>
+  <wpt lat="57.103238069417515" lon="12.250425855749633"><name>Fästning/skans</name><desc>Platsen för en försvunnen skans i Varberg, utritad på en karta från 1645.</desc></wpt>
+  <wpt lat="57.10611875287096" lon="12.243468691654174"><name>Kyrka/kapell</name><desc>Den övertorvade grunden efter en försvunnen kyrka i Varberg.</desc></wpt>
+  <wpt lat="57.106119" lon="12.243469"><name>Varberg 26:2</name><desc>kyrka/kapell i Halland</desc></wpt>
+  <wpt lat="57.10615608632466" lon="12.240363807742478"><name>Fästning/skans</name><desc>Varbergs medeltida slott och fästning, med rötter i 1100-talet.</desc></wpt>
+  <wpt lat="57.09178" lon="12.25997"><name>Apelvikshöjds kyrka</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <wpt lat="57.0867839" lon="12.2465935"><name>Apelvikens kapell</name><desc>Varbergs kommun</desc></wpt>
+  <wpt lat="57.11111111" lon="12.27541667"><name>Sollyckans kyrka</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <wpt lat="57.10779722" lon="12.29862778"><name>Träslövs kyrka</name><desc>kyrka/kapell i Halland (Träslöv 40:1)</desc></wpt>
+  <wpt lat="57.10024" lon="12.3632"><name>Hunnestads kyrka</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <wpt lat="57.05347" lon="12.27807"><name>Träslövsläge kyrka</name><desc>kyrkobyggnad i Varbergs kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Varberg</name>
+    <rtept lat="57.11641667" lon="12.263725"><name>Den gudomliga barmhärtighetens kyrka</name></rtept>
+    <rtept lat="57.11249339402504" lon="12.25317873092448"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="57.11251389" lon="12.25306944"><name>Getakärrs kyrkoruin</name></rtept>
+    <rtept lat="57.105975" lon="12.250685"><name>Varbergs kyrka</name></rtept>
+    <rtept lat="57.103238069417515" lon="12.250425855749633"><name>Fästning/skans</name></rtept>
+    <rtept lat="57.10611875287096" lon="12.243468691654174"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="57.106119" lon="12.243469"><name>Varberg 26:2</name></rtept>
+    <rtept lat="57.10615608632466" lon="12.240363807742478"><name>Fästning/skans</name></rtept>
+    <rtept lat="57.09178" lon="12.25997"><name>Apelvikshöjds kyrka</name></rtept>
+    <rtept lat="57.0867839" lon="12.2465935"><name>Apelvikens kapell</name></rtept>
+    <rtept lat="57.11111111" lon="12.27541667"><name>Sollyckans kyrka</name></rtept>
+    <rtept lat="57.10779722" lon="12.29862778"><name>Träslövs kyrka</name></rtept>
+    <rtept lat="57.10024" lon="12.3632"><name>Hunnestads kyrka</name></rtept>
+    <rtept lat="57.05347" lon="12.27807"><name>Träslövsläge kyrka</name></rtept>
+  </rte>
+</gpx>

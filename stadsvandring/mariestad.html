@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Mariestad — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Mariestad till fots: 98 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 98 stopp och nedladdningsbar PD…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/mariestad">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Mariestad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Mariestad till fots: 98 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 98 stopp och nedladdningsbar PD…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/mariestad">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Mariestad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Mariestad till fots: 98 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 98 stopp och nedladdningsbar PD…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"mariestad","sourceSlug":"stadsvandring/mariestad","centroid":{"lat":58.70947874241507,"lng":13.83272389472134},"stops":[{"name":"Berga kyrka","lat":58.738,"lng":13.91161111},{"name":"Hassle-Säby","lat":58.7475,"lng":13.90027778},{"name":"Leksbergs kyrka","lat":58.6838,"lng":13.8127}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Mariestad","description":"Upptäck Mariestad till fots: 98 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/mariestad","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Berga kyrka","description":"kyrkobyggnad som tillhör Lyrestads församling i Skara stift","geo":{"@type":"GeoCoordinates","latitude":58.738,"longitude":13.91161111}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Hassle-Säby","description":"herrgård i Mariestads kommun","url":"https://stadsvandring.io/p/wd-mariestad-hassle-saby-q10518474","geo":{"@type":"GeoCoordinates","latitude":58.7475,"longitude":13.90027778}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Leksbergs kyrka","description":"kyrkobyggnad i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.6838,"longitude":13.8127}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Marieholmskyrkan","description":"kyrkobyggnad i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.70455,"longitude":13.804025}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Ullervads kyrka","description":"kyrkobyggnad i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.66611111,"longitude":13.86454722}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Leksberg 32:2","description":"kyrka/kapell i Västergötland","geo":{"@type":"GeoCoordinates","latitude":58.670268,"longitude":13.822448}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Leksberg 52:1","description":"minnesmärke i Västergötland","geo":{"@type":"GeoCoordinates","latitude":58.691694,"longitude":13.82366}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Ullervad 47:1","description":"kyrka/kapell i Västergötland","geo":{"@type":"GeoCoordinates","latitude":58.665496,"longitude":13.864344}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Snuggen","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.723694444444,"longitude":13.8475}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Nolhagen nedre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.73075,"longitude":13.848805555556}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Nolhagen övre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.730472222222,"longitude":13.852}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Snappudden nedre","description":"en ensfyr i Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.741138888889,"longitude":13.841472222222}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Snappudden övre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.744555555556,"longitude":13.863888888889}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Mariestad nedre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.719222222222,"longitude":13.820166666667}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Mariestad övre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.716444444444,"longitude":13.816611111111}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Mariestad Inre nedre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.715055555556,"longitude":13.816805555556}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Mariestad Inre övre","description":"en ensfyr vid Vänern i Mariestads kommun","geo":{"@type":"GeoCoordinates","latitude":58.709083333333,"longitude":13.816638888889}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Nya torget","description":"torg i Mariestad, Västergötland","geo":{"@type":"GeoCoordinates","latitude":58.70937,"longitude":13.8233}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Hamnbron","description":"bro i Mariestad","geo":{"@type":"GeoCoordinates","latitude":58.71064,"longitude":13.81697}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"UTHUSLÄNGA","description":"En uthuslänga upptagen i Bebyggelseregistret.","geo":{"@type":"GeoCoordinates","latitude":58.710371848008045,"longitude":13.820411975310725}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"KÖKSFLYGELN","description":"Residensets köksflygel, uppförd på 1740-talet.","geo":{"@type":"GeoCoordinates","latitude":58.70779746674979,"longitude":13.817625363625687}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Bårhus","description":"Ett bårhus från 1800-talets andra hälft.","geo":{"@type":"GeoCoordinates","latitude":58.71200368442292,"longitude":13.821905184580084}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"SKOMAGASINET","description":"Ett bostadshus från 1840-talet som senare kallades Skomagasinet.","url":"https://stadsvandring.io/p/ksamsok-skomagasinet-mariestad-579773","geo":{"@type":"GeoCoordinates","latitude":58.70835039958721,"longitude":13.822899281264966}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"UTHUS","description":"Ett putsat tegeluthus från 1800-talet, tillbyggt 1923.","url":"https://stadsvandring.io/p/ksamsok-uthus-mariestad-580618","geo":{"@type":"GeoCoordinates","latitude":58.71264921739144,"longitude":13.821293578722491}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"HÖRNHUS","description":"Ett hörnhus från 1890-talet på en tomt med anor från före stadsbranden 1693.","url":"https://stadsvandring.io/p/ksamsok-hornhus-mariestad-580243","geo":{"@type":"GeoCoordinates","latitude":58.71045257290504,"longitude":13.821401783338018}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Mariestad gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 98 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Mariestad?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 98 sevärdheter i Mariestad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Berga kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad som tillhör Lyrestads församling i Skara stift"}},{"@type":"Question","name":"Vad är Hassle-Säby?","acceptedAnswer":{"@type":"Answer","text":"herrgård i Mariestads kommun"}},{"@type":"Question","name":"Vad är Leksbergs kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Mariestads kommun"}},{"@type":"Question","name":"Vad är Marieholmskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Mariestads kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Mariestad","item":"https://stadsvandring.io/stadsvandring/mariestad"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Mariestad</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Mariestad</span><span class="badge">98 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Mariestad — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Mariestad till fots: 98 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Mariestad"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-mariestad-berga-kyrka-q10428341"><b>1. Berga kyrka</b><span>Kyrka · kyrkobyggnad som tillhör Lyrestads församling i Skara stift</span></a>
+<a class="tile" href="/p/wd-mariestad-hassle-saby-q10518474"><b>2. Hassle-Säby</b><span>Byggnad · herrgård i Mariestads kommun</span></a>
+<a class="tile" href="/p/wd-mariestad-leksbergs-kyrka-q10556743"><b>3. Leksbergs kyrka</b><span>Kyrka · kyrkobyggnad i Mariestads kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Mariestad · 98</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Mariestad. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 36</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariestad-ed33c9"><b>Husgrund, historisk tid</b></a> — En stenlagd husgrund från historisk tid.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-mariestad-86aeea"><b>Fartygs-/båtlämning</b></a> — En pråm daterad till 1846 genom analys av virket.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-mariestad-fa4a3a"><b>Vägmärke</b></a> — En kalkstensmilstolpe på ett kvadratiskt postament.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-mariestad-ec3455"><b>Boplatsområde</b></a> — Ett boplatsområde med härdar och gropar.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-mariestad-bd9d5f"><b>Husgrund, historisk tid</b></a> — En husgrund med synlig syllrad från historisk tid.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-mariestad-c36a1d"><b>Bytomt/gårdstomt</b></a> — Den gamla gårdstomten Tunaholm/Marieholm, känd i skrift sedan 1400-talet.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-mariestad-05c754"><b>Lägenhetsbebyggelse</b></a> — Ett torp med husgrund och källare, belagt på kartor från 1800-talet.</li>
+<li><a href="/p/ksamsok-kvarn-mariestad-b227e1"><b>Kvarn</b></a> — En kvarnlämning med tegelbyggnad, dammvallar och rännor.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-mariestad-8d807c"><b>Lägenhetsbebyggelse</b></a> — Lägenhetsbebyggelse med husgrunder och en jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mariestad-e5d58e"><b>Röjningsröse</b></a> — Ett röjningsröse i två stenlager.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-mariestad-bbda78"><b>Röjningsröse</b></a> — Två avlånga röjningsrösen av stora block på en bergsklack.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-mariestad-fd405b"><b>Fyndplats</b></a> — En fyndplats för kopparmynt från 1670-talet, funna 1953.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mariestad-39a130"><b>Fossil åker</b></a> — Ett röjningsröseområde med ett tiotal odlingsrösen och en stensträng.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-mariestad-9062f6"><b>Fyndplats</b></a> — En fyndplats för svenska kopparmynt från 1600-talet, funna 1962.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mariestad-65e91b"><b>Fossil åker</b></a> — Fossil åkermark med kolinslag, vall och röjningsrösen.</li>
+<li><a href="/karta?plats=ksamsok-fossil-aker-mariestad-cd36fc"><b>Fossil åker</b></a> — Ett röjningsröseområde markerat som åkermark på en 1800-talskarta.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-mariestad-f8089b"><b>Fartygs-/båtlämning</b></a> — En klinkbyggd båt av tall, undersökt vid en utredning 2007.</li>
+<li><a href="/p/ksamsok-hamnanlaggning-mariestad-d6e280"><b>Hamnanläggning</b></a> — Rester av en tidig brygga eller förtöjning som Bohusläns museum undersökte 2007.</li>
+<li><a href="/p/ksamsok-boplatsomrade-mariestad-c8b4cf"><b>Boplatsområde</b></a> — Ett litet boplatsområde där sju anläggningar frilades på en yta av sex gånger fyra meter.</li>
+<li><a href="/karta?plats=ksamsok-fangstanlaggning-ovrig-mariestad-09e1df"><b>Fångstanläggning övrig</b></a> — Rader av nedslagna pålar som troligen hört till en fast fiskeanläggning.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-mariestad-48fa1a"><b>Fyndplats</b></a> — En plats vid Lillängens gård där flintyxor och andra stenföremål har hittats.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-mariestad-b9f763"><b>Bytomt/gårdstomt</b></a> — En övergiven gårdstomt som hörde till Stengårdshult under senare delen av 1800-talet.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-mariestad-3d9431"><b>Stensättning</b></a> — En låg stensättning med plan yta, bevuxen med mossa och sly.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-mariestad-0946e7"><b>Lägenhetsbebyggelse</b></a> — Lämningar efter backstugor, däribland en kallad Lugnet, kända från 1800-talets kartor.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-mariestad-25c23e"><b>Hägnad</b></a> — En delvis utrasad stenmur som möjligen följt en äldre ägogräns.</li>
+<li><a href="/karta?plats=ksamsok-gransmarke-mariestad-b8b209"><b>Gränsmärke</b></a> — En gränssten från 1690 med tre kronor och inskriften Russlingen allmänning.</li>
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-mariestad-b035a9"><b>Lägenhetsbebyggelse</b></a> — En vidsträckt lägenhetsbebyggelse med husgrunder, stenmurar och en välbevarad jordkällare.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-mariestad-ef2b7c"><b>Hällristning</b></a> — En numera borttagen älvkvarnshäll som upptäcktes 1957.</li>
+<li><a href="/karta?plats=ksamsok-kilkesten-grav-markerad-av-sten-block-mariestad-1bce8d"><b>Kilkesten, Grav markerad av sten/block</b></a> — En rest granitsten som lutar allt kraftigare med åren.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-mariestad-d2d3da"><b>Fartygs-/båtlämning</b></a> — Resterna av skonaren Lisa, som brändes ned i Vänern 1956.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-mariestad-17d9a6"><b>Stadslager</b></a> — Ett kulturlager från Mariestads äldsta tid som stad.</li>
+<li><a href="/p/ksamsok-hamnanlaggning-mariestad-cabfe7"><b>Hamnanläggning</b></a> — En utfallen stenkista med timmer, daterad genom årsringar till tidigt 1800-tal.</li>
+<li><a href="/karta?plats=ksamsok-fangstanlaggning-ovrig-mariestad-f11c70"><b>Fångstanläggning övrig</b></a> — En fast fiskeanläggning daterad till 1400- eller 1500-talet.</li>
+<li><a href="/karta?plats=ksamsok-fangstanlaggning-ovrig-mariestad-02a9bc"><b>Fångstanläggning övrig</b></a> — En fast fiskeanläggning liknande en närliggande, men utan datering.</li>
+<li><a href="/karta?plats=ksamsok-fangstanlaggning-ovrig-mariestad-6ccfac"><b>Fångstanläggning övrig</b></a> — En undersökt och borttagen fiskeanläggning daterad till 1100-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-mariestad-45b24b"><b>Fyndplats</b></a> — Platsen där ett Sigismundmynt från 1597 påträffades vid residenset i Mariestad.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 34</h3>
+<ul class="place-list">
+<li><a href="/p/wd-mariestad-hassle-saby-q10518474"><b>Hassle-Säby</b></a> — herrgård i Mariestads kommun</li>
+<li><a href="/karta?plats=ksamsok-uthuslanga-mariestad-694675"><b>UTHUSLÄNGA</b></a> — En uthuslänga upptagen i Bebyggelseregistret. <span class="era">1785</span></li>
+<li><a href="/karta?plats=ksamsok-koksflygeln-mariestad-357413"><b>KÖKSFLYGELN</b></a> — Residensets köksflygel, uppförd på 1740-talet. <span class="era">1742–1742</span></li>
+<li><a href="/karta?plats=ksamsok-barhus-mariestad-041907"><b>Bårhus</b></a> — Ett bårhus från 1800-talets andra hälft. <span class="era">1850–1900</span></li>
+<li><a href="/p/ksamsok-skomagasinet-mariestad-579773"><b>SKOMAGASINET</b></a> — Ett bostadshus från 1840-talet som senare kallades Skomagasinet. <span class="era">1840–1840</span></li>
+<li><a href="/p/ksamsok-uthus-mariestad-580618"><b>UTHUS</b></a> — Ett putsat tegeluthus från 1800-talet, tillbyggt 1923. <span class="era">1800–1899</span></li>
+<li><a href="/p/ksamsok-hornhus-mariestad-580243"><b>HÖRNHUS</b></a> — Ett hörnhus från 1890-talet på en tomt med anor från före stadsbranden 1693. <span class="era">1892–1893</span></li>
+<li><a href="/p/ksamsok-bostadshus-mariestad-580388"><b>BOSTADSHUS</b></a> — Ett timrat 1700-talshus som tidvis tjänat som bränneri och apotek. <span class="era">1700–1799</span></li>
+<li><a href="/p/ksamsok-mellanbyggnaden-mariestad-580505"><b>MELLANBYGGNADEN</b></a> — En byggnad vars tomt slogs samman efter branden 1693 och som byggdes på under 1800-talet. <span class="era">1929–1929</span></li>
+<li><a href="/karta?plats=ksamsok-kansliflygel-mariestad-357418"><b>KANSLIFLYGEL</b></a> — Residensets kansliflyglar från 1810-talet, en gång landskansli och ränteri. <span class="era">1811–1813</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-mariestad-694672"><b>BOSTADSHUS</b></a> — Ett bostadshus från omkring 1890. <span class="era">1890</span></li>
+<li><a href="/p/ksamsok-bertha-petterssons-hus-mariestad-580313"><b>BERTHA PETTERSSONS HUS</b></a> — Ett torghus vars källare kan gå tillbaka till tiden före branden 1693. <span class="era">1800–1829</span></li>
+<li><a href="/p/ksamsok-mariestads-jarnvagsstation-mariestad-644821"><b>MARIESTADS JÄRNVÄGSSTATION</b></a> — Stationshuset från 1908–09, ritat av Lars Kellman och byggnadsminne sedan 2005. <span class="era">1908–1909</span></li>
+<li><a href="/p/ksamsok-sydostra-sidobyggnaden-mariestad-580353"><b>SYDÖSTRA SIDOBYGGNADEN</b></a> — En fängelsebyggnad från 1840-talet, ursprungligen brygghus och badhus. <span class="era">1842–1849</span></li>
+<li><a href="/p/ksamsok-huvudbyggnad-mariestad-580626"><b>HUVUDBYGGNAD</b></a> — Landslasarettets huvudbyggnad från 1760-talet, senare fattighus. <span class="era">1760–1769</span></li>
+<li><a href="/p/ksamsok-mariestads-teater-mariestad-580874"><b>MARIESTADS TEATER</b></a> — Mariestads teater, tillkommen på borgerskapets initiativ på 1840-talet. <span class="era">1841–1848</span></li>
+<li><a href="/karta?plats=ksamsok-bageriet-i-kvarteret-baggen-mariestad-694674"><b>BAGERIET I KVARTERET BAGGEN</b></a> — Ett karolinskt hus som länge rymde ett bageri. <span class="era">1690–1699</span></li>
+<li><a href="/p/ksamsok-mariestads-tingsratt-mariestad-697361"><b>MARIESTADS TINGSRÄTT</b></a> — Ett klassiserande tingshus från 1923 med två tingssalar. <span class="era">1923–1923</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-mariestad-357415"><b>FLYGELBYGGNAD</b></a> — En flygelbyggnad från 1756. <span class="era">1756–1756</span></li>
+<li><a href="/p/ksamsok-mariestads-fangelse-mariestad-580794"><b>MARIESTADS FÄNGELSE</b></a> — Cellfängelset från 1840-talet, byggt efter nya humanitära ideal. <span class="era">1842–1849</span></li>
+<li><a href="/karta?plats=ksamsok-stall-mariestad-357416"><b>STALL</b></a> — Ett stall från 1756. <span class="era">1756–1756</span></li>
+<li><a href="/karta?plats=ksamsok-sydvastra-sidobyggnaden-tillbyggd-med-stallverkshus-mariestad-579878"><b>SYDVÄSTRA SIDOBYGGNADEN TILLBYGGD MED STÄLLVERKSHUS</b></a> — En fängelsebyggnad från 1840-talet, ursprungligen reservhäkte. <span class="era">1842–1849</span></li>
+<li><a href="/karta?plats=ksamsok-skolbyggnad-mariestad-579958"><b>SKOLBYGGNAD</b></a> — Fängelsets skolbyggnad från 1971. <span class="era">1971–1971</span></li>
+<li><a href="/p/ksamsok-huvudbyggnaden-mariestad-580364"><b>HUVUDBYGGNADEN</b></a> — Ett stenhus från 1761, uppfört åt grosshandlaren Christoffer Zackau. <span class="era">1761–1761</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-mariestad-028081"><b>Bostadshus</b></a> — Ett bostadshus från 1946. <span class="era">1946–1946</span></li>
+<li><a href="/karta?plats=ksamsok-sporthall-mariestad-028167"><b>Sporthall</b></a> — En sporthall från 1939. <span class="era">1939–1939</span></li>
+<li><a href="/p/ksamsok-kulissmagasinet-mariestad-692547"><b>KULISSMAGASINET</b></a> — Ett kulissmagasin från 1992 för teaterns äldre scendekorer. <span class="era">1992–1992</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-mariestad-692555"><b>Uthus</b></a> — Ett uthus från omkring mitten av 1900-talet. <span class="era">1935</span></li>
+<li><a href="/karta?plats=ksamsok-lansresidenset-mariestad-357412"><b>LÄNSRESIDENSET</b></a> — Länsresidenset från 1733, med målade trätak från 1700-talet. <span class="era">1733–1733</span></li>
+<li><a href="/karta?plats=ksamsok-kavaljersflygeln-mariestad-357414"><b>KAVALJERSFLYGELN</b></a> — Kavaljersflygeln från 1756. <span class="era">1756–1756</span></li>
+<li><a href="/karta?plats=ksamsok-mariestads-stadskvarn-mariestad-040944"><b>mariestads stadskvarn</b></a> — Ett kraftverk som fick sitt nuvarande utförande på 1890-talet. <span class="era">1892–1892</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-mariestad-692556"><b>GÅRDSHUS</b></a> — Ett gårdshus från 1991 med tvättstuga och soprum. <span class="era">1991–1991</span></li>
+<li><a href="/karta?plats=ksamsok-ekonomibyggnad-mariestad-041908"><b>Ekonomibyggnad</b></a> — En ekonomibyggnad från tidigt 1960-tal. <span class="era">1960–1964</span></li>
+<li><a href="/karta?plats=ksamsok-nya-flygeln-mariestad-579893"><b>NYA FLYGELN</b></a> — En bostadsflygel färdigställd 1991. <span class="era">1991–1991</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 10</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariestad-berga-kyrka-q10428341"><b>Berga kyrka</b></a> — kyrkobyggnad som tillhör Lyrestads församling i Skara stift</li>
+<li><a href="/karta?plats=wd-mariestad-leksbergs-kyrka-q10556743"><b>Leksbergs kyrka</b></a> — kyrkobyggnad i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-marieholmskyrkan-q10577338"><b>Marieholmskyrkan</b></a> — kyrkobyggnad i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-ullervads-kyrka-q10708753"><b>Ullervads kyrka</b></a> — kyrkobyggnad i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-leksberg-32-2-q29580391"><b>Leksberg 32:2</b></a> — kyrka/kapell i Västergötland</li>
+<li><a href="/karta?plats=wd-mariestad-ullervad-47-1-q29600425"><b>Ullervad 47:1</b></a> — kyrka/kapell i Västergötland</li>
+<li><a href="/p/ksamsok-frikyrka-bonehus-missionshus-mariestad-042605"><b>Frikyrka / bönehus /missionshus</b></a> — Missionskyrkan från 1957, byggd på den gamla missionshustomten. <span class="era">1957–1957</span></li>
+<li><a href="/p/ksamsok-sodra-begravningsplatsens-kapell-mariestad-644772"><b>SÖDRA BEGRAVNINGSPLATSENS KAPELL</b></a> — Ett gravkapell från 1800-talets slut på Södra kyrkogården. <span class="era">1860–1899</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-mariestad-029396"><b>Kyrka</b></a> — Skogskapellet med krematorium, invigt 1976. <span class="era">1975–1975</span></li>
+<li><a href="/p/ksamsok-mariestads-domkyrka-mariestad-443533"><b>MARIESTADS DOMKYRKA</b></a> — Domkyrkan, grundad av hertig Karl 1593 med Klara kyrka som förebild. <span class="era">1593–1619</span></li>
+</ul>
+<h3 class="city-h3">Torn · 10</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariestad-snuggen-q40684908"><b>Snuggen</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-nolhagen-nedre-q40685953"><b>Nolhagen nedre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-nolhagen-ovre-q40686699"><b>Nolhagen övre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-snappudden-nedre-q40687372"><b>Snappudden nedre</b></a> — en ensfyr i Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-snappudden-ovre-q40688101"><b>Snappudden övre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-mariestad-nedre-q42022177"><b>Mariestad nedre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-mariestad-ovre-q42029099"><b>Mariestad övre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-mariestad-inre-nedre-q42029445"><b>Mariestad Inre nedre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=wd-mariestad-mariestad-inre-ovre-q42029707"><b>Mariestad Inre övre</b></a> — en ensfyr vid Vänern i Mariestads kommun</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-mariestad-029397"><b>Klockstapel</b></a> — En klockstapel uppförd 1975. <span class="era">1975–1975</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-minnesmarke-mariestad-cf1a57"><b>Minnesmärke</b></a> — En minnessten över kungsgården Marieholm och dess trädgård.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-mariestad-c16788"><b>Minnesmärke</b></a> — Två minnesstenar av gnejs över kungabesök 1910 och 1951.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-mariestad-c928c4"><b>Minnesmärke</b></a> — En minnessten rest över Jonas Wærnland, som grundlade parken på platsen.</li>
+</ul>
+<h3 class="city-h3">Bro · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariestad-hamnbron-q114851886"><b>Hamnbron</b></a> — bro i Mariestad</li>
+<li><a href="/karta?plats=ksamsok-bro-mariestad-c9d36f"><b>Bro</b></a> — Två brofundament av sten och betong på ömse sidor om en kanal.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariestad-leksberg-52-1-q29580434"><b>Leksberg 52:1</b></a> — minnesmärke i Västergötland</li>
+</ul>
+<h3 class="city-h3">Torg · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-mariestad-nya-torget-q107721098"><b>Nya torget</b></a> — torg i Mariestad, Västergötland</li>
+</ul>
+<h3 class="city-h3">fyr · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-snuggens-fyr-mariestad-028434"><b>Snuggens fyr</b></a> — En järnfyr från 1904 som vägledde inseglingen till Mariestad. <span class="era">1904</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 98 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/mariestad/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/mariestad/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Mariestad gratis?</summary><p>Ja. Karta, alla 98 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Mariestad?</summary><p>Vandringen samlar 98 sevärdheter i Mariestad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Berga kyrka?</summary><p>kyrkobyggnad som tillhör Lyrestads församling i Skara stift</p></details>
+<details class="faq"><summary>Vad är Hassle-Säby?</summary><p>herrgård i Mariestads kommun</p></details>
+<details class="faq"><summary>Vad är Leksbergs kyrka?</summary><p>kyrkobyggnad i Mariestads kommun</p></details>
+<details class="faq"><summary>Vad är Marieholmskyrkan?</summary><p>kyrkobyggnad i Mariestads kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

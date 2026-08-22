@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Linköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.4697941" lon="15.6403808"><name>Sankt Martins kyrka</name><desc>kyrka i Linköpigs kommun och stift</desc></wpt>
+  <wpt lat="58.45036111" lon="15.71154444"><name>Rystads kyrka</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.407249120190265" lon="15.64363390210631"><name>TANNEFORSKYRKAN</name><desc>Tanneforskyrkan från 1963–64 ritades av bröderna Kandell och ligger monumentalt på berget.</desc></wpt>
+  <wpt lat="58.40722222" lon="15.64361111"><name>Tannefors kyrka</name><desc>kyrka i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.408666666667" lon="15.626194444444"><name>Linköpings missionskyrka</name><desc>Equmeniakyrkan är en kyrkobyggnad i Linköping.</desc></wpt>
+  <wpt lat="58.41139167" lon="15.62466111"><name>Sankt Lars kyrka</name><desc>kyrka i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.41149497001949" lon="15.625336841992482"><name>Kyrka/kapell</name><desc>Ett flertal runristade gravhällar av kalksten som bevaras under kyrkan.</desc></wpt>
+  <wpt lat="58.411389" lon="15.618278"><name>Saint Mary&#39;s Chapel (Linköping Cathedral)</name><desc>Saint Mary&#39;s Chapel (Linköping Cathedral)</desc></wpt>
+  <wpt lat="58.41176693111465" lon="15.617908725876106"><name>DOMKYRKOSYSSLOMANSGÅRDEN</name><desc>Huvudbyggnaden restes 1813 och rymmer än idag flera bevarade inredningsdetaljer.</desc></wpt>
+  <wpt lat="58.41124015017972" lon="15.617445461676313"><name>Linköpings domkyrka</name><desc>Linköpings domkyrka, med grunder efter en föregångare från 1100-talet.</desc></wpt>
+  <wpt lat="58.41341667" lon="15.61794444"><name>Sankt Nikolai katolska kyrka</name><desc>romersk-katolsk kyrkobyggnad i Linköping, Sverige</desc></wpt>
+  <wpt lat="58.408379824791" lon="15.613659609726463"><name>Kyrka/kapell</name><desc>Platsen för det medeltida Sankt Örjans kapell, där skelett påträffats vid byggnadsarbeten.</desc></wpt>
+  <wpt lat="58.404176705771" lon="15.613741554976"><name>Stolplyckans kyrka</name><desc>kyrka i Linköping</desc></wpt>
+  <wpt lat="58.4025" lon="15.61"><name>Tomaskyrkan</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.4062578" lon="15.6053224"><name>Uppståndelsens kapell</name><desc>kapell i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.41416667" lon="15.6"><name>Ansgarskyrkan</name><desc>kyrkobyggnad i Svenska kyrkan i Linköping, Sverige</desc></wpt>
+  <wpt lat="58.4251" lon="15.5788"><name>Skäggetorps kyrka</name><desc>kyrka i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.40988889" lon="15.56697222"><name>Mikaelskyrkan</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.3875" lon="15.56666667"><name>Lambohovskyrkan</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.37125" lon="15.556"><name>Slaka kyrka</name><desc>kyrka i Linköpings stift</desc></wpt>
+  <wpt lat="58.363922958499" lon="15.567828011057"><name>Ljusets kapell</name><desc>kapell i vid Lilla aska griftegård</desc></wpt>
+  <wpt lat="58.39758333" lon="15.61152778"><name>Garnisonskyrkan</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.39277778" lon="15.63916667"><name>Berga kyrka</name><desc>kyrka i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.39600278" lon="15.66344167"><name>Sankta Maria i Johannelund</name><desc>kyrka i Linköpings kommun, Sverige</desc></wpt>
+  <wpt lat="58.38083333" lon="15.67861111"><name>Sankt Hans kyrka</name><desc>kyrka i Linköpings kommun</desc></wpt>
+  <wpt lat="58.37769167" lon="15.64323889"><name>Vidingsjö kyrka</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <wpt lat="58.41666667" lon="15.52361111"><name>Kärna kyrka</name><desc>kyrkobyggnad i Linköpings kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Linköping</name>
+    <rtept lat="58.4697941" lon="15.6403808"><name>Sankt Martins kyrka</name></rtept>
+    <rtept lat="58.45036111" lon="15.71154444"><name>Rystads kyrka</name></rtept>
+    <rtept lat="58.407249120190265" lon="15.64363390210631"><name>TANNEFORSKYRKAN</name></rtept>
+    <rtept lat="58.40722222" lon="15.64361111"><name>Tannefors kyrka</name></rtept>
+    <rtept lat="58.408666666667" lon="15.626194444444"><name>Linköpings missionskyrka</name></rtept>
+    <rtept lat="58.41139167" lon="15.62466111"><name>Sankt Lars kyrka</name></rtept>
+    <rtept lat="58.41149497001949" lon="15.625336841992482"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="58.411389" lon="15.618278"><name>Saint Mary&#39;s Chapel (Linköping Cathedral)</name></rtept>
+    <rtept lat="58.41176693111465" lon="15.617908725876106"><name>DOMKYRKOSYSSLOMANSGÅRDEN</name></rtept>
+    <rtept lat="58.41124015017972" lon="15.617445461676313"><name>Linköpings domkyrka</name></rtept>
+    <rtept lat="58.41341667" lon="15.61794444"><name>Sankt Nikolai katolska kyrka</name></rtept>
+    <rtept lat="58.408379824791" lon="15.613659609726463"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="58.404176705771" lon="15.613741554976"><name>Stolplyckans kyrka</name></rtept>
+    <rtept lat="58.4025" lon="15.61"><name>Tomaskyrkan</name></rtept>
+    <rtept lat="58.4062578" lon="15.6053224"><name>Uppståndelsens kapell</name></rtept>
+    <rtept lat="58.41416667" lon="15.6"><name>Ansgarskyrkan</name></rtept>
+    <rtept lat="58.4251" lon="15.5788"><name>Skäggetorps kyrka</name></rtept>
+    <rtept lat="58.40988889" lon="15.56697222"><name>Mikaelskyrkan</name></rtept>
+    <rtept lat="58.3875" lon="15.56666667"><name>Lambohovskyrkan</name></rtept>
+    <rtept lat="58.37125" lon="15.556"><name>Slaka kyrka</name></rtept>
+    <rtept lat="58.363922958499" lon="15.567828011057"><name>Ljusets kapell</name></rtept>
+    <rtept lat="58.39758333" lon="15.61152778"><name>Garnisonskyrkan</name></rtept>
+    <rtept lat="58.39277778" lon="15.63916667"><name>Berga kyrka</name></rtept>
+    <rtept lat="58.39600278" lon="15.66344167"><name>Sankta Maria i Johannelund</name></rtept>
+    <rtept lat="58.38083333" lon="15.67861111"><name>Sankt Hans kyrka</name></rtept>
+    <rtept lat="58.37769167" lon="15.64323889"><name>Vidingsjö kyrka</name></rtept>
+    <rtept lat="58.41666667" lon="15.52361111"><name>Kärna kyrka</name></rtept>
+  </rte>
+</gpx>

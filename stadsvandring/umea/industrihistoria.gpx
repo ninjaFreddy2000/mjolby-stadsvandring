@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Umeå</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="63.83611111" lon="20.12611111"><name>Notvarpsbron</name><desc>Notvarpsbron är en hängbro som går över Umeälven, Umeå kommun.</desc></wpt>
+  <wpt lat="63.82976" lon="20.14316"><name>Baggbölebron</name><desc>bro i Umeå</desc></wpt>
+  <wpt lat="63.826527777778" lon="20.220194444444"><name>Lundabron</name><desc>bro i Umeå</desc></wpt>
+  <wpt lat="63.825" lon="20.249166666667"><name>Gamla bron</name><desc>en bro i Umeå</desc></wpt>
+  <wpt lat="63.8237" lon="20.2494"><name>Tegsbron</name><desc>bro i Umeå</desc></wpt>
+  <wpt lat="63.820833333333" lon="20.266666666667"><name>Kyrkbron</name><desc>bro i Umeå</desc></wpt>
+  <rte><name>Industrihistoria i Umeå</name>
+    <rtept lat="63.83611111" lon="20.12611111"><name>Notvarpsbron</name></rtept>
+    <rtept lat="63.82976" lon="20.14316"><name>Baggbölebron</name></rtept>
+    <rtept lat="63.826527777778" lon="20.220194444444"><name>Lundabron</name></rtept>
+    <rtept lat="63.825" lon="20.249166666667"><name>Gamla bron</name></rtept>
+    <rtept lat="63.8237" lon="20.2494"><name>Tegsbron</name></rtept>
+    <rtept lat="63.820833333333" lon="20.266666666667"><name>Kyrkbron</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Nyköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Nyköping till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/nykoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Nyköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Nyköping till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/nykoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Nyköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Nyköping till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 109 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"nykoping","sourceSlug":"stadsvandring/nykoping","centroid":{"lat":58.74558156089156,"lng":17.02221170621509},"stops":[{"name":"Nyköpingshus","lat":58.74847222,"lng":17.01166667},{"name":"Alla Helgona kyrka","lat":58.75139722,"lng":17.01597778},{"name":"Bergshammars kyrka","lat":58.7422,"lng":16.90360278}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Nyköping","description":"Upptäck Nyköping till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/nykoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Nyköpingshus","description":"medeltida borg i Nyköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.74847222,"longitude":17.01166667}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Alla Helgona kyrka","description":"kyrkobyggnad i Nyköping i Strängnäs stift","geo":{"@type":"GeoCoordinates","latitude":58.75139722,"longitude":17.01597778}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Bergshammars kyrka","description":"kyrkobyggnad i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.7422,"longitude":16.90360278}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Gripes Modellteatermuseum","description":"arbetslivsmuseum i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.7545333333,"longitude":17.0104833333}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Kilakastalen","description":"borg i Södermanland","url":"https://stadsvandring.io/p/wd-nykoping-kilakastalen-q10545362","geo":{"@type":"GeoCoordinates","latitude":58.740934,"longitude":16.960095}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Palmemonumentet","description":"Palmemonumentet är ett minnesmärke i brons utanför Träffen i Nyköping.","geo":{"@type":"GeoCoordinates","latitude":58.761722,"longitude":17.021806}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Sankt Nicolai kyrka","description":"kyrkobyggnad i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.7536,"longitude":17.0097}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Sankta Katarina kyrka","description":"kyrkobyggnad i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.72861111,"longitude":17.01388889}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Släbro","description":"område utanför Nyköping, Södermanland.","url":"https://stadsvandring.io/p/wd-nykoping-slabro-q10671741","geo":{"@type":"GeoCoordinates","latitude":58.77027778,"longitude":16.97138889}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Stjärnholm","description":"herrgård och stiftsgård i Strängnäs stift","geo":{"@type":"GeoCoordinates","latitude":58.69402778,"longitude":17.03222222}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Stjärnholms kyrka","description":"kyrkobyggnad i Oxelösunds kommun","geo":{"@type":"GeoCoordinates","latitude":58.692625,"longitude":17.03163889}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Torgbrunnen, Nyköping","description":"Torgbrunnen är en tidigare vattenpost och dricksvattenfontän belägen framför Länsstyrelsens byggnad på Stora torget i Nyköping.","url":"https://stadsvandring.io/p/wd-nykoping-torgbrunnen-nykoping-q10700090","geo":{"@type":"GeoCoordinates","latitude":58.753,"longitude":17.0086}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Sankta Anna katolska kyrka","description":"katolsk kyrka i Nyköping","geo":{"@type":"GeoCoordinates","latitude":58.75248,"longitude":16.99476}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Väderbrunn","description":"borg i Södermanland (Bergshammar 75:1)","geo":{"@type":"GeoCoordinates","latitude":58.759043,"longitude":16.917967}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Svansta","description":"by i Helgona socken","geo":{"@type":"GeoCoordinates","latitude":58.783611111111,"longitude":17.041944444444}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Näsuddens fyr","description":"en fyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.727888888889,"longitude":17.117472222222}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Sjösa Östra övre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.736433333333,"longitude":17.108333333333}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Sjösa Norra övre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.742277777778,"longitude":17.094972222222}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Sjösa nedre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.7374,"longitude":17.10275}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Östra Linudden","description":"en fyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.737055555556,"longitude":17.102277777778}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Västra Linudden","description":"en fyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.740111111111,"longitude":17.084277777778}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Linudden nedre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.740583333333,"longitude":17.084416666667}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Linudden övre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.741444444444,"longitude":17.079472222222}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Brandholmens fyr","description":"en fyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.735833333333,"longitude":17.051027777778}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Intaget nedre","description":"en ensfyr i Nyköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.73525,"longitude":17.050638888889}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Nyköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 109 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Nyköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 109 sevärdheter i Nyköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Nyköpingshus?","acceptedAnswer":{"@type":"Answer","text":"medeltida borg i Nyköping, Sverige"}},{"@type":"Question","name":"Vad är Alla Helgona kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Nyköping i Strängnäs stift"}},{"@type":"Question","name":"Vad är Bergshammars kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Nyköpings kommun"}},{"@type":"Question","name":"Vad är Gripes Modellteatermuseum?","acceptedAnswer":{"@type":"Answer","text":"arbetslivsmuseum i Nyköpings kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Nyköping","item":"https://stadsvandring.io/stadsvandring/nykoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Nyköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Nyköping</span><span class="badge">109 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Nyköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Nyköping till fots: 109 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Nyköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-nykoping-nykopingshus-q1779071"><b>1. Nyköpingshus</b><span>Slott · medeltida borg i Nyköping, Sverige</span></a>
+<a class="tile" href="/p/wd-nykoping-alla-helgona-kyrka-q10405429"><b>2. Alla Helgona kyrka</b><span>Kyrka · kyrkobyggnad i Nyköping i Strängnäs stift</span></a>
+<a class="tile" href="/p/wd-nykoping-bergshammars-kyrka-q10428504"><b>3. Bergshammars kyrka</b><span>Kyrka · kyrkobyggnad i Nyköpings kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Nyköping · 109</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Nyköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 54</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-uppfordringsanlaggning-nykoping-c6aefc"><b>Uppfordringsanläggning</b></a> — En registrerad uppfordringsanläggning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-pappersindustri-nykoping-d9a28a"><b>Pappersindustri</b></a> — Ett privilegierat pappersbruk som verkade från 1729 till en brand 1802.</li>
+<li><a href="/karta?plats=ksamsok-brunn-kallkalla-nykoping-46e3e8"><b>Brunn/kallkälla</b></a> — En stensatt brunn eller kallkälla, kanske ett gammalt vattenhål.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-c2cb0e"><b>Fyndplats</b></a> — Fyndplats för en järnyxa från slottets vallgrav.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-nykoping-2a62a7"><b>Vägmärke</b></a> — Ett registrerat vägmärke med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-textilindustri-nykoping-4985e4"><b>Textilindustri</b></a> — Kallmurade rester av ett troligt sämskmakeri från 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-nykoping-c9625a"><b>Bytomt/gårdstomt</b></a> — En registrerad bytomt eller gårdstomt med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-ostra-kungsladugarden-bytomt-gardstomt-nykoping-abc3b0"><b>Östra Kungsladugården, Bytomt/gårdstomt</b></a> — Bytomten Östra Kungsladugården med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-nykoping-609ad9"><b>Hägnad</b></a> — En stenmur på omkring 45 meter, delvis liggande på berg.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-nykoping-394daf"><b>Stensättning</b></a> — En registrerad stensättning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-kemisk-industri-nykoping-eb7928"><b>Kemisk industri</b></a> — En registrerad lämning efter kemisk industri med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-0ca574"><b>Fyndplats</b></a> — En registrerad fyndplats med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-ef6b85"><b>Fyndplats</b></a> — Fyndplats för ett välvt bronsspänne med djurornamentik.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-nykoping-a68f4f"><b>Brott/täkt</b></a> — Ett registrerat brott eller täkt med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-nykoping-5cd4ae"><b>Träindustri</b></a> — En registrerad lämning efter träindustri med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-nykoping-f517f9"><b>Träindustri</b></a> — Plats för en sågkvarn belagd på en karta från 1676.</li>
+<li><a href="/karta?plats=ksamsok-varv-slip-nykoping-54cfe4"><b>Varv/slip</b></a> — Ett skeppsvarv vid Nyköpings skeppsbro, verksamt på 1700- och 1800-talet.</li>
+<li><a href="/karta?plats=ksamsok-gruvomrade-nykoping-b0328f"><b>Gruvområde</b></a> — Ett registrerat gruvområde med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-e6021d"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-8e8a30"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-95e51b"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-6a4559"><b>Fyndplats</b></a> — En registrerad fyndplats med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-halltorp-lagenhetsbebyggelse-nykoping-11c8f8"><b>Hälltorp, Lägenhetsbebyggelse</b></a> — Lägenhetsbebyggelsen Hälltorp med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-nykoping-2fca6a"><b>Hamnanläggning</b></a> — En gammal båtbrygga vid ån, i dag ett promenadstråk.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-nykoping-dc9074"><b>Stadslager</b></a> — Ett medeltida och yngre stadslager i Nyköpings centrum.</li>
+<li><a href="/p/ksamsok-industri-ovrig-nykoping-3becea"><b>Industri övrig</b></a> — Rester av ett troligt snidverk vid forsen med rötter i 1600-talet.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-nykoping-078be6"><b>Färdväg</b></a> — En stensatt vägbank, rest av en äldre åkerväg.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-affbce"><b>Fyndplats</b></a> — En registrerad fyndplats med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-traindustri-nykoping-e522cd"><b>Träindustri</b></a> — Plats för en såg som belagts på 1600- och 1700-talskartor.</li>
+<li><a href="/karta?plats=ksamsok-sundbergstorp-lagenhetsbebyggelse-nykoping-b9f7ff"><b>Sundbergstorp, Lägenhetsbebyggelse</b></a> — Lägenhetsbebyggelsen Sundbergstorp med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-nykoping-e1145e"><b>Fyndplats</b></a> — Fyndplats för en fingerring av brons med inskrift.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-nykoping-aead40"><b>Bytomt/gårdstomt</b></a> — En registrerad bytomt eller gårdstomt med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-gruvhal-nykoping-f54864"><b>Gruvhål</b></a> — Ett registrerat gruvhål med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-nykoping-787c2e"><b>Fornlämningsliknande bildning</b></a> — En registrerad fornlämningsliknande bildning med sparsam dokumentation.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-nykoping-b97932"><b>Fartygs-/båtlämning</b></a> — Rester av en gammal båt funna 1959 under rådhusets källare.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-cda425"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-nykoping-3a776c"><b>Bytomt/gårdstomt</b></a> — Gårdstomten Storgården, känd från 1600-talskartor.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-nykoping-dcc38f"><b>Bytomt/gårdstomt</b></a> — En registrerad bytomt eller gårdstomt med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-dbdc29"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-nykoping-cf587b"><b>Husgrund, historisk tid</b></a> — En registrerad husgrund från historisk tid med sparsam dokumentation.</li>
+<li><a href="/p/ksamsok-hamnanlaggning-nykoping-25613d"><b>Hamnanläggning</b></a> — Rester av en brygga med pålar undersökt 2010.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-nykoping-139691"><b>Stensättning</b></a> — En registrerad stensättning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-nykoping-64dca3"><b>Stensättning</b></a> — En registrerad stensättning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-metallindustri-jarnbruk-nykoping-ab2aa1"><b>Metallindustri/järnbruk</b></a> — Nyköpings mässingsbruk, grundat på privilegium från 1646.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-nykoping-f5289b"><b>Bytomt/gårdstomt</b></a> — En registrerad bytomt eller gårdstomt med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-nykoping-f09ffc"><b>Vägmärke</b></a> — Ett registrerat vägmärke med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-nykoping-562ddc"><b>Hägnad</b></a> — En stenmur som följer bergets fot, med en väg intill.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-nykoping-2884bd"><b>Fornlämningsliknande bildning</b></a> — En registrerad fornlämningsliknande bildning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-nykoping-eea4c5"><b>Kvarn</b></a> — Storhuskvarn, i drift till 1971 med rötter i 1400-talet.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-nykoping-c4c2f0"><b>Husgrund, historisk tid</b></a> — En husgrund i sluttning, kallmurad av huggna block.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-nykoping-ff62a0"><b>Lägenhetsbebyggelse</b></a> — En registrerad lägenhetsbebyggelse med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-nykoping-1fb8c3"><b>Stensättning</b></a> — En registrerad stensättning med sparsam dokumentation.</li>
+<li><a href="/karta?plats=ksamsok-rose-nykoping-fb283b"><b>Röse</b></a> — Ett registrerat röse med sparsam dokumentation.</li>
+<li><a href="/p/ksamsok-kvarn-nykoping-63277c"><b>Kvarn</b></a> — En kvarn i Forsfallet med anor från medeltiden, återuppbyggd flera gånger efter översvämning och brand.</li>
+</ul>
+<h3 class="city-h3">Torn · 17</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-nasuddens-fyr-q44597372"><b>Näsuddens fyr</b></a> — en fyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sjosa-ostra-ovre-q44597697"><b>Sjösa Östra övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sjosa-norra-ovre-q44597960"><b>Sjösa Norra övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sjosa-nedre-q44598175"><b>Sjösa nedre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-ostra-linudden-q44598351"><b>Östra Linudden</b></a> — en fyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-vastra-linudden-q44598568"><b>Västra Linudden</b></a> — en fyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-linudden-nedre-q44598784"><b>Linudden nedre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-linudden-ovre-q44598975"><b>Linudden övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-brandholmens-fyr-q44599268"><b>Brandholmens fyr</b></a> — en fyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-intaget-nedre-q44599554"><b>Intaget nedre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-intaget-ostra-ovre-q44599745"><b>Intaget Östra övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-intaget-vastra-ovre-q44599977"><b>Intaget Västra övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-herrhagen-nedre-q44600200"><b>Herrhagen nedre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-herrhagen-ovre-q44600350"><b>Herrhagen övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-nykopings-hamn-ovre-q110830330"><b>Nyköpings Hamn övre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-nykopings-hamn-nedre-q110830329"><b>Nyköpings Hamn nedre</b></a> — en ensfyr i Nyköpings kommun</li>
+<li><a href="/karta?plats=ksamsok-karntornet-nykoping-028930"><b>Kärntornet</b></a> — Ett torn i Nyköping upptaget i Bebyggelseregistret. <span class="era">1240–1259</span></li>
+</ul>
+<h3 class="city-h3">Byggnad · 14</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-stjarnholm-q10680332"><b>Stjärnholm</b></a> — herrgård och stiftsgård i Strängnäs stift</li>
+<li><a href="/karta?plats=ksamsok-sankt-anna-sjukhus-hospitalet-nykoping-028969"><b>SANKT ANNA SJUKHUS (HOSPITALET)</b></a> — Ett klassicistiskt sjukhus från 1799 ritat av Olof Tempelman. <span class="era">1799–1799</span></li>
+<li><a href="/karta?plats=ksamsok-lusthus-nykoping-049336"><b>LUSTHUS</b></a> — Ett vitmålat lusthus av trä från 1800-talets början. <span class="era">1800–1850</span></li>
+<li><a href="/p/ksamsok-porthus-nykoping-700321"><b>PORTHUS</b></a> — Den bevarade porthusdelen av Karl IX:s renässansslott, senare använd som fånghus. <span class="era">1570–1599</span></li>
+<li><a href="/karta?plats=ksamsok-huvudbyggnad-nykoping-049337"><b>HUVUDBYGGNAD</b></a> — En envånings huvudbyggnad som fick sitt utseende vid 1800-talets mitt. <span class="era">1723–1729</span></li>
+<li><a href="/p/ksamsok-nykopings-stadshus-nykoping-014786"><b>Nyköpings stadshus</b></a> — Ett modernistiskt stadshus från 1960-talet med tydliga influenser från Alvar Aalto. <span class="era">1962–1969</span></li>
+<li><a href="/p/ksamsok-residenset-nykoping-700323"><b>RESIDENSET</b></a> — Det gamla residenset från 1726 som byggts på medeltida murar och haft många funktioner. <span class="era">1726–1726</span></li>
+<li><a href="/p/ksamsok-residenset-i-nykoping-nykoping-356510"><b>RESIDENSET I NYKÖPING</b></a> — Landshövdingeresidenset vid Stora Torget från 1806, uppfört i nyklassisk stil. <span class="era">1806–1806</span></li>
+<li><a href="/p/ksamsok-tingshus-nykoping-585875"><b>Tingshus</b></a> — Ett tingshus i rött tegel från 1910–11 med en hög takryttare för tingsklockan. <span class="era">1910–1911</span></li>
+<li><a href="/p/ksamsok-nykopings-radhus-nykoping-014785"><b>Nyköpings rådhus</b></a> — Nyköpings rådhus, en putsad stenbyggnad med sessionssal utsmyckad kring 1900. <span class="era">1723–1723</span></li>
+<li><a href="/karta?plats=ksamsok-odd-fellow-nykoping-017571"><b>ODD FELLOW</b></a> — En byggnad i Nyköping upptagen i Bebyggelseregistret. <span class="era">1912–1913</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-nykoping-695781"><b>FLYGELBYGGNAD</b></a> — En timrad och vitmålad flygelbyggnad från 1720-talet med bostäder. <span class="era">1723–1729</span></li>
+<li><a href="/karta?plats=ksamsok-gustav-vasas-rondell-nykoping-028931"><b>Gustav Vasas rondell</b></a> — En byggnad i Nyköping förd i Bebyggelseregistret. <span class="era">1500–1599</span></li>
+<li><a href="/karta?plats=ksamsok-galdstugan-nykoping-700322"><b>GÄLDSTUGAN</b></a> — En gäldstuga från 1746 där skuldsatta hölls i förvar. <span class="era">1746–1746</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 12</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-alla-helgona-kyrka-q10405429"><b>Alla Helgona kyrka</b></a> — kyrkobyggnad i Nyköping i Strängnäs stift</li>
+<li><a href="/karta?plats=wd-nykoping-bergshammars-kyrka-q10428504"><b>Bergshammars kyrka</b></a> — kyrkobyggnad i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sankt-nicolai-kyrka-q10661428"><b>Sankt Nicolai kyrka</b></a> — kyrkobyggnad i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sankta-katarina-kyrka-q10661529"><b>Sankta Katarina kyrka</b></a> — kyrkobyggnad i Nyköpings kommun</li>
+<li><a href="/karta?plats=wd-nykoping-stjarnholms-kyrka-q10680333"><b>Stjärnholms kyrka</b></a> — kyrkobyggnad i Oxelösunds kommun</li>
+<li><a href="/karta?plats=wd-nykoping-sankta-anna-katolska-kyrka-q18332454"><b>Sankta Anna katolska kyrka</b></a> — katolsk kyrka i Nyköping</li>
+<li><a href="/karta?plats=wd-nykoping-hjortensbergskyrkan-q67183772"><b>Hjortensbergskyrkan</b></a> — kyrkobyggnad i Nyköpings kommun</li>
+<li><a href="/karta?plats=ksamsok-franciscuskapellets-klockstapel-nykoping-016530"><b>FRANCISCUSKAPELLETS KLOCKSTAPEL</b></a> — En klockstapel i Nyköping upptagen i Bebyggelseregistret. <span class="era">1967–1967</span></li>
+<li><a href="/karta?plats=ksamsok-franciscus-kapell-nykoping-440897"><b>FRANCISCUS KAPELL</b></a> — Ett kapell i Nyköping upptaget i Bebyggelseregistret. <span class="era">1971–1972</span></li>
+<li><a href="/karta?plats=ksamsok-arnokyrkan-nykoping-014654"><b>ARNÖKYRKAN</b></a> — En kyrka i Nyköping upptagen i Bebyggelseregistret. <span class="era">1997</span></li>
+<li><a href="/karta?plats=ksamsok-alla-helgona-kyrkans-klockstapel-nykoping-041129"><b>ALLA HELGONA KYRKANS KLOCKSTAPEL</b></a> — En klockstapel i Nyköping upptagen i Bebyggelseregistret. <span class="era">1725–1725</span></li>
+<li><a href="/karta?plats=ksamsok-s-t-nicolai-kyrkas-klockstapel-nykoping-041119"><b>S:T NICOLAI KYRKAS KLOCKSTAPEL</b></a> — En klockstapel i Nyköping upptagen i Bebyggelseregistret. <span class="era">1692–1692</span></li>
+</ul>
+<h3 class="city-h3">Slott · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-nykopingshus-q1779071"><b>Nyköpingshus</b></a> — medeltida borg i Nyköping, Sverige</li>
+<li><a href="/p/wd-nykoping-kilakastalen-q10545362"><b>Kilakastalen</b></a> — borg i Södermanland</li>
+<li><a href="/karta?plats=wd-nykoping-vaderbrunn-q29939997"><b>Väderbrunn</b></a> — borg i Södermanland (Bergshammar 75:1)</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-palmemonumentet-q10615466"><b>Palmemonumentet</b></a> — Palmemonumentet är ett minnesmärke i brons utanför Träffen i Nyköping.</li>
+<li><a href="/p/wd-nykoping-torgbrunnen-nykoping-q10700090"><b>Torgbrunnen, Nyköping</b></a> — Torgbrunnen är en tidigare vattenpost och dricksvattenfontän belägen framför Länsstyrelsens byggnad på Stora torget i Nyköping.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-nykoping-251196"><b>Minnesmärke</b></a> — En minnessten från 1768 rest intill en bro.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-nykoping-slabro-q10671741"><b>Släbro</b></a> — område utanför Nyköping, Södermanland.</li>
+<li><a href="/karta?plats=wd-nykoping-svansta-q31885773"><b>Svansta</b></a> — by i Helgona socken</li>
+</ul>
+<h3 class="city-h3">museum · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-nykoping-gripes-modellteatermuseum-q10508880"><b>Gripes Modellteatermuseum</b></a> — arbetslivsmuseum i Nyköpings kommun</li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-borg-nykoping-e18e61"><b>Borg</b></a> — Nyköpingshus, en medeltida borg som byggts om genom seklerna.</li>
+</ul>
+<h3 class="city-h3">Bro · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-bro-nykoping-0a2783"><b>Bro</b></a> — Rester av en bro med pålar daterade till vintern 1613–1614.</li>
+</ul>
+<h3 class="city-h3">Runsten · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-nykoping-6fdb74"><b>Runristning</b></a> — En runsten från 1000-talet inmurad i Allhelgonakyrkans vägg.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 109 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/nykoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/nykoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Nyköping gratis?</summary><p>Ja. Karta, alla 109 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Nyköping?</summary><p>Vandringen samlar 109 sevärdheter i Nyköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Nyköpingshus?</summary><p>medeltida borg i Nyköping, Sverige</p></details>
+<details class="faq"><summary>Vad är Alla Helgona kyrka?</summary><p>kyrkobyggnad i Nyköping i Strängnäs stift</p></details>
+<details class="faq"><summary>Vad är Bergshammars kyrka?</summary><p>kyrkobyggnad i Nyköpings kommun</p></details>
+<details class="faq"><summary>Vad är Gripes Modellteatermuseum?</summary><p>arbetslivsmuseum i Nyköpings kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

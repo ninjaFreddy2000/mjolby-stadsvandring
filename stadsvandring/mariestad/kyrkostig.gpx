@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Mariestad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.738" lon="13.91161111"><name>Berga kyrka</name><desc>kyrkobyggnad som tillhör Lyrestads församling i Skara stift</desc></wpt>
+  <wpt lat="58.70398079641032" lon="13.8467099840088"><name>Kyrka</name><desc>Skogskapellet med krematorium, invigt 1976.</desc></wpt>
+  <wpt lat="58.702277784746535" lon="13.836305699501782"><name>SÖDRA BEGRAVNINGSPLATSENS KAPELL</name><desc>Ett gravkapell från 1800-talets slut på Södra kyrkogården.</desc></wpt>
+  <wpt lat="58.70773303964666" lon="13.821684232603609"><name>Frikyrka / bönehus /missionshus</name><desc>Missionskyrkan från 1957, byggd på den gamla missionshustomten.</desc></wpt>
+  <wpt lat="58.71250388351949" lon="13.822486425818221"><name>MARIESTADS DOMKYRKA</name><desc>Domkyrkan, grundad av hertig Karl 1593 med Klara kyrka som förebild.</desc></wpt>
+  <wpt lat="58.70455" lon="13.804025"><name>Marieholmskyrkan</name><desc>kyrkobyggnad i Mariestads kommun</desc></wpt>
+  <wpt lat="58.6838" lon="13.8127"><name>Leksbergs kyrka</name><desc>kyrkobyggnad i Mariestads kommun</desc></wpt>
+  <wpt lat="58.670268" lon="13.822448"><name>Leksberg 32:2</name><desc>kyrka/kapell i Västergötland</desc></wpt>
+  <wpt lat="58.66611111" lon="13.86454722"><name>Ullervads kyrka</name><desc>kyrkobyggnad i Mariestads kommun</desc></wpt>
+  <wpt lat="58.665496" lon="13.864344"><name>Ullervad 47:1</name><desc>kyrka/kapell i Västergötland</desc></wpt>
+  <rte><name>Kyrkostigen i Mariestad</name>
+    <rtept lat="58.738" lon="13.91161111"><name>Berga kyrka</name></rtept>
+    <rtept lat="58.70398079641032" lon="13.8467099840088"><name>Kyrka</name></rtept>
+    <rtept lat="58.702277784746535" lon="13.836305699501782"><name>SÖDRA BEGRAVNINGSPLATSENS KAPELL</name></rtept>
+    <rtept lat="58.70773303964666" lon="13.821684232603609"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="58.71250388351949" lon="13.822486425818221"><name>MARIESTADS DOMKYRKA</name></rtept>
+    <rtept lat="58.70455" lon="13.804025"><name>Marieholmskyrkan</name></rtept>
+    <rtept lat="58.6838" lon="13.8127"><name>Leksbergs kyrka</name></rtept>
+    <rtept lat="58.670268" lon="13.822448"><name>Leksberg 32:2</name></rtept>
+    <rtept lat="58.66611111" lon="13.86454722"><name>Ullervads kyrka</name></rtept>
+    <rtept lat="58.665496" lon="13.864344"><name>Ullervad 47:1</name></rtept>
+  </rte>
+</gpx>

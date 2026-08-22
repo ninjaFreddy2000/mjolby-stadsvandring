@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Sala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.93214" lon="16.61744"><name>Sala sockenkyrka</name><desc>kyrkobyggnad som tillhör Sala församling i Västerås stift</desc></wpt>
+  <wpt lat="59.92197116875367" lon="16.605518525407394"><name>Frikyrka / bönehus /missionshus</name><desc>Ett missionshus i Sala uppfört 1879–1880.</desc></wpt>
+  <wpt lat="59.920305555556" lon="16.602055555556"><name>Kristina kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Sala kommun, Sverige</desc></wpt>
+  <wpt lat="59.92037843729009" lon="16.612166433326568"><name>Frikyrka / bönehus /missionshus</name><desc>En frikyrka från 1924 som senare blev biograf.</desc></wpt>
+  <wpt lat="59.91475098997276" lon="16.627361961089587"><name>Kyrka/kapell</name><desc>Medeltida kyrka med sägen om en räddning genom heliga Birgitta.</desc></wpt>
+  <wpt lat="59.91409" lon="16.62721"><name>Norrby kyrka</name><desc>kyrkobyggnad i Sala kommun</desc></wpt>
+  <wpt lat="59.87" lon="16.545"><name>Kila kyrka</name><desc>kyrkobyggnad i Sala kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Sala</name>
+    <rtept lat="59.93214" lon="16.61744"><name>Sala sockenkyrka</name></rtept>
+    <rtept lat="59.92197116875367" lon="16.605518525407394"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="59.920305555556" lon="16.602055555556"><name>Kristina kyrka</name></rtept>
+    <rtept lat="59.92037843729009" lon="16.612166433326568"><name>Frikyrka / bönehus /missionshus</name></rtept>
+    <rtept lat="59.91475098997276" lon="16.627361961089587"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="59.91409" lon="16.62721"><name>Norrby kyrka</name></rtept>
+    <rtept lat="59.87" lon="16.545"><name>Kila kyrka</name></rtept>
+  </rte>
+</gpx>

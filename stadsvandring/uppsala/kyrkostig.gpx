@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Uppsala</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.953888888889" lon="17.694861111111"><name>Lyckebokyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.8995" lon="17.6318"><name>Gamla Uppsala kyrka</name><desc>kyrkobyggnad i Uppsala kommun, Sverige</desc></wpt>
+  <wpt lat="59.87805556" lon="17.61972222"><name>Tunabergskyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.87833333" lon="17.64666667"><name>Lötenkyrkan</name><desc>kyrkobyggnad i Svenska kyrkan-Evangeliska fosterlandsstiftelsen i Uppsala, Sweden</desc></wpt>
+  <wpt lat="59.86895556" lon="17.64356389"><name>Korskyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.86769444" lon="17.649875"><name>Sankt Pers kyrka</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.86045" lon="17.65650833"><name>Almtunakyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.855472222222" lon="17.649138888889"><name>Samariterhemmets kyrka</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.857475" lon="17.64370556"><name>Baptistkyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.85638889" lon="17.63888889"><name>Sankt Lars kyrka</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.857149319964" lon="17.637940432327"><name>Uppsala hospitalskyrka</name><desc>kyrka i Uppsala</desc></wpt>
+  <wpt lat="59.855475" lon="17.638843"><name>Gravkapell</name><desc>kapell i Uppsala kommun</desc></wpt>
+  <wpt lat="59.85688889" lon="17.63260833"><name>Helga Trefaldighets kyrka</name><desc>kyrkobyggnad i Uppsala</desc></wpt>
+  <wpt lat="59.8581519" lon="17.6336322"><name>Uppsala Domkyrka</name><desc>Stopp på ljudturen «Stadsvandring i rasismens historia i Uppsala» i Uppsala.</desc></wpt>
+  <wpt lat="59.859625" lon="17.63638889"><name>Uppsala Franciskankonvent</name><desc>Uppsala franciskankonvent var ett konvent tillhörigt Franciskanorden i Uppsala.</desc></wpt>
+  <wpt lat="59.85990556" lon="17.63871667"><name>Pingstkyrkan, Uppsala</name><desc>kyrkobyggnad i Uppsala, Sverige</desc></wpt>
+  <wpt lat="59.86168333" lon="17.63628333"><name>Missionskyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.86456667" lon="17.63452222"><name>Mikaelskyrkan</name><desc>kyrkobyggnad i Uppsala</desc></wpt>
+  <wpt lat="59.86274722" lon="17.61925556"><name>Vindhemskyrkan S:ta Birgitta</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.86886111" lon="17.66818056"><name>Salabackekyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.86597222" lon="17.68572222"><name>Årstakyrkan</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.8759954" lon="17.6863591"><name>Vaksala kyrka</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <wpt lat="59.832944444444" lon="17.744888888889"><name>Danmarks kyrka</name><desc>kyrkobyggnad i Uppsala kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Uppsala</name>
+    <rtept lat="59.953888888889" lon="17.694861111111"><name>Lyckebokyrkan</name></rtept>
+    <rtept lat="59.8995" lon="17.6318"><name>Gamla Uppsala kyrka</name></rtept>
+    <rtept lat="59.87805556" lon="17.61972222"><name>Tunabergskyrkan</name></rtept>
+    <rtept lat="59.87833333" lon="17.64666667"><name>Lötenkyrkan</name></rtept>
+    <rtept lat="59.86895556" lon="17.64356389"><name>Korskyrkan</name></rtept>
+    <rtept lat="59.86769444" lon="17.649875"><name>Sankt Pers kyrka</name></rtept>
+    <rtept lat="59.86045" lon="17.65650833"><name>Almtunakyrkan</name></rtept>
+    <rtept lat="59.855472222222" lon="17.649138888889"><name>Samariterhemmets kyrka</name></rtept>
+    <rtept lat="59.857475" lon="17.64370556"><name>Baptistkyrkan</name></rtept>
+    <rtept lat="59.85638889" lon="17.63888889"><name>Sankt Lars kyrka</name></rtept>
+    <rtept lat="59.857149319964" lon="17.637940432327"><name>Uppsala hospitalskyrka</name></rtept>
+    <rtept lat="59.855475" lon="17.638843"><name>Gravkapell</name></rtept>
+    <rtept lat="59.85688889" lon="17.63260833"><name>Helga Trefaldighets kyrka</name></rtept>
+    <rtept lat="59.8581519" lon="17.6336322"><name>Uppsala Domkyrka</name></rtept>
+    <rtept lat="59.859625" lon="17.63638889"><name>Uppsala Franciskankonvent</name></rtept>
+    <rtept lat="59.85990556" lon="17.63871667"><name>Pingstkyrkan, Uppsala</name></rtept>
+    <rtept lat="59.86168333" lon="17.63628333"><name>Missionskyrkan</name></rtept>
+    <rtept lat="59.86456667" lon="17.63452222"><name>Mikaelskyrkan</name></rtept>
+    <rtept lat="59.86274722" lon="17.61925556"><name>Vindhemskyrkan S:ta Birgitta</name></rtept>
+    <rtept lat="59.86886111" lon="17.66818056"><name>Salabackekyrkan</name></rtept>
+    <rtept lat="59.86597222" lon="17.68572222"><name>Årstakyrkan</name></rtept>
+    <rtept lat="59.8759954" lon="17.6863591"><name>Vaksala kyrka</name></rtept>
+    <rtept lat="59.832944444444" lon="17.744888888889"><name>Danmarks kyrka</name></rtept>
+  </rte>
+</gpx>

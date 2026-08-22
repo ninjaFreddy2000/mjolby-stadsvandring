@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Söderköping — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Söderköping till fots: 75 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 75 stopp och nedladdningsbar…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/soderkoping">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Söderköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Söderköping till fots: 75 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 75 stopp och nedladdningsbar…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/soderkoping">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Söderköping — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Söderköping till fots: 75 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 75 stopp och nedladdningsbar…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"soderkoping","sourceSlug":"stadsvandring/soderkoping","centroid":{"lat":58.475908461519865,"lng":16.355961838661642},"stops":[{"name":"Mems slott","lat":58.48166667,"lng":16.41111111},{"name":"Bolltorp","lat":58.439555555556,"lng":16.407472222222},{"name":"Sankt Laurentii kyrka","lat":58.480203,"lng":16.319364}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Söderköping","description":"Upptäck Söderköping till fots: 75 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/soderkoping","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Mems slott","description":"slott i Norrköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.48166667,"longitude":16.41111111}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Bolltorp","description":"Bolltorp är ett säteri i Östergötland, 7 kilometer sydost om Söderköping i Skönberga socken, Söderköpings kommun.","geo":{"@type":"GeoCoordinates","latitude":58.439555555556,"longitude":16.407472222222}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Sankt Laurentii kyrka","description":"kyrkobyggnad i Svenska kyrkan i Söderköping, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.480203,"longitude":16.319364}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Skönberga kyrka","description":"kyrkobyggnad i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.46537,"longitude":16.35861}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Tingstads kyrka","description":"kyrka i Sverige","geo":{"@type":"GeoCoordinates","latitude":58.52922222,"longitude":16.2915}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Tåby kyrka","description":"kyrkobyggnad i Svenska kyrkan i Tåby, Sverige","geo":{"@type":"GeoCoordinates","latitude":58.5141,"longitude":16.3616}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Drothems kyrka","description":"kyrkobyggnad i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.48086,"longitude":16.31591}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Söderköpings fyr","description":"en fyr vid Storåns utlopp i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.474333333333,"longitude":16.412166666667}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan","description":"kyrka i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.478861111111,"longitude":16.327472222222}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Vintervadskyrkan","description":"kyrka i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.4815,"longitude":16.318916666667}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Arken","description":"kyrka i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.46825,"longitude":16.317916666667}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Mems fyr","description":"en fyr vid Göta kanal i Söderköpings kommun","geo":{"@type":"GeoCoordinates","latitude":58.479277777778,"longitude":16.420444444444}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"HAMMARKINDS OCH SKÄRSKINDS HÄRADERS TINGSHUS","description":"Ett tingshus från 1904 i återhållsam jugendbarock vid Göta kanal i Söderköping.","url":"https://stadsvandring.io/p/ksamsok-hammarkinds-och-skarskinds-haraders-tingshus-soderkoping-126261","geo":{"@type":"GeoCoordinates","latitude":58.480624050220676,"longitude":16.329272871087827}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Klockstapel","description":"En klockstapel i Söderköping från 1700-talet.","geo":{"@type":"GeoCoordinates","latitude":58.465113225932946,"longitude":16.35827213164423}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Lägenhetsbebyggelse","description":"Grunden efter en backstuga med spismursrest, känd från lantmäteriakter sedan 1690.","url":"https://stadsvandring.io/p/ksamsok-lagenhetsbebyggelse-soderkoping-607db1","geo":{"@type":"GeoCoordinates","latitude":58.464938043102116,"longitude":16.378372016369546}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"En fyndplats i Söderköping vars beskrivning inte är kvalitetssäkrad.","geo":{"@type":"GeoCoordinates","latitude":58.49634972516683,"longitude":16.35288976584922}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"Fyndplats för en rund stenplatta med borrade hål, förvarad på Wiggeby gård.","geo":{"@type":"GeoCoordinates","latitude":58.47576111427342,"longitude":16.361704350947594}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Lägenhetsbebyggelse","description":"Bebyggelselämningar med grunder efter ett boningshus och tre ekonomibyggnader.","geo":{"@type":"GeoCoordinates","latitude":58.46545621096448,"longitude":16.386275460611994}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Textilindustri","description":"Platsen för ett färgeri känt från häradsekonomiska kartan 1868–77, i dag båtuppställning.","geo":{"@type":"GeoCoordinates","latitude":58.48009395644597,"longitude":16.345361862929533}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"Fyndplats för en skafthålsyxa av grönsten, förvarad på Wiggeby gård.","geo":{"@type":"GeoCoordinates","latitude":58.477063893945136,"longitude":16.3600125110973}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Stensättning","description":"Två gravar i sten, en nära kvadratisk och en rund, belägna nära varandra.","geo":{"@type":"GeoCoordinates","latitude":58.47300456397596,"longitude":16.384726532073515}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Hamnanläggning","description":"Ungefärlig plats för ett tjärkompani enligt en lantmäteriakt från 1701.","geo":{"@type":"GeoCoordinates","latitude":58.48109693868173,"longitude":16.348019457977642}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Bytomt/gårdstomt","description":"Gårdstomten för Ede, en gård som etablerades runt 1910 och avvecklades före 1979.","url":"https://stadsvandring.io/p/ksamsok-bytomt-gardstomt-soderkoping-b03e36","geo":{"@type":"GeoCoordinates","latitude":58.48048490652317,"longitude":16.343470971695673}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Eggeby gamla tomt, Bytomt/gårdstomt","description":"Eggeby gamla tomt med bebyggelselämningar och belägg som by ända sedan 1428.","url":"https://stadsvandring.io/p/ksamsok-eggeby-gamla-tomt-bytomt-gardstomt-soderkoping-f4d469","geo":{"@type":"GeoCoordinates","latitude":58.47209555034911,"longitude":16.36816963136975}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Dammvall","description":"En registrerad dammvall utan närmare beskrivning.","geo":{"@type":"GeoCoordinates","latitude":58.467464887764784,"longitude":16.339511462816333}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Söderköping gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 75 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Söderköping?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 75 sevärdheter i Söderköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Mems slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Norrköpings kommun"}},{"@type":"Question","name":"Vad är Bolltorp?","acceptedAnswer":{"@type":"Answer","text":"Bolltorp är ett säteri i Östergötland, 7 kilometer sydost om Söderköping i Skönberga socken, Söderköpings kommun."}},{"@type":"Question","name":"Vad är Sankt Laurentii kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Söderköping, Sverige"}},{"@type":"Question","name":"Vad är Skönberga kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Söderköpings kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Söderköping","item":"https://stadsvandring.io/stadsvandring/soderkoping"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Söderköping</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Söderköping</span><span class="badge">75 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Söderköping — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Söderköping till fots: 75 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Söderköping"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-soderkoping-mems-slott-q6814180"><b>1. Mems slott</b><span>Slott · slott i Norrköpings kommun</span></a>
+<a class="tile" href="/p/wd-soderkoping-bolltorp-q10432615"><b>2. Bolltorp</b><span>Byggnad · Bolltorp är ett säteri i Östergötland, 7 kilometer sydost om Söderköping i Skön…</span></a>
+<a class="tile" href="/p/wd-soderkoping-sankt-laurentii-kyrka-q10661406"><b>3. Sankt Laurentii kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Söderköping, Sverige</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Söderköping · 75</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Söderköping. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 57</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-lagenhetsbebyggelse-soderkoping-607db1"><b>Lägenhetsbebyggelse</b></a> — Grunden efter en backstuga med spismursrest, känd från lantmäteriakter sedan 1690.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-04a470"><b>Fyndplats</b></a> — En fyndplats i Söderköping vars beskrivning inte är kvalitetssäkrad.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-ce6b02"><b>Fyndplats</b></a> — Fyndplats för en rund stenplatta med borrade hål, förvarad på Wiggeby gård.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-soderkoping-b72f17"><b>Lägenhetsbebyggelse</b></a> — Bebyggelselämningar med grunder efter ett boningshus och tre ekonomibyggnader.</li>
+<li><a href="/karta?plats=ksamsok-textilindustri-soderkoping-ff92a0"><b>Textilindustri</b></a> — Platsen för ett färgeri känt från häradsekonomiska kartan 1868–77, i dag båtuppställning.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-f66c03"><b>Fyndplats</b></a> — Fyndplats för en skafthålsyxa av grönsten, förvarad på Wiggeby gård.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-65e299"><b>Stensättning</b></a> — Två gravar i sten, en nära kvadratisk och en rund, belägna nära varandra.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-soderkoping-1a31cb"><b>Hamnanläggning</b></a> — Ungefärlig plats för ett tjärkompani enligt en lantmäteriakt från 1701.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-soderkoping-b03e36"><b>Bytomt/gårdstomt</b></a> — Gårdstomten för Ede, en gård som etablerades runt 1910 och avvecklades före 1979.</li>
+<li><a href="/p/ksamsok-eggeby-gamla-tomt-bytomt-gardstomt-soderkoping-f4d469"><b>Eggeby gamla tomt, Bytomt/gårdstomt</b></a> — Eggeby gamla tomt med bebyggelselämningar och belägg som by ända sedan 1428.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-soderkoping-647b41"><b>Dammvall</b></a> — En registrerad dammvall utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-soderkoping-d71d08"><b>Gravfält</b></a> — Ett gravfält med fem runda stensättningar, varav några är skadade.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-83a246"><b>Stensättning</b></a> — Två runda stensättningar, den ena omkring fem meter i diameter, cirka 35 meter isär.</li>
+<li><a href="/karta?plats=ksamsok-hog-soderkoping-2840d4"><b>Hög</b></a> — Två gravhögar med dominerande läge och vid utsikt över bygden kring Söderköping.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-soderkoping-1a9094"><b>Hällristning</b></a> — En hällristning med tre skålgropar, dokumenterad av Botark 2009.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-soderkoping-ab3fe1"><b>Lägenhetsbebyggelse</b></a> — Plats för en båtsmansstuga och senare torpet Åbacka, känd från 1600- och 1700-talsakter.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-soderkoping-c28e7d"><b>Hällristning</b></a> — En hällristning med fem skålgropar, dokumenterad av Botark 2009.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-22a474"><b>Stensättning</b></a> — En rund stensättning med grop i mitten och synlig kantkedja i sydost.</li>
+<li><a href="/p/ksamsok-rojningsrose-soderkoping-f74ea2"><b>Röjningsröse</b></a> — Ett röjningsröse kopplat till en historisk åker där det nu är villabebyggelse.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-soderkoping-f6e908"><b>Lägenhetsbebyggelse</b></a> — Bebyggelselämningar efter Högantopp, ett hus som revs 1908.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-soderkoping-67444b"><b>Husgrund, historisk tid</b></a> — En kvadratisk husgrund känd från 1946 års karta, delundersökt 2018.</li>
+<li><a href="/p/ksamsok-hog-soderkoping-9c264f"><b>Hög</b></a> — Rester av tre gravhögar, troligen platsen för ett skadat gravfält.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-1b566b"><b>Stensättning</b></a> — En rund gravhög samt intill den en oval stenkrets som kan vara en grav.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-soderkoping-e6d761"><b>Vägmärke</b></a> — En kalkstensmilstolpe med inskriften 1/2 MIL, flyttad sedan 1946.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-soderkoping-471a65"><b>Kvarn</b></a> — Ungefärlig plats för en kvarn under Fullerstad, i dag överdämd.</li>
+<li><a href="/karta?plats=ksamsok-kanal-soderkoping-cc7a47"><b>Kanal</b></a> — Lämningar efter en sluss från 1832, undersökt arkeologiskt 2018.</li>
+<li><a href="/karta?plats=ksamsok-samlingsplats-soderkoping-207cfe"><b>Samlingsplats</b></a> — Plats för en rad om 22 åbodar längs Storån, känd från kartor 1779 och 1810.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-953d80"><b>Stensättning</b></a> — En rund stensättning med större stenar i väster och möjlig kantkedja i sydost.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-c5fef5"><b>Stensättning</b></a> — En rund stensättning på fyra meter med en mittsten och skador i norr.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-soderkoping-0bbaa2"><b>Boplatsområde</b></a> — En boplats med två härdar, daterad till förromersk järnålder.</li>
+<li><a href="/karta?plats=ksamsok-gravfalt-soderkoping-34c1fc"><b>Gravfält</b></a> — Ett gravfält med 32 gravar, delvis stört av senare trädgårdsanläggningar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-b55157"><b>Stensättning</b></a> — En möjlig rund stensättning på sex meter, bevuxen med tallar.</li>
+<li><a href="/karta?plats=ksamsok-litzells-kalla-kalla-med-tradition-soderkoping-c1c5a4"><b>Litzells källa, Källa med tradition</b></a> — Litzells källa, en hälsokälla fattad i ett cementrör med låsbart lock.</li>
+<li><a href="/karta?plats=ksamsok-hog-soderkoping-59e51a"><b>Hög</b></a> — Rest av en gravhög med branta slänter, delvis bortgrävd vid grustäkt.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-e9c53c"><b>Fyndplats</b></a> — Fyndplats för två skafthålsyxor samt tradition om ett båtfynd vid Igelkärret.</li>
+<li><a href="/p/ksamsok-stensattning-soderkoping-e7b438"><b>Stensättning</b></a> — Två runda stensättningar på fem meter, belägna på olika avsatser.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-soderkoping-0ae33f"><b>Fornlämningsliknande lämning</b></a> — Ett område med tio gropar, troligen potatisgropar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-fb1ad8"><b>Stensättning</b></a> — Två runda stensättningar, den ena delvis uttömd i mitten.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-soderkoping-9643f8"><b>Kvarn</b></a> — Grunden efter Stro kvarn vid Fullerstad, omnämnd redan 1419.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-27f185"><b>Stensättning</b></a> — En rund stensättning med tydlig kantkedja och en tall i östra kanten.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-86d556"><b>Fyndplats</b></a> — Fyndplats för två spiralräfflade halsringar av brons.</li>
+<li><a href="/p/ksamsok-textilindustri-soderkoping-abadb9"><b>Textilindustri</b></a> — Plats för en skinnstamp under Fullerstad, känd sedan 1600-talet, i dag överdämd.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-soderkoping-88d019"><b>Fartygs-/båtlämning</b></a> — En båtlämning som påträffades vid täckdikning 1948 och ligger kvar i marken.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-forhistorisk-medeltida-soderkoping-d57426"><b>Husgrund, förhistorisk/medeltida</b></a> — En husgrund anlagd i två plan med en absidrundning mot söder.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-soderkoping-cda49c"><b>Lägenhetsbebyggelse</b></a> — Plats för Brostugan, en backstuga känd från den häradsekonomiska kartan 1868–1877.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-soderkoping-e91780"><b>Kvarn</b></a> — Ungefärlig plats för Stro kvarn, kallad Nya Stro 1789, i dag överdämd.</li>
+<li><a href="/karta?plats=ksamsok-livsmedelsindustri-soderkoping-7502cf"><b>Livsmedelsindustri</b></a> — Plats för Kronobränneriet vid Söderköping, i dag industrimark.</li>
+<li><a href="/p/ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-soderkoping-40ce4f"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Ett klapperfält som i äldre tradition felaktigt tolkats som borg eller bronsåldersröse.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-soderkoping-f651a2"><b>Lägenhetsbebyggelse</b></a> — Plats för en båtsmansstuga och senare torpet Gröndal, känd från 1690 och 1789.</li>
+<li><a href="/p/ksamsok-husgrund-historisk-tid-soderkoping-de3cba"><b>Husgrund, historisk tid</b></a> — Ett gravfält med 15 fornlämningar och en sentida vall som troligen burit en dansbana.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-soderkoping-3356d0"><b>Övrigt</b></a> — Fyndplats för en båt som iakttogs i Storån och åkerbrinken 1950.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-soderkoping-a95f8a"><b>Fornlämningsliknande lämning</b></a> — En stensättningsliknande lämning som kan vara en naturbildning.</li>
+<li><a href="/p/ksamsok-gravfalt-soderkoping-540219"><b>Gravfält</b></a> — Ett gravfält med 15 fornlämningar och en sentida vall som troligen burit en dansbana.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-soderkoping-aee6f8"><b>Fyndplats</b></a> — Fyndplats för en skafthålsyxa av grönsten.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-soderkoping-f1d59c"><b>Stensättning</b></a> — En möjlig rund stensättning, delvis bortschaktad i väster.</li>
+<li><a href="/karta?plats=ksamsok-stenkrets-stenrad-soderkoping-d163ff"><b>Stenkrets/stenrad</b></a> — En stenrad lagd intill en häll, med kol funnet mellan stenarna.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-soderkoping-bb710c"><b>Hällristning</b></a> — En hällristning med tolv älvkvarnar i en brant häll.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 8</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-soderkoping-sankt-laurentii-kyrka-q10661406"><b>Sankt Laurentii kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Söderköping, Sverige</li>
+<li><a href="/karta?plats=wd-soderkoping-skonberga-kyrka-q10671253"><b>Skönberga kyrka</b></a> — kyrkobyggnad i Söderköpings kommun</li>
+<li><a href="/karta?plats=wd-soderkoping-tingstads-kyrka-q10698272"><b>Tingstads kyrka</b></a> — kyrka i Sverige</li>
+<li><a href="/karta?plats=wd-soderkoping-taby-kyrka-q10708055"><b>Tåby kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Tåby, Sverige</li>
+<li><a href="/karta?plats=wd-soderkoping-drothems-kyrka-q12124607"><b>Drothems kyrka</b></a> — kyrkobyggnad i Söderköpings kommun</li>
+<li><a href="/karta?plats=wd-soderkoping-pingstkyrkan-q93875802"><b>Pingstkyrkan</b></a> — kyrka i Söderköpings kommun</li>
+<li><a href="/karta?plats=wd-soderkoping-vintervadskyrkan-q93876157"><b>Vintervadskyrkan</b></a> — kyrka i Söderköpings kommun</li>
+<li><a href="/karta?plats=wd-soderkoping-arken-q93883150"><b>Arken</b></a> — kyrka i Söderköpings kommun</li>
+</ul>
+<h3 class="city-h3">Torn · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-soderkoping-soderkopings-fyr-q40441088"><b>Söderköpings fyr</b></a> — en fyr vid Storåns utlopp i Söderköpings kommun</li>
+<li><a href="/karta?plats=wd-soderkoping-mems-fyr-q109512896"><b>Mems fyr</b></a> — en fyr vid Göta kanal i Söderköpings kommun</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-soderkoping-029885"><b>Klockstapel</b></a> — En klockstapel i Söderköping från 1700-talet. <span class="era">1700–1799</span></li>
+</ul>
+<h3 class="city-h3">Byggnad · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-soderkoping-bolltorp-q10432615"><b>Bolltorp</b></a> — Bolltorp är ett säteri i Östergötland, 7 kilometer sydost om Söderköping i Skönberga socken, Söderköpings kommun.</li>
+<li><a href="/p/ksamsok-hammarkinds-och-skarskinds-haraders-tingshus-soderkoping-126261"><b>HAMMARKINDS OCH SKÄRSKINDS HÄRADERS TINGSHUS</b></a> — Ett tingshus från 1904 i återhållsam jugendbarock vid Göta kanal i Söderköping. <span class="era">1904–1904</span></li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-fornborg-soderkoping-45fc6c"><b>Fornborg</b></a> — En fornborg skyddad av branta stup och befäst med kraftiga stenvallar.</li>
+<li><a href="/p/ksamsok-ramundersborg-fornborg-soderkoping-f1c687"><b>Ramundersborg, Fornborg</b></a> — Ramundersborg, en fornborg med en huvudborg och en förborg, befäst av nio stenvallar.</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-soderkoping-mems-slott-q6814180"><b>Mems slott</b></a> — slott i Norrköpings kommun</li>
+</ul>
+<h3 class="city-h3">Runsten · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-soderkoping-730047"><b>Runristning</b></a> — Övre delen av en runsten funnen i en åker vid Gilleskullen.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-soderkoping-c42a4a"><b>Minnesmärke</b></a> — Minnessten över brunnsläkaren Johan Olof Lagberg, rest 1923.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 75 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/soderkoping/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/soderkoping/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Söderköping gratis?</summary><p>Ja. Karta, alla 75 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Söderköping?</summary><p>Vandringen samlar 75 sevärdheter i Söderköping — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Mems slott?</summary><p>slott i Norrköpings kommun</p></details>
+<details class="faq"><summary>Vad är Bolltorp?</summary><p>Bolltorp är ett säteri i Östergötland, 7 kilometer sydost om Söderköping i Skönberga socken, Söderköpings kommun.</p></details>
+<details class="faq"><summary>Vad är Sankt Laurentii kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Söderköping, Sverige</p></details>
+<details class="faq"><summary>Vad är Skönberga kyrka?</summary><p>kyrkobyggnad i Söderköpings kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

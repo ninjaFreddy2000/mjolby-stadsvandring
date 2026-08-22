@@ -1,12 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Kyrkostigen i Karlskrona</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
-  <wpt lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name><desc>Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.</desc></wpt>
-  <wpt lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name><desc>Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.</desc></wpt>
+  <wpt lat="56.200839" lon="15.53727"><name>Nättraby kyrka</name><desc>kyrka i Nättraby, Karlskrona kommun</desc></wpt>
+  <wpt lat="56.179888888889" lon="15.602444444444"><name>Vämö kapell</name><desc>Vämö kapell är ett kapell tillhörande Karlskrona stadsförsamling.</desc></wpt>
+  <wpt lat="56.19394444" lon="15.62047222"><name>Kungsmarkskyrkan</name><desc>kyrkobyggnad i Karlskrona kommun</desc></wpt>
+  <wpt lat="56.158374781431434" lon="15.60051359288629"><name>Bastion Kungshall, Fästning/skans</name><desc>Bastionen Kungshall, del av stadens befästningar.</desc></wpt>
+  <wpt lat="56.15440406238" lon="15.59989640671901"><name>Bastion Havsfrun, Fästning/skans</name><desc>Bastion Havsfrun, ännu inte kvalitetssäkrad.</desc></wpt>
   <wpt lat="56.156796" lon="15.590977"><name>Amiralitetskyrkan Ulrica Pia</name><desc>En mäktig träkyrka i Karlskrona, invigd 1685 för amiralitetsförsamlingen.</desc></wpt>
+  <wpt lat="56.15682406020318" lon="15.590999058416024"><name>Kyrka/kapell</name><desc>Kyrko-/kapellämning beskriven i inventeringsboken.</desc></wpt>
+  <wpt lat="56.156850058752745" lon="15.590289099344254"><name>Mur söder om Amiralitetskyrkan</name><desc>En mur söder om Amiralitetskyrkan i Karlskrona.</desc></wpt>
+  <wpt lat="56.15736129778157" lon="15.587331951240545"><name>Mur vid Klosterporten</name><desc>Mur vid Klosterporten, registrerad som klosterruin.</desc></wpt>
+  <wpt lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name><desc>Rund barockkyrka vid Stortorget, även kallad Tyska kyrkan, inspirerad av Pantheon i Rom.</desc></wpt>
+  <wpt lat="56.16060565600898" lon="15.585983173316253"><name>Kyrka/kapell</name><desc>Kyrko-/kapellämning beskriven i inventeringsboken.</desc></wpt>
+  <wpt lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name><desc>Ljus barockbasilika mitt på Stortorget, ritad av Nicodemus Tessin den yngre och invigd 1744.</desc></wpt>
+  <wpt lat="56.16286667" lon="15.58315"><name>Möllebackskyrkan</name><desc>kyrkobyggnad i Karlskrona kommun</desc></wpt>
+  <wpt lat="56.160561111111" lon="15.578638888889"><name>Emanuelskyrkan</name><desc>kyrkobyggnad i Karlskrona kommun</desc></wpt>
+  <wpt lat="56.15022203787241" lon="15.591554571574877"><name>G:A BADSTUGAN, FINSKA KYRKAN (K0018.464)</name><desc>En tegelbyggnad från 1697, ursprungligen för brandfarlig tjärbehandling av tågvirke, senare kallad Finska kyrkan.</desc></wpt>
+  <wpt lat="56.14947219323502" lon="15.592164985942436"><name>Fästning/skans</name><desc>Fästningslämning i form av en sträckningsmur.</desc></wpt>
+  <wpt lat="56.141399644686366" lon="15.59442685250889"><name>Fästning/skans</name><desc>Fyren Godnatt, uppförd på ett gammalt kastell.</desc></wpt>
+  <wpt lat="56.14138415274042" lon="15.594457141937376"><name>GODNATTS FÄSTNINGSTORN</name><desc>En sjöfästning utanför Karlskrona som 1879 fick ett fyrtorn för att leda fartyg in mot hamnen.</desc></wpt>
+  <wpt lat="56.11686667" lon="15.61533056"><name>Tjurkö kyrka</name><desc>kyrkobyggnad i Karlskrona kommun</desc></wpt>
+  <wpt lat="56.104" lon="15.556"><name>Ellenabben</name><desc>befästning i Sverige</desc></wpt>
+  <wpt lat="56.11391944" lon="15.51801667"><name>Aspö kyrka</name><desc>kyrkobyggnad i Karlskrona kommun</desc></wpt>
   <rte><name>Kyrkostigen i Karlskrona</name>
-    <rtept lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name></rtept>
-    <rtept lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name></rtept>
+    <rtept lat="56.200839" lon="15.53727"><name>Nättraby kyrka</name></rtept>
+    <rtept lat="56.179888888889" lon="15.602444444444"><name>Vämö kapell</name></rtept>
+    <rtept lat="56.19394444" lon="15.62047222"><name>Kungsmarkskyrkan</name></rtept>
+    <rtept lat="56.158374781431434" lon="15.60051359288629"><name>Bastion Kungshall, Fästning/skans</name></rtept>
+    <rtept lat="56.15440406238" lon="15.59989640671901"><name>Bastion Havsfrun, Fästning/skans</name></rtept>
     <rtept lat="56.156796" lon="15.590977"><name>Amiralitetskyrkan Ulrica Pia</name></rtept>
+    <rtept lat="56.15682406020318" lon="15.590999058416024"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="56.156850058752745" lon="15.590289099344254"><name>Mur söder om Amiralitetskyrkan</name></rtept>
+    <rtept lat="56.15736129778157" lon="15.587331951240545"><name>Mur vid Klosterporten</name></rtept>
+    <rtept lat="56.160587" lon="15.58598"><name>Trefaldighetskyrkan, Karlskrona</name></rtept>
+    <rtept lat="56.16060565600898" lon="15.585983173316253"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="56.161123" lon="15.588153"><name>Fredrikskyrkan, Karlskrona</name></rtept>
+    <rtept lat="56.16286667" lon="15.58315"><name>Möllebackskyrkan</name></rtept>
+    <rtept lat="56.160561111111" lon="15.578638888889"><name>Emanuelskyrkan</name></rtept>
+    <rtept lat="56.15022203787241" lon="15.591554571574877"><name>G:A BADSTUGAN, FINSKA KYRKAN (K0018.464)</name></rtept>
+    <rtept lat="56.14947219323502" lon="15.592164985942436"><name>Fästning/skans</name></rtept>
+    <rtept lat="56.141399644686366" lon="15.59442685250889"><name>Fästning/skans</name></rtept>
+    <rtept lat="56.14138415274042" lon="15.594457141937376"><name>GODNATTS FÄSTNINGSTORN</name></rtept>
+    <rtept lat="56.11686667" lon="15.61533056"><name>Tjurkö kyrka</name></rtept>
+    <rtept lat="56.104" lon="15.556"><name>Ellenabben</name></rtept>
+    <rtept lat="56.11391944" lon="15.51801667"><name>Aspö kyrka</name></rtept>
   </rte>
 </gpx>

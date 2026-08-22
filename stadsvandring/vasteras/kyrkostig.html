@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Västerås — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vasteras/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Västerås — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vasteras/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Västerås — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv. 19 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vasteras","theme":"kyrkostig","sourceSlug":"stadsvandring/vasteras/kyrkostig","centroid":{"lat":59.61490817628688,"lng":16.534842565950242},"stops":[{"name":"Rönnby kyrk-center","lat":59.64847222,"lng":16.50675},{"name":"Skerike kyrka","lat":59.64444444,"lng":16.48027778},{"name":"Önsta Gryta kyrka","lat":59.64655,"lng":16.53483333},{"name":"Gideonsbergskyrkan","lat":59.62760833,"lng":16.556575},{"name":"Östra kapellet","lat":59.61423164676952,"lng":16.5529111934987},{"name":"VÄSTERÅS DOMKYRKA","lat":59.61255699741894,"lng":16.541410602946982},{"name":"Kyrka/kapell","lat":59.60913102859542,"lng":16.542136737719904},{"name":"Pingstkyrkan, Västerås","lat":59.60555556,"lng":16.53111111},{"name":"Mikaelikyrkan","lat":59.60541389,"lng":16.51803333},{"name":"Ansgarskyrkan, Västerås","lat":59.61742,"lng":16.51996},{"name":"S:ta Ursulas kapell","lat":59.619608,"lng":16.534921},{"name":"Sparvens kapell","lat":59.60869,"lng":16.49483},{"name":"Bäckbykyrkan","lat":59.6,"lng":16.46777778},{"name":"Lundby kyrka","lat":59.57741667,"lng":16.46663889},{"name":"Västerlövsta 318:1","lat":59.562026,"lng":16.512342},{"name":"Viksängskyrkan","lat":59.60555556,"lng":16.57972222},{"name":"Lifecenter International Church","lat":59.616666666667,"lng":16.603888888889},{"name":"Tomaskyrkan","lat":59.62135278,"lng":16.58983333},{"name":"Badelunda kyrka","lat":59.64055556,"lng":16.62805556}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Västerås","description":"Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Rönnby kyrk-center","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-ronnby-kyrk-center-q10659023"},{"@type":"HowToStep","position":2,"name":"Skerike kyrka","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-skerike-kyrka-q10670107"},{"@type":"HowToStep","position":3,"name":"Önsta Gryta kyrka","text":"kyrka i Västerås","url":"https://stadsvandring.io/p/wd-vasteras-onsta-gryta-kyrka-q10727377"},{"@type":"HowToStep","position":4,"name":"Gideonsbergskyrkan","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-gideonsbergskyrkan-q10504801"},{"@type":"HowToStep","position":5,"name":"Östra kapellet","text":"Östra kapellet i Västerås från 1882, format som ett grekiskt kors.","url":"https://stadsvandring.io/p/ksamsok-ostra-kapellet-vasteras-014701"},{"@type":"HowToStep","position":6,"name":"VÄSTERÅS DOMKYRKA","text":"Domkyrkan i Västerås, grundlagd på 1230-talet i mörkrött tegel.","url":"https://stadsvandring.io/p/ksamsok-vasteras-domkyrka-vasteras-357622"},{"@type":"HowToStep","position":7,"name":"Kyrka/kapell","text":"Platsen för S:t Nicolaikyrkan och en fyndplats för en runristad gravhäll.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-vasteras-fe85eb"},{"@type":"HowToStep","position":8,"name":"Pingstkyrkan, Västerås","text":"pingstkyrka i Västerås, Sverige","url":"https://stadsvandring.io/p/wd-vasteras-pingstkyrkan-vasteras-q19631574"},{"@type":"HowToStep","position":9,"name":"Mikaelikyrkan","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-mikaelikyrkan-q10585157"},{"@type":"HowToStep","position":10,"name":"Ansgarskyrkan, Västerås","text":"Ansgarskyrkan är en kyrka i Pettersberg i Västerås, vilken är huvudkyrka för Ansgarsförsamlingen i Västerås.","url":"https://stadsvandring.io/p/wd-vasteras-ansgarskyrkan-vasteras-q19977468"},{"@type":"HowToStep","position":11,"name":"S:ta Ursulas kapell","text":"kyrka/kapell i Västmanland (Västerås 355:1)","url":"https://stadsvandring.io/p/wd-vasteras-s-ta-ursulas-kapell-q29885920"},{"@type":"HowToStep","position":12,"name":"Sparvens kapell","text":"Sparvens kapell var en kyrkobyggnad i Västerås Lundby församling i Västerås stift.","url":"https://stadsvandring.io/p/wd-vasteras-sparvens-kapell-q49101920"},{"@type":"HowToStep","position":13,"name":"Bäckbykyrkan","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-backbykyrkan-q10438387"},{"@type":"HowToStep","position":14,"name":"Lundby kyrka","text":"Kyrka i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-lundby-kyrka-q10570765"},{"@type":"HowToStep","position":15,"name":"Västerlövsta 318:1","text":"kyrka/kapell i Uppland","url":"https://stadsvandring.io/p/wd-vasteras-vasterlovsta-318-1-q29884930"},{"@type":"HowToStep","position":16,"name":"Viksängskyrkan","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-viksangskyrkan-q10715308"},{"@type":"HowToStep","position":17,"name":"Lifecenter International Church","text":"kyrka och församling i Västerås","url":"https://stadsvandring.io/p/wd-vasteras-lifecenter-international-church-q78725758"},{"@type":"HowToStep","position":18,"name":"Tomaskyrkan","text":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-tomaskyrkan-q10699467"},{"@type":"HowToStep","position":19,"name":"Badelunda kyrka","text":"Kyrka i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-badelunda-kyrka-q10424496"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Västerås","description":"Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/vasteras/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":19,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Rönnby kyrk-center","url":"https://stadsvandring.io/p/wd-vasteras-ronnby-kyrk-center-q10659023"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Skerike kyrka","url":"https://stadsvandring.io/p/wd-vasteras-skerike-kyrka-q10670107"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Önsta Gryta kyrka","url":"https://stadsvandring.io/p/wd-vasteras-onsta-gryta-kyrka-q10727377"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Gideonsbergskyrkan","url":"https://stadsvandring.io/p/wd-vasteras-gideonsbergskyrkan-q10504801"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Östra kapellet","url":"https://stadsvandring.io/p/ksamsok-ostra-kapellet-vasteras-014701"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"VÄSTERÅS DOMKYRKA","url":"https://stadsvandring.io/p/ksamsok-vasteras-domkyrka-vasteras-357622"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-vasteras-fe85eb"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan, Västerås","url":"https://stadsvandring.io/p/wd-vasteras-pingstkyrkan-vasteras-q19631574"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Mikaelikyrkan","url":"https://stadsvandring.io/p/wd-vasteras-mikaelikyrkan-q10585157"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Ansgarskyrkan, Västerås","url":"https://stadsvandring.io/p/wd-vasteras-ansgarskyrkan-vasteras-q19977468"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"S:ta Ursulas kapell","url":"https://stadsvandring.io/p/wd-vasteras-s-ta-ursulas-kapell-q29885920"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Sparvens kapell","url":"https://stadsvandring.io/p/wd-vasteras-sparvens-kapell-q49101920"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Bäckbykyrkan","url":"https://stadsvandring.io/p/wd-vasteras-backbykyrkan-q10438387"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Lundby kyrka","url":"https://stadsvandring.io/p/wd-vasteras-lundby-kyrka-q10570765"}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Västerlövsta 318:1","url":"https://stadsvandring.io/p/wd-vasteras-vasterlovsta-318-1-q29884930"}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Viksängskyrkan","url":"https://stadsvandring.io/p/wd-vasteras-viksangskyrkan-q10715308"}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Lifecenter International Church","url":"https://stadsvandring.io/p/wd-vasteras-lifecenter-international-church-q78725758"}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Tomaskyrkan","url":"https://stadsvandring.io/p/wd-vasteras-tomaskyrkan-q10699467"}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Badelunda kyrka","url":"https://stadsvandring.io/p/wd-vasteras-badelunda-kyrka-q10424496"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Västerås","item":"https://stadsvandring.io/stadsvandring/vasteras"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Västerås","item":"https://stadsvandring.io/stadsvandring/vasteras/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/vasteras">Stadsvandring i Västerås</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Västerås</span><span class="badge">19 stopp</span></div>
+<h1>Kyrkostigen i Västerås</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Västerås — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Västerås"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-vasteras-ronnby-kyrk-center-q10659023"><b>1. Rönnby kyrk-center</b><span>Kyrka · kyrkobyggnad i Västerås kommun</span></a>
+<a class="tile" href="/p/wd-vasteras-skerike-kyrka-q10670107"><b>2. Skerike kyrka</b><span>Kyrka · kyrkobyggnad i Västerås kommun</span></a>
+<a class="tile" href="/p/wd-vasteras-onsta-gryta-kyrka-q10727377"><b>3. Önsta Gryta kyrka</b><span>Kyrka · kyrka i Västerås</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 19 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/vasteras/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-vasteras-ronnby-kyrk-center-q10659023"><b>1. Rönnby kyrk-center</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-skerike-kyrka-q10670107"><b>2. Skerike kyrka</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-onsta-gryta-kyrka-q10727377"><b>3. Önsta Gryta kyrka</b></a> — kyrka i Västerås</li>
+<li><a href="/p/wd-vasteras-gideonsbergskyrkan-q10504801"><b>4. Gideonsbergskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/ksamsok-ostra-kapellet-vasteras-014701"><b>5. Östra kapellet</b></a> — Östra kapellet i Västerås från 1882, format som ett grekiskt kors.</li>
+<li><a href="/p/ksamsok-vasteras-domkyrka-vasteras-357622"><b>6. VÄSTERÅS DOMKYRKA</b></a> — Domkyrkan i Västerås, grundlagd på 1230-talet i mörkrött tegel.</li>
+<li><a href="/p/ksamsok-kyrka-kapell-vasteras-fe85eb"><b>7. Kyrka/kapell</b></a> — Platsen för S:t Nicolaikyrkan och en fyndplats för en runristad gravhäll.</li>
+<li><a href="/p/wd-vasteras-pingstkyrkan-vasteras-q19631574"><b>8. Pingstkyrkan, Västerås</b></a> — pingstkyrka i Västerås, Sverige</li>
+<li><a href="/p/wd-vasteras-mikaelikyrkan-q10585157"><b>9. Mikaelikyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-ansgarskyrkan-vasteras-q19977468"><b>10. Ansgarskyrkan, Västerås</b></a> — Ansgarskyrkan är en kyrka i Pettersberg i Västerås, vilken är huvudkyrka för Ansgarsförsamlingen i Västerås.</li>
+<li><a href="/p/wd-vasteras-s-ta-ursulas-kapell-q29885920"><b>11. S:ta Ursulas kapell</b></a> — kyrka/kapell i Västmanland (Västerås 355:1)</li>
+<li><a href="/p/wd-vasteras-sparvens-kapell-q49101920"><b>12. Sparvens kapell</b></a> — Sparvens kapell var en kyrkobyggnad i Västerås Lundby församling i Västerås stift.</li>
+<li><a href="/p/wd-vasteras-backbykyrkan-q10438387"><b>13. Bäckbykyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-lundby-kyrka-q10570765"><b>14. Lundby kyrka</b></a> — Kyrka i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-vasterlovsta-318-1-q29884930"><b>15. Västerlövsta 318:1</b></a> — kyrka/kapell i Uppland</li>
+<li><a href="/p/wd-vasteras-viksangskyrkan-q10715308"><b>16. Viksängskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-lifecenter-international-church-q78725758"><b>17. Lifecenter International Church</b></a> — kyrka och församling i Västerås</li>
+<li><a href="/p/wd-vasteras-tomaskyrkan-q10699467"><b>18. Tomaskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-badelunda-kyrka-q10424496"><b>19. Badelunda kyrka</b></a> — Kyrka i Västerås kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/vasteras">Stadsvandringen i Västerås</a> <a class="cta ghost" href="/stadsvandring/vasteras/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

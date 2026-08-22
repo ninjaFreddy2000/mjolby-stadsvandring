@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Hässleholm — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv. 9 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/hassleholm/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Hässleholm — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv. 9 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/hassleholm/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Hässleholm — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv. 9 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"hassleholm","theme":"kyrkostig","sourceSlug":"stadsvandring/hassleholm/kyrkostig","centroid":{"lat":56.15722874256458,"lng":13.779424941367981},"stops":[{"name":"Vankiva kyrka","lat":56.19109444,"lng":13.74571389},{"name":"Västerkyrkan","lat":56.16111111,"lng":13.75694444},{"name":"Hässleholms kyrka","lat":56.15684167,"lng":13.77022222},{"name":"Hässleholms begravningskapell","lat":56.15417534641419,"lng":13.778688355645833},{"name":"Ljungdala kyrka","lat":56.1672,"lng":13.78727778},{"name":"Stoby kyrka","lat":56.17980278,"lng":13.83200556},{"name":"Ignaberga nya kyrka","lat":56.124555555556,"lng":13.830083333333},{"name":"Ignaberga gamla kyrka","lat":56.12166667,"lng":13.83055556},{"name":"Finja kyrka","lat":56.158611111111,"lng":13.683333333333}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Hässleholm","description":"Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Vankiva kyrka","text":"kyrkobyggnad i Svenska kyrkan i Vankiva, Sverige","url":"https://stadsvandring.io/p/wd-hassleholm-vankiva-kyrka-q10712663"},{"@type":"HowToStep","position":2,"name":"Västerkyrkan","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-vasterkyrkan-q10717955"},{"@type":"HowToStep","position":3,"name":"Hässleholms kyrka","text":"kyrkobyggnad i Svenska kyrkan i Hässleholm, Sverige","url":"https://stadsvandring.io/p/wd-hassleholm-hassleholms-kyrka-q10531824"},{"@type":"HowToStep","position":4,"name":"Hässleholms begravningskapell","text":"Ett medeltidsinspirerat tegelkapell från 1906–07, ritat av Theodor Wåhlin.","url":"https://stadsvandring.io/p/ksamsok-hassleholms-begravningskapell-hassleholm-052172"},{"@type":"HowToStep","position":5,"name":"Ljungdala kyrka","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-ljungdala-kyrka-q10568342"},{"@type":"HowToStep","position":6,"name":"Stoby kyrka","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-stoby-kyrka-q10680410"},{"@type":"HowToStep","position":7,"name":"Ignaberga nya kyrka","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-ignaberga-nya-kyrka-q10534255"},{"@type":"HowToStep","position":8,"name":"Ignaberga gamla kyrka","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-ignaberga-gamla-kyrka-q10534252"},{"@type":"HowToStep","position":9,"name":"Finja kyrka","text":"kyrkobyggnad i Hässleholms kommun","url":"https://stadsvandring.io/p/wd-hassleholm-finja-kyrka-q10495351"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Hässleholm","description":"Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/hassleholm/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Vankiva kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-vankiva-kyrka-q10712663"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Västerkyrkan","url":"https://stadsvandring.io/p/wd-hassleholm-vasterkyrkan-q10717955"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Hässleholms kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-hassleholms-kyrka-q10531824"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Hässleholms begravningskapell","url":"https://stadsvandring.io/p/ksamsok-hassleholms-begravningskapell-hassleholm-052172"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Ljungdala kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-ljungdala-kyrka-q10568342"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Stoby kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-stoby-kyrka-q10680410"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Ignaberga nya kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-ignaberga-nya-kyrka-q10534255"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Ignaberga gamla kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-ignaberga-gamla-kyrka-q10534252"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Finja kyrka","url":"https://stadsvandring.io/p/wd-hassleholm-finja-kyrka-q10495351"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Hässleholm","item":"https://stadsvandring.io/stadsvandring/hassleholm"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Hässleholm","item":"https://stadsvandring.io/stadsvandring/hassleholm/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/hassleholm">Stadsvandring i Hässleholm</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Hässleholm</span><span class="badge">9 stopp</span></div>
+<h1>Kyrkostigen i Hässleholm</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Hässleholm — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Hässleholm"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-hassleholm-vankiva-kyrka-q10712663"><b>1. Vankiva kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Vankiva, Sverige</span></a>
+<a class="tile" href="/p/wd-hassleholm-vasterkyrkan-q10717955"><b>2. Västerkyrkan</b><span>Kyrka · kyrkobyggnad i Hässleholms kommun</span></a>
+<a class="tile" href="/p/wd-hassleholm-hassleholms-kyrka-q10531824"><b>3. Hässleholms kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Hässleholm, Sverige</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 9 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/hassleholm/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-hassleholm-vankiva-kyrka-q10712663"><b>1. Vankiva kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Vankiva, Sverige</li>
+<li><a href="/p/wd-hassleholm-vasterkyrkan-q10717955"><b>2. Västerkyrkan</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-hassleholms-kyrka-q10531824"><b>3. Hässleholms kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Hässleholm, Sverige</li>
+<li><a href="/p/ksamsok-hassleholms-begravningskapell-hassleholm-052172"><b>4. Hässleholms begravningskapell</b></a> — Ett medeltidsinspirerat tegelkapell från 1906–07, ritat av Theodor Wåhlin.</li>
+<li><a href="/p/wd-hassleholm-ljungdala-kyrka-q10568342"><b>5. Ljungdala kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-stoby-kyrka-q10680410"><b>6. Stoby kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-ignaberga-nya-kyrka-q10534255"><b>7. Ignaberga nya kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-ignaberga-gamla-kyrka-q10534252"><b>8. Ignaberga gamla kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li>
+<li><a href="/p/wd-hassleholm-finja-kyrka-q10495351"><b>9. Finja kyrka</b></a> — kyrkobyggnad i Hässleholms kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/hassleholm">Stadsvandringen i Hässleholm</a> <a class="cta ghost" href="/stadsvandring/hassleholm/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

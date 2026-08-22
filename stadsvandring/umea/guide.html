@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Hela stadsvandringen i Umeå (PDF) | Stadsvandring.io</title>
+<meta name="description" content="Hela den självguidade stadsvandringen i Umeå — alla 147 stopp att spara som PDF.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/umea/guide">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Hela stadsvandringen i Umeå (PDF) | Stadsvandring.io">
+<meta property="og:description" content="Hela den självguidade stadsvandringen i Umeå — alla 147 stopp att spara som PDF.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/umea/guide">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hela stadsvandringen i Umeå (PDF) | Stadsvandring.io">
+<meta name="twitter:description" content="Hela den självguidade stadsvandringen i Umeå — alla 147 stopp att spara som PDF.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style>
+.stop h3{font-size:20px;margin:0 0 6px}
+.lock{text-align:center}
+@media print{
+  .no-print{display:none !important}
+  body{background:#fff}
+  .wrap{max-width:100%;padding:0}
+  header.site,footer.site{display:none}
+  .card{border:0;box-shadow:none;padding:0;margin:0 0 18px;break-inside:avoid}
+  .badge{border:1px solid #ccc}
+}
+</style>
+<script defer src="/vendor/supabase.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="guide">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs no-print"><a href="/">Hem</a> › <a href="/stadsvandring/umea">Stadsvandring i Umeå</a> › Hela guiden</nav>
+
+<section id="lm-locked" class="card lock no-print">
+  <h1>Hela stadsvandringen i Umeå</h1>
+  <p>Den fullständiga guiden låses upp när du angett din e-post. Det tar tio sekunder och är gratis.</p>
+  <p><a class="cta" href="/stadsvandring/umea#lm-gate">Lås upp via e-post →</a></p>
+</section>
+
+<div id="lm-guide-full" hidden>
+  <div class="badges no-print"><span class="badge">🚶 Hela vandringen</span><span class="badge">📍 Umeå</span><span class="badge">147 stopp</span></div>
+  <h1>Stadsvandring i Umeå — hela guiden</h1>
+  <p class="lead">Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+  <p class="no-print"><button id="lm-print" class="cta">💾 Spara som PDF / skriv ut</button></p>
+  <article class="card stop">
+<h3>1. Bildmuseet</h3>
+<div class="badges"><span class="badge">museum</span></div>
+
+<p>Bildmuseet är en svensk statligt ägd konsthall för internationell samtidskonst och visuell kultur i Umeå. Bildmuseet grundades 1981 av Umeå universitet, då med tanken att konst ur statens konstsamlingar, t.ex. Moderna museet, Nationalmuseum eller Östasiatiska museet, också skulle kunna visas i norra Sverige. Satsningen präglades av rådande kulturpolitik, som bland annat betonade önskemålet att ”ge människor möjligheter till egen skapande verksamhet”, ”motverka kommersialismens negativa verkningar” och ”hänsyn till eftersatta gruppers erfarenheter och behov”. Under åren har inriktningen ändrats och verksamheten vuxit, och idag är Bildmuseet en av Sveriges största konsthallar för samtida konst och producerar egna utställningar i samarbete med konstnärer, konstinstitutitioner och universitetet över hela världen. Vid sidan om samtidskonsten presenterar Bildmuseet ibland historiska återblickar, fotografi, arkitektur och formgivning. Bildmuseets utställningar presenterar internationellt framstående konstnärer, filmare, fotografer och designer, som t.ex. Walid Raad, Zineb Sedira, Tracey Rose, Mario Merz, Dayanita Singh, Agnès Varda, Felice Varini, Joan Jonas, Isaac Julien, Stan Douglas, Leonor Fini, Rafel Lozano-Hemmer, Julio Le Parc, John Akomfrah, Charles och Ray Eames, Jumana Emil Abboud och Ana Mendieta. Under sommaren 2026 visar museet tre utställningar: Ai and the Paradox of Agency, Umeå Konsthögskolas Of Love and Care och Var är mitt ägg? vinnare av årets bilderbok.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>2. Backens kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Backens kyrka, ibland även Backenkyrkan, är en kyrkobyggnad i stadsdelen Backen i västra Umeå. Den är församlingskyrka i Umeå landsförsamling i Luleå stift.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>3. Böleängkyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Böleängkyrkan är en före detta kyrkobyggnad i stadsdelen Böleäng i Umeå. Den var distriktskyrka i Tegs församling i Luleå stift. Kyrkan avsakraliserades 31 augusti 2020 och lokalerna är sålda till Ica Fyrklövern som ligger vägg i vägg. Islamiska föreningen ville köpa Böleängskyrkan men nekades under budgivningen. Kyrkan byggdes 1979. Är byggd i trä och har ett kvadratisk plan, med kyrkorummet placerat i mitten. Taket är flackt och fasaderna är klädda med ljust gråbrun träpanel. Klockbocken är fristående. Invändigt är väggarna klädda med vitlaserad träpanel. Innertaket är klätt med vita gipsplattor och har synliga träbjälkar.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>4. Carlskyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Carlskyrkan är en kyrkobyggnad som invigdes 1984 i stadsdelen Carlshem i Umeå. Den är distriktskyrka i Ålidhems församling i Luleå stift och är en samarbetskyrka mellan Evangeliska fosterlandsstiftelsen, som har ansvaret för det löpande arbetet, och Svenska kyrkan.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>5. Den förhistoriska världen</h3>
+<div class="badges"><span class="badge">museum</span></div>
+
+<p>Den förhistoriska världen är ett naturvetenskapligt museum i Umeå med speciell inriktning på tro och vetande, med en kreationistisk profil. Museet drivs av en ideell allkristen förening och satsar lite extra på material om dinosaurier. Museet tillbakavisar att det skulle driva tesen att naturvetenskapliga tolkningar ska göras ur Bibeln. Museet ifrågasätter dock den förhärskande tolkningen av observationer gällande förhistorien, jordens bildande, livets uppkomst och livets utveckling, i synnerhet evolutionsteorin. Museet grundades och drivs av Mats Molén.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>6. Ersbodakyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Ersbodakyrkan är en distriktskyrka i Umeå stadsförsamling i Luleå stift. Kyrkan byggdes samtidigt som övrig bebyggelse i Västra Ersboda centrum i Umeå och invigdes 10 oktober 1982.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>7. Ersmarkskyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Ersmarkskyrkan är en kyrkobyggnad i byn Ersmark utanför Umeå. Den är distriktskyrka i Umeå stadsförsamling i Luleå stift och är en samarbetskyrka mellan Evangeliska fosterlandsstiftelsen, som har ansvaret för det löpande arbetet, och Svenska kyrkan.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>8. Grisbackakyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Grisbackakyrkan är en kyrka som tillhör Umeå landsförsamling i Luleå stift och står i stadsdelen Grisbacka i Umeå. Grisbackakyrkan är en samarbetskyrka mellan EFS och Svenska kyrkan.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>9. Grön eld, Umeå</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Grön eld är en 9 meter hög grön glasskulptur utförd av Vicke Lindstrand. Grön eld är ett av Umeås mest kända konstverk och var när den uppfördes 1970 världens största glasskulptur. Konstverket står på Järnvägstorget, framför Umeå centralstation.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>10. Hedlundakyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Hedlundakyrkan är en frikyrka tillhörande Equmeniakyrkan, belägen i stadsdelen Väst på stan i Umeå. Hedlundakyrkan var tidigare belägen i nuvarande Korskyrkans lokaler, men dessa såldes till Elimförsamlingen och arkitekt Janne Feldt ritade den nya Hedlundakyrkan, som invigdes år 1973.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>11. Helena Elisabeth kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Helena Elisabeth kyrka är en kyrkobyggnad i Umeå i Luleå stift. Den är församlingskyrka i Umeå stadsförsamling.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>12. Jesu Kristi kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Jesu kristi kyrka ligger på Carlshöjd i östra Umeå och tillhör samfundet Jesu Kristi Kyrka av Sista Dagars Heliga, känd som mormonkyrkan.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>13. Korskyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Korskyrkan ligger centralt i Umeå och är en del av Evangeliska Frikyrkan. Församlingen bildades nyåret 1940.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>14. Mariakyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Mariakyrkan är en kyrkobyggnad i stadsdelen Marieberg i Umeå. Den tillhör Umeå Maria församling i Luleå stift. Uppförd 1982 och byggd i tegel med gula tegelfasader. Den har svagt lutande pulpettak med papp. På taket har kyrkklockorna suttit i en vit genombruten kub; sedan 2002 sitter de i ett externt torn, ritat av Ragnar Bergeå. Väggarna i kyrkan är vitputsade och takets träpanel är vitmålad. Golvet är av kalksten. Kyrkan har flyttbara träbänkar. Arkitekt var Bertil Håkansson och altartextilen är vävd av Margit Westin. Den tidigare orgeln var en modulorgel, byggd av Nord Orgel i Umeå. 2015 invigdes kyrkans nya orgel, en helmekanisk orgel med 17 stämmor, byggd av Robert Gustavsson Orgelbyggeri, Härnösand. Orgeln kan drivas utan elektricitet med hjälp av en trampa till bälgen.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>15. Norra Skenet</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Norra skenet är en skulptur av Ernst Nordin och en symbol för Umeå universitet. I samband med utformningen av Umeå universitets campus utlystes en riksomfattande tävling, vilken vanns av Ernst Nordin med Norra skenet 1967. Skulpturen restes ursprungligen 1969 och flyttades 1995 till sin nuvarande plats vid Universitetsdammen, för att ge plats åt Lärarutbildningshuset. Skulpturen har en diagonal komposition med fyra ben och består av hopsvetsade fyrkantsrör i polerat rostfritt stål med ett inbyggt strålkastarsystem.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>16. Umeå pingstkyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Umeå pingstkyrka ligger centralt i östra delen av centrala Umeå och drivs av Pingströrelsen i Sverige. Tidigare hette den Filadelfiakyrkan, och det var härifrån TV-programmet Hela kyrkan sjunger sändes.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>17. Röbäcks kapell</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Röbäcks kapell är ett begravningskapell som ligger på Röbäcks kyrkogård i Umeå. Det tillhör Tegs församling i Luleå stift. Kapellet har plats för 100 personer.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>18. Tegs kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Tegs kyrka är en kyrkobyggnad i Umeå och ligger i närheten av Tegsbron där gamla E4 (numera länsväg 503) korsar Ume älv. Den tillhör Tegs församling i Luleå stift.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>19. Vasakyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Se även: Vasakyrkan Vasakyrkan i Umeå ligger i samma hus som före detta Hotell Vasa invid Vasaplan i centrala Umeå. Kyrkan drivs av EFS och har verksamhet för många åldrar. Vasakyrkan har cirka 300 medlemmar.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>20. Västerslättskyrkan S:t Staffan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Västerslättskyrkan (S:t Staffan) är en distriktskyrka i Umeå stadsförsamling i Luleå stift. Kyrkan ligger i stadsdelen Västerslätts centrum i Umeå. Det runda kyrkorummet, vars cirkelrunda planlösning har influenser från Italien, var tidigare en konsumhall från 1957, ritad av Sune Flök. Byggnaden har en stomme av gjuten betong och betongtegeltak. Väggarna saknade ursprungligen fönster för att ge plats åt hyllinredningar i butiken. Ljuset skulle istället komma uppifrån från en glaslanternin. Hösten 1976 började arbetet med om- och tillbyggnad. Butikshallen kläddes med gult tegel och varuintaget glasades in. Väggar och innertak är vitputsade och golvet är lagt av keramiska plattor. Kyrkan invigdes den 4 september 1977. Arkitekt för ombyggnationen var Bertil Håkansson. Den fristående klockstapeln är byggd i trä med platt tak och har en klocka gjuten av Bergholtz klockgjuteri i Sigtuna.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>21. Ålidhemskyrkan</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>Ålidhemskyrkan är en kyrkobyggnad som tillhör Ålidhems församling i Luleå stift. Invigd 1973. Den ligger på en skogklädd kulle mellan Sofiehem, Ålidbacken och Ålidhem, i närheten av Norrlands universitetssjukhus i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>22. Guitars – the Museum</h3>
+<div class="badges"><span class="badge">museum</span></div>
+
+<p>Guitars – the Museum (i folkmun även kallat Gitarrmuseet) är ett museum beläget i centrala Umeå.Initiativtagaren till Gitarrmuseet var Hasse Lidgren. Första presentationen för Umeå Kommun gjordes 2012, under andra halvan av år 2012 anslöt restaurangägarna och entreprenörerna Fredrik Fagerlund och Jonas Svedin till projektet. Då föll de sista bitarna på plats och gitarrmuseet i sin nuvarande form grundades och öppnade den 2 februari år 2014 i samband med invigningen av Umeå - Europas Kulturhuvudstad. Museet flyttade år 2018 från Vasagatan 20 till vindsvåningen hos Umeå Folkets Hus - Skolgatan 59 - där det nu huserar.Museet drevs de första åren av Svenska Gitarrmuseet AB, ett gemensamt bolag under ledning av personerna bakom musikaffären 4Sound och den tidigare rockklubben Scharinska, , vilka också stor del ligger bakom satsningen på ett gitarrmuseum. I november 2015 övergick ägandet av museet till en ideell förening, i vars styrelse även kommunen är representerad . I maj 2019 öppnade Guitars på vindsvåningen hos Umeå Folkets Hus. Den ideella föreningen äger fortsatt driftbolaget Svenska Gitarrmuseet AB.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>23. Kvinnohistoriskt museum</h3>
+<div class="badges"><span class="badge">museum</span></div>
+
+<p>Kvinnohistoriskt museum är ett museum i Umeå specialiserat på kvinnohistoria och är det första i Sverige i sitt slag. Museet invigdes 22 november 2014 i kulturhuset Väven. Kvinnohistoriskt museum är tänkt att ta upp frågor som kön och makt, identitet och historia. Museets logotyp var tidigare XX som står för kromosomuppsättningen hos kvinnor.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>24. Eye Benches II</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Eye Benches II är en skulptur av den fransk-amerikanska skulptören Louise Bourgeois, inköpt av Balticgruppen för Umedalens skulpturpark. Skulpturen är huggen ur svart granit från Zimbabwe av italienska stenhuggare , åren 1996–1997. Verkets två delar liknar gigantiska, vakande ögon – som överblickar trädgården framför motionsanläggningen Iksu spa – och har baksidor som kan fungera som sittplatser.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>25. Laddningsplats för ljushuvuden</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Konstsoffor uppvärmda med fjärrvärme med inbyggd bredbandsanslutning.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>26. Hoppare</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Skulpturkonstverk i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>27. Tegsgården</h3>
+<div class="badges"><span class="badge">Byggnad</span></div>
+
+<p>Tegsgården är en herrgård i Umeå från 1825. Huset är sedan 1969 klassat som byggnadsminne, och restaurerades åren 1970–1971. Herrgården är en gul träbyggnad med en bottenvåning och en vindsvåning, med en boyta på 244 kvadratmeter. Byggnaden har ett brutet mansardtak med valmade gavelspetsar. Ursprungligen fanns även två flygelbyggnader. Förstukvisten med lövsågerier är en tillbyggnad från 1890-talet. Tegsgården byggdes som bostadshus för kommissionslantmätaren Jonas Gustaf Stenberg. 2016 såldes huset med ett utgångspris på 5,5 miljoner kronor. Byggnaden ska ej förväxlas med före detta servicehuset med samma namn, som sedan 2013 hyser en förskola.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>28. Dunkermomentet</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>begravningsplats i Västerbotten</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>29. Line of Thoughts</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Line of Thoughts är en bronsskulptur i Umeå, skapad av den brittiske konstnären Tony Cragg. Verket uppfördes 2003 vid Umeälvens norra strand intill handelsområdet Strömpilen, som vid den tiden ägdes av Balticgruppen, som också beställt och äger skulpturen . Hösten 2019 flyttades skulpturen på ägarens begäran till Varvsparken på Teg, på älvens södra sida. Verket är tillverkat i sektioner som sammanfogats ovanpå varandra, vilket ger intrycket att den stillastående skulpturen vrider sig runt sin egen axel och visar olika ansikten beroende på hur betraktaren rör sig.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>30. Standing Man</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Standing Man är en bronsskulptur bemålad med oljefärg, skapad av den brittiske konstnären Sean Henry. Verket uppfördes 2007 för en utställning hos Galleri Andersson/Sandström på Umedalen i Umeå. Efter utställningen, som fick stor uppmärksamhet, erbjöd sig galleriet att temporärt och utan kostnad exponera verket på Rådhustorget i centrala Umeå under några sommarmånader. På hösten samma år beslöt Kulturnämnden i Umeå att köpa in verket för 810 000 kr, för permanent placering vid torget.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>31. Fontänskulptur</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Fontänskulptur är ett monumentalt verk – ritat av den umeåfödde formgivaren Stig Lindberg och utfört av keramikern Eje Öberg – som Umeå kommun lät placera mitt på Renmarkstorget i centrala Umeå två år efter torgets ombyggnation i mitten av 1970-talet.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>32. Listen</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Listen är ett konstverk av konstnären Camilla Akraka på Rådhustorget i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>33. Vågspel</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Vågspel är en fontänskulptur på Campustorget mellan MIT-huset och Universumhuset på Umeå universitets campus. Skulpturen beställdes av Statens konstråd i samband med uppförandet av MIT-huset. Konstverket är placerat mitt i en åttakantig bassäng och består av fyra vågformade bronspelare, som omger en mittpelare av rostfritt stål utefter vilken vatten rinner. På sommaren är Vågspel en fontänskulptur, på vintern ett illuminerat verk belyst av starka strålkastare. Tre trappsteg runt bassängen fungerar som sittplatser. Förebilder till verket kan sökas i medeltida torgbrunnar och den egyptiska kulturens obelisker.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>34. Skin 4</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Skin 4 är en träskulptur av Mehmet Ali Uysal som föreställer en – nio meter hög – klädnypa. Namnet ska anspela på att verket &quot;nyper tag&quot; i jordens tunna skinn. Verket – som beställdes av Umeå kommun med stöd av Balticgruppen inför kulturhuvudstadsåret 2014 – är producerat av granvirke av träförädlingsföretaget Martinsons i Bygdsiljum. Varianter av verket finns även i Liege, New York, Nicey-sur-Aire och Paris. Konstnären Mehmet Ali Uysal är född 1976 i Mersin, Turkiet och är, efter studier i Ankara och Bourges (Frankrike), numera verksam som lärare vid institutionen för konst och musik vid Mellanösterns tekniska universitet i Ankara.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>35. 2 × 3² Cube</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>2 × 3² Cube är ett verk av Cristos Gianakos som påminner om två fåtöljer, placerade vid Umeälvens strand i Öbackaparken i centrala Umeå. Verket – vars &quot;fåtöljer&quot; knappast inbjuder till sittning – består av två rostfärgade kubformer i corténstål, uppställda mot varandra på några meters avstånd. Ur vardera kub har en mindre kub skurits ut, så att håligheterna kan bilda slutändor för en tänkt, svävande form som förbinder de två kuberna. Konstnären Cristos Gianakos är född 1934 i New York, USA där han fortfarande är verksam, parallellt med boende i Chania, Grekland.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>36. 3D π</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>3D π är ett verk av den svenska konstnären Eva Löfdahl som förenar en Karl Johanssvamp och en pappersrulle till den matematiska symbolen pi: π.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>37. Gustav II Adolfs byst</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>En byst av Umeås grundare, Gustav II Adolf, är placerad mitt emellan Storgatan och dubbeltrappan på Rådhusets södra sida</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>38. Gustav Rosén</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>skulptur i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>39. Tellus</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>skulptur i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>40. Sittande kvinna vid källa</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>skulptur i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>41. Järnfågel</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>skulptur i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>42. Odelsgutt</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Skulptur i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>43. Studier och lek i skolan</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Studier och lek i skolan i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>44. Väsen</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Väsen i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>45. Wilhelm Peterson- Berger</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Wilhelm Peterson- Berger i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>46. Hantverk</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Hantverk i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>47. Ask och Embla</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Ask och Embla i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>48. Morgon</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>skulptur i Umeå kommun</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>49. Struktur Mandala</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Struktur Mandala i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>50. Apollon 350</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Apollon 350 i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>51. Najad</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Konstverket Najad, skulptur och fontän i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>52. Lill-Inga</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Lill-Inga i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>53. Håll-ning, Mot-stod, För-står,</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Håll-ning, Mot-stod, För-står, i Umeå.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>54. Backens kapell</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>kapell i Umeå kommun, Sverige</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>55. Heliga korsets kapell</h3>
+<div class="badges"><span class="badge">Kyrka</span></div>
+
+<p>kapell i Umeå kommun, Sverige</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>56. Tegsbron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Tegsbron är en balkbro och invigdes 8 oktober 1949 som Umeås andra bro över älven och därmed blev den första bron, numera kallad Gamla bron, gång- och cykelbana. Tegsbron tog E4 och E12 över Ume älv i centrala Umeå fram till 2012 då Östra länken invigdes förbi staden. I oktober 2013 infördes genomfartsförbud för tung trafik genom Umeå centrum på väg 503 – som alltså passerar Tegsbron – mellan Söderslättsrondellen till och Ersbodarondellen, vilket enligt tidiga mätningar (2013) minskade den tunga trafiken med närmare 20 procent, och därmed också utsläppen av främst partiklar och kvävedioxider.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>57. Kyrkbron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Kyrkbron är en bro i Umeå som förbinder Östra Kyrkogatan norr om Ume älv med Tegsvägen söder om densamma. Kyrkbron började byggas 1973 och invigdes 26 september 1975 som Umeås tredje bro över älven. En diskussion om placeringen av bron bredvid kyrkan pågick från tidigt 1960-tal och fortsatte in på 1970-talet. Vid bygget påträffades ett okänt gravfält (en äldre del av kyrkogården) vilket ledde till arkeologiska utgrävningar. Bron består av två parallella lådbalkar i betong med vertikala raka stöd och är egentligen två separata broar med var sitt körfält med på- och avfartsramper som sträcker sig ut över älven på norra sidan. Syftet med att bygga Kyrkbron var att avlasta Tegsbron, och den dimensionerades därför för en förväntad drastisk ökning av biltrafiken i centrum, vilket visade sig vara en rejäl överskattning.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>58. Gamla bron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Gamla bron är Umeås äldsta kvarvarande broförbindelse över Ume älv och är 301 meter lång.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>59. Broparken</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Broparken i Umeå anlades 1897. Parken ligger i en sydsluttning ner mot Strandpromenaden vid Umeälven, invid Gamla bron, och består av en stor gräsyta med stora gamla träd, bland annat poppel och ek. Tack vare sittplatserna – och efter ombyggnaden även &quot;matvagnar&quot; – närmast Storgatan och parkens kontakt med älven är den en populär plats på sommaren. På senare dagar har sportutövare börjat nyttja parkens sluttande natur som grund för att rigga en liten skid- och snowboardbacke under vinterhalvåret.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>60. Bölesholmarna</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Bölesholmarna, som ligger något uppströms Gamla bron över Ume älv i centrala Umeå, består av holmarna Gröna oxen och Grytan – ursprungligen kallade Stora och Lilla Bölesören – som är inbördes förbundna med broar. Båda holmarna nås via gång-/cykelbroar från stadsdelen Böleäng på Tegssidan av älven. I juni 2016 beslutade Umeå kommun att bygga en hängbro – Lundabron – mellan Bölesholmarna och Strandpromenaden vid Lundåkern på norra älvsstranden. Bygget startade hösten 2016 och blev klart tre år senare. På Bölesholmarna finns lekplats, badplats med sandstrand och badbrygga, omklädningsrum, dusch och toalett anpassad för rörelsehindrade, fiskeramper samt en mängd grillplatser.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>61. Döbelns plan</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Döbelns plan är en liten brukspark belägen Väst på stan i Umeå, inramad av trevånings flerbostadshus och de korta tvärgatorna Smedsgatan, Repslagargatan och Prästgatan. Från parkens östra kant börjar Kungsgatan mot centrum, från dess västra sida går Östra Prinsgatan mot Hedlundaområdet. (Trots namnet ligger Döbelns plan varken nära Döbelnsgatan eller Döbelns park, som båda ligger öster om Umeå centrum.) Parken anlades i mitten av 1940-talet, en tid då trädgårdsstaden var idealet och också den tid då de första större flerfamiljshusen byggdes i Umeå. Parken är rektangulär, med äldre björkar i utkanterna som omsluter gräsmattor, blomsterplanteringar och i mitten en liten fontän med parkbänkar och buskar. I slutet av 1990-talet byggdes parken om med bland annat nya lösningar för cykelvägar. Döbelns plan restaurerades på nytt 2011, bland annat genom nyplantering av träd.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>62. Mariehemsängarna</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Mariehemsängarna är ett grönområde i Umeå, beläget mellan Mariehem och Stadsliden. Området karaktäriseras av stora gräsmattor. Genom parken rinner en liten å med några dammar som brukar hysa svanar och änder på sommaren. Här finns också Mariehem SK:s hemmaplan MSK Arena. På Mariehemsängarna har Brännbollsyran genomförts varje år sedan 1974.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>63. Notvarpsbron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Notvarpsbron är en hängbro som går över Umeälven, Umeå kommun. Bron byggdes 1991 och går mellan Arboretum Norr i Baggböle på älvens norra sida och Umeå Energicentrum, nära Klabböle, på den södra sidan. Denna del av älven ligger mellan dammen till vattenkraftverket Stornorrfors och dess utlopp, som mynnar ut strax nedom bron. Detta leder till att vattenflödet vid bron kan variera mycket. Sitt namn har den fått efter det notfiske som tidigare bedrevs strax söder om Baggböle.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>64. Rådhusparken</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Rådhusparken är en park i centrala Umeå, belägen i södersluttningen mot Umeälven, mellan rådhuset vid Storgatan i norr och Västra Strandgatan i söder, Handelsbanken i öster och Stora hotellet/kulturhuset Väven i väster. Parken har symmetriskt utplacerade grusgångar och fritt placerade träd, bland annat skogslönn, hästkastanj, skogslind, sibirisk lärk, hägg, poppel, ask, vårtbjörk och glasbjörk. I parkens mitt finns en fontän, ursprungligen byggd 1920. Sommartid är parken en plats för solbadare, glassätare och picknicklunchande, vintertid brukar träden dekoreras med ljusinstallationer – och sluttningen blir varje nyårsafton en bra utsiktsplats för stadens fyrverkerier.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>65. Rådhustorget</h3>
+<div class="badges"><span class="badge">Torg</span></div>
+
+<p>Rådhustorget är ett torg beläget norr om Umeå rådhus med daglig torghandel. Kungsgatan går genom torget i öst-västlig riktning och Rådhusesplanaden har sin södra ände vid Rådhustorget. Rådhustorget fick sitt nuvarande läge efter stadsbranden 1888. Fram till 1970-talet, då Kungsgatan byggdes om till gågata, fungerade denna gata samt Östra och Västra Rådhusgatan som inramning för själva torget. Rådhustorget byggdes delvis om på 1980-talet, med ny markbeläggning och terrasseringar i söder och väster; den senare kom att tjäna som både scen och sittplats, som i folkmun kallades Apberget . Under åren 2016–2017 byggdes torget om från grunden, i huvudsak enligt planer utformade av landskapsarkitekt Thorbjörn Andersson.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>66. Stadsliden</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Stadsliden är ett stort grönområde centralt i Umeå. I folkmun kallas det oftast för Gammliaskogen, på grund av närheten till Gammliaområdet. Området, som avsattes som parkmark 1974, upptar cirka 1,6 kvadratkilometer och består till största delen av granskog. Området genomkorsas av ett antal motionsspår (från 1,9 till 10 km). Stadsliden är omgiven av tätortsbebyggelse och gränsar till stadsdelarna Berghem, Haga, Sandbacka, Mariedal och Mariehem. I områdets södra utkant ligger Gammlia friluftsmuseum med Västerbottens museum (länsmuseum). Där finns också sporthallen Gammliahallen och idrottsarenan Gammliavallen. På östra sidan finns Bräntberget som är en slalom- och pulkbacke med skidlift. I området har ett flertal större idrottsarrangemang genomförts, bl.a. SM i terränglöpning 1981 och SM i längdåkning 1996, 2001 och 2014, prologen till O-ringen 1997 samt världscupen i längdåkning 2004.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>67. Trädgård i norr</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Trädgård i norr var mellan 1987 och 2011 en park i centrala Umeå. Den låg som en avlång remsa mellan Västra Strandgatan och Umeälven, och hade samma utbredning i väst-östlig riktning som Rådhusparken på andra sidan om Västra Strandgatan. Parken genomkorsades av strandpromenaden, som går från småbåtshamnen på Lundåkern i väster till Sofiehem i öster. Trädgård i norr var den mest besökta parken i Umeå under sin tid. Trädgården anlades på den gamla kajplatsen i samband med bostadsmässan Bo87 och var planerad att stå i två år, för att sedan ge plats åt en planerad breddning av Västra Strandgatan. I och med att trädgården blev mycket omtyckt av stadens innevånare och turister fick trädgården stå kvar. Trädgården genomgick flera större förändringar även om den grundläggande strukturen fanns kvar och det pågick ett kontinuerligt arbete med att förändra växtmaterialet i trädgården. Vid denna plats ligger även Umeå gästhamn, som består av en brygga med 26 båtplatser och en servicebyggnad. Trädgård i norr ersätts av en annan parkanläggning på samma plats; en utvidgning av Rådhusparken.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>68. Vasaplan</h3>
+<div class="badges"><span class="badge">Torg</span></div>
+
+<p>Vasaplan är sedan invigningen 25 februari 1977 en knutpunkt för Umeå Lokaltrafik i centrala Umeå. Förutom stadsbussar, nattbussar och flygbuss går även en del av länstrafiken i Västerbotten från Vasaplan, men då på den korsande Vasagatan. Resten av länstrafiken och busslinjer till andra delar av landet går från Umeå busstation. Vasaplan ligger i huvudsak på Skolgatan, mellan tvärgatorna Rådhusesplanaden i väster och Västra Kyrkogatan i öster. I direkt anslutning till Vasaplan finns bland annat Umeå Folkets hus, Vasakyrkan, Pressbyrån, flera hotell och restauranger, kiosker och gallerian Utopia. I augusti 2016 öppnades det nya badhuset Navet närmast öster om Vasaplan. Under 2016–2017 byggdes Vasaplan om. De tidigare busshållplatserna togs bort och placerades istället längs en central mittrefug med vänstertrafik. För den nya arkitekturen svarade Wingårdh arkitektkontor. Utformningen av Vasaplatsen var ett av tolv byggnadsverk som 2019 nominerades till Träpriset 2020. I oktober 2017 ordnades en omröstning om platsens namn av den satiriska Facebook-gruppen Umeå, meme-huvudstad 2018. Med hänvisning till arkitekturen blev omröstningens utslag att Vasaplan ska kallas Bastuplan. Likt flera andra centrala bussgator i Sverige är Vasaplan uppvärmd med värmeslingor vintertid, för att minska risken för halkolyckor.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>69. Öbackaparken</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>Öbackaparken är ett grönområde vid Umeälven i Umeå, som sträcker sig från Konstnärligt campus strax söder om centrum till älvkröken sydväst om sjukhusområdet – mittemot Ön. Delar av parken var, liksom bostadsområdet Öbacka, under 1900-talets första hälft ett industriområde. Parken består till större delen av gräsmattor, några glest placerade träd, samt på senare tid utplacerade konstverk. Två bäckar (Djupbäcken och Sandbäcken) har sina utlopp i parken. Genom parken går Strandpromenaden (kommunen räknar Öbackaparken som en del av Strandpromenaden). I den östligaste delen av parken byggdes åren 2010–2016 det nya bostadsområdet Öbacka strand, där man återställt Djupbäckens utlopp och därigenom &quot;räddat&quot; en del av parkområdet.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>70. Lundabron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Lundabron är en bro för gående och cyklister över Ume älv som förbinder Bölesholmarna och västra Umeå i höjd med Lundåkern. Bron är med sin längd på 179 meter Sveriges längsta hängbro för gående och cyklister. Bron planerades ursprungligen för byggstart 2016 och skulle med en budget på 46 miljoner kronor stå klar 2017, men projektet försenades med mer än två år. När bron invigdes 20 december 2019 beräknades slutnotan landa kring 156 miljoner kronor. Det allra första förslaget var att bygga en snedstagsbro i trä, baserad på Älvsbackabron i Skellefteå. Den hade färdigställts 2011 av det lokala företaget Martinsons Träbroar, som specialiserat sig på att konstruera och bygga broar i trä. I det projektet användes en montagemetod som gick ut på att lansera ut broplattan på brons uppspända stagsystem, vilket ansågs vara en snabb och kostnadseffektiv metod. Det förslag som togs fram för Lundabron vidareutvecklades, eftersom spännvidden var längre. Genom att bredda pylonernas bas samt koppla ihop pylonerna i topp, skapades de A-formade pylonerna i förslaget. De var då också lutade framåt mot varandra för att minska längden mellan pylontopparna och därmed undvika för flacka stag. Sedermera ändrades brons huvudsakliga byggmaterial från limträ till betong men brons A-formade pyloner levde kvar i utformningen.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>71. Lasarettskajen nedre</h3>
+<div class="badges"><span class="badge">Torn</span></div>
+
+<p>en ensfyr vid Umeälven i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>72. Lasarettskajen övre</h3>
+<div class="badges"><span class="badge">Torn</span></div>
+
+<p>en ensfyr vid Umeälven i Umeå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>73. Linders park</h3>
+<div class="badges"><span class="badge">Naturreservat</span></div>
+
+<p>park i Luleå</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>74. Baggbölebron</h3>
+<div class="badges"><span class="badge">Bro</span></div>
+
+<p>Baggbölebron är en vägbro som tar E12 över Umeälven i Umeå. Bron är en del av Umeåprojektets västra länk och är en förbindelse mellan Umedalen i norr och Röbäck i söder. Baggbölebron öppnades för trafik 11 november 2024 som Umeås sjätte bro över älven.</p>
+<ul class="facts"><li>Källa: Wikidata/Wikipedia</li></ul></article>
+<article class="card stop">
+<h3>75. ÖSTRA FLYGELN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1859–1862</span></div>
+
+<p>Denna sidobyggnad är av trä i en våning, med rödmålad locklistpanel, vita knutar och fönstersnickerier samt tak av grönmålad plåt. Invändigt är byggnaden förändrad.</p>
+<ul class="facts"><li>Nybyggnadsår: 1859 - 1862</li><li>UMEÅ CELLFÄNGELSET 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>76. SEMINARIET FÖR HUSLIG UTBILDNING</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1953–1960</span></div>
+
+<p>Seminariet uppfördes 1953–60 efter ritningar av arkitekten Nils Tesch och består av tre vinkelställda byggnadskroppar kring en gård samt en bakomliggande länga. Husen har betongstomme med fasader av rött tegel och sadeltak täckt med enkupigt tegel. Tesch formgav även dörrar, listverk, kapphyllor och annan fast inredning med stor omsorg, medan inredningsarkitekten Carl Malmsten stod för möbler och textilier.</p>
+<ul class="facts"><li>Nybyggnadsår: 1953 - 1960</li><li>UMEÅ HUGIN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>77. RÅDHUSET I UMEÅ</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1890–1890</span></div>
+
+<p>Rådhuset är en tvåvåningsbyggnad i rött tegel med ett markerat mittparti i form av en risalit och en rikt dekorerad trappgavelsfrontespis. Både norra fasaden mot torget och den södra mot älven är monumentalt utformade, med sockel av kvaderhuggen natursten och detaljer i puts. Över frontespisen reser sig ett öppet klocktorn med spira, och huvudentrén från Storgatan nås via en dubbeltrappa som bär upp en paradbalkong. Det branta sadeltaket är täckt av falsad plåt, och en nisch i västra gaveln var tänkt att rymma en staty.</p>
+<ul class="facts"><li>Nybyggnadsår: 1890 - 1890</li><li>UMEÅ UMEÅ 6:2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>78. VÄSTRA FLYGELN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1859–1862</span></div>
+
+<p>Sidobyggnaden är av trä i en våning, med rödmålad locklistpanel, vita knutar och fönstersnickerier samt tak av grönmålad plåt. Invändigt har byggnaden förändrats.</p>
+<ul class="facts"><li>Nybyggnadsår: 1859 - 1862</li><li>UMEÅ CELLFÄNGELSET 1 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>79. GAMLA BANKHUSET, &quot;SMÖRASKEN&quot;</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1877–1877</span></div>
+
+<p>Vid Storgatan ligger Westerbottens enskilda banks första bankhus, en putsad och gulfärgad tvåvånings stenbyggnad i nyrenässans, ritad 1877 av kaptenen Axel Cederberg, stadens tekniske rådgivare. På grund av de rundade hörnen döpte folkhumorn huset till Smörasken. Sedan banken efter branden 1888 flyttat till Rådhusparken har byggnaden haft många funktioner, bland annat inrymt Umeå stadsbibliotek 1936–54. Med sitt välbevarade yttre är den en god företrädare för den norrländska småstadens officiella byggnadsstil vid 1800-talets slut.</p>
+<ul class="facts"><li>Nybyggnadsår: 1877 - 1877</li><li>UMEÅ VIKINGEN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>80. FÖRRÅD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1909–1909</span></div>
+
+<p>Detta förråd i Umeå dateras till 1909 och är upptaget i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1909 - 1909</li><li>UMEÅ STADSLIDEN 3:10 - husnr 18</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>81. TRÄPAVILJONGEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1866–1866</span></div>
+
+<p>Träpaviljongen uppfördes 1866 för mentalpatienter och är byggd av timmer med rödfärgad locklistpanel efter ritningar av arkitekten A R Hörnell. Byggnaden ingår i byggnadsminnesområdet kring Gamla Lasarettet, vars gräns ändrades 1994.</p>
+<ul class="facts"><li>Nybyggnadsår: 1866 - 1866</li><li>UMEÅ SANDÅKERN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>82. Jordkällare</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1940–1949</span></div>
+
+<p>Denna jordkällare i Umeå dateras till 1940-talet och finns med i Riksantikvarieämbetets bebyggelseregister. Några närmare uppgifter om byggnaden framgår inte av underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1940 - 1949</li><li>UMEÅ RIDDARBORGEN 2 - husnr 9001</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>83. KASERN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna kasern i Umeå dateras till 1908 och är registrerad i Riksantikvarieämbetets bebyggelseregister. Ytterligare uppgifter om byggnaden saknas i underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 8</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>84. BANKHUSET (HANDELSBANKEN)</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1894–1894</span></div>
+
+<p>Bankhuset uppfördes 1894 efter en arkitekttävling med fem framstående svenska arkitekter, där Ernst Stenhammar segrade med ett förslag som ansluter till rådhusets stil. Fasaden är av ljusrött tegel med lister och detaljer i ljusgrå natursten, och byggnaden har två våningar med vindsvåning under valmat plåttak. Huvudfasaden mot väster har en bred risalit med hög svängd prydnadsgavel och en rikt skulpterad portal, medan hörnen är rundade och gårdstornen krönta av lökkupolliknande huvar. Sockeln av grovhuggen granit bär ett bröstvärn av ljus natursten.</p>
+<ul class="facts"><li>Nybyggnadsår: 1894 - 1894</li><li>UMEÅ ÄGIR 7 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>85. MATSALSBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna matsalsbyggnad i Umeå dateras till 1908 och är upptagen i Riksantikvarieämbetets bebyggelseregister. Underlaget rymmer inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 11</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>86. STENPAVILJONGEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1897–1897</span></div>
+
+<p>Stenpaviljongen är uppförd av tegel med gulfärgad spritputs efter ritningar av arkitekten Axel Kumlien och öppnades 1897. Den inrymde operationssal och kirurgisk avdelning med hög teknisk standard för sin tid. Byggnaden ingår i byggnadsminnesområdet kring Gamla Lasarettet, vars gräns ändrades 1994.</p>
+<ul class="facts"><li>Nybyggnadsår: 1897 - 1897</li><li>UMEÅ SANDÅKERN 3 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>87. ADMINISTRATIONSBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna administrationsbyggnad i Umeå dateras till 1908 och finns registrerad i Riksantikvarieämbetets bebyggelseregister. Några närmare uppgifter om byggnaden anges inte.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 7</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>88. GÅRDSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1900–1907</span></div>
+
+<p>På tomten står även ett gårdshus, vars östra del ursprungligen inrymde stall och kuskbostad. Den västra delen tillkom 1907 efter ritningar av Gustaf Hermansson.</p>
+<ul class="facts"><li>Nybyggnadsår: 1900 - 1907</li><li>UMEÅ TYR 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>89. Uthus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1894–1894</span></div>
+
+<p>Detta uthus i Umeå dateras till 1894 och är upptaget i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1894 - 1894</li><li>UMEÅ RIDDARBORGEN 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>90. ANNEX</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1941–1941</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1941 och benämns Annex. Den finns upptagen i Riksantikvarieämbetets bebyggelseregister. Något närmare om husets funktion eller utformning framgår inte av underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1941 - 1941</li><li>UMEÅ HUGIN 3 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>91. BOSTADSHUS, RIPAN 3</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1870–1879</span></div>
+
+<p>Huset restes på 1870-talet efter ritningar av stadsbyggmästare Gustaf Axel Pettersson, i två våningar med panelklädda timmerväggar under tegeltak. Fasaderna bär bågfriser och profilerade fönsteröverstycken. Ett trapphus mot gården tillkom 1898 och 1919 förlängdes byggnaden västerut. Både exteriör och delvis interiör har kvar sin ursprungliga prägel. Tillsammans med Ripan 1 hör huset till de få byggnader som överlevde stadsbranden 1888. Tonsättaren Wilhelm Peterson-Berger bodde här 1885–1895.</p>
+<ul class="facts"><li>Nybyggnadsår: 1870 - 1879</li><li>UMEÅ RIPAN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>92. STOLPBOD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1737–1737</span></div>
+
+<p>Väster om manbyggnaden står en knuttimrad stolpbod som restes 1737. Ursprungligen låg den på motsatt sida av vägen och flyttades senare till sin nuvarande plats. Övriga uppgifter om boden saknas i underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1737 - 1737</li><li>UMEÅ BÖLEGÅRD 5 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>93. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1871–1871</span></div>
+
+<p>Fastigheten Brogård 1 bebyggdes 1871 av bagaren K A Tillman, men såldes redan 1876 till lantmätaren Alexander Lagergréen, som ägde huset till 1899. Bland senare ägare fanns kapten O A Öhman och Johannes Modig. En salong mot gården tillkom 1886. Stommen är av liggande timmer på stensockel, och fasaden bär gul locklistpanel med profilerade fönsteröverstycken och gröna luckor. År 1940 fick huset en rikt snidad ytterdörr av träsnidaren Emil Sandberg. Taket är utfört i schweizerstil.</p>
+<ul class="facts"><li>Nybyggnadsår: 1871 - 1871</li><li>UMEÅ BROGÅRD 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>94. SKOLBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1925–1925</span></div>
+
+<p>Lärarhögskolan, tidigare folkskoleseminarium, uppfördes 1925 efter ritningar av arkitekt Gustav Holmdahl. Anläggningen har en central byggnad i tre och en halv våning med vinkelställda trevåniga flyglar, och gården sluts på fjärde sidan av en öppen arkad. Fasaderna är gråvitputsade med socklar och portomfattningar av grå granit, och taket täcks av svartmålad plåt med höga ventilationspipor. Arkitekturen räknas som ett synnerligen välbevarat exempel på tjugotalsklassicism.</p>
+<ul class="facts"><li>Nybyggnadsår: 1925 - 1925</li><li>UMEÅ HUGIN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>95. BARACK</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1916–1916</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1916 och benämns Barack. Den är registrerad i Riksantikvarieämbetets bebyggelseregister. Underlaget ger ingen ytterligare beskrivning av byggnadens utformning eller användning.</p>
+<ul class="facts"><li>Nybyggnadsår: 1916 - 1916</li><li>UMEÅ STADSLIDEN 3:10 - husnr 15</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>96. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1890–1890</span></div>
+
+<p>Huset restes strax efter stadsbranden 1888 som bostad åt lektor Edvard Waldenström, med byggnadslov 1890 och ritning av A W Bodinson samma år. Den nuvarande panelen och en numera riven veranda ritades 1897 av C Fr Sandgren, stadens mest anlitade arkitekt vid denna tid. Byggnaden är timrad i två våningar med breda frontespiser och valmade tak, och taket täcks av grönmålad plåt. Träfasaden är rikt dekorerad med pilastrar och lister samt omväxlande stående och liggande fasspontpanel.</p>
+<ul class="facts"><li>Nybyggnadsår: 1890 - 1890</li><li>UMEÅ VIDAR 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>97. FLYGELBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1870–1879</span></div>
+
+<p>Bostads- och kontorshuset vid Nytorgsgatan var från början ett uthus uppfört 1874. Det utökades med bostadsrum 1879 och byggdes till på nytt 1931. Under 1930-talet inreddes uthusdelen till kontor och bostäder.</p>
+<ul class="facts"><li>Nybyggnadsår: 1870 - 1879</li><li>UMEÅ RIPAN 1 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>98. CELLFÄNGELSET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1859–1862</span></div>
+
+<p>Huvudbyggnaden i två våningar företräder den mindre, raka fängelsetypen och restes 1859–1862. Fasaderna är putsade och gulfärgade med lisener och listverk i vitt, medan sadeltaken täcks av ljusgrönmålad plåt. Invändigt är administrationsdelens bottenvåning mycket välbevarad, och celldelen har ett öppet bjälklag som bara förekommer i ett fåtal fall.</p>
+<ul class="facts"><li>Nybyggnadsår: 1859 - 1862</li><li>UMEÅ CELLFÄNGELSET 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>99. KASERN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1908 och benämns Kasern. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister. Ytterligare uppgifter om byggnaden saknas i underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 6</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>100. TRÄDGÅRDSMÄSTARBOSTADEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1905–1905</span></div>
+
+<p>Trädgårdsmästarbostaden uppfördes 1905 och rymde från början en bostadslägenhet samt ett stall för tre hästar. Några ytterligare uppgifter om byggnaden framgår inte av underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1905 - 1905</li><li>UMEÅ HÄRMOD 9 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>101. SPARBANKSHUSET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1917–1917</span></div>
+
+<p>Sparbankshuset är ett exempel på 1910-talets nationella tegelstil. Torben Grut, arkitekt bakom Stockholms stadion, signerade ritningarna 1915 och två år senare stod huset klart. Fasaderna av handslaget tegel i gråröd ton har en stram prägel med breda lisener, höga tätspröjsade fönster i de övre våningarna och korgbågiga fönster i bottenvåningen. Den sparsamma yttre dekoren och den påkostade inredningen med stucktak, dörrar och boaseringar utfördes efter Gruts egna detaljritningar.</p>
+<ul class="facts"><li>Nybyggnadsår: 1917 - 1917</li><li>UMEÅ ODIN 3 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>102. Garage</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1954–1954</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1954 och benämns Garage. Den är registrerad i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga fler uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1954 - 1954</li><li>UMEÅ RIDDARBORGEN 2 - husnr 3</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>103. FRÄLSNINGSARMÉNS SAMLINGSLOKAL</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1918–1918</span></div>
+
+<p>Byggnaden på fastigheten Ymer 2 uppfördes 1918 som biografen Svea efter ritningar av arkitekt Nils Nordén. Efter tre år som biograf togs lokalen över av Frälsningsarmén, som sedan dess använt den som samlingslokal. Exteriören är klassicistiskt hållen med gråmålad liggande fasspontpanel, ljusa snickeridetaljer och en arkad vid entrén mot Kungsgatan. Både fasaden och delar av interiören, som foajén, biljettkuren och den östra läktarens bänkrader, är i det närmaste oförändrade sedan biograftiden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1918 - 1918</li><li>UMEÅ YMER 2 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>104. BÖLE ÖVERSTELÖJTNANTSBOSTÄLLE</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1761–1761</span></div>
+
+<p>Manbyggnaden restes 1761, sannolikt efter mönsterplanen i 1694 års boställsordning, på samma plats som ett äldre överstelöjtnantsboställe från 1696. Böle tjänade som militärboställe fram till 1897. Byggnaden är en timrad envåningsbyggnad med frontespiser och brutet spåntak, klädd med rödfärgad locklistpanel. Flera ombyggnader, bland annat 1866, har förändrat exteriören; ursprungligen hade huset sadeltak. Den nuvarande balkongen på fyra kolonner härrör från 1934, medan den ursprungliga rumsindelningen med mittkorridor till stor del är bevarad i västra delen.</p>
+<ul class="facts"><li>Nybyggnadsår: 1761 - 1761</li><li>UMEÅ BÖLEGÅRD 5 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>105. OFFICERSMÄSS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1910–1910</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1910 och benämns Officersmäss. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister. Något mer om byggnaden framgår inte av underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1910 - 1910</li><li>UMEÅ STADSLIDEN 3:10 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>106. EXERCISHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1908 och benämns Exercishus. Den är registrerad i Riksantikvarieämbetets bebyggelseregister. Underlaget ger inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>107. STATIONSHUSET, UMEÅ</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1896–1896</span></div>
+
+<p>Stationshuset i Umeå uppfördes 1896 och finns registrerat i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga närmare uppgifter om byggnadens utformning eller historia.</p>
+<ul class="facts"><li>Nybyggnadsår: 1896 - 1896</li><li>UMEÅ UMEÅ 7:11 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>108. Umeå stads kyrka</h3>
+<div class="badges"><span class="badge">Kyrka</span><span class="badge">1892–1894</span></div>
+
+<p>Sedan den gamla träkyrkan brunnit på julaftonen 1887 och stadens centrum ödelagts sommaren 1888 stod Umeå inför ett omfattande återuppbyggnadsarbete. Den nye stadsarkitekten Fredrik Olaus Lindström fick rita flertalet offentliga byggnader, däribland stadskyrkan, som uppfördes 1892–1894 i nygotisk stil av tegel på granitsockel. Kyrkan har en treskeppig plan med tvärskepp, huvudentré genom tornet i nordväst och kor i öster. Tornets läge anpassades efter tomtens bärighet, och ekonomiska skäl tvingade fram enklare och billigare materialval.</p>
+<ul class="facts"><li>Nybyggnadsår: 1892 - 1894</li><li>UMEÅ UMEÅ 6:4 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>109. REKTOR JOHANSSONS GÅRD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1876–1876</span></div>
+
+<p>Den äldre byggnaden på fastigheten Domherren 1 och 2 restes 1876 efter ritning av stadsbyggmästare G A Pettersson, med läroverkets rektor Johan Johansson som byggherre. Huset är ett av få bevarade exempel på 1870-talets stadsbebyggelse i Umeå. Det är timrat i två våningar med flackt valmat plåttak av en typ som var vanlig i norrländska städer. Utvändigt bär det gulmålad panel i nyrenässansstil med pilastrar, listverk och konsolfris.</p>
+<ul class="facts"><li>Nybyggnadsår: 1876 - 1876</li><li>UMEÅ DOMHERREN 9 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>110. MORITZSKA GÅRDEN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1891–1891</span></div>
+
+<p>Moritzska gården hör till de ståtligaste hus som restes i Umeå efter branden 1888. Den byggdes av timmer 1891 i kvarteret Idun som bostad och kontor åt disponenten Carl Gustaf Moritz, som vid sin död 1897 testamenterade fastigheten till staden. Efter en långdragen debatt flyttades huvudbyggnaden 1983 till kyrkbrons norra ände. Umeåarkitekten C Fr Sandgren gav gården en rik utformning med en sydfasad kring en loggia med joniska kolonner, takdekor i nyrenässans och senare tillägg med tydliga jugenddrag.</p>
+<ul class="facts"><li>Nybyggnadsår: 1891 - 1891</li><li>UMEÅ HÄRMOD 10 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>111. HOVRÄTTEN FÖR ÖVRE NORRLAND</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1887–1887</span></div>
+
+<p>Hovrättsbyggnaden uppfördes 1887 efter ritningar av arkitekten Johan Nordqvist. Den inrymde Umeås första folkskoleseminarium fram till 1925 och därefter bland annat museum och bibliotek till 1936, då hovrätten för övre Norrland flyttade in. År 1952 förlängdes huset med två fönsteraxlar i vardera änden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1887 - 1887</li><li>UMEÅ LÄRAREN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>112. HANTVERKSHUSET, ASCHANSKA VILLAN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1888–1899</span></div>
+
+<p>Aschanska villan vilar mot älven på en hög sockel av grovhuggen granit. Huskroppen ligger något snett mot gatulinjen, så att en altan bildas i dess östra ände. Villan är uppförd i en våning, men det brutna taket rymmer även en full vindsvåning. De smala flyglarna mot gården täcks av branta brutna tak.</p>
+<ul class="facts"><li>Nybyggnadsår: 1888 - 1899</li><li>UMEÅ ÄGIR 12 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>113. Tingshus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1992–1994</span></div>
+
+<p>Tingsrätten ligger i Engelska parken strax öster om stadens centrum. Byggnaden fick arkitekturpriset Umespiran 1995, vilket framgår av en plakett på fasaden; motiveringen lyfte fram den välavvägda anpassningen till en känslig miljö, den välkomnande entrén och samspelet mellan byggnad och inredning. Tingshuset består av flera vinkelställda byggnadskroppar i en till två våningar som omger en stensatt innergård med rabatter och vattenkonst. Kring den nästan slutna gården löper en uppglasad omgång i en våning.</p>
+<ul class="facts"><li>Nybyggnadsår: 1992 - 1994</li><li>UMEÅ HUGIN 4 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>114. Tingshus</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1955–1958</span></div>
+
+<p>Det gamla tingshuset restes på samma tomt där ett hus från 1879 stått. För att rätten skulle kunna arbeta vidare byggdes huset i etapper: först tingssalsdelen och bostadslängan, därefter revs det gamla huset och den tredje huskroppen uppfördes. Vid invigningen den 29 mars 1958 beskrev häradshövdingen huset som väl lämpat och värdigt inrett utan onödig lyx, och pressen kallade det ett av landets vackraste tingshus. Sedan tingsrätten flyttade 1994 har huset använts av länsrätten.</p>
+<ul class="facts"><li>Nybyggnadsår: 1955 - 1958</li><li>UMEÅ SANDÅKERN 7 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>115. FÄRGAREN 1</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1882–1882</span></div>
+
+<p>Huset uppfördes 1882 som bostads- och butikshus åt färgaren J M Höglander och är ett väl bevarat exempel på den mer påkostade bebyggelse som präglade Storgatan före stadsbranden 1888. Huvudbyggnaden av timmer i två våningar under valmat plåttak har en panel i nyrenässansstil med pilastrar, listverk och konsolfris, målad i beige och olivgrönt. Den bildar pendang till bankhuset på andra sidan gatan. Efter branden köptes fastigheten av Västerbottens läns sparbank, som inrättade bankkontor i bottenvåningen.</p>
+<ul class="facts"><li>Nybyggnadsår: 1882 - 1882</li><li>UMEÅ FÄRGAREN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>116. TELEVERKETS HUS, UMEÅ</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1900–1900</span></div>
+
+<p>Televerkets hus i Umeå uppfördes 1900 och finns registrerat i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga närmare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1900 - 1900</li><li>UMEÅ HÖDER 7 - husnr 9001</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>117. RESIDENSET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1891–1894</span></div>
+
+<p>Det nuvarande residenset uppfördes 1891–1894 efter ritningar av C. Fr. Ekholm och Ludvig Peterson. Bottenvåningen rymde länsstyrelsens tjänstelokaler medan övervåningen inreddes för landshövdingen. Under byggtiden var tidningen Westerbotten kritisk och menade att den låga men mycket långa byggnaden mer förde tankarna till ett affärshus än till en statlig ämbetslokal. År 1935 tillbyggdes två utskjutande flyglar i anslutande stil.</p>
+<ul class="facts"><li>Nybyggnadsår: 1891 - 1894</li><li>UMEÅ RIDDARBORGEN 2 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>118. GAMLA LASARETTET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1785–1785</span></div>
+
+<p>Gamla lasarettet uppfördes 1785 av timmer i ursprungligen en våning och räknas som ett av landets äldsta bevarade lasarettshus. Verksamheten hade från början hela övre Norrland som upptagningsområde men endast åtta vårdplatser. Sitt nuvarande utseende fick huset genom en påbyggnad 1863 och brädfodring 1866. Fasaden bär stående gulmålad locklistpanel med båglist, konsolfris och detaljer, en paneltyp som även fanns på andra offentliga byggnader i Umeå före stadsbranden 1888.</p>
+<ul class="facts"><li>Nybyggnadsår: 1785 - 1785</li><li>UMEÅ SANDÅKERN 3 - husnr 5</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>119. GAMLA SLÖJDSKOLAN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1879–1879</span></div>
+
+<p>År 1875 startade Västerbottens läns hushållningssällskap en slöjdskola i Umeå, och 1879 flyttade den in i eget hus. Byggnaden är ritad av arkitekten F R Ekberg och uppförd av stående timmer i två våningar. Den hör till de få kvarvarande exemplen på 1870-talets bebyggelse i staden. Fasaderna bär liggande panel från 1895 med rikt utformade omfattningar och listverk, målad i två beige nyanser, och det låga valmade taket är plåtklätt. Ett trapphus mot gården tillkom 1904.</p>
+<ul class="facts"><li>Nybyggnadsår: 1879 - 1879</li><li>UMEÅ SLÖJDAREN 3 - husnr 5</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>120. RINGSTRANDSKA VILLAN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1899–1899</span></div>
+
+<p>Villan uppfördes 1899 åt jägmästaren Nils Ringstrand efter ritningar av Gustaf Lindgren. Huset är byggt av trä i delvis två våningar, med fasspontpanel på fasaderna och spånklädda gavelrösten med dekorativa vindskidor. Byggnaden är rödfärgad med vita snickeridetaljer. Huvudbyggnaden, som bland annat disponeras av Druidlogen i Umeå, genomgick en omfattande inre ombyggnad 1948–1949.</p>
+<ul class="facts"><li>Nybyggnadsår: 1899 - 1899</li><li>UMEÅ TYR 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>121. SJUKHUSBYGGNAD</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1908 och benämns Sjukhusbyggnad. Den är registrerad i Riksantikvarieämbetets bebyggelseregister. Underlaget ger inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 14</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>122. SCHARINSKA VILLAN</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1900–1929</span></div>
+
+<p>Scharinska villan hör till arkitekten Ragnar Östbergs främsta ungdomsverk. Fasaden mot Storgatan är delad i två olika höga partier, där varje fönsteraxel livas av en svängd, barockartad gavel, och murarna är putsade och rödfärgade. Stor omsorg lades på detaljerna, bland annat huvudingångens ytterdörr med en trärelief av bladverk och småänglar som symboliserar ägarens barn. Invändigt är mycket av den påkostade inredningen bevarad, särskilt bottenvåningens herrum, salong och matsal, den senare med väggbeklädnad av spansk majolika.</p>
+<ul class="facts"><li>Nybyggnadsår: 1900 - 1929</li><li>UMEÅ HÄRMOD 9 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>123. VON AHNSKA MAGASINET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1887–1887</span></div>
+
+<p>Von Ahnska magasinets äldsta del är en ladugård timrad 1887 åt överstelöjtnant L A von Hedenberg. Efter stadsbranden 1888 köptes fastigheten av köpmannen J V von Ahn, och ladugården byggdes då till med en magasinslänga ner mot älvstranden efter ritningar av C Fr Sandgren. Det rödfärgade magasinet är ett tidstypiskt och välbevarat exempel på magasin från handelsgårdsepoken under 1800-talets senare del.</p>
+<ul class="facts"><li>Nybyggnadsår: 1887 - 1887</li><li>UMEÅ VIKINGEN 3 - husnr 2</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>124. BOSTADSHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1870–1879</span></div>
+
+<p>De två byggnaderna i kvarteret Ripan 1 restes under 1870-talet efter ritningar av stadsbyggmästare Gustav Axel Pettersson. De är byggda av timmer i en och en halv våning, klädda med rödfärgad locklistpanel och täckta av tegelklädda sadeltak.</p>
+<ul class="facts"><li>Nybyggnadsår: 1870 - 1879</li><li>UMEÅ RIPAN 1 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>125. GAMLA TULLMAGASINET</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1901–1901</span></div>
+
+<p>De magasin och bodar som präglade hamnpartiet före branden 1888 återuppbyggdes aldrig. I stället bildade de främsta handelsmännen tillsammans med Umeå stad ett bolag som 1901 uppförde ett gemensamt magasin, som också rymde lokaler för tullkammaren. När hamnverksamheten i centrum upphörde och tullen flyttade till Holmsund förlorade huset sina ursprungliga funktioner. Tegelbyggnaden, ritad av E O Mångberg, vilar på en råhuggen granitsockel och har röda fasader med inslag av mörkare tegel och grupperade rundbågiga fönster. Vindsvåningen skadades i en brand 1908.</p>
+<ul class="facts"><li>Nybyggnadsår: 1901 - 1901</li><li>UMEÅ BRAGE 6 - husnr 1</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>126. Plank</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1859–1862</span></div>
+
+<p>Detta plank i Umeå tillkom 1859–1862 och finns registrerat i Riksantikvarieämbetets bebyggelseregister. Underlaget innehåller inga ytterligare uppgifter.</p>
+<ul class="facts"><li>Nybyggnadsår: 1859 - 1862</li><li>UMEÅ CELLFÄNGELSET 1 - husnr 9001</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>127. GYMNASTIKHUS</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1908–1908</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1908 och benämns Gymnastikhus. Den är registrerad i Riksantikvarieämbetets bebyggelseregister. Något mer om byggnaden framgår inte av underlaget.</p>
+<ul class="facts"><li>Nybyggnadsår: 1908 - 1908</li><li>UMEÅ STADSLIDEN 3:10 - husnr 10</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>128. VERKSTAD OCH STALL</h3>
+<div class="badges"><span class="badge">Byggnad</span><span class="badge">1917–1917</span></div>
+
+<p>Denna byggnad i Umeå uppfördes 1917 och benämns Verkstad och stall. Den finns registrerad i Riksantikvarieämbetets bebyggelseregister. Underlaget ger inga ytterligare uppgifter om byggnaden.</p>
+<ul class="facts"><li>Nybyggnadsår: 1917 - 1917</li><li>UMEÅ STADSLIDEN 3:10 - husnr 17</li><li>Bebyggelse - byggnad</li><li>Källa: Riksantikvarieämbetet – Bebyggelseregistret</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>129. Stridsvärn</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Skyttevärnet bildar en cirkel av delvis utrasade, kallmurade kantiga stenar och är omkring 1,2 meter högt. Mot väster finns en öppning som är cirka 3,5 meter lång.</p>
+<ul class="facts"><li>L2020:6517</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>130. Ristning, medeltid/historisk tid</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>På en berghäll finns 26 ristningar samlade inom en yta. De utgörs av 22 texter med initialer och namn, två årtal, däribland 1917, samt två bilder föreställande ett huvud och en ring. Längst i sydväst läses namnen Axel, Ipa och Valdemar tillsammans med datumet 21/5 1917. De enskilda ristningarna är 5–7 centimeter breda och 3–10 centimeter höga.</p>
+<ul class="facts"><li>L2019:6555</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>131. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Detta minnesmärke i Umeå saknar en kvalitetssäkrad beskrivning. Uppgifter kan vara ofullständiga, felaktiga eller inaktuella, och för mer information hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:7895</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>132. Brott/täkt</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Stenbrottet är omkring 165 meter långt i nord-sydlig riktning och 50 meter brett samt mellan 3 och 5 meter djupt.</p>
+<ul class="facts"><li>L2020:6510</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>133. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Detta minnesmärke i Umeå saknar en kvalitetssäkrad beskrivning. Informationen kan vara ofullständig, felaktig eller inaktuell, och för mer uppgifter hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:7796</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>134. Dammvall</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Vid platsen finns ett dammfundament av cement och stålbalkar, och norr om det är älvstranden förstärkt med nedslagna stockar. Fundamentet är rester av en flottningsdamm som enligt uppgift byggdes 1951 vid Ön för att reglera vattenflödet i Lillån och därmed styra timmerflödet i skiljet. Dammen bestod av en stenkista på botten med betongpelare och mellanliggande dammluckor. När flottningen upphörde revs dammen, och i dag återstår bara de två fundamenten på var sida om älven.</p>
+<ul class="facts"><li>L2019:7351</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>135. Brott/täkt</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Stenbrottet har rund form och i det ligger ett tjugotal kantiga stenar. Underlaget saknar närmare uppgifter om brottets mått.</p>
+<ul class="facts"><li>L2020:6509</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>136. Husgrund, historisk tid</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Lämningen utgörs av en husgrund från historisk tid, omkring 0,1 meter hög, där naturstenar ligger kvar som syllstenar. Några ytterligare uppgifter framgår inte av underlaget.</p>
+<ul class="facts"><li>L2019:7350</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>137. Vägmärke</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Detta vägmärke i Umeå saknar en kvalitetssäkrad beskrivning. Uppgifterna kan vara ofullständiga, felaktiga eller inaktuella, och för mer information hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:8024</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>138. Fornlämningsliknande lämning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Lämningen är en närmast oval, stensättningsliknande krets av stenar som mäter omkring 0,5 till 0,9 meter. Den är ofylld och skadad utmed östsydöstra kanten på en sträcka av tre meter, där några stenar slängts in mot mitten. I den västra kanten står en kantställd sten omkring 0,5 meter hög.</p>
+<ul class="facts"><li>L1938:7800</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>139. Vägmärke</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Detta vägmärke i Umeå saknar en kvalitetssäkrad beskrivning. Informationen kan vara ofullständig, felaktig eller inaktuell, och för mer uppgifter hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:8621</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>140. Stadslager</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Inom området kan kulturlager från 1600- och 1700-talets stad förväntas. Umeå fick provisoriska stadsprivilegier 1622, vilka förnyades 1646. Staden brändes ner till grunden av ryska styrkor under åren 1714–1721.</p>
+<ul class="facts"><li>L1938:8586</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>141. Övrigt</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Denna lämning i Umeå saknar en kvalitetssäkrad beskrivning. Uppgifterna kan vara ofullständiga, felaktiga eller inaktuella, och för mer information hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:8430</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>142. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Detta minnesmärke i Umeå saknar en kvalitetssäkrad beskrivning. Informationen kan vara ofullständig, felaktig eller inaktuell, och för mer uppgifter hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:8431</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>143. Ristning, medeltid/historisk tid</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Inom ett hästskoformat område finns flera ristningar från historisk tid. De består främst av initialer och årtal, men även av figurer, bland annat en indian.</p>
+<ul class="facts"><li>L2020:6512</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>144. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Detta minnesmärke i Umeå saknar en kvalitetssäkrad beskrivning. Uppgifterna kan vara ofullständiga, felaktiga eller inaktuella, och för mer information hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:8041</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>145. Hällristning</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Hällristningen består av en ythuggen oval med en djupare huggen kantlinje. På den sydöstra sidan finns ett handtagsliknande element format av tre parallella huggna linjer, där de två yttre är en fortsättning på kantlinjen och möts vid den sydöstra änden, som är den bredaste delen.</p>
+<ul class="facts"><li>L2019:6554</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>146. Begravningsplats</h3>
+<div class="badges"><span class="badge">fornminne</span></div>
+
+<p>Platsen är en ödekyrkogård som tjänade som stadens begravningsplats mellan 1646 och 1837. I området står fyra gravstenar kvar, varav två är resta, och i östra delen finns Dunchens grav. Någon gravkarta saknas och kyrkogårdens utsträckning är okänd. Den östra delen undersöktes 1972 under ledning av S. Klaasum.</p>
+<ul class="facts"><li>L1938:8079</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+<article class="card stop">
+<h3>147. Minnesmärke</h3>
+<div class="badges"><span class="badge">Konst &amp; staty</span></div>
+
+<p>Detta minnesmärke i Umeå saknar en kvalitetssäkrad beskrivning. Informationen kan vara ofullständig, felaktig eller inaktuell, och för mer uppgifter hänvisas till inventeringsboken.</p>
+<ul class="facts"><li>L1938:7427</li><li>Kulturlämning</li><li>Källa: Riksantikvarieämbetet – kmr_lamningar</li><li>Faktaunderlag: Riksantikvarieämbetet (omskriven text)</li></ul></article>
+  <footer class="guide-foot"><p>Källa: Stadsvandring.io — Umeå. Innehåll från Wikipedia/Wikidata m.fl. under fria licenser.</p></footer>
+</div>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

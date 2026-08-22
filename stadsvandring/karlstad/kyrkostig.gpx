@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Karlstad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.4056" lon="13.5723"><name>Kronoparkskyrkan</name><desc>Kronoparkskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.</desc></wpt>
+  <wpt lat="59.40388" lon="13.5478"><name>Kroppkärrskyrkan</name><desc>Kroppkärrskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.</desc></wpt>
+  <wpt lat="59.401854" lon="13.525337"><name>Uppståndelsens kapell</name><desc>kapell i Karlstads kommun</desc></wpt>
+  <wpt lat="59.405" lon="13.519861"><name>Rudskyrkan</name><desc>kyrkobyggnad i Karlstads kommun</desc></wpt>
+  <wpt lat="59.39288056" lon="13.513575"><name>Norrstrandskyrkan</name><desc>kyrkobyggnad i Karlstads kommun</desc></wpt>
+  <wpt lat="59.38614604" lon="13.5119819"><name>Meta kapellet</name><desc>Karlstads västra kyrkogård</desc></wpt>
+  <wpt lat="59.38222222" lon="13.50472222"><name>Betlehemskyrkan</name><desc>kyrkobyggnad i Karlstads kommun</desc></wpt>
+  <wpt lat="59.3815033816308" lon="13.50647119657742"><name>KARLSTADS DOMKYRKA</name><desc>Domkyrkan på Tingvallaön, invigd 1730 efter att flera tidigare kyrkor brunnit.</desc></wpt>
+  <wpt lat="59.38" lon="13.50777778"><name>Vår Fru av Rosenkransens katolska kyrka</name><desc>kyrkobyggnad i Karlstads kommun</desc></wpt>
+  <wpt lat="59.378446845248" lon="13.497051109787"><name>Pingstkyrkan, Karlstad</name><desc>pingstförsamling i Karlstad, Sverige</desc></wpt>
+  <wpt lat="59.37550621322498" lon="13.493775068234266"><name>VIKENKYRKA</name><desc>En sluten stadsdelskyrka i Viken från 1983, ritad av Lars-Erik Havstad.</desc></wpt>
+  <wpt lat="59.37733" lon="13.51769"><name>Herrhagskyrkan</name><desc>Herrhagskyrkan är en kyrkobyggnad i Karlstad i Karlstads stift.</desc></wpt>
+  <wpt lat="59.38263889" lon="13.46525"><name>Västerstrandskyrkan</name><desc>kyrkobyggnad i Karlstads kommun</desc></wpt>
+  <wpt lat="59.33565278" lon="13.52075"><name>Hammarö kyrka</name><desc>kyrkobyggnad i Hammarö kommun</desc></wpt>
+  <wpt lat="59.323" lon="13.46391667"><name>Skoghalls kyrka</name><desc>kyrkobyggnad i Hammarö kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Karlstad</name>
+    <rtept lat="59.4056" lon="13.5723"><name>Kronoparkskyrkan</name></rtept>
+    <rtept lat="59.40388" lon="13.5478"><name>Kroppkärrskyrkan</name></rtept>
+    <rtept lat="59.401854" lon="13.525337"><name>Uppståndelsens kapell</name></rtept>
+    <rtept lat="59.405" lon="13.519861"><name>Rudskyrkan</name></rtept>
+    <rtept lat="59.39288056" lon="13.513575"><name>Norrstrandskyrkan</name></rtept>
+    <rtept lat="59.38614604" lon="13.5119819"><name>Meta kapellet</name></rtept>
+    <rtept lat="59.38222222" lon="13.50472222"><name>Betlehemskyrkan</name></rtept>
+    <rtept lat="59.3815033816308" lon="13.50647119657742"><name>KARLSTADS DOMKYRKA</name></rtept>
+    <rtept lat="59.38" lon="13.50777778"><name>Vår Fru av Rosenkransens katolska kyrka</name></rtept>
+    <rtept lat="59.378446845248" lon="13.497051109787"><name>Pingstkyrkan, Karlstad</name></rtept>
+    <rtept lat="59.37550621322498" lon="13.493775068234266"><name>VIKENKYRKA</name></rtept>
+    <rtept lat="59.37733" lon="13.51769"><name>Herrhagskyrkan</name></rtept>
+    <rtept lat="59.38263889" lon="13.46525"><name>Västerstrandskyrkan</name></rtept>
+    <rtept lat="59.33565278" lon="13.52075"><name>Hammarö kyrka</name></rtept>
+    <rtept lat="59.323" lon="13.46391667"><name>Skoghalls kyrka</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Västerås — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Västerås till fots: 186 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 186 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vasteras">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Västerås — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Västerås till fots: 186 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 186 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vasteras">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Västerås — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Västerås till fots: 186 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 186 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vasteras","sourceSlug":"stadsvandring/vasteras","centroid":{"lat":59.610009317631366,"lng":16.542377701185863},"stops":[{"name":"Anundshög","lat":59.63055556,"lng":16.64472222},{"name":"Västerås slott","lat":59.60638889,"lng":16.54444444},{"name":"Fullerö slott","lat":59.5475,"lng":16.54583333}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Västerås","description":"Upptäck Västerås till fots: 186 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/vasteras","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Anundshög","description":"gravfält i Badelunda i Västmanland (Västerås 431:1)","geo":{"@type":"GeoCoordinates","latitude":59.63055556,"longitude":16.64472222}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Västerås slott","description":"Slott i Västerås uppfört på 1100-talet","geo":{"@type":"GeoCoordinates","latitude":59.60638889,"longitude":16.54444444}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Fullerö slott","description":"slott i Västerås-Barkarö socken, Västerås kommun","geo":{"@type":"GeoCoordinates","latitude":59.5475,"longitude":16.54583333}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Apotekarbron","description":"Apotekarbron är en bro i centrala Västerås nära Bondtorget och Stora torget.","geo":{"@type":"GeoCoordinates","latitude":59.6100426,"longitude":16.5419674}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Aseaströmmen","description":"skulptur på Stora Torget i Västerås invigd 1989","url":"https://stadsvandring.io/p/wd-vasteras-aseastrommen-q10419577","geo":{"@type":"GeoCoordinates","latitude":59.61072222,"longitude":16.54248611}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Badelunda kyrka","description":"Kyrka i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-badelunda-kyrka-q10424496","geo":{"@type":"GeoCoordinates","latitude":59.64055556,"longitude":16.62805556}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Bäckbykyrkan","description":"kyrkobyggnad i Västerås kommun","geo":{"@type":"GeoCoordinates","latitude":59.6,"longitude":16.46777778}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Djäkneberget","description":"parkområde i Västerås.","url":"https://stadsvandring.io/p/wd-vasteras-djakneberget-q10475008","geo":{"@type":"GeoCoordinates","latitude":59.61166667,"longitude":16.53333333}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Fasadutsmyckning, Smedjegatan i Västerås","description":"Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).","geo":{"@type":"GeoCoordinates","latitude":59.61129444,"longitude":16.54492778}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Fiskartorget","description":"torg vid stadshuset","geo":{"@type":"GeoCoordinates","latitude":59.60777778,"longitude":16.54583333}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Gideonsbergskyrkan","description":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-gideonsbergskyrkan-q10504801","geo":{"@type":"GeoCoordinates","latitude":59.62760833,"longitude":16.556575}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Johannes Rudbeckius","description":"en skulptur av Carl Milles","url":"https://stadsvandring.io/p/wd-vasteras-johannes-rudbeckius-q10540489","geo":{"@type":"GeoCoordinates","latitude":59.6125,"longitude":16.54045}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Kunskapens träd, Västerås","description":"Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Västerås, skapad av Carl-Emil Berglin och tillverkad av Ulunda Smide.","geo":{"@type":"GeoCoordinates","latitude":59.61238056,"longitude":16.54874167}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Lundby kyrka","description":"Kyrka i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-lundby-kyrka-q10570765","geo":{"@type":"GeoCoordinates","latitude":59.57741667,"longitude":16.46663889}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Mikaelikyrkan","description":"kyrkobyggnad i Västerås kommun","geo":{"@type":"GeoCoordinates","latitude":59.60541389,"longitude":16.51803333}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Rönnby kyrk-center","description":"kyrkobyggnad i Västerås kommun","geo":{"@type":"GeoCoordinates","latitude":59.64847222,"longitude":16.50675}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Skerike kyrka","description":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-skerike-kyrka-q10670107","geo":{"@type":"GeoCoordinates","latitude":59.64444444,"longitude":16.48027778}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Sommarsöndag","description":"Sommarsöndag är en skulptur i brons av Oscar Antonsson (1898–1960).","geo":{"@type":"GeoCoordinates","latitude":59.6045,"longitude":16.53158333}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Stora torget","description":"torg i Västerås, Västmanland","geo":{"@type":"GeoCoordinates","latitude":59.61111111,"longitude":16.54305556}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Tomaskyrkan","description":"kyrkobyggnad i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-tomaskyrkan-q10699467","geo":{"@type":"GeoCoordinates","latitude":59.62135278,"longitude":16.58983333}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Vallby friluftsmuseum","description":"arbetslivsmuseum i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-vallby-friluftsmuseum-q10712301","geo":{"@type":"GeoCoordinates","latitude":59.622266,"longitude":16.515903}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Vasaparken","description":"park i Västerås","geo":{"@type":"GeoCoordinates","latitude":59.6075,"longitude":16.54833333}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Viksängskyrkan","description":"kyrkobyggnad i Västerås kommun","geo":{"@type":"GeoCoordinates","latitude":59.60555556,"longitude":16.57972222}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Vindarnas grotta","description":"Vindarnas grotta är en skulptur i brons och granit av Eric Grate, som är placerad vid Fiskartorget, utanför stadshuset i Västerås.","url":"https://stadsvandring.io/p/wd-vasteras-vindarnas-grotta-q10715683","geo":{"@type":"GeoCoordinates","latitude":59.60823889,"longitude":16.54576389}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Västerås fritidsbåtsmuseum","description":"nedlagt arbetslivsmuseum i Västerås kommun","url":"https://stadsvandring.io/p/wd-vasteras-vasteras-fritidsbatsmuseum-q10718091","geo":{"@type":"GeoCoordinates","latitude":59.60749817,"longitude":16.56902504}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Västerås gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 186 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Västerås?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 186 sevärdheter i Västerås — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Anundshög?","acceptedAnswer":{"@type":"Answer","text":"gravfält i Badelunda i Västmanland (Västerås 431:1)"}},{"@type":"Question","name":"Vad är Västerås slott?","acceptedAnswer":{"@type":"Answer","text":"Slott i Västerås uppfört på 1100-talet"}},{"@type":"Question","name":"Vad är Fullerö slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Västerås-Barkarö socken, Västerås kommun"}},{"@type":"Question","name":"Vad är Apotekarbron?","acceptedAnswer":{"@type":"Answer","text":"Apotekarbron är en bro i centrala Västerås nära Bondtorget och Stora torget."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Västerås","item":"https://stadsvandring.io/stadsvandring/vasteras"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Västerås</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Västerås</span><span class="badge">186 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Västerås — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Västerås till fots: 186 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Västerås"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-vasteras-anundshog-q612476"><b>1. Anundshög</b><span>Sevärdhet · gravfält i Badelunda i Västmanland (Västerås 431:1)</span></a>
+<a class="tile" href="/p/wd-vasteras-vasteras-slott-q2243915"><b>2. Västerås slott</b><span>Slott · Slott i Västerås uppfört på 1100-talet</span></a>
+<a class="tile" href="/p/wd-vasteras-fullero-slott-q5508309"><b>3. Fullerö slott</b><span>Slott · slott i Västerås-Barkarö socken, Västerås kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Västerås · 186</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Västerås. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Byggnad · 67</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-583271"><b>BOSTADSHUS</b></a> — Ett bostadshus i Västerås från mitten av 1800-talet. <span class="era">1840–1859</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015445"><b>Industribyggnad</b></a> — En industribyggnad i Västerås från perioden kring 1900 till mitten av 1900-talet. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015482"><b>Industribyggnad</b></a> — En industribyggnad i Västerås uppförd under första halvan av 1900-talet. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015483"><b>Industribyggnad</b></a> — Ännu en industribyggnad i Västerås från perioden 1898–1954. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015466"><b>Industribyggnad</b></a> — En industribyggnad i Västerås från industrialismens genombrott. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-carlstroms-charkuterifabrik-vasteras-015604"><b>Carlströms charkuterifabrik</b></a> — En charkuterifabrik i Västerås från 1940-talet. <span class="era">1940–1949</span></li>
+<li><a href="/karta?plats=ksamsok-drift-och-pannhusforrad-vasteras-689310"><b>DRIFT- OCH PANNHUSFÖRRÅD</b></a> — Ett förrådshus knutet till drift och pannhus, uppfört på 1930-talet. <span class="era">1930–1939</span></li>
+<li><a href="/karta?plats=ksamsok-falkenbergska-kvarnen-vasteras-015601"><b>Falkenbergska kvarnen</b></a> — En 1800-talskvarn i Västerås. <span class="era">1800–1899</span></li>
+<li><a href="/karta?plats=ksamsok-verkstad-vasteras-015528"><b>Verkstad</b></a> — En verkstadsbyggnad från mitten av 1900-talet. <span class="era">1940–1959</span></li>
+<li><a href="/karta?plats=ksamsok-maskinhall-vasteras-689307"><b>MASKINHALL</b></a> — En maskinhall uppförd på 1930-talet. <span class="era">1930–1939</span></li>
+<li><a href="/karta?plats=ksamsok-garage-vasteras-688717"><b>GARAGE</b></a> — Ett rödfärgat timmergarage som tidigt på 1800-talet var brygghus. <span class="era">1800–1814</span></li>
+<li><a href="/karta?plats=ksamsok-lektorsgarden-vasteras-357624"><b>LEKTORSGÅRDEN</b></a> — En lektorsgård rest efter stadsbranden 1714. <span class="era">1714–1799</span></li>
+<li><a href="/karta?plats=ksamsok-biskopsgarden-vasteras-425871"><b>BISKOPSGÅRDEN</b></a> — En vinkelbyggd biskopsgård med medeltida ursprung nära domkyrkan.</li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015439"><b>Industribyggnad</b></a> — En industribyggnad från perioden kring 1900-talets första hälft. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-015525"><b>Bostadshus</b></a> — Ett bostadshus uppfört under 2000-talets första decennium. <span class="era">2000–2010</span></li>
+<li><a href="/karta?plats=ksamsok-silo-vasteras-015438"><b>Silo</b></a> — En silo uppförd 1934. <span class="era">1934–1934</span></li>
+<li><a href="/karta?plats=ksamsok-kontor-vasteras-015522"><b>Kontor</b></a> — En kontorsbyggnad från 1900-talets första decennier. <span class="era">1900–1929</span></li>
+<li><a href="/karta?plats=ksamsok-slakthus-vasteras-015411"><b>Slakthus</b></a> — Ett slakthus från 1900-talet. <span class="era">1900–1999</span></li>
+<li><a href="/karta?plats=ksamsok-fryxellska-skolans-gymnastikbyggnad-vasteras-050849"><b>Fryxellska skolans gymnastikbyggnad</b></a> — Gymnastikhuset till Fryxellska flickskolan, färdigt 1904. <span class="era">1904–1904</span></li>
+<li><a href="/karta?plats=ksamsok-verkstad-vasteras-050654"><b>VERKSTAD</b></a> — En verkstad uppförd 1915–1917. <span class="era">1915–1917</span></li>
+<li><a href="/karta?plats=ksamsok-forrad-och-kontor-vasteras-050653"><b>Förråd och kontor</b></a> — En förråds- och kontorsbyggnad från 1915–1917. <span class="era">1915–1917</span></li>
+<li><a href="/karta?plats=ksamsok-slakthus-vasteras-015421"><b>Slakthus</b></a> — Ett slakthus från 1900-talet. <span class="era">1900–1999</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015444"><b>Industribyggnad</b></a> — En industribyggnad från tiden kring sekelskiftet 1900 till mitten av 1900-talet. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-pumpstation-vasteras-689679"><b>PUMPSTATION</b></a> — En pumpstation uppförd kring 1947–1952. <span class="era">1947–1952</span></li>
+<li><a href="/karta?plats=ksamsok-bod-vasteras-688722"><b>BOD</b></a> — En timrad tvåvånings bod på domprostgårdens tomt, byggd tidigast 1774. <span class="era">1774–1799</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-689672"><b>BOSTADSHUS</b></a> — Ett bostadshus från 1920-talet. <span class="era">1920–1929</span></li>
+<li><a href="/p/ksamsok-vasteras-tingsratt-vasteras-696890"><b>VÄSTERÅS TINGSRÄTT</b></a> — Västerås tingsrätt, en modernistisk byggnad från 1970–1971. <span class="era">1970–1971</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015489"><b>Industribyggnad</b></a> — En industribyggnad från 1900-talets första hälft. <span class="era">1898–1954</span></li>
+<li><a href="/p/ksamsok-tingshuset-vasteras-vasteras-696892"><b>TINGSHUSET, VÄSTERÅS</b></a> — Nyrest tingshus från 1890-talet med runt torntrapphus och utskjutande tingssal. <span class="era">1895–1897</span></li>
+<li><a href="/p/ksamsok-turbinhuset-vasteras-015650"><b>Turbinhuset</b></a> — Turbinhuset vid Svartån, byggt 1891 för att locka ASEA till staden. <span class="era">1891–1891</span></li>
+<li><a href="/karta?plats=ksamsok-askbrunn-vasteras-050655"><b>Askbrunn</b></a> — En askbrunn uppförd kring 1947–1952. <span class="era">1947–1952</span></li>
+<li><a href="/karta?plats=ksamsok-kloreringshus-vasteras-689677"><b>KLORERINGSHUS</b></a> — Ett kloreringshus från perioden 1947–1952. <span class="era">1947–1952</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015457"><b>Industribyggnad</b></a> — En industribyggnad från tiden 1898–1954. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-tvatt-och-mangelbod-vasteras-689680"><b>TVÄTT- OCH MANGELBOD</b></a> — En tvätt- och mangelbod från 1920-talet. <span class="era">1920–1929</span></li>
+<li><a href="/karta?plats=ksamsok-stallverksbyggnad-vasteras-689671"><b>STÄLLVERKSBYGGNAD</b></a> — En ställverksbyggnad från 1920-talet. <span class="era">1920–1929</span></li>
+<li><a href="/karta?plats=ksamsok-sotarns-tvattstuga-vasteras-049990"><b>SOTARNS TVÄTTSTUGA</b></a> — En stenbyggnad, rest av en lektorsgård, som sist tjänade som tvättstuga.</li>
+<li><a href="/p/ksamsok-sundinska-huset-vasteras-583620"><b>SUNDINSKA HUSET</b></a> — Ett empirehus från 1850, byggt åt tobaksfabrikören A.T. Sundin. <span class="era">1850–1850</span></li>
+<li><a href="/karta?plats=ksamsok-verkstad-vasteras-015516"><b>Verkstad</b></a> — En verkstad från 1880-talet. <span class="era">1880–1889</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-vasteras-015437"><b>Magasin</b></a> — Ett magasin från 1900-talet. <span class="era">1900–1999</span></li>
+<li><a href="/karta?plats=ksamsok-korsvirkeshuset-vasteras-583227"><b>KORSVIRKESHUSET</b></a> — Ett korsvirkeshus från mitten av 1700-talet. <span class="era">1740–1759</span></li>
+<li><a href="/karta?plats=ksamsok-matarvattenbyggnad-vasteras-689667"><b>MATARVATTENBYGGNAD</b></a> — En matarvattenbyggnad uppförd kring 1947–1952. <span class="era">1947–1952</span></li>
+<li><a href="/karta?plats=ksamsok-bageri-vasteras-015600"><b>Bageri</b></a> — Ett bageri uppfört 1932. <span class="era">1932–1932</span></li>
+<li><a href="/karta?plats=ksamsok-domkapitelhuset-vasteras-357623"><b>DOMKAPITELHUSET</b></a> — Domkapitelhuset, ett medeltida hus ombyggt 1630–31 för prästgymnasiet.</li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-583180"><b>BOSTADSHUS</b></a> — Ett bostadshus från 1918–21, byggt åt ångkraftverkets anställda. <span class="era">1918–1921</span></li>
+<li><a href="/karta?plats=ksamsok-komministergarden-vasteras-583539"><b>KOMMINISTERGÅRDEN</b></a> — En 1700-talsgård av reveterat timmer, bostad åt domkyrkokomministern. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-fabriksbyggnad-vasteras-015429"><b>Fabriksbyggnad</b></a> — En fabriksbyggnad från mitten av 1700-talet. <span class="era">1740–1759</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015471"><b>Industribyggnad</b></a> — En industribyggnad från tiden 1898–1954. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-industribyggnad-vasteras-015485"><b>Industribyggnad</b></a> — En industribyggnad från 1900-talets första hälft. <span class="era">1898–1954</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-015518"><b>Bostadshus</b></a> — Ett bostadshus från 1900-talets första decennier. <span class="era">1900–1929</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vasteras-015520"><b>Bostadshus</b></a> — Ett bostadshus från perioden 1900–1929. <span class="era">1900–1929</span></li>
+<li><a href="/karta?plats=ksamsok-bjornoverkstaden-vasteras-015529"><b>Björnöverkstaden</b></a> — Björnöverkstaden, uppförd 1955. <span class="era">1955–1955</span></li>
+<li><a href="/karta?plats=ksamsok-vasteras-bryggeri-ab-vasteras-015599"><b>Västerås Bryggeri AB</b></a> — Byggnad tillhörig Västerås Bryggeri AB, från 1854. <span class="era">1854–1854</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-vasteras-015603"><b>Uthus</b></a> — Ett uthus från 1800-talet. <span class="era">1800–1899</span></li>
+<li><a href="/karta?plats=ksamsok-portlider-vasteras-688718"><b>PORTLIDER</b></a> — Ett portlider av rödfärgat timmer, uppfört senast 1814. <span class="era">1800–1814</span></li>
+<li><a href="/p/ksamsok-radhuset-vasteras-vasteras-696891"><b>RÅDHUSET, VÄSTERÅS</b></a> — Rådhuset i Västerås, en klassicistisk byggnad från 1857–1860. <span class="era">1857–1860</span></li>
+<li><a href="/p/ksamsok-televerkets-hus-vasteras-583278"><b>TELEVERKETS HUS</b></a> — Televerkets hus från 1911, ritat av Erik Lallerstedt. <span class="era">1911–1911</span></li>
+<li><a href="/karta?plats=ksamsok-kontor-och-verkstadsbyggnad-vasteras-689306"><b>KONTOR- OCH VERKSTADSBYGGNAD</b></a> — En kombinerad kontors- och verkstadsbyggnad från 1930-talet. <span class="era">1930–1939</span></li>
+<li><a href="/karta?plats=ksamsok-domprostgarden-vasteras-583616"><b>DOMPROSTGÅRDEN</b></a> — Domprostgården, uppförd på 1730-talet och påbyggd på 1780-talet. <span class="era">1730–1739</span></li>
+<li><a href="/karta?plats=ksamsok-stall-vasteras-049991"><b>STALL</b></a> — En 1700-talsstallbyggnad söder om slottet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-kvarnvretens-pumpstation-vasteras-015649"><b>Kvarnvretens pumpstation</b></a> — Kvarnvretens pumpstation, uppförd 1886–1888. <span class="era">1886–1888</span></li>
+<li><a href="/karta?plats=ksamsok-proban-vasteras-688720"><b>PROBAN</b></a> — Proban, en senmedeltida byggnad som varit skolhäkte och likvagnsbod.</li>
+<li><a href="/p/ksamsok-gardshus-vasteras-688716"><b>GÅRDSHUS</b></a> — Ett timrat gårdshus från senast 1814, använt som bod och senare gästrum. <span class="era">1800–1814</span></li>
+<li><a href="/p/ksamsok-vasteras-stadshotell-vasteras-583643"><b>VÄSTERÅS STADSHOTELL</b></a> — Erik Hahrs stadshotell från 1907 räknas som Västerås mest genomförda jugendbyggnad. <span class="era">1907–1907</span></li>
+<li><a href="/karta?plats=ksamsok-parkeringshus-vasteras-015524"><b>Parkeringshus</b></a> — Ett parkeringshus i Västerås upptaget i Bebyggelseregistret. <span class="era">1970–1999</span></li>
+<li><a href="/karta?plats=ksamsok-rensningshus-vasteras-689678"><b>RENSNINGSHUS</b></a> — Ett rensningshus i Västerås. <span class="era">1947–1952</span></li>
+<li><a href="/karta?plats=ksamsok-kallaren-vasteras-688719"><b>KÄLLAREN</b></a> — En källare av medeltida ursprung, murad i gråsten och tegel.</li>
+<li><a href="/karta?plats=ksamsok-iogt-huset-vasteras-583561"><b>IOGT-HUSET</b></a> — IOGT-huset i Västerås, uppfört under 1800-talet. <span class="era">1800–1800</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 57</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-vasteras-17cbbd"><b>Lägenhetsbebyggelse</b></a> — Lämning efter ett torp känt från 1800- och 1900-talskartor.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-vasteras-24984a"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En plats med flera osäkra uppgifter, bland annat om ett helgeandshus.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-a06d66"><b>Fartygs-/båtlämning</b></a> — En trolig fartygslämning som hittades vid Sjöfartsverkets sjömätning.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-vasteras-af36b9"><b>Dammvall</b></a> — En gråstensdamm i Svartån som hörde till Wickholms kvarn.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-vasteras-d63469"><b>Ristning, medeltid/historisk tid</b></a> — En ristning från medeltid eller historisk tid.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-vasteras-82c3c6"><b>Stadslager</b></a> — Ett stadslager där kulturlager från medeltid till 1600-tal kan påträffas.</li>
+<li><a href="/p/ksamsok-hagnad-vasteras-45d2fb"><b>Hägnad</b></a> — Rest av ett gravfält med högar, stensättningar och en stensträng.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vasteras-cbbec3"><b>Begravningsplats</b></a> — Uppgift om en byggnad vid en begravningsplats.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vasteras-14bda4"><b>Hällristning</b></a> — Flera förekomster av älvkvarnar och en möjlig stensättning i berghällar.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vasteras-62250f"><b>Stensättning</b></a> — En oregelbunden, nära rund stensättning med intilliggande block.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vasteras-f5e0fb"><b>Stensättning</b></a> — En rund stensättning med kantkedja, delvis omplockad.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-vasteras-f39a0a"><b>Fornlämningsliknande lämning</b></a> — En fornlämningsliknande lämning som undersöktes och togs bort 1974.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-vasteras-e1894a"><b>Husgrund, historisk tid</b></a> — En husgrund efter ett pumphus från historisk tid.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vasteras-441917"><b>Vägmärke</b></a> — En milstolpe i granit rest 1790 under landshövding De la Gardie.</li>
+<li><a href="/karta?plats=ksamsok-boplatslamning-ovrig-vasteras-003635"><b>Boplatslämning övrig</b></a> — En härd daterad till 200–400-talet e.Kr., funnen vid utgrävning 2017.</li>
+<li><a href="/karta?plats=ksamsok-rojningsrose-vasteras-36567f"><b>Röjningsröse</b></a> — Ett odlingsröse av staplade stenar.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vasteras-6dcb72"><b>Hällristning</b></a> — En hällristning med fem älvkvarnar i mellankornig bergart.</li>
+<li><a href="/p/ksamsok-hagnad-vasteras-a26c53"><b>Hägnad</b></a> — Rest av ett gravfält med högar, stensättningar och en stensträng.</li>
+<li><a href="/karta?plats=ksamsok-hog-vasteras-d97031"><b>Hög</b></a> — Plats för gravhögar som omtalas på 1870-talet men troligen sedan länge är bortbyggda.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-vasteras-4d65d7"><b>Övrigt</b></a> — Plats med spår av äldre industri och ett omtalat hyttområde.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-vasteras-e4c9a6"><b>Färdväg</b></a> — En omsorgsfullt stenlagd väg från sent 1800-tal, återfunnen vid utgrävning 2014.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-vasteras-01cdc5"><b>Färdväg</b></a> — Kulturlager från den äldre staden och uppgift om en gammal färdväg.</li>
+<li><a href="/karta?plats=ksamsok-grav-och-boplatsomrade-vasteras-0b55cc"><b>Grav- och boplatsområde</b></a> — Ett forntida grav- och boplatsområde med skärvstenshög och stensättning.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vasteras-66158b"><b>Hällristning</b></a> — Hällristning med förhistoriska älvkvarnar och ett runstensfragment.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-vasteras-0b8e8e"><b>Hägnad</b></a> — En gammal stensträng som markerat en hägnad eller gräns.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vasteras-0aef09"><b>Begravningsplats</b></a> — Uppgift om en kolerakyrkogård.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-5a0c4d"><b>Fartygs-/båtlämning</b></a> — En fartygslämning funnen vid Sjöfartsverkets sjömätning.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vasteras-3f8e85"><b>Bytomt/gårdstomt</b></a> — Uppgift om en äldre gårdstomt.</li>
+<li><a href="/karta?plats=ksamsok-hyttlamning-vasteras-beac86"><b>Hyttlämning</b></a> — Uppgift om en industri- och hyttlämning.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vasteras-8efaa3"><b>Stensättning</b></a> — Flera förekomster av älvkvarnar och en möjlig stensättning i berghällar.</li>
+<li><a href="/karta?plats=ksamsok-hyttlamning-vasteras-15b264"><b>Hyttlämning</b></a> — Platsen för en hyttruin.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-36d20a"><b>Fartygs-/båtlämning</b></a> — En möjlig fartygslämning funnen vid sjömätning 2012.</li>
+<li><a href="/karta?plats=ksamsok-hog-vasteras-848dcb"><b>Hög</b></a> — En trolig gravhög, skadad av avschaktning och bevuxen med ekar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-868ac4"><b>Fartygs-/båtlämning</b></a> — En fartygslämning funnen vid Sjöfartsverkets sjömätning.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-vasteras-f99611"><b>Stridsvärn</b></a> — Ett skyttevärn.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-vasteras-355633"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — Rest av en trolig gravhög med mittgrop.</li>
+<li><a href="/p/ksamsok-gravfalt-vasteras-d664bc"><b>Gravfält</b></a> — Rest av ett gravfält med högar, stensättningar och en stensträng.</li>
+<li><a href="/karta?plats=ksamsok-fangstgrop-vasteras-3dbdfe"><b>Fångstgrop</b></a> — En kallmurad fångstgrop för varg.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vasteras-946567"><b>Vägmärke</b></a> — Tre milstolpar från 1779 och 1833 i gnejs, gjutjärn och kalksten.</li>
+<li><a href="/karta?plats=ksamsok-naturforemal-bildning-med-bruk-tradition-eller-namn-vasteras-7444cf"><b>Naturföremål/-bildning med bruk, tradition eller namn</b></a> — En källa i ett tolvkantigt brunnskar av brons med reliefer.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-f787da"><b>Fartygs-/båtlämning</b></a> — En möjlig fartygslämning funnen vid sjömätning 2012.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vasteras-c882a8"><b>Fartygs-/båtlämning</b></a> — En fartygslämning funnen vid Sjöfartsverkets sjömätning.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vasteras-4705de"><b>Boplats</b></a> — En boplats med keramik, kulturlager och bränt ben funnen vid förundersökning.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vasteras-52a418"><b>Hällristning</b></a> — En hällristning med ett tiotal älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-vasteras-1f14da"><b>Avrättningsplats</b></a> — En avrättningsplats med uppgift om älvkvarnar.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vasteras-67e5a8"><b>Vägmärke</b></a> — En milstolpe av gjutjärn på en granitplatta.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-vasteras-a43f93"><b>Fartygs-/båtlämning</b></a> — Ett vrak funnet 1935 vid grävning i Västerås hamn, kopplat till en kanonkula.</li>
+<li><a href="/karta?plats=ksamsok-hagnad-vasteras-7e0b54"><b>Hägnad</b></a> — En stenrad som tolkats som hägnad eller markgräns, framgrävd 2004.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-bildning-vasteras-7e5b69"><b>Fornlämningsliknande bildning</b></a> — En fornlämningsliknande bildning i Västerås med knapphändigt underlag.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-vasteras-69787a"><b>Hällristning</b></a> — En hällyta med sju älvkvarnar och en avlång fördjupning.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-vasteras-eb25a3"><b>Färdväg</b></a> — En omkring 32 meter lång hålväg med plan botten.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vasteras-a95236"><b>Fyndplats</b></a> — Fyndplats för redskap och husrester från en medeltida smedja och skomakarverkstad.</li>
+<li><a href="/karta?plats=ksamsok-stensattning-vasteras-d37684"><b>Stensättning</b></a> — En trolig stensättning och en möjlig störd hög nära varandra.</li>
+<li><a href="/karta?plats=ksamsok-krutkallarbacken-hallristning-vasteras-742697"><b>Krutkällarbacken, Hällristning</b></a> — Plats med uppgift om en avrättningsplats och en älvkvarnsförekomst.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-vasteras-5dedf1"><b>Fornlämningsliknande lämning</b></a> — Ett område med minst fem stensättningsliknande anläggningar av delvis sentida ursprung.</li>
+<li><a href="/karta?plats=ksamsok-emaus-bytomt-gardstomt-vasteras-6b97c0"><b>Emaus, Bytomt/gårdstomt</b></a> — En bytomt vars utsträckning framgår av 1819 års karta.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vasteras-4827bb"><b>Vägmärke</b></a> — En väghållningssten i Västerås med kortfattat underlag.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 19</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vasteras-badelunda-kyrka-q10424496"><b>Badelunda kyrka</b></a> — Kyrka i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-backbykyrkan-q10438387"><b>Bäckbykyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-gideonsbergskyrkan-q10504801"><b>Gideonsbergskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-lundby-kyrka-q10570765"><b>Lundby kyrka</b></a> — Kyrka i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-mikaelikyrkan-q10585157"><b>Mikaelikyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-ronnby-kyrk-center-q10659023"><b>Rönnby kyrk-center</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-skerike-kyrka-q10670107"><b>Skerike kyrka</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-tomaskyrkan-q10699467"><b>Tomaskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-viksangskyrkan-q10715308"><b>Viksängskyrkan</b></a> — kyrkobyggnad i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-onsta-gryta-kyrka-q10727377"><b>Önsta Gryta kyrka</b></a> — kyrka i Västerås</li>
+<li><a href="/p/wd-vasteras-pingstkyrkan-vasteras-q19631574"><b>Pingstkyrkan, Västerås</b></a> — pingstkyrka i Västerås, Sverige</li>
+<li><a href="/karta?plats=wd-vasteras-ansgarskyrkan-vasteras-q19977468"><b>Ansgarskyrkan, Västerås</b></a> — Ansgarskyrkan är en kyrka i Pettersberg i Västerås, vilken är huvudkyrka för Ansgarsförsamlingen i Västerås.</li>
+<li><a href="/karta?plats=wd-vasteras-vasterlovsta-318-1-q29884930"><b>Västerlövsta 318:1</b></a> — kyrka/kapell i Uppland</li>
+<li><a href="/karta?plats=wd-vasteras-s-ta-ursulas-kapell-q29885920"><b>S:ta Ursulas kapell</b></a> — kyrka/kapell i Västmanland (Västerås 355:1)</li>
+<li><a href="/karta?plats=wd-vasteras-sparvens-kapell-q49101920"><b>Sparvens kapell</b></a> — Sparvens kapell var en kyrkobyggnad i Västerås Lundby församling i Västerås stift.</li>
+<li><a href="/karta?plats=wd-vasteras-lifecenter-international-church-q78725758"><b>Lifecenter International Church</b></a> — kyrka och församling i Västerås</li>
+<li><a href="/p/ksamsok-ostra-kapellet-vasteras-014701"><b>Östra kapellet</b></a> — Östra kapellet i Västerås från 1882, format som ett grekiskt kors. <span class="era">1882</span></li>
+<li><a href="/p/ksamsok-vasteras-domkyrka-vasteras-357622"><b>VÄSTERÅS DOMKYRKA</b></a> — Domkyrkan i Västerås, grundlagd på 1230-talet i mörkrött tegel. <span class="era">1200–1229</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-vasteras-fe85eb"><b>Kyrka/kapell</b></a> — Platsen för S:t Nicolaikyrkan och en fyndplats för en runristad gravhäll.</li>
+</ul>
+<h3 class="city-h3">Torn · 16</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vasteras-hovaren-q40849437"><b>Hovaren</b></a> — en fyr i Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vasteras-fyr-q41070669"><b>Västerås fyr</b></a> — en fyr i Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vastra-holmen-q41071579"><b>Västra Holmen</b></a> — en fyr i Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-malarparkshamnen-nedre-q111024607"><b>Mälarparkshamnen nedre</b></a> — en f.d. ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-malarparkshamnen-ovre-q111024608"><b>Mälarparkshamnen övre</b></a> — en f.d. ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-gamla-hamnen-ovre-q111025702"><b>Gamla Hamnen övre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-gamla-hamnen-nedre-q111025701"><b>Gamla Hamnen nedre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vasteras-djuphamn-roda-nedre-q111025802"><b>Västerås Djuphamn Röda nedre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vasteras-djuphamn-roda-ovre-q111025803"><b>Västerås Djuphamn Röda övre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vasteras-djuphamn-grona-nedre-q111025800"><b>Västerås Djuphamn Gröna nedre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-vasteras-djuphamn-grona-ovre-q111025801"><b>Västerås Djuphamn Gröna övre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-djuphamnsbassangen-nedre-q111029019"><b>Djuphamnsbassängen nedre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=wd-vasteras-djuphamnsbassangen-ovre-q111029020"><b>Djuphamnsbassängen övre</b></a> — en ensfyr vid Mälaren i Västerås kommun</li>
+<li><a href="/karta?plats=ksamsok-byggnad-for-tornpannor-p11-p12-p13-p14-vasteras-689668"><b>BYGGNAD FÖR TORNPANNOR P11, P12, P13, P14</b></a> — En byggnad som inrymde tornpannorna P11 till P14. <span class="era">1947–1951</span></li>
+<li><a href="/karta?plats=ksamsok-centraltornsbyggnad-vasteras-689670"><b>CENTRALTORNSBYGGNAD</b></a> — En centraltornsbyggnad rest under åren 1915–1920. <span class="era">1915–1920</span></li>
+<li><a href="/karta?plats=ksamsok-djaknebergets-vattentorn-vasteras-015605"><b>Djäknebergets vattentorn</b></a> — Djäknebergets vattentorn i Västerås, uppfört 1932–1934. <span class="era">1932–1934</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 9</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vasteras-aseastrommen-q10419577"><b>Aseaströmmen</b></a> — skulptur på Stora Torget i Västerås invigd 1989</li>
+<li><a href="/karta?plats=wd-vasteras-fasadutsmyckning-smedjegatan-i-vasteras-q10494244"><b>Fasadutsmyckning, Smedjegatan i Västerås</b></a> — Fasadutsmyckning är ett konstverk från 1960 av Per Lindekrantz (1913−1994).</li>
+<li><a href="/p/wd-vasteras-johannes-rudbeckius-q10540489"><b>Johannes Rudbeckius</b></a> — en skulptur av Carl Milles</li>
+<li><a href="/karta?plats=wd-vasteras-kunskapens-trad-vasteras-q10550432"><b>Kunskapens träd, Västerås</b></a> — Kunskapens träd är en skulptur, som rests 1980 på Viktor Larssons plats i Västerås, skapad av Carl-Emil Berglin och tillverkad av Ulunda Sm…</li>
+<li><a href="/karta?plats=wd-vasteras-sommarsondag-q10673620"><b>Sommarsöndag</b></a> — Sommarsöndag är en skulptur i brons av Oscar Antonsson (1898–1960).</li>
+<li><a href="/p/wd-vasteras-vindarnas-grotta-q10715683"><b>Vindarnas grotta</b></a> — Vindarnas grotta är en skulptur i brons och granit av Eric Grate, som är placerad vid Fiskartorget, utanför stadshuset i Västerås.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vasteras-943b5c"><b>Minnesmärke</b></a> — Minnesvård över biskop Johannes Rudbeckius, rest till hans 300-årsminne.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vasteras-8d5ff4"><b>Minnesmärke</b></a> — En minnessten med byst av Gustav Vasa till minne av 1527.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vasteras-c05874"><b>Minnesmärke</b></a> — Två minnesstenar med byster av Hjalmar Branting och G.F. Thelander.</li>
+</ul>
+<h3 class="city-h3">museum · 5</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vasteras-vallby-friluftsmuseum-q10712301"><b>Vallby friluftsmuseum</b></a> — arbetslivsmuseum i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-vasteras-fritidsbatsmuseum-q10718091"><b>Västerås fritidsbåtsmuseum</b></a> — nedlagt arbetslivsmuseum i Västerås kommun</li>
+<li><a href="/p/wd-vasteras-vasteras-konstmuseum-q10718099"><b>Västerås konstmuseum</b></a> — Västerås konstmuseum är ett kommunalt konstmuseum i Västerås kommun som visar utställningar med framförallt svensk konst och verk ur den eg…</li>
+<li><a href="/p/wd-vasteras-vasteras-skolmuseum-q10718107"><b>Västerås skolmuseum</b></a> — Västerås Skolmuseum lades ner våren 2015, men var tidigare beläget i Herrgärdsskolan, centrala Västerås.</li>
+<li><a href="/p/wd-vasteras-vardmuseet-q31871273"><b>Vårdmuseet</b></a> — medicinhistoriskt museum i Västerås</li>
+</ul>
+<h3 class="city-h3">Bro · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vasteras-apotekarbron-q10416118"><b>Apotekarbron</b></a> — Apotekarbron är en bro i centrala Västerås nära Bondtorget och Stora torget.</li>
+<li><a href="/karta?plats=wd-vasteras-saltangsbron-q105514793"><b>Saltängsbron</b></a> — en fd. bro Västmanland</li>
+<li><a href="/karta?plats=wd-vasteras-lillauddsbron-q111024566"><b>Lillåuddsbron</b></a> — en bro i Västerås</li>
+</ul>
+<h3 class="city-h3">Runsten · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-runristning-vasteras-f6a609"><b>Runristning</b></a> — Två block med älvkvarnar och en kopia av ett runstensfragment.</li>
+<li><a href="/karta?plats=ksamsok-runristning-vasteras-3262e9"><b>Runristning</b></a> — Fyndplats för en runristad gravhäll som förvaras på länsmuseet.</li>
+<li><a href="/karta?plats=ksamsok-runristning-vasteras-85d1de"><b>Runristning</b></a> — Fyra runristningar funna i domkyrkan.</li>
+</ul>
+<h3 class="city-h3">Slott · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vasteras-vasteras-slott-q2243915"><b>Västerås slott</b></a> — Slott i Västerås uppfört på 1100-talet</li>
+<li><a href="/karta?plats=wd-vasteras-fullero-slott-q5508309"><b>Fullerö slott</b></a> — slott i Västerås-Barkarö socken, Västerås kommun</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vasteras-djakneberget-q10475008"><b>Djäkneberget</b></a> — parkområde i Västerås.</li>
+<li><a href="/karta?plats=wd-vasteras-vasaparken-q10713285"><b>Vasaparken</b></a> — park i Västerås</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vasteras-fiskartorget-q10495757"><b>Fiskartorget</b></a> — torg vid stadshuset</li>
+<li><a href="/karta?plats=wd-vasteras-stora-torget-q10681182"><b>Stora torget</b></a> — torg i Västerås, Västmanland</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vasteras-anundshog-q612476"><b>Anundshög</b></a> — gravfält i Badelunda i Västmanland (Västerås 431:1)</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 186 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/vasteras/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/vasteras/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Västerås gratis?</summary><p>Ja. Karta, alla 186 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Västerås?</summary><p>Vandringen samlar 186 sevärdheter i Västerås — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Anundshög?</summary><p>gravfält i Badelunda i Västmanland (Västerås 431:1)</p></details>
+<details class="faq"><summary>Vad är Västerås slott?</summary><p>Slott i Västerås uppfört på 1100-talet</p></details>
+<details class="faq"><summary>Vad är Fullerö slott?</summary><p>slott i Västerås-Barkarö socken, Västerås kommun</p></details>
+<details class="faq"><summary>Vad är Apotekarbron?</summary><p>Apotekarbron är en bro i centrala Västerås nära Bondtorget och Stora torget.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

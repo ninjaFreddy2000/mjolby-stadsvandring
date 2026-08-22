@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Jönköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.785934336206026" lon="14.153590111136394"><name>Minnesmärke</name><desc>Ett monument vid den gamla Junebron och namnet Junaköping.</desc></wpt>
+  <wpt lat="57.783850061923786" lon="14.159474324552448"><name>Minnesmärke</name><desc>En byst rest 1936 till minne av uppfinnaren Alexander Lagerman.</desc></wpt>
+  <wpt lat="57.784307405838014" lon="14.162958800256895"><name>Minnesmärke</name><desc>Platsen för statsbanans station med en minnestavla över Halmstad–Nässjö Järnvägar.</desc></wpt>
+  <wpt lat="57.7813855361293" lon="14.16431134168247"><name>Minnesmärke</name><desc>Läroverksbyggnaden från 1910–1912 med statyn Flickorna i Småland.</desc></wpt>
+  <wpt lat="57.7820408231054" lon="14.166676602517581"><name>Minnesmärke</name><desc>En minnessten över Johan Printz, guvernör över Nya Sverige.</desc></wpt>
+  <wpt lat="57.78416027391122" lon="14.169175998795883"><name>Minnesmärke</name><desc>Ett hamnmonument av ankare och propeller, skänkt av Lions Club 1970.</desc></wpt>
+  <wpt lat="57.78221518932079" lon="14.17481213375945"><name>Minnesmärke</name><desc>En minnestavla över konstnären Johan Fredrik Höckert, född här 1826.</desc></wpt>
+  <wpt lat="57.7817902500871" lon="14.17859374932512"><name>Minnesmärke</name><desc>Braheskolan, stadens lärdomsskola 1696–1867, där Viktor Rydberg gick.</desc></wpt>
+  <wpt lat="57.779589251101065" lon="14.178035714246375"><name>Minnesmärke</name><desc>En minnestavla över Storkenfeldtska flickskolan och ett fynd av 121 medeltida silvermynt.</desc></wpt>
+  <wpt lat="57.781536468038325" lon="14.186874621205964"><name>Minnesmärke</name><desc>En minnessten över mosskulturmannen Carl von Feilitzen.</desc></wpt>
+  <wpt lat="57.781477389176494" lon="14.19385539691113"><name>Minnesmärke</name><desc>En minnesplatta på Dag Hammarskjölds födelsehus.</desc></wpt>
+  <wpt lat="57.77732328602195" lon="14.205042218085326"><name>Minnesmärke</name><desc>En minnessten över Smålands artilleriregemente och gravar från spanska sjukan.</desc></wpt>
+  <wpt lat="57.77513705281603" lon="14.201975172306701"><name>Minnesmärke</name><desc>En minnessten över Smålands artilleriregemente, med ett äldre flintyxefynd i närheten.</desc></wpt>
+  <wpt lat="57.77162838686569" lon="14.198253855323937"><name>Minnesmärke</name><desc>Ett minnesmonument över stamhästen Gossen.</desc></wpt>
+  <wpt lat="57.770725169746676" lon="14.193698149507947"><name>Minnesmärke</name><desc>En minnessten från 1836 över en parkanläggare, med äldre stenyxefynd i närheten.</desc></wpt>
+  <wpt lat="57.774349971525645" lon="14.157176668218217"><name>Minnesmärke</name><desc>Ett monument på Munkplan över Munksjö Aktiebolags grundare.</desc></wpt>
+  <rte><name>Konstrundan i Jönköping</name>
+    <rtept lat="57.785934336206026" lon="14.153590111136394"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.783850061923786" lon="14.159474324552448"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.784307405838014" lon="14.162958800256895"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.7813855361293" lon="14.16431134168247"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.7820408231054" lon="14.166676602517581"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.78416027391122" lon="14.169175998795883"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.78221518932079" lon="14.17481213375945"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.7817902500871" lon="14.17859374932512"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.779589251101065" lon="14.178035714246375"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.781536468038325" lon="14.186874621205964"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.781477389176494" lon="14.19385539691113"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.77732328602195" lon="14.205042218085326"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.77513705281603" lon="14.201975172306701"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.77162838686569" lon="14.198253855323937"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.770725169746676" lon="14.193698149507947"><name>Minnesmärke</name></rtept>
+    <rtept lat="57.774349971525645" lon="14.157176668218217"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

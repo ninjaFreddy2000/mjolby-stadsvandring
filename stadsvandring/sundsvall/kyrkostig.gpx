@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Sundsvall</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="62.44795278" lon="17.35249722"><name>Sköns kyrka</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.41909444" lon="17.33617778"><name>Bosvedjans kyrka</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.41027778" lon="17.33083333"><name>Bydalens gravkapell</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.400343772026325" lon="17.34637538147017"><name>BIRGITTAKYRKAN</name><desc>En kyrka från 1970–1972 ritad av arkitekten och formgivaren Carl-Axel Acking.</desc></wpt>
+  <wpt lat="62.39797222" lon="17.34366667"><name>Brokyrkan</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.38833333" lon="17.31277778"><name>EFS-kyrkan, Sundsvall</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.38833333" lon="17.30583333"><name>Elimkyrkan</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.38888889" lon="17.30388889"><name>Betlehemskyrkan</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.39027778" lon="17.30319444"><name>Pingstkyrkan, Sundsvall</name><desc>kyrka i Sundsvall, Sverige</desc></wpt>
+  <wpt lat="62.39080519280593" lon="17.302330412072642"><name>METODISTKYRKAN</name><desc>En metodistkyrka från 1892 ritad av byggmästaren C.J. Henriksson, restaurerad 1979.</desc></wpt>
+  <wpt lat="62.39119444" lon="17.30011111"><name>Gustav Adolfs kyrka</name><desc>kyrkobyggnad i Sundsvall</desc></wpt>
+  <wpt lat="62.39264812900242" lon="17.28478426973869"><name>Kyrka/kapell</name><desc>Platsen för Sundsvalls äldsta kyrka och kyrkogård, i bruk fram till 1640-talet.</desc></wpt>
+  <wpt lat="62.38921667" lon="17.271775"><name>Nacksta kyrka</name><desc>katolsk kyrka i Sundsvall</desc></wpt>
+  <wpt lat="62.39966667" lon="17.26159722"><name>Granlo kyrka</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.41083333" lon="17.26944444"><name>Granloholms kyrka</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.405353" lon="17.208553"><name>Selånger 86:1</name><desc>kyrka/kapell i Medelpad</desc></wpt>
+  <wpt lat="62.40833" lon="17.20693"><name>Selångers kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Selånger, Sverige</desc></wpt>
+  <wpt lat="62.37944444" lon="17.34833333"><name>Skönsmons gravkapell</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <wpt lat="62.3789" lon="17.35625"><name>Skönsmons kyrka</name><desc>kyrkobyggnad i Sundsvalls kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Sundsvall</name>
+    <rtept lat="62.44795278" lon="17.35249722"><name>Sköns kyrka</name></rtept>
+    <rtept lat="62.41909444" lon="17.33617778"><name>Bosvedjans kyrka</name></rtept>
+    <rtept lat="62.41027778" lon="17.33083333"><name>Bydalens gravkapell</name></rtept>
+    <rtept lat="62.400343772026325" lon="17.34637538147017"><name>BIRGITTAKYRKAN</name></rtept>
+    <rtept lat="62.39797222" lon="17.34366667"><name>Brokyrkan</name></rtept>
+    <rtept lat="62.38833333" lon="17.31277778"><name>EFS-kyrkan, Sundsvall</name></rtept>
+    <rtept lat="62.38833333" lon="17.30583333"><name>Elimkyrkan</name></rtept>
+    <rtept lat="62.38888889" lon="17.30388889"><name>Betlehemskyrkan</name></rtept>
+    <rtept lat="62.39027778" lon="17.30319444"><name>Pingstkyrkan, Sundsvall</name></rtept>
+    <rtept lat="62.39080519280593" lon="17.302330412072642"><name>METODISTKYRKAN</name></rtept>
+    <rtept lat="62.39119444" lon="17.30011111"><name>Gustav Adolfs kyrka</name></rtept>
+    <rtept lat="62.39264812900242" lon="17.28478426973869"><name>Kyrka/kapell</name></rtept>
+    <rtept lat="62.38921667" lon="17.271775"><name>Nacksta kyrka</name></rtept>
+    <rtept lat="62.39966667" lon="17.26159722"><name>Granlo kyrka</name></rtept>
+    <rtept lat="62.41083333" lon="17.26944444"><name>Granloholms kyrka</name></rtept>
+    <rtept lat="62.405353" lon="17.208553"><name>Selånger 86:1</name></rtept>
+    <rtept lat="62.40833" lon="17.20693"><name>Selångers kyrka</name></rtept>
+    <rtept lat="62.37944444" lon="17.34833333"><name>Skönsmons gravkapell</name></rtept>
+    <rtept lat="62.3789" lon="17.35625"><name>Skönsmons kyrka</name></rtept>
+  </rte>
+</gpx>

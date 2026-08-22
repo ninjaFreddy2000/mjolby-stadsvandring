@@ -2,10 +2,20 @@
 <gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
 <metadata><name>Kyrkostigen i Finspång</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
   <wpt lat="58.8276" lon="15.9348"><name>Rejmyre kyrka</name><desc>Brukskyrkan i glasbrukssamhället Rejmyre.</desc></wpt>
+  <wpt lat="58.743324026947334" lon="15.805195816018083"><name>Loreborg, Fornborg</name><desc>Loreborg, en fornborg skyddad av branta stup med rester av stenvallar.</desc></wpt>
+  <wpt lat="58.709527777778" lon="15.781305555556"><name>Missionskyrkan</name><desc>kyrka i Finspångs kommun</desc></wpt>
+  <wpt lat="58.70994444" lon="15.77055556"><name>Finspångs slottskapell</name><desc>kyrkobyggnad i Finspångs kommun</desc></wpt>
+  <wpt lat="58.704194444444" lon="15.830694444444"><name>Ölstads missionshus</name><desc>kyrka i Finspångs kommun</desc></wpt>
+  <wpt lat="58.70205556" lon="15.84766667"><name>Risinge nya kyrka</name><desc>kyrkobyggnad i Finspångs kommun</desc></wpt>
   <wpt lat="58.675" lon="15.844"><name>Risinge gamla kyrka</name><desc>Medeltida kyrka med praktfulla kalkmålningar — &quot;Sankta Maria&quot;.</desc></wpt>
   <wpt lat="58.743" lon="15.575"><name>Hällestads kyrka</name><desc>Bergslagskyrka i den västra gruv- och skogsbygden.</desc></wpt>
   <rte><name>Kyrkostigen i Finspång</name>
     <rtept lat="58.8276" lon="15.9348"><name>Rejmyre kyrka</name></rtept>
+    <rtept lat="58.743324026947334" lon="15.805195816018083"><name>Loreborg, Fornborg</name></rtept>
+    <rtept lat="58.709527777778" lon="15.781305555556"><name>Missionskyrkan</name></rtept>
+    <rtept lat="58.70994444" lon="15.77055556"><name>Finspångs slottskapell</name></rtept>
+    <rtept lat="58.704194444444" lon="15.830694444444"><name>Ölstads missionshus</name></rtept>
+    <rtept lat="58.70205556" lon="15.84766667"><name>Risinge nya kyrka</name></rtept>
     <rtept lat="58.675" lon="15.844"><name>Risinge gamla kyrka</name></rtept>
     <rtept lat="58.743" lon="15.575"><name>Hällestads kyrka</name></rtept>
   </rte>

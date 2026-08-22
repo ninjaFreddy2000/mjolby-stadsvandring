@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Vadstena</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.4675" lon="14.97472222"><name>Hagebyhöga kyrka</name><desc>kyrkobyggnad i Vadstena kommun</desc></wpt>
+  <wpt lat="58.445764" lon="14.95998"><name>Klåstads gamla kyrkoplats</name><desc>tidigare kyrka/kapell i Vadstena, Östergötland</desc></wpt>
+  <wpt lat="58.4415" lon="15.003"><name>Fivelstads kyrka</name><desc>kyrkobyggnad i Fivelstad i Linköpings stift</desc></wpt>
+  <wpt lat="58.412970990435" lon="14.978362416104"><name>Orlunda gamla kyrka</name><desc>tidigare kyrka i Orlunda, Sverige</desc></wpt>
+  <wpt lat="58.4126" lon="14.9787"><name>Orlunda kyrka</name><desc>kyrkobyggnad i Orlunda, Vadstena kommun</desc></wpt>
+  <wpt lat="58.40882222" lon="14.89571389"><name>Strå kyrka</name><desc>kyrka i Vadstena kommun, Sverige</desc></wpt>
+  <wpt lat="58.403281" lon="14.847858"><name>Broby gamla kyrkoplats</name><desc>kyrka/kapell i Östergötland (Strå 4:2)</desc></wpt>
+  <wpt lat="58.43458333" lon="14.80231667"><name>Örberga kyrka</name><desc>kyrka i Vadstena kommun, Sverige</desc></wpt>
+  <wpt lat="58.46360556" lon="14.80841111"><name>Nässja kyrka</name><desc>kyrka i Vadstena kommun, Sverige</desc></wpt>
+  <wpt lat="58.44593617301" lon="14.883100541057"><name>Vadstena slottskyrka</name><desc>kyrkobyggnad i Vadstena kommun</desc></wpt>
+  <wpt lat="58.44895556" lon="14.89275"><name>S:t Pers kyrka</name><desc>kyrkobyggnad i Vadstena kommun</desc></wpt>
+  <wpt lat="58.45031834867796" lon="14.890690231932245"><name>Kloster</name><desc>En putsad stenbyggnad med sadeltak och valmade flygeltak.</desc></wpt>
+  <wpt lat="58.450777777778" lon="14.891527777778"><name>Vadstena klosterkyrka</name><desc>kyrkobyggnad i Vadstena kommun</desc></wpt>
+  <wpt lat="58.449440585311" lon="14.905207157135"><name>Ljusets kapell</name><desc>Gravkapell på Nya kyrkogården i Vadstena</desc></wpt>
+  <rte><name>Kyrkostigen i Vadstena</name>
+    <rtept lat="58.4675" lon="14.97472222"><name>Hagebyhöga kyrka</name></rtept>
+    <rtept lat="58.445764" lon="14.95998"><name>Klåstads gamla kyrkoplats</name></rtept>
+    <rtept lat="58.4415" lon="15.003"><name>Fivelstads kyrka</name></rtept>
+    <rtept lat="58.412970990435" lon="14.978362416104"><name>Orlunda gamla kyrka</name></rtept>
+    <rtept lat="58.4126" lon="14.9787"><name>Orlunda kyrka</name></rtept>
+    <rtept lat="58.40882222" lon="14.89571389"><name>Strå kyrka</name></rtept>
+    <rtept lat="58.403281" lon="14.847858"><name>Broby gamla kyrkoplats</name></rtept>
+    <rtept lat="58.43458333" lon="14.80231667"><name>Örberga kyrka</name></rtept>
+    <rtept lat="58.46360556" lon="14.80841111"><name>Nässja kyrka</name></rtept>
+    <rtept lat="58.44593617301" lon="14.883100541057"><name>Vadstena slottskyrka</name></rtept>
+    <rtept lat="58.44895556" lon="14.89275"><name>S:t Pers kyrka</name></rtept>
+    <rtept lat="58.45031834867796" lon="14.890690231932245"><name>Kloster</name></rtept>
+    <rtept lat="58.450777777778" lon="14.891527777778"><name>Vadstena klosterkyrka</name></rtept>
+    <rtept lat="58.449440585311" lon="14.905207157135"><name>Ljusets kapell</name></rtept>
+  </rte>
+</gpx>

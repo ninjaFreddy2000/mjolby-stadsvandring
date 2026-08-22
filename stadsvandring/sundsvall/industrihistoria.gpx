@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Sundsvall</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="62.4074" lon="17.2335"><name>Bergsåkersbron</name><desc>Bergsåkersbron är en balkbro i betong, som utgör Västra vägen mellan Granlo till Bergsåker i Sundsvall.</desc></wpt>
+  <wpt lat="62.39351667" lon="17.281"><name>Widesbron</name><desc>Widesbron eller Videsbron är en balkbro i betong, som utgör Västra vägens sträckning över Selångersån mellan Åkroken och Västhagen i Sundsvall.</desc></wpt>
+  <wpt lat="62.3935" lon="17.2912"><name>Sporthallsbron</name><desc>Sporthallsbron är en gång- och cykelbro från Västra Allén i Västermalm till Sundsvalls sporthall och Badhusparken i Norrmalm på andra sidan Selångersån.</desc></wpt>
+  <wpt lat="62.39225" lon="17.30205556"><name>Storbron</name><desc>bro i Sundsvall</desc></wpt>
+  <wpt lat="62.3923" lon="17.3049"><name>Thulebron</name><desc>Thulebron är en gång- och cykelbro i Sundsvall som utgör Thulegatans förlängning över Selångersån till Norrmalmsparken.</desc></wpt>
+  <wpt lat="62.39263889" lon="17.30694444"><name>Puckelbron</name><desc>Puckelbron är en balkbro i betong, som utgör Torggatans sträckning över Selångersån i centrala Sundsvall.</desc></wpt>
+  <wpt lat="62.39286111" lon="17.30930556"><name>Norrmalmsbron</name><desc>Norrmalmsbron är en balkbro i betong, som förbinder Skönsbergsvägen med Esplanaden i centrala Sundsvall.</desc></wpt>
+  <wpt lat="62.3931" lon="17.3129"><name>Tivolibron</name><desc>Tivolibron är en balkrambro i betong i centrala Sundsvall mellan Finnkajen i Stenstan och Skepparplatsen i Norrmalm.</desc></wpt>
+  <wpt lat="62.389" lon="17.342"><name>Sundsvallsbron</name><desc>bro i Sundsvall i Sverige</desc></wpt>
+  <wpt lat="62.3846" lon="17.2823"><name>Fagerdalsbron</name><desc>Fagerdalsbron är en bro, som utgör Sidsjövägens sträckning över Sidsjöbäcken mellan Södermalm och Sallyhill i Sundsvall.</desc></wpt>
+  <wpt lat="62.3788" lon="17.2807"><name>Sidsjöbron</name><desc>bro i Sverige</desc></wpt>
+  <rte><name>Industrihistoria i Sundsvall</name>
+    <rtept lat="62.4074" lon="17.2335"><name>Bergsåkersbron</name></rtept>
+    <rtept lat="62.39351667" lon="17.281"><name>Widesbron</name></rtept>
+    <rtept lat="62.3935" lon="17.2912"><name>Sporthallsbron</name></rtept>
+    <rtept lat="62.39225" lon="17.30205556"><name>Storbron</name></rtept>
+    <rtept lat="62.3923" lon="17.3049"><name>Thulebron</name></rtept>
+    <rtept lat="62.39263889" lon="17.30694444"><name>Puckelbron</name></rtept>
+    <rtept lat="62.39286111" lon="17.30930556"><name>Norrmalmsbron</name></rtept>
+    <rtept lat="62.3931" lon="17.3129"><name>Tivolibron</name></rtept>
+    <rtept lat="62.389" lon="17.342"><name>Sundsvallsbron</name></rtept>
+    <rtept lat="62.3846" lon="17.2823"><name>Fagerdalsbron</name></rtept>
+    <rtept lat="62.3788" lon="17.2807"><name>Sidsjöbron</name></rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Nyköping</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.762786111111" lon="17.028483333333"><name>Hjortensbergskyrkan</name><desc>kyrkobyggnad i Nyköpings kommun</desc></wpt>
+  <wpt lat="58.755204146826145" lon="17.037303966687737"><name>FRANCISCUS KAPELL</name><desc>Ett kapell i Nyköping upptaget i Bebyggelseregistret.</desc></wpt>
+  <wpt lat="58.75522097481243" lon="17.03835123846136"><name>FRANCISCUSKAPELLETS KLOCKSTAPEL</name><desc>En klockstapel i Nyköping upptagen i Bebyggelseregistret.</desc></wpt>
+  <wpt lat="58.75245816884707" lon="17.017012236390798"><name>ALLA HELGONA KYRKANS KLOCKSTAPEL</name><desc>En klockstapel i Nyköping upptagen i Bebyggelseregistret.</desc></wpt>
+  <wpt lat="58.75139722" lon="17.01597778"><name>Alla Helgona kyrka</name><desc>kyrkobyggnad i Nyköping i Strängnäs stift</desc></wpt>
+  <wpt lat="58.7536" lon="17.0097"><name>Sankt Nicolai kyrka</name><desc>kyrkobyggnad i Nyköpings kommun</desc></wpt>
+  <wpt lat="58.754014932834444" lon="17.0067349170338"><name>S:T NICOLAI KYRKAS KLOCKSTAPEL</name><desc>En klockstapel i Nyköping upptagen i Bebyggelseregistret.</desc></wpt>
+  <wpt lat="58.74823735200129" lon="17.011327809143086"><name>Borg</name><desc>Nyköpingshus, en medeltida borg som byggts om genom seklerna.</desc></wpt>
+  <wpt lat="58.75248" lon="16.99476"><name>Sankta Anna katolska kyrka</name><desc>katolsk kyrka i Nyköping</desc></wpt>
+  <wpt lat="58.72885839132481" lon="17.01393059305533"><name>ARNÖKYRKAN</name><desc>En kyrka i Nyköping upptagen i Bebyggelseregistret.</desc></wpt>
+  <wpt lat="58.72861111" lon="17.01388889"><name>Sankta Katarina kyrka</name><desc>kyrkobyggnad i Nyköpings kommun</desc></wpt>
+  <wpt lat="58.692625" lon="17.03163889"><name>Stjärnholms kyrka</name><desc>kyrkobyggnad i Oxelösunds kommun</desc></wpt>
+  <wpt lat="58.7422" lon="16.90360278"><name>Bergshammars kyrka</name><desc>kyrkobyggnad i Nyköpings kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Nyköping</name>
+    <rtept lat="58.762786111111" lon="17.028483333333"><name>Hjortensbergskyrkan</name></rtept>
+    <rtept lat="58.755204146826145" lon="17.037303966687737"><name>FRANCISCUS KAPELL</name></rtept>
+    <rtept lat="58.75522097481243" lon="17.03835123846136"><name>FRANCISCUSKAPELLETS KLOCKSTAPEL</name></rtept>
+    <rtept lat="58.75245816884707" lon="17.017012236390798"><name>ALLA HELGONA KYRKANS KLOCKSTAPEL</name></rtept>
+    <rtept lat="58.75139722" lon="17.01597778"><name>Alla Helgona kyrka</name></rtept>
+    <rtept lat="58.7536" lon="17.0097"><name>Sankt Nicolai kyrka</name></rtept>
+    <rtept lat="58.754014932834444" lon="17.0067349170338"><name>S:T NICOLAI KYRKAS KLOCKSTAPEL</name></rtept>
+    <rtept lat="58.74823735200129" lon="17.011327809143086"><name>Borg</name></rtept>
+    <rtept lat="58.75248" lon="16.99476"><name>Sankta Anna katolska kyrka</name></rtept>
+    <rtept lat="58.72885839132481" lon="17.01393059305533"><name>ARNÖKYRKAN</name></rtept>
+    <rtept lat="58.72861111" lon="17.01388889"><name>Sankta Katarina kyrka</name></rtept>
+    <rtept lat="58.692625" lon="17.03163889"><name>Stjärnholms kyrka</name></rtept>
+    <rtept lat="58.7422" lon="16.90360278"><name>Bergshammars kyrka</name></rtept>
+  </rte>
+</gpx>

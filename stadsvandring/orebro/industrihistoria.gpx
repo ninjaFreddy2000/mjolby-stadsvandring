@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Örebro</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.279125141868654" lon="15.21221368905791"><name>Kontorshuset vid örebro central</name><desc>Kontorshuset vid Örebro central, uppfört 1862.</desc></wpt>
+  <wpt lat="59.278528776660714" lon="15.211690916981839"><name>ÖREBRO STATIONSHUS</name><desc>Örebros stationshus från 1862, präglat av järnvägens utveckling.</desc></wpt>
+  <wpt lat="59.27530559321925" lon="15.215325462094837"><name>CENTRALPALATSET I ÖREBRO</name><desc>Centralpalatset, en jugendbyggnad från 1911-1913 med tornhuv och urtavlor.</desc></wpt>
+  <wpt lat="59.274561437145955" lon="15.216476253587897"><name>ARBETSHUSET I ÖREBRO</name><desc>En 1740-talsbyggnad vid slottet som länge var arbets- och barnhem för fattiga barn.</desc></wpt>
+  <wpt lat="59.27425" lon="15.21658333"><name>Kanslibron</name><desc>bro i Örebro</desc></wpt>
+  <wpt lat="59.274237398214254" lon="15.216608353000337"><name>Bro</name><desc>Kanslibron, en valvbro i sex spann av huggen sten med rötter på 1760-talet.</desc></wpt>
+  <wpt lat="59.274870653197496" lon="15.21701185509388"><name>FD LANDSHÖVDINGESTALLET I ÖREBRO</name><desc>Ett stall från 1768-1771 för landshövdingen, en av få bevarade 1700-talsstenbyggnader i staden.</desc></wpt>
+  <wpt lat="59.27341923810306" lon="15.214380924084296"><name>Bro</name><desc>En valvbro av sten från 1788 i anslutning till slottet.</desc></wpt>
+  <wpt lat="59.27394444" lon="15.21336111"><name>Storbron, Örebro</name><desc>Storbron ligger i Örebros centrum, invid Örebro slott, just där den nord-sydgående grusåsen skär Svartån.</desc></wpt>
+  <wpt lat="59.27447453125851" lon="15.213036897220974"><name>GAMLA TEATERN I ÖREBRO</name><desc>Örebros gamla teater från 1853, en gång landets näst största scen.</desc></wpt>
+  <wpt lat="59.27284911323969" lon="15.213384117382796"><name>FD RIKSBANKSHUSET I ÖREBRO</name><desc>Före detta riksbankskontor i elegant nybarock, ritat av bankspecialisten Aron Johansson.</desc></wpt>
+  <wpt lat="59.2726757170305" lon="15.213063385733866"><name>ÖREBRO TINGSRÄTT</name><desc>Örebro tingsrätt, en central byggnadskropp med rötter i 1854.</desc></wpt>
+  <wpt lat="59.27219758192415" lon="15.213160455841855"><name>ÖREBRO FD RÅDHUS</name><desc>Örebros gamla rådhus i nygotik, uppfört 1858-1863 för stadens förvaltning.</desc></wpt>
+  <wpt lat="59.27247374463301" lon="15.209558220506494"><name>FD POST- OCH TELEGRAFHUSET I ÖREBRO (TELEVERKETS HUS)</name><desc>Televerkets äldre huvudbyggnad, ett tegelklätt hus från 1913-1914 som även rymt Posten.</desc></wpt>
+  <wpt lat="59.2719996849765" lon="15.20901552127108"><name>FD VARMBADHUSET I ÖREBRO</name><desc>Örebros gamla simhall från 1928, vid invigningen Nordeuropas största.</desc></wpt>
+  <wpt lat="59.27316667" lon="15.20897222"><name>Vasabron</name><desc>bro i Örebro</desc></wpt>
+  <wpt lat="59.27318684486839" lon="15.20896801600019"><name>Bro</name><desc>En stenvalvbro i tre spann från 1926, krönt av obeliskformade pelare.</desc></wpt>
+  <wpt lat="59.27175" lon="15.20183"><name>Hagabron, Örebro</name><desc>Hagabron i Örebro leder över Svartån.</desc></wpt>
+  <rte><name>Industrihistoria i Örebro</name>
+    <rtept lat="59.279125141868654" lon="15.21221368905791"><name>Kontorshuset vid örebro central</name></rtept>
+    <rtept lat="59.278528776660714" lon="15.211690916981839"><name>ÖREBRO STATIONSHUS</name></rtept>
+    <rtept lat="59.27530559321925" lon="15.215325462094837"><name>CENTRALPALATSET I ÖREBRO</name></rtept>
+    <rtept lat="59.274561437145955" lon="15.216476253587897"><name>ARBETSHUSET I ÖREBRO</name></rtept>
+    <rtept lat="59.27425" lon="15.21658333"><name>Kanslibron</name></rtept>
+    <rtept lat="59.274237398214254" lon="15.216608353000337"><name>Bro</name></rtept>
+    <rtept lat="59.274870653197496" lon="15.21701185509388"><name>FD LANDSHÖVDINGESTALLET I ÖREBRO</name></rtept>
+    <rtept lat="59.27341923810306" lon="15.214380924084296"><name>Bro</name></rtept>
+    <rtept lat="59.27394444" lon="15.21336111"><name>Storbron, Örebro</name></rtept>
+    <rtept lat="59.27447453125851" lon="15.213036897220974"><name>GAMLA TEATERN I ÖREBRO</name></rtept>
+    <rtept lat="59.27284911323969" lon="15.213384117382796"><name>FD RIKSBANKSHUSET I ÖREBRO</name></rtept>
+    <rtept lat="59.2726757170305" lon="15.213063385733866"><name>ÖREBRO TINGSRÄTT</name></rtept>
+    <rtept lat="59.27219758192415" lon="15.213160455841855"><name>ÖREBRO FD RÅDHUS</name></rtept>
+    <rtept lat="59.27247374463301" lon="15.209558220506494"><name>FD POST- OCH TELEGRAFHUSET I ÖREBRO (TELEVERKETS HUS)</name></rtept>
+    <rtept lat="59.2719996849765" lon="15.20901552127108"><name>FD VARMBADHUSET I ÖREBRO</name></rtept>
+    <rtept lat="59.27316667" lon="15.20897222"><name>Vasabron</name></rtept>
+    <rtept lat="59.27318684486839" lon="15.20896801600019"><name>Bro</name></rtept>
+    <rtept lat="59.27175" lon="15.20183"><name>Hagabron, Örebro</name></rtept>
+  </rte>
+</gpx>

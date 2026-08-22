@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Industrihistoria i Hjo</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="58.307669593656605" lon="14.274103832254294"><name>Bro</name><desc>En stenbro från en äldre väg som hamnade under vatten när dammen byggdes.</desc></wpt>
+  <wpt lat="58.30268339787166" lon="14.290523641022395"><name>Bro</name><desc>Norrbro, en stenvalvsbro från 1881 på gamla landsvägen mot Askersund, ännu i bruk.</desc></wpt>
+  <wpt lat="58.302638888889" lon="14.290555555556"><name>Norrbro</name><desc>bro i Hjo</desc></wpt>
+  <rte><name>Industrihistoria i Hjo</name>
+    <rtept lat="58.307669593656605" lon="14.274103832254294"><name>Bro</name></rtept>
+    <rtept lat="58.30268339787166" lon="14.290523641022395"><name>Bro</name></rtept>
+    <rtept lat="58.302638888889" lon="14.290555555556"><name>Norrbro</name></rtept>
+  </rte>
+</gpx>

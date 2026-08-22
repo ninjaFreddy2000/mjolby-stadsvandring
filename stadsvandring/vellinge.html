@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Vellinge — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Vellinge till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PDF…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vellinge">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Vellinge — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Vellinge till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PDF…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vellinge">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Vellinge — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Vellinge till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 51 stopp och nedladdningsbar PDF…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vellinge","sourceSlug":"stadsvandring/vellinge","centroid":{"lat":55.41616079534426,"lng":12.97484503493949},"stops":[{"name":"Gästisparken","lat":55.4701814,"lng":13.0185365},{"name":"Gamla torg","lat":55.3909587,"lng":12.834312},{"name":"Rängs kyrka","lat":55.42472222,"lng":13.02}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Vellinge","description":"Upptäck Vellinge till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/vellinge","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Gästisparken","description":"Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.","geo":{"@type":"GeoCoordinates","latitude":55.4701814,"longitude":13.0185365}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Gamla torg","description":"Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.","geo":{"@type":"GeoCoordinates","latitude":55.3909587,"longitude":12.834312}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Rängs kyrka","description":"kyrkobyggnad i Vellinge kommun","geo":{"@type":"GeoCoordinates","latitude":55.42472222,"longitude":13.02}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Stora Hammars kyrka","description":"kyrkobyggnad i Vellinge kommun","geo":{"@type":"GeoCoordinates","latitude":55.425166666667,"longitude":12.967861111111}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Stora Hammars gamla kyrka","description":"kyrkobyggnad i Vellinge kommun","geo":{"@type":"GeoCoordinates","latitude":55.42333333,"longitude":12.99}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Räng 5:1","description":"kyrka/kapell i Skåne","geo":{"@type":"GeoCoordinates","latitude":55.404424,"longitude":12.986138}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Falsterbokanalen Nr 1","description":"en fyr i Vellinge kommun","geo":{"@type":"GeoCoordinates","latitude":55.393055555556,"longitude":12.949694444444}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Falsterbokanalen Nr 2","description":"en fyr i Vellinge kommun","geo":{"@type":"GeoCoordinates","latitude":55.39275,"longitude":12.948555555556}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Stenbocks skansar, Fästning/skans","description":"Resterna av en skans vid Vellinge från Karl XII:s tid, ursprungligen försedd med fyra bastioner.","geo":{"@type":"GeoCoordinates","latitude":55.419752920234615,"longitude":12.951735837893516}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Depåfynd","description":"En nedgrävd skatt vid Vellinge med över 500 brakteatrar och mynt, funnen av husmannen Per Jeppsson.","geo":{"@type":"GeoCoordinates","latitude":55.4033496719967,"longitude":12.989628497246768}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Flatmarksgrav","description":"Ett gravfält vid Vellinge som delvis kom i dagen 1929 vid en vägomläggning.","geo":{"@type":"GeoCoordinates","latitude":55.4264858007638,"longitude":12.967242239371672}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Vallanläggning","description":"En vall med tillhörande grav vid Vellinge, undersökt 1983 med fynd av keramik och järn.","geo":{"@type":"GeoCoordinates","latitude":55.4015706452763,"longitude":12.986006531332073}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Boplats","description":"En boplats vid Vellinge med ett sextiotal anläggningar, undersökt på 1990-talet.","geo":{"@type":"GeoCoordinates","latitude":55.40860349361446,"longitude":12.988313761258985}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Boplats","description":"En vidsträckt boplats vid Vellinge med fynd samlade sedan 1940-talet och undersökt så sent som 2023.","geo":{"@type":"GeoCoordinates","latitude":55.408449306764716,"longitude":12.983579355051583}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Vägmärke","description":"Två gamla väghållningsstenar av granit vid Vellinge, flankerande en villainfart.","geo":{"@type":"GeoCoordinates","latitude":55.40811323013219,"longitude":12.981804867732555}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"Fyndplatsen för ett ornerat treflikigt bronsspänne vid Stora Hammar, Vellinge.","geo":{"@type":"GeoCoordinates","latitude":55.42840832370281,"longitude":12.972890884175872}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Boplats","description":"Fyndplatsen för en benfylld lerurna vid Vellinge, kompletterad med flintfynd 1985.","geo":{"@type":"GeoCoordinates","latitude":55.431371230867974,"longitude":12.971033629427936}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Boplats","description":"En boplats vid Vellinge med ett trettiotal anläggningar, undersökt i början av 1990-talet.","geo":{"@type":"GeoCoordinates","latitude":55.409880845326306,"longitude":12.985357877942286}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Boplats","description":"En vall och en angränsande boplats vid Vellinge, undersökta 1983.","geo":{"@type":"GeoCoordinates","latitude":55.39980592304972,"longitude":12.97920555419171}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Hög","description":"Platsen för en försvunnen gravhög vid Vellinge, bevarad i ortnamnet Högs Vången.","geo":{"@type":"GeoCoordinates","latitude":55.430137383133335,"longitude":12.96381145441339}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Boplatsområde","description":"Ett omfattande boplatsområde vid Vellinge med 136 stolphål, undersökt och borttaget efter 2008.","geo":{"@type":"GeoCoordinates","latitude":55.42598924968222,"longitude":12.976622899490662}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Sohög, Boplats","description":"Den fyndrika stenåldersboplatsen Sohög vid Vellinge, undersökt redan 1910 och 1924.","geo":{"@type":"GeoCoordinates","latitude":55.40621225924722,"longitude":12.974911794927342}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Fyndplats","description":"En fyndplats vid Vellinge med havsvattenpatinerad flinta, funnen vid en utredning 2018.","geo":{"@type":"GeoCoordinates","latitude":55.40711907693306,"longitude":12.980747399721965}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Minnesmärke","description":"Sten rest 1930 åt kyrkoherde Collin som planterade Ljungskogen.","geo":{"@type":"GeoCoordinates","latitude":55.40308918615429,"longitude":12.961433031052422}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Bytomt/gårdstomt","description":"Bebyggelsespår från Kämpinge medeltida by, bebott ända sedan bronsåldern.","geo":{"@type":"GeoCoordinates","latitude":55.40586340910958,"longitude":12.985877545849476}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Vellinge gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 51 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Vellinge?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 51 sevärdheter i Vellinge — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Gästisparken?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge."}},{"@type":"Question","name":"Vad är Gamla torg?","acceptedAnswer":{"@type":"Answer","text":"Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge."}},{"@type":"Question","name":"Vad är Rängs kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Vellinge kommun"}},{"@type":"Question","name":"Vad är Stora Hammars kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Vellinge kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Vellinge","item":"https://stadsvandring.io/stadsvandring/vellinge"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Vellinge</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Vellinge</span><span class="badge">51 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Vellinge — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Vellinge till fots: 51 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Vellinge"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/izi-vellinge-gastisparken"><b>1. Gästisparken</b><span>Sevärdhet · Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Velli…</span></a>
+<a class="tile" href="/p/izi-vellinge-gamla-torg"><b>2. Gamla torg</b><span>Torg · Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Velli…</span></a>
+<a class="tile" href="/p/wd-vellinge-rangs-kyrka-q10658443"><b>3. Rängs kyrka</b><span>Kyrka · kyrkobyggnad i Vellinge kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Vellinge · 51</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Vellinge. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">fornminne · 39</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-depafynd-vellinge-473925"><b>Depåfynd</b></a> — En nedgrävd skatt vid Vellinge med över 500 brakteatrar och mynt, funnen av husmannen Per Jeppsson.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-vellinge-8e6382"><b>Flatmarksgrav</b></a> — Ett gravfält vid Vellinge som delvis kom i dagen 1929 vid en vägomläggning.</li>
+<li><a href="/karta?plats=ksamsok-vallanlaggning-vellinge-414d04"><b>Vallanläggning</b></a> — En vall med tillhörande grav vid Vellinge, undersökt 1983 med fynd av keramik och järn.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-716098"><b>Boplats</b></a> — En boplats vid Vellinge med ett sextiotal anläggningar, undersökt på 1990-talet.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-025b58"><b>Boplats</b></a> — En vidsträckt boplats vid Vellinge med fynd samlade sedan 1940-talet och undersökt så sent som 2023.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vellinge-9a219f"><b>Vägmärke</b></a> — Två gamla väghållningsstenar av granit vid Vellinge, flankerande en villainfart.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vellinge-19309b"><b>Fyndplats</b></a> — Fyndplatsen för ett ornerat treflikigt bronsspänne vid Stora Hammar, Vellinge.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-1b0198"><b>Boplats</b></a> — Fyndplatsen för en benfylld lerurna vid Vellinge, kompletterad med flintfynd 1985.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-d42a57"><b>Boplats</b></a> — En boplats vid Vellinge med ett trettiotal anläggningar, undersökt i början av 1990-talet.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-826a3a"><b>Boplats</b></a> — En vall och en angränsande boplats vid Vellinge, undersökta 1983.</li>
+<li><a href="/karta?plats=ksamsok-hog-vellinge-98e117"><b>Hög</b></a> — Platsen för en försvunnen gravhög vid Vellinge, bevarad i ortnamnet Högs Vången.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-vellinge-708c28"><b>Boplatsområde</b></a> — Ett omfattande boplatsområde vid Vellinge med 136 stolphål, undersökt och borttaget efter 2008.</li>
+<li><a href="/karta?plats=ksamsok-sohog-boplats-vellinge-2d970a"><b>Sohög, Boplats</b></a> — Den fyndrika stenåldersboplatsen Sohög vid Vellinge, undersökt redan 1910 och 1924.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vellinge-3366a0"><b>Fyndplats</b></a> — En fyndplats vid Vellinge med havsvattenpatinerad flinta, funnen vid en utredning 2018.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vellinge-3f544b"><b>Bytomt/gårdstomt</b></a> — Bebyggelsespår från Kämpinge medeltida by, bebott ända sedan bronsåldern.</li>
+<li><a href="/karta?plats=ksamsok-plats-med-tradition-vellinge-7bd208"><b>Plats med tradition</b></a> — Skogshöjd som burit namnet Granhög ända sedan 1500-talet.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-vellinge-9ba48b"><b>Stenkammargrav</b></a> — Svag förhöjning i åkern, rester av dösen som gett Saxedöseåkern dess namn.</li>
+<li><a href="/karta?plats=ksamsok-fyndsamling-vellinge-c38f70"><b>Fyndsamling</b></a> — Rik stenåldersamling med ett trettiotal flintyxor, hopsamlad kring Maglarp.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-f78211"><b>Boplats</b></a> — Stenåldersboplats där ett hundratal flintfynd samlats in under 1900-talet.</li>
+<li><a href="/karta?plats=ksamsok-grav-uppgift-om-typ-saknas-vellinge-2f5ecc"><b>Grav - uppgift om typ saknas</b></a> — Borttagen brandgrav, undersökt 1916, där man fann förkolnade ben.</li>
+<li><a href="/karta?plats=ksamsok-kungshogen-hog-vellinge-d3e536"><b>Kungshögen, Hög</b></a> — Rekonstruerad hög där Montelius 1890 fann fem gravar, den översta från vikingatiden.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vellinge-0721f7"><b>Fyndplats</b></a> — Fyndplats för en lerurna med ben, funnen vid jordbruksarbete.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vellinge-c98eba"><b>Fartygs-/båtlämning</b></a> — Ett drygt 22 meter långt vrak vars skrovdelar delvis bevarats i sanden.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vellinge-24db4a"><b>Bytomt/gårdstomt</b></a> — Bytomten efter Kämpinge by, belagd sedan 1300-talet och en gång sjutton gårdar stor.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-a9cf14"><b>Boplats</b></a> — Boplats från äldre stenålder, upptäckt 1965 men senare bortschaktad.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-dd6fdd"><b>Boplats</b></a> — En registrerad boplats i Vellinge utan närmare beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-vellinge-e41949"><b>Vägmärke</b></a> — Väghållningssten som pekar ut gården Stora Hammars ansvar för vägunderhåll.</li>
+<li><a href="/karta?plats=ksamsok-hog-vellinge-637f06"><b>Hög</b></a> — Den borttagna Hyllehögen, vars flintfynd bevaras på Trelleborgs museum.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-5c776f"><b>Boplats</b></a> — Stenåldersboplats där ett tiotal kärnyxor hittats i en sandtäkt.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-885389"><b>Boplats</b></a> — Förhistorisk boplats med gropar, härdar och en möjlig flatmarksgrav.</li>
+<li><a href="/karta?plats=ksamsok-kvarn-vellinge-0fcfff"><b>Kvarn</b></a> — Platsen för en väderkvarn, en stubbamölla riven i slutet av 1800-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-vellinge-72b000"><b>Fyndplats</b></a> — Två skafthålsförsedda stenyxor, funna i en villaträdgård 1930.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-vellinge-243efd"><b>Boplatsområde</b></a> — Undersökt boplats med elva långhus, bebodd från förkristen tid till vikingatid.</li>
+<li><a href="/karta?plats=ksamsok-fyndsamling-vellinge-cbc2b5"><b>Fyndsamling</b></a> — Liten samling stenåldersfynd från gården Räng.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vellinge-27363a"><b>Begravningsplats</b></a> — Kämpinge ödekyrkogård, övergiven sedan kyrkan lades ned 1632.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-vellinge-f0a444"><b>Bytomt/gårdstomt</b></a> — Bytomten efter Stora Hammar, medeltida prebende åt Lunds domkapitel.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-vellinge-edad5f"><b>Boplatsområde</b></a> — Stor järnåldersboplats med långhus och praktfulla fibulor från 400–600-talet.</li>
+<li><a href="/karta?plats=ksamsok-boplats-vellinge-6863ce"><b>Boplats</b></a> — Boplatsspår från yngre bronsålder, funna inför bygget av en idrottsplats.</li>
+<li><a href="/karta?plats=ksamsok-flatmarksgrav-vellinge-ecb661"><b>Flatmarksgrav</b></a> — Flatmarksgrav med skelett och lerkärl, funnen vid grävning 1942.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 5</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vellinge-rangs-kyrka-q10658443"><b>Rängs kyrka</b></a> — kyrkobyggnad i Vellinge kommun</li>
+<li><a href="/karta?plats=wd-vellinge-stora-hammars-kyrka-q10680998"><b>Stora Hammars kyrka</b></a> — kyrkobyggnad i Vellinge kommun</li>
+<li><a href="/karta?plats=wd-vellinge-stora-hammars-gamla-kyrka-q10680997"><b>Stora Hammars gamla kyrka</b></a> — kyrkobyggnad i Vellinge kommun</li>
+<li><a href="/karta?plats=wd-vellinge-rang-5-1-q29477259"><b>Räng 5:1</b></a> — kyrka/kapell i Skåne</li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-vellinge-7ea61a"><b>Kyrka/kapell</b></a> — Grundrester efter Kämpinge kyrka, som lades ned som församlingskyrka 1632.</li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vellinge-falsterbokanalen-nr-1-q42430371"><b>Falsterbokanalen Nr 1</b></a> — en fyr i Vellinge kommun</li>
+<li><a href="/karta?plats=wd-vellinge-falsterbokanalen-nr-2-q42432633"><b>Falsterbokanalen Nr 2</b></a> — en fyr i Vellinge kommun</li>
+</ul>
+<h3 class="city-h3">Borgruin · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stenbocks-skansar-fastning-skans-vellinge-8f30ee"><b>Stenbocks skansar, Fästning/skans</b></a> — Resterna av en skans vid Vellinge från Karl XII:s tid, ursprungligen försedd med fyra bastioner.</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-vellinge-3ddda0"><b>Fästning/skans</b></a> — Rester av en jordvallsskans som möter den gamla banvallen.</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-vellinge-gastisparken"><b>Gästisparken</b></a> — Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.</li>
+</ul>
+<h3 class="city-h3">Torg · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-vellinge-gamla-torg"><b>Gamla torg</b></a> — Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-vellinge-2af42b"><b>Minnesmärke</b></a> — Sten rest 1930 åt kyrkoherde Collin som planterade Ljungskogen.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 51 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/vellinge/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/vellinge/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Vellinge gratis?</summary><p>Ja. Karta, alla 51 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Vellinge?</summary><p>Vandringen samlar 51 sevärdheter i Vellinge — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Gästisparken?</summary><p>Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.</p></details>
+<details class="faq"><summary>Vad är Gamla torg?</summary><p>Stopp på ljudturen «Gamla Vellinge - från kyrkby till järnvägssamhälle» i Vellinge.</p></details>
+<details class="faq"><summary>Vad är Rängs kyrka?</summary><p>kyrkobyggnad i Vellinge kommun</p></details>
+<details class="faq"><summary>Vad är Stora Hammars kyrka?</summary><p>kyrkobyggnad i Vellinge kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

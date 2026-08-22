@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Kristianstad</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.081916666667" lon="14.188888888889"><name>Råbelövs kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.050972222222" lon="14.17675"><name>Himmelska glädjens kapell</name><desc>kapell i Kristianstad</desc></wpt>
+  <wpt lat="56.05" lon="14.18333333"><name>Nosaby kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.04273" lon="14.18052"><name>Österängs kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.045259" lon="14.205339"><name>Nosaby 31:1</name><desc>kyrka/kapell i Skåne</desc></wpt>
+  <wpt lat="56.02804972815832" lon="14.168835113283773"><name>Heliga korsets kapell</name><desc>Heliga korsets kapell i Kristianstad från 1942, ritat av Herbert Kockum.</desc></wpt>
+  <wpt lat="56.030642894569155" lon="14.155029002486318"><name>Stadsbefästning</name><desc>Rester av Kristianstads befästningar från 1600- och 1700-talet.</desc></wpt>
+  <wpt lat="56.0312200255284" lon="14.152606842449597"><name>Heliga Trefaldighets Kyrka</name><desc>Bild 1: Upphovsman var danske kung Christian IV, som i sin nya stad önskade en magnifik katedral.</desc></wpt>
+  <wpt lat="56.035387" lon="14.154786"><name>Utanverken, N Vallgraven</name><desc>stadsbefästning i Skåne (Kristianstad 110:1)</desc></wpt>
+  <wpt lat="56.04530651863902" lon="14.145506032661073"><name>Fästning/skans</name><desc>Undersökt och borttaget försvarsverk i Kristianstad.</desc></wpt>
+  <wpt lat="56.046775752387454" lon="14.134887778427073"><name>Skans, Fästning/skans</name><desc>En V-formad skans utanför Kristianstad, känd från en karta 1837.</desc></wpt>
+  <wpt lat="56.03777481279979" lon="14.122584742964463"><name>Lillö, Borg</name><desc>Lillö borg, en medeltida slottsruin ödelagd under kriget 1658–59.</desc></wpt>
+  <wpt lat="56.04905" lon="14.15515833"><name>Näsby kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.02000046" lon="14.14472198"><name>Vilans kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="55.98944444" lon="14.15166667"><name>Norra Åsums kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="55.9918" lon="14.08716389"><name>Vä kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="55.988224" lon="14.085217"><name>Helgeandshuset</name><desc>kyrka/kapell i Skåne (Vä 18:1)</desc></wpt>
+  <wpt lat="56.01468611" lon="14.06803611"><name>Skepparslövs kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.05916667" lon="14.09916667"><name>Araslövs kyrka</name><desc>kyrkobyggnad i Kristianstads kommun</desc></wpt>
+  <wpt lat="56.07413056" lon="14.08305556"><name>Färlövs kyrka</name><desc>1180-tals kyrka i Lunds stift</desc></wpt>
+  <wpt lat="56.0106" lon="14.24853"><name>Gustav Adolfs kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Viby, Sverige</desc></wpt>
+  <rte><name>Kyrkostigen i Kristianstad</name>
+    <rtept lat="56.081916666667" lon="14.188888888889"><name>Råbelövs kyrka</name></rtept>
+    <rtept lat="56.050972222222" lon="14.17675"><name>Himmelska glädjens kapell</name></rtept>
+    <rtept lat="56.05" lon="14.18333333"><name>Nosaby kyrka</name></rtept>
+    <rtept lat="56.04273" lon="14.18052"><name>Österängs kyrka</name></rtept>
+    <rtept lat="56.045259" lon="14.205339"><name>Nosaby 31:1</name></rtept>
+    <rtept lat="56.02804972815832" lon="14.168835113283773"><name>Heliga korsets kapell</name></rtept>
+    <rtept lat="56.030642894569155" lon="14.155029002486318"><name>Stadsbefästning</name></rtept>
+    <rtept lat="56.0312200255284" lon="14.152606842449597"><name>Heliga Trefaldighets Kyrka</name></rtept>
+    <rtept lat="56.035387" lon="14.154786"><name>Utanverken, N Vallgraven</name></rtept>
+    <rtept lat="56.04530651863902" lon="14.145506032661073"><name>Fästning/skans</name></rtept>
+    <rtept lat="56.046775752387454" lon="14.134887778427073"><name>Skans, Fästning/skans</name></rtept>
+    <rtept lat="56.03777481279979" lon="14.122584742964463"><name>Lillö, Borg</name></rtept>
+    <rtept lat="56.04905" lon="14.15515833"><name>Näsby kyrka</name></rtept>
+    <rtept lat="56.02000046" lon="14.14472198"><name>Vilans kyrka</name></rtept>
+    <rtept lat="55.98944444" lon="14.15166667"><name>Norra Åsums kyrka</name></rtept>
+    <rtept lat="55.9918" lon="14.08716389"><name>Vä kyrka</name></rtept>
+    <rtept lat="55.988224" lon="14.085217"><name>Helgeandshuset</name></rtept>
+    <rtept lat="56.01468611" lon="14.06803611"><name>Skepparslövs kyrka</name></rtept>
+    <rtept lat="56.05916667" lon="14.09916667"><name>Araslövs kyrka</name></rtept>
+    <rtept lat="56.07413056" lon="14.08305556"><name>Färlövs kyrka</name></rtept>
+    <rtept lat="56.0106" lon="14.24853"><name>Gustav Adolfs kyrka</name></rtept>
+  </rte>
+</gpx>

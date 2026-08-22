@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Eskilstuna</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.42" lon="16.470556"><name>Tor och bockarna</name><desc>gjutjärnsskulptur skapad av Allan Ebeling</desc></wpt>
+  <wpt lat="59.371111111111" lon="16.482222222222"><name>Hjalmar Branting av Carl Eldh</name><desc>byst i Eskilstuna</desc></wpt>
+  <wpt lat="59.37036111" lon="16.51347222"><name>Arbetets ära och glädje</name><desc>Arbetets ära och glädje är en brunn som står på Fristadstorget i Eskilstuna.</desc></wpt>
+  <wpt lat="59.373" lon="16.517916666667"><name>Guds hand</name><desc>skulptur av Carl Milles</desc></wpt>
+  <rte><name>Konstrundan i Eskilstuna</name>
+    <rtept lat="59.42" lon="16.470556"><name>Tor och bockarna</name></rtept>
+    <rtept lat="59.371111111111" lon="16.482222222222"><name>Hjalmar Branting av Carl Eldh</name></rtept>
+    <rtept lat="59.37036111" lon="16.51347222"><name>Arbetets ära och glädje</name></rtept>
+    <rtept lat="59.373" lon="16.517916666667"><name>Guds hand</name></rtept>
+  </rte>
+</gpx>

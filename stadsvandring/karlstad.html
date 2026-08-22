@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Karlstad — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Karlstad till fots: 106 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 106 stopp och nedladdningsbar P…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/karlstad">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Karlstad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Karlstad till fots: 106 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 106 stopp och nedladdningsbar P…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/karlstad">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Karlstad — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Karlstad till fots: 106 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 106 stopp och nedladdningsbar P…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"karlstad","sourceSlug":"stadsvandring/karlstad","centroid":{"lat":59.378752677267045,"lng":13.51067282254147},"stops":[{"name":"Alsters herrgård","lat":59.39833333,"lng":13.60222222},{"name":"Mariebergsskogen","lat":59.368486,"lng":13.484786},{"name":"Vår Fru av Rosenkransens katolska kyrka","lat":59.38,"lng":13.50777778}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Karlstad","description":"Upptäck Karlstad till fots: 106 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/karlstad","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Alsters herrgård","description":"herrgård i Värmland","geo":{"@type":"GeoCoordinates","latitude":59.39833333,"longitude":13.60222222}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Mariebergsskogen","description":"park i Karlstad, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.368486,"longitude":13.484786}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Vår Fru av Rosenkransens katolska kyrka","description":"kyrkobyggnad i Karlstads kommun","geo":{"@type":"GeoCoordinates","latitude":59.38,"longitude":13.50777778}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Betlehemskyrkan","description":"kyrkobyggnad i Karlstads kommun","geo":{"@type":"GeoCoordinates","latitude":59.38222222,"longitude":13.50472222}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Ferlin steppar","description":"Ferlin steppar är en skulptur i cortenstål vid Stora torget i Karlstad skapad av Thomas Qvarsebo.","url":"https://stadsvandring.io/p/wd-karlstad-ferlin-steppar-q10494730","geo":{"@type":"GeoCoordinates","latitude":59.38111111,"longitude":13.50183333}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Fredsmonumentet i Karlstad","description":"skulptur på Stora torget i Karlstad av Ivar Johnsson","url":"https://stadsvandring.io/p/wd-karlstad-fredsmonumentet-i-karlstad-q10498808","geo":{"@type":"GeoCoordinates","latitude":59.38083333,"longitude":13.5025}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Hammarö kyrka","description":"kyrkobyggnad i Hammarö kommun","geo":{"@type":"GeoCoordinates","latitude":59.33565278,"longitude":13.52075}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Hertig Karl (staty)","description":"Hertig Karl är en staty i centrala Karlstad föreställande Karl IX.","url":"https://stadsvandring.io/p/wd-karlstad-hertig-karl-staty-q10522766","geo":{"@type":"GeoCoordinates","latitude":59.38083333,"longitude":13.49916667}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Jakobsbergsbron","description":"Jakobsbergsbron, färdigställd 1929, är den mittersta och äldsta av de tre vägbroar som förbinder den värmländska skärgårdskommunen Hammarö med Karlstads kommun…","url":"https://stadsvandring.io/p/wd-karlstad-jakobsbergsbron-q10539310","geo":{"@type":"GeoCoordinates","latitude":59.35527778,"longitude":13.48138889}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Norrstrandskyrkan","description":"kyrkobyggnad i Karlstads kommun","geo":{"@type":"GeoCoordinates","latitude":59.39288056,"longitude":13.513575}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Och solen har sin gång","description":"en skulptur i granit av Leo Pettersson","geo":{"@type":"GeoCoordinates","latitude":59.38472222,"longitude":13.49952778}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Sandgrund","description":"Lars Lerin-museum i Karlstad, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.38472222,"longitude":13.50277778}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Skoghalls kyrka","description":"kyrkobyggnad i Hammarö kommun","geo":{"@type":"GeoCoordinates","latitude":59.323,"longitude":13.46391667}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Stora torget","description":"torg i Karlstad","geo":{"@type":"GeoCoordinates","latitude":59.3807,"longitude":13.5031}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Vindarnas boning","description":"Vindarnas boning (finska: Tuulenpesä) är en fontänskulptur av den finländske konstnären Aimo Tukiainen som invigdes den 16 juni 1967 i Karlstad.","url":"https://stadsvandring.io/p/wd-karlstad-vindarnas-boning-q10715684","geo":{"@type":"GeoCoordinates","latitude":59.38138889,"longitude":13.49833333}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Västerstrandskyrkan","description":"kyrkobyggnad i Karlstads kommun","geo":{"@type":"GeoCoordinates","latitude":59.38263889,"longitude":13.46525}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Gustaf Fröding","description":"staty av Herman Reijers","geo":{"@type":"GeoCoordinates","latitude":59.380277777778,"longitude":13.501944444444}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Frödingstenen i Alster","description":"sten","url":"https://stadsvandring.io/p/wd-karlstad-frodingstenen-i-alster-q18289958","geo":{"@type":"GeoCoordinates","latitude":59.401805555556,"longitude":13.605891666667}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Herrhagskyrkan","description":"Herrhagskyrkan är en kyrkobyggnad i Karlstad i Karlstads stift.","geo":{"@type":"GeoCoordinates","latitude":59.37733,"longitude":13.51769}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Rudskyrkan","description":"kyrkobyggnad i Karlstads kommun","geo":{"@type":"GeoCoordinates","latitude":59.405,"longitude":13.519861}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Kronoparkskyrkan","description":"Kronoparkskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.","geo":{"@type":"GeoCoordinates","latitude":59.4056,"longitude":13.5723}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Kroppkärrskyrkan","description":"Kroppkärrskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.","geo":{"@type":"GeoCoordinates","latitude":59.40388,"longitude":13.5478}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Pingstkyrkan, Karlstad","description":"pingstförsamling i Karlstad, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.378446845248,"longitude":13.497051109787}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Under solen (skulptur)","description":"bronsskulptur av Klara Kristalova","url":"https://stadsvandring.io/p/wd-karlstad-under-solen-skulptur-q27477336","geo":{"@type":"GeoCoordinates","latitude":59.369722222222,"longitude":13.486388888889}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Kvarnbergsparken","description":"Kvarnbergsparken","geo":{"@type":"GeoCoordinates","latitude":59.37855,"longitude":13.48754}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Karlstad gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 106 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Karlstad?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 106 sevärdheter i Karlstad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Alsters herrgård?","acceptedAnswer":{"@type":"Answer","text":"herrgård i Värmland"}},{"@type":"Question","name":"Vad är Mariebergsskogen?","acceptedAnswer":{"@type":"Answer","text":"park i Karlstad, Sverige"}},{"@type":"Question","name":"Vad är Vår Fru av Rosenkransens katolska kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Karlstads kommun"}},{"@type":"Question","name":"Vad är Betlehemskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Karlstads kommun"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Karlstad","item":"https://stadsvandring.io/stadsvandring/karlstad"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Karlstad</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Karlstad</span><span class="badge">106 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Karlstad — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Karlstad till fots: 106 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Karlstad"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-karlstad-alsters-herrgard-q1614039"><b>1. Alsters herrgård</b><span>museum · herrgård i Värmland</span></a>
+<a class="tile" href="/p/wd-karlstad-mariebergsskogen-q1897573"><b>2. Mariebergsskogen</b><span>Naturreservat · park i Karlstad, Sverige</span></a>
+<a class="tile" href="/p/wd-karlstad-var-fru-av-rosenkransens-katolska-kyrka-q10426216"><b>3. Vår Fru av Rosenkransens katolska kyrka</b><span>Kyrka · kyrkobyggnad i Karlstads kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Karlstad · 106</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Karlstad. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Byggnad · 31</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-expositionshuset-karlstad-584753"><b>EXPOSITIONSHUSET</b></a> — Utställningslokal från 1862 ritad av A.W. Edelsvärd i schweizerstil. <span class="era">1861–1862</span></li>
+<li><a href="/p/ksamsok-karlstads-centralstation-karlstad-357540"><b>KARLSTADS CENTRALSTATION</b></a> — Stationshus i nyrenässans från 1869 vid Nordvästra stambanan. <span class="era">1869–1869</span></li>
+<li><a href="/karta?plats=ksamsok-biskopsgarden-huvudbyggnaden-karlstad-357555"><b>BISKOPSGÅRDEN (HUVUDBYGGNADEN)</b></a> — Biskopsgårdens timrade huvudbyggnad från slutet av 1770-talet. <span class="era">1775–1785</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-karlstad-675985"><b>MAGASIN</b></a> — Magasin från 1700-talet, upptaget i Bebyggelseregistret. <span class="era">1700–1799</span></li>
+<li><a href="/p/ksamsok-flachska-garden-karlstad-584854"><b>FLACHSKA GÅRDEN</b></a> — Timrad handelsgård vid Klarälven med rötter i 1600-talet. <span class="era">1600–1699</span></li>
+<li><a href="/p/ksamsok-bostadshus-karlstad-585846"><b>BOSTADSHUS</b></a> — En äldre timrad gårdsflygel som flyttades hit 1891 och då fick sin dekorativa panel. <span class="era">1891–1891</span></li>
+<li><a href="/karta?plats=ksamsok-ostra-flygeln-karlstad-578150"><b>ÖSTRA FLYGELN</b></a> — En flygelbyggnad i Karlstad med rötter i 1600-talet. <span class="era">1600–1699</span></li>
+<li><a href="/karta?plats=ksamsok-administrationsbyggnad-forvaltning-kontor-karlstad-440288"><b>Administrationsbyggnad/förvaltning/ kontor</b></a> — En kontors- och förvaltningsbyggnad i Karlstad från 1961. <span class="era">1961–1961</span></li>
+<li><a href="/karta?plats=ksamsok-stall-och-vagnsbod-karlstad-675984"><b>STALL OCH VAGNSBOD</b></a> — En stall- och vagnsbodsbyggnad i Karlstad från 1700-talet. <span class="era">1700–1799</span></li>
+<li><a href="/karta?plats=ksamsok-hybelejens-gata-4-karlstad-048735"><b>hYBELEJENS GATA 4</b></a> — Ett fyravånings nyrenässanshus från 1903 med praktfull måleridekor i entrén. <span class="era">1903–1903</span></li>
+<li><a href="/p/ksamsok-karlstads-teater-karlstad-578073"><b>KARLSTADS TEATER</b></a> — En teater från 1893 vars rika fasader speglar sent 1800-talsideal. <span class="era">1893–1893</span></li>
+<li><a href="/karta?plats=ksamsok-vastra-flygeln-karlstad-578083"><b>VÄSTRA FLYGELN</b></a> — En flygelbyggnad i Karlstad uppförd 1784. <span class="era">1784–1784</span></li>
+<li><a href="/p/ksamsok-forsamlingshem-karlstad-607277"><b>Församlingshem</b></a> — Herrhagskyrkans församlingshem, uppfört 1972 efter en lång tillkomsthistoria. <span class="era">1971–1972</span></li>
+<li><a href="/p/ksamsok-karlstads-radhus-karlstad-696844"><b>KARLSTADS RÅDHUS</b></a> — Ernst Jacobssons monumentala rådhus från 1869 med de vakande Värmlandsörnarna. <span class="era">1868–1868</span></li>
+<li><a href="/karta?plats=ksamsok-vastra-flygeln-karlstad-675917"><b>VÄSTRA FLYGELN</b></a> — En flygelbyggnad i Karlstad från perioden 1750–1830. <span class="era">1750–1830</span></li>
+<li><a href="/p/ksamsok-grevgarden-karlstad-676168"><b>GREVGÅRDEN</b></a> — Ett timmerhus från 1782–84 uppfört av räntmästare Sjöstedt, senare i grevlig ägo. <span class="era">1782–1784</span></li>
+<li><a href="/p/ksamsok-wermlandsbanken-karlstad-048736"><b>WERMLANDSBANKEN</b></a> — Ett bankhus från 1906–08, ritat av Ernst Stenhammar i nationalromantisk anda. <span class="era">1906–1908</span></li>
+<li><a href="/p/ksamsok-frimurarelogen-karlstad-577965"><b>FRIMURARELOGEN</b></a> — Frimurarelogen från 1869, skådeplats för Frödings Balen och unionsupplösningen 1905. <span class="era">1869–1869</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-och-bostadshus-karlstad-357556"><b>UTHUS OCH BOSTADSHUS</b></a> — Ett tegelhus i en och en halv våning, troligen uppfört 1882. <span class="era">1870–1899</span></li>
+<li><a href="/karta?plats=ksamsok-doktorsgarden-karlstad-584660"><b>DOKTORSGÅRDEN</b></a> — Ett timrat tvåvåningshus vid Älvgatan, troligen uppfört omkring 1820. <span class="era">1815–1824</span></li>
+<li><a href="/p/ksamsok-hypoteksforeningens-hus-karlstad-585004"><b>HYPOTEKSFÖRENINGENS HUS</b></a> — Ett empirehus från 1853 som klarade sig undan stadsbranden 1865. <span class="era">1853–1853</span></li>
+<li><a href="/p/ksamsok-ostra-bron-karlstad-050132"><b>Östra Bron</b></a> — Stenvalvsbron över östra Klarälvsgrenen, byggd 1761–65. <span class="era">1761–1765</span></li>
+<li><a href="/p/ksamsok-gamla-gymnasiet-gamla-laroverkshuset-karlstad-357539"><b>GAMLA GYMNASIET (GAMLA LÄROVERKSHUSET)</b></a> — Läroverkshus från 1752–59 ritat av Hårleman och Cronstedt, med observatorietorn. <span class="era">1753–1759</span></li>
+<li><a href="/p/ksamsok-tingvallagymnasiet-tingvallalaroverket-karlstad-585134"><b>TINGVALLAGYMNASIET (TINGVALLALÄROVERKET)</b></a> — Ett läroverk i gult tegel från 1869 vid torgets östra sida. <span class="era">1867–1869</span></li>
+<li><a href="/p/ksamsok-pihlgrensgarden-karlstad-585848"><b>PIHLGRENSGÅRDEN</b></a> — En timrad gård från sent 1700-tal som fick empirekaraktär 1840. <span class="era">1750–1799</span></li>
+<li><a href="/p/ksamsok-karlstad-residens-karlstad-049247"><b>Karlstad residens</b></a> — Landshövdingens residens i Karlstad, uppfört 1869–71. <span class="era">1869–1871</span></li>
+<li><a href="/karta?plats=ksamsok-landshovdingegarden-karlstad-585044"><b>LANDSHÖVDINGEGÅRDEN</b></a> — Ett vinkelbyggt tvåvåningshus, troligen äldre än 1752, som nu används av kommunen. <span class="era">1719–1750</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-karlstad-676467"><b>UTHUS</b></a> — Ett grönmålat trä-uthus, troligen uppfört 1867. <span class="era">1850–1899</span></li>
+<li><a href="/karta?plats=ksamsok-sandbackens-gard-mangardsbyggnaden-karlstad-585160"><b>SANDBÄCKENS GÅRD, MANGÅRDSBYGGNADEN</b></a> — Sandbäckens mangårdsbyggnad, som blev militärt boställe under 1900-talet. <span class="era">1793–1795</span></li>
+<li><a href="/karta?plats=ksamsok-magasin-karlstad-584871"><b>MAGASIN</b></a> — En magasinsbyggnad i Karlstad från tiden 1700–1865. <span class="era">1700–1865</span></li>
+<li><a href="/karta?plats=ksamsok-bod-karlstad-041242"><b>Bod</b></a> — En bod i Karlstad från första hälften av 1800-talet. <span class="era">1800–1850</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 24</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-fartygs-batlamning-karlstad-06a6e9"><b>Fartygs-/båtlämning</b></a> — En välbevarad stockbåt som togs upp ur vattnet 1963.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlstad-788279"><b>Fartygs-/båtlämning</b></a> — Ett vrak av en platteka som påträffades 1993.</li>
+<li><a href="/p/ksamsok-fyndplats-karlstad-484d5d"><b>Fyndplats</b></a> — Fyndplats för en eller ett par skafthålsyxor från Kanikenäset.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-karlstad-6efbf9"><b>Bytomt/gårdstomt</b></a> — En bytomt markerad på en lantmäterikarta från 1766.</li>
+<li><a href="/p/ksamsok-grav-markerad-av-sten-block-karlstad-cb3b95"><b>Grav markerad av sten/block</b></a> — Ett möjligt gravfält med en rest sten och otydliga förhöjningar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlstad-e8636a"><b>Fartygs-/båtlämning</b></a> — Vraket av en träbåt som kan komma att övertäckas.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-cafb75"><b>Fyndplats</b></a> — Fyndplats för en grönstensklubba hittad 1927.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlstad-da49f9"><b>Fartygs-/båtlämning</b></a> — Vraket av en pråm, möjligen med hjälpmotor.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlstad-ef5af3"><b>Fartygs-/båtlämning</b></a> — Arkivuppgift om fartyget Axel som förliste 1848.</li>
+<li><a href="/p/ksamsok-omrade-med-fartygslamningar-karlstad-d92b00"><b>Område med fartygslämningar</b></a> — Ett område med minst tio pråmvrak och en trolig kranfundament.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-karlstad-a74a94"><b>Stadslager</b></a> — Ett stadslager med kulturlager från medeltid och 1500–1600-tal.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-9bccaf"><b>Fyndplats</b></a> — Fyndplats för en grönstensyxa påträffad vid ett husrivning i Viken.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-karlstad-b114fb"><b>Fartygs-/båtlämning</b></a> — En ångslup som kantrade vid Kanikenäset 1903.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-09905f"><b>Fyndplats</b></a> — Fyndplats för en trindyxa av grönsten från 1912.</li>
+<li><a href="/karta?plats=ksamsok-bytomt-gardstomt-karlstad-3acfae"><b>Bytomt/gårdstomt</b></a> — En gårdstomt vid Sandbäcken med belägg tillbaka till år 1600.</li>
+<li><a href="/karta?plats=ksamsok-stridsvarn-karlstad-60ea8d"><b>Stridsvärn</b></a> — Ett åttkantigt luftvärnsvärn av betong, idag använt som eldstad.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-fe7cd7"><b>Fyndplats</b></a> — Uppgift om en skafthålsyxa funnen 1927 i Klara.</li>
+<li><a href="/p/ksamsok-fyndplats-karlstad-8a3161"><b>Fyndplats</b></a> — Fyndplats för två stenyxor funna på 1800-talet vid Herrhagen.</li>
+<li><a href="/p/ksamsok-fartygs-batlamning-karlstad-54cb37"><b>Fartygs-/båtlämning</b></a> — Arkivuppgift om blockskutan Charolina af Carlstad, satt på grund på 1860-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-adf12c"><b>Fyndplats</b></a> — Fyndplats för en kopparlegeringstacka, påträffad 2012.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-9e89b4"><b>Fyndplats</b></a> — Fyndplats för en trindyxa av grönsten funnen 1782.</li>
+<li><a href="/karta?plats=ksamsok-varv-slip-karlstad-19041a"><b>Varv/slip</b></a> — Ett varv utpekat som Skutbyggarebacken på en karta från 1766.</li>
+<li><a href="/p/ksamsok-bytomt-gardstomt-karlstad-367f66"><b>Bytomt/gårdstomt</b></a> — Gårdstomt i Karlstad efter Nordholmsgård, undersökt arkeologiskt 2024.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-karlstad-0f4cf3"><b>Fyndplats</b></a> — Fyndplats i Karlstad för en trindyxa av grönsten funnen 1915.</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 16</h3>
+<ul class="place-list">
+<li><a href="/p/wd-karlstad-ferlin-steppar-q10494730"><b>Ferlin steppar</b></a> — Ferlin steppar är en skulptur i cortenstål vid Stora torget i Karlstad skapad av Thomas Qvarsebo.</li>
+<li><a href="/p/wd-karlstad-fredsmonumentet-i-karlstad-q10498808"><b>Fredsmonumentet i Karlstad</b></a> — skulptur på Stora torget i Karlstad av Ivar Johnsson</li>
+<li><a href="/p/wd-karlstad-hertig-karl-staty-q10522766"><b>Hertig Karl (staty)</b></a> — Hertig Karl är en staty i centrala Karlstad föreställande Karl IX.</li>
+<li><a href="/karta?plats=wd-karlstad-och-solen-har-sin-gang-q10606288"><b>Och solen har sin gång</b></a> — en skulptur i granit av Leo Pettersson</li>
+<li><a href="/p/wd-karlstad-vindarnas-boning-q10715684"><b>Vindarnas boning</b></a> — Vindarnas boning (finska: Tuulenpesä) är en fontänskulptur av den finländske konstnären Aimo Tukiainen som invigdes den 16 juni 1967 i Karl…</li>
+<li><a href="/karta?plats=wd-karlstad-gustaf-froding-q18242130"><b>Gustaf Fröding</b></a> — staty av Herman Reijers</li>
+<li><a href="/p/wd-karlstad-frodingstenen-i-alster-q18289958"><b>Frödingstenen i Alster</b></a> — sten</li>
+<li><a href="/p/wd-karlstad-under-solen-skulptur-q27477336"><b>Under solen (skulptur)</b></a> — bronsskulptur av Klara Kristalova</li>
+<li><a href="/karta?plats=wd-karlstad-nobody-puts-baby-in-a-corner-q121288810"><b>Nobody puts Baby in a corner</b></a> — konstverk av Moa och Mikaela Krestesen</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlstad-a0fecf"><b>Minnesmärke</b></a> — En minnessten med kanonkula till minne av lantvärnsmän som avled 1808.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlstad-e7f05a"><b>Minnesmärke</b></a> — En minnestavla som vid besiktningen tillfälligt var nedtagen.</li>
+<li><a href="/p/ksamsok-minnesmarke-karlstad-f72e15"><b>Minnesmärke</b></a> — Minnesstenar över biskop Eklund och andra vid domkyrkan.</li>
+<li><a href="/p/ksamsok-minnesmarke-karlstad-2eeea9"><b>Minnesmärke</b></a> — En 190 meter lång stenvalvsbro med minnesstenar från 1797.</li>
+<li><a href="/p/ksamsok-minnesmarke-karlstad-1f1d57"><b>Minnesmärke</b></a> — En bronsskulptur på marmorsockel till minne av finsk nybyggaranda.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlstad-9b2515"><b>Minnesmärke</b></a> — Minnesmärke i Karlstad över Gustav Adolf Andersson, grundare av Karlstads Mekaniska Werkstad.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-karlstad-5c97fd"><b>Minnesmärke</b></a> — Fredsmonument i Karlstad rest till minne av den svensk-norska unionsupplösningen.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 15</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlstad-var-fru-av-rosenkransens-katolska-kyrka-q10426216"><b>Vår Fru av Rosenkransens katolska kyrka</b></a> — kyrkobyggnad i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-betlehemskyrkan-q10429013"><b>Betlehemskyrkan</b></a> — kyrkobyggnad i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-hammaro-kyrka-q10516911"><b>Hammarö kyrka</b></a> — kyrkobyggnad i Hammarö kommun</li>
+<li><a href="/karta?plats=wd-karlstad-norrstrandskyrkan-q10602941"><b>Norrstrandskyrkan</b></a> — kyrkobyggnad i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-skoghalls-kyrka-q10670299"><b>Skoghalls kyrka</b></a> — kyrkobyggnad i Hammarö kommun</li>
+<li><a href="/karta?plats=wd-karlstad-vasterstrandskyrkan-q10718022"><b>Västerstrandskyrkan</b></a> — kyrkobyggnad i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-herrhagskyrkan-q19977818"><b>Herrhagskyrkan</b></a> — Herrhagskyrkan är en kyrkobyggnad i Karlstad i Karlstads stift.</li>
+<li><a href="/karta?plats=wd-karlstad-rudskyrkan-q26256594"><b>Rudskyrkan</b></a> — kyrkobyggnad i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-kronoparkskyrkan-q26256780"><b>Kronoparkskyrkan</b></a> — Kronoparkskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.</li>
+<li><a href="/karta?plats=wd-karlstad-kroppkarrskyrkan-q26256784"><b>Kroppkärrskyrkan</b></a> — Kroppkärrskyrkan är en kyrkobyggnad i Karlstad kommun i Norrstrands församling, Karlstads stift.</li>
+<li><a href="/karta?plats=wd-karlstad-pingstkyrkan-karlstad-q26256799"><b>Pingstkyrkan, Karlstad</b></a> — pingstförsamling i Karlstad, Sverige</li>
+<li><a href="/karta?plats=wd-karlstad-meta-kapellet-q116003966"><b>Meta kapellet</b></a> — Karlstads västra kyrkogård</li>
+<li><a href="/karta?plats=wd-karlstad-uppstandelsens-kapell-q130477797"><b>Uppståndelsens kapell</b></a> — kapell i Karlstads kommun</li>
+<li><a href="/p/ksamsok-karlstads-domkyrka-karlstad-440298"><b>KARLSTADS DOMKYRKA</b></a> — Domkyrkan på Tingvallaön, invigd 1730 efter att flera tidigare kyrkor brunnit. <span class="era">1722–1730</span></li>
+<li><a href="/p/ksamsok-vikenkyrka-karlstad-616788"><b>VIKENKYRKA</b></a> — En sluten stadsdelskyrka i Viken från 1983, ritad av Lars-Erik Havstad. <span class="era">1983</span></li>
+</ul>
+<h3 class="city-h3">Torn · 8</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlstad-marrholmen-q40554441"><b>Märrholmen</b></a> — en fyr i Vänern i Hammarö kommun</li>
+<li><a href="/karta?plats=wd-karlstad-hammaro-fyr-q41970306"><b>Hammarö fyr</b></a> — en fyr i Vänern i Hammarö kommun</li>
+<li><a href="/karta?plats=wd-karlstad-lambergshamnen-q42011610"><b>Lambergshamnen</b></a> — en fyr vid Vänern i Karlstad</li>
+<li><a href="/karta?plats=wd-karlstad-fantviksudde-q108764792"><b>Fantviksudde</b></a> — en fyr i Karlstads kommun</li>
+<li><a href="/karta?plats=wd-karlstad-bockskar-q109459977"><b>Bockskär</b></a> — en fyr vid Vänern i Hammarö kommun</li>
+<li><a href="/karta?plats=wd-karlstad-karlstads-hamn-ovre-q109460330"><b>Karlstads hamn övre</b></a> — en ensfyr i Vänern i Karlstad</li>
+<li><a href="/karta?plats=wd-karlstad-karlstads-hamn-nedre-q109460329"><b>Karlstads hamn nedre</b></a> — en ensfyr i Vänern i Karlstad</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-karlstad-041201"><b>Klockstapel</b></a> — En klockstapel i Karlstad rest 1983. <span class="era">1983–1983</span></li>
+</ul>
+<h3 class="city-h3">museum · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlstad-alsters-herrgard-q1614039"><b>Alsters herrgård</b></a> — herrgård i Värmland</li>
+<li><a href="/karta?plats=wd-karlstad-sandgrund-q10661165"><b>Sandgrund</b></a> — Lars Lerin-museum i Karlstad, Sverige</li>
+<li><a href="/p/ksamsok-varmlands-museum-karlstad-676193"><b>VÄRMLANDS MUSEUM</b></a> — Cyrillus Johanssons museibyggnad från 1929 med drag av östasiatisk arkitektur. <span class="era">1926–1929</span></li>
+</ul>
+<h3 class="city-h3">Naturreservat · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlstad-mariebergsskogen-q1897573"><b>Mariebergsskogen</b></a> — park i Karlstad, Sverige</li>
+<li><a href="/karta?plats=wd-karlstad-kvarnbergsparken-q32271997"><b>Kvarnbergsparken</b></a> — Kvarnbergsparken</li>
+<li><a href="/karta?plats=wd-karlstad-gubbholmen-q96091537"><b>Gubbholmen</b></a> — holme i Klarälven</li>
+</ul>
+<h3 class="city-h3">Bro · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-karlstad-jakobsbergsbron-q10539310"><b>Jakobsbergsbron</b></a> — Jakobsbergsbron, färdigställd 1929, är den mittersta och äldsta av de tre vägbroar som förbinder den värmländska skärgårdskommunen Hammarö…</li>
+<li><a href="/p/ksamsok-bro-karlstad-f5c39d"><b>Bro</b></a> — En 190 meter lång stenvalvsbro med minnesstenar från 1797.</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-karlstad-stora-torget-q10681176"><b>Stora torget</b></a> — torg i Karlstad</li>
+<li><a href="/karta?plats=wd-karlstad-zarah-leanders-plats-q109326206"><b>Zarah Leanders plats</b></a> — plats i Karlstad</li>
+</ul>
+<h3 class="city-h3">fyr · 1</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-lambergshamnens-fyr-karlstad-028402"><b>Lambergshamnens fyr</b></a> — En fyr i stålfackverk vid Lambergshamnen, inrättad 1951. <span class="era">1951</span></li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-sockerslottet-karlstad-584987"><b>SOCKERSLOTTET</b></a> — Ett påkostat putshus från 1898–99, ritat av Carl Österman. <span class="era">1898–1899</span></li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 106 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/karlstad/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/karlstad/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Karlstad gratis?</summary><p>Ja. Karta, alla 106 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Karlstad?</summary><p>Vandringen samlar 106 sevärdheter i Karlstad — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Alsters herrgård?</summary><p>herrgård i Värmland</p></details>
+<details class="faq"><summary>Vad är Mariebergsskogen?</summary><p>park i Karlstad, Sverige</p></details>
+<details class="faq"><summary>Vad är Vår Fru av Rosenkransens katolska kyrka?</summary><p>kyrkobyggnad i Karlstads kommun</p></details>
+<details class="faq"><summary>Vad är Betlehemskyrkan?</summary><p>kyrkobyggnad i Karlstads kommun</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

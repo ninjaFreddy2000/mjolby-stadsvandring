@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Konstrundan i Malmö — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida. 13 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/malmo/konstrunda">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Konstrundan i Malmö — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida. 13 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/malmo/konstrunda">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konstrundan i Malmö — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida. 13 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"malmo","theme":"konstrunda","sourceSlug":"stadsvandring/malmo/konstrunda","centroid":{"lat":55.59607287234289,"lng":12.995939138852501},"stops":[{"name":"Minnesmärke","lat":55.60754014575519,"lng":13.006991873550293},{"name":"Emigranterna","lat":55.60622,"lng":13.00483},{"name":"Optimistorkestern","lat":55.605278,"lng":13.001111},{"name":"Minnesmärke","lat":55.604774792194405,"lng":13.000711476140676},{"name":"Minnesmärke","lat":55.60714581750781,"lng":12.998736862276344},{"name":"Minnesmärke","lat":55.60522116472545,"lng":12.994057437666909},{"name":"Minnesmärke","lat":55.59100490994264,"lng":12.992200650985586},{"name":"Zlatan-statyn","lat":55.585,"lng":12.988055555556},{"name":"Per Albin Hansson byst","lat":55.57307,"lng":12.99824},{"name":"Olof Palmes staty","lat":55.59296200973045,"lng":13.01308260892071},{"name":"Minnesmärke","lat":55.592640500601746,"lng":13.014425784430014},{"name":"Byst av Hjalmar Branting","lat":55.595,"lng":13.013055555556},{"name":"Staty av limhamnskungen Berg","lat":55.58309,"lng":12.92171}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Konstrundan i Malmö","description":"Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida.","step":[{"@type":"HowToStep","position":1,"name":"Minnesmärke","text":"Två minnesplattor kring flyttade gravstenar över Frans Suell och landshövdingen Johann Cronman.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-fc9bfa"},{"@type":"HowToStep","position":2,"name":"Emigranterna","text":"skulptur av Carl Milles","url":"https://stadsvandring.io/p/wd-malmo-emigranterna-q116695069"},{"@type":"HowToStep","position":3,"name":"Optimistorkestern","text":"skulptur","url":"https://stadsvandring.io/p/wd-malmo-optimistorkestern-q10610966"},{"@type":"HowToStep","position":4,"name":"Minnesmärke","text":"Flenburgska gården, ett byggnadsminne troligen från 1595, med minnesplatta om samma årtal.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-31b15a"},{"@type":"HowToStep","position":5,"name":"Minnesmärke","text":"Två minnesplattor som berättar om Kockska huset och den intilliggande Dringenbergska gården.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-55714d"},{"@type":"HowToStep","position":6,"name":"Minnesmärke","text":"Kopparplatta över en port med uppgift om Annellska och Påhlssonska huset från 1705.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-c1194f"},{"@type":"HowToStep","position":7,"name":"Minnesmärke","text":"Nära fem meter hög minnessten till minne av Baltiska utställningen i Malmö 1914.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-affebb"},{"@type":"HowToStep","position":8,"name":"Zlatan-statyn","text":"skulptur i Malmö föreställande Zlatan Ibrahimovic","url":"https://stadsvandring.io/p/wd-malmo-zlatan-statyn-q78013113"},{"@type":"HowToStep","position":9,"name":"Per Albin Hansson byst","text":"byst i Hyllie","url":"https://stadsvandring.io/p/wd-malmo-per-albin-hansson-byst-q52825892"},{"@type":"HowToStep","position":10,"name":"Olof Palmes staty","text":"Olof Palme (1927 - 1986) was a Social Democrat politician and two-time Prime Minister of Sweden (1969 - 76 and 1982 - 86) who was assassinated on a Stockholm st","url":"https://stadsvandring.io/p/bht-malmo-olof-palmes-staty-428"},{"@type":"HowToStep","position":11,"name":"Minnesmärke","text":"Naturformad minnessten om Frans Suells park och dess omvandling till Folkets park.","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-5a4d8d"},{"@type":"HowToStep","position":12,"name":"Byst av Hjalmar Branting","text":"Malmö folkets park","url":"https://stadsvandring.io/p/wd-malmo-byst-av-hjalmar-branting-q52820376"},{"@type":"HowToStep","position":13,"name":"Staty av limhamnskungen Berg","text":"i Limhamn","url":"https://stadsvandring.io/p/wd-malmo-staty-av-limhamnskungen-berg-q103838852"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Konstrundan i Malmö","description":"Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida.","url":"https://stadsvandring.io/stadsvandring/malmo/konstrunda","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-fc9bfa"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Emigranterna","url":"https://stadsvandring.io/p/wd-malmo-emigranterna-q116695069"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Optimistorkestern","url":"https://stadsvandring.io/p/wd-malmo-optimistorkestern-q10610966"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-31b15a"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-55714d"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-c1194f"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-affebb"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Zlatan-statyn","url":"https://stadsvandring.io/p/wd-malmo-zlatan-statyn-q78013113"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Per Albin Hansson byst","url":"https://stadsvandring.io/p/wd-malmo-per-albin-hansson-byst-q52825892"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Olof Palmes staty","url":"https://stadsvandring.io/p/bht-malmo-olof-palmes-staty-428"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Minnesmärke","url":"https://stadsvandring.io/p/ksamsok-minnesmarke-malmo-5a4d8d"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Byst av Hjalmar Branting","url":"https://stadsvandring.io/p/wd-malmo-byst-av-hjalmar-branting-q52820376"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Staty av limhamnskungen Berg","url":"https://stadsvandring.io/p/wd-malmo-staty-av-limhamnskungen-berg-q103838852"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Malmö","item":"https://stadsvandring.io/stadsvandring/malmo"},{"@type":"ListItem","position":3,"name":"Konstrundan i Malmö","item":"https://stadsvandring.io/stadsvandring/malmo/konstrunda"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/malmo">Stadsvandring i Malmö</a> › konstrunda</nav>
+<div class="badges"><span class="badge">🎨 Tematisk rutt</span><span class="badge">📍 Malmö</span><span class="badge">13 stopp</span></div>
+<h1>Konstrundan i Malmö</h1>
+<p class="lead">Statyer, konst och museer i Malmö — en runda för dig som vill se ortens kreativa sida.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Konstrundan i Malmö"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/ksamsok-minnesmarke-malmo-fc9bfa"><b>1. Minnesmärke</b><span>Konst &amp; staty · Två minnesplattor kring flyttade gravstenar över Frans Suell och landshövdingen…</span></a>
+<a class="tile" href="/p/wd-malmo-emigranterna-q116695069"><b>2. Emigranterna</b><span>Konst &amp; staty · skulptur av Carl Milles</span></a>
+<a class="tile" href="/p/wd-malmo-optimistorkestern-q10610966"><b>3. Optimistorkestern</b><span>Konst &amp; staty · skulptur</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 13 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/malmo/konstrunda.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/ksamsok-minnesmarke-malmo-fc9bfa"><b>1. Minnesmärke</b></a> — Två minnesplattor kring flyttade gravstenar över Frans Suell och landshövdingen Johann Cronman.</li>
+<li><a href="/p/wd-malmo-emigranterna-q116695069"><b>2. Emigranterna</b></a> — skulptur av Carl Milles</li>
+<li><a href="/p/wd-malmo-optimistorkestern-q10610966"><b>3. Optimistorkestern</b></a> — skulptur</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-31b15a"><b>4. Minnesmärke</b></a> — Flenburgska gården, ett byggnadsminne troligen från 1595, med minnesplatta om samma årtal.</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-55714d"><b>5. Minnesmärke</b></a> — Två minnesplattor som berättar om Kockska huset och den intilliggande Dringenbergska gården.</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-c1194f"><b>6. Minnesmärke</b></a> — Kopparplatta över en port med uppgift om Annellska och Påhlssonska huset från 1705.</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-affebb"><b>7. Minnesmärke</b></a> — Nära fem meter hög minnessten till minne av Baltiska utställningen i Malmö 1914.</li>
+<li><a href="/p/wd-malmo-zlatan-statyn-q78013113"><b>8. Zlatan-statyn</b></a> — skulptur i Malmö föreställande Zlatan Ibrahimovic</li>
+<li><a href="/p/wd-malmo-per-albin-hansson-byst-q52825892"><b>9. Per Albin Hansson byst</b></a> — byst i Hyllie</li>
+<li><a href="/p/bht-malmo-olof-palmes-staty-428"><b>10. Olof Palmes staty</b></a> — Olof Palme (1927 - 1986) was a Social Democrat politician and two-time Prime Minister of Sweden (1969 - 76 and 1982 - 8…</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-5a4d8d"><b>11. Minnesmärke</b></a> — Naturformad minnessten om Frans Suells park och dess omvandling till Folkets park.</li>
+<li><a href="/p/wd-malmo-byst-av-hjalmar-branting-q52820376"><b>12. Byst av Hjalmar Branting</b></a> — Malmö folkets park</li>
+<li><a href="/p/wd-malmo-staty-av-limhamnskungen-berg-q103838852"><b>13. Staty av limhamnskungen Berg</b></a> — i Limhamn</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/malmo">Stadsvandringen i Malmö</a> <a class="cta ghost" href="/stadsvandring/malmo/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

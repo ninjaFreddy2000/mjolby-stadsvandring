@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Kyrkostigen i Varberg — tematisk stadsvandring | Stadsvandring.io</title>
+<meta name="description" content="Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/varberg/kyrkostig">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Kyrkostigen i Varberg — tematisk stadsvandring | Stadsvandring.io">
+<meta property="og:description" content="Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/varberg/kyrkostig">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kyrkostigen i Varberg — tematisk stadsvandring | Stadsvandring.io">
+<meta name="twitter:description" content="Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv. 14 stopp med karta och GPX.">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"varberg","theme":"kyrkostig","sourceSlug":"stadsvandring/varberg/kyrkostig","centroid":{"lat":57.10144379233129,"lng":12.265733105433627},"stops":[{"name":"Den gudomliga barmhärtighetens kyrka","lat":57.11641667,"lng":12.263725},{"name":"Kyrka/kapell","lat":57.11249339402504,"lng":12.25317873092448},{"name":"Getakärrs kyrkoruin","lat":57.11251389,"lng":12.25306944},{"name":"Varbergs kyrka","lat":57.105975,"lng":12.250685},{"name":"Fästning/skans","lat":57.103238069417515,"lng":12.250425855749633},{"name":"Kyrka/kapell","lat":57.10611875287096,"lng":12.243468691654174},{"name":"Varberg 26:2","lat":57.106119,"lng":12.243469},{"name":"Fästning/skans","lat":57.10615608632466,"lng":12.240363807742478},{"name":"Apelvikshöjds kyrka","lat":57.09178,"lng":12.25997},{"name":"Apelvikens kapell","lat":57.0867839,"lng":12.2465935},{"name":"Sollyckans kyrka","lat":57.11111111,"lng":12.27541667},{"name":"Träslövs kyrka","lat":57.10779722,"lng":12.29862778},{"name":"Hunnestads kyrka","lat":57.10024,"lng":12.3632},{"name":"Träslövsläge kyrka","lat":57.05347,"lng":12.27807}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+#lm-tema-full .cta{width:auto}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Kyrkostigen i Varberg","description":"Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv.","step":[{"@type":"HowToStep","position":1,"name":"Den gudomliga barmhärtighetens kyrka","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-den-gudomliga-barmhartighetens-kyrka-q10468660"},{"@type":"HowToStep","position":2,"name":"Kyrka/kapell","text":"Ruinen efter en medeltida kyrka i Varberg, i bruk mellan 1300 och 1578.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-varberg-9a905a"},{"@type":"HowToStep","position":3,"name":"Getakärrs kyrkoruin","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-getakarrs-kyrkoruin-q10504583"},{"@type":"HowToStep","position":4,"name":"Varbergs kyrka","text":"Stadens största och äldsta kyrka, uppförd i gustaviansk stil 1769–1772 efter en förödande stadsbrand.","url":"https://stadsvandring.io/p/varberg-varbergs-kyrka"},{"@type":"HowToStep","position":5,"name":"Fästning/skans","text":"Platsen för en försvunnen skans i Varberg, utritad på en karta från 1645.","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-varberg-57238b"},{"@type":"HowToStep","position":6,"name":"Kyrka/kapell","text":"Den övertorvade grunden efter en försvunnen kyrka i Varberg.","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-varberg-971b34"},{"@type":"HowToStep","position":7,"name":"Varberg 26:2","text":"kyrka/kapell i Halland","url":"https://stadsvandring.io/p/wd-varberg-varberg-26-2-q29378421"},{"@type":"HowToStep","position":8,"name":"Fästning/skans","text":"Varbergs medeltida slott och fästning, med rötter i 1100-talet.","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-varberg-e69388"},{"@type":"HowToStep","position":9,"name":"Apelvikshöjds kyrka","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-apelvikshojds-kyrka-q10414420"},{"@type":"HowToStep","position":10,"name":"Apelvikens kapell","text":"Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-apelvikens-kapell-q116798502"},{"@type":"HowToStep","position":11,"name":"Sollyckans kyrka","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-sollyckans-kyrka-q10673292"},{"@type":"HowToStep","position":12,"name":"Träslövs kyrka","text":"kyrka/kapell i Halland (Träslöv 40:1)","url":"https://stadsvandring.io/p/wd-varberg-traslovs-kyrka-q10705616"},{"@type":"HowToStep","position":13,"name":"Hunnestads kyrka","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-hunnestads-kyrka-q10527212"},{"@type":"HowToStep","position":14,"name":"Träslövsläge kyrka","text":"kyrkobyggnad i Varbergs kommun","url":"https://stadsvandring.io/p/wd-varberg-traslovslage-kyrka-q10705618"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Kyrkostigen i Varberg","description":"Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv.","url":"https://stadsvandring.io/stadsvandring/varberg/kyrkostig","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Den gudomliga barmhärtighetens kyrka","url":"https://stadsvandring.io/p/wd-varberg-den-gudomliga-barmhartighetens-kyrka-q10468660"}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-varberg-9a905a"}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Getakärrs kyrkoruin","url":"https://stadsvandring.io/p/wd-varberg-getakarrs-kyrkoruin-q10504583"}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Varbergs kyrka","url":"https://stadsvandring.io/p/varberg-varbergs-kyrka"}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Fästning/skans","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-varberg-57238b"}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Kyrka/kapell","url":"https://stadsvandring.io/p/ksamsok-kyrka-kapell-varberg-971b34"}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Varberg 26:2","url":"https://stadsvandring.io/p/wd-varberg-varberg-26-2-q29378421"}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Fästning/skans","url":"https://stadsvandring.io/p/ksamsok-fastning-skans-varberg-e69388"}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Apelvikshöjds kyrka","url":"https://stadsvandring.io/p/wd-varberg-apelvikshojds-kyrka-q10414420"}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Apelvikens kapell","url":"https://stadsvandring.io/p/wd-varberg-apelvikens-kapell-q116798502"}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Sollyckans kyrka","url":"https://stadsvandring.io/p/wd-varberg-sollyckans-kyrka-q10673292"}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Träslövs kyrka","url":"https://stadsvandring.io/p/wd-varberg-traslovs-kyrka-q10705616"}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Hunnestads kyrka","url":"https://stadsvandring.io/p/wd-varberg-hunnestads-kyrka-q10527212"}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Träslövsläge kyrka","url":"https://stadsvandring.io/p/wd-varberg-traslovslage-kyrka-q10705618"}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandring i Varberg","item":"https://stadsvandring.io/stadsvandring/varberg"},{"@type":"ListItem","position":3,"name":"Kyrkostigen i Varberg","item":"https://stadsvandring.io/stadsvandring/varberg/kyrkostig"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="tema">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/stadsvandring/varberg">Stadsvandring i Varberg</a> › kyrkostig</nav>
+<div class="badges"><span class="badge">⛪ Tematisk rutt</span><span class="badge">📍 Varberg</span><span class="badge">14 stopp</span></div>
+<h1>Kyrkostigen i Varberg</h1>
+<p class="lead">Kyrkor, kloster och ruiner i Varberg — en vandring genom ortens äldsta och mest andliga byggnadsarv.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över Kyrkostigen i Varberg"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-varberg-den-gudomliga-barmhartighetens-kyrka-q10468660"><b>1. Den gudomliga barmhärtighetens kyrka</b><span>Kyrka · kyrkobyggnad i Varbergs kommun</span></a>
+<a class="tile" href="/p/ksamsok-kyrka-kapell-varberg-9a905a"><b>2. Kyrka/kapell</b><span>Kyrka · Ruinen efter en medeltida kyrka i Varberg, i bruk mellan 1300 och 1578.</span></a>
+<a class="tile" href="/p/wd-varberg-getakarrs-kyrkoruin-q10504583"><b>3. Getakärrs kyrkoruin</b><span>Kyrka · kyrkobyggnad i Varbergs kommun</span></a>
+</div>
+
+<section class="gate card" id="lm-tema">
+  <h2>Lås upp hela rutten + GPX</h2>
+  <p>Ange din e-post så får du alla 14 stopp i ordning och en GPX-fil att ladda in i din klocka eller karta.</p>
+  <form id="lm-tema-form" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler tematiska rutter (valfritt)</label>
+    <button type="submit" class="cta">Lås upp rutten →</button>
+    <p id="lm-tema-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <div id="lm-tema-full" hidden>
+    <p><a class="cta" href="/stadsvandring/varberg/kyrkostig.gpx" download>⬇ Ladda ner GPX</a></p>
+    <ol class="facts"><li><a href="/p/wd-varberg-den-gudomliga-barmhartighetens-kyrka-q10468660"><b>1. Den gudomliga barmhärtighetens kyrka</b></a> — kyrkobyggnad i Varbergs kommun</li>
+<li><a href="/p/ksamsok-kyrka-kapell-varberg-9a905a"><b>2. Kyrka/kapell</b></a> — Ruinen efter en medeltida kyrka i Varberg, i bruk mellan 1300 och 1578.</li>
+<li><a href="/p/wd-varberg-getakarrs-kyrkoruin-q10504583"><b>3. Getakärrs kyrkoruin</b></a> — kyrkobyggnad i Varbergs kommun</li>
+<li><a href="/p/varberg-varbergs-kyrka"><b>4. Varbergs kyrka</b></a> — Stadens största och äldsta kyrka, uppförd i gustaviansk stil 1769–1772 efter en förödande stadsbrand.</li>
+<li><a href="/p/ksamsok-fastning-skans-varberg-57238b"><b>5. Fästning/skans</b></a> — Platsen för en försvunnen skans i Varberg, utritad på en karta från 1645.</li>
+<li><a href="/p/ksamsok-kyrka-kapell-varberg-971b34"><b>6. Kyrka/kapell</b></a> — Den övertorvade grunden efter en försvunnen kyrka i Varberg.</li>
+<li><a href="/p/wd-varberg-varberg-26-2-q29378421"><b>7. Varberg 26:2</b></a> — kyrka/kapell i Halland</li>
+<li><a href="/p/ksamsok-fastning-skans-varberg-e69388"><b>8. Fästning/skans</b></a> — Varbergs medeltida slott och fästning, med rötter i 1100-talet.</li>
+<li><a href="/p/wd-varberg-apelvikshojds-kyrka-q10414420"><b>9. Apelvikshöjds kyrka</b></a> — kyrkobyggnad i Varbergs kommun</li>
+<li><a href="/p/wd-varberg-apelvikens-kapell-q116798502"><b>10. Apelvikens kapell</b></a> — Varbergs kommun</li>
+<li><a href="/p/wd-varberg-sollyckans-kyrka-q10673292"><b>11. Sollyckans kyrka</b></a> — kyrkobyggnad i Varbergs kommun</li>
+<li><a href="/p/wd-varberg-traslovs-kyrka-q10705616"><b>12. Träslövs kyrka</b></a> — kyrka/kapell i Halland (Träslöv 40:1)</li>
+<li><a href="/p/wd-varberg-hunnestads-kyrka-q10527212"><b>13. Hunnestads kyrka</b></a> — kyrkobyggnad i Varbergs kommun</li>
+<li><a href="/p/wd-varberg-traslovslage-kyrka-q10705618"><b>14. Träslövsläge kyrka</b></a> — kyrkobyggnad i Varbergs kommun</li></ol>
+  </div>
+</section>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/stadsvandring/varberg">Stadsvandringen i Varberg</a> <a class="cta ghost" href="/stadsvandring/varberg/fakta">Faktabanken</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

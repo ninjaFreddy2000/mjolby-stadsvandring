@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Växjö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.88902823393642" lon="14.793620701039114"><name>Minnesmärke</name><desc>Ett minnesmärke i Växjö med kortfattat underlag.</desc></wpt>
+  <wpt lat="56.88475795866501" lon="14.808458979539846"><name>Minnesmärke</name><desc>Ett minnesmärke i Växjö med kortfattat underlag.</desc></wpt>
+  <wpt lat="56.878463796933474" lon="14.81294326628709"><name>Minnesmärke</name><desc>Ett minnesmärke i Växjö med kortfattat underlag.</desc></wpt>
+  <wpt lat="56.8772115" lon="14.8119213"><name>Esaias Tegner staty</name><desc>staty i Växjö kommun</desc></wpt>
+  <wpt lat="56.876686111111" lon="14.810769444444"><name>Linné staty</name><desc>staty i Växjö kommun</desc></wpt>
+  <wpt lat="56.87602" lon="14.81054"><name>Peter Wieselgren staty</name><desc>staty i Växjö</desc></wpt>
+  <wpt lat="56.87830977089427" lon="14.815510722143935"><name>Minnesmärke</name><desc>Ett minnesmärke registrerat i Växjö.</desc></wpt>
+  <wpt lat="56.880286214701336" lon="14.821892829120264"><name>Minnesmärke</name><desc>Ett minnesmärke registrerat i Växjö.</desc></wpt>
+  <wpt lat="56.87524949336219" lon="14.800675896539177"><name>Minnesmärke</name><desc>Ett minnesmärke i Växjö med kortfattat underlag.</desc></wpt>
+  <wpt lat="56.8775813716096" lon="14.782199457776827"><name>Minnesmärke</name><desc>Ett minnesmärke i Växjö med kortfattat underlag.</desc></wpt>
+  <wpt lat="56.874982308954415" lon="14.776567744668881"><name>Minnesmärke</name><desc>Minnessten rest 1929 över en väg anlagd av pionjärskolan.</desc></wpt>
+  <wpt lat="56.871696778129504" lon="14.779911326818556"><name>Minnesmärke</name><desc>En minnessten över Kungl. Kronobergs regementes övningsplats.</desc></wpt>
+  <rte><name>Konstrundan i Växjö</name>
+    <rtept lat="56.88902823393642" lon="14.793620701039114"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.88475795866501" lon="14.808458979539846"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.878463796933474" lon="14.81294326628709"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.8772115" lon="14.8119213"><name>Esaias Tegner staty</name></rtept>
+    <rtept lat="56.876686111111" lon="14.810769444444"><name>Linné staty</name></rtept>
+    <rtept lat="56.87602" lon="14.81054"><name>Peter Wieselgren staty</name></rtept>
+    <rtept lat="56.87830977089427" lon="14.815510722143935"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.880286214701336" lon="14.821892829120264"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.87524949336219" lon="14.800675896539177"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.8775813716096" lon="14.782199457776827"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.874982308954415" lon="14.776567744668881"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.871696778129504" lon="14.779911326818556"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

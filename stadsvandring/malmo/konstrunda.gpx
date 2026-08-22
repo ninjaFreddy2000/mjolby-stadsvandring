@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Malmö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="55.60754014575519" lon="13.006991873550293"><name>Minnesmärke</name><desc>Två minnesplattor kring flyttade gravstenar över Frans Suell och landshövdingen Johann Cronman.</desc></wpt>
+  <wpt lat="55.60622" lon="13.00483"><name>Emigranterna</name><desc>skulptur av Carl Milles</desc></wpt>
+  <wpt lat="55.605278" lon="13.001111"><name>Optimistorkestern</name><desc>skulptur</desc></wpt>
+  <wpt lat="55.604774792194405" lon="13.000711476140676"><name>Minnesmärke</name><desc>Flenburgska gården, ett byggnadsminne troligen från 1595, med minnesplatta om samma årtal.</desc></wpt>
+  <wpt lat="55.60714581750781" lon="12.998736862276344"><name>Minnesmärke</name><desc>Två minnesplattor som berättar om Kockska huset och den intilliggande Dringenbergska gården.</desc></wpt>
+  <wpt lat="55.60522116472545" lon="12.994057437666909"><name>Minnesmärke</name><desc>Kopparplatta över en port med uppgift om Annellska och Påhlssonska huset från 1705.</desc></wpt>
+  <wpt lat="55.59100490994264" lon="12.992200650985586"><name>Minnesmärke</name><desc>Nära fem meter hög minnessten till minne av Baltiska utställningen i Malmö 1914.</desc></wpt>
+  <wpt lat="55.585" lon="12.988055555556"><name>Zlatan-statyn</name><desc>skulptur i Malmö föreställande Zlatan Ibrahimovic</desc></wpt>
+  <wpt lat="55.57307" lon="12.99824"><name>Per Albin Hansson byst</name><desc>byst i Hyllie</desc></wpt>
+  <wpt lat="55.59296200973045" lon="13.01308260892071"><name>Olof Palmes staty</name><desc>Olof Palme (1927 - 1986) was a Social Democrat politician and two-time Prime Minister of Sweden (1969 - 76 and 1982 - 86) who was assassinated on a Stockholm st</desc></wpt>
+  <wpt lat="55.592640500601746" lon="13.014425784430014"><name>Minnesmärke</name><desc>Naturformad minnessten om Frans Suells park och dess omvandling till Folkets park.</desc></wpt>
+  <wpt lat="55.595" lon="13.013055555556"><name>Byst av Hjalmar Branting</name><desc>Malmö folkets park</desc></wpt>
+  <wpt lat="55.58309" lon="12.92171"><name>Staty av limhamnskungen Berg</name><desc>i Limhamn</desc></wpt>
+  <rte><name>Konstrundan i Malmö</name>
+    <rtept lat="55.60754014575519" lon="13.006991873550293"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.60622" lon="13.00483"><name>Emigranterna</name></rtept>
+    <rtept lat="55.605278" lon="13.001111"><name>Optimistorkestern</name></rtept>
+    <rtept lat="55.604774792194405" lon="13.000711476140676"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.60714581750781" lon="12.998736862276344"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.60522116472545" lon="12.994057437666909"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.59100490994264" lon="12.992200650985586"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.585" lon="12.988055555556"><name>Zlatan-statyn</name></rtept>
+    <rtept lat="55.57307" lon="12.99824"><name>Per Albin Hansson byst</name></rtept>
+    <rtept lat="55.59296200973045" lon="13.01308260892071"><name>Olof Palmes staty</name></rtept>
+    <rtept lat="55.592640500601746" lon="13.014425784430014"><name>Minnesmärke</name></rtept>
+    <rtept lat="55.595" lon="13.013055555556"><name>Byst av Hjalmar Branting</name></rtept>
+    <rtept lat="55.58309" lon="12.92171"><name>Staty av limhamnskungen Berg</name></rtept>
+  </rte>
+</gpx>

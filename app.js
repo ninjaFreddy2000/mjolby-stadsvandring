@@ -541,10 +541,12 @@ async function init() {
   }
 
   // Landningssida vid första besöket: välj/sök stad innan appen visas.
-  // Delad ruttlänk (?rutt=<id>) öppnar rutten direkt — före landningsvyn, så den
-  // som klickat på en kompis länk inte först tvingas välja stad.
+  // Djuplänkar hoppar över landningsvyn — den som klickat på en länk ska landa
+  // på det de klickade på, inte på en stadsväljare.
   const sharedRoute = routeInUrl();
+  const sharedPlace = placeInUrl();
   if (sharedRoute) { localStorage.setItem(LANDING_KEY,'1'); openRoute(sharedRoute); }
+  else if (sharedPlace) { localStorage.setItem(LANDING_KEY,'1'); openPlaceDeepLink(sharedPlace); }
   else if (!localStorage.getItem(LANDING_KEY)) openLanding();
 
   track('app_open', { lang });
@@ -1254,6 +1256,29 @@ function timelineHtml(id, e){
     </div>
   </li>`).join('');
   return `<div class="timeline"><div class="tl-h">🕰️ ${lang==='en'?'Timeline':'Tidslinje'}</div><ol class="tl-list">${rows}</ol></div>`;
+}
+
+// ?plats=<id> — öppnar en plats direkt. Ortssidorna på webbplatsen länkar hit
+// för de platser som inte har en egen statisk sida, så varje plats är nåbar
+// från en länk även utan att man vet vilken stad den ligger i.
+function placeInUrl(){
+  try {
+    const id = new URLSearchParams(location.search).get('plats');
+    if (!id) return null;
+    history.replaceState(null, '', location.pathname);
+    return id;
+  } catch (e) { return null; }
+}
+async function openPlaceDeepLink(id){
+  if (!DATA.some(e => e.id === id)){
+    const c = await cityForId(id);
+    if (c && c !== activeCity) await setActiveCity(c);
+    else if (c) await loadCity(c);
+  }
+  const e = DATA.find(x => x.id === id);
+  if (!e) { toast(lang==='en' ? 'That place could not be found.' : 'Platsen gick inte att hitta.'); return; }
+  if (cityOf(e) !== activeCity) await setActiveCity(cityOf(e));
+  openSheet(id);
 }
 
 /* ---------- Stop detail sheet ---------- */

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Malmö — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Malmö till fots: 503 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 503 stopp och nedladdningsbar PDF-…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/malmo">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Malmö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Malmö till fots: 503 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 503 stopp och nedladdningsbar PDF-…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/malmo">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Malmö — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Malmö till fots: 503 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 503 stopp och nedladdningsbar PDF-…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"malmo","sourceSlug":"stadsvandring/malmo","centroid":{"lat":55.59766449729499,"lng":13.008522312736208},"stops":[{"name":"Kaptensgatan adventure","lat":55.60040801074794,"lng":13.004761248542502},{"name":"Caspar Trendelenburg 1755-1820","lat":55.6024224,"lng":12.9989206},{"name":"Hans Canon 1794-1837","lat":55.6027658,"lng":12.997423}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Malmö","description":"Upptäck Malmö till fots: 503 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/malmo","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Kaptensgatan adventure","description":"Se huset i bakgrunden","geo":{"@type":"GeoCoordinates","latitude":55.60040801074794,"longitude":13.004761248542502}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Caspar Trendelenburg 1755-1820","description":"Här vilar Caspar Trendelenburg och hans hustru Catharina f.","url":"https://stadsvandring.io/p/bht-malmo-caspar-trendelenburg-1755-1820-901","geo":{"@type":"GeoCoordinates","latitude":55.6024224,"longitude":12.9989206}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Hans Canon 1794-1837","description":"Hans Canon var föreståndare för fängelset på Malmöhus, med runt tusen fångar som levde tätt samman i den medeltida borgen.","url":"https://stadsvandring.io/p/bht-malmo-hans-canon-1794-1837-903","geo":{"@type":"GeoCoordinates","latitude":55.6027658,"longitude":12.997423}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Mjölkbutiken på Landbygatan","description":"Alma Falkman berättar i sina minnen från 1860/70-talets Malmö om en kvinna som etablerade sin näring på Landbygatan.","url":"https://stadsvandring.io/p/bht-malmo-mjolkbutiken-pa-landbygatan-889","geo":{"@type":"GeoCoordinates","latitude":55.605220972066846,"longitude":12.997877945061665}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Johan Fredrik Barkman 1789-1865","description":"Apotekaren Johan Fredrik Barkman öppnade 1822 apoteket Lejonet, då beläget på västra sidan av Stortorget, odlade medicinalväxter och tillverkade seltersvatten.","url":"https://stadsvandring.io/p/bht-malmo-johan-fredrik-barkman-1789-1865-896","geo":{"@type":"GeoCoordinates","latitude":55.60204262573183,"longitude":12.998972603041086}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Liberation and Paradise","description":"This is a church with a notable history around LGBTQI issues.","url":"https://stadsvandring.io/p/bht-malmo-liberation-and-paradise-441","geo":{"@type":"GeoCoordinates","latitude":55.60269289192117,"longitude":13.01422956132956}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Jörgen Kocks hus","description":"Med pengar som hustrun Citze Kortzdatter van Nuland förde i boet kunde borgmästaren, rådmannen och myntmästaren Jörgen Kock bygga sig ett fantastiskt stenpalats","url":"https://stadsvandring.io/p/bht-malmo-jorgen-kocks-hus-822","geo":{"@type":"GeoCoordinates","latitude":55.60714437467087,"longitude":12.998882577053518}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Gustaf Dahlgren 1815-1875","description":"I ett gravställe för guld- och silversmeder återfinner vi juveleraren Gustaf Dahlgren.","url":"https://stadsvandring.io/p/bht-malmo-gustaf-dahlgren-1815-1875-941","geo":{"@type":"GeoCoordinates","latitude":55.60036353081318,"longitude":13.016678715346183}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Monbijouskolan","description":"Under the name Mon Bijou , this was an open-air restaurant from 1810, surrounded by shady plain trees and a lush park.","url":"https://stadsvandring.io/p/bht-malmo-monbijouskolan-290","geo":{"@type":"GeoCoordinates","latitude":55.5962991389552,"longitude":13.00681809629518}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Jerusalemsgatan","description":"Där köpcentret Caroli city nu ligger fanns fordom flera gator ur det medeltida gatunätet som raderades bort under skövlingarna vid tidigt 1970-tal.","url":"https://stadsvandring.io/p/bht-malmo-jerusalemsgatan-854","geo":{"@type":"GeoCoordinates","latitude":55.60654501167951,"longitude":13.006351283023742}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Ostindiefararen Lauritz Nielsen","description":"Vi tar med oss prästen Hagbard Isberg som ciceron när vi flanerar runt i kvarteren på Väster.","url":"https://stadsvandring.io/p/bht-malmo-ostindiefararen-lauritz-nielsen-890","geo":{"@type":"GeoCoordinates","latitude":55.60375442380067,"longitude":12.996005910108806}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Riksbankshuset","description":"Arkitekten John Smedberg ritade detta hus för Riksbankens räkning, en flirt med den italienska klassicismen eftersom bankväsendet en gång uppstod i Italien.","url":"https://stadsvandring.io/p/bht-malmo-riksbankshuset-855","geo":{"@type":"GeoCoordinates","latitude":55.607485941853945,"longitude":13.00292231144314}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Jaktpaviljongen","description":"Malmö had a royal visit from Oscar I and his family in 1848, partly to keep abreast of developments in Europe (the First Schleswig War was imminent).","url":"https://stadsvandring.io/p/bht-malmo-jaktpaviljongen-478","geo":{"@type":"GeoCoordinates","latitude":55.59325509887208,"longitude":13.01449734292154}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Nutin Cloetta 1839-1891","description":"Bröderna Bernhard, Christoph och Nutin Cloetta föddes i Schweiz och kom via Danmark till Malmö där de 1873 startade en chokladfabrik i Grynbodgatan, vilken Nut…","url":"https://stadsvandring.io/p/bht-malmo-nutin-cloetta-1839-1891-942","geo":{"@type":"GeoCoordinates","latitude":55.60011951662863,"longitude":13.018607176282604}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Far i hatten","description":"The English translation of 'Far i Hatten' is 'Father in the Hat'.","url":"https://stadsvandring.io/p/bht-malmo-far-i-hatten-415","geo":{"@type":"GeoCoordinates","latitude":55.592807112134125,"longitude":13.01449854676096}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Sjöbergska palatset","description":"Ett magnifikt hus som ritades av arkitekten Alfred Arwidius till Axel Paulus och hans hustru Ida Sjöberg 1894.","url":"https://stadsvandring.io/p/bht-malmo-sjobergska-palatset-856","geo":{"@type":"GeoCoordinates","latitude":55.60787707810298,"longitude":13.009995304814916}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Epidemisjukhuset","description":"Gamla epidemisjukhuset på Celsiusgatan stod färdigt 1880 på samma tomt som varit Malmös avrättningsplats ca 1500-1830.","url":"https://stadsvandring.io/p/bht-malmo-epidemisjukhuset-172","geo":{"@type":"GeoCoordinates","latitude":55.601998131101084,"longitude":13.02350308660324}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Barnens Scen","description":"This building was constructed in 1895 as an outdoor dance floor roofed but without walls, so dancers could move their bodies in any weather.","url":"https://stadsvandring.io/p/bht-malmo-barnens-scen-449","geo":{"@type":"GeoCoordinates","latitude":55.59224089500965,"longitude":13.01452557563454}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Wienska palatset","description":"Wienska palatset till vänster i bild, med bronsknektar ovan entr n i nästan naturlig storlek.","url":"https://stadsvandring.io/p/bht-malmo-wienska-palatset-857","geo":{"@type":"GeoCoordinates","latitude":55.607714813374415,"longitude":13.004411344130007}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Allmänna sjukhuset","description":"In the 1880s, the Swedish health service made it clear that Malmö s main hospital, located at Slottsgatan, was not of an acceptable standard.","url":"https://stadsvandring.io/p/bht-malmo-allmanna-sjukhuset-294","geo":{"@type":"GeoCoordinates","latitude":55.58875234866785,"longitude":13.00378285807888}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Lundbergska trädgården","description":"Two acres of land here at the southern end of the park, next to what is now Kristianstadsgatan, were once owned by a commercial gardening company called Lundber","url":"https://stadsvandring.io/p/bht-malmo-lundbergska-tradgarden-459","geo":{"@type":"GeoCoordinates","latitude":55.59259620665217,"longitude":13.0128283380995}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Hollywood star Nils Asther (1897–1981)","description":"Nils Asther grew up in Malmö.","url":"https://stadsvandring.io/p/bht-malmo-hollywood-star-nils-asther-1897-1981-464","geo":{"@type":"GeoCoordinates","latitude":55.60493456657377,"longitude":12.99910707410928}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Nils Werngren 1815-1897","description":"Den blivande sjökaptenen Nils Werngren föddes i ett hus i hörnet av Väster- och Gråbrödersgatan.","url":"https://stadsvandring.io/p/bht-malmo-nils-werngren-1815-1897-902","geo":{"@type":"GeoCoordinates","latitude":55.602092296524674,"longitude":12.99598664785042}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Marie (Bernadette) David 1865-1897","description":"Elisabethsystrarna grundades i Tyskland 1842 och kom till Malmö 1874.","url":"https://stadsvandring.io/p/bht-malmo-marie-bernadette-david-1865-1897-947","geo":{"@type":"GeoCoordinates","latitude":55.59695097387238,"longitude":13.019986356495478}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Apoteket Lejonet","description":"Det står 1897 på fasaden, men låt er inte luras, det hann bli mars 1898 innan huset var slutbesiktigat och invigt.","url":"https://stadsvandring.io/p/bht-malmo-apoteket-lejonet-873","geo":{"@type":"GeoCoordinates","latitude":55.60570448425128,"longitude":13.000935767624622}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Malmö gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 503 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Malmö?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 503 sevärdheter i Malmö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Kaptensgatan adventure?","acceptedAnswer":{"@type":"Answer","text":"Se huset i bakgrunden"}},{"@type":"Question","name":"Vad är Caspar Trendelenburg 1755-1820?","acceptedAnswer":{"@type":"Answer","text":"Här vilar Caspar Trendelenburg och hans hustru Catharina f."}},{"@type":"Question","name":"Vad är Hans Canon 1794-1837?","acceptedAnswer":{"@type":"Answer","text":"Hans Canon var föreståndare för fängelset på Malmöhus, med runt tusen fångar som levde tätt samman i den medeltida borgen."}},{"@type":"Question","name":"Vad är Mjölkbutiken på Landbygatan?","acceptedAnswer":{"@type":"Answer","text":"Alma Falkman berättar i sina minnen från 1860/70-talets Malmö om en kvinna som etablerade sin näring på Landbygatan."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Malmö","item":"https://stadsvandring.io/stadsvandring/malmo"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Malmö</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Malmö</span><span class="badge">503 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Malmö — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Malmö till fots: 503 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Malmö"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/bht-malmo-kaptensgatan-adventure-904"><b>1. Kaptensgatan adventure</b><span>Sevärdhet · Se huset i bakgrunden</span></a>
+<a class="tile" href="/p/bht-malmo-caspar-trendelenburg-1755-1820-901"><b>2. Caspar Trendelenburg 1755-1820</b><span>Sevärdhet · Här vilar Caspar Trendelenburg och hans hustru Catharina f.</span></a>
+<a class="tile" href="/p/bht-malmo-hans-canon-1794-1837-903"><b>3. Hans Canon 1794-1837</b><span>Sevärdhet · Hans Canon var föreståndare för fängelset på Malmöhus, med runt tusen fångar so…</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Malmö · 503</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Malmö. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Sevärdhet · 241</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=bht-malmo-kaptensgatan-adventure-904"><b>Kaptensgatan adventure</b></a> — Se huset i bakgrunden <span class="era">1</span></li>
+<li><a href="/p/bht-malmo-caspar-trendelenburg-1755-1820-901"><b>Caspar Trendelenburg 1755-1820</b></a> — Här vilar Caspar Trendelenburg och hans hustru Catharina f. <span class="era">1820</span></li>
+<li><a href="/p/bht-malmo-hans-canon-1794-1837-903"><b>Hans Canon 1794-1837</b></a> — Hans Canon var föreståndare för fängelset på Malmöhus, med runt tusen fångar som levde tätt samman i den medeltida borgen. <span class="era">1837</span></li>
+<li><a href="/p/bht-malmo-mjolkbutiken-pa-landbygatan-889"><b>Mjölkbutiken på Landbygatan</b></a> — Alma Falkman berättar i sina minnen från 1860/70-talets Malmö om en kvinna som etablerade sin näring på Landbygatan. <span class="era">1860</span></li>
+<li><a href="/p/bht-malmo-johan-fredrik-barkman-1789-1865-896"><b>Johan Fredrik Barkman 1789-1865</b></a> — Apotekaren Johan Fredrik Barkman öppnade 1822 apoteket Lejonet, då beläget på västra sidan av Stortorget, odlade medicinalväxter och tillve… <span class="era">1865</span></li>
+<li><a href="/p/bht-malmo-liberation-and-paradise-441"><b>Liberation and Paradise</b></a> — This is a church with a notable history around LGBTQI issues. <span class="era">1870</span></li>
+<li><a href="/p/bht-malmo-gustaf-dahlgren-1815-1875-941"><b>Gustaf Dahlgren 1815-1875</b></a> — I ett gravställe för guld- och silversmeder återfinner vi juveleraren Gustaf Dahlgren. <span class="era">1875</span></li>
+<li><a href="/p/bht-malmo-jerusalemsgatan-854"><b>Jerusalemsgatan</b></a> — Där köpcentret Caroli city nu ligger fanns fordom flera gator ur det medeltida gatunätet som raderades bort under skövlingarna vid tidigt 1… <span class="era">1880</span></li>
+<li><a href="/p/bht-malmo-ostindiefararen-lauritz-nielsen-890"><b>Ostindiefararen Lauritz Nielsen</b></a> — Vi tar med oss prästen Hagbard Isberg som ciceron när vi flanerar runt i kvarteren på Väster. <span class="era">1880</span></li>
+<li><a href="/p/bht-malmo-jaktpaviljongen-478"><b>Jaktpaviljongen</b></a> — Malmö had a royal visit from Oscar I and his family in 1848, partly to keep abreast of developments in Europe (the First Schleswig War was… <span class="era">1890</span></li>
+<li><a href="/p/bht-malmo-nutin-cloetta-1839-1891-942"><b>Nutin Cloetta 1839-1891</b></a> — Bröderna Bernhard, Christoph och Nutin Cloetta föddes i Schweiz och kom via Danmark till Malmö där de 1873 startade en chokladfabrik i Gryn… <span class="era">1891</span></li>
+<li><a href="/p/bht-malmo-far-i-hatten-415"><b>Far i hatten</b></a> — The English translation of &#39;Far i Hatten&#39; is &#39;Father in the Hat&#39;. <span class="era">1892</span></li>
+<li><a href="/p/bht-malmo-sjobergska-palatset-856"><b>Sjöbergska palatset</b></a> — Ett magnifikt hus som ritades av arkitekten Alfred Arwidius till Axel Paulus och hans hustru Ida Sjöberg 1894. <span class="era">1894</span></li>
+<li><a href="/p/bht-malmo-barnens-scen-449"><b>Barnens Scen</b></a> — This building was constructed in 1895 as an outdoor dance floor roofed but without walls, so dancers could move their bodies in any weather. <span class="era">1895</span></li>
+<li><a href="/p/bht-malmo-wienska-palatset-857"><b>Wienska palatset</b></a> — Wienska palatset till vänster i bild, med bronsknektar ovan entr n i nästan naturlig storlek. <span class="era">1895</span></li>
+<li><a href="/p/bht-malmo-hollywood-star-nils-asther-1897-1981-464"><b>Hollywood star Nils Asther (1897–1981)</b></a> — Nils Asther grew up in Malmö. <span class="era">1897</span></li>
+<li><a href="/p/bht-malmo-nils-werngren-1815-1897-902"><b>Nils Werngren 1815-1897</b></a> — Den blivande sjökaptenen Nils Werngren föddes i ett hus i hörnet av Väster- och Gråbrödersgatan. <span class="era">1897</span></li>
+<li><a href="/p/bht-malmo-marie-bernadette-david-1865-1897-947"><b>Marie (Bernadette) David 1865-1897</b></a> — Elisabethsystrarna grundades i Tyskland 1842 och kom till Malmö 1874. <span class="era">1897</span></li>
+<li><a href="/p/bht-malmo-apoteket-lejonet-873"><b>Apoteket Lejonet</b></a> — Det står 1897 på fasaden, men låt er inte luras, det hann bli mars 1898 innan huset var slutbesiktigat och invigt. <span class="era">1898</span></li>
+<li><a href="/p/bht-malmo-axel-danielsson-1863-1899-elma-danielsson-1865-1936-970"><b>Axel Danielsson 1863-1899 &amp; Elma Danielsson 1865-1936</b></a> — Axel Danielsson var grundare av tidningen Arbetet. <span class="era">1899</span></li>
+<li><a href="/p/bht-malmo-renhallningsverket-113"><b>Renhållningsverket</b></a> — I början av 1900-talet inrättades stadens nya renhållningsverk på Sorgenfri. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-malmo-malmo-gasverk-138"><b>Malmö Gasverk</b></a> — Här låg Malmös Gasverk som togs i drift runt 1900. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-malmo-tivoli-182"><b>Malmö tivoli</b></a> — Malmö Tivoli was a fairground run by Danish-born Ole Olsson that first opened its gates in 1898. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-innan-trianglen-222"><b>Innan trianglen</b></a> — Malmö&#39;s city engineer Major Anders Nilsson (from whom Major Nilssonsgatan takes its name) gave Friisgatan its curved shape in 1903, inspire… <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-humlegatan-832"><b>Humlegatan</b></a> — Låt oss beundra det Diedenska huset. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-malmo-snapperupsgatan-833"><b>Snapperupsgatan</b></a> — Dessa delar av staden var ingalunda försedda med gott rykte. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-livet-pa-ostergatan-859"><b>Livet på Östergatan</b></a> — I bilden har hästspårvagnen på vår vänstra sida passerat den låga bebyggelsen i kvarteret Magnus Smek, saligen insomnat och avrivet i slute… <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-rundelsgatan-860"><b>Rundelsgatan</b></a> — Här ser vi hur Rundelsgatan så nätt svänger upp mot S:t Petri kyrka, som vi kan se har gatans mjuka rundning försvunnit över tid. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-engelbrektsgatan-grynbodgatan-868"><b>Engelbrektsgatan–Grynbodgatan</b></a> — Kvarteret har fått sitt namn Väveriet eftersom det en gång låg ett bomullsväveri i korsningen av Engelbrektsgatan och Grynbodgatan. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-engelbrektsgatan-869"><b>Engelbrektsgatan</b></a> — På 1600-talet hette nuvarande Engelbrektsgatan det mer färgstarka namnet Marijne Brendevins straede. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-grabrodersgatan-876"><b>Gråbrödersgatan</b></a> — Gatan har fått sitt namn efter gråbröderna, men det var en bit härifrån, på nuvarande Norra Vallgatan i östra delen av kvarteret Fisken som… <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-malmo-betelkyrkan-adventure-2-906"><b>Betelkyrkan adventure 2</b></a> — Mer historia, om träden och när de planterades <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-max-1860-1900-hilma-happach-1865-1949-972"><b>Max 1860-1900 &amp; Hilma Happach 1865-1949</b></a> — Tvålfabrikören Max Happach var född i Ystad. <span class="era">1900</span></li>
+<li><a href="/karta?plats=bht-malmo-rolfsgatan-idunsgatan-1169"><b>Rolfsgatan/Idunsgatan</b></a> — Rolfsgatan/Idunsgatan <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-gottfried-beijer-1838-1901-948"><b>Gottfried Beijer 1838-1901</b></a> — Gottfried var tidigt handelsman i Hamburg och London. <span class="era">1901</span></li>
+<li><a href="/p/bht-malmo-moriska-paviljongen-363"><b>Moriska paviljongen</b></a> — This remarkable building, commissioned by the Social Democrats, was completed in 1903. <span class="era">1903</span></li>
+<li><a href="/p/bht-malmo-moriska-paviljongen-2-482"><b>Moriska paviljongen (2)</b></a> — In 1902, the board approved a proposal for a larger restaurant building, since there weren t sufficient facilities to meet the demand. <span class="era">1903</span></li>
+<li><a href="/p/bht-malmo-elise-mayr-1822-1904-898"><b>Elise Mayr 1822-1904</b></a> — 1859 invigdes den sista delen av Gamla Begravningsplatsen. <span class="era">1904</span></li>
+<li><a href="/karta?plats=bht-malmo-flygfoto-med-utsikt-mot-varnhem-154"><b>Flygfoto med utsikt mot Värnhem</b></a> — Här är det inte lätt att känna igen sig! <span class="era">1905</span></li>
+<li><a href="/p/bht-malmo-lydia-wahlstrom-1869-1954-543"><b>Lydia Wahlström (1869-1954)</b></a> — From the 1905 archives of Arbetet newspaper, it seems that Dr. <span class="era">1905</span></li>
+<li><a href="/p/bht-malmo-norregatan-852"><b>Norregatan</b></a> — Det första huset till höger i den gamla bilden är östra skolan från 1848, ritad av Carl Gottreich Beijer. <span class="era">1905</span></li>
+<li><a href="/p/bht-malmo-sparvagnar-127"><b>Spårvagnar</b></a> — Till spårvägarnas driftcentral fick de som körde buss och spårvagn hämta sin lön varje vecka. <span class="era">1906</span></li>
+<li><a href="/p/bht-malmo-planket-458"><b>Planket</b></a> — In 1891, the Social Democrat party took over the lease of Möllevångsparken (as Folkets park was then known) from Godtemplarna the Swedish t… <span class="era">1906</span></li>
+<li><a href="/p/bht-malmo-decriminalise-homosexuality-462"><b>Decriminalise homosexuality!</b></a> — This was the site of the Social Democrat newspaper Arbetet&#39;s first office. <span class="era">1907</span></li>
+<li><a href="/p/bht-malmo-en-modern-gata-866"><b>En modern gata</b></a> — Hela den gamla bilden andas och sjuder av det moderna. <span class="era">1907</span></li>
+<li><a href="/p/bht-malmo-rudolf-asp-1851-1907-971"><b>Rudolf Asp 1851-1907</b></a> — Rudolf Asp började som boktryckare men blev med tiden ett tungt namn i historien om Malmös tidningar. <span class="era">1907</span></li>
+<li><a href="/p/bht-malmo-seventeen-147"><b>Seventeen</b></a> — I byggnaden bakom spårvagnen låg bland andra Malmö Skofabrik och Konfektionsföretaget Seventeen som sydde ungdomskläder. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-nya-aktiebolaget-eskil-metzen-251"><b>Nya Aktiebolaget Eskil Metzén</b></a> — Metz n&#39;s dyehouse and chemical laundry was built on Kopparbergsgatan around 1910. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-herta-wiren-265"><b>Herta Wirén</b></a> — The Larsson family two adults and six children moved into a studio apartment here in October 1906, back when the building was still new. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-sigrid-vestdahl-303"><b>Sigrid Vestdahl</b></a> — Sigrid Vestdahl moved into this building soon after it was built. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-b-for-barbro-and-beebar-362"><b>B for Barbro and BeeBar</b></a> — In 2019, the Malmö Pride parade passed what was then the gay hang-out BeeBar. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-auktionskammaren-376"><b>Auktionskammaren</b></a> — On the left of the picture, you can see a protruding pointed roof, just underneath the leafless tree branches. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-bersaerna-422"><b>Bersåerna</b></a> — Rows of cozy arbors sat along the sides of the pond. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-langa-dammen-424"><b>Långa dammen</b></a> — The pond is as old as the park it was part of the original 30,000 m2 private park built by the Suells in 1806-07. <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-dammen-446"><b>Dammen</b></a> — How wonderfully Malmö-ist to describe Folkets park as &quot;the centre of the earth&quot;! <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-kalendegatan-882"><b>Kalendegatan</b></a> — Första gången gatan nämns, 1476, kallas den Kalenthe stredit vilket syftar på att gatan sträcktes bort till Kalendegillets laghus i mitten… <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-axel-paulus-1839-1913-ida-sjoberg-1857-1941-973"><b>Axel Paulus 1839-1913 &amp; Ida Sjöberg 1857-1941</b></a> — Familjen Sjöbergs gravställe är storslaget, men så var Axel Paulus också industrikapitalist och tämligen förmögen. <span class="era">1913</span></li>
+<li><a href="/p/bht-malmo-gasverket-151"><b>Gasverket</b></a> — år 1898 togs Malmös nya gasverk på Sankt Knuts väg/Industrigatan i bruk. <span class="era">1915</span></li>
+<li><a href="/p/bht-malmo-ensamheten-263"><b>Ensamheten</b></a> — Don&#39;t be fooled that it says Trianglen in the picture: it describes the shape of the house and not the Malmö neighbourhood of the same name. <span class="era">1915</span></li>
+<li><a href="/p/bht-malmo-torghandeln-293"><b>Torghandeln</b></a> — Market trading began on Möllevångstorget pretty much as soon as it was built, in the early 20th century. <span class="era">1915</span></li>
+<li><a href="/p/bht-malmo-hjalmar-nyrop-1885-1915-897"><b>Hjalmar Nyrop 1885-1915</b></a> — Han blev inte gammal, flygpionjären, som tros ha dött i sviterna efter skador han fått när han skulle få sitt certifikat. <span class="era">1915</span></li>
+<li><a href="/p/bht-malmo-vingarne-the-wings-469"><b>Vingarne - The Wings</b></a> — In 1916, Vingarne ( The Wings ) was shown at the Metropolteatern cinema. <span class="era">1916</span></li>
+<li><a href="/p/bht-malmo-the-massive-entertainment-block-355"><b>The Massive Entertainment block</b></a> — Several factories and workplaces were established along the lively Bergsgatan in late 19th century, specialising in textiles, cars, chocola… <span class="era">1917</span></li>
+<li><a href="/p/bht-malmo-henrik-menander-1853-1917-952"><b>Henrik Menander 1853-1917</b></a> — Har man någon gång hört Arbetets söner, vars text Henrik Menander skrev, eller den svenska versionen av Internationalen, som han översatte,… <span class="era">1917</span></li>
+<li><a href="/p/bht-malmo-bertil-1851-1918-anna-sederholm-1868-1933-977"><b>Bertil 1851-1918 &amp; Anna Sederholm 1868-1933</b></a> — Bertil och Anna Sederholms gravplats är ett Parthenon i mindre skala. <span class="era">1918</span></li>
+<li><a href="/p/bht-malmo-terrariet-440"><b>Terrariet</b></a> — ända sedan parken grundades har det funnits växthus på området där plantor drivits upp och grönsaker odlats. <span class="era">1919</span></li>
+<li><a href="/karta?plats=bht-malmo-flygfoto-med-utsikt-mot-kirseberg-114"><b>Flygfoto med utsikt mot Kirseberg</b></a> — Här är det inte lätt att känna igen sig! <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-mohab-142"><b>MOHAB</b></a> — Malmö Oljeslageri &amp; Happachs Såpfabriks AB (båda grundade 1905) låg här med sina fabriker bredvid varandra. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-malmo-sydsvenska-aggexporten-164"><b>Sydsvenska Äggexporten</b></a> — Foto Otto Ohm, Christian Kindblads samlingar <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-lilla-venedig-368"><b>Lilla Venedig</b></a> — At the start of the 19th century, the private estate known as Sofielundsgården was split into plots and sold off to two groups of people mo… <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-matilda-olsson-1849-1920-910"><b>Matilda Olsson 1849-1920</b></a> — Matilda Olsson och Anders Påhlsson gifte sig 1874. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-otto-ohm-1860-1920-951"><b>Otto Ohm 1860-1920</b></a> — På stenen finns förutom namnen en Kristussymbol; den första och den sista bokstaven i det grekiska alfabetet, alfa och . <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-kristianstadsgatan-16-270"><b>Kristianstadsgatan 16</b></a> — This building, designed by architect Hans Thyselius, was once home to Centralmejeriet (the Central Dairy). <span class="era">1923</span></li>
+<li><a href="/p/bht-malmo-oscar-hjalmar-wiens-1846-1923-974"><b>Oscar Hjalmar Wiens 1846-1923</b></a> — Oscar Hjalmar kallades O.H och etablerade sig i Malmö 1874. <span class="era">1923</span></li>
+<li><a href="/p/bht-malmo-barnekows-laboratorium-159"><b>Barnekows Laboratorium</b></a> — Barnekows laboratorium grundades i Malmö år 1878 av den danske ingenjören Sophus von Barnekow och blev Sveriges första fabrik för mejeripre… <span class="era">1925</span></li>
+<li><a href="/karta?plats=bht-malmo-barn-i-ytterklader-1926-118"><b>Barn i ytterkläder 1926</b></a> — Gruppbild av barn i ytterkläder utanför Spånehusvägen 46. <span class="era">1926</span></li>
+<li><a href="/p/bht-malmo-norregatan-stora-kvarngatan-862"><b>Norregatan/Stora Kvarngatan</b></a> — Här syns hur den äldre bebyggelsen fullständigt rivits för att ge plats åt opåkallat mycket postmodernism, inte minst i kvarteret Storken. <span class="era">1928</span></li>
+<li><a href="/p/bht-malmo-hans-krondahl-467"><b>Hans Krondahl</b></a> — Malmö s principal art gallery, Malmö Konsthall, houses a large Hans Krondahl (1929 2018) collection. <span class="era">1929</span></li>
+<li><a href="/karta?plats=bht-malmo-sparvagarnas-driftcentral-131"><b>Spårvägarnas driftcentral</b></a> — Foto Stadsarkivet <span class="era">1930</span></li>
+<li><a href="/karta?plats=bht-malmo-hast-med-vagn-143"><b>Häst med vagn</b></a> — Häst med vagn vid färgfirman Luttrups plank. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-sofielunds-industriomrade-295"><b>Sofielunds industriområde</b></a> — At the start of the 20th century, most of Malmö s factories were still located in the city centre. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-jesusparken-326"><b>Jesusparken</b></a> — Falsterboplan is almost universally known as Jesusparken. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-pagen-gustav-moller-354"><b>Pågen &amp; Gustav Möller</b></a> — The section of Möllevångsgatan, west of Södra Förstadsgatan, was previously called Tallgatan. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-majken-johansson-1930-1993-535"><b>Majken Johansson (1930-1993)</b></a> — Majken Johansson was one of Sweden&#39;s most notable poets of the second half of the 20th century. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-elisabethsystrarnas-sjukhem-851"><b>Elisabethsystrarnas sjukhem</b></a> — Den katolska kongregationen med samma namn består av kvinnor som vill hjälpa andra, oavsett religion eller samhällsklass. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-max-engestrom-1867-1930-949"><b>Max Engeström 1867-1930</b></a> — Max Engeströms far Edvard var ägare av och en av grundarna till sockerfabriken i Arlöv, en post som togs över av Max efter faderns död. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-bussgaraget-146"><b>Bussgaraget</b></a> — Bussgaraget byggdes 1932 och låg då i stadens utkant. <span class="era">1933</span></li>
+<li><a href="/p/bht-malmo-christopher-isherwood-at-the-grand-hotel-379"><b>Christopher Isherwood at the Grand Hotel</b></a> — Christopher Isherwood (1904-1986) was a gay British writer, best known for his book Farewell to Berlin, later filmed as Cabaret. <span class="era">1934</span></li>
+<li><a href="/p/bht-malmo-dama-verken-411"><b>Dama-Verken</b></a> — The company was actually called AB Damm- och Spånledningar, but no-one around here would ever say that: Dama-Verken was the name that stuck. <span class="era">1936</span></li>
+<li><a href="/p/bht-malmo-saturnus-311"><b>Saturnus</b></a> — Founded in 1893, AB Fabriken Saturnus moved to their newly built premises on Lantmannagatan in 1937. <span class="era">1937</span></li>
+<li><a href="/p/bht-malmo-ab-textilkonst-414"><b>AB Textilkonst</b></a> — You don t hear about shoelace makers so often these days. <span class="era">1939</span></li>
+<li><a href="/p/bht-malmo-malmo-stadsarkiv-532"><b>Malmö Stadsarkiv</b></a> — The City Archive (Malmö Stadsarkiv) is situated in the former premises of Arbetet newspaper. <span class="era">1939</span></li>
+<li><a href="/karta?plats=bht-malmo-nobelvagen-137"><b>Nobelvägen</b></a> — Nobelvägens framdragning. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-ekstroms-skomakeri-302"><b>Ekströms skomakeri</b></a> — That s a shoemaker standing in his doorway greeting us. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-ab-kvarnmaskiner-316"><b>AB Kvarnmaskiner</b></a> — When it founded in 1867, this company was called Malmö Franska Kvarnstensfabrik Malmö French Millstone Factory even though it was actually… <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-folkets-funfair-322"><b>Folkets Funfair</b></a> — From the beginning, the management had envisaged Folkets Park as a place with swings and carousels. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-k-rzels-spinnerier-364"><b>Kürzels spinnerier</b></a> — In 1896, Fritz K rzel opened a spinning mill here, named K rzels Fabriker AB. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-malmo-central-prison-1914-2015-463"><b>Malmö Central Prison (1914-2015)</b></a> — In Sweden, homosexual acts were illegal until 1944. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-hollywood-1943-144"><b>Hollywood 1943</b></a> — Efter första världskriget rådde akut bostadsbrist i Malmö och staden uppförde ett antal nödbostäder. <span class="era">1943</span></li>
+<li><a href="/karta?plats=bht-malmo-botildenborgsvagen-6-382"><b>Botildenborgsvägen 6</b></a> — Det här huset byggdes 1916 av Bygg-Nils Sonesson. <span class="era">1944</span></li>
+<li><a href="/p/bht-malmo-the-mountain-roller-coaster-479"><b>The mountain roller coaster</b></a> — From Arbetet newspaper, April 1944 The huge roller coaster in Malmö Folkets Park, whose silhouette provided a mountain landscape in Möllevå… <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jagersrovagen-56-635"><b>Jägersrovägen 56</b></a> — Här bodde Stig Hansson, linjeförman, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-botildenborgsvagen-7-643"><b>Botildenborgsvägen 7</b></a> — 1944 låg här ett hus som byggts 1921 av byggmästare Herbert Nilsson. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-botildenborgsvagen-53-644"><b>Botildenborgsvägen 53</b></a> — Här bodde Gustaf Andersson, byggmästare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jagersrovagen-28-645"><b>Jägersrovägen 28</b></a> — Här bodde Kurt Ecksten, linjearbetare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-kaprifoliegatan-7-646"><b>Kaprifoliegatan 7</b></a> — Här bodde Elvir Stridh, kontorist, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jarneksgatan-17-647"><b>Järneksgatan 17</b></a> — Här bodde Oscar Ferdinand Nilsson, reparatör, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jarneksgatan-14-648"><b>Järneksgatan 14</b></a> — Här bodde Thor Wilhelm, droskägare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jarneksgatan-8-649"><b>Järneksgatan 8</b></a> — Här bodde Karl Kristoffersson, verkmästare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jagersrovagen-42-679"><b>Jägersrovägen 42</b></a> — Här bodde Per Liedholm, byggnadsarbetare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jagersrovagen-44-680"><b>Jägersrovägen 44</b></a> — Här bodde Erik Charles Gustavsson, målare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-botildenborgsvagen-28-682"><b>Botildenborgsvägen 28</b></a> — Här bodde Richard Alfredsson, murare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-jagersrovagen-34-689"><b>Jägersrovägen 34</b></a> — Här bodde Karl och Hugo Nilsson, förman , 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-botildenborgsvagen-18-690"><b>Botildenborgsvägen 18</b></a> — Huset byggdes 1916 av byggmästare Landegren. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-hortensiagatan-3-691"><b>Hortensiagatan 3</b></a> — Här bodde Hakon Hall, bleckslagare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-videgatan-16-694"><b>Videgatan 16</b></a> — 1944 bodde här Otto Monty, fattigvårdstillsyningsman. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-motorcykel-681"><b>Motorcykel</b></a> — Man på motorcykel <span class="era">1945</span></li>
+<li><a href="/p/bht-malmo-alfred-benzon-ab-123"><b>Alfred Benzon AB</b></a> — Alfred Benzon AB grundades år 1900 och bestod av fem avdelningar: Kemikalieavdelningen - tillverkning av syror och gaser. <span class="era">1946</span></li>
+<li><a href="/p/bht-malmo-a-hulten-ab-413"><b>A Hultén AB</b></a> — Furniture started to be made here in 1893, when master carpenter Anders Hult n opened his business (A Hult n AB). <span class="era">1947</span></li>
+<li><a href="/p/bht-malmo-anna-1860-1934-eva-bunth-1862-1947-978"><b>Anna 1860-1934 &amp; Eva Bunth 1862-1947</b></a> — Anna och Eva Bunth var pedagoger som ivrade för flickors utbildning. <span class="era">1947</span></li>
+<li><a href="/p/bht-malmo-kai-finds-love-at-hipp-480"><b>Kai finds love at Hipp</b></a> — In the spring of 1949, Hipp aka Malmö Hippodrome welcomed Stockholm s Casino Revue. <span class="era">1949</span></li>
+<li><a href="/p/bht-malmo-per-albin-hansson-bust-487"><b>Per Albin Hansson bust</b></a> — Emil Näsvall made this bust of Social Democratic politician Per Albin Hansson (1885 1946). <span class="era">1949</span></li>
+<li><a href="/p/bht-malmo-bjorngrottan-225"><b>Björngrottan</b></a> — It&#39;s seems scarcely believable now, but as recently as the 1950s Folkets Park had its own bear cave. <span class="era">1950</span></li>
+<li><a href="/p/bht-malmo-anita-and-hornet-389"><b>Anita and Hornet</b></a> — The corner building here was home to Caf Hörnet (literally, The Corner Cafe). <span class="era">1950</span></li>
+<li><a href="/p/bht-malmo-ghost-train-483"><b>Ghost train</b></a> — From Max Lundgren&#39;s novel Inga Eliasson, Sales Assistant. <span class="era">1950</span></li>
+<li><a href="/p/bht-malmo-oscar-winge-1884-1951-961"><b>Oscar Winge 1884-1951</b></a> — Oscar Winge, ursprungligen Svensson, var regissör, skådespelare och teaterchef i Malmö. <span class="era">1951</span></li>
+<li><a href="/p/bht-malmo-stora-entren-244"><b>Stora entrén</b></a> — Folkets Park&#39;s main entrance on Amiralsgatan isn t its the oldest that can be found a short distance away on Norra Parkgatan. <span class="era">1952</span></li>
+<li><a href="/p/bht-malmo-amiralen-from-amiralsgatan-476"><b>Amiralen (from Amiralsgatan)</b></a> — From Bo Widerberg&#39;s 1952 novel, Hösttermin: Then came Folkets Park, with the vibrant colours of its cramped carousels and Amiralen s exagge… <span class="era">1952</span></li>
+<li><a href="/p/bht-malmo-gustav-moller-bust-488"><b>Gustav Möller bust</b></a> — On 24 August 1952, the bust of the former minister of social affairs and trade was unveiled in the presence of the man himself. <span class="era">1952</span></li>
+<li><a href="/karta?plats=bht-malmo-hilma-tjader-1863-1952-960"><b>Hilma Tjäder 1863-1952</b></a> — Hilma Tjäder föddes i Västmanland och utbildade sig till lärarinna. <span class="era">1952</span></li>
+<li><a href="/p/bht-malmo-naima-wifstrand-320"><b>Naima Wifstrand</b></a> — Naima Wifstrand (1890-1968) was one of Sweden&#39;s most famous actresses and operetta singers of the 20th century. <span class="era">1954</span></li>
+<li><a href="/p/bht-malmo-olga-hellquist-1893-1954-953"><b>Olga Hellquist 1893-1954</b></a> — Olga Hellqvist spelade på scen såväl som på film, var också kuplettsångerska och komiker som började framträda på Folkets Hus teater 1914. <span class="era">1954</span></li>
+<li><a href="/p/bht-malmo-billie-holiday-splits-the-crowd-1108"><b>Billie Holiday splits the crowd</b></a> — In January 1954, Billie Holiday came to Malmö as the main attraction in a touring mini festival called &quot;Jazz Club USA&quot;. <span class="era">1954</span></li>
+<li><a href="/karta?plats=bht-malmo-hollywood-109"><b>Hollywood</b></a> — På andra sidan östra Farmvägen låg Renhållningsverket med sina stallar och behandlingshus för latrintunnornas innehåll . <span class="era">1955</span></li>
+<li><a href="/karta?plats=bht-malmo-solvesborgsgatan-313"><b>Sölvesborgsgatan</b></a> — Sölvesborgsgatan <span class="era">1955</span></li>
+<li><a href="/p/bht-malmo-anna-stenberg-1867-1956-959"><b>Anna Stenberg 1867-1956</b></a> — Anna Stenberg kom till Malmö i 20-årsåldern och arbetade som hospitalsköterska på asylen i Rundelsgatan, den tidens psykiatriska klinik. <span class="era">1956</span></li>
+<li><a href="/p/bht-malmo-thekla-edstrand-1880-1959-954"><b>Thekla Edstrand 1880-1959</b></a> — Thekla Edstrand var konstsamlare och också den ledande gestalten i den kulturella salong hon drev i sitt hem på Slottsgatan 6. <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-malmo-oscar-hagg-1870-1959-955"><b>Oscar Hägg 1870-1959</b></a> — Oscar Emil Hägg blev den mest kände jugendarkitekten i Malmö. <span class="era">1959</span></li>
+<li><a href="/karta?plats=bht-malmo-solidar-156"><b>Solidar</b></a> — Solidar var tidigare en bekant bild i Malmös stadsbild. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-malmo-ostra-farmvagen-163"><b>Östra Farmvägen</b></a> — Foto: Malmö Museum <span class="era">1960</span></li>
+<li><a href="/p/bht-malmo-nils-erik-ahreus-1929-1961-956"><b>Nils-Erik Åhréus 1929-1961</b></a> — Nils-Erik åhr us var flygkapten på det plan som störtade i Ndola i nuvarande Zambia den 18 september 1961. <span class="era">1961</span></li>
+<li><a href="/p/bht-malmo-hjalmar-gullberg-1898-1961-greta-thott-1908-2003-958"><b>Hjalmar Gullberg 1898-1961 &amp; Greta Thott 1908-2003</b></a> — Här vilar skalden och hans livskamrat; Hjalmar Gullberg och Greta Thott. <span class="era">1961</span></li>
+<li><a href="/p/bht-malmo-kvarteret-korpen-185"><b>Kvarteret Korpen</b></a> — This block is framed by Spångatan, Södra Förstadsgatan, Norra Skolgatan and Friisgatan. <span class="era">1963</span></li>
+<li><a href="/karta?plats=bht-malmo-regnigt-hollywood-125"><b>Regnigt Hollywood</b></a> — Det inledande stycket i Mary Anderssons dokumentärroman Sorgenfri (1979) lyder: &quot;östra Farmvägen ligger tyst och öde. <span class="era">1964</span></li>
+<li><a href="/p/bht-malmo-thilda-engstrom-188"><b>Thilda Engström</b></a> — a Here s a description of a typical Malmö woman who lived through the turn of the 20th century: Born Liatorp, Kronoberg County in 1868. <span class="era">1964</span></li>
+<li><a href="/karta?plats=bht-malmo-bebyggelse-pa-sorgenfriomradet-162"><b>Bebyggelse på Sorgenfriområdet</b></a> — Foto Berndt Johnsson, Christian Kindblads Samlingar <span class="era">1965</span></li>
+<li><a href="/p/bht-malmo-groningen-hsbs-dromkok-167"><b>Gröningen &amp; HSBs Drömkök</b></a> — I husen, som restes runt 1955 fanns HSB drömkök - ett väl genomtänkt och planerat kök, med lutande köksskåp så de inte skuggade diskbänken… <span class="era">1965</span></li>
+<li><a href="/p/bht-malmo-lesbian-siesta-461"><b>Lesbian Siesta</b></a> — In 1969, Lasse Bonstad started the restaurant Siesta, on Altonagatan, one of the city&#39;s first openly gay places. <span class="era">1966</span></li>
+<li><a href="/karta?plats=bht-malmo-hollywood-rivs-121"><b>Hollywood rivs</b></a> — Nödbostäderna - dessa enkla träbaracker som ställdes på Sorgenfri i början av tjugotalet som en tillfällig lösning på bostadsbristen - blev… <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-nykterhetsrorelsen-200"><b>Nykterhetsrörelsen</b></a> — Hasselgatan was originally called Sturegatan, but together with several other streets nearby, it was renamed when Sofielund was incorporate… <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-bryggeriet-236"><b>Bryggeriet</b></a> — Brewing had already been the family business for generations when Malmquists Bryggeriaktiebolag purchased a site and moved their business h… <span class="era">1967</span></li>
+<li><a href="/karta?plats=bht-malmo-snurran-863"><b>&quot;Snurran&quot;</b></a> — Här har vi en bild från Snurran , gathörnet av Grönegatan och Humlegatan som fanns redan på medeltiden. <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-ahoy-it-s-the-rolling-stones-1087"><b>Ahoy, it’s the Rolling Stones!</b></a> — The Rolling Stones came to Malmö a few days before their gigs at Baltiska Hallen the summer of 1965, and this photo shows Keith Richards, M… <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-the-beatles-frosty-reception-1096"><b>The Beatles’ frosty reception</b></a> — On 14th October 1967, half of The Beatles popped up in Malmö. <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-the-beatles-head-home-1118"><b>The Beatles head home</b></a> — George Harrison and Paul McCartney got a lot of media attention when they visited Maharishi Mahesh Yogi for a weekend in October 1967. <span class="era">1967</span></li>
+<li><a href="/p/bht-malmo-syrener-och-kalvstek-317"><b>Syrener och kalvstek</b></a> — Malmö entertainer and musician östen Warnerbring had a keen interest in football. <span class="era">1969</span></li>
+<li><a href="/p/bht-malmo-abba-the-very-early-days-1093"><b>ABBA: the very early days</b></a> — Malmö played a part in the origin story of global superstars ABBA. <span class="era">1969</span></li>
+<li><a href="/p/bht-malmo-judy-garland-s-penultimate-show-1097"><b>Judy Garland’s penultimate show</b></a> — On 22nd March 1969, Judy Garland arrived in Malmö and checked in to the Savoy Hotel. <span class="era">1969</span></li>
+<li><a href="/karta?plats=bht-malmo-vagnhallen-129"><b>Vagnhallen</b></a> — Spårvägarnas driftcentral med vagnhallen, Koltåget och Linje 4b på väg till Vagnhallen. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-jimi-hendrix-gets-a-mixed-response-at-klubb-bongo-207"><b>Jimi Hendrix gets a mixed response at Klubb Bongo</b></a> — In 1964, Dan Walterström and Per Falck started a pop and rock club called Klubb Bongo. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-n-p-moller-fastighetsskotare-231"><b>N. P. Möller – fastighetsskötare</b></a> — N. P. Möller, the friendly estate agent, became well-known in the early 1970s as the lead character in the TV programme of the same name. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-kristianstadsgatan-17-240"><b>Kristianstadsgatan 17</b></a> — Gunnar &quot;Siljabloo&quot; Nilson (1925-1989) was one of Sweden&#39;s greatest jazz performers. <span class="era">1970</span></li>
+<li><a href="/karta?plats=bht-malmo-fricksgatan-5-296"><b>Fricksgatan 5</b></a> — A small community sprung up around the Malmö-Ystad railway, at what is now Södervärn. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-the-ferry-to-denmark-386"><b>The ferry to Denmark</b></a> — Ferries left from here to Copenhagen a place that offered richer entertainment and greater anonymity than Malmö. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-nar-nagot-gar-sonder-943"><b>När något går sönder...</b></a> — När kyrkan revs . jag är egentligen inte särskilt religiös, gick bara förbi här när det hände. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-eva-remeaus-ants-and-elephants-1102"><b>Eva Remeaus, ants and elephants</b></a> — In the 1970s, Eva Remeaus (1950 1993) lived at Föreningsgatan 57. <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-the-rolling-stones-malmo-party-1129"><b>The Rolling Stones’ Malmö party</b></a> — One weekend in June 1965, there was a notorious party at Ola and Ingela Ström s parents place (Fersens Väg 4, to be precise). <span class="era">1970</span></li>
+<li><a href="/p/bht-malmo-claesgatan-5-238"><b>Claesgatan 5</b></a> — The Claes in Claesgatan is Claes Nestor Siegbahn. <span class="era">1971</span></li>
+<li><a href="/p/bht-malmo-club-max-rfsl-390"><b>Club Max - RFSL</b></a> — RFSL Malmö the Malmö chapter of what is now called The Swedish Federation for Lesbian, Gay, Bisexual, Transgender, Queer and Intersex Right… <span class="era">1971</span></li>
+<li><a href="/p/bht-malmo-the-attack-on-gay-house-392"><b>The attack on Gay House</b></a> — Gay House was founded by Lars Hector in 1971. <span class="era">1971</span></li>
+<li><a href="/p/bht-malmo-the-first-liberation-marches-967"><b>The first liberation marches</b></a> — When the police raided the Stonewall Inn (one of the busiest gay bars in New York) in June 1969, it triggered spontaneous demonstrations, p… <span class="era">1971</span></li>
+<li><a href="/p/bht-malmo-cornelis-vreeswijk-s-long-malmo-history-1107"><b>Cornelis Vreeswijk’s long Malmö history</b></a> — Dutch-Swedish singer, songwriter, actor and poet Cornelis Vreeswijk lived in Malmö for several spells throughout his eventful life. <span class="era">1971</span></li>
+<li><a href="/karta?plats=bht-malmo-barn-i-godheten-166"><b>Barn i Godheten</b></a> — Här fanns det gott om lekkamrater! <span class="era">1972</span></li>
+<li><a href="/p/bht-malmo-light-my-fire-396"><b>Light my Fire</b></a> — Activist Agneta Berndt lived in this building when she was 18. <span class="era">1972</span></li>
+<li><a href="/karta?plats=bht-malmo-biljardhallen-116"><b>Biljardhallen</b></a> — Där biljardhall på bilden är, fanns en tid även Volvos bilförsäljning. <span class="era">1974</span></li>
+<li><a href="/p/bht-malmo-addo-117"><b>Addo</b></a> — Addo grundades 1918 av Hugo Agrell och hade vid början av 30-talet ca 70 anställda och tillverkade ca 3000 maskiner om året. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-ferrosan-ab-1974-133"><b>Ferrosan AB 1974</b></a> — Ferrosan AB grundades 1919 i Helsingborg. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-nobelvagen-1974-135"><b>Nobelvägen 1974</b></a> — Till höger om bilden låg Celsiusgården, Malmös första äldreboende i kommunal regi. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-vy-mot-oster-1974-141"><b>Vy mot öster 1974</b></a> — 1974, då bilden togs, låg här en målarfirma. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-zenithgatan-1974-148"><b>Zenithgatan 1974</b></a> — Korsningen Zenithgatan och Industrigatan, baksidan av före detta spårvägarnas driftcentral. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-vy-industrigatan-mot-oster-150"><b>Vy Industrigatan mot öster</b></a> — TGM, som fortfarande existerar, är ett snickeri och måleri som numera drivs av Optimera. <span class="era">1974</span></li>
+<li><a href="/p/bht-malmo-abf-241"><b>ABF</b></a> — ABF bildades för över 100 år sedan, den 16 november 1912. <span class="era">1974</span></li>
+<li><a href="/p/bht-malmo-badtaget-227"><b>&quot;Badtåget&quot;</b></a> — The Heleneholmsstigen cycle path follows the former railway line between Malmö and Trelleborg that opened in 1886. <span class="era">1975</span></li>
+<li><a href="/p/bht-malmo-betelkyrkan-345"><b>Betelkyrkan</b></a> — Betelförsamlingen, eller som den först kallades, Evangeliska Missionsföreningen, bildades i Malmö den 16 maj 1885. <span class="era">1975</span></li>
+<li><a href="/p/bht-malmo-grynbodgatan-870"><b>Grynbodgatan</b></a> — I Grynbodgatan startade en gång de tre schweiziska bröderna Bernhard, Nutin och Christoph Cloettas chokladfabrik som 1901 flyttade till Lju… <span class="era">1975</span></li>
+<li><a href="/karta?plats=bht-malmo-per-wahloo-964"><b>Per Wahlöö</b></a> — Per Wahlöö var journalist på bland annat Sydsvenskan och Kvällsposten. <span class="era">1975</span></li>
+<li><a href="/p/bht-malmo-amalthea-sets-sail-1098"><b>Amalthea sets sail</b></a> — The Amalthea record company was started in 1977 by, among others, the musician Dan Hylander. <span class="era">1977</span></li>
+<li><a href="/p/bht-malmo-tintomara-fyran-1978-2002-391"><b>Tintomara - Fyran (1978–2002)</b></a> — Beyond the whitewashed gates and up the stairs, you could find Tintomara, which opened in 1978. <span class="era">1978</span></li>
+<li><a href="/p/bht-malmo-blondie-leave-their-hammer-at-home-1105"><b>Blondie leave their hammer at home</b></a> — On the 18 February 1978, American new wave band Blondie played at Dad s Dancehall on Föreningsgatan 54. <span class="era">1978</span></li>
+<li><a href="/p/bht-malmo-secret-meeting-places-380"><b>Secret meeting places</b></a> — The city&#39;s parks have always been meeting places for men who have sex with men. <span class="era">1980</span></li>
+<li><a href="/p/bht-malmo-malmo-gay-radio-472"><b>Malmö Gay Radio</b></a> — Malmö Gay Radio began life in Ken Paine&#39;s wardrobe on Stenbocksgatan in 1980. <span class="era">1980</span></li>
+<li><a href="/p/bht-malmo-blakulla-women-s-collective-397"><b>Blåkulla Women&#39;s Collective</b></a> — &quot;Blåkulla&quot; became emblematic of the many women&#39;s collectives around Möllevången and St Knuts Torg in the 1970s and 1980s. <span class="era">1984</span></li>
+<li><a href="/p/bht-malmo-restaurang-zorba-233"><b>Restaurang Zorba</b></a> — Now the location of Tusen&amp;2 restaurant, this corner was home to the Zorba restaurant throughout the 1980s. <span class="era">1985</span></li>
+<li><a href="/p/bht-malmo-stora-kvarngatan-28-675"><b>Stora Kvarngatan 28</b></a> — Kvarnen i namnet syftar på stubbamöllan Vallamöllan. <span class="era">1985</span></li>
+<li><a href="/p/bht-malmo-fredman-a-malmo-institution-1101"><b>Fredman: A Malmö institution</b></a> — For many years, the legendary Malmö nightclub Fredman stood at Regementsgatan 4. <span class="era">1985</span></li>
+<li><a href="/p/bht-malmo-the-pogues-fairytales-of-new-york-and-malmo-1113"><b>The Pogues’ fairytales of New York and Malmö</b></a> — Kulturbolaget - then located here in Erikslust - held a unique Pogues gig on 6th November 1985 unique in that singer Shane MacGowan was abs… <span class="era">1985</span></li>
+<li><a href="/p/bht-malmo-salong-caluff-s-510"><b>Salong Caluff ́s</b></a> — Caluff s Salon opened in 1987. <span class="era">1987</span></li>
+<li><a href="/p/bht-malmo-world-aids-day-517"><b>World AIDS Day</b></a> — The first World AIDS Day was held on December 1 1988 and was dedicated to the fight against AIDS. <span class="era">1988</span></li>
+<li><a href="/p/bht-malmo-the-leathermen-518"><b>The Leathermen</b></a> — SLM Malmö (Scandinavian Leather Men) came together in a private apartment in 1989. <span class="era">1989</span></li>
+<li><a href="/p/bht-malmo-noaks-ark-and-positiva-gruppen-522"><b>Noaks Ark and Positiva Gruppen</b></a> — In the early 1980s, the first reports of AIDS emerged. <span class="era">1989</span></li>
+<li><a href="/p/bht-malmo-bob-dylan-1103"><b>Bob Dylan</b></a> — även en av världens mest kända artister kan gå vilse. <span class="era">1989</span></li>
+<li><a href="/p/bht-malmo-rfsl-korsgatan-243"><b>RFSL, Korsgatan</b></a> — When RFSL (the Swedish Federation for Lesbian, Gay, Bisexual, Transgender, Queer and Intersex Rights) moved from Eden, they found a new loc… <span class="era">1990</span></li>
+<li><a href="/p/bht-malmo-skonhet-kommer-394"><b>Skönhet kommer</b></a> — Queer people and attitudes were at the forefront of the Malmö club scene in the early 1990s. <span class="era">1990</span></li>
+<li><a href="/p/bht-malmo-herta-wiren-1899-1991-899"><b>Herta Wirén 1899-1991</b></a> — I minneslunden vilar författaren Herta Wir n. <span class="era">1991</span></li>
+<li><a href="/p/bht-malmo-fredrik-roos-1951-1991-965"><b>Fredrik Roos 1951-1991</b></a> — Fredrik Roos hade utbildat sig på Handelshögskolan och kom från ekonomiskt goda förhållanden. <span class="era">1991</span></li>
+<li><a href="/p/bht-malmo-jerry-williams-starts-his-own-heartbreak-hotel-1104"><b>Jerry Williams starts his own Heartbreak Hotel</b></a> — From the early sixties all the way into the twenty-first century, Jerry Williams was Sweden&#39;s king of rock and roll. <span class="era">1991</span></li>
+<li><a href="/p/bht-malmo-eurovision-s-first-trip-to-malmo-1109"><b>Eurovision’s first trip to Malmö</b></a> — Malmö first hosted the Eurovision Song Contest in 1992 at the city s ice stadium (Isstadion). <span class="era">1992</span></li>
+<li><a href="/p/bht-malmo-the-fight-for-registered-partnerships-471"><b>The fight for registered partnerships</b></a> — On this street corner in 1993, members of RFSL and the RFSU, along with pastor Christer Kyr us, collected signatures for The Registered Par… <span class="era">1993</span></li>
+<li><a href="/p/bht-malmo-the-cardigans-move-in-1100"><b>The Cardigans move in</b></a> — Den 1 juli 1994 flyttade medlemmarna i pop- och rockgruppen The Cardigans in på Södra Förstadsgatan 68 när de lämnade Jönköping för Malmö. <span class="era">1994</span></li>
+<li><a href="/karta?plats=bht-malmo-regnbagsfestival-malmo-pride-516"><b>Regnbågsfestival - Malmö Pride</b></a> — Malmö s first Regnbågsfestival was held in 1995. <span class="era">1995</span></li>
+<li><a href="/p/bht-malmo-from-the-triangle-and-the-opera-to-europe-1128"><b>From the Triangle and the Opera to Europe!</b></a> — When Jan Johansen came to Malmö in the spring of 1995 it was not only to hit the shops at the Triangeln shopping mall. <span class="era">1995</span></li>
+<li><a href="/p/bht-malmo-restaurang-g-501"><b>Restaurang G</b></a> — Entertainment and events organiser Lars Hector built, owned and operated Restaurang G, on Gustav Adolfs Torg. <span class="era">1998</span></li>
+<li><a href="/karta?plats=bht-malmo-kjh-549"><b>kjh</b></a> — kjh <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-malmo-quizfraga-4-1053"><b>Quizfråga 4</b></a> — Charlotte Wiebulls affär i torgets västra sida var ett populärt utflyktsmål under 1970/80-talen. <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-malmo-quizfraga-6-1063"><b>Quizfråga 6</b></a> — Gabriel Hedman lär uppföra spannmålsmagasinet på innergården under 1800talet, numera Form/Designcenter. <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-malmo-quizfraga-9-1072"><b>Quizfråga 9</b></a> — Under 1980-2000-talet fanns det en saluhall i nord västra hörnet av torget. <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-malmo-quizfraga-10-1074"><b>Quizfråga 10</b></a> — Bara strax nordöst om Lilla torg ligger ett av norra Europas största torg Stortorget. <span class="era">2000</span></li>
+<li><a href="/karta?plats=bht-malmo-wonk-473"><b>Wonk</b></a> — If you like house and techno, you shouldn t have missed Wonk! <span class="era">2002</span></li>
+<li><a href="/p/bht-malmo-on-the-beach-with-franz-ferdinand-1115"><b>On the beach with Franz Ferdinand</b></a> — By summer 2003, Franz Ferdinand were getting some feverish attention from the British music press even though they had yet to release any r… <span class="era">2003</span></li>
+<li><a href="/p/bht-malmo-orangeriet-438"><b>Orangeriet</b></a> — Alldeles invid stora entr n finner vi ett glashus som trots att det är förhållandevis ungt ändå har en spännande historia. <span class="era">2004</span></li>
+<li><a href="/p/bht-malmo-tomboy-475"><b>Tomboy</b></a> — At the turn of the year 2004/2005, a hetero-friendly gay club opened in this building, which had previously been home to the Bodoni cafe (w… <span class="era">2004</span></li>
+<li><a href="/karta?plats=bht-malmo-g-a-wagnels-fargeri-kemtvatt-124"><b>G. A. Wagnels Färgeri &amp; Kemtvätt</b></a> — Wangels grundades av Fabrikör G. <span class="era">2010</span></li>
+<li><a href="/karta?plats=bht-malmo-sjurtest-489"><b>Sjurtest</b></a> — lampan <span class="era">2020</span></li>
+<li><a href="/p/bht-malmo-alltid-fullt-av-skit-overallt-hela-tiden-944"><b>Alltid fullt av skit överallt hela tiden....</b></a> — Alltid fullt av skit överallt hela tiden när en ska in i soprummet det går absolut inte att ta sig fram gärna en hektisk vardag när barnen… <span class="era">2020</span></li>
+<li><a href="/karta?plats=bht-malmo-den-blodiga-honungsdraken-556"><b>Den blodiga honungsdraken</b></a> — Den där läskiga typen Neeej, visa mig inga bilder! <span class="era">2021</span></li>
+<li><a href="/karta?plats=bht-malmo-gnoltofsla-564"><b>Gnöltofsla</b></a> — Vad vore Malmö utan sina Gnöltofslor? <span class="era">2021</span></li>
+<li><a href="/karta?plats=bht-malmo-grymtflaxare-568"><b>Grymtflaxare</b></a> — Har du sett! Det är ju en liten Grymtflaxare! <span class="era">2021</span></li>
+<li><a href="/karta?plats=bht-malmo-lifra-heliotropen-83"><b>Lifra Heliotropen</b></a> — Heliotropen 4 Visionsbild P-hus och Padelhall Foto: Arkitektgruppen med tillstånd av Lifra <span class="era">2024</span></li>
+<li><a href="/karta?plats=izi-malmo-malmo-live"><b>Malmö Live</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-malmo-saluhall"><b>Malmö Saluhall</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-city-library"><b>City Library</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-kungsparken"><b>Kungsparken</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-fiskehoddorna"><b>Fiskehoddorna</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-vastra-hamnen"><b>Västra Hamnen</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-turning-torso"><b>Turning Torso</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-dockan"><b>Dockan</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-terminal"><b>Terminal</b></a> — Stopp på ljudturen «Slussen Project» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-heart"><b>Heart</b></a> — Stopp på ljudturen «Slussen Project» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-st-peter"><b>St Peter</b></a> — Stopp på ljudturen «Malmö Audio Guide» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-frans-suell"><b>Frans Suell</b></a> — Stopp på ljudturen «Malmö Audio Guide» i Malmö.</li>
+<li><a href="/karta?plats=izi-malmo-oresund"><b>Öresund</b></a> — Stopp på ljudturen «Malmö Audio Guide» i Malmö.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 74</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-jorgen-kocks-hus-822"><b>Jörgen Kocks hus</b></a> — Med pengar som hustrun Citze Kortzdatter van Nuland förde i boet kunde borgmästaren, rådmannen och myntmästaren Jörgen Kock bygga sig ett f… <span class="era">1870</span></li>
+<li><a href="/p/bht-malmo-monbijouskolan-290"><b>Monbijouskolan</b></a> — Under the name Mon Bijou , this was an open-air restaurant from 1810, surrounded by shady plain trees and a lush park. <span class="era">1880</span></li>
+<li><a href="/p/bht-malmo-riksbankshuset-855"><b>Riksbankshuset</b></a> — Arkitekten John Smedberg ritade detta hus för Riksbankens räkning, en flirt med den italienska klassicismen eftersom bankväsendet en gång u… <span class="era">1888</span></li>
+<li><a href="/p/bht-malmo-epidemisjukhuset-172"><b>Epidemisjukhuset</b></a> — Gamla epidemisjukhuset på Celsiusgatan stod färdigt 1880 på samma tomt som varit Malmös avrättningsplats ca 1500-1830. <span class="era">1895</span></li>
+<li><a href="/p/bht-malmo-allmanna-sjukhuset-294"><b>Allmänna sjukhuset</b></a> — In the 1880s, the Swedish health service made it clear that Malmö s main hospital, located at Slottsgatan, was not of an acceptable standar… <span class="era">1896</span></li>
+<li><a href="/p/bht-malmo-niorumsvillan-184"><b>Niorumsvillan</b></a> — In 1897, Max and Hilma Happach moved into this nine-room villa in picture A, that stands alongside the four-storey building that housed Hap… <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-suellska-villan-305"><b>Suellska villan</b></a> — In 1796, married couple Frans Suell and Anna Cajsa af Trolle built this neat summer cottage, that they named Lugnet uti Möllevången (Peace… <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-the-prince-s-hussars-393"><b>The Prince&#39;s Hussars</b></a> — From 1897 to 1927, the barracks for the Crown Prince&#39;s Hussar Regiment were located around here. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-en-herrgard-mitt-i-stan-836"><b>En herrgård mitt i stan</b></a> — Fotografen står precis vid sidan av Caroli kyrka och tar bilden västerut. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-radhuset-878"><b>Rådhuset</b></a> — Rådhuset i Malmö är samtida med anläggandet av Stortorget. <span class="era">1903</span></li>
+<li><a href="/p/bht-malmo-malmo-bleckvarufabrik-plm-412"><b>Malmö Bleckvarufabrik/PLM</b></a> — Many of the companies that moved out to Sofielund&#39;s industrial area had previously been based in central Malmö. <span class="era">1909</span></li>
+<li><a href="/p/bht-malmo-platsen-framfor-sommarteatern-448"><b>Platsen framför sommarteatern</b></a> — Sofia came home from the strike meeting in Folkets park, and told us about it in her dreamy way. <span class="era">1909</span></li>
+<li><a href="/p/bht-malmo-sofielunds-folkets-hus-371"><b>Sofielunds Folkets hus</b></a> — Gamla Sofielund school, designed by Salomon Sörensen, was completed in 1902. <span class="era">1910</span></li>
+<li><a href="/karta?plats=bht-malmo-spanehusvagen-46-48-152"><b>Spånehusvägen 46-48</b></a> — Foto Nils Jönsson / Malmö Museer <span class="era">1917</span></li>
+<li><a href="/p/bht-malmo-per-fricks-fabrik-145"><b>Per Fricks Fabrik</b></a> — Pehr Fricks fabriker låg här ca 1911 - 1929 och bedrev cichoria och tobaksfabriksrörelse samt förarbete av trävaror . <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-sorgenfriskolan-155"><b>Sorgenfriskolan</b></a> — Ur text om Sorgenfriskolan från 1930: Flera nya skolhus ha tillkommit. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-vepan-542"><b>Trikåfabriken - Vepan</b></a> — Vi tänker inte så ofta på att det en gång i tiden fanns något helt annat där vi går idag. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-den-statliga-bilen-659"><b>Trikåfabriken - Den ståtliga bilen</b></a> — Scania bilfabrik är Sveriges första bilfabrik. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-skvallrande-huvuden-663"><b>Trikåfabriken - Skvallrande huvuden</b></a> — Finns det några som ser allt i kvarteret är dekorationshuvudena på fasaden längs Monbijougatan. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-aterforening-med-jon-och-alma-1-707"><b>Trikåfabriken - Återförening med Jon och Alma 1</b></a> — Jon: &quot;Tack för att ni berättar om allt ni sett och lärt er. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-suellska-villan-708"><b>Trikåfabriken - Suellska villan</b></a> — Suellska villan. Fin som snus när den en gång byggdes i slutet på sjuttonhundratalet - men i sämre skick nu på 1920-talet. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-utanfor-fabriksaktiebolaget-skandinavien-709"><b>Trikåfabriken - Utanför Fabriksaktiebolaget Skandinavien</b></a> — Fabriksaktiebolaget Skandinavien är en annan textilfabrik i området. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-minnesgudstjansten-vid-betesdakyrkan-715"><b>Trikåfabriken - Minnesgudstjänsten vid Betesdakyrkan</b></a> — Den nybyggda Betesdakyrkan i närheten av trikåfabriken håller i minnesgudstjänsten för Alma. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-restaurang-moriskan-720"><b>Trikåfabriken - Restaurang Moriskan</b></a> — Moriska paviljongen, eller Moriskan som alla säger, är ett nöjespalats i Folket park. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-trikafabriken-fallet-732"><b>Trikåfabriken - Fallet</b></a> — Det gäller att värdera allt bra i livet för på ett ögonblick kan det vara borta. <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-malmo-trikafabriken-samtal-med-alma-734"><b>Trikåfabriken - Samtal med Alma</b></a> — Alma: &quot;Efter att ha hört allting ni har berättat för mig så har jag en sak att dela med er. <span class="era">1920</span></li>
+<li><a href="/p/bht-malmo-rosenvingehuset-891"><b>Rosenvingehuset</b></a> — &quot;Ack människa, betänk din lott Hur Gud av jord dig skapat blott Hur döden smyger, tjuven lik Och rycker bort både arm och rik.&quot; Så lyder in… <span class="era">1920</span></li>
+<li><a href="/karta?plats=bht-malmo-annelundsgarden-1923-338"><b>Annelundsgården, 1923</b></a> — Annelundsgården, 1923 <span class="era">1923</span></li>
+<li><a href="/p/bht-malmo-sofielundsgarden-372"><b>Sofielundsgården</b></a> — Here you can see the south facade of Sofielundsgården&#39;s main building. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-lonngarden-409"><b>Lönngården</b></a> — In the early 1930s, the Lönngården area was established. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-malmo-ostra-sjukhus-1935-1995-515"><b>Malmö Östra Sjukhus (1935–1995)</b></a> — Olga Börjesson was chief physician at Malmö s psychiatric hospital. <span class="era">1935</span></li>
+<li><a href="/karta?plats=bht-malmo-bastadsgarden-barnrikehusen-165"><b>Båstadsgården &amp; Barnrikehusen</b></a> — Båstadsgården, två hus som byggdes som bostadsrätter. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-nya-sofielundsskolan-306"><b>Nya Sofielundsskolan</b></a> — Sofielund s old primary school sat beside an allotment site, Thulekolonin, which was set up in the 1910s. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-folkets-hus-315"><b>Folkets Hus</b></a> — In December 1947, the venerable Folkets Hus in Torpgatan (Sweden&#39;s first purpose built People s House) was replaced by a more modern struct… <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-malmo-radhus-court-520"><b>Malmö Rådhus court</b></a> — In 1940, around 20 gay men were prosecuted for &quot;moral crimes&quot; at the Rådhus Court. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-maskinfabriks-aktiebolaget-thule-408"><b>Maskinfabriks Aktiebolaget Thule</b></a> — Formed in 1908, this company specialised in machine tools and, a little later, industrial planers and saws. <span class="era">1942</span></li>
+<li><a href="/karta?plats=bht-malmo-barnrikehusen-fran-nobelvagen-169"><b>Barnrikehusen från Nobelvägen</b></a> — Dessa två hus är kända som Barnrikehusen och byggdes ca 1936. <span class="era">1945</span></li>
+<li><a href="/p/bht-malmo-hoghuset-180"><b>Höghuset</b></a> — In 1953, the MKB housing association built an eight-storey building here, in the Fritz neighbourhood. <span class="era">1955</span></li>
+<li><a href="/p/bht-malmo-sture-lagerwall-at-malmo-stadsteater-395"><b>Sture Lagerwall at Malmö Stadsteater</b></a> — The first thing Sture Lagerwall did when he came to the theatre, was to go into the canteen, pull down his trousers, and lie face down on a… <span class="era">1958</span></li>
+<li><a href="/karta?plats=bht-malmo-experimenthusens-affarer-160"><b>Experimenthusens affärer</b></a> — Här kunde man handla allt vad man behövde. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-malmo-experimenthusen-161"><b>Experimenthusen</b></a> — Experimenthusen producerades mellan 1952 och 1965 av Fritz Jaenecke &amp; Sten Samuelson. <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-malmo-barn-utanfor-barnrikehusen-170"><b>Barn utanför Barnrikehusen</b></a> — Barn utanför Barnrikehusen <span class="era">1960</span></li>
+<li><a href="/karta?plats=bht-malmo-radhuskallaren-468"><b>Rådhuskällaren</b></a> — From 1960 to 1969, Rådhuskällaren was a place where the gay men of Malmö met in secret. <span class="era">1960</span></li>
+<li><a href="/p/bht-malmo-kompanihuset-881"><b>Kompanihuset</b></a> — Huset byggdes under 1520-talet och har idag åter den engelskt röda färg som var dess ursprungliga. <span class="era">1960</span></li>
+<li><a href="/p/bht-malmo-nojesteatern-321"><b>Nöjesteatern</b></a> — The building that&#39;s now Nöjesteatern was originally a cinema Amiralen that opened in January 1940. <span class="era">1966</span></li>
+<li><a href="/p/bht-malmo-the-villas-of-stenberg-514"><b>The villas of Stenberg</b></a> — There was once a park here, next to the canal, in which stood one of the city&#39;s first four public toilets. <span class="era">1970</span></li>
+<li><a href="/karta?plats=bht-malmo-mkbhusen-168"><b>MKBhusen</b></a> — Foto Claes Håkansson / Malmö Museer <span class="era">1973</span></li>
+<li><a href="/p/bht-malmo-marlene-dietrich-at-malmo-stadsteater-546"><b>Marlene Dietrich at Malmö Stadsteater</b></a> — The German-born actress and singer Marlene Dietrich (1901-1992) is famous for films like 1930 s The Blue Angel (in which she kissed a woman… <span class="era">1973</span></li>
+<li><a href="/karta?plats=bht-malmo-forlagshuset-norden-ab-1974-134"><b>Förlagshuset Norden AB 1974</b></a> — Förlagshuset Norden producerade framför allt uppslagsböcker och finare böcker. <span class="era">1974</span></li>
+<li><a href="/karta?plats=bht-malmo-riven-fasad-pa-spanehusvagen-139"><b>Riven fasad på Spånehusvägen</b></a> — Foto Berti Jönsson / Malmö Museer <span class="era">1974</span></li>
+<li><a href="/p/bht-malmo-kvinnohusgruppen-i-malmo-544"><b>Kvinnohusgruppen i Malmö</b></a> — At the end of the 1970s, Kvinnohusgruppen (the Women s House Group) was formed in Malmö in a first-floor, three-room property in the west-e… <span class="era">1979</span></li>
+<li><a href="/p/bht-malmo-ribersborgs-kallbadhus-551"><b>Ribersborgs kallbadhus</b></a> — &quot;Kallis&quot;, one of the city&#39;s nude saunas and bathing spots, has been an important and well-attended unofficial meeting place for LGBTQI peop… <span class="era">1980</span></li>
+<li><a href="/p/bht-malmo-mollevangsgarden-439"><b>Möllevångsgården</b></a> — I dessa byggnader har det varit allt från glashytta till gayklubb och kulturförening! <span class="era">1983</span></li>
+<li><a href="/karta?plats=wd-malmo-katrinetorp-q10544416"><b>Katrinetorp</b></a> — Katrinetorp är en herrgård i Bunkeflo socken i Malmö kommun.</li>
+<li><a href="/karta?plats=ksamsok-krutkammaren-malmo-978680"><b>krutkammaren</b></a> — Krutkamrar av tegel och gråsten, äldre än den omgivande bastionen. <span class="era">1787–1794</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-malmo-995148"><b>GÅRDSHUS</b></a> — Gårdshus i Malmö från 1967. <span class="era">1967–1967</span></li>
+<li><a href="/karta?plats=ksamsok-fabriks-och-magasinbyggnad-malmo-977982"><b>FABRIKS- OCH MAGASINBYGGNAD</b></a> — Fabriks- och magasinbyggnad i Malmö från 1860. <span class="era">1860–1860</span></li>
+<li><a href="/karta?plats=ksamsok-mollarebostaden-malmo-049292"><b>MÖLLAREBOSTADEN</b></a> — Möllarebostad i Malmö från 1854. <span class="era">1854–1854</span></li>
+<li><a href="/p/ksamsok-malmo-stadsteater-malmo-978900"><b>MALMÖ STADSTEATER</b></a> — Malmö stadsteater, invigd 1944 och en av Europas modernaste, byggd efter Lewerentz förslag. <span class="era">1944–1944</span></li>
+<li><a href="/p/ksamsok-bensinstationen-pa-mariedalsvagen-49-malmo-030065"><b>Bensinstationen på Mariedalsvägen 49</b></a> — Funktionalistisk bensinstation från 1954, ritad av Thorsten Roos i kvarteret Tomtebo. <span class="era">1954–1954</span></li>
+<li><a href="/karta?plats=ksamsok-lansresidenset-i-malmo-malmo-357043"><b>LÄNSRESIDENSET I MALMÖ</b></a> — Länsresidenset i Malmö, två 1600-talshus sammanbyggda 1730 till residens. <span class="era">1600–1629</span></li>
+<li><a href="/karta?plats=ksamsok-vastergatslangan-malmo-995140"><b>VÄSTERGATSLÄNGAN</b></a> — Västergatslängan i Malmö från 1520-talet. <span class="era">1522–1525</span></li>
+<li><a href="/p/ksamsok-malmo-tingsratt-malmo-394715"><b>MALMÖ TINGSRÄTT</b></a> — Malmö tingsrätt, en återhållsam naturstensbyggnad med arkadgång och säkerhetssal. <span class="era">1960–1960</span></li>
+<li><a href="/karta?plats=ksamsok-forrad-malmo-049290"><b>Förråd</b></a> — Två gårdshus från sent 1800-tal, invändigt ombyggda, som använts som förråd. <span class="era">1870–1899</span></li>
+<li><a href="/p/ksamsok-bostadshus-malmo-976884"><b>BOSTADSHUS</b></a> — Korsvirkeshus från 1600-talet med empirefasad från 1803–05, ett av Malmös finaste. <span class="era">1600–1699</span></li>
+<li><a href="/karta?plats=ksamsok-beijerska-huset-malmo-995346"><b>BEIJERSKA HUSET</b></a> — Byggnad i Malmö från 1873, upptagen i Bebyggelseregistret. <span class="era">1873–1873</span></li>
+<li><a href="/p/ksamsok-centralstationen-malmo-049289"><b>CENTRALSTATIONEN</b></a> — Malmös centralstation, invigd 1872 efter Edelsvärds ritningar, med rester av det äldre stationshuset bevarade. <span class="era">1872–1872</span></li>
+<li><a href="/p/ksamsok-oxie-och-skytts-harads-forna-tingshus-malmo-381646"><b>OXIE OCH SKYTTS HÄRADS FORNA TINGSHUS</b></a> — Ståtligt tingshus från 1904 av Teodor Wåhlin med borglik karaktär och stenlejon vid entrén. <span class="era">1904–1904</span></li>
+<li><a href="/karta?plats=ksamsok-kockska-huset-malmo-995146"><b>KOCKSKA HUSET</b></a> — Byggnad i Malmö uppförd 1522–1525, upptagen i Bebyggelseregistret. <span class="era">1522–1525</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-med-butikslokaler-malmo-981180"><b>BOSTADSHUS MED BUTIKSLOKALER</b></a> — Bostadshus med butikslokaler i Malmö från 1848, upptaget i Bebyggelseregistret. <span class="era">1848–1848</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-malmo-979222"><b>GÅRDSHUS</b></a> — Gårdsflygel i Malmö som tillkom 1871 när gatuhuset byggdes om. <span class="era">1871–1871</span></li>
+<li><a href="/karta?plats=ksamsok-bostadhus-med-butikslokaler-malmo-979224"><b>BOSTADHUS MED BUTIKSLOKALER</b></a> — Bostadshus med butiker i Malmö vars äldsta delar är från tiden före 1857. <span class="era">1857–1857</span></li>
+<li><a href="/karta?plats=ksamsok-angmaskinshus-malmo-978064"><b>ÅNGMASKINSHUS</b></a> — Byggnad i Malmö från 1911, upptagen i Bebyggelseregistret. <span class="era">1911–1911</span></li>
+<li><a href="/karta?plats=ksamsok-sadesmagasin-malmo-976886"><b>SÄDESMAGASIN</b></a> — Fyravånings spannmålsmagasin i gult tegel, uppfört 1850–52 av handelsmannen Gabriel Hedman. <span class="era">1850–1852</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 42</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-sankt-johannes-kyrka-279"><b>Sankt Johannes kyrka</b></a> — När Malmö växte kraftigt i det tidiga 1900-talet behövde alla de som bebodde arbetarkvarteren i Södra Förstaden och Möllevången en egen kyr… <span class="era">1910</span></li>
+<li><a href="/p/wd-malmo-sankt-pauli-kyrka-q889213"><b>Sankt Pauli kyrka</b></a> — kyrka i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-vastra-skravlinge-kyrka-q2262193"><b>Västra Skrävlinge kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-limhamns-kyrka-q2566963"><b>Limhamns kyrka</b></a> — kyrka i området Limhamn i Malmö, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-saint-naum-of-ohrid-church-malmo-q4500971"><b>Saint Naum of Ohrid Church, Malmö</b></a> — Saint Naum of Ohrid Church, Malmö</li>
+<li><a href="/karta?plats=wd-malmo-caroli-kyrka-q4992379"><b>Caroli kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/p/wd-malmo-lockarps-kyrka-q5413449"><b>Lockarps kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-arlovs-kyrka-q10418083"><b>Arlövs kyrka</b></a> — kyrkobyggnad i Burlövs kommun</li>
+<li><a href="/karta?plats=wd-malmo-bunkeflo-kyrka-q10437757"><b>Bunkeflo kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-fosie-kyrka-q10498249"><b>Fosie kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-helgeandskyrkan-q10519529"><b>Helgeandskyrkan</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-heliga-trefaldighetskyrkan-q10520037"><b>Heliga Trefaldighetskyrkan</b></a> — kyrkobyggnad i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-husie-kyrka-q10527399"><b>Husie kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-hyllie-kyrka-q10529118"><b>Hyllie kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-kirsebergs-kyrka-q10545804"><b>Kirsebergs kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/p/wd-malmo-kramarekapellet-q10549678"><b>Krämarekapellet</b></a> — kapell i Sankt Petri kyrka, Malmö</li>
+<li><a href="/karta?plats=wd-malmo-pingstkyrkan-europaporten-q10631916"><b>Pingstkyrkan Europaporten</b></a> — kyrka i Malmö, Sverige</li>
+<li><a href="/p/wd-malmo-rosengards-kyrka-q10656979"><b>Rosengårds kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankt-andreas-kyrka-q10661318"><b>Sankt Andreas kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankt-matteus-kyrka-q10661412"><b>Sankt Matteus kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankt-mikaels-kyrka-q10661418"><b>Sankt Mikaels kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankta-katarina-kyrka-q10661528"><b>Sankta Katarina kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankta-maria-kyrka-q10661536"><b>Sankta Maria kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sodra-sallerups-kyrka-q10688984"><b>Södra Sallerups kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-tyska-kyrkan-q10707822"><b>Tyska kyrkan</b></a> — kyrkobyggnad tillhörandes Tyska evangeliska församlingen i Malmö, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-hyllie-park-kyrkan-q18331088"><b>Hyllie Park Kyrkan</b></a> — Hyllie Park Kyrkan är en kristen församling i Malmö ansluten till Evangeliska Frikyrkan med cirka 270 medlemmar.</li>
+<li><a href="/karta?plats=wd-malmo-var-fralsares-kyrka-q108064711"><b>Vår Frälsares kyrka</b></a> — kyrkobyggnad i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-vastra-skravlinge-gamla-kyrka-q110553722"><b>Västra Skrävlinge gamla kyrka</b></a> — tidigare kyrka i Västra Skrävlinge, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-hyllie-gamla-kyrka-q110553872"><b>Hyllie gamla kyrka</b></a> — tidigare kyrka i Hyllie</li>
+<li><a href="/karta?plats=wd-malmo-bunkeflo-gamla-kyrka-q110559215"><b>Bunkeflo gamla kyrka</b></a> — tidigare kyrka i Bunkeflo, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-heliga-korsets-kapell-malmo-q115595345"><b>Heliga korsets kapell, Malmö</b></a> — Heliga korsets kapell, Malmö</li>
+<li><a href="/karta?plats=wd-malmo-sankt-nicolai-kapell-malmo-q126902462"><b>Sankt Nicolai kapell, Malmö</b></a> — Sankt Nicolai kapell, Malmö</li>
+<li><a href="/karta?plats=wd-malmo-sankta-birgittas-kapell-q130477785"><b>Sankta birgittas kapell</b></a> — kapell i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-sankta-gertruds-kapell-q130477788"><b>Sankta gertruds kapell</b></a> — kapell i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-uppstandelsens-kapell-q130477798"><b>Uppståndelsens kapell</b></a> — kapell i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-s-t-matteus-diakoniexpedition-q130478076"><b>S:t matteus diakoniexpedition</b></a> — S:t matteus diakoniexpedition</li>
+<li><a href="/karta?plats=wd-malmo-heliga-kyrillos-och-methodios-kyrka-q135743885"><b>Heliga Kyrillos och Methodios kyrka</b></a> — serbisk-ortodox kyrka i Malmö, Sverige</li>
+<li><a href="/karta?plats=ksamsok-pauli-mellersta-kyrkogard-malmo-370418"><b>PAULI MELLERSTA KYRKOGÅRD</b></a> — Kyrkogård i Malmö, anlagd 1890. <span class="era">1890–1890</span></li>
+<li><a href="/karta?plats=ksamsok-sankt-matteus-kyrka-sofielundskyrkan-malmo-388836"><b>SANKT MATTEUS KYRKA (SOFIELUNDSKYRKAN)</b></a> — Sankt Matteus kyrka (Sofielundskyrkan) i Malmö, byggd 1955–1957. <span class="era">1955–1957</span></li>
+<li><a href="/karta?plats=ksamsok-frikyrka-bonehus-missionshus-malmo-367739"><b>Frikyrka / bönehus /missionshus</b></a> — Frikyrko- eller missionshusbyggnad i Malmö.</li>
+<li><a href="/p/ksamsok-sankt-petri-kyrka-malmo-370413"><b>Sankt Petri kyrka</b></a> — Malmös medeltida storkyrka i baltisk tegelgotik, byggd på 1300-talet med Lübeck som förebild. <span class="era">1100–1349</span></li>
+<li><a href="/karta?plats=ksamsok-kyrka-kapell-malmo-570118"><b>Kyrka/kapell</b></a> — Uppgift om ett medeltida kapell öster om Pildammarna.</li>
+</ul>
+<h3 class="city-h3">fornminne · 34</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-fortojningsanordning-malmo-6b7a5f"><b>Förtöjningsanordning</b></a> — Medeltida förtöjningsplats med ekpålar daterade till 1360–1388, funna vid en utgrävning 2007.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-malmo-6be9de"><b>Hamnanläggning</b></a> — Rester av en kajkonstruktion, troligen från 1800-talet, undersökt och borttagen 2014.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-4163e4"><b>Boplats</b></a> — Ungefärlig plats för en boplats med flinta och keramik, insamlade på 1910-talet.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-malmo-6daa25"><b>Fyndplats</b></a> — Fyndplats för flinta i ett torvlager, tolkat som rester av en mesolitisk skog.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-malmo-98a4a6"><b>Avrättningsplats</b></a> — Uppgift om en avrättningsplats, kallad Rackarebacken på en karta från 1697.</li>
+<li><a href="/karta?plats=ksamsok-hard-malmo-1754d6"><b>Härd</b></a> — En undersökt härd och en intilliggande fyndplats för flintspån, förvarade på Malmö museum.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-malmo-5c214c"><b>Vägmärke</b></a> — Milstolpe i kalk- eller sandsten från 1676 med kungakrona och Karl XI:s monogram.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-malmo-23c13d"><b>Fyndplats</b></a> — Fyndplats med flintspån intill en undersökt härd, materialet förvaras på Malmö museum.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-malmo-2d14ce"><b>Hällristning</b></a> — Fem älvkvarnar på ett blocks lodräta södra sida, delvis vittrade.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-d0a0d5"><b>Boplats</b></a> — Boplats med mesolitisk flinta och yngre fynd från medeltid till 1700-tal.</li>
+<li><a href="/p/ksamsok-hog-malmo-db9df2"><b>Hög</b></a> — Utplånad hög vid Celsiusgatan, även känd som avrättningsplatsen Galgebacken.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-malmo-9afe7e"><b>Hamnanläggning</b></a> — Rester av en sentida kajkonstruktion med fyra stolpar, undersökt 2014.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-malmo-add1a2"><b>Begravningsplats</b></a> — Oregelbunden begravningsplats där 22 gravar påträffats in situ.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-bb5d58"><b>Boplats</b></a> — Delundersökt boplats med gropar och flintmaterial, daterad till mellanneolitikum.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-malmo-1cac3d"><b>Hamnanläggning</b></a> — Träkaj från 1800-talet, dokumenterad vid en schaktövervakning 2007.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-malmo-2f998b"><b>Fyndplats</b></a> — Fyndplats för en ornerad hornhacka med bevarat träskaft, daterad till kongemoseperioden.</li>
+<li><a href="/karta?plats=ksamsok-fardvag-malmo-cd47f4"><b>Färdväg</b></a> — Landsväg från 1600-talet, funnen under Föreningsgatan vid schaktningar 1982 och 1985.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-fa3159"><b>Boplats</b></a> — Ungefärlig plats för en boplats med flintredskap och en möjlig megalitgrav benämnd Steendössen.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-38aec8"><b>Boplats</b></a> — Rester av förhistoriskt kulturlager och en härd, funna under medeltida lager i kvarteret Tranan.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-malmo-591be7"><b>Stadslager</b></a> — Delvis undersökt stadslager med kulturlager från medeltid, 1500- och 1600-tal.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-malmo-c4c0aa"><b>Stadslager</b></a> — Ett stadslager strax utanför det tidigare markerade, tillkommet vid utredningen 1983.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-3f92fa"><b>Boplats</b></a> — Boplats med stolphål, flinta och ben, undersökt och borttagen 2004.</li>
+<li><a href="/karta?plats=ksamsok-fyndplats-malmo-856c04"><b>Fyndplats</b></a> — Fyndplats med svallad stenåldersflinta samt yngre ben, trä och keramik från medeltiden.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-9aaee1"><b>Boplats</b></a> — Delundersökt boplats med benmaterial och en ornerad hornhacka, daterad till Maglemose–kongemose.</li>
+<li><a href="/karta?plats=ksamsok-avrattningsplats-malmo-9eab2b"><b>Avrättningsplats</b></a> — Utplånad hög vid Celsiusgatan, känd som avrättningsplatsen Galgebacken.</li>
+<li><a href="/karta?plats=ksamsok-boplatsomrade-malmo-ca6df6"><b>Boplatsområde</b></a> — Härdrester och stolphål, undersökta och borttagna.</li>
+<li><a href="/karta?plats=ksamsok-hog-malmo-e4994d"><b>Hög</b></a> — Uppgift om en hög som på en karta från 1697 kallas Rackarebacken.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-malmo-7a8644"><b>Övrigt</b></a> — En kvarnsten med tillhörande namn och tradition, med hål i mitten.</li>
+<li><a href="/karta?plats=ksamsok-dammvall-malmo-7cc560"><b>Dammvall</b></a> — Uppgift om en äldre dammvall enligt S. Rosborn 1984.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-7074b5"><b>Boplats</b></a> — Förhistoriskt kulturlager med djurben, funnet vid en utgrävning på Drottningtorget 1982.</li>
+<li><a href="/karta?plats=ksamsok-hog-malmo-287c8f"><b>Hög</b></a> — Uppgift om en hög, markerad som en backe på 1742 års karta.</li>
+<li><a href="/karta?plats=ksamsok-stenkammargrav-malmo-c2c42e"><b>Stenkammargrav</b></a> — Uppgift om en möjlig dös, kallad Stendösen på en karta från 1697.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-malmo-03772e"><b>Hamnanläggning</b></a> — Kaj av 22 träpålar på rad från mitten av 1800-talet, funnen vid en utgrävning 2007.</li>
+<li><a href="/karta?plats=ksamsok-boplats-malmo-7cc080"><b>Boplats</b></a> — Boplats med två gropar och fynd, möjligen från yngre bronsålder, undersökt av Malmö museum.</li>
+</ul>
+<h3 class="city-h3">Torn · 32</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-sodervarns-vattentorn-370"><b>Södervärns vattentorn</b></a> — Södervärn&#39;s water tower was designed by city architect Salomon Sörensen. <span class="era">1928</span></li>
+<li><a href="/p/bht-malmo-lars-eric-tornberg-1921-1943-975"><b>Lars-Eric Tornberg 1921-1943</b></a> — Lars-Eric Tornberg var en av 33 besättningsmän ombord på u-båten Ulven då den gick på en tysk mina utanför Marstrand i april 1943. <span class="era">1943</span></li>
+<li><a href="/karta?plats=bht-malmo-hagtornsgatan-20-684"><b>Hagtornsgatan 20</b></a> — Här bodde Anders Wikstrand, stuveriarbetare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-hagtornsgatan-23-686"><b>Hagtornsgatan 23</b></a> — Här bodde Oskar Arholm, svarvare, 1944. <span class="era">1944</span></li>
+<li><a href="/karta?plats=bht-malmo-hagtornsgatan-3-692"><b>Hagtornsgatan 3</b></a> — Här bodde Wiggo Larsson, kommunalarbetare, 1944. <span class="era">1944</span></li>
+<li><a href="/p/bht-malmo-fotbollsflatorna-381"><b>Fotbollsflatorna</b></a> — In the 1990s, readers of RFSL Malmö&#39;s member magazine, Traffic, were introduced to the Indigo Girls, &quot;the proud football lesbians&quot; who were… <span class="era">2001</span></li>
+<li><a href="/p/wd-malmo-malmo-inre-fyr-q39867552"><b>Malmö inre fyr</b></a> — fyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-yttre-fyr-q39868900"><b>Malmö yttre fyr</b></a> — fyr i Malmö</li>
+<li><a href="/p/wd-malmo-malmo-vagbrytarbank-q39870416"><b>Malmö vågbrytarbank</b></a> — fyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-oljehamn-nedre-q42376428"><b>Malmö Oljehamn nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-oljehamn-ovre-q42376708"><b>Malmö Oljehamn övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-ovre-q42378172"><b>Malmö övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-industrirannan-nedre-q42379491"><b>Industrirännan nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-industrirannan-ovre-q42379593"><b>Industrirännan övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-industrihamnen-q42379749"><b>Industrihamnen</b></a> — en fyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-turbinhamnen-norra-q42405789"><b>Turbinhamnen Norra</b></a> — en fyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ma-7-q109519639"><b>MA 7</b></a> — en fyr i Malmö hamn</li>
+<li><a href="/karta?plats=wd-malmo-limhamn-norra-q109851610"><b>Limhamn Norra</b></a> — en f.d. fyr i Limhamn i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-nr-11-q110292240"><b>Malmö Nr 11</b></a> — en fyr i Malmö hamn</li>
+<li><a href="/karta?plats=wd-malmo-turbinhamnen-sodra-q110292388"><b>Turbinhamnen Södra</b></a> — en fyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-limhamns-bathamn-ovre-q110821354"><b>Limhamns Båthamn övre</b></a> — en ensfyr i Limhamn i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-limhamns-bathamn-nedre-q110821353"><b>Limhamns Båthamn nedre</b></a> — en ensfyr i Limhamn i Malmö kommun</li>
+<li><a href="/karta?plats=wd-malmo-malmo-nedre-q42376971"><b>Malmö nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-frihamn-nedre-q42378421"><b>Malmö Frihamn nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-malmo-frihamn-ovre-q42378582"><b>Malmö Frihamn övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ma-rod-nedre-q110291079"><b>MA Röd nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ma-rod-ovre-q110291080"><b>MA Röd övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ma-grona-ovre-q110291851"><b>MA Gröna övre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ma-grona-nedre-q110291849"><b>MA Gröna nedre</b></a> — en ensfyr i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-fh-3-q110292134"><b>FH 3</b></a> — en fyr i Malmö hamn</li>
+<li><a href="/karta?plats=wd-malmo-fh-4-q110292133"><b>FH 4</b></a> — en fyr i Malmö hamn</li>
+<li><a href="/karta?plats=wd-malmo-malmo-nr-10-q110292242"><b>Malmö Nr 10</b></a> — en fyr i Malmö hamn</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 23</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-lundbergska-tradgarden-459"><b>Lundbergska trädgården</b></a> — Two acres of land here at the southern end of the park, next to what is now Kristianstadsgatan, were once owned by a commercial gardening c… <span class="era">1897</span></li>
+<li><a href="/p/bht-malmo-browns-conditoritradgard-477"><b>Browns Conditoriträdgård</b></a> — This was once the site of Browns Conditoriträdgård, a &quot;first-class summer restaurant, next to the sports field with a beautiful forest park… <span class="era">1906</span></li>
+<li><a href="/p/bht-malmo-tradgardsmastarbostaden-361"><b>Trädgårdsmästarbostaden</b></a> — During his stay in Rome around 1836, Danish sculptor Bertel Thorvaldsen (1770 - 1844) made a series of four reliefs that he named The Ages… <span class="era">1907</span></li>
+<li><a href="/p/bht-malmo-abba-draw-a-crowd-to-folkets-park-1094"><b>ABBA draw a crowd to Folkets Park</b></a> — ABBA performed in Folkets Park on July 3, 1975. <span class="era">1975</span></li>
+<li><a href="/p/bht-malmo-the-park-outside-4-an-235"><b>The park outside 4:an</b></a> — Sadly, threats and violence have been part of Malmö&#39;s LGBTQI history, affecting the lives of many LGBTQI people. <span class="era">1988</span></li>
+<li><a href="/p/wd-malmo-pildammsparken-q1579207"><b>Pildammsparken</b></a> — park i Malmö, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-beijers-park-q3133813"><b>Beijers park</b></a> — park i stadsdelen Kirseberg, Malmö</li>
+<li><a href="/p/wd-malmo-bulltoftaparken-q4997067"><b>Bulltoftaparken</b></a> — park i Malmö</li>
+<li><a href="/p/wd-malmo-cronhielmsparken-q5187705"><b>Cronhielmsparken</b></a> — park belägen i stadsdelen Rosengård i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-gerlachs-park-q5550935"><b>Gerlachs park</b></a> — Gerlachs park är en park belägen i stadsdelen Kirseberg i Malmö.</li>
+<li><a href="/p/wd-malmo-ronneholmsparken-q7386690"><b>Rönneholmsparken</b></a> — Rönneholmsparken är en av Malmös mindre parker.</li>
+<li><a href="/p/wd-malmo-rorsjoparken-q7386697"><b>Rörsjöparken</b></a> — park i Malmö, Sverige</li>
+<li><a href="/karta?plats=wd-malmo-scaniaparken-q7430034"><b>Scaniaparken</b></a> — grönområde i Malmö</li>
+<li><a href="/p/wd-malmo-sibbarp-q7506950"><b>Sibbarp</b></a> — område om Malmö</li>
+<li><a href="/karta?plats=wd-malmo-oresundsparken-q8079016"><b>Öresundsparken</b></a> — park i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-kroksbacksparken-q10549384"><b>Kroksbäcksparken</b></a> — Kroksbäcksparken är en park och delområde belägen i stadsdelen Hyllie i stadsområdet Väster i Malmö.</li>
+<li><a href="/karta?plats=wd-malmo-garnisonsplanteringen-q18290090"><b>Garnisonsplanteringen</b></a> — park i stadsdelen Kirseberg, Malmö</li>
+<li><a href="/karta?plats=wd-malmo-ogardsparken-q18335292"><b>Ögårdsparken</b></a> — Ögårdsparken är en park i Malmö belägen mellan Almgården och Herrgården.</li>
+<li><a href="/karta?plats=wd-malmo-goingeplan-q120500037"><b>Göingeplan</b></a> — park i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-falsterboplan-q120504903"><b>Falsterboplan</b></a> — park i Malmö</li>
+<li><a href="/p/wd-malmo-kastanjeplatsen-q124696081"><b>Kastanjeplatsen</b></a> — park i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-slottstradgarden-q130530659"><b>Slottsträdgården</b></a> — park i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-magistratsparken-q136231312"><b>Magistratsparken</b></a> — park i Malmö</li>
+</ul>
+<h3 class="city-h3">Torg · 15</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-saluhallen-lilla-torg-861"><b>Saluhallen, Lilla torg</b></a> — Stadsarkitekten Salomon Sörensen var den som ritade saluhallen som mellan åren 1903 1968 kom att ligga på större delen av torgets utlagda y… <span class="era">1903</span></li>
+<li><a href="/p/bht-malmo-mitt-pa-mollevangstorget-337"><b>Mitt på Möllevångstorget</b></a> — Malmö featured in the 1588 version of Braun and Hogenberg&#39;s Civitates Orbis Terrarum (Atlas of Cities of the World). <span class="era">1910</span></li>
+<li><a href="/p/bht-malmo-drottningtorget-841"><b>Drottningtorget</b></a> — Drottningtorget är uppkallat efter drottning Fredrika av Baden, gift med den svenske kungen Gustav IV Adolf. <span class="era">1940</span></li>
+<li><a href="/p/bht-malmo-konsthallstorget-352"><b>Konsthallstorget</b></a> — On the left of the photograph, you can see Malmö s craft guild (Malmö Hantverksförening), which was designed in 1916 by the prolific archit… <span class="era">1943</span></li>
+<li><a href="/karta?plats=wd-malmo-anna-lindhs-plats-q10412357"><b>Anna Lindhs plats</b></a> — plats i Malmö Centrum</li>
+<li><a href="/p/wd-malmo-dalaplan-q10466058"><b>Dalaplan</b></a> — Dalaplan är en gammal och viktig trafikknutpunkt i den sydligaste delen av centrala Malmö.</li>
+<li><a href="/p/wd-malmo-gustav-adolfs-torg-q10511131"><b>Gustav Adolfs torg</b></a> — torg i Malmö</li>
+<li><a href="/p/wd-malmo-nobeltorget-q10601532"><b>Nobeltorget</b></a> — Nobeltorget är en av Malmös mest trafikerade platser i korsningen av Nobelvägen och Amiralsgatan.</li>
+<li><a href="/p/wd-malmo-sodra-fisktorget-q10688887"><b>Södra Fisktorget</b></a> — Södra Fisktorget är ett litet torg i Malmö i närheten av Möllevångstorget.</li>
+<li><a href="/p/wd-malmo-varnhemstorget-q18334864"><b>Värnhemstorget</b></a> — Värnhemstorget är ett torg och sedan länge en viktig trafikknutpunkt i Malmö, där Lundavägen, Sallerupsvägen, Föreningsgatan och Östra Förs…</li>
+<li><a href="/karta?plats=wd-malmo-olof-palmes-plats-q52826274"><b>Olof Palmes plats</b></a> — del av Nobel Torget i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-hyllie-stationstorg-q125101321"><b>Hyllie stationstorg</b></a> — torg i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-kirsebergs-torg-q125175991"><b>Kirsebergs torg</b></a> — torg i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-masttorget-q125194582"><b>Masttorget</b></a> — torg i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-dag-hammarskjolds-torg-q138649567"><b>Dag Hammarskjölds torg</b></a> — Dag Hammarskjölds torg</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 13</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-olof-palmes-staty-428"><b>Olof Palmes staty</b></a> — Olof Palme (1927 - 1986) was a Social Democrat politician and two-time Prime Minister of Sweden (1969 - 76 and 1982 - 86) who was assassina… <span class="era">1989</span></li>
+<li><a href="/p/wd-malmo-optimistorkestern-q10610966"><b>Optimistorkestern</b></a> — skulptur</li>
+<li><a href="/karta?plats=wd-malmo-byst-av-hjalmar-branting-q52820376"><b>Byst av Hjalmar Branting</b></a> — Malmö folkets park</li>
+<li><a href="/karta?plats=wd-malmo-per-albin-hansson-byst-q52825892"><b>Per Albin Hansson byst</b></a> — byst i Hyllie</li>
+<li><a href="/karta?plats=wd-malmo-zlatan-statyn-q78013113"><b>Zlatan-statyn</b></a> — skulptur i Malmö föreställande Zlatan Ibrahimovic</li>
+<li><a href="/karta?plats=wd-malmo-staty-av-limhamnskungen-berg-q103838852"><b>Staty av limhamnskungen Berg</b></a> — i Limhamn</li>
+<li><a href="/karta?plats=wd-malmo-emigranterna-q116695069"><b>Emigranterna</b></a> — skulptur av Carl Milles</li>
+<li><a href="/p/ksamsok-minnesmarke-malmo-55714d"><b>Minnesmärke</b></a> — Två minnesplattor som berättar om Kockska huset och den intilliggande Dringenbergska gården.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-malmo-fc9bfa"><b>Minnesmärke</b></a> — Två minnesplattor kring flyttade gravstenar över Frans Suell och landshövdingen Johann Cronman.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-malmo-c1194f"><b>Minnesmärke</b></a> — Kopparplatta över en port med uppgift om Annellska och Påhlssonska huset från 1705.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-malmo-31b15a"><b>Minnesmärke</b></a> — Flenburgska gården, ett byggnadsminne troligen från 1595, med minnesplatta om samma årtal.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-malmo-affebb"><b>Minnesmärke</b></a> — Nära fem meter hög minnessten till minne av Baltiska utställningen i Malmö 1914.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-malmo-5a4d8d"><b>Minnesmärke</b></a> — Naturformad minnessten om Frans Suells park och dess omvandling till Folkets park.</li>
+</ul>
+<h3 class="city-h3">museum · 10</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-thekla-edstrands-konstmuseum-867"><b>Thekla Edstrands konstmuseum</b></a> — Några hus har rivits och nya står på dess plats, men generellt är det en husrad som är hyfsat intakt, kan man se på bilderna. <span class="era">1900</span></li>
+<li><a href="/p/bht-malmo-gasverket-elverket-rooseum-moderna-museet-853"><b>Gasverket/Elverket/Rooseum/Moderna museet</b></a> — 1852 ansökte den engelske ingenjören Henry Alexander Milne om att få bygga ett gasverk och svara för belysningen på stadens gator. <span class="era">1901</span></li>
+<li><a href="/karta?plats=wd-malmo-malmo-konsthall-q633078"><b>Malmö Konsthall</b></a> — svensk konsthall för nutida konst</li>
+<li><a href="/p/wd-malmo-moderna-museet-malmo-q1718267"><b>Moderna Museet Malmö</b></a> — konstmuseum och -utställningshall i Malmö. Del av Moderna Museet.</li>
+<li><a href="/p/wd-malmo-idrottsmuseet-i-malmo-q10534154"><b>Idrottsmuseet i Malmö</b></a> — före detta idrottsmuseum i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-limhamns-museum-q10562024"><b>Limhamns Museum</b></a> — Limhamns museum, Soldattorpet, är ett svenskt hembygdsmuseum vid Limhamnsvägen 102 i Limhamn i Malmö kommun.</li>
+<li><a href="/p/wd-malmo-koggmuseet-q10546943"><b>Koggmuseet</b></a> — nedlagt skeppsmuseum i Malmö</li>
+<li><a href="/p/wd-malmo-malmo-museum-q10576120"><b>Malmö museum</b></a> — museum i Malmö</li>
+<li><a href="/p/wd-malmo-wowragarden-q10720657"><b>Wowragården</b></a> — gård i Södra Sallerup, Malmö, Sverige</li>
+<li><a href="/p/wd-malmo-oscar-olsson-museet-q17487669"><b>Oscar Olsson-museet</b></a> — museum om Oscar Olsson, även känd som &quot;Olsson med skägget&quot;</li>
+</ul>
+<h3 class="city-h3">Bro · 9</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-morescobron-872"><b>Morescobron</b></a> — Pälsar och damkappor var största inkomstkällan för AB Moresco som lät bygga upp sitt fabrikshus precis intill vid Torggatan. <span class="era">1910</span></li>
+<li><a href="/p/wd-malmo-universitetsbron-q10709723"><b>Universitetsbron</b></a> — Universitetsbron i Malmö, byggd 2004 (invigd 28 augusti), är en snedkabelbro som sammanbinder Skeppsbron med Hjälmarekajen.</li>
+<li><a href="/karta?plats=wd-malmo-alvsborgsbron-q10725757"><b>Älvsborgsbron</b></a> — bro i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-fersens-bro-q55376873"><b>Fersens bro</b></a> — bro i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-hjalmarbron-q55376891"><b>Hjälmarbron</b></a> — Hjälmarbron</li>
+<li><a href="/karta?plats=wd-malmo-malarbron-q55376935"><b>Mälarbron</b></a> — bro i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-petribron-q55377000"><b>Petribron</b></a> — Petribron</li>
+<li><a href="/karta?plats=wd-malmo-beijers-bro-q133767980"><b>Beijers bro</b></a> — Beijers bro</li>
+<li><a href="/karta?plats=wd-malmo-styrmansbron-q133798866"><b>Styrmansbron</b></a> — Styrmansbron</li>
+</ul>
+<h3 class="city-h3">Slott · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=izi-malmo-slottsparken"><b>Slottsparken</b></a> — Stopp på ljudturen «Bicycle Audio Guide Malmö» i Malmö.</li>
+<li><a href="/karta?plats=wd-malmo-malmohus-q1810918"><b>Malmöhus</b></a> — slott i Malmö</li>
+<li><a href="/karta?plats=wd-malmo-skogsholms-borg-q29475160"><b>Skogsholms borg</b></a> — borg i Skåne (Oxie 42:1)</li>
+<li><a href="/karta?plats=ksamsok-slottsmollan-malmo-978540"><b>slottsmöllan</b></a> — Anläggning i Malmö från 1851, upptagen i Bebyggelseregistret. <span class="era">1851–1851</span></li>
+</ul>
+<h3 class="city-h3">Station · 3</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-sodervarns-station-234"><b>Södervärns station</b></a> — Södervärn station was built in 1886, on the Malmö-Ystad line that opened in 1874. <span class="era">1905</span></li>
+<li><a href="/p/bht-malmo-omnibusstationen-237"><b>Omnibusstationen</b></a> — In 1887, horse-drawn trams were introduced to Malmö, operated by a private company. <span class="era">1930</span></li>
+<li><a href="/p/bht-malmo-jarnvagsovergangen-325"><b>Järnvägsövergången</b></a> — From 1874, when the railway between Malmö and Ystad was opened, trains ran along what is now Lönngatan, and effectively divided the area in… <span class="era">1960</span></li>
+</ul>
+<h3 class="city-h3">Hotell · 2</h3>
+<ul class="place-list">
+<li><a href="/p/bht-malmo-hotel-horn-hotell-savoy-864"><b>Hotel Horn/Hotell Savoy</b></a> — There has been an inn on this site since the Middle Ages. <span class="era">1914</span></li>
+<li><a href="/p/bht-malmo-hotell-nornan-405"><b>Hotell Nornan</b></a> — The legendary boundary-smashing trans person &quot;Merry Lou&quot;, aka Marie-Louise Simonsen, ran the Hotell Nornan on Västergatan for a number of y… <span class="era">1960</span></li>
+</ul>
+<h3 class="city-h3">Borgruin · 1</h3>
+<ul class="place-list">
+<li><a href="/p/ksamsok-borg-malmo-db8a7d"><b>Borg</b></a> — Försvarsverk kring Malmöhus med bastioner och vallgravar, delvis undersökt vid flera tillfällen.</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 503 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/malmo/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/malmo/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Malmö gratis?</summary><p>Ja. Karta, alla 503 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Malmö?</summary><p>Vandringen samlar 503 sevärdheter i Malmö — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Kaptensgatan adventure?</summary><p>Se huset i bakgrunden</p></details>
+<details class="faq"><summary>Vad är Caspar Trendelenburg 1755-1820?</summary><p>Här vilar Caspar Trendelenburg och hans hustru Catharina f.</p></details>
+<details class="faq"><summary>Vad är Hans Canon 1794-1837?</summary><p>Hans Canon var föreståndare för fängelset på Malmöhus, med runt tusen fångar som levde tätt samman i den medeltida borgen.</p></details>
+<details class="faq"><summary>Vad är Mjölkbutiken på Landbygatan?</summary><p>Alma Falkman berättar i sina minnen från 1860/70-talets Malmö om en kvinna som etablerade sin näring på Landbygatan.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

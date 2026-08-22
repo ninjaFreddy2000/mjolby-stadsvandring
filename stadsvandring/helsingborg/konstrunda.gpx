@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Helsingborg</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="56.083581260914514" lon="12.658434128765133"><name>Minnesmärke</name><desc>Två minnesstenar med anknytning till Sofieros anläggande 1865.</desc></wpt>
+  <wpt lat="56.06466604148711" lon="12.679508600486075"><name>Minnesmärke</name><desc>En minnessten över Dag Hammarskjöld.</desc></wpt>
+  <wpt lat="56.04635942788868" lon="12.692289521388037"><name>Ånglok &amp; staty</name><desc>Här stod Stenbocksstatyn mellan 1901 och 1959.</desc></wpt>
+  <wpt lat="56.046195888012356" lon="12.693346992309671"><name>Statyn flyttas</name><desc>Stenbocken stod mitt i gatan och flyttades våren 1959 20 m västerut till sin nuvarande plats.</desc></wpt>
+  <wpt lat="56.046388888889" lon="12.693722222222"><name>Magnus Stenbocks staty</name><desc>staty i Helsingborg</desc></wpt>
+  <wpt lat="56.03722222" lon="12.61583333"><name>Han</name><desc>Han</desc></wpt>
+  <wpt lat="56.03868" lon="12.61243"><name>Danserindebrønden</name><desc>Danserindebrønden</desc></wpt>
+  <rte><name>Konstrundan i Helsingborg</name>
+    <rtept lat="56.083581260914514" lon="12.658434128765133"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.06466604148711" lon="12.679508600486075"><name>Minnesmärke</name></rtept>
+    <rtept lat="56.04635942788868" lon="12.692289521388037"><name>Ånglok &amp; staty</name></rtept>
+    <rtept lat="56.046195888012356" lon="12.693346992309671"><name>Statyn flyttas</name></rtept>
+    <rtept lat="56.046388888889" lon="12.693722222222"><name>Magnus Stenbocks staty</name></rtept>
+    <rtept lat="56.03722222" lon="12.61583333"><name>Han</name></rtept>
+    <rtept lat="56.03868" lon="12.61243"><name>Danserindebrønden</name></rtept>
+  </rte>
+</gpx>

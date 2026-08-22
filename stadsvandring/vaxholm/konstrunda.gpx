@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Konstrundan i Vaxholm</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="59.40646487025528" lon="18.338894692994167"><name>Minnesmärke</name><desc>En övertorvad kolerakyrkogård i Vaxholm med en gravsten över en fanjunkare.</desc></wpt>
+  <wpt lat="59.40531455918307" lon="18.34495153829757"><name>Minnesmärke</name><desc>En minnessten från 1939 över Vaxö läger, flankerad av två gamla kanoner.</desc></wpt>
+  <wpt lat="59.403352681914185" lon="18.34771488359287"><name>Minnesmärke</name><desc>En minnessten över grundandet av Sankt Petri kyrka i Vaxholm år 1644.</desc></wpt>
+  <rte><name>Konstrundan i Vaxholm</name>
+    <rtept lat="59.40646487025528" lon="18.338894692994167"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.40531455918307" lon="18.34495153829757"><name>Minnesmärke</name></rtept>
+    <rtept lat="59.403352681914185" lon="18.34771488359287"><name>Minnesmärke</name></rtept>
+  </rte>
+</gpx>

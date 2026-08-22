@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Stadsvandring.io" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>Kyrkostigen i Eksjö</name><link href="https://stadsvandring.io"><text>Stadsvandring.io</text></link></metadata>
+  <wpt lat="57.667247" lon="14.971619"><name>Eksjö kyrka</name><desc>kyrkobyggnad i Svenska kyrkan i Eksjö, Sverige</desc></wpt>
+  <wpt lat="57.665083333333" lon="14.974222222222"><name>Eksjö missionskyrka</name><desc>kyrka i Eksjö</desc></wpt>
+  <wpt lat="57.64974016551157" lon="14.958127354414842"><name>SKOGSKAPELLET</name><desc>Ett skogskapell vid en begravningsplats formad av trädgårdsarkitekt Sven A Hermelin.</desc></wpt>
+  <wpt lat="57.64875100049981" lon="14.988307751053053"><name>MARIAKAPELLET</name><desc>Eksjös första stadsdelskyrka, byggd i Kvarnarp vintern 1993–1994.</desc></wpt>
+  <wpt lat="57.612975" lon="15.025625"><name>Höreda kyrka</name><desc>kyrkobyggnad i Eksjö kommun</desc></wpt>
+  <rte><name>Kyrkostigen i Eksjö</name>
+    <rtept lat="57.667247" lon="14.971619"><name>Eksjö kyrka</name></rtept>
+    <rtept lat="57.665083333333" lon="14.974222222222"><name>Eksjö missionskyrka</name></rtept>
+    <rtept lat="57.64974016551157" lon="14.958127354414842"><name>SKOGSKAPELLET</name></rtept>
+    <rtept lat="57.64875100049981" lon="14.988307751053053"><name>MARIAKAPELLET</name></rtept>
+    <rtept lat="57.612975" lon="15.025625"><name>Höreda kyrka</name></rtept>
+  </rte>
+</gpx>

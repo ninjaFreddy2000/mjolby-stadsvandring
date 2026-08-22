@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Vaxholm — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Vaxholm till fots: 80 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 80 stopp och nedladdningsbar PDF-…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/vaxholm">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Vaxholm — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Vaxholm till fots: 80 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 80 stopp och nedladdningsbar PDF-…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/vaxholm">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Vaxholm — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Vaxholm till fots: 80 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 80 stopp och nedladdningsbar PDF-…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"vaxholm","sourceSlug":"stadsvandring/vaxholm","centroid":{"lat":59.39969928721049,"lng":18.359822136523682},"stops":[{"name":"Bogesunds slott","lat":59.39333333,"lng":18.28444444},{"name":"12:e batteriet på Rindö","lat":59.40611111,"lng":18.36361111},{"name":"Byviksfortet","lat":59.39972222,"lng":18.42583333}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Vaxholm","description":"Upptäck Vaxholm till fots: 80 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/vaxholm","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Bogesunds slott","description":"slott i Vaxholm","url":"https://stadsvandring.io/p/wd-vaxholm-bogesunds-slott-q4937567","geo":{"@type":"GeoCoordinates","latitude":59.39333333,"longitude":18.28444444}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"12:e batteriet på Rindö","description":"historiskt försvarsverk uppfördes för att komplettera Rindö redutt.","url":"https://stadsvandring.io/p/wd-vaxholm-12-e-batteriet-pa-rindo-q10397084","geo":{"@type":"GeoCoordinates","latitude":59.40611111,"longitude":18.36361111}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Byviksfortet","description":"militär installation i Vaxholms kommun","url":"https://stadsvandring.io/p/wd-vaxholm-byviksfortet-q10438363","geo":{"@type":"GeoCoordinates","latitude":59.39972222,"longitude":18.42583333}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Ekuddsparken","description":"Ekuddsparken är en park i Vaxholm.","geo":{"@type":"GeoCoordinates","latitude":59.40163056,"longitude":18.34406944}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Kronuddens batteri","description":"militär installation i Vaxholms kommun","geo":{"@type":"GeoCoordinates","latitude":59.40527778,"longitude":18.35361111}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Kummelnäs kapell","description":"kyrkobyggnad i Nacka kommun","geo":{"@type":"GeoCoordinates","latitude":59.35270833,"longitude":18.27793056}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Norrnäs","description":"herrgårdshus i Stockholm, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.38194444,"longitude":18.46222222}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Pålsundsbatteriet","description":"militär installation i Vaxholms kommun","geo":{"@type":"GeoCoordinates","latitude":59.39777778,"longitude":18.32138889}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Resarö kapell","description":"kyrkobyggnad i Vaxholms kommun","geo":{"@type":"GeoCoordinates","latitude":59.42875,"longitude":18.33405556}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Vaxholms kyrka","description":"kyrkobyggnad i Svenska kyrkan i Vaxholm, Sverige","geo":{"@type":"GeoCoordinates","latitude":59.4034,"longitude":18.34745}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Väster Skägga Gård","description":"Väster Skägga gård är en 190 hektar stor gård, på norra Värmdö, som år 1883 köptes av Carl Anders Lindroth.","url":"https://stadsvandring.io/p/wd-vaxholm-vaster-skagga-gard-q10717862","geo":{"@type":"GeoCoordinates","latitude":59.415,"longitude":18.44027778}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"11:e batteriet, Rindö","description":"två bunkrar murade i gråsten","geo":{"@type":"GeoCoordinates","latitude":59.39916667,"longitude":18.39583333}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Parkvillan","description":"Parkvillan vid Bogesunds slott","geo":{"@type":"GeoCoordinates","latitude":59.394580976273,"longitude":18.2889152923}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Elfviksgrund","description":"fyr vid Lidingö utanför Stockholm","geo":{"@type":"GeoCoordinates","latitude":59.364,"longitude":18.259}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Brödstyckets fyr","description":"fyr vid Trälhavet i Stockholms skärgård","geo":{"@type":"GeoCoordinates","latitude":59.423777777778,"longitude":18.40425}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Kodjupets fyr","description":"före detta fyr i Kodjupet vid Vaxholm","geo":{"@type":"GeoCoordinates","latitude":59.418166666667,"longitude":18.345916666667}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Östra Ryd 7:1","description":"minnesmärke i Uppland","geo":{"@type":"GeoCoordinates","latitude":59.393049,"longitude":18.28479}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Östra Ryd 169:1","description":"minnesmärke i Uppland","geo":{"@type":"GeoCoordinates","latitude":59.391519,"longitude":18.293685}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Lerviksudde fyr","description":"fyr vid Trälhavet utanför Åkersberga","geo":{"@type":"GeoCoordinates","latitude":59.452888888889,"longitude":18.387388888889}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Bjurögrund","description":"en fyr i Saxarfjärden i Stockholms skärgård","geo":{"@type":"GeoCoordinates","latitude":59.442777777778,"longitude":18.439916666667}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Björnsgrundet","description":"en fyr i Halvkakssundet öster om Lidingö","geo":{"@type":"GeoCoordinates","latitude":59.366472222222,"longitude":18.3105}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Bogesunds fyr","description":"fyr i Askrikefjärden utanför Stockholm","geo":{"@type":"GeoCoordinates","latitude":59.380805555556,"longitude":18.304}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Furuholmens fyr","description":"en fyr i Höggarnsfjärden utanför Stockholm","geo":{"@type":"GeoCoordinates","latitude":59.371722222222,"longitude":18.33525}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Granholmens fyr","description":"fyr söder om Vaxholm i Stockholms skärgård","geo":{"@type":"GeoCoordinates","latitude":59.377694444444,"longitude":18.294333333333}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Lagnögrund","description":"en fyr mellan Tynningö och Norra Lagnö i Stockholms skärgård","geo":{"@type":"GeoCoordinates","latitude":59.3586,"longitude":18.41505}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Vaxholm gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 80 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Vaxholm?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 80 sevärdheter i Vaxholm — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Bogesunds slott?","acceptedAnswer":{"@type":"Answer","text":"slott i Vaxholm"}},{"@type":"Question","name":"Vad är 12:e batteriet på Rindö?","acceptedAnswer":{"@type":"Answer","text":"historiskt försvarsverk uppfördes för att komplettera Rindö redutt."}},{"@type":"Question","name":"Vad är Byviksfortet?","acceptedAnswer":{"@type":"Answer","text":"militär installation i Vaxholms kommun"}},{"@type":"Question","name":"Vad är Ekuddsparken?","acceptedAnswer":{"@type":"Answer","text":"Ekuddsparken är en park i Vaxholm."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Vaxholm","item":"https://stadsvandring.io/stadsvandring/vaxholm"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Vaxholm</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Vaxholm</span><span class="badge">80 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Vaxholm — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Vaxholm till fots: 80 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Vaxholm"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-vaxholm-bogesunds-slott-q4937567"><b>1. Bogesunds slott</b><span>Slott · slott i Vaxholm</span></a>
+<a class="tile" href="/p/wd-vaxholm-12-e-batteriet-pa-rindo-q10397084"><b>2. 12:e batteriet på Rindö</b><span>Borgruin · historiskt försvarsverk uppfördes för att komplettera Rindö redutt.</span></a>
+<a class="tile" href="/p/wd-vaxholm-byviksfortet-q10438363"><b>3. Byviksfortet</b><span>Borgruin · militär installation i Vaxholms kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Vaxholm · 80</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Vaxholm. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Torn · 26</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-elfviksgrund-q28375621"><b>Elfviksgrund</b></a> — fyr vid Lidingö utanför Stockholm</li>
+<li><a href="/karta?plats=wd-vaxholm-brodstyckets-fyr-q28375635"><b>Brödstyckets fyr</b></a> — fyr vid Trälhavet i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-kodjupets-fyr-q28375694"><b>Kodjupets fyr</b></a> — före detta fyr i Kodjupet vid Vaxholm</li>
+<li><a href="/karta?plats=wd-vaxholm-lerviksudde-fyr-q32276945"><b>Lerviksudde fyr</b></a> — fyr vid Trälhavet utanför Åkersberga</li>
+<li><a href="/karta?plats=wd-vaxholm-bjurogrund-q33129589"><b>Bjurögrund</b></a> — en fyr i Saxarfjärden i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-bjornsgrundet-q33129597"><b>Björnsgrundet</b></a> — en fyr i Halvkakssundet öster om Lidingö</li>
+<li><a href="/karta?plats=wd-vaxholm-bogesunds-fyr-q33129608"><b>Bogesunds fyr</b></a> — fyr i Askrikefjärden utanför Stockholm</li>
+<li><a href="/karta?plats=wd-vaxholm-furuholmens-fyr-q33131160"><b>Furuholmens fyr</b></a> — en fyr i Höggarnsfjärden utanför Stockholm</li>
+<li><a href="/karta?plats=wd-vaxholm-granholmens-fyr-q33131418"><b>Granholmens fyr</b></a> — fyr söder om Vaxholm i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-lagnogrund-q33137877"><b>Lagnögrund</b></a> — en fyr mellan Tynningö och Norra Lagnö i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-lilla-hoggarnsbank-q33139091"><b>Lilla Höggarnsbank</b></a> — fyr i Höggarnsfjärden utanför Lidingö</li>
+<li><a href="/karta?plats=wd-vaxholm-oxdjupet-vastra-q33179873"><b>Oxdjupet Västra</b></a> — en fyr vid Oxdjupet i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-sandgrundets-fyr-q33180739"><b>Sandgrundets fyr</b></a> — en fyr vid Vaxholm</li>
+<li><a href="/karta?plats=wd-vaxholm-stora-berteln-q33184072"><b>Stora Berteln</b></a> — en fyr vid Trälhavet och Lindalssundet</li>
+<li><a href="/karta?plats=wd-vaxholm-stora-hoggarnsbank-q33184466"><b>Stora Höggarnsbank</b></a> — en fyr i Höggarnsfjärden utanför Lidingö</li>
+<li><a href="/karta?plats=wd-vaxholm-tisterogrundet-q33195107"><b>Tisterögrundet</b></a> — en fyr vid Trälhavet</li>
+<li><a href="/karta?plats=wd-vaxholm-tynningo-fyr-q33196430"><b>Tynningö fyr</b></a> — en fyr vid Tynningö i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-varmdo-garpen-q33200844"><b>Värmdö-Garpen</b></a> — en fyr mellan Tynningö och Värmdö i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-oxdjupet-ostra-q33200965"><b>Oxdjupet Östra</b></a> — en fyr vid Oxdjupet i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-vastra-ronnholmen-q33225232"><b>Västra Rönnholmen</b></a> — fyr vid Resarö i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-ostra-algogrundet-q33227913"><b>Östra Älgögrundet</b></a> — fyr i Saxarfjärden i Stockholms skärgård</li>
+<li><a href="/karta?plats=wd-vaxholm-tynningo-farjelage-q110997386"><b>Tynningö färjeläge</b></a> — en fyr i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-norra-lagno-farjelage-q110997387"><b>Norra Lagnö färjeläge</b></a> — en fyr i Värmdö kommun</li>
+<li><a href="/karta?plats=ksamsok-kruttornet-vaxholm-691544"><b>KRUTTORNET</b></a> — Ett krutförvaringstorn i Vaxholm från kastellepoken 1833–63. <span class="era">1833–1863</span></li>
+<li><a href="/karta?plats=ksamsok-livtorn-vaxholm-050839"><b>Livtorn</b></a> — Ett torn i Vaxholm känt som Livtornet.</li>
+<li><a href="/karta?plats=ksamsok-klockstapel-vaxholm-029487"><b>Klockstapel</b></a> — En klockstapel från 1760 i Vaxholm med två klockor skänkta av Per Brahe 1670. <span class="era">1760–1760</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 24</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-teno-krog-husgrund-historisk-tid-vaxholm-066c3c"><b>Tenö krog, Husgrund, historisk tid</b></a> — Husgrunden efter Tenö krog i Vaxholm, en värdshusplats belagd på karta redan 1784.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-vaxholm-07fb2a"><b>Husgrund, historisk tid</b></a> — Resterna av en husgrund i Vaxholm, idag en flack rektangulär terrass.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-vaxholm-6de89c"><b>Militär anläggning övrig</b></a> — Den murade grunden efter ett kolhus i Vaxholm, ingrävt i en sluttning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-vaxholm-2ac7e2"><b>Husgrund, historisk tid</b></a> — En husgrund på en stensatt terrass i Vaxholm.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vaxholm-7b256c"><b>Fartygs-/båtlämning</b></a> — Vraket efter en militär ångbåt på djupet vid Vaxholm.</li>
+<li><a href="/karta?plats=ksamsok-hamnanlaggning-vaxholm-82f9de"><b>Hamnanläggning</b></a> — En stenkaj i Vaxholm som ansluter till en alltjämt använd betongbrygga.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-vaxholm-bc387f"><b>Militär anläggning övrig</b></a> — En större husgrund med murad stenfot i Vaxholm.</li>
+<li><a href="/karta?plats=ksamsok-militar-anlaggning-ovrig-vaxholm-ce8398"><b>Militär anläggning övrig</b></a> — Ett fort känt som 22:a batteriet i Vaxholm, med murade rum inbyggda i en gräsbevuxen vall.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vaxholm-f630b9"><b>Fartygs-/båtlämning</b></a> — En fartygslämning vid Vaxholm med ett andra vrak alldeles intill.</li>
+<li><a href="/karta?plats=ksamsok-tomtning-vaxholm-88149e"><b>Tomtning</b></a> — En tomtning vid Vaxholm där berg och murad vall bildar två rum.</li>
+<li><a href="/karta?plats=ksamsok-lagenhetsbebyggelse-vaxholm-fff613"><b>Lägenhetsbebyggelse</b></a> — Platsen för Storwasstorpet i Vaxholm, ett torp känt från kartor mellan 1798 och 1832.</li>
+<li><a href="/karta?plats=ksamsok-terrassering-vaxholm-5faf7f"><b>Terrassering</b></a> — En omsorgsfullt murad terrassering i Vaxholm med en stentrappa upp till en husgrund.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-vaxholm-af8844"><b>Husgrund, historisk tid</b></a> — En husgrund med källare och spår av en spismur i Vaxholm.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vaxholm-6f8740"><b>Begravningsplats</b></a> — En övervuxen kolerakyrkogård i Vaxholm, kännetecknad av låga gravförhöjningar.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vaxholm-ee89de"><b>Fartygs-/båtlämning</b></a> — Ett svåråtkomligt vrak i dyn vid Vaxholm, med kraftiga spant av ask.</li>
+<li><a href="/p/ksamsok-sparranordning-vaxholm-dcc090"><b>Spärranordning</b></a> — En timmerspärr från 1656 mellan Vaxholm och Rindö, del av försvaret som Gustav Vasa grundade 1544.</li>
+<li><a href="/p/ksamsok-husgrund-historisk-tid-vaxholm-235a18"><b>Husgrund, historisk tid</b></a> — En husgrund i Löwenströmska trädgården, känd från en karta kring 1730 och rik på fynd från 1700–1900-tal.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-vaxholm-c6e3d6"><b>Ristning, medeltid/historisk tid</b></a> — En berghällsristning med Oscar II:s monogram och datumet 19 juni 1886.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vaxholm-ec1211"><b>Fartygs-/båtlämning</b></a> — Ett träbåtsvrak vid Vaxholm, kanske knutet till gamla militära pirar.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-vaxholm-8aaa41"><b>Begravningsplats</b></a> — En kolerakyrkogård i Vaxholm där ett fyrtiotal begravningar återfanns vid schaktning 1977.</li>
+<li><a href="/karta?plats=ksamsok-fartygs-batlamning-vaxholm-434394"><b>Fartygs-/båtlämning</b></a> — Vraket efter Agda vid Vaxholm, sänkt av jakten Sirena i en olycka som doldes till december 1912.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-vaxholm-c3ff2a"><b>Brott/täkt</b></a> — En vattenfylld fältspatgruva i Vaxholm med slaggvarp intill.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-vaxholm-3896df"><b>Brott/täkt</b></a> — Ett bergsprängt stenbrott i Vaxholm med synliga borrhål efter sprängning.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-vaxholm-f4ec4f"><b>Husgrund, historisk tid</b></a> — Grunden efter en byggnad i Vaxholm som en militärkarta anger som sommarbostad.</li>
+</ul>
+<h3 class="city-h3">Borgruin · 8</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vaxholm-12-e-batteriet-pa-rindo-q10397084"><b>12:e batteriet på Rindö</b></a> — historiskt försvarsverk uppfördes för att komplettera Rindö redutt.</li>
+<li><a href="/p/wd-vaxholm-byviksfortet-q10438363"><b>Byviksfortet</b></a> — militär installation i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-kronuddens-batteri-q10549534"><b>Kronuddens batteri</b></a> — militär installation i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-palsundsbatteriet-q10647906"><b>Pålsundsbatteriet</b></a> — militär installation i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-11-e-batteriet-rindo-q16486121"><b>11:e batteriet, Rindö</b></a> — två bunkrar murade i gråsten</li>
+<li><a href="/p/ksamsok-vaxholms-kastell-fastning-skans-vaxholm-f055a1"><b>Vaxholms kastell, Fästning/skans</b></a> — Vaxholms kastell, vars försvarshistoria börjar med en skans 1549–58 och som fick sitt nuvarande namn 1920.</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-vaxholm-6a25eb"><b>Fästning/skans</b></a> — Ett befästningsverk från 1858–64 som ingick i försvaret av Vaxholmssunden.</li>
+<li><a href="/karta?plats=ksamsok-fastning-skans-vaxholm-b30848"><b>Fästning/skans</b></a> — En skans av jordvallar och terrasser på en holme vid Vaxholm, med en möjlig kanonställning.</li>
+</ul>
+<h3 class="city-h3">Byggnad · 8</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-norrnas-q10602920"><b>Norrnäs</b></a> — herrgårdshus i Stockholm, Sverige</li>
+<li><a href="/p/wd-vaxholm-vaster-skagga-gard-q10717862"><b>Väster Skägga Gård</b></a> — Väster Skägga gård är en 190 hektar stor gård, på norra Värmdö, som år 1883 köptes av Carl Anders Lindroth.</li>
+<li><a href="/karta?plats=ksamsok-bostadshus-vaxholm-585830"><b>BOSTADSHUS</b></a> — Ett bostadshus i Vaxholm med rötter i 1776. <span class="era">1776–1776</span></li>
+<li><a href="/p/ksamsok-vaxholms-kastell-vaxholm-355479"><b>VAXHOLMS KASTELL</b></a> — Ett kastell från 1833–63 vid Stockholms inlopp som var föråldrat redan vid invigningen och kallades Sveriges dyraste vedbod. <span class="era">1833–1863</span></li>
+<li><a href="/p/ksamsok-villa-akleja-vaxholm-585829"><b>VILLA AKLEJA</b></a> — En sommarvilla från 1870-talet i Vaxholm som konstnären J A G Acke byggde om med en tegelateljé 1901. <span class="era">1870–1879</span></li>
+<li><a href="/p/ksamsok-radhuset-vaxholm-vaxholm-720253"><b>RÅDHUSET, VAXHOLM</b></a> — Ett klassicerande trärådhus från 1885, ritat av bröderna Kumlien, med rådsal, häkte och borgmästarbostad. <span class="era">1885–1885</span></li>
+<li><a href="/p/ksamsok-rindo-redutt-vaxholm-049329"><b>RINDÖ REDUTT</b></a> — Ett befäst logement från 1859–64 på Rindö som förstärkte Vaxholms kastells försvar av inloppet. <span class="era">1859–1864</span></li>
+<li><a href="/karta?plats=ksamsok-gravkor-vaxholm-029488"><b>Gravkor</b></a> — Ett vitputsat gravkor från 1818 på Vaxholms kyrkogård, byggt för familjen Åkerberg. <span class="era">1800–1818</span></li>
+</ul>
+<h3 class="city-h3">Kyrka · 4</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-kummelnas-kapell-q10550104"><b>Kummelnäs kapell</b></a> — kyrkobyggnad i Nacka kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-resaro-kapell-q10651146"><b>Resarö kapell</b></a> — kyrkobyggnad i Vaxholms kommun</li>
+<li><a href="/karta?plats=wd-vaxholm-vaxholms-kyrka-q10713492"><b>Vaxholms kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Vaxholm, Sverige</li>
+<li><a href="/karta?plats=wd-vaxholm-vaxholms-gravkapell-q130477800"><b>Vaxholms gravkapell</b></a> — kapell i Vaxholms kommun</li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 3</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxholm-6c6be7"><b>Minnesmärke</b></a> — En minnessten från 1939 över Vaxö läger, flankerad av två gamla kanoner.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxholm-d9c89a"><b>Minnesmärke</b></a> — En övertorvad kolerakyrkogård i Vaxholm med en gravsten över en fanjunkare.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-vaxholm-3befb6"><b>Minnesmärke</b></a> — En minnessten över grundandet av Sankt Petri kyrka i Vaxholm år 1644.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-ekuddsparken-q10480805"><b>Ekuddsparken</b></a> — Ekuddsparken är en park i Vaxholm.</li>
+<li><a href="/karta?plats=wd-vaxholm-parkvillan-q24284130"><b>Parkvillan</b></a> — Parkvillan vid Bogesunds slott</li>
+</ul>
+<h3 class="city-h3">Sevärdhet · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-ostra-ryd-7-1-q29861725"><b>Östra Ryd 7:1</b></a> — minnesmärke i Uppland</li>
+<li><a href="/karta?plats=wd-vaxholm-ostra-ryd-169-1-q29861983"><b>Östra Ryd 169:1</b></a> — minnesmärke i Uppland</li>
+</ul>
+<h3 class="city-h3">museum · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-vaxholm-j-a-g-ackemuseet-q54868701"><b>J.A.G. Ackemuseet</b></a> — museum Vaxholm</li>
+<li><a href="/p/wd-vaxholm-batmagasinet-pa-rindo-q68110240"><b>Båtmagasinet på Rindö</b></a> — båtmagasin för Sjöhistoriska museet</li>
+</ul>
+<h3 class="city-h3">Slott · 1</h3>
+<ul class="place-list">
+<li><a href="/p/wd-vaxholm-bogesunds-slott-q4937567"><b>Bogesunds slott</b></a> — slott i Vaxholm</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 80 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/vaxholm/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/vaxholm/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Vaxholm gratis?</summary><p>Ja. Karta, alla 80 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Vaxholm?</summary><p>Vandringen samlar 80 sevärdheter i Vaxholm — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Bogesunds slott?</summary><p>slott i Vaxholm</p></details>
+<details class="faq"><summary>Vad är 12:e batteriet på Rindö?</summary><p>historiskt försvarsverk uppfördes för att komplettera Rindö redutt.</p></details>
+<details class="faq"><summary>Vad är Byviksfortet?</summary><p>militär installation i Vaxholms kommun</p></details>
+<details class="faq"><summary>Vad är Ekuddsparken?</summary><p>Ekuddsparken är en park i Vaxholm.</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>

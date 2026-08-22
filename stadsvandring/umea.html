@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2A6B">
+<title>Stadsvandring i Umeå — gratis karta, guide &amp; PDF | Stadsvandring.io</title>
+<meta name="description" content="Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 147 stopp och nedladdningsbar PDF-g…">
+<link rel="canonical" href="https://stadsvandring.io/stadsvandring/umea">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stadsvandring">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Stadsvandring i Umeå — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta property="og:description" content="Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 147 stopp och nedladdningsbar PDF-g…">
+<meta property="og:url" content="https://stadsvandring.io/stadsvandring/umea">
+<meta property="og:image" content="https://stadsvandring.io/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stadsvandring i Umeå — gratis karta, guide &amp; PDF | Stadsvandring.io">
+<meta name="twitter:description" content="Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring. Karta, 147 stopp och nedladdningsbar PDF-g…">
+<meta name="twitter:image" content="https://stadsvandring.io/images/og.jpg">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="application/json" id="lm-data">{"citySlug":"umea","sourceSlug":"stadsvandring/umea","centroid":{"lat":63.825984922226375,"lng":20.263285465739123},"stops":[{"name":"Bildmuseet","lat":63.8203253,"lng":20.276306522366},{"name":"Backens kyrka","lat":63.8308,"lng":20.1699},{"name":"Böleängkyrkan","lat":63.8175,"lng":20.21194444}]}</script>
+<style>
+.lm-map{height:300px;border-radius:14px;border:1px solid var(--line);margin:0 0 22px;background:#eee}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 0}
+.faq p{margin:0 0 14px;color:var(--muted)}
+.gate input[type=email]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:4px 0 10px}
+.gate .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin:0 0 14px}
+.gate .cta{border:0;cursor:pointer;width:100%;font-size:16px}
+.lm-status{font-size:14px;margin:10px 0 0;min-height:1em}
+.lm-status.ok{color:#1a7f37}
+.lm-status.err{color:#b3261e}
+</style>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<script defer src="/vendor/supabase.js"></script>
+<script defer src="/vendor/leaflet/leaflet.js"></script>
+<script type="module" src="/leadmagnet.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristTrip","name":"Stadsvandring i Umeå","description":"Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.","url":"https://stadsvandring.io/stadsvandring/umea","touristType":"Sightseeing","itinerary":{"@type":"ItemList","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"Bildmuseet","description":"svensk statligt ägd konsthall för internationell samtidskonst och visuell kultur i Umeå.","url":"https://stadsvandring.io/p/wd-umea-bildmuseet-q4907651","geo":{"@type":"GeoCoordinates","latitude":63.8203253,"longitude":20.276306522366}}},{"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"Backens kyrka","description":"kyrkobyggnad i Svenska kyrkan i Umeå, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.8308,"longitude":20.1699}}},{"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"Böleängkyrkan","description":"kyrkobyggnad i Umeå kommun","url":"https://stadsvandring.io/p/wd-umea-boleangkyrkan-q10438709","geo":{"@type":"GeoCoordinates","latitude":63.8175,"longitude":20.21194444}}},{"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"Carlskyrkan","description":"kyrkobyggnad i stadsdelen Carlshem i Umeå, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.79861111,"longitude":20.31527778}}},{"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"Den förhistoriska världen","description":"Den förhistoriska världen är ett naturvetenskapligt museum i Umeå med speciell inriktning på tro och vetande, med en kreationistisk profil.","url":"https://stadsvandring.io/p/wd-umea-den-forhistoriska-varlden-q10468623","geo":{"@type":"GeoCoordinates","latitude":63.83694167,"longitude":20.24037222}}},{"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"Ersbodakyrkan","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.85666667,"longitude":20.31166667}}},{"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"Ersmarkskyrkan","description":"kyrkobyggnad i Umeå","geo":{"@type":"GeoCoordinates","latitude":63.88286111,"longitude":20.31755556}}},{"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"Grisbackakyrkan","description":"kyrka i Umeå kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.83413889,"longitude":20.21741667}}},{"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"Grön eld, Umeå","description":"Grön eld är en 9 meter hög grön glasskulptur utförd av Vicke Lindstrand.","geo":{"@type":"GeoCoordinates","latitude":63.8294,"longitude":20.2664}}},{"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"Hedlundakyrkan","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.83164978,"longitude":20.23576736}}},{"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"Helena Elisabeth kyrka","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.8287,"longitude":20.2895}}},{"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"Jesu Kristi kyrka","description":"mormonernas kyrkobyggnad i Umeå","geo":{"@type":"GeoCoordinates","latitude":63.805,"longitude":20.32194444}}},{"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"Korskyrkan","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.8276,"longitude":20.25918333}}},{"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"Mariakyrkan","description":"kyrka i Umeå, Sverige","url":"https://stadsvandring.io/p/wd-umea-mariakyrkan-q10577240","geo":{"@type":"GeoCoordinates","latitude":63.84444427,"longitude":20.32805634}}},{"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"Norra Skenet","description":"Norra skenet är en skulptur av Ernst Nordin och en symbol för Umeå universitet.","url":"https://stadsvandring.io/p/wd-umea-norra-skenet-q10602562","geo":{"@type":"GeoCoordinates","latitude":63.820805555556,"longitude":20.302444444444}}},{"@type":"ListItem","position":16,"item":{"@type":"TouristAttraction","name":"Umeå pingstkyrka","description":"kyrkobyggnad i Umeå, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.8243,"longitude":20.2732}}},{"@type":"ListItem","position":17,"item":{"@type":"TouristAttraction","name":"Röbäcks kapell","description":"kyrka i Umeå kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.79748333,"longitude":20.20033333}}},{"@type":"ListItem","position":18,"item":{"@type":"TouristAttraction","name":"Tegs kyrka","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.81958889,"longitude":20.25465833}}},{"@type":"ListItem","position":19,"item":{"@type":"TouristAttraction","name":"Vasakyrkan","description":"kyrka i Umeå kommun, Sverige","geo":{"@type":"GeoCoordinates","latitude":63.82586389,"longitude":20.26687222}}},{"@type":"ListItem","position":20,"item":{"@type":"TouristAttraction","name":"Västerslättskyrkan S:t Staffan","description":"kyrkobyggnad i Umeå kommun","url":"https://stadsvandring.io/p/wd-umea-vasterslattskyrkan-s-t-staffan-q10718015","geo":{"@type":"GeoCoordinates","latitude":63.83638889,"longitude":20.2325}}},{"@type":"ListItem","position":21,"item":{"@type":"TouristAttraction","name":"Ålidhemskyrkan","description":"kyrkobyggnad i Umeå kommun","geo":{"@type":"GeoCoordinates","latitude":63.8125,"longitude":20.30361111}}},{"@type":"ListItem","position":22,"item":{"@type":"TouristAttraction","name":"Guitars – the Museum","description":"gitarrmuseum","url":"https://stadsvandring.io/p/wd-umea-guitars-the-museum-q15980608","geo":{"@type":"GeoCoordinates","latitude":63.827222222222,"longitude":20.268055555556}}},{"@type":"ListItem","position":23,"item":{"@type":"TouristAttraction","name":"Kvinnohistoriskt museum","description":"museum i Umeå specialiserat på kvinnohistoria","geo":{"@type":"GeoCoordinates","latitude":63.824888888889,"longitude":20.261027777778}}},{"@type":"ListItem","position":24,"item":{"@type":"TouristAttraction","name":"Eye Benches II","description":"Eye Benches II är en skulptur av den fransk-amerikanska skulptören Louise Bourgeois, inköpt av Balticgruppen för Umedalens skulpturpark.","geo":{"@type":"GeoCoordinates","latitude":63.835588888889,"longitude":20.166380555556}}},{"@type":"ListItem","position":25,"item":{"@type":"TouristAttraction","name":"Laddningsplats för ljushuvuden","description":"Konstsoffor uppvärmda med fjärrvärme med inbyggd bredbandsanslutning.","geo":{"@type":"GeoCoordinates","latitude":63.82802,"longitude":20.26786}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Är stadsvandringen i Umeå gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja. Karta, alla 147 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen."}},{"@type":"Question","name":"Hur många sevärdheter ingår i stadsvandringen i Umeå?","acceptedAnswer":{"@type":"Answer","text":"Vandringen samlar 147 sevärdheter i Umeå — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots."}},{"@type":"Question","name":"Vad är Bildmuseet?","acceptedAnswer":{"@type":"Answer","text":"svensk statligt ägd konsthall för internationell samtidskonst och visuell kultur i Umeå."}},{"@type":"Question","name":"Vad är Backens kyrka?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Svenska kyrkan i Umeå, Sverige"}},{"@type":"Question","name":"Vad är Böleängkyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i Umeå kommun"}},{"@type":"Question","name":"Vad är Carlskyrkan?","acceptedAnswer":{"@type":"Answer","text":"kyrkobyggnad i stadsdelen Carlshem i Umeå, Sverige"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://stadsvandring.io/"},{"@type":"ListItem","position":2,"name":"Stadsvandringar","item":"https://stadsvandring.io/platser"},{"@type":"ListItem","position":3,"name":"Stadsvandring i Umeå","item":"https://stadsvandring.io/stadsvandring/umea"}]}</script>
+<style>
+:root{--ink:#1b2a4a;--muted:#5a6680;--bg:#F3EAD8;--card:#fff;--accent:#0A2A6B;--line:#e6dcc6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Mulish,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+a{color:var(--accent)}
+header.site{display:flex;align-items:center;gap:10px;padding:8px 0 20px;border-bottom:1px solid var(--line);margin-bottom:24px}
+header.site .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+header.site b{font-size:18px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 14px}
+nav.crumbs a{color:var(--muted);text-decoration:none}
+h1{font-size:30px;line-height:1.15;margin:6px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.badge{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px}
+.lead{font-size:18px;color:var(--ink);font-weight:500;margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px}
+h2{font-size:18px;margin:0 0 10px}
+ul.facts{margin:0;padding-left:18px}
+ul.facts li{margin:6px 0}
+.sources li{margin:6px 0;word-break:break-word}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.contribute{background:#F3F7EE;border-left:4px solid #5E8C53}
+.contribute h2{margin-top:0}
+.city-h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.place-list{list-style:none;padding:0;margin:0}
+.place-list li{padding:7px 0;border-bottom:1px solid #eee;font-size:15px;line-height:1.5}
+.place-list li:last-child{border-bottom:none}
+.place-list a{text-decoration:none}
+.place-list a b{color:var(--accent)}
+.place-list .era{color:#777;font-size:13px;white-space:nowrap}
+footer.site{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+.tile b{display:block;color:var(--ink);margin-bottom:3px}
+.tile span{font-size:13px;color:var(--muted)}
+.city-h{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 10px}
+figure.hero{margin:0 0 18px}
+figure.hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figure.hero figcaption{font-size:12px;color:var(--muted);margin:6px 2px 0}
+</style>
+</head>
+<body data-lm-page="teaser">
+<div class="wrap">
+<header class="site">
+  <a class="mark" href="/" aria-label="Stadsvandring.io — hem">S</a>
+  <div><b>Stadsvandring.io</b></div>
+</header>
+
+<nav class="crumbs"><a href="/">Hem</a> › <a href="/platser">Stadsvandringar</a> › Umeå</nav>
+<div class="badges"><span class="badge">🚶 Stadsvandring</span><span class="badge">📍 Umeå</span><span class="badge">147 stopp</span><span class="badge">Gratis</span></div>
+<h1>Stadsvandring i Umeå — gratis karta &amp; guide</h1>
+<p class="lead">Upptäck Umeå till fots: 147 sevärdheter med karta, historia och berättelser — en gratis självguidad stadsvandring.</p>
+<div id="lm-map" class="lm-map" role="img" aria-label="Karta över stadsvandringen i Umeå"></div>
+<h2 class="city-h">Tre stopp att börja med</h2>
+<div class="grid two">
+<a class="tile" href="/p/wd-umea-bildmuseet-q4907651"><b>1. Bildmuseet</b><span>museum · svensk statligt ägd konsthall för internationell samtidskonst och visuell kultu…</span></a>
+<a class="tile" href="/p/wd-umea-backens-kyrka-q10424162"><b>2. Backens kyrka</b><span>Kyrka · kyrkobyggnad i Svenska kyrkan i Umeå, Sverige</span></a>
+<a class="tile" href="/p/wd-umea-boleangkyrkan-q10438709"><b>3. Böleängkyrkan</b><span>Kyrka · kyrkobyggnad i Umeå kommun</span></a>
+</div>
+
+<h2 class="city-h">Alla platser i Umeå · 147</h2>
+<p>Hela listan över kartlagda sevärdheter, byggnader, personer och händelser i
+Umeå. Platser med en egen sida länkar dit; övriga öppnas direkt i kartan.</p>
+<h3 class="city-h3">Byggnad · 54</h3>
+<ul class="place-list">
+<li><a href="/p/wd-umea-tegsgarden-q28379800"><b>Tegsgården</b></a> — herrgård i Umeå</li>
+<li><a href="/karta?plats=ksamsok-ostra-flygeln-umea-694644"><b>ÖSTRA FLYGELN</b></a> — Östra flygeln är en av två rödmålade trälängor från 1859–1862. <span class="era">1859–1862</span></li>
+<li><a href="/p/ksamsok-seminariet-for-huslig-utbildning-umea-697544"><b>SEMINARIET FÖR HUSLIG UTBILDNING</b></a> — Ett seminarium från 1950-talet ritat av Nils Tesch med inredning av Carl Malmsten. <span class="era">1953–1960</span></li>
+<li><a href="/p/ksamsok-radhuset-i-umea-umea-584826"><b>RÅDHUSET I UMEÅ</b></a> — Umeås rådhus från 1890, en tegelbyggnad med klocktorn och paradtrappa. <span class="era">1890–1890</span></li>
+<li><a href="/karta?plats=ksamsok-vastra-flygeln-umea-694645"><b>VÄSTRA FLYGELN</b></a> — Västra flygeln är en av två rödmålade trälängor från 1859–1862. <span class="era">1859–1862</span></li>
+<li><a href="/p/ksamsok-gamla-bankhuset-smorasken-umea-585951"><b>GAMLA BANKHUSET, &quot;SMÖRASKEN&quot;</b></a> — Länets första bankhus från 1877, av folkhumorn kallat Smörasken. <span class="era">1877–1877</span></li>
+<li><a href="/karta?plats=ksamsok-forrad-umea-357755"><b>FÖRRÅD</b></a> — Ett förråd i Umeå uppfört 1909. <span class="era">1909–1909</span></li>
+<li><a href="/karta?plats=ksamsok-trapaviljongen-umea-694931"><b>TRÄPAVILJONGEN</b></a> — En timrad paviljong för mentalpatienter från 1866. <span class="era">1866–1866</span></li>
+<li><a href="/karta?plats=ksamsok-jordkallare-umea-052073"><b>Jordkällare</b></a> — En jordkällare i Umeå från 1940-talet. <span class="era">1940–1949</span></li>
+<li><a href="/karta?plats=ksamsok-kasern-umea-357745"><b>KASERN</b></a> — En kasern i Umeå uppförd 1908. <span class="era">1908–1908</span></li>
+<li><a href="/p/ksamsok-bankhuset-handelsbanken-umea-585003"><b>BANKHUSET (HANDELSBANKEN)</b></a> — Ett bankhus från 1894 ritat av Ernst Stenhammar efter en arkitekttävling. <span class="era">1894–1894</span></li>
+<li><a href="/karta?plats=ksamsok-matsalsbyggnad-umea-357748"><b>MATSALSBYGGNAD</b></a> — En matsalsbyggnad i Umeå uppförd 1908. <span class="era">1908–1908</span></li>
+<li><a href="/karta?plats=ksamsok-stenpaviljongen-umea-578304"><b>STENPAVILJONGEN</b></a> — En operationspaviljong av tegel från 1897 ritad av Axel Kumlien. <span class="era">1897–1897</span></li>
+<li><a href="/karta?plats=ksamsok-administrationsbyggnad-umea-357744"><b>ADMINISTRATIONSBYGGNAD</b></a> — En administrationsbyggnad i Umeå uppförd 1908. <span class="era">1908–1908</span></li>
+<li><a href="/karta?plats=ksamsok-gardshus-umea-585998"><b>GÅRDSHUS</b></a> — Ett gårdshus som ursprungligen rymde stall och kuskbostad. <span class="era">1900–1907</span></li>
+<li><a href="/karta?plats=ksamsok-uthus-umea-052071"><b>Uthus</b></a> — Ett uthus i Umeå från 1894. <span class="era">1894–1894</span></li>
+<li><a href="/karta?plats=ksamsok-annex-umea-697542"><b>ANNEX</b></a> — Ett annex i Umeå från 1941, upptaget i Bebyggelseregistret. <span class="era">1941–1941</span></li>
+<li><a href="/p/ksamsok-bostadshus-ripan-3-umea-584768"><b>BOSTADSHUS, RIPAN 3</b></a> — Tvåvåningshus från 1870-talet där tonsättaren Wilhelm Peterson-Berger bodde som ung. <span class="era">1870–1879</span></li>
+<li><a href="/karta?plats=ksamsok-stolpbod-umea-694933"><b>STOLPBOD</b></a> — En knuttimrad stolpbod från 1737, flyttad hit från andra sidan vägen. <span class="era">1737–1737</span></li>
+<li><a href="/p/ksamsok-bostadshus-umea-578266"><b>BOSTADSHUS</b></a> — Timrat bostadshus från 1871 med rikt utformad fasad och snidad portal från 1940. <span class="era">1871–1871</span></li>
+<li><a href="/p/ksamsok-skolbyggnad-umea-697538"><b>SKOLBYGGNAD</b></a> — Välbevarad skolanläggning från 1925 i tjugotalsklassicism, ritad av Gustav Holmdahl. <span class="era">1925–1925</span></li>
+<li><a href="/karta?plats=ksamsok-barack-umea-357752"><b>BARACK</b></a> — En barackbyggnad i Umeå från 1916, upptagen i Bebyggelseregistret. <span class="era">1916–1916</span></li>
+<li><a href="/p/ksamsok-bostadshus-umea-577981"><b>BOSTADSHUS</b></a> — Rikt dekorerat timmerhus från 1890, byggt åt lektor Waldenström efter stadsbranden. <span class="era">1890–1890</span></li>
+<li><a href="/karta?plats=ksamsok-flygelbyggnad-umea-578157"><b>FLYGELBYGGNAD</b></a> — Ett uthus från 1874 vid Nytorgsgatan som senare byggdes om till bostäder och kontor. <span class="era">1870–1879</span></li>
+<li><a href="/p/ksamsok-cellfangelset-umea-694646"><b>CELLFÄNGELSET</b></a> — Ett gulputsat cellfängelse från 1859–1862 av den mindre, raka typen. <span class="era">1859–1862</span></li>
+<li><a href="/karta?plats=ksamsok-kasern-umea-357743"><b>KASERN</b></a> — En kasern i Umeå från 1908, upptagen i Bebyggelseregistret. <span class="era">1908–1908</span></li>
+<li><a href="/karta?plats=ksamsok-tradgardsmastarbostaden-umea-578274"><b>TRÄDGÅRDSMÄSTARBOSTADEN</b></a> — En trädgårdsmästarbostad från 1905 med ursprunglig lägenhet och stall för tre hästar. <span class="era">1905–1905</span></li>
+<li><a href="/p/ksamsok-sparbankshuset-umea-585064"><b>SPARBANKSHUSET</b></a> — Sparbankshus från 1917 i nationell tegelstil, ritat av Torben Grut. <span class="era">1917–1917</span></li>
+<li><a href="/karta?plats=ksamsok-garage-umea-052072"><b>Garage</b></a> — Ett garage i Umeå från 1954, upptaget i Bebyggelseregistret. <span class="era">1954–1954</span></li>
+<li><a href="/p/ksamsok-fralsningsarmens-samlingslokal-umea-578106"><b>FRÄLSNINGSARMÉNS SAMLINGSLOKAL</b></a> — Före detta biograf Svea från 1918 som Frälsningsarmén övertog som samlingslokal. <span class="era">1918–1918</span></li>
+<li><a href="/p/ksamsok-bole-overstelojtnantsbostalle-umea-578116"><b>BÖLE ÖVERSTELÖJTNANTSBOSTÄLLE</b></a> — Ett militärboställe med manbyggnad från 1761, i bruk för Västerbottens regemente till 1897. <span class="era">1761–1761</span></li>
+<li><a href="/karta?plats=ksamsok-officersmass-umea-357738"><b>OFFICERSMÄSS</b></a> — En officersmäss i Umeå från 1910, upptagen i Bebyggelseregistret. <span class="era">1910–1910</span></li>
+<li><a href="/karta?plats=ksamsok-exercishus-umea-357749"><b>EXERCISHUS</b></a> — Ett exercishus i Umeå från 1908, upptaget i Bebyggelseregistret. <span class="era">1908–1908</span></li>
+<li><a href="/karta?plats=ksamsok-stationshuset-umea-umea-357760"><b>STATIONSHUSET, UMEÅ</b></a> — Umeås stationshus från 1896, upptaget i Bebyggelseregistret. <span class="era">1896–1896</span></li>
+<li><a href="/p/ksamsok-rektor-johanssons-gard-umea-578071"><b>REKTOR JOHANSSONS GÅRD</b></a> — Timmerhus från 1876, byggt åt läroverkets rektor Johan Johansson. <span class="era">1876–1876</span></li>
+<li><a href="/p/ksamsok-moritzska-garden-umea-584727"><b>MORITZSKA GÅRDEN</b></a> — Praktfull timmergård från 1891, flyttad 1983 till kyrkbrons norra ände. <span class="era">1891–1891</span></li>
+<li><a href="/karta?plats=ksamsok-hovratten-for-ovre-norrland-umea-584836"><b>HOVRÄTTEN FÖR ÖVRE NORRLAND</b></a> — Byggnad från 1887 som rymt seminarium, museum och sedan 1936 hovrätten för övre Norrland. <span class="era">1887–1887</span></li>
+<li><a href="/karta?plats=ksamsok-hantverkshuset-aschanska-villan-umea-584846"><b>HANTVERKSHUSET, ASCHANSKA VILLAN</b></a> — Villa från åren kring sekelskiftet 1900, rest på hög granitsockel mot älven. <span class="era">1888–1899</span></li>
+<li><a href="/p/ksamsok-tingshus-umea-030171"><b>Tingshus</b></a> — Tingshus från 1990-talet som tilldelades arkitekturpriset Umespiran 1995. <span class="era">1992–1994</span></li>
+<li><a href="/p/ksamsok-tingshus-umea-030172"><b>Tingshus</b></a> — Tingshus från 1955–1958, uppfört i etapper och prisat som ett av landets vackraste. <span class="era">1955–1958</span></li>
+<li><a href="/p/ksamsok-fargaren-1-umea-694927"><b>FÄRGAREN 1</b></a> — Välbevarat bostads- och butikshus från 1882 vid Storgatan, byggt åt färgaren Höglander. <span class="era">1882–1882</span></li>
+<li><a href="/karta?plats=ksamsok-televerkets-hus-umea-umea-695093"><b>TELEVERKETS HUS, UMEÅ</b></a> — Televerkets hus i Umeå från 1900, upptaget i Bebyggelseregistret. <span class="era">1900–1900</span></li>
+<li><a href="/p/ksamsok-residenset-umea-699456"><b>RESIDENSET</b></a> — Länsresidens från 1891–1894 med tjänstelokaler och landshövdingebostad. <span class="era">1891–1894</span></li>
+<li><a href="/p/ksamsok-gamla-lasarettet-umea-578002"><b>GAMLA LASARETTET</b></a> — Ett av landets äldsta bevarade lasarettshus, timrat 1785. <span class="era">1785–1785</span></li>
+<li><a href="/p/ksamsok-gamla-slojdskolan-umea-049960"><b>GAMLA SLÖJDSKOLAN</b></a> — Slöjdskola från 1879, ett av få bevarade hus från 1870-talets Umeå. <span class="era">1879–1879</span></li>
+<li><a href="/p/ksamsok-ringstrandska-villan-umea-584733"><b>RINGSTRANDSKA VILLAN</b></a> — Rödfärgad trävilla från 1899, byggd åt jägmästare Nils Ringstrand. <span class="era">1899–1899</span></li>
+<li><a href="/karta?plats=ksamsok-sjukhusbyggnad-umea-357751"><b>SJUKHUSBYGGNAD</b></a> — En sjukhusbyggnad i Umeå från 1908, upptagen i Bebyggelseregistret. <span class="era">1908–1908</span></li>
+<li><a href="/p/ksamsok-scharinska-villan-umea-578175"><b>SCHARINSKA VILLAN</b></a> — Villa av arkitekten Ragnar Östberg, ett av hans främsta ungdomsverk. <span class="era">1900–1929</span></li>
+<li><a href="/p/ksamsok-von-ahnska-magasinet-umea-697550"><b>VON AHNSKA MAGASINET</b></a> — Handelsgårdsmagasin med äldsta del från 1887, väl bevarat vid älvstranden. <span class="era">1887–1887</span></li>
+<li><a href="/karta?plats=ksamsok-bostadshus-umea-578038"><b>BOSTADSHUS</b></a> — Två timmerhus från 1870-talet i kvarteret Ripan, ritade av stadsbyggmästare Pettersson. <span class="era">1870–1879</span></li>
+<li><a href="/p/ksamsok-gamla-tullmagasinet-umea-578166"><b>GAMLA TULLMAGASINET</b></a> — Gemensamt hamnmagasin i tegel från 1901, med lokaler för tullkammaren. <span class="era">1901–1901</span></li>
+<li><a href="/karta?plats=ksamsok-plank-umea-050683"><b>Plank</b></a> — Ett plank i Umeå från 1859–1862, upptaget i Bebyggelseregistret. <span class="era">1859–1862</span></li>
+<li><a href="/karta?plats=ksamsok-gymnastikhus-umea-357747"><b>GYMNASTIKHUS</b></a> — Ett gymnastikhus i Umeå från 1908, upptaget i Bebyggelseregistret. <span class="era">1908–1908</span></li>
+<li><a href="/karta?plats=ksamsok-verkstad-och-stall-umea-357754"><b>VERKSTAD OCH STALL</b></a> — Verkstad och stall i Umeå från 1917, upptagen i Bebyggelseregistret. <span class="era">1917–1917</span></li>
+</ul>
+<h3 class="city-h3">Konst &amp; staty · 36</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-umea-gron-eld-umea-q10509958"><b>Grön eld, Umeå</b></a> — Grön eld är en 9 meter hög grön glasskulptur utförd av Vicke Lindstrand.</li>
+<li><a href="/p/wd-umea-norra-skenet-q10602562"><b>Norra Skenet</b></a> — Norra skenet är en skulptur av Ernst Nordin och en symbol för Umeå universitet.</li>
+<li><a href="/karta?plats=wd-umea-eye-benches-ii-q23007429"><b>Eye Benches II</b></a> — Eye Benches II är en skulptur av den fransk-amerikanska skulptören Louise Bourgeois, inköpt av Balticgruppen för Umedalens skulpturpark.</li>
+<li><a href="/karta?plats=wd-umea-laddningsplats-for-ljushuvuden-q27980474"><b>Laddningsplats för ljushuvuden</b></a> — Konstsoffor uppvärmda med fjärrvärme med inbyggd bredbandsanslutning.</li>
+<li><a href="/karta?plats=wd-umea-hoppare-q28005416"><b>Hoppare</b></a> — Skulpturkonstverk i Umeå.</li>
+<li><a href="/karta?plats=wd-umea-dunkermomentet-q29867255"><b>Dunkermomentet</b></a> — begravningsplats i Västerbotten</li>
+<li><a href="/p/wd-umea-line-of-thoughts-q73905466"><b>Line of Thoughts</b></a> — Line of Thoughts är en bronsskulptur i Umeå, skapad av den brittiske konstnären Tony Cragg.</li>
+<li><a href="/karta?plats=wd-umea-standing-man-q81013227"><b>Standing Man</b></a> — bronsskulptur</li>
+<li><a href="/karta?plats=wd-umea-fontanskulptur-q81530265"><b>Fontänskulptur</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-listen-q83395037"><b>Listen</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-vagspel-q94237277"><b>Vågspel</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-skin-4-q94743541"><b>Skin 4</b></a> — skulptur i Umeå</li>
+<li><a href="/p/wd-umea-2-3-cube-q94952198"><b>2 × 3² Cube</b></a> — konstverk i Umeå</li>
+<li><a href="/karta?plats=wd-umea-3d-q96238009"><b>3D π</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-gustav-ii-adolfs-byst-q102348069"><b>Gustav II Adolfs byst</b></a> — En byst av Umeås grundare, Gustav II Adolf, är placerad mitt emellan Storgatan och dubbeltrappan på Rådhusets södra sida</li>
+<li><a href="/karta?plats=wd-umea-gustav-rosen-q102442351"><b>Gustav Rosén</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-tellus-q102442349"><b>Tellus</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-sittande-kvinna-vid-kalla-q102442355"><b>Sittande kvinna vid källa</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-jarnfagel-q102442353"><b>Järnfågel</b></a> — skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-odelsgutt-q102442358"><b>Odelsgutt</b></a> — Skulptur i Umeå</li>
+<li><a href="/karta?plats=wd-umea-studier-och-lek-i-skolan-q102442359"><b>Studier och lek i skolan</b></a> — Studier och lek i skolan</li>
+<li><a href="/karta?plats=wd-umea-vasen-q102442360"><b>Väsen</b></a> — Väsen</li>
+<li><a href="/karta?plats=wd-umea-wilhelm-peterson-berger-q102443958"><b>Wilhelm Peterson- Berger</b></a> — Wilhelm Peterson- Berger</li>
+<li><a href="/karta?plats=wd-umea-hantverk-q102530714"><b>Hantverk</b></a> — Hantverk</li>
+<li><a href="/karta?plats=wd-umea-ask-och-embla-q102740648"><b>Ask och Embla</b></a> — Ask och Embla</li>
+<li><a href="/karta?plats=wd-umea-morgon-q102740652"><b>Morgon</b></a> — skulptur i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-struktur-mandala-q102740656"><b>Struktur Mandala</b></a> — Struktur Mandala</li>
+<li><a href="/karta?plats=wd-umea-apollon-350-q102740661"><b>Apollon 350</b></a> — Apollon 350</li>
+<li><a href="/karta?plats=wd-umea-najad-q102740669"><b>Najad</b></a> — Konstverket Najad, skulptur och fontän i Umeå</li>
+<li><a href="/karta?plats=wd-umea-lill-inga-q102740673"><b>Lill-Inga</b></a> — Lill-Inga</li>
+<li><a href="/karta?plats=wd-umea-hall-ning-mot-stod-for-star-q102740677"><b>Håll-ning, Mot-stod, För-står,</b></a> — Håll-ning, Mot-stod, För-står,</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-umea-d8c38c"><b>Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-umea-f9f04a"><b>Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-umea-c2c469"><b>Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-umea-940156"><b>Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-minnesmarke-umea-f85c84"><b>Minnesmärke</b></a> — Ett minnesmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+</ul>
+<h3 class="city-h3">Kyrka · 20</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-umea-backens-kyrka-q10424162"><b>Backens kyrka</b></a> — kyrkobyggnad i Svenska kyrkan i Umeå, Sverige</li>
+<li><a href="/p/wd-umea-boleangkyrkan-q10438709"><b>Böleängkyrkan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-carlskyrkan-q10443135"><b>Carlskyrkan</b></a> — kyrkobyggnad i stadsdelen Carlshem i Umeå, Sverige</li>
+<li><a href="/karta?plats=wd-umea-ersbodakyrkan-q10488435"><b>Ersbodakyrkan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-ersmarkskyrkan-q10488441"><b>Ersmarkskyrkan</b></a> — kyrkobyggnad i Umeå</li>
+<li><a href="/karta?plats=wd-umea-grisbackakyrkan-q10508908"><b>Grisbackakyrkan</b></a> — kyrka i Umeå kommun, Sverige</li>
+<li><a href="/karta?plats=wd-umea-hedlundakyrkan-q10519182"><b>Hedlundakyrkan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-helena-elisabeth-kyrka-q10519448"><b>Helena Elisabeth kyrka</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-jesu-kristi-kyrka-q10540030"><b>Jesu Kristi kyrka</b></a> — mormonernas kyrkobyggnad i Umeå</li>
+<li><a href="/karta?plats=wd-umea-korskyrkan-q10548216"><b>Korskyrkan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/p/wd-umea-mariakyrkan-q10577240"><b>Mariakyrkan</b></a> — kyrka i Umeå, Sverige</li>
+<li><a href="/karta?plats=wd-umea-umea-pingstkyrka-q10631913"><b>Umeå pingstkyrka</b></a> — kyrkobyggnad i Umeå, Sverige</li>
+<li><a href="/karta?plats=wd-umea-robacks-kapell-q10658799"><b>Röbäcks kapell</b></a> — kyrka i Umeå kommun, Sverige</li>
+<li><a href="/karta?plats=wd-umea-tegs-kyrka-q10691910"><b>Tegs kyrka</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-vasakyrkan-q10713261"><b>Vasakyrkan</b></a> — kyrka i Umeå kommun, Sverige</li>
+<li><a href="/p/wd-umea-vasterslattskyrkan-s-t-staffan-q10718015"><b>Västerslättskyrkan S:t Staffan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-alidhemskyrkan-q10726470"><b>Ålidhemskyrkan</b></a> — kyrkobyggnad i Umeå kommun</li>
+<li><a href="/karta?plats=wd-umea-backens-kapell-q108048492"><b>Backens kapell</b></a> — kapell i Umeå kommun, Sverige</li>
+<li><a href="/karta?plats=wd-umea-heliga-korsets-kapell-q108057261"><b>Heliga korsets kapell</b></a> — kapell i Umeå kommun, Sverige</li>
+<li><a href="/p/ksamsok-umea-stads-kyrka-umea-448138"><b>Umeå stads kyrka</b></a> — Nygotisk stadskyrka från 1892–1894, byggd efter att både gamla kyrkan och stadskärnan brunnit. <span class="era">1892–1894</span></li>
+</ul>
+<h3 class="city-h3">fornminne · 14</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=ksamsok-stridsvarn-umea-c4ae56"><b>Stridsvärn</b></a> — Ett kallmurat skyttevärn av sten med öppning mot väster.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-umea-e053b2"><b>Ristning, medeltid/historisk tid</b></a> — En berghäll med 26 ristade initialer, namn, årtal och bilder.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-umea-6a1d33"><b>Brott/täkt</b></a> — Ett stenbrott om cirka 165 gånger 50 meter.</li>
+<li><a href="/p/ksamsok-dammvall-umea-7803fd"><b>Dammvall</b></a> — Rester av en flottningsdamm från 1951 vid Ön i form av två fundament.</li>
+<li><a href="/karta?plats=ksamsok-brott-takt-umea-8bbdd2"><b>Brott/täkt</b></a> — Ett stenbrott med ett tjugotal kantiga stenar.</li>
+<li><a href="/karta?plats=ksamsok-husgrund-historisk-tid-umea-851fd2"><b>Husgrund, historisk tid</b></a> — En husgrund från historisk tid med syllstenar av natursten.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-umea-4f2e1b"><b>Vägmärke</b></a> — Ett vägmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-fornlamningsliknande-lamning-umea-252940"><b>Fornlämningsliknande lämning</b></a> — En oval stensättningsliknande lämning av kantiga stenar, skadad i öster.</li>
+<li><a href="/karta?plats=ksamsok-vagmarke-umea-fb5adb"><b>Vägmärke</b></a> — Ett vägmärke i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-stadslager-umea-9dbbf7"><b>Stadslager</b></a> — Ett stadslager med förväntade kulturlager från 1600- och 1700-talets Umeå.</li>
+<li><a href="/karta?plats=ksamsok-ovrigt-umea-48d904"><b>Övrigt</b></a> — En lämning i Umeå med ännu ej kvalitetssäkrad beskrivning.</li>
+<li><a href="/karta?plats=ksamsok-ristning-medeltid-historisk-tid-umea-a3c309"><b>Ristning, medeltid/historisk tid</b></a> — Ett hästskoformat område med ristningar från historisk tid.</li>
+<li><a href="/karta?plats=ksamsok-hallristning-umea-986c2e"><b>Hällristning</b></a> — En hällristning med en huggen oval och ett handtagsliknande element.</li>
+<li><a href="/karta?plats=ksamsok-begravningsplats-umea-252086"><b>Begravningsplats</b></a> — Stadens ödekyrkogård och begravningsplats åren 1646–1837.</li>
+</ul>
+<h3 class="city-h3">Naturreservat · 9</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-umea-broparken-q10436119"><b>Broparken</b></a> — park i Umeå</li>
+<li><a href="/p/wd-umea-bolesholmarna-q10438708"><b>Bölesholmarna</b></a> — Bölesholmarna, som ligger något uppströms Gamla bron över Ume älv i centrala Umeå, består av holmarna Gröna oxen och Grytan – ursprungligen…</li>
+<li><a href="/p/wd-umea-dobelns-plan-q10478623"><b>Döbelns plan</b></a> — Döbelns plan är en liten brukspark belägen Väst på stan i Umeå, inramad av trevånings flerbostadshus och de korta tvärgatorna Smedsgatan, R…</li>
+<li><a href="/karta?plats=wd-umea-mariehemsangarna-q10577328"><b>Mariehemsängarna</b></a> — grönområde i Umeå</li>
+<li><a href="/p/wd-umea-radhusparken-q10658669"><b>Rådhusparken</b></a> — park i Umeå</li>
+<li><a href="/p/wd-umea-stadsliden-q10677189"><b>Stadsliden</b></a> — Stadsliden är ett stort grönområde centralt i Umeå.</li>
+<li><a href="/p/wd-umea-tradgard-i-norr-q10705537"><b>Trädgård i norr</b></a> — Trädgård i norr var mellan 1987 och 2011 en park i centrala Umeå.</li>
+<li><a href="/p/wd-umea-obackaparken-q10727058"><b>Öbackaparken</b></a> — Öbackaparken är ett grönområde vid Umeälven i Umeå, som sträcker sig från Konstnärligt campus strax söder om centrum till älvkröken sydväst…</li>
+<li><a href="/karta?plats=wd-umea-linders-park-q118235874"><b>Linders park</b></a> — park i Luleå</li>
+</ul>
+<h3 class="city-h3">Bro · 6</h3>
+<ul class="place-list">
+<li><a href="/p/wd-umea-tegsbron-q3603773"><b>Tegsbron</b></a> — bro i Umeå</li>
+<li><a href="/p/wd-umea-kyrkbron-q3603778"><b>Kyrkbron</b></a> — bro i Umeå</li>
+<li><a href="/karta?plats=wd-umea-gamla-bron-q3603782"><b>Gamla bron</b></a> — en bro i Umeå</li>
+<li><a href="/karta?plats=wd-umea-notvarpsbron-q10603808"><b>Notvarpsbron</b></a> — Notvarpsbron är en hängbro som går över Umeälven, Umeå kommun.</li>
+<li><a href="/p/wd-umea-lundabron-q80118366"><b>Lundabron</b></a> — bro i Umeå</li>
+<li><a href="/karta?plats=wd-umea-baggbolebron-q134701001"><b>Baggbölebron</b></a> — bro i Umeå</li>
+</ul>
+<h3 class="city-h3">museum · 4</h3>
+<ul class="place-list">
+<li><a href="/p/wd-umea-bildmuseet-q4907651"><b>Bildmuseet</b></a> — svensk statligt ägd konsthall för internationell samtidskonst och visuell kultur i Umeå.</li>
+<li><a href="/p/wd-umea-den-forhistoriska-varlden-q10468623"><b>Den förhistoriska världen</b></a> — Den förhistoriska världen är ett naturvetenskapligt museum i Umeå med speciell inriktning på tro och vetande, med en kreationistisk profil.</li>
+<li><a href="/p/wd-umea-guitars-the-museum-q15980608"><b>Guitars – the Museum</b></a> — gitarrmuseum</li>
+<li><a href="/karta?plats=wd-umea-kvinnohistoriskt-museum-q18291532"><b>Kvinnohistoriskt museum</b></a> — museum i Umeå specialiserat på kvinnohistoria</li>
+</ul>
+<h3 class="city-h3">Torg · 2</h3>
+<ul class="place-list">
+<li><a href="/p/wd-umea-radhustorget-q10658674"><b>Rådhustorget</b></a> — torg i Umeå</li>
+<li><a href="/p/wd-umea-vasaplan-q10713286"><b>Vasaplan</b></a> — busstorg i Umeå</li>
+</ul>
+<h3 class="city-h3">Torn · 2</h3>
+<ul class="place-list">
+<li><a href="/karta?plats=wd-umea-lasarettskajen-nedre-q111030535"><b>Lasarettskajen nedre</b></a> — en ensfyr vid Umeälven i Umeå</li>
+<li><a href="/karta?plats=wd-umea-lasarettskajen-ovre-q111030536"><b>Lasarettskajen övre</b></a> — en ensfyr vid Umeälven i Umeå</li>
+</ul>
+
+<section class="gate card" id="lm-gate">
+  <h2>Ladda ner hela vandringen gratis</h2>
+  <p>Ange din e-post så låser vi upp PDF-kartan, alla 147 stopp och hela guiden — direkt i mejlen.</p>
+  <form id="lm-gate-form" data-guide-url="/stadsvandring/umea/guide" novalidate>
+    <input type="email" name="email" inputmode="email" autocomplete="email" required placeholder="din@epost.se" aria-label="E-postadress">
+    <label class="consent"><input type="checkbox" name="consent"> Skicka mig fler gratis stadsvandringar och tips (valfritt)</label>
+    <button type="submit" class="cta">Lås upp hela vandringen →</button>
+    <p id="lm-gate-status" class="lm-status" role="status" aria-live="polite"></p>
+  </form>
+  <p id="lm-gate-unlocked" class="lm-status ok" hidden>Du är redan inloggad. <a href="/stadsvandring/umea/guide">Öppna hela vandringen →</a></p>
+</section>
+
+<h2 class="city-h">Vanliga frågor</h2>
+<details class="faq"><summary>Är stadsvandringen i Umeå gratis?</summary><p>Ja. Karta, alla 147 stopp och hela guiden är gratis på Stadsvandring.io. Du anger bara din e-post för att låsa upp den nedladdningsbara PDF-vandringen.</p></details>
+<details class="faq"><summary>Hur många sevärdheter ingår i stadsvandringen i Umeå?</summary><p>Vandringen samlar 147 sevärdheter i Umeå — kyrkor, torg, byggnader och platser med en historia, alla nåbara till fots.</p></details>
+<details class="faq"><summary>Vad är Bildmuseet?</summary><p>svensk statligt ägd konsthall för internationell samtidskonst och visuell kultur i Umeå.</p></details>
+<details class="faq"><summary>Vad är Backens kyrka?</summary><p>kyrkobyggnad i Svenska kyrkan i Umeå, Sverige</p></details>
+<details class="faq"><summary>Vad är Böleängkyrkan?</summary><p>kyrkobyggnad i Umeå kommun</p></details>
+<details class="faq"><summary>Vad är Carlskyrkan?</summary><p>kyrkobyggnad i stadsdelen Carlshem i Umeå, Sverige</p></details>
+
+<p style="margin-top:24px"><a class="cta ghost" href="/platser">Alla platser</a> <a class="cta ghost" href="/karta">Öppna kartan &amp; appen</a></p>
+<footer class="site">
+  <p><strong>Stadsvandring.io</strong> — guidade stadsvandringar i Mjölby, Ydre, Kinda, Mullsjö, Värnamo, Motala, Valdemarsvik, Boxholm, Ödeshög, Alingsås, Göteborg, Stockholm, Norrköping, Finspång, Gävle, Visby, Borgholm, Piteå, Varberg, Falkenberg, Marstrand, Karlskrona, Halmstad, Smögen, Västervik, Dalby, Kristianstad, Åtvidaberg, Helsingborg, Malmö, Skanör Falsterbo, Landskrona, Kalmar, Hässleholm, Lund, Åre, Eskilstuna, Uppsala, Vellinge, Luleå, Linköping, Örebro, Västerås, Jönköping, Växjö, Karlstad, Sundsvall, Umeå, Östersund, Nyköping, Vadstena, Sigtuna, Eksjö, Nora, Trosa, Vaxholm, Mariefred, Söderköping, Strängnäs, Enköping, Trelleborg, Karlshamn, Ronneby, Lidköping, Mariestad, Arboga, Falun, Gränna, Sala, Härnösand, Hjo, Askersund. Upptäck sevärdheter, historia och berättelser en plats i taget.</p>
+  <p><a href="/karta">Öppna kartan &amp; appen</a> · <a href="/platser">Alla platser</a> · <a href="/om">Om &amp; vanliga frågor</a></p>
+</footer>
+</div>
+</body>
+</html>
