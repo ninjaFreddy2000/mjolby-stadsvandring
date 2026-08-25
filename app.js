@@ -14,7 +14,8 @@ function challengesMod(){
   }
   return _chPromise;
 }
-import { initAuth, mountAuthProfile, shareApp, isAdmin, isLoggedIn } from './auth.js';
+import { initAuth, mountAuthProfile, shareApp, isAdmin, isLoggedIn,
+         getProfile, saveProfileFields, hasBio, reviewBlocker, myModeratedCities } from './auth.js';
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 import { axiomLog } from './axiom.js';
 
@@ -465,6 +466,12 @@ function routeThumb(seed=0){
 }
 
 const typeLabel = e => t('type_' + typeOf(e));
+// Escapar text som ska in i en HTML-mall. app.js tappade sin hjälpare när det
+// gamla localStorage-bidragsflödet ströks; presentationen är användartext och
+// måste escapas innan den läggs i en textarea.
+const escHtml = v => String(v == null ? '' : v)
+  .replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+
 const tourName = key => (key === 'userroute' && USER_ROUTE) ? USER_ROUTE.title : t('tour_' + key + '_name');
 const tourSub  = key => (key === 'userroute' && USER_ROUTE) ? (USER_ROUTE.intro || '') : t('tour_' + key + '_sub');
 function stopThumb(e, badge){
@@ -2375,6 +2382,66 @@ function checkNewBadges(){
 // Bidra-vyn: samla allt som gör appen till folkets egen — lägg till en plats,
 // lämna ett tips, granska andras. Låg tidigare som en sektion längst ned i
 // profilen, dit ingen scrollade.
+// Vad kom du hit för? Valet styr VÄG och TON — aldrig behörighet. Att kunna
+// säga "jag vill bidra" är en avsiktsförklaring, inte en befordran; moderator
+// blir man av att faktiskt bidra (se supabase/migrations/…contributor_roles).
+function intentCardHtml(){
+  return `<div class="intent-card">
+    <h3>${t('intent_title')}</h3>
+    <p class="fb-sub">${t('intent_sub')}</p>
+    <div class="intent-row">
+      <button class="intent-btn intent-btn--explore" data-intent="explore">
+        <span aria-hidden="true">🗺️</span><b>${t('intent_explore')}</b><small>${t('intent_explore_d')}</small></button>
+      <button class="intent-btn intent-btn--contribute" data-intent="contribute">
+        <span aria-hidden="true">✍️</span><b>${t('intent_contribute')}</b><small>${t('intent_contribute_d')}</small></button>
+    </div>
+  </div>`;
+}
+function wireIntentCard(root, onDone){
+  root.querySelectorAll('[data-intent]').forEach(b => b.onclick = async () => {
+    const val = b.dataset.intent;
+    b.disabled = true;
+    await saveProfileFields({ intent: val });
+    track('intent_chosen', { intent: val });
+    if (val === 'explore'){ switchTab('home'); toast('🗺️ ' + t('intent_explore_done')); }
+    else { toast('✍️ ' + t('intent_contribute_done')); }
+    if (onDone) onDone();
+  });
+}
+
+// Presentationen: vem du är och varför du bidrar. Krävs för att GRANSKA andras
+// bidrag, inte för att bidra själv.
+function bioCardHtml(){
+  const p = getProfile() || {};
+  const bio = p.bio || '';
+  const klar = hasBio();
+  return `<div class="bio-card${klar ? ' bio-card--done' : ''}">
+    <h3>${klar ? '✓ ' : ''}${t('bio_title')}</h3>
+    <p class="fb-sub">${t('bio_sub')}</p>
+    <textarea class="fb-text" id="bio-text" rows="4" maxlength="600"
+      placeholder="${t('bio_ph')}" aria-label="${t('bio_title')}">${escHtml(bio)}</textarea>
+    <div class="bio-row">
+      <small id="bio-count">${bio.length}/600</small>
+      <button class="cta" id="bio-save">${t('bio_save')}</button>
+    </div>
+  </div>`;
+}
+function wireBioCard(root, onSaved){
+  const ta = root.querySelector('#bio-text'); if (!ta) return;
+  const cnt = root.querySelector('#bio-count');
+  ta.oninput = () => { if (cnt) cnt.textContent = `${ta.value.length}/600`; };
+  root.querySelector('#bio-save').onclick = async () => {
+    const v = ta.value.trim();
+    if (v && v.length < 40){ toast(t('bio_too_short')); return; }
+    const btn = root.querySelector('#bio-save'); btn.disabled = true;
+    const { error } = await saveProfileFields({ bio: v || null });
+    btn.disabled = false;
+    if (error){ toast(error.message); return; }
+    toast('💛 ' + t('bio_saved'));
+    if (onSaved) onSaved();
+  };
+}
+
 function renderContribute(){
   const on = tipsActive();
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_contribute')}</h2><p>${t('contribute_lead')} · ${activeCity}</p></div>`;
@@ -2398,7 +2465,40 @@ function renderContribute(){
     mountAuthProfile(slot, { onChange: renderContribute });
     return;
   }
-  mountTipsProfile($('#screen'), { onChange: renderContribute });
+  const prof = getProfile() || {};
+  const scr = $('#screen');
+
+  // Har man inte sagt vad man kom hit för frågar vi först. Rent routingval.
+  if (!prof.intent){
+    scr.insertAdjacentHTML('beforeend', intentCardHtml());
+    wireIntentCard(scr, renderContribute);
+  }
+
+  // Presentationen visas för den som valt att bidra, eller som redan skrivit en.
+  if (prof.intent === 'contribute' || prof.bio){
+    scr.insertAdjacentHTML('beforeend', bioCardHtml());
+    wireBioCard(scr, renderContribute);
+  }
+
+  // Vägen till att få granska — konkret, inte som ett låst hänglås.
+  const hinder = reviewBlocker();
+  if (hinder === 'bio'){
+    scr.insertAdjacentHTML('beforeend',
+      `<div class="review-lock">🔎 ${t('review_needs_bio')}</div>`);
+  }
+
+  mountTipsProfile(scr, { onChange: renderContribute });
+
+  // Städer man modererar. Hämtas efteråt — ingen ska vänta på den.
+  myModeratedCities().then(städer => {
+    if (!städer.length || $('#screen') !== scr || activeTab !== 'contribute') return;
+    const namn = städer.map(sl => (CITY_INDEX.find(c => c.slug === sl) || {}).name || sl);
+    scr.insertAdjacentHTML('afterbegin', `<div class="mod-badge">
+        <span class="mod-badge__ic" aria-hidden="true">🛡️</span>
+        <div><b>${t('mod_title')}</b>
+          <small>${t('mod_sub')} ${namn.map(n => escHtml(n)).join(', ')}</small></div>
+      </div>`);
+  });
 }
 
 function renderProfil(){

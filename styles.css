@@ -789,6 +789,40 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .cw-row b{display:block;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:2px}
 .cw-row small{font-size:12.5px;line-height:1.45;color:var(--ink-3)}
 
+/* ── Bidragsroller: avsiktsval, presentation, moderatorbricka ────────────────
+   Valet ska kännas som två likvärdiga dörrar, inte som en uppmaning med ett
+   artigt alternativ bredvid. Därför samma vikt på båda knapparna. */
+.intent-card{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:18px;margin-bottom:16px}
+.intent-card h3{font-family:var(--font-display);font-size:17px;color:var(--ink);margin:0 0 4px}
+.intent-row{display:flex;gap:10px;margin-top:14px}
+.intent-btn{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  padding:14px;border-radius:var(--r-md);border:1.5px solid var(--line);background:var(--paper);
+  cursor:pointer;text-align:left;font-family:var(--font-body)}
+.intent-btn:active{transform:scale(.99)}
+.intent-btn>span{font-size:22px;line-height:1.2;margin-bottom:4px}
+.intent-btn b{font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink)}
+.intent-btn small{font-size:12px;line-height:1.4;color:var(--ink-3)}
+.intent-btn--explore:hover{border-color:var(--sjo,#3E78A8)}
+.intent-btn--contribute:hover{border-color:var(--forest)}
+@media (max-width:400px){ .intent-row{flex-direction:column} }
+
+.bio-card{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:18px;margin-bottom:16px}
+.bio-card--done{background:var(--forest-soft);border-color:#cfe0c6}
+.bio-card h3{font-family:var(--font-display);font-size:17px;color:var(--ink);margin:0 0 4px}
+.bio-card .fb-text{margin-top:12px;margin-bottom:8px}
+.bio-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bio-row small{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.bio-row .cta{margin:0;flex:none;padding-left:22px;padding-right:22px}
+
+.mod-badge{display:flex;gap:12px;align-items:center;padding:14px;margin-bottom:16px;
+  background:var(--honey-soft);border:1px solid #EAD7A6;border-radius:var(--r-lg)}
+.mod-badge__ic{font-size:24px;flex:none}
+.mod-badge b{display:block;font-family:var(--font-display);font-size:15px;color:#7a5a10}
+.mod-badge small{font-size:12.5px;color:#8a6a1a;line-height:1.45}
+
+
 /* ── Egna rutter (routes.js) ────────────────────────────────────────────────
    Ruttkorten återanvänder .led-card från de kurerade lederna — en rutt någon
    gjort ska kännas likvärdig med en färdig led, inte som en andra klassens

@@ -11,7 +11,7 @@ const GOOGLE_OAUTH_ENABLED = false;
 
 let ctx = null;
 let supa = null;
-const state = { user: null, profile: null, ready: false };
+const state = { user: null, profile: null, ready: false, modCities: [] };
 const listeners = [];
 
 const t = k => (ctx && ctx.t ? ctx.t(k) : k);
@@ -101,18 +101,71 @@ export async function refreshProfile() {
   if (!supa || !state.user) { state.profile = null; return null; }
   const { data, error } = await supa
     .from('profiles')
-    .select('id, display_name, city, tier, is_admin, reputation, published_count, trust_active_at')
+    .select('id, display_name, city, tier, is_admin, reputation, published_count, trust_active_at, intent, bio, home_city')
     .eq('id', state.user.id)
     .maybeSingle();
   if (error) { console.warn('profil-fel', error); }
   state.profile = data || null;
+  // Moderatorskap är en egen tabell, inte en kolumn på profilen — hämtas med.
+  state.modCities = [];
+  if (state.profile) {
+    const { data: m } = await supa.rpc('my_moderated_cities');
+    state.modCities = (m || []).map(r => r.city);
+  }
   return state.profile;
 }
 
+export function moderatedCities() { return state.modCities; }
+export function moderatesAnyCity() { return state.modCities.length > 0; }
+export function moderatesCity(slug) { return state.modCities.includes(slug); }
+
 export function client() { return supa; }
+// Granska andras bidrag kräver TVÅ saker: nivån, och att man står för något.
+// Wikipedias användarsida-norm — ska du döma andras arbete får du presentera dig.
+// Admin är undantagen; hen är redan känd.
 export function canReview() {
   const p = state.profile;
-  return !!(p && (p.is_admin || p.tier === 'granskare' || p.tier === 'ortskannare'));
+  if (!p) return false;
+  if (p.is_admin) return true;
+  // Är man stadsmoderator har man redan förtjänat förtroendet — och har per
+  // definition en presentation, eftersom den krävs för att bli det.
+  if (moderatesAnyCity()) return true;
+  const nivå = p.tier === 'granskare' || p.tier === 'ortskannare';
+  return nivå && hasBio();
+}
+export function hasBio() {
+  const p = state.profile;
+  return !!(p && p.bio && p.bio.trim().length >= 40);
+}
+// Varför granskningen är låst — så UI:t kan säga rätt sak i stället för "nej".
+export function reviewBlocker() {
+  const p = state.profile;
+  if (!p) return 'login';
+  if (canReview()) return null;
+  const nivå = p.tier === 'granskare' || p.tier === 'ortskannare';
+  return nivå ? 'bio' : 'tier';
+}
+
+// Sparar användarens egna fält. Betrodda kolumner (tier, reputation, is_admin)
+// skyddas av en trigger i databasen — klienten kan inte röra dem oavsett.
+export async function saveProfileFields(fields) {
+  if (!supa || !state.user) return { error: { message: 'inte inloggad' } };
+  const tillåtna = ['display_name', 'bio', 'home_city', 'intent'];
+  const rad = {};
+  for (const k of tillåtna) if (k in fields) rad[k] = fields[k];
+  const { error } = await supa.from('profiles').update(rad).eq('id', state.user.id);
+  if (!error) await refreshProfile();
+  return { error };
+}
+
+// Städer där jag är moderator. Tom lista = ingen — det är normalläget.
+export async function myModeratedCities() {
+  if (!supa || !state.user) return [];
+  if (state.modCities.length) return state.modCities;      // redan laddad med profilen
+  const { data, error } = await supa.rpc('my_moderated_cities');
+  if (error) return [];
+  state.modCities = (data || []).map(r => r.city);
+  return state.modCities;
 }
 export function isAdmin() { return !!(state.profile && state.profile.is_admin); }
 
@@ -248,7 +301,7 @@ export function openLogin() {
 export async function signOut() {
   if (!supa) return;
   await supa.auth.signOut();
-  state.user = null; state.profile = null; emit();
+  state.user = null; state.profile = null; state.modCities = []; emit();
   if (ctx && ctx.toast) ctx.toast(t('auth_signed_out'));
 }
 
