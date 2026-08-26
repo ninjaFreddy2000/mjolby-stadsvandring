@@ -4,10 +4,27 @@
 // session via getState()/getProfile().
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
 
-// Google OAuth-knappen döljs tills providern faktiskt aktiverats i Supabase
-// (external_google_enabled). Annars ger knappen "provider is not enabled"-fel.
-// Sätt till true när Google OAuth-credentials lagts in i Supabase.
-const GOOGLE_OAUTH_ENABLED = false;
+// Vart användaren ska landa efter inloggning. MÅSTE vara appen, inte roten:
+// index.html laddar bara webbsida.js, alltså ingen Supabase-klient. En magisk
+// länk, en kontobekräftelse, en lösenordsåterställning eller en Google-retur som
+// pekade på '/' lämnade token:en i URL:en helt okonsumerad — inloggningen tystnade
+// utan felmeddelande. app.js kör med detectSessionInUrl och plockar upp den.
+const APP_URL = () => location.origin + '/karta';
+
+// Vilka OAuth-providers som är påslagna läses i KÖRTID från Supabase publika
+// /auth/v1/settings, i stället för en hårdkodad flagga som måste kodändras och
+// deployas. Slår Fredrik på Google i dashboarden dyker knappen upp av sig själv.
+let _providers = null;
+async function enabledProviders() {
+  if (_providers) return _providers;
+  try {
+    const base = (await import('./config.js')).SUPABASE_URL;
+    const key = (await import('./config.js')).SUPABASE_ANON_KEY;
+    const r = await fetch(base.replace(/\/$/, '') + '/auth/v1/settings', { headers: { apikey: key } });
+    _providers = (await r.json()).external || {};
+  } catch (e) { _providers = {}; }
+  return _providers;
+}
 
 let ctx = null;
 let supa = null;
@@ -214,17 +231,24 @@ export function openLogin() {
         <button class="fb-x" id="auth-x" aria-label="${en ? 'Close' : 'Stäng'}">&times;</button>
         <h3>${t('auth_title')}</h3>
         <p class="fb-sub">${t('auth_sub')}</p>
-        ${GOOGLE_OAUTH_ENABLED ? `<button class="auth-google" id="auth-google" type="button">
-          <span class="g-mark">G</span> ${t('auth_google')}
-        </button>
-        <div class="auth-or"><span>${t('auth_or')}</span></div>` : ''}
+        <div id="auth-oauth"></div>
         ${tabs}
         ${body}
         <button class="cta" id="auth-submit" style="margin:6px 0 0">${submitLabel}</button>
         ${mode === 'password' ? `<button class="auth-link" id="auth-forgot" type="button">${t('auth_forgot')}</button>` : ''}
         <p class="auth-fine" id="auth-msg"></p>`;
       card.querySelector('#auth-x').onclick = () => close(false);
-      const gb = card.querySelector('#auth-google'); if (gb) gb.onclick = googleLogin;
+      // Google-knappen ritas in när vi vet att providern är påslagen. Att visa
+      // den annars ger bara "provider is not enabled" i ansiktet på användaren.
+      enabledProviders().then(p => {
+        const slot = card.querySelector('#auth-oauth');
+        if (!slot || !p.google) return;
+        slot.innerHTML = `<button class="auth-google" id="auth-google" type="button">
+            <span class="g-mark">G</span> ${t('auth_google')}
+          </button>
+          <div class="auth-or"><span>${t('auth_or')}</span></div>`;
+        slot.querySelector('#auth-google').onclick = googleLogin;
+      });
       card.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode = b.dataset.mode; render(); });
       card.querySelector('#auth-submit').onclick = submit;
       const fp = card.querySelector('#auth-forgot'); if (fp) fp.onclick = forgot;
@@ -240,7 +264,7 @@ export function openLogin() {
       msg(t('auth_redirecting'), true);
       const { error } = await supa.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: location.origin },
+        options: { redirectTo: APP_URL() },
       });
       if (error) msg(error.message, false);
     }
@@ -253,7 +277,7 @@ export function openLogin() {
       btn.disabled = true; msg(t('auth_working'), true);
       try {
         if (mode === 'magic') {
-          const { error } = await supa.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin } });
+          const { error } = await supa.auth.signInWithOtp({ email, options: { emailRedirectTo: APP_URL() } });
           if (error) throw error;
           card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
             <p>${t('auth_magic_sent')}</p>
@@ -262,7 +286,7 @@ export function openLogin() {
           return;
         }
         if (mode === 'signup') {
-          const { data, error } = await supa.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.origin } });
+          const { data, error } = await supa.auth.signUp({ email, password: pw, options: { emailRedirectTo: APP_URL() } });
           if (error) throw error;
           if (data.session) { close(true); return; }     // confirmations off → signed in
           card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
@@ -284,7 +308,7 @@ export function openLogin() {
       const email = (card.querySelector('#auth-email') || {}).value;
       if (!email || !email.includes('@')) { msg(t('auth_bad_email'), false); return; }
       msg(t('auth_working'), true);
-      const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo: location.origin });
+      const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo: APP_URL() });
       if (error) { msg(error.message, false); return; }
       card.innerHTML = `<div class="fb-thanks"><div class="fb-thanks-emoji">📨</div>
         <p>${t('auth_reset_sent')}</p>

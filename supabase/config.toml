@@ -21,15 +21,20 @@ port = 55324
 enabled = false
 
 [auth]
-# Site URL + redirects for the live PWA. Add your local dev URL too if needed.
-site_url = "https://stadsvandring.io"
+# Site URL + redirects för PWA:n. site_url pekar på /karta, inte på roten:
+# index.html laddar bara webbsida.js och har ingen Supabase-klient, så en token i
+# URL:en hade legat kvar okonsumerad och inloggningen tystnat utan felmeddelande.
+# OBS: den här filen styr bara LOKAL utveckling. Motsvarande inställning i prod
+# görs i dashboarden (Authentication → URL Configuration).
+site_url = "https://stadsvandring.io/karta"
 additional_redirect_urls = [
   "https://stadsvandring.io",
   "https://stadsvandring.io/**",
-  "http://localhost:5173",
-  "http://127.0.0.1:5173",
+  # Wildcards även lokalt — utan /** matchar inte http://localhost:8090/karta.
   "http://localhost:8090",
-  "http://127.0.0.1:8090"
+  "http://localhost:8090/**",
+  "http://127.0.0.1:8090",
+  "http://127.0.0.1:8090/**"
 ]
 enable_signup = true
 
