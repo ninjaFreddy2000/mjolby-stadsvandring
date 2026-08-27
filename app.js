@@ -528,10 +528,21 @@ async function init() {
   setupTeller();
   setupChallenges();
   // Konton + community-tips drar in supabase-biblioteket (199 kB). Inget av det
-  // behövs för att kartan ska bli användbar, så det får vänta tills webbläsaren
-  // är ledig — annars konkurrerar hämtningen med kartrutor och nålar.
-  const idle = window.requestIdleCallback || (fn => setTimeout(fn, 800));
-  idle(() => setupAuthTips(), { timeout: 3000 });
+  // behövs för att kartan ska bli användbar, så det får normalt vänta tills
+  // webbläsaren är ledig — annars konkurrerar hämtningen med kartrutor och nålar.
+  //
+  // MEN: kommer man tillbaka från Google ligger sessionen i URL:ens hash, och den
+  // plockas upp när Supabase-klienten skapas (detectSessionInUrl). Då får ingenting
+  // vänta på idle — annars står token kvar oläst, användaren förblir utloggad och
+  // klickar Google igen. Det såg ut som en loop.
+  const oauthRetur = /[#&](access_token|error|error_description)=/.test(location.hash || '');
+  if (oauthRetur) {
+    setupAuthTips();
+    surfaceOAuthError();
+  } else {
+    const idle = window.requestIdleCallback || (fn => setTimeout(fn, 800));
+    idle(() => setupAuthTips(), { timeout: 3000 });
+  }
   setupInstallPrompt();
   setupSpokBanner();
   setupConnectivity();
@@ -566,10 +577,19 @@ function buildMap() {
     if(!c.length) return [58.327,15.13];
     return [c.reduce((s,x)=>s+x.lat,0)/c.length, c.reduce((s,x)=>s+x.lng,0)/c.length]; })();
   map = L.map('map', { zoomControl:true }).setView(cc, 12);
-  // Carto Voyager-basemap (gratis, ingen nyckel, tillåten för app-bruk). OSM:s egna
-  // tile-servrar (tile.openstreetmap.org) blockerar produktionsappar med 503 → använd inte dem.
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '&copy; OpenStreetMap, &copy; CARTO'
+  // Basemap: Esri World Street Map. Carto Voyager användes tidigare men Carto har
+  // börjat kräva API-nyckel — rutorna svarar fortfarande 200, men bilden är en
+  // diagonal "API KEY REQUIRED"-vattenstämpel över hela kartan. Statuskoll räcker
+  // alltså inte för att upptäcka det; det syns bara visuellt.
+  //
+  // Esri är fritt utan nyckel med attribution. OSM:s egna servrar valdes bort
+  // medvetet: deras användarpolicy förbjuder uttryckligen appar som distribuerar
+  // deras rutor utan tillstånd, oavsett att de tekniskt svarar.
+  //
+  // Vill man tillbaka till en mjukare stil är rätt väg en gratis Carto- eller
+  // MapTiler-nyckel (75k visningar/mån räcker gott) — då byts bara URL:en här.
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19, attribution: '&copy; Esri, HERE, Garmin, &copy; OpenStreetMap-bidragsgivare'
   }).addTo(map);
   // Bläddra-läget klustrar avståndsbaserat i renderView(); plain-lager för aktiv tur (alla stopp syns).
   markerLayer = L.layerGroup();
@@ -1286,6 +1306,20 @@ async function openPlaceDeepLink(id){
   if (!e) { toast(lang==='en' ? 'That place could not be found.' : 'Platsen gick inte att hitta.'); return; }
   if (cityOf(e) !== activeCity) await setActiveCity(cityOf(e));
   openSheet(id);
+}
+
+// En misslyckad OAuth-retur (nekad behörighet, app i testläge, utgången kod) kom
+// tillbaka som error i hashen och gjorde absolut ingenting — användaren stod kvar
+// utloggad utan besked. Nu syns det.
+function surfaceOAuthError(){
+  try {
+    const h = new URLSearchParams((location.hash || '').replace(/^#/, ''));
+    const err = h.get('error_description') || h.get('error');
+    if (!err) return;
+    history.replaceState(null, '', location.pathname);   // låt inte felet ligga kvar
+    setTimeout(() => toast('⚠️ ' + decodeURIComponent(err).replace(/\+/g, ' ').slice(0, 120)), 1200);
+    track('oauth_error', { msg: String(err).slice(0, 80) });
+  } catch (e) {}
 }
 
 /* ---------- Stop detail sheet ---------- */
