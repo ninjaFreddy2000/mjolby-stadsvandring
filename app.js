@@ -394,75 +394,56 @@ const sizedImg = (url, dir) =>
 const imgCredit = e => { const i = chosenImg(e); return i ? (i.attribution || null) : null; };
 const imgFocal = e => { const i = chosenImg(e); return i ? (i.focal || null) : null; };
 const iconOf = e => CATEGORY_ICON[e.category] || '📍';
-/* ---------- Illustrerad stadsscen (porterad från designen) ---------- */
-function svgHouse(x,y,w,h,wall,roof,hip){
-  const rh=h*0.52;
-  const r = hip
-    ? `<polygon points="${x-4},${y} ${x+w+4},${y} ${x+w-6},${y-rh} ${x+6},${y-rh}" fill="${roof}"/>`
-    : `<polygon points="${x-5},${y} ${x+w+5},${y} ${x+w/2},${y-rh}" fill="${roof}"/>`;
-  return `<g>${r}<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${wall}"/>`
-    + `<rect x="${x-1}" y="${y}" width="${w+2}" height="2.5" fill="rgba(0,0,0,.08)"/>`
-    + `<rect x="${x+w*0.16}" y="${y+h*0.2}" width="${w*0.22}" height="${h*0.28}" rx="1.5" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.12)" stroke-width="0.8"/>`
-    + `<rect x="${x+w*0.62}" y="${y+h*0.2}" width="${w*0.22}" height="${h*0.28}" rx="1.5" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.12)" stroke-width="0.8"/>`
-    + `<rect x="${x+w*0.4}" y="${y+h*0.5}" width="${w*0.2}" height="${h*0.5}" rx="2" fill="rgba(0,0,0,.18)"/></g>`;
-}
-function svgTree(x,y,r,c='var(--scene-grass-2)'){
-  return `<g><rect x="${x-1.6}" y="${y}" width="3.2" height="${r*0.7}" rx="1.5" fill="#7c5a3a"/>`
-    + `<circle cx="${x}" cy="${y-r*0.3}" r="${r}" fill="${c}"/>`
-    + `<circle cx="${x-r*0.55}" cy="${y+r*0.1}" r="${r*0.7}" fill="${c}"/>`
-    + `<circle cx="${x+r*0.55}" cy="${y+r*0.1}" r="${r*0.7}" fill="${c}"/>`
-    + `<circle cx="${x-r*0.3}" cy="${y-r*0.5}" r="${r*0.45}" fill="rgba(255,255,255,.12)"/></g>`;
-}
-function svgPine(x,y,h){
-  const w=h*0.5;
-  return `<g><rect x="${x-1.4}" y="${y}" width="2.8" height="5" fill="#7c5a3a"/>`
-    + `<polygon points="${x},${y-h} ${x-w/2},${y-h*0.45} ${x+w/2},${y-h*0.45}" fill="var(--scene-grass-2)"/>`
-    + `<polygon points="${x},${y-h*0.62} ${x-w*0.62},${y} ${x+w*0.62},${y}" fill="var(--scene-grass)"/></g>`;
-}
-function svgCloud(x,y,s,speed){
-  return `<g style="animation:driftCloud ${speed}s ease-in-out infinite alternate" transform="translate(${x} ${y}) scale(${s})">`
-    + `<ellipse cx="0" cy="0" rx="16" ry="9" fill="rgba(255,255,255,.92)"/>`
-    + `<ellipse cx="13" cy="3" rx="11" ry="7" fill="rgba(255,255,255,.92)"/>`
-    + `<ellipse cx="-12" cy="3" rx="9" ry="6" fill="rgba(255,255,255,.92)"/></g>`;
-}
+/* ---------- Grafiska platshållare ------------------------------------------
+   Här låg tidigare en målad stadsscen: himmelsgradient, animerad sol, två
+   drivande moln, en guppande segelbåt, en viftande svensk flagga, vatten, väg,
+   granar och fem hus i sex färger. Den fyllde en bildruta med rörelse men sa
+   ingenting — och rörelsen plus färgmängden var precis det som fick appen att
+   se maskingenererad ut.
+
+   Ersatt av samma formspråk som sidhuvudets silhuett: pergament, EN röd ton i
+   låg opacitet, en marklinje. Platshållaren ska säga "här saknas ett foto" och
+   sedan hålla tyst. Ingen animation.                                          */
+
+// Taklinjen, i miniatyr. Samma former som images/stadssilhuett.svg så att
+// appen och webbsidan talar samma språk.
+const TAKLINJE =
+  'M18 150v-26h26v26zM18 124l13-11 13 11z' +
+  'M60 150v-34h24v34zM60 116l12-10 12 10z' +
+  'M100 150v-44h38v44zM100 106l19-14 19 14z' +
+  'M158 150v-56h44v56zM158 94l22-15 22 15zM175 150V52h11v98zM175 52l5.5-22 5.5 22z' +
+  'M218 150v-30h22v30zM218 120l11-9 11 9z' +
+  'M256 150v-38h20v38zM256 112l10-9 10 9z' +
+  'M292 150v-48h30v48zM292 102l15-12 15 12z' +
+  'M336 150v-32h26v32zM336 118l13-11 13 11z';
+
 function townScene(){
   return `<svg class="town-scene" viewBox="0 0 400 178" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs><linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--sky-1)"/><stop offset="100%" stop-color="var(--sky-2)"/></linearGradient></defs>
-    <rect x="0" y="0" width="400" height="178" fill="url(#skyG)"/>
-    <g style="animation:floaty 7s ease-in-out infinite"><circle cx="338" cy="40" r="18" fill="var(--flag-yellow)" opacity="0.9"/><circle cx="338" cy="40" r="26" fill="var(--flag-yellow)" opacity="0.18"/></g>
-    ${svgCloud(78,36,1,26)}${svgCloud(250,26,0.7,20)}
-    <path d="M0 96 Q70 64 150 88 T300 80 T400 92 V178 H0 Z" fill="var(--forest-soft)"/>
-    <path d="M0 112 Q90 84 200 104 T400 104 V178 H0 Z" fill="var(--scene-grass)" opacity="0.55"/>
-    <rect x="0" y="126" width="400" height="52" fill="var(--scene-water)"/>
-    <rect x="0" y="126" width="400" height="9" fill="rgba(255,255,255,0.18)"/>
-    <g style="animation:bob 5s ease-in-out infinite"><polygon points="44,150 70,150 64,160 50,160" fill="#7c5a3a"/><polygon points="57,120 57,148 40,148" fill="#FFFDF7"/><polygon points="59,122 59,148 74,148" fill="var(--flag-blue)"/></g>
-    <rect x="0" y="120" width="400" height="14" fill="var(--scene-grass-2)"/>
-    ${svgHouse(96,118,34,30,'var(--wall-a)','var(--roof-a)',false)}
-    ${svgHouse(138,116,30,32,'var(--wall-b)','var(--roof-b)',false)}
-    <g><rect x="186" y="92" width="34" height="56" fill="#FBF7EE"/><polygon points="183,92 223,92 203,72" fill="var(--roof-a)"/><rect x="198" y="46" width="10" height="48" fill="#FBF7EE"/><polygon points="197,46 209,46 203,30" fill="var(--forest)"/><rect x="201" y="34" width="4" height="9" fill="var(--honey)"/><rect x="200" y="108" width="6" height="14" rx="3" fill="rgba(0,0,0,0.18)"/></g>
-    ${svgHouse(232,116,32,32,'var(--wall-c)','var(--roof-b)',true)}
-    ${svgHouse(270,118,30,30,'var(--wall-a)','var(--roof-a)',false)}
-    ${svgTree(80,138,13)}${svgTree(170,140,11,'var(--scene-grass)')}${svgPine(346,146,30)}
-    <g><rect x="20" y="96" width="2.6" height="52" rx="1.3" fill="#9a8b6f"/><g style="animation:floaty 4s ease-in-out infinite"><rect x="22.6" y="98" width="30" height="19" fill="var(--flag-blue)"/><rect x="22.6" y="105" width="30" height="5" fill="var(--flag-yellow)"/><rect x="31" y="98" width="5" height="19" fill="var(--flag-yellow)"/></g></g>
-    <path d="M0 178 L0 162 Q140 150 200 162 Q280 176 400 160 L400 178 Z" fill="var(--scene-road)"/>
-    <path d="M0 162 Q140 150 200 162 Q280 176 400 160" fill="none" stroke="var(--scene-road-edge)" stroke-width="2"/>
+    <rect width="400" height="178" fill="var(--paper-2)"/>
+    <path d="${TAKLINJE}" fill="var(--primary)" opacity=".13"/>
+    <path d="M0 150h400" stroke="var(--primary)" stroke-width="1.5" opacity=".22"/>
   </svg>`;
 }
 
+// Ruttminiatyr: en slinga med start- och slutpunkt. Att den ÄR en rutt är hela
+// informationen — gräs, sjö, väg och granar var dekor som konkurrerade med den.
+// Visas i två ramar: 100×74 (ledlistan) och 48×48 (stadslistan). Därför "meet",
+// så inget beskärs i kvadraten, plus en bakgrundsruta större än viewBox som
+// fyller brevlådningen med samma papper.
 function routeThumb(seed=0){
-  const roofs=['var(--roof-a)','var(--lake)','var(--forest)'];
-  const d=['M0 46 C40 36 70 56 132 44','M0 30 C40 44 70 26 132 40'][seed%2];
-  return `<svg viewBox="0 0 132 72" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" aria-hidden="true">
-    <rect width="132" height="72" fill="var(--scene-grass)"/><rect width="132" height="72" fill="rgba(255,255,255,.08)"/>
-    <path d="M0 ${42+seed*4} C40 ${36+seed*4} 70 ${50-seed*3} 132 44" stroke="var(--scene-water)" stroke-width="6" fill="none" stroke-linecap="round"/>
-    <ellipse cx="${100-seed*8}" cy="58" rx="20" ry="11" fill="var(--scene-water)"/>
-    <path d="${d}" fill="none" stroke="var(--scene-road-edge)" stroke-width="8" stroke-linecap="round"/>
-    <path d="${d}" fill="none" stroke="var(--scene-road)" stroke-width="5" stroke-linecap="round"/>
-    <g transform="translate(48 30) scale(.55)">${svgHouse(0,0,26,20,'#FBF7EE',roofs[seed%3],false)}</g>
-    <g transform="translate(80 50) scale(.5)">${svgHouse(0,0,24,20,'var(--wall-a)',roofs[(seed+1)%3],false)}</g>
-    ${svgTree(24,50,7)}${svgTree(118,60,8,'var(--honey)')}${svgPine(64,20,13)}
-    <circle cx="8" cy="${seed%2?24:56}" r="4.5" fill="var(--primary)" stroke="#fff" stroke-width="1.5"/>
-    <circle cx="124" cy="44" r="5" fill="var(--honey)" stroke="#fff" stroke-width="1.5"/>
+  const i = ((seed % 3) + 3) % 3;
+  const d = [
+    'M16 52 C40 20 60 62 78 36 S100 16 106 24',
+    'M16 24 C38 56 58 18 78 42 S100 60 106 50',
+    'M16 38 C34 14 54 58 76 28 S100 50 106 32',
+  ][i];
+  const y0 = [52, 24, 38][i], y1 = [24, 50, 32][i];
+  return `<svg viewBox="0 0 120 72" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block" aria-hidden="true">
+    <rect x="-120" y="-120" width="360" height="312" fill="var(--paper-2)"/>
+    <path d="${d}" fill="none" stroke="var(--primary)" stroke-width="3"
+          stroke-linecap="round" stroke-dasharray="1 7" opacity=".6"/>
+    <circle cx="16" cy="${y0}" r="5" fill="var(--primary)"/>
+    <circle cx="106" cy="${y1}" r="5" fill="none" stroke="var(--primary)" stroke-width="3"/>
   </svg>`;
 }
 

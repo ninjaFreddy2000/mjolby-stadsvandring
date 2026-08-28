@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 92 1200 238" width="1200" height="238"
+     preserveAspectRatio="xMidYMax slice" role="img"
+     aria-label="Silhuett av en svensk småstad: kyrka med torn, kvarn, stugor och en bro.">
+  <title>Svensk småstad i silhuett</title>
+
+  <!-- Ersätter header.jpg (245 kB målad rasterbild). Silhuetten är byggd för att
+       läsas i ALLA storlekar: stora former, två röda toner, en horisont. Detaljer
+       som ändå försvinner vid nedskalning finns inte med. -->
+
+  <!-- Pergament, samma som appens paper-token -->
+  <rect x="0" y="92" width="1200" height="238" fill="#F3EAD8"/>
+
+  <!-- Bakre rad: samma rött nedtonat. Ett enda djuplager, inte fyra. -->
+  <g fill="#AC3F22" opacity=".28">
+    <path d="M60 300v-52h58v52z"/>
+    <path d="M150 300v-74h44v74z"/>
+    <path d="M226 300v-40h64v40z"/>
+    <path d="M470 300v-58h50v58z"/>
+    <path d="M560 300v-46h40v46z"/>
+    <path d="M800 300v-64h52v64z"/>
+    <path d="M886 300v-44h46v44z"/>
+    <path d="M1010 300v-70h48v70z"/>
+    <path d="M1100 300v-48h56v48z"/>
+    <!-- två furor som bryter taklinjen -->
+    <path d="M366 300l22-70 22 70z"/>
+    <path d="M960 300l18-56 18 56z"/>
+  </g>
+
+  <!-- Främre rad i fullt falurött. Kyrkan är den enda formen som får sticka upp
+       ordentligt — den bär igenkänningen ensam. -->
+  <g fill="#AC3F22">
+    <!-- stugor vänster -->
+    <path d="M96 322v-46h52v46z"/>
+    <path d="M96 276l26-22 26 22z"/>
+    <path d="M180 322v-62h46v62z"/>
+    <path d="M180 260l23-20 23 20z"/>
+
+    <!-- kvarnen vid ån: bredare kropp, litet utbygge -->
+    <path d="M262 322v-78h74v78z"/>
+    <path d="M262 244l37-26 37 26z"/>
+    <path d="M336 322v-34h30v34z"/>
+
+    <!-- kyrkan: torn + långhus, den högsta punkten -->
+    <path d="M520 322v-92h96v92z"/>
+    <path d="M520 230l48-30 48 30z"/>
+    <path d="M556 322V150h24v172z"/>
+    <path d="M556 150l12-46 12 46z"/>
+
+    <!-- radhuslänga mitt -->
+    <path d="M660 322v-54h40v54z"/>
+    <path d="M660 268l20-18 20 18z"/>
+    <path d="M712 322v-66h38v66z"/>
+    <path d="M712 256l19-17 19 17z"/>
+    <path d="M762 322v-48h36v48z"/>
+    <path d="M762 274l18-16 18 16z"/>
+
+    <!-- höger: högre stadshus -->
+    <path d="M900 322v-84h58v84z"/>
+    <path d="M900 238l29-24 29 24z"/>
+    <path d="M1000 322v-58h48v58z"/>
+    <path d="M1000 264l24-20 24 20z"/>
+    <path d="M1078 322v-70h52v70z"/>
+    <path d="M1078 252l26-22 26 22z"/>
+  </g>
+
+  <!-- Bron över ån — en båge, tre pelare. Det enda "händelsen" i bilden. -->
+  <g stroke="#AC3F22" fill="none" stroke-width="7" stroke-linecap="round">
+    <path d="M356 322q56-46 112 0" opacity=".55"/>
+  </g>
+  <g fill="#AC3F22" opacity=".55">
+    <rect x="386" y="300" width="7" height="22"/>
+    <rect x="418" y="294" width="7" height="28"/>
+    <rect x="450" y="300" width="7" height="22"/>
+  </g>
+
+  <!-- Marklinjen: håller ihop raden. Falurött, inte svart — svart drog
+       till sig blicken som en avdelare. -->
+  <path d="M0 322h1200" stroke="#AC3F22" stroke-width="1.5" opacity=".35"/>
+</svg>

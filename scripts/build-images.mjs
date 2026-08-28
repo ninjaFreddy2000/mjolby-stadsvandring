@@ -26,7 +26,9 @@ const SIZES = [
   { dir: 'w800', width: 800, q: 74 },   // hero i detaljvyn (~400 CSS-px @2x)
 ];
 // Bilder som används som CSS-bakgrund i full bredd behöver en större variant.
-const WIDE = { dir: 'w1200', width: 1200, q: 72, only: ['header.jpg'] };
+// w1200 fanns bara för header.jpg. Den rasterbilden är ersatt av
+// images/stadssilhuett.svg (3 kB vektor) — inget behöver bred variant längre.
+const WIDE = { dir: 'w1200', width: 1200, q: 72, only: [] };
 
 function have(cmd) {
   try { execFileSync('which', [cmd], { stdio: 'ignore' }); return true; } catch { return false; }
@@ -65,5 +67,6 @@ for (const file of originals) {
 }
 
 const mb = b => (b / 1024 / 1024).toFixed(1) + ' MB';
-console.log(`✓ ${n} bilder → ${SIZES.map(s => s.dir).join(' + ')} (+ ${WIDE.dir} för ${WIDE.only.join(', ')})`);
+console.log(`✓ ${n} bilder → ${SIZES.map(s => s.dir).join(' + ')}`
+  + (WIDE.only.length ? ` (+ ${WIDE.dir} för ${WIDE.only.join(', ')})` : ''));
 console.log(`  original: ${mb(before)}   varianter totalt: ${mb(after)}`);

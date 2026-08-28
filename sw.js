@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v95';
+const CACHE = 'mjolby-stadsvandring-v96';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -24,7 +24,7 @@ const SHELL = [
   './vendor/fonts/fonts.css', './vendor/fonts/fredoka-normal-latin.woff2', './vendor/fonts/mulish-normal-latin.woff2',
   './vendor/leaflet/images/marker-icon.png', './vendor/leaflet/images/marker-icon-2x.png',
   './vendor/leaflet/images/marker-shadow.png', './vendor/leaflet/images/layers.png', './vendor/leaflet/images/layers-2x.png',
-  './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './images/w320/skanska-lasse.webp', './images/w1200/header.webp',
+  './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './images/w320/skanska-lasse.webp', './images/stadssilhuett.svg',
 ];
 
 self.addEventListener('install', e=>{
