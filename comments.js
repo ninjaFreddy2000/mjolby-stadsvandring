@@ -11,6 +11,7 @@
 import { getSupabase, isConfigured } from './config.js';
 import { getUser, requireAuth } from './auth.js';
 import { uploadPhoto } from './tips.js';
+import { ico } from './icons.js';
 
 let ctx = null;
 let supa = null;
@@ -100,7 +101,7 @@ function commentHtml(c, meId) {
 export function commentBlockHtml(stopId) {
   if (!commentsActive()) return '';
   return `<div class="cmt-section" data-comments="${esc(stopId)}">
-    <div class="contrib-h">💬 ${t('cmt_section')}</div>
+    <div class="contrib-h">${ico('chat',17)} ${t('cmt_section')}</div>
     <div class="cmt-list-wrap"><div class="contrib-optimizing">${t('cmt_loading')}</div></div>
     <div class="cmt-form-wrap"></div>
   </div>`;
@@ -117,7 +118,7 @@ export async function wireCommentBlock(root, stopId) {
   function renderForm() {
     const me = getUser();
     if (!me) {
-      formWrap.innerHTML = `<button class="contrib-add" data-cmt-login="1">💬 ${t('cmt_write')}</button>`;
+      formWrap.innerHTML = `<button class="contrib-add" data-cmt-login="1">${ico('chat',18)} ${t('cmt_write')}</button>`;
       formWrap.querySelector('[data-cmt-login]').onclick = async () => {
         if (await requireAuth()) renderForm();
       };
@@ -128,7 +129,7 @@ export async function wireCommentBlock(root, stopId) {
         <textarea class="fb-text" id="cmt-text" rows="3" placeholder="${t('cmt_placeholder')}" aria-label="${t('cmt_placeholder')}"></textarea>
         <div class="cmt-photo" id="cmt-photo"></div>
         <div class="cmt-form-row">
-          <button class="fb-cta cmt-photo-btn" id="cmt-photo-btn" type="button">📷 ${t('cmt_addphoto')}</button>
+          <button class="fb-cta cmt-photo-btn" id="cmt-photo-btn" type="button">${ico('camera',17)} ${t('cmt_addphoto')}</button>
           <button class="cta" id="cmt-send">${t('cmt_send')}</button>
         </div>
       </div>`;

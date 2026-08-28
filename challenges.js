@@ -1,3 +1,4 @@
+import { ico } from './icons.js';
 // Stadsutmaning — geocaching-tävlingar för Stadsvandring.io.
 // Helt klientsidan: tävlingen kodas i URL:ens hash, resultat delas som koder.
 // Isolerad modul: når app.js bara via context-objektet (se initChallenges).
@@ -137,10 +138,10 @@ export function mountChallengeProfile(container){
   const section = document.createElement('div');
   section.className = 'ch-prof';
   section.innerHTML = `
-    <h3 class="prof-h">🏁 ${t('ch_section')}</h3>
+    <h3 class="prof-h">${ico('flag',17)} ${t('ch_section')}</h3>
     <p class="ch-prof-sub">${t('ch_create_sub')}</p>
-    <button class="ch-btn-primary" id="ch-create">🏁 ${t('ch_create')}</button>
-    <button class="ch-btn-ghost" id="ch-results">🏆 ${t('ch_results')}</button>
+    <button class="ch-btn-primary" id="ch-create">${ico('flag',18)} ${t('ch_create')}</button>
+    <button class="ch-btn-ghost" id="ch-results">${ico('trophy',18)} ${t('ch_results')}</button>
     <div id="ch-runs"></div>`;
   container.appendChild(section);
   $('#ch-create').onclick = openBuilder;
@@ -156,12 +157,12 @@ export function mountChallengeCTA(container){
   card.className = 'ch-cta-card';
   card.innerHTML = `
     <div class="ch-cta-text">
-      <h3>🏁 ${t('ch_section')}</h3>
+      <h3>${ico('flag',17)} ${t('ch_section')}</h3>
       <p>${t('ch_create_sub')}</p>
     </div>
     <div class="ch-cta-actions">
-      <button class="ch-btn-primary" id="ch-cta-create">🏁 ${t('ch_create')}</button>
-      <button class="ch-btn-ghost" id="ch-cta-results">🏆 ${t('ch_results')}</button>
+      <button class="ch-btn-primary" id="ch-cta-create">${ico('flag',18)} ${t('ch_create')}</button>
+      <button class="ch-btn-ghost" id="ch-cta-results">${ico('trophy',18)} ${t('ch_results')}</button>
     </div>`;
   container.appendChild(card);
   card.querySelector('#ch-cta-create').onclick = openBuilder;
@@ -229,7 +230,7 @@ function renderBuilder(){
       <input class="cb-in" id="cb-search" type="search" placeholder="${esc(t('ch_search_stops'))}" aria-label="${esc(t('ch_search_stops'))}">
       <div id="cb-picker" class="cb-picker"></div>
 
-      <button class="ch-btn-primary cb-generate" id="cb-generate">🔗 ${t('ch_generate')}</button>
+      <button class="ch-btn-primary cb-generate" id="cb-generate">${ico('link',18)} ${t('ch_generate')}</button>
     </div>`;
 
   // Bind textfält → draft (ingen omrendering vid skrift)
@@ -290,7 +291,7 @@ function renderSelected(){
         <span class="ctc-tools">
           <button class="ctc-mv" data-mv="up" aria-label="${t('ch_up')}">▲</button>
           <button class="ctc-mv" data-mv="down" aria-label="${t('ch_down')}">▼</button>
-          <button class="ctc-rm" aria-label="${t('ch_remove')}">✕</button>
+          <button class="ctc-rm" aria-label="${t('ch_remove')}">${ico('close',14)}</button>
         </span>
       </div>
       <div class="ch-seg ctc-seg">${seg}</div>
@@ -453,11 +454,11 @@ async function showGenerated(challenge){
       <p class="ch-size-meter ${meter}">${meterTxt}</p>
       <div class="ch-codebox"><input id="ch-link" readonly value="${esc(link)}"></div>
       <div class="ch-row2">
-        <button class="ch-btn-primary" id="ch-copy">📋 ${t('ch_copy')}</button>
-        <button class="ch-btn-ghost" id="ch-share">📤 ${t('ch_share')}</button>
+        <button class="ch-btn-primary" id="ch-copy">${ico('copy',18)} ${t('ch_copy')}</button>
+        <button class="ch-btn-ghost" id="ch-share">${ico('share',18)} ${t('ch_share')}</button>
       </div>
-      <button class="ch-btn-ghost" id="ch-print">🖨️ ${t('ch_print')}</button>
-      <button class="ch-btn-ghost" id="ch-newedit">✏️ ${t('ch_new')}</button>
+      <button class="ch-btn-ghost" id="ch-print">${ico('print',18)} ${t('ch_print')}</button>
+      <button class="ch-btn-ghost" id="ch-newedit">${ico('pencil',18)} ${t('ch_new')}</button>
       <p class="ch-prof-sub">${t('ch_gen_hint')}</p>
     </div>`;
   $('#ch-copy').onclick = () => copyText(link);
@@ -521,7 +522,7 @@ function openJoin(challenge){
       ${resume
         ? `<button class="ch-btn-primary" id="cp-continue">▶︎ ${t('ch_continue')}</button>
            <button class="ch-btn-ghost" id="cp-restart">↺ ${t('ch_restart')}</button>`
-        : `<button class="ch-btn-primary" id="cp-start">🚩 ${t('ch_start')}</button>`}
+        : `<button class="ch-btn-primary" id="cp-start">${ico('flag',18)} ${t('ch_start')}</button>`}
     </div>`;
   const startFn = (fresh) => {
     const name = ($('#cp-name').value || '').trim();
@@ -573,7 +574,7 @@ function renderPlay(){
           </button></li>`;
         }).join('')}
       </ol>
-      <button class="ch-btn-primary" id="cp-finish">🏁 ${t('ch_finish')}</button>
+      <button class="ch-btn-primary" id="cp-finish">${ico('flag',18)} ${t('ch_finish')}</button>
     </div>`;
   $('#cp-body').querySelectorAll('.cp-stop').forEach(r => r.onclick = () => openTask(c.stops[+r.dataset.i]));
   $('#cp-finish').onclick = () => finish();
@@ -613,11 +614,11 @@ function renderTask(stop){
       <div class="quiz-opts">${stop.task.opts.map((o,i)=>`<button class="quiz-opt" data-i="${i}">${esc(o)}</button>`).join('')}</div>`;
   } else if (stop.task.type === 'photo'){
     body = `<p class="ct-q">${esc(stop.task.prompt || t('ch_photo_default'))}</p>
-      <button class="ch-btn-primary" id="ct-photo">📸 ${t('ch_photo_take')}</button>`;
+      <button class="ch-btn-primary" id="ct-photo">${ico('camera',18)} ${t('ch_photo_take')}</button>`;
   } else if (stop.task.type === 'code'){
     body = `<p class="ct-q">${esc(stop.task.prompt || t('ch_code_default'))}</p>
       <input class="cb-in" id="ct-code" placeholder="${esc(t('ch_code_enter'))}">
-      <button class="ch-btn-primary" id="ct-verify">✓ ${t('ch_verify')}</button>`;
+      <button class="ch-btn-primary" id="ct-verify">${ico('check',17)} ${t('ch_verify')}</button>`;
   }
   card.innerHTML = head + body;
   $('#ct-x').onclick = closeTask;
@@ -664,8 +665,8 @@ function renderVisitTask(e){
   const maps = ctx.hasCoords(e)
     ? `<a class="ct-maps" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${e.coordinates.lat},${e.coordinates.lng}">🧭 ${t('ch_directions')}</a>` : '';
   return `${dist}
-    <button class="ch-btn-ghost" id="ct-locate">📍 ${t('ch_find_me')}</button>
-    <button class="ch-btn-primary" id="ct-checkin" ${within?'':'disabled'}>${within ? '✓ '+t('ch_checkin') : t('ch_checkin_far')}</button>
+    <button class="ch-btn-ghost" id="ct-locate">${ico('locate',17)} ${t('ch_find_me')}</button>
+    <button class="ch-btn-primary" id="ct-checkin" ${within?'':'disabled'}>${within ? ico('check',17)+' '+t('ch_checkin') : t('ch_checkin_far')}</button>
     ${maps}`;
 }
 function wireVisitTask(e, stop){
@@ -734,8 +735,8 @@ function finish(){
       <p class="ch-prof-sub">${t('ch_result_hint')}</p>
       <div class="ch-codebox"><input id="ch-rescode" readonly value="${esc(code)}"></div>
       <div class="ch-row2">
-        <button class="ch-btn-primary" id="ch-rescopy">📋 ${t('ch_copy')}</button>
-        <button class="ch-btn-ghost" id="ch-resshare">📤 ${t('ch_share')}</button>
+        <button class="ch-btn-primary" id="ch-rescopy">${ico('copy',18)} ${t('ch_copy')}</button>
+        <button class="ch-btn-ghost" id="ch-resshare">${ico('share',18)} ${t('ch_share')}</button>
       </div>
       <button class="ch-btn-ghost" id="ch-resdone">${t('ch_close')}</button>
     </div>`;
@@ -794,14 +795,14 @@ function renderResults(challengeId){
     </div>`).join('') : `<p class="ch-empty">${t('ch_no_results')}</p>`;
   $('#cr-body').innerHTML = `<div class="cr-pad">
     ${c?`<p class="ch-prof-sub">${maxScore(c)} ${t('ch_points_short')} · ${c.stops.length} ${t('ch_stops')}</p>`:''}
-    <h4 class="cb-h">🏆 ${t('ch_leaderboard')} <span class="cb-count">${board.length}</span></h4>
+    <h4 class="cb-h">${ico('trophy',17)} ${t('ch_leaderboard')} <span class="cb-count">${board.length}</span></h4>
     <div class="ch-leader">${rows}</div>
     <h4 class="cb-h">${t('ch_paste_codes')}</h4>
     <textarea class="cb-in cb-ta" id="cr-paste" rows="3" placeholder="${esc(t('ch_paste_ph'))}"></textarea>
     <button class="ch-btn-primary" id="cr-import">⬇︎ ${t('ch_import')}</button>
     <div class="ch-row2">
-      <button class="ch-btn-ghost" id="cr-export">📤 ${t('ch_export')}</button>
-      <button class="ch-btn-ghost" id="cr-clear">🗑️ ${t('ch_clear')}</button>
+      <button class="ch-btn-ghost" id="cr-export">${ico('share',18)} ${t('ch_export')}</button>
+      <button class="ch-btn-ghost" id="cr-clear">${ico('trash',18)} ${t('ch_clear')}</button>
     </div>
     <button class="ch-btn-ghost" id="cr-back">‹ ${t('ch_results')}</button>
   </div>`;

@@ -2,6 +2,7 @@
 // Isolerad modul (samma mönster som challenges.js). All säkerhet ligger i RLS +
 // SECURITY DEFINER-funktioner i Supabase; den här filen är bara UI + anrop.
 import { getSupabase, isConfigured } from './config.js';
+import { ico } from './icons.js';
 import { getState, getProfile, getUser, isAdmin, canReview, requireAuth,
          tierLabel, onAuthChange } from './auth.js';
 
@@ -74,8 +75,8 @@ export function stopBlockHtml(stopId) {
       </div></div>`;
   }).join('');
   return `<div class="contrib-section">
-    ${list.length ? `<div class="contrib-h">🧺 ${t('contrib_section')}</div>${items}` : ''}
-    <button class="contrib-add" data-tip="${stopId}">➕ ${t('tip_add')}</button>
+    ${list.length ? `<div class="contrib-h">${ico('inbox',17)} ${t('contrib_section')}</div>${items}` : ''}
+    <button class="contrib-add" data-tip="${stopId}">${ico('plus',18)} ${t('tip_add')}</button>
   </div>`;
 }
 export function wireStopBlock(root, stopId) {
@@ -228,7 +229,7 @@ export async function openTipForm(opts = {}) {
         <div class="tip-map" id="tip-map"></div>
         <div class="tip-coords" id="tip-coords">
           <span id="tip-coord-txt">${coords ? `📍 ${coords.lat}, ${coords.lng}` : t('tip_no_coords')}</span>
-          <button class="om-link" id="tip-gps" type="button">📡 ${t('tip_use_gps')}</button>
+          <button class="om-link" id="tip-gps" type="button">${ico('satellite',17)} ${t('tip_use_gps')}</button>
         </div>
         <small class="fb-sub">${t('tip_map_hint')}</small></div>` : ''}
       <div class="contrib-photo-area" id="tip-photo-area">${hasMediaPreview ? `<div class="contrib-preview"><img src="${esc(existingMedia)}" alt=""></div>` : ''}</div>
@@ -392,15 +393,15 @@ export async function openReviewQueue() {
           <b>${esc(tp.title)}</b>${tp.body ? `<p>${esc(tp.body)}</p>` : ''}
         </div>
         <div class="review-actions">
-          <button class="rev-ok ${myVote === 'approve' ? 'cast' : ''}" data-ok="${tp.id}">👍 ${t('approve')}</button>
-          <button class="rev-no ${myVote === 'reject' ? 'cast' : ''}" data-no="${tp.id}">👎 ${t('reject')}</button>
-          ${admin ? `<button class="rev-admin" data-pub="${tp.id}">⚡ ${t('admin_publish')}</button>
-                     <button class="rev-admin" data-info="${tp.id}">📝 ${t('admin_request_info')}</button>
-                     <button class="rev-admin danger" data-rej="${tp.id}">⛔ ${t('admin_reject')}</button>` : ''}
+          <button class="rev-ok ${myVote === 'approve' ? 'cast' : ''}" data-ok="${tp.id}">${ico('thumbUp',17)} ${t('approve')}</button>
+          <button class="rev-no ${myVote === 'reject' ? 'cast' : ''}" data-no="${tp.id}">${ico('thumbDown',17)} ${t('reject')}</button>
+          ${admin ? `<button class="rev-admin" data-pub="${tp.id}">${ico('bolt',16)} ${t('admin_publish')}</button>
+                     <button class="rev-admin" data-info="${tp.id}">${ico('note',16)} ${t('admin_request_info')}</button>
+                     <button class="rev-admin danger" data-rej="${tp.id}">${ico('ban',16)} ${t('admin_reject')}</button>` : ''}
         </div></div>`;
     }).join('');
     card.innerHTML = `<button class="fb-x" id="r-x" aria-label="${en() ? 'Close' : 'Stäng'}">&times;</button>
-      <h3>${t('review')} ${admin ? '🛡️' : ''}</h3>
+      <h3>${t('review')} ${admin ? ico('shield',16) : ''}</h3>
       <p class="fb-sub">${admin ? t('review_sub_admin') : t('review_sub')}</p>
       ${err ? `<div class="auth-fine err">${esc(err)}</div>` : ''}
       ${items || `<div class="screen-empty">${t('review_empty')}</div>`}`;
@@ -453,12 +454,12 @@ export function mountTipsProfile(el, opts = {}) {
     const user = getUser();
     if (!user) { wrap.innerHTML = ''; return; }
     const review = canReview()
-      ? `<button class="fb-cta" id="tp-review">🔎 ${t('review')}</button>`
-      : `<div class="review-lock">🔒 ${t('review_unlock_hint')}</div>`;
+      ? `<button class="fb-cta" id="tp-review">${ico('search',18)} ${t('review')}</button>`
+      : `<div class="review-lock">${ico('lock',17)} ${t('review_unlock_hint')}</div>`;
     wrap.innerHTML = `
       <h3 class="prof-h">${t('tip_my_section')}</h3>
-      <button class="cta" id="tp-addplace">📍 ${t('tip_add_place')}</button>
-      <button class="fb-cta" id="tp-add">➕ ${t('tip_add')}</button>
+      <button class="cta" id="tp-addplace">${ico('pin',18)} ${t('tip_add_place')}</button>
+      <button class="fb-cta" id="tp-add">${ico('plus',18)} ${t('tip_add')}</button>
       ${review}
       <div id="tp-mine" class="tp-mine"><div class="contrib-optimizing">${t('review_loading')}</div></div>`;
     wrap.querySelector('#tp-addplace').onclick = () => openTipForm({ kind: 'place', onSaved: loadMine });

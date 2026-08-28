@@ -9,6 +9,7 @@
 // emot av den som fick länken.
 import { getSupabase, isConfigured } from './config.js';
 import { getUser, requireAuth } from './auth.js';
+import { ico } from './icons.js';
 
 let ctx = null;
 let supa = null;
@@ -31,12 +32,15 @@ let tableMissing = false;   // migrationen inte körd → visa inget alls
 // ── Färdsätt ────────────────────────────────────────────────────────────────
 // Tempot används bara för tidsuppskattningen. Gånghastighet i stadsmiljö med
 // stopp är lägre än ren gångtakt — 4 km/h är realistiskt, inte 5.
+// `ikon` används i gränssnittet (SVG), `emoji` i delningstext som går till
+// WhatsApp och SMS — där vore SVG-markup bara skräp.
 const MODES = {
-  walk: { icon: '🚶', kmh: 4.0,  key: 'route_mode_walk' },
-  run:  { icon: '🏃', kmh: 9.0,  key: 'route_mode_run' },
-  bike: { icon: '🚲', kmh: 15.0, key: 'route_mode_bike' },
+  walk: { ikon: 'walk', emoji: '🚶', kmh: 4.0,  key: 'route_mode_walk' },
+  run:  { ikon: 'run',  emoji: '🏃', kmh: 9.0,  key: 'route_mode_run' },
+  bike: { ikon: 'bike', emoji: '🚲', kmh: 15.0, key: 'route_mode_bike' },
 };
-const modeIcon = m => (MODES[m] || MODES.walk).icon;
+const modeIcon  = (m, px = 20) => ico((MODES[m] || MODES.walk).ikon, px);
+const modeEmoji = m => (MODES[m] || MODES.walk).emoji;
 const modeLabel = m => t((MODES[m] || MODES.walk).key);
 
 function distKm(a, b) {
@@ -116,7 +120,7 @@ function routeCardHtml(r, opts = {}) {
     <span class="led-meta">
       <b>${esc(r.title)}</b>
       <small>${r.stops.length} ${t('stops')} · ${fmtKm(km)} · ${fmtMin(min)}${opts.mine ? (r.is_public ? '' : ` · ${t('route_private')}`) : ` · ${esc(nameOf(r.author_id))}`}</small>
-      <span class="led-count">${whenTxt ? `🗓️ ${whenTxt}` : (r.walk_count ? `${r.walk_count} ${t('route_walked_by')}` : t('route_nobody_yet'))}</span>
+      <span class="led-count">${whenTxt ? `${ico('calendar',14)} ${whenTxt}` : (r.walk_count ? `${r.walk_count} ${t('route_walked_by')}` : t('route_nobody_yet'))}</span>
     </span>
   </button>`;
 }
@@ -138,7 +142,7 @@ export async function mountRoutes(container) {
   const theirsNotMine = theirs.filter(r => !mine.some(m => m.id === r.id));
   wrap.innerHTML = `
     <h3 class="prof-h">${t('route_yours')}</h3>
-    <button class="cta route-new" id="route-new">➕ ${t('route_create')}</button>
+    <button class="cta route-new" id="route-new">${ico('plus',18)} ${t('route_create')}</button>
     ${mine.length ? mine.map(r => routeCardHtml(r, { mine: true })).join('')
                   : `<p class="cmt-empty">${t('route_none_yours')}</p>`}
     <h3 class="prof-h">${t('route_in_city')} ${esc(ctx.cityName || '')}</h3>
@@ -177,7 +181,7 @@ function renderBuilder() {
 
       <label class="cb-l">${t('route_field_mode')}</label>
       <div class="ch-seg" id="rb-mode" role="group" aria-label="${esc(t('route_field_mode'))}">
-        ${Object.keys(MODES).map(m => `<button data-mode="${m}" class="${draft.mode === m ? 'on' : ''}">${MODES[m].icon} ${modeLabel(m)}</button>`).join('')}
+        ${Object.keys(MODES).map(m => `<button data-mode="${m}" class="${draft.mode === m ? 'on' : ''}">${modeIcon(m,17)} ${modeLabel(m)}</button>`).join('')}
       </div>
 
       <label class="cb-l" for="rb-f-when">${t('route_field_when')}</label>
@@ -219,7 +223,7 @@ function renderStats() {
   const el = $('#rb-stats'); if (!el) return;
   if (draft.stops.length < 2) { el.innerHTML = ''; return; }
   const { km, min } = routeStats(draft.stops, draft.mode);
-  el.innerHTML = `<span>${modeIcon(draft.mode)} ${fmtKm(km)}</span><span>⏱️ ${t('route_about')} ${fmtMin(min)}</span>`;
+  el.innerHTML = `<span>${modeIcon(draft.mode)} ${fmtKm(km)}</span><span>${ico('clock',15)} ${t('route_about')} ${fmtMin(min)}</span>`;
 }
 
 function renderSelected() {
@@ -331,13 +335,13 @@ export async function openRoute(id) {
         </div>
       </div>
       ${r.intro ? `<p class="route-intro">${esc(r.intro)}</p>` : ''}
-      ${when ? `<div class="route-when">🗓️ ${esc(when.toLocaleString(en() ? 'en-GB' : 'sv-SE', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }))}</div>` : ''}
+      ${when ? `<div class="route-when">${ico('calendar',16)} ${esc(when.toLocaleString(en() ? 'en-GB' : 'sv-SE', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }))}</div>` : ''}
 
       <button class="ch-btn-primary" id="rv-start">${modeIcon(r.mode)} ${t('route_start')}</button>
       <div class="route-actions">
-        <button class="fb-cta" id="rv-share">📤 ${t('route_share')}</button>
-        ${me ? `<button class="fb-cta" id="rv-done">✓ ${t('route_log_walk')}</button>` : ''}
-        ${mine ? `<button class="fb-cta" id="rv-edit">✎ ${t('route_edit')}</button>` : ''}
+        <button class="fb-cta" id="rv-share">${ico('share',18)} ${t('route_share')}</button>
+        ${me ? `<button class="fb-cta" id="rv-done">${ico('check',18)} ${t('route_log_walk')}</button>` : ''}
+        ${mine ? `<button class="fb-cta" id="rv-edit">${ico('pencil',18)} ${t('route_edit')}</button>` : ''}
       </div>
 
       <h4 class="cb-h">${t('route_stops_head')}</h4>
@@ -373,8 +377,8 @@ async function shareRoute(r) {
   const whenTxt = when ? ' ' + when.toLocaleString(en() ? 'en-GB' : 'sv-SE', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
   const { km } = routeStats(r.stops, r.mode);
   const text = en()
-    ? `${r.title} — ${modeIcon(r.mode)} ${fmtKm(km)} past ${r.stops.length} places.${whenTxt ? ' We are going' + whenTxt + '.' : ''} Come along!`
-    : `${r.title} — ${modeIcon(r.mode)} ${fmtKm(km)} förbi ${r.stops.length} platser.${whenTxt ? ' Vi går den' + whenTxt + '.' : ''} Häng med!`;
+    ? `${r.title} — ${modeEmoji(r.mode)} ${fmtKm(km)} past ${r.stops.length} places.${whenTxt ? ' We are going' + whenTxt + '.' : ''} Come along!`
+    : `${r.title} — ${modeEmoji(r.mode)} ${fmtKm(km)} förbi ${r.stops.length} platser.${whenTxt ? ' Vi går den' + whenTxt + '.' : ''} Häng med!`;
   try {
     if (navigator.share) { await navigator.share({ title: r.title, text, url }); return; }
   } catch (e) { if (e && e.name === 'AbortError') return; }

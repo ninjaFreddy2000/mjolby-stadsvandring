@@ -57,6 +57,7 @@ import { initTips, refreshCity as refreshTips, isActive as tipsActive, mountTips
 import { initComments, commentBlockHtml, wireCommentBlock, clearCommentCache } from './comments.js';
 import { initRoutes, mountRoutes, openRoute, routeInUrl } from './routes.js';
 import { initImpact, mountImpact } from './impact.js';
+import { ico } from './icons.js';
 import { initInstall, openInstallGuide } from './install.js';
 // admin.js (24 kB) laddas inte i förväg — den behövs bara av admins, och bara
 // när dashboarden faktiskt öppnas. Se openAdminDashboard() nedan.
@@ -607,7 +608,7 @@ function buildMap() {
     options:{ position:'topleft' },
     onAdd(){
       const b = L.DomUtil.create('a','leaflet-bar leaflet-control loc-btn');
-      b.href='#'; b.title='Var är jag?'; b.innerHTML='📍';
+      b.href='#'; b.title='Var är jag?'; b.innerHTML=ico('locate', 18);
       b.setAttribute('role','button'); b.setAttribute('aria-label','Visa min position på kartan');
       b.style.cssText='width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;background:#fff';
       L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); locate(); });
@@ -620,7 +621,7 @@ function buildMap() {
     options:{ position:'topleft' },
     onAdd(){
       const b = L.DomUtil.create('a','leaflet-bar leaflet-control autoguide-btn');
-      b.href='#'; b.title='Auto-guide av'; b.innerHTML='🎧';
+      b.href='#'; b.title='Auto-guide av'; b.innerHTML=ico('headset', 18);
       b.setAttribute('role','button'); b.setAttribute('aria-label','Slå på auto-guide (ljud vid stopp)'); b.setAttribute('aria-pressed','false');
       b.style.cssText='width:34px;height:34px;line-height:34px;text-align:center;font-size:17px;background:#fff';
       L.DomEvent.on(b,'click',ev=>{ L.DomEvent.preventDefault(ev); toggleAutoGuide(); });
@@ -1127,7 +1128,7 @@ function openTourPanel(key){
   const qt = $('#quest-toggle');
   qt.setAttribute('aria-pressed', String(questMode));
   qt.classList.toggle('on', questMode);
-  qt.textContent = '🗺️ ' + (questMode ? t('quest_on') : t('quest_off'));
+  qt.innerHTML = ico('map', 16) + ' ' + (questMode ? t('quest_on') : t('quest_off'));
   qt.onclick = ()=>{ questMode = !questMode; openTourPanel(key); };
 
   $('#tour-stops').innerHTML = list.map((e,i)=>{
@@ -1358,7 +1359,7 @@ function openSheet(id){
       </div>` : '';
   const nowThenToggle = hasHist ? `<div class="nowthen" role="group" aria-label="${lang==='en'?'Now or then':'Nu eller förr'}">
         <button type="button" class="nowthen__btn on" data-mode="now">${nowLabel}</button>
-        <button type="button" class="nowthen__btn" data-mode="then">📷 ${thenLabel}</button>
+        <button type="button" class="nowthen__btn" data-mode="then">${ico('camera',16)} ${thenLabel}</button>
       </div>` : '';
   const hero = (img || hasHist)
     ? `<div class="hero">
@@ -1383,7 +1384,7 @@ function openSheet(id){
       ${leadOf(e)?`<p class="lead">${leadOf(e)}</p>`:''}
       ${noticeHtml(id, e)}
       ${tellerBubble(id)}
-      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">🔊 ${t('speak_listen')}</button>`:''}
+      ${('speechSynthesis' in window)?`<button class="speak-btn" id="speak-btn">${ico('speaker',18)} ${t('speak_listen')}</button>`:''}
       ${(lang==='en' && storyHtml)?`<p class="story-note">📖 ${t('story_note')}</p>`:''}
       ${storyHtml?`<div class="story">${storyHtml}</div>`:''}
       ${facts?`<ul class="facts">${facts}</ul>`:''}
@@ -1397,7 +1398,7 @@ function openSheet(id){
            ${photoBlock(id)}`
         : ''}
       ${e.address?`<p class="addr">📍 ${e.address}</p>`:''}
-      ${hasCoords(e)?`<button class="addr-map" id="show-on-map">🗺️ ${lang==='en'?'Show on map':'Visa på kartan'}</button>`:''}
+      ${hasCoords(e)?`<button class="addr-map" id="show-on-map">${ico('map', 16)} ${lang==='en'?'Show on map':'Visa på kartan'}</button>`:''}
       ${srcs?`<p class="srcs">${srcs}</p>`:''}
       ${e.spokkartan_url?`<p class="spok-link"><a href="${e.spokkartan_url}" target="_blank" rel="noopener">👻 ${lang==='en'?'Read this place’s ghost story on Spökkartan':'Läs platsens spökhistoria på Spökkartan'} →</a></p>`:''}
     </div>`;
@@ -1583,9 +1584,9 @@ function photoBlock(id){
   const p = photos()[id];
   if (p) return `<div class="photo-block">
       <img class="my-photo" src="${p}" alt="${lang==='en'?'Your photo from the place':'Din bild från platsen'}">
-      <button class="photo-share" data-share="${id}">${t('photo_share')}</button>
+      <button class="photo-share" data-share="${id}">${ico('share',17)} ${t('photo_share')}</button>
     </div>`;
-  return `<button class="photo-cta" data-photo="${id}">${t('photo_cta')}</button>`;
+  return `<button class="photo-cta" data-photo="${id}">${ico('camera',17)} ${t('photo_cta')}</button>`;
 }
 
 /* ---------- Automatisk bildförbättring (canvas, klientsida) ----------
@@ -1795,7 +1796,7 @@ function setExploreView(v, first){
 }
 function updateViewToggle(){
   const b = $('#view-toggle'); if (!b) return;
-  b.innerHTML = exploreView === 'map' ? `📋 ${t('view_list')}` : `🗺️ ${t('view_map')}`;
+  b.innerHTML = exploreView === 'map' ? `${ico('book',16)} ${t('view_list')}` : `${ico('map',16)} ${t('view_map')}`;
 }
 // Basen för listvyn: stadens platser genom samma filter som kartan + fritextsök.
 // (DATA, inte ENTRIES — platser utan koordinater hör också hemma i listan.)
@@ -2000,7 +2001,7 @@ function stopSpeaking(){
 }
 function updateSpeakButtons(){
   const b = $('#speak-btn');
-  if (b) b.innerHTML = speaking ? t('speak_stop') : `🔊 ${t('speak_listen')}`;
+  if (b) b.innerHTML = speaking ? t('speak_stop') : `${ico('speaker',18)} ${t('speak_listen')}`;
 }
 // Röster laddas ibland asynkront
 if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = ()=>{};
@@ -2148,10 +2149,10 @@ function renderCities(){
     </button>`).join('') : '';
 
   $('#screen').innerHTML = `<div class="screen-head"><h2>${t('screen_cities')}</h2><p>${t('cities_pick')}</p></div>
-    <button class="fb-cta" id="cities-locate" style="margin:0 0 14px">📍 ${t('land_locate')}</button>
+    <button class="fb-cta" id="cities-locate" style="margin:0 0 14px">${ico('locate',17)} ${t('land_locate')}</button>
     ${activeCards}
     ${soon?`<h3 class="prof-h">${t('city_more_soon')}</h3>${soon}`:''}
-    <button class="fb-cta" id="fb-cities">💬 ${t('feedback')}</button>`;
+    <button class="fb-cta" id="fb-cities">${ico('chat',18)} ${t('feedback')}</button>`;
   $('#screen').querySelector('#cities-locate').onclick = openLanding;
   $('#screen').querySelectorAll('[data-pick]').forEach(c=> c.onclick=()=>{ switchTab('home'); setActiveCity(c.dataset.pick); });
   $('#screen').querySelectorAll('[data-soon]').forEach(c=> c.onclick=()=> toast(t('city_soon') + ' 🌱'));
@@ -2207,7 +2208,7 @@ function openLanding(){
     <div class="land-hero"><h1>${t('land_title')}</h1><p>${t('land_sub')}</p></div>
     <div class="land-search"><span class="land-mag">🔍</span>
       <input id="land-q" type="search" inputmode="search" autocomplete="off" placeholder="${t('land_search')}"></div>
-    <button class="land-locate" id="land-locate">📍 ${t('land_locate')}</button>
+    <button class="land-locate" id="land-locate">${ico('locate',17)} ${t('land_locate')}</button>
     <div class="land-list" id="land-list"></div>`;
   const qi=$('#land-q'); qi.oninput=()=>renderLandingList(qi.value);
   // Mobil: när tangentbordet öppnas, scrolla upp sökfältet så det (och listan)
@@ -2425,9 +2426,9 @@ function intentCardHtml(){
     <p class="fb-sub">${t('intent_sub')}</p>
     <div class="intent-row">
       <button class="intent-btn intent-btn--explore" data-intent="explore">
-        <span aria-hidden="true">🗺️</span><b>${t('intent_explore')}</b><small>${t('intent_explore_d')}</small></button>
+        <span aria-hidden="true">${ico('map',24)}</span><b>${t('intent_explore')}</b><small>${t('intent_explore_d')}</small></button>
       <button class="intent-btn intent-btn--contribute" data-intent="contribute">
-        <span aria-hidden="true">✍️</span><b>${t('intent_contribute')}</b><small>${t('intent_contribute_d')}</small></button>
+        <span aria-hidden="true">${ico('pencil',24)}</span><b>${t('intent_contribute')}</b><small>${t('intent_contribute_d')}</small></button>
     </div>
   </div>`;
 }
@@ -2450,7 +2451,7 @@ function bioCardHtml(){
   const bio = p.bio || '';
   const klar = hasBio();
   return `<div class="bio-card${klar ? ' bio-card--done' : ''}">
-    <h3>${klar ? '✓ ' : ''}${t('bio_title')}</h3>
+    <h3>${klar ? ico('check',17)+' ' : ''}${t('bio_title')}</h3>
     <p class="fb-sub">${t('bio_sub')}</p>
     <textarea class="fb-text" id="bio-text" rows="4" maxlength="600"
       placeholder="${t('bio_ph')}" aria-label="${t('bio_title')}">${escHtml(bio)}</textarea>
@@ -2488,9 +2489,9 @@ function renderContribute(){
     // en inloggningsvägg.
     $('#screen').insertAdjacentHTML('beforeend', `
       <div class="contrib-why">
-        <div class="cw-row"><span>📍</span><div><b>${t('cw_place')}</b><small>${t('cw_place_d')}</small></div></div>
-        <div class="cw-row"><span>📷</span><div><b>${t('cw_tip')}</b><small>${t('cw_tip_d')}</small></div></div>
-        <div class="cw-row"><span>🔎</span><div><b>${t('cw_review')}</b><small>${t('cw_review_d')}</small></div></div>
+        <div class="cw-row"><span>${ico('pin',22)}</span><div><b>${t('cw_place')}</b><small>${t('cw_place_d')}</small></div></div>
+        <div class="cw-row"><span>${ico('camera',22)}</span><div><b>${t('cw_tip')}</b><small>${t('cw_tip_d')}</small></div></div>
+        <div class="cw-row"><span>${ico('search',22)}</span><div><b>${t('cw_review')}</b><small>${t('cw_review_d')}</small></div></div>
       </div>`);
     // mountAuthProfile prepend:ar i sin container — ge den en egen så kortet
     // hamnar under rubriken i stället för överst på skärmen.
@@ -2518,7 +2519,7 @@ function renderContribute(){
   const hinder = reviewBlocker();
   if (hinder === 'bio'){
     scr.insertAdjacentHTML('beforeend',
-      `<div class="review-lock">🔎 ${t('review_needs_bio')}</div>`);
+      `<div class="review-lock">${ico('search',18)} ${t('review_needs_bio')}</div>`);
   }
 
   mountTipsProfile(scr, { onChange: renderContribute });
@@ -2528,7 +2529,7 @@ function renderContribute(){
     if (!städer.length || $('#screen') !== scr || activeTab !== 'contribute') return;
     const namn = städer.map(sl => (CITY_INDEX.find(c => c.slug === sl) || {}).name || sl);
     scr.insertAdjacentHTML('afterbegin', `<div class="mod-badge">
-        <span class="mod-badge__ic" aria-hidden="true">🛡️</span>
+        <span class="mod-badge__ic" aria-hidden="true">${ico('shield',22)}</span>
         <div><b>${t('mod_title')}</b>
           <small>${t('mod_sub')} ${namn.map(n => escHtml(n)).join(', ')}</small></div>
       </div>`);
@@ -2561,11 +2562,11 @@ function renderProfil(){
     <div class="ach-grid">${achGrid}</div>
     <h3 class="prof-h">${t('prof_badges')}</h3>
     <div class="stamp-grid">${grid}</div>
-    <button class="fb-cta" id="fb-prof">💬 ${t('feedback')}</button>
-    <button class="fb-cta" id="install-prof">📲 ${t('install_app')}</button>
-    ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">🛡️ ${t('admin_dashboard')}</button>` : ''}
+    <button class="fb-cta" id="fb-prof">${ico('chat',18)} ${t('feedback')}</button>
+    <button class="fb-cta" id="install-prof">${ico('install',18)} ${t('install_app')}</button>
+    ${adminAvailable() ? `<button class="fb-cta" id="admin-prof">${ico('shield',18)} ${t('admin_dashboard')}</button>` : ''}
     <h3 class="prof-h">Stadsvandring.io</h3>
-    <button class="fb-cta" id="prof-cities">🗺️ ${lang==='en'?'Choose a town':'Välj stad'}</button>
+    <button class="fb-cta" id="prof-cities">${ico('map',18)} ${lang==='en'?'Choose a town':'Välj stad'}</button>
     <a class="fb-cta" href="/blogg">📰 ${lang==='en'?'Read the blog':'Läs bloggen'}</a>
     <a class="fb-cta" href="/">ℹ️ ${lang==='en'?'About us':'Om oss'}</a>
     <div class="prof-social">

@@ -3,6 +3,7 @@
 // context-objekt (ctx) med översättning/toast/fokus-helpers. tips.js läser samma
 // session via getState()/getProfile().
 import { getSupabase, isConfigured, SHARE_URL } from './config.js';
+import { ico } from './icons.js';
 
 // Vart användaren ska landa efter inloggning. MÅSTE vara appen, inte roten:
 // index.html laddar bara webbsida.js, alltså ingen Supabase-klient. En magisk
@@ -357,7 +358,7 @@ export function mountAuthProfile(el, opts = {}) {
         <b>${t('auth_join_title')}</b>
         <p class="fb-sub">${t('auth_join_sub')}</p>
         <button class="cta" id="ap-login">${t('auth_login_share')}</button>
-        <button class="om-link" id="ap-share2">📤 ${t('share_app')}</button>
+        <button class="om-link" id="ap-share2">${ico('share',17)} ${t('share_app')}</button>
       </div>`;
       wrap.querySelector('#ap-login').onclick = async () => { const ok = await openLogin(); if (ok && opts.onChange) opts.onChange(); };
       const sh = wrap.querySelector('#ap-share2'); if (sh) sh.onclick = shareApp;
@@ -381,8 +382,8 @@ export function mountAuthProfile(el, opts = {}) {
       </div>
       ${nextTierHint(p)}
       <div class="acc-actions">
-        <button class="om-link" id="ap-rename">✏️ ${t('auth_rename')}</button>
-        <button class="om-link" id="ap-share">📤 ${t('share_app')}</button>
+        <button class="om-link" id="ap-rename">${ico('pencil',16)} ${t('auth_rename')}</button>
+        <button class="om-link" id="ap-share">${ico('share',17)} ${t('share_app')}</button>
         <button class="om-link" id="ap-logout">↩︎ ${t('auth_logout')}</button>
       </div>`;
     wrap.querySelector('#ap-logout').onclick = async () => { await signOut(); if (opts.onChange) opts.onChange(); };

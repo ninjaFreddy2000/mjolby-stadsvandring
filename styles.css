@@ -789,6 +789,27 @@ a.fb-cta{display:block;text-align:center;text-decoration:none;box-sizing:border-
 .cw-row b{display:block;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:2px}
 .cw-row small{font-size:12.5px;line-height:1.45;color:var(--ink-3)}
 
+/* ── Ikoner (icons.js) ───────────────────────────────────────────────────────
+   En uppsättning, ett rutnät, en linjetjocklek. Emoji som knappikon var den
+   tydligaste signalen på att ingen formgett appen — och de renderas dessutom
+   olika på varje plattform, vilket är själva grötigheten. */
+.ico{flex:none;vertical-align:-0.18em;stroke-width:1.75}
+/* Ikon + text i en knapp ska sitta på samma baslinje med jämnt mellanrum. */
+button:has(>.ico),.cta:has(.ico),.fb-cta:has(.ico),.contrib-add:has(.ico),
+.ch-btn-primary:has(.ico),.route-new:has(.ico){
+  display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.led-count .ico,.route-stats .ico,.contrib-h .ico{vertical-align:-0.15em;opacity:.75}
+.contrib-h{display:flex;align-items:center;gap:7px}
+.route-stats{align-items:center}
+.route-stats span{display:inline-flex;align-items:center;gap:5px}
+.review-lock{display:flex;align-items:center;gap:8px}
+/* Kartkontrollerna: ikonen ska centreras i den 34 px stora rutan. */
+.loc-btn,.autoguide-btn{display:flex!important;align-items:center;justify-content:center}
+.cw-row>span .ico{margin-top:2px}
+.mod-badge__ic .ico{display:block}
+.route-mode .ico,.route-hero-mode .ico{width:26px;height:26px;stroke-width:1.6}
+
+
 /* ── Bidragsroller: avsiktsval, presentation, moderatorbricka ────────────────
    Valet ska kännas som två likvärdiga dörrar, inte som en uppmaning med ett
    artigt alternativ bredvid. Därför samma vikt på båda knapparna. */

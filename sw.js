@@ -1,4 +1,4 @@
-const CACHE = 'mjolby-stadsvandring-v93';
+const CACHE = 'mjolby-stadsvandring-v95';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
@@ -13,7 +13,7 @@ const SHELL = [
   // cachen först när de faktiskt hämtas. Tidigare låg hela data.json (9,6 MB) här
   // och laddades ned vid varje SW-installation.
   './data/cities.json',
-  './events.json', './config.js', './auth.js', './tips.js', './ghosts.js', './axiom.js', './install.js', './comments.js', './routes.js', './impact.js',
+  './events.json', './config.js', './auth.js', './tips.js', './ghosts.js', './axiom.js', './install.js', './comments.js', './routes.js', './icons.js', './impact.js',
   // challenges.js och admin.js laddas dynamiskt först när de behövs — de ligger
   // därför inte i shell-cachen utan hamnar i den när de faktiskt hämtas.
   // vendor/supabase.js (199 kB) och vendor/qrcode.js hämtas på begäran och
