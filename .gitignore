@@ -11,3 +11,6 @@ node_modules/
 data.json.bak*
 data.json.pre-*
 supabase/.temp/
+
+# Förhandsgranskade artikelutkast (genereras av scripts/build-blogg.mjs)
+blogg/*.preview.html

@@ -9,3 +9,18 @@ data.json.pre-slott
 # scripts/build-data.mjs). data.json är 9,6 MB och behöver inte ligga i prod.
 data.json
 data.json.merged
+
+# Förhandsgranskade artikelutkast — aldrig till produktion.
+*.preview.html
+
+# Spanarens arbetsmaterial: uppslag, research och ej godkända artikelutkast.
+# Interna dokument — får inte ligga publikt (jfr backup-filerna som exponerades).
+spanare/
+
+# Bloggens källdata. Appen serverar den renderade HTML:en, inte JSON:en.
+blogg/_posts/
+blogg/_legacy.json
+blogg/_index.json
+
+# Arbetsmaterial för bilder (källfiler, exportunderlag). Aldrig till produktion.
+_imgwork/
