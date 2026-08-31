@@ -2,7 +2,7 @@
 // Isolerad modul, importeras av app.js (samma mönster som challenges.js). Får ett
 // context-objekt (ctx) med översättning/toast/fokus-helpers. tips.js läser samma
 // session via getState()/getProfile().
-import { getSupabase, isConfigured, SHARE_URL } from './config.js';
+import { getSupabase, isConfigured, SHARE_URL, EMAIL_DELIVERY } from './config.js';
 import { ico } from './icons.js';
 
 // Vart användaren ska landa efter inloggning. MÅSTE vara appen, inte roten:
@@ -205,6 +205,8 @@ export function openLogin() {
     const overlay = document.querySelector('#auth');
     const card = document.querySelector('#auth-card');
     let mode = 'signup';   // 'magic' | 'password' | 'signup' — instant (autoconfirm) default så ingen fastnar på ett uteblivet mejl
+    // Fliken ritas inte utan EMAIL_DELIVERY, men läget kan sättas via data-mode.
+    if (!EMAIL_DELIVERY && mode === 'magic') mode = 'password';
     let done = false;
     const close = (ok) => {
       if (done) return; done = true;
@@ -217,7 +219,7 @@ export function openLogin() {
       const en = ctx && ctx.lang === 'en';
       const tabs = `
         <div class="fb-types auth-tabs">
-          <button class="fb-chip ${mode === 'magic' ? 'on' : ''}" data-mode="magic">${t('auth_tab_magic')}</button>
+          ${EMAIL_DELIVERY ? `<button class="fb-chip ${mode === 'magic' ? 'on' : ''}" data-mode="magic">${t('auth_tab_magic')}</button>` : ''}
           <button class="fb-chip ${mode === 'password' ? 'on' : ''}" data-mode="password">${t('auth_tab_password')}</button>
           <button class="fb-chip ${mode === 'signup' ? 'on' : ''}" data-mode="signup">${t('auth_tab_signup')}</button>
         </div>`;
@@ -236,7 +238,7 @@ export function openLogin() {
         ${tabs}
         ${body}
         <button class="cta" id="auth-submit" style="margin:6px 0 0">${submitLabel}</button>
-        ${mode === 'password' ? `<button class="auth-link" id="auth-forgot" type="button">${t('auth_forgot')}</button>` : ''}
+        ${mode === 'password' && EMAIL_DELIVERY ? `<button class="auth-link" id="auth-forgot" type="button">${t('auth_forgot')}</button>` : ''}
         <p class="auth-fine" id="auth-msg"></p>`;
       card.querySelector('#auth-x').onclick = () => close(false);
       // Google-knappen ritas in när vi vet att providern är påslagen. Att visa

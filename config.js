@@ -15,6 +15,21 @@ const _ov = (k) => { try { return localStorage.getItem(k) || ''; } catch (e) { r
 export const SUPABASE_URL = _ov('cfg_supabase_url') || 'https://phkrlofngyobgupaepej.supabase.co';
 export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable_YrrflIKTGbNQSofhlf3aZA_qONa6Xdc'; // publik (publishable) nyckel — säker att committa; säkerheten ligger i RLS
 
+// ── E-postleverans ───────────────────────────────────────────────────────────
+// Supabase kör på sin INBYGGDA e-posttjänst tills Custom SMTP är påslaget i
+// dashboarden (Authentication → Emails → SMTP Settings). Den är strypt till ett
+// par mejl i timmen och levererar i praktiken bara till projektets egna
+// medlemmar — alltså: magisk länk och lösenordsåterställning tystnar för
+// riktiga användare. Att visa knapparna ändå skickar folk in i en återvändsgränd
+// där ingenting syns hända.
+//
+// Konto + lösenord fungerar utan mejl (mailer_autoconfirm är på), och Google-
+// inloggning rör inte e-post alls. Därför döljs bara de två flödena.
+//
+// SÄTT DENNA TILL true när Custom SMTP är verifierat och ett testmejl gått fram.
+// Ingen annan kod behöver röras.
+export const EMAIL_DELIVERY = false;
+
 // Startstad vid allra första besöket, innan användaren valt. Detta är INTE
 // längre "appens stad": community-tips och granskning följer den stad man är i
 // (app.js skickar in citySlug), så alla 72 städer har ett eget flöde.
