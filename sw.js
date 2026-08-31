@@ -1,8 +1,11 @@
-const CACHE = 'mjolby-stadsvandring-v96';
+const CACHE = 'mjolby-stadsvandring-v97';
 // Separat runtime-cache för kartrutor/foton/fonter. Hålls UTANFÖR den versionerade
 // shell-cachen så den (a) inte raderas vid varje koduppdatering och (b) kan trimmas
 // till ett tak — annars växer den obegränsat på användarens enhet ("clogging up").
-const RUNTIME = 'mjolby-runtime-v1';
+// v1 → v2: v1 innehöll Carto-rutor med "API key required"-vattenstämpel.
+// Cachen bevaras med flit mellan kodsläpp, så ett URL-byte i koden räckte
+// inte — de gamla rutorna serverades cache-first ändå. Namnbytet slänger dem.
+const RUNTIME = 'mjolby-runtime-v2';
 const RUNTIME_MAX = 250;   // max antal cachade rutor/foton; äldsta vräks (FIFO)
 
 // Appen bor på /karta (karta.html). Roten ('/') är webbplatsens startsida (statisk,
@@ -13,7 +16,7 @@ const SHELL = [
   // cachen först när de faktiskt hämtas. Tidigare låg hela data.json (9,6 MB) här
   // och laddades ned vid varje SW-installation.
   './data/cities.json',
-  './events.json', './config.js', './auth.js', './tips.js', './ghosts.js', './axiom.js', './install.js', './comments.js', './routes.js', './icons.js', './impact.js',
+  './events.json', './config.js', './auth.js', './basemap.js', './tips.js', './ghosts.js', './axiom.js', './install.js', './comments.js', './routes.js', './icons.js', './impact.js',
   // challenges.js och admin.js laddas dynamiskt först när de behövs — de ligger
   // därför inte i shell-cachen utan hamnar i den när de faktiskt hämtas.
   // vendor/supabase.js (199 kB) och vendor/qrcode.js hämtas på begäran och
@@ -83,7 +86,7 @@ self.addEventListener('fetch', e=>{
   e.respondWith(
     caches.match(req).then(cached=>{
       const net = fetch(req).then(res=>{
-        if (res && res.status===200 && (req.url.startsWith(self.location.origin) || req.url.includes('basemaps.cartocdn.com') || req.url.includes('tile.openstreetmap'))){
+        if (res && res.status===200 && (req.url.startsWith(self.location.origin) || req.url.includes('server.arcgisonline.com'))){
           const copy = res.clone();
           caches.open(RUNTIME).then(c=>c.put(req, copy).then(()=>trimCache(RUNTIME, RUNTIME_MAX)));
         }

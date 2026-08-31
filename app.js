@@ -4,6 +4,7 @@ import { STORIES, EXTRA_IMAGES, TIMELINES, NOTICES, HISTORIC_IMAGES } from './co
 import { STORYTELLERS, ACTIVE_CITY, defaultTeller } from './storytellers.js';
 import { cityBlurb } from './cityintros.js';
 import { STRINGS, SUMMARY_EN, TELLER_EN } from './i18n.js';
+import { addBasemap } from './basemap.js';
 // challenges.js (39 kB) laddas inte i förväg. Stadsutmaningen syns först på
 // Leder- och Profil-fliken, så den vanliga sessionen "öppna kartan och titta"
 // betalar inte för den. Laddas direkt bara om man kommer in via en delad länk.
@@ -570,9 +571,7 @@ function buildMap() {
   //
   // Vill man tillbaka till en mjukare stil är rätt väg en gratis Carto- eller
   // MapTiler-nyckel (75k visningar/mån räcker gott) — då byts bara URL:en här.
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 19, attribution: '&copy; Esri, HERE, Garmin, &copy; OpenStreetMap-bidragsgivare'
-  }).addTo(map);
+  addBasemap(map);
   // Bläddra-läget klustrar avståndsbaserat i renderView(); plain-lager för aktiv tur (alla stopp syns).
   markerLayer = L.layerGroup();
   plainLayer = L.layerGroup();

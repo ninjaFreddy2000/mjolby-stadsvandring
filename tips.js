@@ -3,6 +3,7 @@
 // SECURITY DEFINER-funktioner i Supabase; den här filen är bara UI + anrop.
 import { getSupabase, isConfigured } from './config.js';
 import { ico } from './icons.js';
+import { addBasemap } from './basemap.js';
 import { getState, getProfile, getUser, isAdmin, canReview, requireAuth,
          tierLabel, onAuthChange } from './auth.js';
 
@@ -170,7 +171,7 @@ export async function openTipForm(opts = {}) {
     const start = coords || mapCenter() || { lat: 58.327, lng: 15.13 };
     if (!coords) setCoords(start.lat, start.lng);
     miniMap = window.L.map(el, { zoomControl: true, attributionControl: false }).setView([start.lat, start.lng], 15);
-    window.L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(miniMap);
+    addBasemap(miniMap, { attribution: false });
     pickMarker = window.L.marker([start.lat, start.lng], { draggable: true }).addTo(miniMap);
     pickMarker.on('dragend', () => { const ll = pickMarker.getLatLng(); setCoords(ll.lat, ll.lng); });
     miniMap.on('click', (e) => { pickMarker.setLatLng(e.latlng); setCoords(e.latlng.lat, e.latlng.lng); });

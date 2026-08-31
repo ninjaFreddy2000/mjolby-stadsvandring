@@ -14,6 +14,8 @@
 //   "teaser" → Leaflet-karta + signup-gate (lead-insert + magic-länk)
 //   "guide"  → låst tills inloggad session finns; annars länk tillbaka till gaten
 // ─────────────────────────────────────────────────────────────────────────
+import { addBasemap } from './basemap.js';
+
 import { getSupabase, isConfigured } from './config.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -35,9 +37,7 @@ function initMap(data) {
   const { lat, lng } = data.centroid;
   const map = L.map(node, { scrollWheelZoom: false, attributionControl: true })
     .setView([lat, lng], 14);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap, &copy; CARTO', maxZoom: 19,
-  }).addTo(map);
+  addBasemap(map);
 
   const pts = (data.stops || []).filter(s => s.lat && s.lng);
   const group = [];
