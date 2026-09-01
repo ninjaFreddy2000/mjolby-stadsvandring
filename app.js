@@ -518,14 +518,19 @@ async function init() {
   // plockas upp när Supabase-klienten skapas (detectSessionInUrl). Då får ingenting
   // vänta på idle — annars står token kvar oläst, användaren förblir utloggad och
   // klickar Google igen. Det såg ut som en loop.
-  const oauthRetur = /[#&](access_token|error|error_description)=/.test(location.hash || '');
+  // Supabase lägger svaret i hashen (implicit) ELLER i query-strängen (PKCE, och
+  // ALLTID vid fel). Att bara läsa hashen missade hela felfallet.
+  const oauthRetur = /[#&](access_token|code|error|error_description)=/.test(location.hash || '')
+                  || /[?&](code|error|error_description)=/.test(location.search || '');
   if (oauthRetur) {
     setupAuthTips();
-    surfaceOAuthError();
   } else {
     const idle = window.requestIdleCallback || (fn => setTimeout(fn, 800));
     idle(() => setupAuthTips(), { timeout: 3000 });
   }
+  // Alltid — inte bara vid retur: ett fel som parkerats före en omladdning ska
+  // fram även när URL:en hunnit bli ren.
+  surfaceOAuthError();
   setupInstallPrompt();
   setupSpokBanner();
   setupConnectivity();
@@ -1294,12 +1299,30 @@ async function openPlaceDeepLink(id){
 // utloggad utan besked. Nu syns det.
 function surfaceOAuthError(){
   try {
+    // Felet kan ligga i hashen ELLER i query-strängen — Supabase skickar det i
+    // båda. Att bara läsa hashen gjorde halva felfallet osynligt.
     const h = new URLSearchParams((location.hash || '').replace(/^#/, ''));
-    const err = h.get('error_description') || h.get('error');
-    if (!err) return;
-    history.replaceState(null, '', location.pathname);   // låt inte felet ligga kvar
-    setTimeout(() => toast('⚠️ ' + decodeURIComponent(err).replace(/\+/g, ' ').slice(0, 120)), 1200);
-    track('oauth_error', { msg: String(err).slice(0, 80) });
+    const q = new URLSearchParams(location.search || '');
+    const err = h.get('error_description') || q.get('error_description')
+             || h.get('error') || q.get('error');
+
+    // Toasten låg på 1200 ms fördröjning. Tog en ny service worker över under
+    // tiden laddades sidan om, meddelandet försvann och URL:en var redan rensad
+    // — kvar blev en sida som såg oinloggad ut utan förklaring. Det såg ut som
+    // en loop. Nu parkeras felet så att omladdningen bär det vidare.
+    if (err) {
+      try { sessionStorage.setItem('oauth_err', String(err)); } catch (_) {}
+      history.replaceState(null, '', location.pathname);   // låt inte felet ligga kvar
+    }
+    let parkerat = null;
+    try {
+      parkerat = sessionStorage.getItem('oauth_err');
+      if (parkerat) sessionStorage.removeItem('oauth_err');
+    } catch (_) {}
+    if (!parkerat) return;
+
+    setTimeout(() => toast('⚠️ ' + decodeURIComponent(parkerat).replace(/\+/g, ' ').slice(0, 120)), 1200);
+    track('oauth_error', { msg: String(parkerat).slice(0, 80) });
   } catch (e) {}
 }
 
