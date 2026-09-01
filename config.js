@@ -30,6 +30,26 @@ export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable
 // Ingen annan kod behöver röras.
 export const EMAIL_DELIVERY = false;
 
+// ── Google-inloggning ────────────────────────────────────────────────────────
+// AV tills client secret i Supabase är rättad. Den som ligger där nu är 10
+// tecken och börjar inte med GOCSPX-; en äkta Google-hemlighet är 35 tecken.
+// Google visar därför samtyckesrutan som vanligt, men när Supabase ska växla
+// in koden mot en token svarar Google nej:
+//
+//   error_code=unexpected_failure
+//   Unable to exchange external code: 4/0A…
+//
+// Client-ID, redirect-URI, Site URL och allowlistan är verifierat korrekta —
+// rör dem inte. Felet sitter enbart i hemligheten.
+//
+// Knappen döljs tills vidare. Att visa en inloggning som alltid misslyckas är
+// värre än att inte visa den: användaren klickar, kastas tillbaka, och tror
+// att appen är trasig. Konto + lösenord fungerar fullt ut under tiden.
+//
+// SÄTT TILL true när hemligheten är utbytt i Supabase (Authentication →
+// Sign In / Providers → Google → Client Secret).
+export const GOOGLE_LOGIN = false;
+
 // Startstad vid allra första besöket, innan användaren valt. Detta är INTE
 // längre "appens stad": community-tips och granskning följer den stad man är i
 // (app.js skickar in citySlug), så alla 72 städer har ett eget flöde.

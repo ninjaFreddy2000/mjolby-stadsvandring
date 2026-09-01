@@ -2,7 +2,7 @@
 // Isolerad modul, importeras av app.js (samma mönster som challenges.js). Får ett
 // context-objekt (ctx) med översättning/toast/fokus-helpers. tips.js läser samma
 // session via getState()/getProfile().
-import { getSupabase, isConfigured, SHARE_URL, EMAIL_DELIVERY } from './config.js';
+import { getSupabase, isConfigured, SHARE_URL, EMAIL_DELIVERY, GOOGLE_LOGIN } from './config.js';
 import { ico } from './icons.js';
 
 // Vart användaren ska landa efter inloggning. MÅSTE vara appen, inte roten:
@@ -245,7 +245,9 @@ export function openLogin() {
       // den annars ger bara "provider is not enabled" i ansiktet på användaren.
       enabledProviders().then(p => {
         const slot = card.querySelector('#auth-oauth');
-        if (!slot || !p.google) return;
+        // GOOGLE_LOGIN är av så länge Supabase har fel client secret — annars
+        // ritas en knapp som alltid kastar tillbaka användaren utloggad.
+        if (!slot || !p.google || !GOOGLE_LOGIN) return;
         slot.innerHTML = `<button class="auth-google" id="auth-google" type="button">
             <span class="g-mark">G</span> ${t('auth_google')}
           </button>
