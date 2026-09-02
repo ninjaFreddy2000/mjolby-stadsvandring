@@ -26,9 +26,7 @@ const SIZES = [
   { dir: 'w800', width: 800, q: 74 },   // hero i detaljvyn (~400 CSS-px @2x)
 ];
 // Bilder som används som CSS-bakgrund i full bredd behöver en större variant.
-// w1200 fanns bara för header.jpg. Den rasterbilden är ersatt av
-// images/stadssilhuett.svg (3 kB vektor) — inget behöver bred variant längre.
-const WIDE = { dir: 'w1200', width: 1200, q: 72, only: [] };
+const WIDE = { dir: 'w1200', width: 1200, q: 72, only: ['header.jpg'] };
 
 function have(cmd) {
   try { execFileSync('which', [cmd], { stdio: 'ignore' }); return true; } catch { return false; }

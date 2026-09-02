@@ -46,9 +46,8 @@ webbstorlekar som byggs med:
 ```bash
 node scripts/build-images.mjs
 ```
-Det skriver `images/w320/` (listminiatyrer) och `images/w800/` (hero i
-detaljvyn). Kräver `brew install webp`. Sidhuvudet är inte längre en rasterbild
-utan `images/stadssilhuett.svg`, och behöver inget byggsteg.
+Det skriver `images/w320/` (listminiatyrer), `images/w800/` (hero i detaljvyn)
+och `images/w1200/header.webp` (CSS-bakgrunden). Kräver `brew install webp`.
 Appen faller tillbaka på originalet om en variant saknas, så steget är valfritt
 men sparar ungefär 20× på en listvy.
 

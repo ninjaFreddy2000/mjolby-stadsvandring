@@ -400,22 +400,18 @@ section { position: relative; }
   background: linear-gradient(180deg, var(--pergament) 0%, rgba(243,234,216,0) 100%);
   pointer-events: none; z-index: 1;
 }
-/* Som sidhuvud ligger den överst. Ingen toning behövs: silhuettens papper ÄR
-   heron:s papper, så ytorna möts utan skarv. Bildtexten flyttas ovanför bilden
-   och blir en överrad — under bilden hängde den löst i tomrummet. */
-.citybanner--top { display: flex; flex-direction: column; padding-top: 30px; }
-.citybanner--top::before, .citybanner--top::after { display: none; }
-.citybanner--top .citybanner__img {
-  /* SVG:n har fast proportion — width + height:auto räcker. max-height med
-     object-fit:contain gav horisontell brevlådning med grå kanter. */
-  order: 2; height: auto; object-fit: fill;
+/* Som sidhuvud ligger den överst — då ska tonringen ske NEDÅT, in i heron, i
+   stället för uppåt. Allt annat ärvs från .citybanner: fotot beskärs med
+   object-fit:cover och bildtexten ligger vit över den mörknande underkanten,
+   vilket håller den läsbar mot bilden. */
+.citybanner--top::before { display: none; }
+.citybanner--top::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 96px;
+  background: linear-gradient(180deg, rgba(243,234,216,0) 0%, var(--pergament) 100%);
+  pointer-events: none; z-index: 1;
 }
-.citybanner--top .citybanner__caption {
-  order: 1; position: static; margin: 0 auto 14px; padding: 0 24px;
-  max-width: 46ch; background: none; text-shadow: none;
-  color: var(--ink, #2F2A20); opacity: .6;
-  font-size: clamp(15px, 1.5vw, 18px); font-weight: 500; letter-spacing: .01em;
-}
+/* Som sidhuvud får den vara något lägre än när den låg mitt på sidan. */
+.citybanner--top .citybanner__img { height: clamp(240px, 34vw, 460px); }
 .citybanner__caption {
   position: absolute; left: 0; right: 0; bottom: 0;
   margin: 0; padding: 72px 24px 24px;
