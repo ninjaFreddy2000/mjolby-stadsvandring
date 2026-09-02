@@ -31,24 +31,26 @@ export const SUPABASE_ANON_KEY = _ov('cfg_supabase_anon_key') || 'sb_publishable
 export const EMAIL_DELIVERY = false;
 
 // ── Google-inloggning ────────────────────────────────────────────────────────
-// AV tills client secret i Supabase är rättad. Den som ligger där nu är 10
-// tecken och börjar inte med GOCSPX-; en äkta Google-hemlighet är 35 tecken.
-// Google visar därför samtyckesrutan som vanligt, men när Supabase ska växla
-// in koden mot en token svarar Google nej:
+// Appen använder Googles ID-token-flöde (Google Identity Services), INTE
+// omdirigerings-flödet. Skillnaden spelar roll här:
 //
-//   error_code=unexpected_failure
-//   Unable to exchange external code: 4/0A…
+//   Omdirigering:  Google → Supabase växlar kod mot token med client_secret
+//   ID-token:      Google signerar en token i webbläsaren → Supabase verifierar
+//                  signaturen mot client_id
 //
-// Client-ID, redirect-URI, Site URL och allowlistan är verifierat korrekta —
-// rör dem inte. Felet sitter enbart i hemligheten.
+// Den andra vägen rör aldrig client_secret. Det är avgörande, för hemligheten
+// som ligger i Supabase är fel (10 tecken, saknar GOCSPX-prefix; en äkta är
+// 35). Omdirigerings-flödet dog därför på "Unable to exchange external code"
+// och kastade tillbaka användaren utloggad — det såg ut som en loop.
 //
-// Knappen döljs tills vidare. Att visa en inloggning som alltid misslyckas är
-// värre än att inte visa den: användaren klickar, kastas tillbaka, och tror
-// att appen är trasig. Konto + lösenord fungerar fullt ut under tiden.
-//
-// SÄTT TILL true när hemligheten är utbytt i Supabase (Authentication →
-// Sign In / Providers → Google → Client Secret).
-export const GOOGLE_LOGIN = false;
+// Förutsättning: https://stadsvandring.io måste ligga under Authorized
+// JavaScript origins på OAuth-klienten i Google Cloud. Det gör den.
+export const GOOGLE_LOGIN = true;
+
+// Client-ID:t är PUBLIKT — det ligger ändå i varje authorize-URL. Det är
+// hemligheten som är känslig, och den behövs inte i det här flödet.
+export const GOOGLE_CLIENT_ID =
+  '834176335370-o3tr83so4q4q70fln6heil35bo5u7e94.apps.googleusercontent.com';
 
 // Startstad vid allra första besöket, innan användaren valt. Detta är INTE
 // längre "appens stad": community-tips och granskning följer den stad man är i

@@ -2,7 +2,7 @@
 // Isolerad modul, importeras av app.js (samma mönster som challenges.js). Får ett
 // context-objekt (ctx) med översättning/toast/fokus-helpers. tips.js läser samma
 // session via getState()/getProfile().
-import { getSupabase, isConfigured, SHARE_URL, EMAIL_DELIVERY, GOOGLE_LOGIN } from './config.js';
+import { getSupabase, isConfigured, SHARE_URL, EMAIL_DELIVERY, GOOGLE_LOGIN, GOOGLE_CLIENT_ID } from './config.js';
 import { ico } from './icons.js';
 
 // Vart användaren ska landa efter inloggning. MÅSTE vara appen, inte roten:
@@ -25,6 +25,24 @@ async function enabledProviders() {
     _providers = (await r.json()).external || {};
   } catch (e) { _providers = {}; }
   return _providers;
+}
+
+// Googles ID-token-flöde. Skriptet laddas först när någon faktiskt öppnar
+// inloggningen — det ska inte kosta något för de allra flesta besökare, som
+// bara tittar på kartan.
+let _gsi = null;
+function loadGsi() {
+  if (_gsi) return _gsi;
+  _gsi = new Promise((res, rej) => {
+    if (window.google && window.google.accounts) return res();
+    const el = document.createElement('script');
+    el.src = 'https://accounts.google.com/gsi/client';
+    el.async = true; el.defer = true;
+    el.onload = () => res();
+    el.onerror = () => rej(new Error('gsi_load'));
+    document.head.appendChild(el);
+  });
+  return _gsi;
 }
 
 let ctx = null;
@@ -243,16 +261,33 @@ export function openLogin() {
       card.querySelector('#auth-x').onclick = () => close(false);
       // Google-knappen ritas in när vi vet att providern är påslagen. Att visa
       // den annars ger bara "provider is not enabled" i ansiktet på användaren.
-      enabledProviders().then(p => {
+      enabledProviders().then(async p => {
         const slot = card.querySelector('#auth-oauth');
-        // GOOGLE_LOGIN är av så länge Supabase har fel client secret — annars
-        // ritas en knapp som alltid kastar tillbaka användaren utloggad.
         if (!slot || !p.google || !GOOGLE_LOGIN) return;
-        slot.innerHTML = `<button class="auth-google" id="auth-google" type="button">
-            <span class="g-mark">G</span> ${t('auth_google')}
-          </button>
-          <div class="auth-or"><span>${t('auth_or')}</span></div>`;
-        slot.querySelector('#auth-google').onclick = googleLogin;
+        // Knappen ritas av Google själv. Vår egen knapp gick till
+        // omdirigerings-flödet, som kräver en client_secret Supabase inte har
+        // rätt kopia av. Googles knapp ger i stället en signerad ID-token som
+        // Supabase kan verifiera på egen hand.
+        try {
+          await loadGsi();
+          slot.innerHTML = `<div id="auth-gbtn"></div>
+            <div class="auth-or"><span>${t('auth_or')}</span></div>`;
+          google.accounts.id.initialize({
+            client_id: GOOGLE_CLIENT_ID,
+            callback: googleCredential,
+            auto_select: false,
+            cancel_on_tap_outside: true,
+          });
+          google.accounts.id.renderButton(slot.querySelector('#auth-gbtn'), {
+            type: 'standard', theme: 'outline', size: 'large',
+            text: 'continue_with', shape: 'pill', logo_alignment: 'center',
+            locale: (ctx && ctx.lang === 'en') ? 'en' : 'sv', width: 300,
+          });
+        } catch (e) {
+          // Skriptet blockerat (nätverk, tillägg, sträng spårningsspärr) —
+          // lämna rutan utan Google-knapp hellre än med en trasig.
+          slot.innerHTML = '';
+        }
       });
       card.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { mode = b.dataset.mode; render(); });
       card.querySelector('#auth-submit').onclick = submit;
@@ -265,13 +300,18 @@ export function openLogin() {
       if (m) { m.textContent = text; m.className = 'auth-fine' + (ok ? ' ok' : text ? ' err' : ''); }
     };
 
-    async function googleLogin() {
-      msg(t('auth_redirecting'), true);
-      const { error } = await supa.auth.signInWithOAuth({
+    // Google har signerat en ID-token åt oss. Supabase verifierar signaturen
+    // och aud mot client_id och ger tillbaka en session — ingen omdirigering,
+    // ingen kodväxling, ingen client_secret.
+    async function googleCredential(resp) {
+      if (!resp || !resp.credential) { msg(t('auth_bad_email'), false); return; }
+      msg(t('auth_working'), true);
+      const { error } = await supa.auth.signInWithIdToken({
         provider: 'google',
-        options: { redirectTo: APP_URL() },
+        token: resp.credential,
       });
-      if (error) msg(error.message, false);
+      if (error) { msg(error.message, false); return; }
+      close(true);
     }
 
     async function submit() {
